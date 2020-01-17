@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<title>TreeVisual</title>
+
+<head>
+    <script src="js/circle.js"></script>
+    <script src="js/sunburst.js"></script>
+    <script src="js/tree.js"></script>
+    <script src="js/treemap.js"></script>
+    <script src="js/zoomable_treemap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/introjs.css">
+    <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/demo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/graph-visual.css">
+    <link rel="stylesheet" href="css/circle.css">
+</head>
+
+<body>
+    <div id="textWidthDiv"></div>
+    <div class="loading-wrapper" style="display: none">
+        <div class="loading-cover"></div>
+        <div style="color: #a09de5" class="loading la-ball-clip-rotate la-3x">
+            <div></div>
+        </div>
+    </div>
+    
+    <nav class="navbar navbar-default navbar-static-top col-lg-10 col-9" id="topNav">
+        <div class="navbar-header">
+        <!-- Branding Image -->
+            <a class="navbar-brand" id="brand-name" href="/" data-step="3" data-intro="Tree Visual"
+            data-position='right' data-scrollTo='tooltip'>
+            Tree<span style="color:#0C2340;">Visual</span>
+            </a>
+        <!-- information about graph -->
+        </div>
+        <div style="float: right" id="graphInfoDiv">
+        <ul class="list-unstyled" id="graphInfo">
+            <li id="dataInfoPapers">Number of papers: </li>
+            <li id="dataInfoCitations">Number of citations: </li>
+        </ul>
+        </div>
+    
+    </nav>
+    
+    <div class="container-fluid" id="mainDiv">
+        <div class="row" style="margin-left:10px">
+            <!-- graphsDiv -->
+            <div class="col-lg-10 col-9 row " id="graphsDiv">
+        
+                <!-- graph 1 with widgets-->
+                <div class="col-lg-6 col-md-12">
+                    <!-- graph-self -->
+                    <div class="row" id="graphDiv1">
+                        <div class="col-lg-11 col-12 graph-section" id="graphInsideDiv1">
+                            <svg id="g1" viewBox="0 0 500 500"></svg>
+                        </div><!-- col-md-11 -->
+                    </div><!-- graphDiv1 -->
+
+                    <form id="widgetsDiv1">
+                        <div class="row">
+                            <!-- left part -->
+                            <div class="col-sm-7" id="left-widget1">
+                            <!-- Layout -->
+                            <div id="layout1" class="form-group row mb-2">
+                                <label for="dropdown1" class="col-md-4 col-form-label">
+                                <h2>Layout</h2>
+                                </label>
+                                <div class="col-md-7" style="padding-right:0">
+                                <select id="dropdown1" class="layoutDropdown custom-select" onchange="change_map('1')">
+                                    <option class="optionGroup" value="Tree" selected>Tree</option>
+                                    <option class="optionGroup" value="Treemap">Treemap</option>
+                                    <option class="optionGroup" value="Sunburst">Zoomable_Treemap</option>
+                                    <option class="optionGroup" value="Circle">Circle</option>
+                                    <option class="optionGroup" value="Sunburst">Sunburst</option>
+                                </select>
+                                </div>
+                            </div>
+
+                            <div id="layout1_treemap" class="form-group row mb-2" style="visibility:hidden">
+                                    <label for="dropdown1_treemap" class="col-md-4 col-form-label">
+                                    <h2>Tiling Strategy</h2>
+                                    </label>
+                                    <div class="col-md-7" style="padding-right:0">
+                                    <select id="dropdown1_treemap" class="layoutDropdown custom-select" onchange="change_tiling('1')">
+                                        <option class="optionGroup" value="Squarify" selected>Squarify</option>
+                                        <option class="optionGroup" value="Binary">Binary</option>
+                                        <option class="optionGroup" value="Dice">Dice</option>
+                                        <option class="optionGroup" value="Slice">Slice</option>
+                                        <option class="optionGroup" value="SliceDice">SliceDice</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- graph 2 with widgets-->
+                <div class="col-lg-6 col-md-12">
+                    <!-- graph-self -->
+                    <div class="row" id="graphDiv2">
+                        <div class="col-lg-11 col-12 graph-section">
+                        <svg viewBox="0 0 500 500" id="g2"></svg>
+                        </div>
+                    </div><!-- graphDiv2 -->
+
+                    <!-- widgets of graph 2 -->
+                    <form id="widgetsDiv2">
+                        <div class="row">
+                            <!-- left part -->
+                            <div class="col-sm-7" id="left-widget2">
+                            <!-- layout -->
+                            <div id="layout2" class="form-group row mb-2">
+                                <label for="dropdown2" class="col-md-4 col-form-label">
+                                    <h2>Layout</h2>
+                                </label>
+                
+                                <div class="col-md-7" style="padding-right:0">
+                                    <select id="dropdown2" class="layoutDropdown custom-select" onchange="change_map('2')">
+                                        <option class="optionGroup" value="Tree">Tree</option>
+                                        <option class="optionGroup" value="Treemap">Treemap</option>
+                                        <option class="optionGroup" value="Sunburst" selected>Zoomable_Treemap</option>
+                                        <option class="optionGroup" value="Circle">Circle</option>
+                                        <option class="optionGroup" value="Sunburst">Sunburst</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div id="layout2_treemap" class="form-group row mb-2" style="visibility:hidden">
+                                <label for="dropdown2_treemap" class="col-md-4 col-form-label" >
+                                <h2>Tiling Strategy</h2>
+                                </label>
+                                <div class="col-md-7" style="padding-right:0">
+                                <select id="dropdown2_treemap" class="layoutDropdown custom-select" onchange="change_tiling('2')">
+                                    <option class="optionGroup" value="Squarify" selected>Squarify</option>
+                                    <option class="optionGroup" value="Binary">Binary</option>
+                                    <option class="optionGroup" value="Dice">Dice</option>
+                                    <option class="optionGroup" value="Slice">Slice</option>
+                                    <option class="optionGroup" value="SliceDice">SliceDice</option>
+                                </select>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- sidebar -->
+            <div class="col-lg-2 col-3 row" style="overflow-y: auto; overflow-x: hidden; padding-left:0px" id="sidebar">
+                <div id="sidebarInsideDiv" class="ml-auto ml-0" style="width: 100%; padding-left:15px">
+                <form>
+                    <h2 id="toolbar-head"
+                    style="font-size: 20px; width: 100%; padding-bottom: 13px; padding-top: 20px; margin-bottom: -10px; color: #000">
+                        <b>Data Description</b>
+                    </h2>
+                    <!-- end head -->
+                    <hr id="hr">
+
+                    <div class="col-md-12" id="sidebarIntroDiv">
+                            <div id="sidebarIntro">
+                              <!-- dataset selection -->
+                              <div class="mb-4" style="width: 100%">
+                                <span style="font-size:15px"> Selected Author: </span>
+                                <div id="dataDropdownIntro" style="width: 100%; padding-bottom: 0px; margin-bottom: 24px">
+                                  <select id="dataDropdown" class="custom-select mb-0" style="width:100%" onchange="change_author()">
+                                    <option class="optionGroup" value="Stasko" selected>John Stasko</option>
+                                    <option class="optionGroup" value="Jiawei Han">Jiawei Han</option>
+                                    <option class="optionGroup" value="Christos">Christos Faloutsos</option>
+                                    <option class="optionGroup" value="Leskovec">Jure Leskovec</option>
+                                  </select>
+                                </div>
+                                <div id="DataDescription">
+                                    <span id="dataInfoName">Introduction:</span>
+                                    <br/>
+                                    <span id="dataInfo" style="font-size:10px">The visualization is showing <span id="enter_authorname"></span>'s publications from 
+                                    <span id="start_year"></span> to <span id="end_year"></span>.
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <span id="graphDescription">Hierarchical Data Structure:</span>
+                                    <span style="font-size:10px">
+                                        <br/>-------Publish Year
+                                        <br/>|
+                                        <br/>-----Publish Type
+                                        <br/>|
+                                        <br/>---Publisher CCF Rank
+                                        <br/>|
+                                        <br/>-Individual Paper    
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <span id="graphSource">Data Source: </span>
+                                    <br/>
+                                    <span style="font-size:10px">Microsoft Academic Graph & Google_scholar</span>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
