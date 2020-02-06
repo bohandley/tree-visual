@@ -100,9 +100,17 @@ function draw_zoomable_treemap(position){
             }
         }
 
+        //if I click something that is zoomable in circle,
+        // but that thing is hidden in zoomable tree,
+        // then I have to simulate a click on each level of zoomable tree
+        // to get deeper into 
         function display(d) {
             grandparent
                 .datum(d.parent)
+                .attr("id", function(d){
+
+                    return ["zoomable"].concat(buildId(d).reverse()).join("-");
+                })
                 .on("click", transition)
             .select("text")
                 .text(name(d));
@@ -113,11 +121,29 @@ function draw_zoomable_treemap(position){
 
             var g = g1.selectAll("g")
                 .data(d._children)
+
             .enter().append("g");
 
             g.filter(function(d) { return d._children; })
-                .classed("children", true)
-                .on("click", transition);
+                .classed("children zoomable", true)
+                .attr("id", function(d){
+                    return ["zoomable"].concat(buildId(d).reverse()).join("-");
+                })
+                .on("drill", function(d){
+                    DrillTransition(d)
+                })
+                .on("click", function(d){
+                    
+                
+                if(c > 1){
+                    c = 0;
+                    return;
+                }
+
+                    transition(d)
+
+                    
+                });
 
             g.selectAll(".child")
                 .data(function(d) { return d._children || [d]; })
@@ -127,10 +153,14 @@ function draw_zoomable_treemap(position){
 
             g.append("rect")
                 .attr("class", "parent")
-                .on("mouseover", function(){
+                .on("mouseover", function(d){
+                    var packId = ["pack"].concat(buildId(d).reverse()).join("-");
+                    d3.select("#"+packId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                     d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 })
-                .on("mouseout", function(){
+                .on("mouseout", function(d){
+                    var packId = ["pack"].concat(buildId(d).reverse()).join("-");
+                    d3.select("#"+packId).style("stroke", "white").style("stroke-width", 0.5);
                     d3.select(this).style("stroke", "white").style("stroke-width", 0.5);
                 })
                 .call(rect)
@@ -143,37 +173,82 @@ function draw_zoomable_treemap(position){
                 .call(text);
 
             function transition(d) {
-            if (transitioning || !d) return;
-            transitioning = true;
+                // get the id of the pack that needs to zoom
+                
+                var id = ["pack"].concat(buildId(d).reverse()).join("-");
+                d3.select('#'+ id).dispatch('click', function(){
+                    c += 1;
+                    // clicked(clicks, "zoomableTree");
+                });    
+            
+                    
+            
+                if (transitioning || !d) return;
+                transitioning = true;
 
-            var g2 = display(d),
-                t1 = g1.transition().duration(750),
-                t2 = g2.transition().duration(750);
+                var g2 = display(d),
+                    t1 = g1.transition().duration(750),
+                    t2 = g2.transition().duration(750);
 
-            // Update the domain only after entering new elements.
-            x.domain([d.x, d.x + d.dx]);
-            y.domain([d.y, d.y + d.dy]);
+                // Update the domain only after entering new elements.
+                x.domain([d.x, d.x + d.dx]);
+                y.domain([d.y, d.y + d.dy]);
 
-            // Enable anti-aliasing during the transition.
-            svg.style("shape-rendering", null);
+                // Enable anti-aliasing during the transition.
+                svg.style("shape-rendering", null);
 
-            // Draw child nodes on top of parent nodes.
-            svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
+                // Draw child nodes on top of parent nodes.
+                svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
 
-            // Fade-in entering text.
-            g2.selectAll("text").style("fill-opacity", 0);
+                // Fade-in entering text.
+                g2.selectAll("text").style("fill-opacity", 0);
 
-            // Transition to the new view.
-            t1.selectAll("text").call(text).style("fill-opacity", 0);
-            t2.selectAll("text").call(text).style("fill-opacity", 1);
-            t1.selectAll("rect").call(rect);
-            t2.selectAll("rect").call(rect);
+                // Transition to the new view.
+                t1.selectAll("text").call(text).style("fill-opacity", 0);
+                t2.selectAll("text").call(text).style("fill-opacity", 1);
+                t1.selectAll("rect").call(rect);
+                t2.selectAll("rect").call(rect);
 
-            // Remove the old node when the transition is finished.
-            t1.remove().each("end", function() {
-                svg.style("shape-rendering", "crispEdges");
-                transitioning = false;
-            });
+                // Remove the old node when the transition is finished.
+                t1.remove().each("end", function() {
+                    svg.style("shape-rendering", "crispEdges");
+                    transitioning = false;
+                });
+            }
+
+            function DrillTransition(d) {                    
+            
+                if (transitioning || !d) return;
+                transitioning = true;
+
+                var g2 = display(d),
+                    t1 = g1.transition().duration(750),
+                    t2 = g2.transition().duration(750);
+
+                // Update the domain only after entering new elements.
+                x.domain([d.x, d.x + d.dx]);
+                y.domain([d.y, d.y + d.dy]);
+
+                // Enable anti-aliasing during the transition.
+                svg.style("shape-rendering", null);
+
+                // Draw child nodes on top of parent nodes.
+                svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
+
+                // Fade-in entering text.
+                g2.selectAll("text").style("fill-opacity", 0);
+
+                // Transition to the new view.
+                t1.selectAll("text").call(text).style("fill-opacity", 0);
+                t2.selectAll("text").call(text).style("fill-opacity", 1);
+                t1.selectAll("rect").call(rect);
+                t2.selectAll("rect").call(rect);
+
+                // Remove the old node when the transition is finished.
+                t1.remove().each("end", function() {
+                    svg.style("shape-rendering", "crispEdges");
+                    transitioning = false;
+                });
             }
 
             return g;

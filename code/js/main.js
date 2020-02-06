@@ -1,3 +1,11 @@
+var c = 0;
+
+var isTransitioning = {
+    zoomable: 0
+}
+
+var zooming;
+
 function Remove_nodechildren(id){
     var parent = document.getElementById(id)
     var childrens = parent.childNodes;
@@ -30,6 +38,7 @@ function change_map(position){
 
     var objS = document.getElementById("dropdown" + position);
     var grade = objS.options[objS.selectedIndex].text;
+
     if(grade == "Circle"){
         Remove_nodechildren("g"+position);
         draw_circle("#g" + position);
@@ -45,6 +54,8 @@ function change_map(position){
         draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex);
     }
     else if(grade == "Zoomable_Treemap"){
+        
+
         Remove_nodechildren("g" + position);
         draw_zoomable_treemap("#g" + position);
     }
@@ -93,10 +104,11 @@ window.onload = function(){
 
     change_num();
 
-    //this.draw_sunburst("#g1");
-    //this.draw_circle("#g1");
-    this.draw_tree("#g1");
+    
+    // this.draw_sunburst("#g1");
+    this.draw_circle("#g1");
+    // this.draw_tree("#g1");
     //this.draw_treemap("#g1");
-    //this.draw_new_treemap("#g1");
+    //this.draw_new_treemap("#g1");    
     this.draw_zoomable_treemap("#g2");
 }
