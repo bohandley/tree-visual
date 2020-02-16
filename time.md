@@ -30,7 +30,28 @@
 2/5/2020
 	5:30pm to 7:30pm
 		Iterate, drill down into zoomable treemap ids
+
+2/9/2020
+	1:00pm-5:30pm
+	Drill up through zoomable tree map when clicking
+		same node in pack view
+		white background in pack view
+
+2/13/2020
+	5:30 to 9:30
+		debug and solve issue of multiple firings when zooming
+		prevent click events when the zoomable tree is 
+			drilling down
+			drilling up
 		
+
+2/16/2020
+	2:00pm-
+		debug and solve issue of not firing corectly after changing selection of graph
+			pack view does not zoom correctly
+
+
+
   Features:
   	-build up brushing and linking
   		highlight one, get the other
@@ -45,10 +66,12 @@
   		sunburst selection explore hierarchy
   		zoomable tree graph
 
-  	-Change name of circle view to pakview
+  	X-Change name of circle view to packview
 
   	-Click on one, synchronize the other if zoomable
-
+  		NEED to fincish pack and zoomable, in pack if click on other node, cross node
+  			NEED TO ZOOM OUT THEN ZOOM IN
+  			
   	-Onboarding
   		Brief introduction if first view, 1,2,3,4...
 

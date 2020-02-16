@@ -4,7 +4,12 @@ var isTransitioning = {
     zoomable: 0
 }
 
-var zooming;
+var zoomZooming;
+
+var prvClk = {
+    pack: '',
+    zoomable: ''
+}
 
 function Remove_nodechildren(id){
     var parent = document.getElementById(id)
@@ -34,34 +39,33 @@ function change_tiling(position){
 }
 
 function change_map(position){
+    d3.select("#g" + position+ "-div")
+        .html("")
+        .append("svg")
+        .attr("id", "g" + position)
+        .attr("viewBox", "0 0 500 500");
+
     d3.select("#layout" + position + "_treemap").style("visibility", "hidden");
 
     var objS = document.getElementById("dropdown" + position);
     var grade = objS.options[objS.selectedIndex].text;
 
-    if(grade == "Circle"){
-        Remove_nodechildren("g"+position);
-        draw_circle("#g" + position);
+    if(grade == "Pack"){
+        this.draw_pack("#g" + position);
     }
     else if(grade == "Sunburst"){
-        Remove_nodechildren("g"+position);
-        draw_sunburst("#g" + position);
+        this.draw_sunburst("#g" + position);
     }
     else if(grade == "Treemap"){
         d3.select("#layout" + position + "_treemap").style("visibility", "visible");
 
-        Remove_nodechildren("g" + position);
-        draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex);
+        this.draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex);
     }
     else if(grade == "Zoomable_Treemap"){
-        
-
-        Remove_nodechildren("g" + position);
-        draw_zoomable_treemap("#g" + position);
+        this.draw_zoomable_treemap("#g" + position);
     }
     else if(grade == "Tree"){
-        Remove_nodechildren("g" + position);
-        draw_tree("#g" + position);
+        this.draw_tree("#g" + position);
     }
 
     d3.select("#g"+position).attr("viewBox", function(){
@@ -106,7 +110,7 @@ window.onload = function(){
 
     
     // this.draw_sunburst("#g1");
-    this.draw_circle("#g1");
+    this.draw_pack("#g1");
     // this.draw_tree("#g1");
     //this.draw_treemap("#g1");
     //this.draw_new_treemap("#g1");    

@@ -112,6 +112,9 @@ function draw_zoomable_treemap(position){
                     return ["zoomable"].concat(buildId(d).reverse()).join("-");
                 })
                 .on("click", transition)
+                .on("drill", function(d){
+                    drillTransition(d);
+                })
             .select("text")
                 .text(name(d));
 
@@ -130,7 +133,7 @@ function draw_zoomable_treemap(position){
                     return ["zoomable"].concat(buildId(d).reverse()).join("-");
                 })
                 .on("drill", function(d){
-                    DrillTransition(d)
+                    drillTransition(d)
                 })
                 .on("click", function(d){
                     
@@ -178,7 +181,6 @@ function draw_zoomable_treemap(position){
                 var id = ["pack"].concat(buildId(d).reverse()).join("-");
                 d3.select('#'+ id).dispatch('click', function(){
                     c += 1;
-                    // clicked(clicks, "zoomableTree");
                 });    
             
                     
@@ -216,7 +218,7 @@ function draw_zoomable_treemap(position){
                 });
             }
 
-            function DrillTransition(d) {                    
+            function drillTransition(d) {                    
             
                 if (transitioning || !d) return;
                 transitioning = true;

@@ -6,7 +6,7 @@
 
 <head>
     <script src="js/utilities.js"></script>
-    <script src="js/circle.js"></script>
+    <script src="js/pack.js"></script>
     <script src="js/sunburst.js"></script>
     <script src="js/tree.js"></script>
     <script src="js/treemap.js"></script>
@@ -61,7 +61,7 @@
                 <div class="col-lg-6 col-md-12">
                     <!-- graph-self -->
                     <div class="row" id="graphDiv1">
-                        <div class="col-lg-11 col-12 graph-section" id="graphInsideDiv1">
+                        <div class="col-lg-11 col-12 graph-section" id="g1-div">
                             <svg id="g1" viewBox="0 0 500 500"></svg>
                         </div><!-- col-md-11 -->
                     </div><!-- graphDiv1 -->
@@ -77,10 +77,10 @@
                                 </label>
                                 <div class="col-md-7" style="padding-right:0">
                                 <select id="dropdown1" class="layoutDropdown custom-select" onchange="change_map('1')">
-                                    <option class="optionGroup" value="Tree" selected>Tree</option>
+                                    <option class="optionGroup" value="Tree">Tree</option>
                                     <option class="optionGroup" value="Treemap">Treemap</option>
                                     <option class="optionGroup" value="Sunburst">Zoomable_Treemap</option>
-                                    <option class="optionGroup" value="Circle">Circle</option>
+                                    <option class="optionGroup" value="Pack" selected>Pack</option>
                                     <option class="optionGroup" value="Sunburst">Sunburst</option>
                                 </select>
                                 </div>
@@ -109,7 +109,7 @@
                 <div class="col-lg-6 col-md-12">
                     <!-- graph-self -->
                     <div class="row" id="graphDiv2">
-                        <div class="col-lg-11 col-12 graph-section">
+                        <div class="col-lg-11 col-12 graph-section" id="g2-div">
                         <svg viewBox="0 0 500 500" id="g2"></svg>
                         </div>
                     </div><!-- graphDiv2 -->
@@ -130,7 +130,7 @@
                                         <option class="optionGroup" value="Tree">Tree</option>
                                         <option class="optionGroup" value="Treemap">Treemap</option>
                                         <option class="optionGroup" value="Sunburst" selected>Zoomable_Treemap</option>
-                                        <option class="optionGroup" value="Circle">Circle</option>
+                                        <option class="optionGroup" value="Pack">Pack</option>
                                         <option class="optionGroup" value="Sunburst">Sunburst</option>
                                     </select>
                                 </div>
