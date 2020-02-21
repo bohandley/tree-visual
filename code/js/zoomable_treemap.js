@@ -47,6 +47,7 @@ function draw_zoomable_treemap(position){
         .attr("dy", ".75em");
 
     d3v3.json(FileName, function(root) {
+        root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
         for(var i =0; i<root.children.length; i++){
             for(var j=0; j<root.children[i].children.length; j++){
                 for(var k=0; k<root.children[i].children[j].children.length; k++){
@@ -138,8 +139,8 @@ function draw_zoomable_treemap(position){
                 .on("click", function(d){
                     
                 
-                if(c > 1){
-                    c = 0;
+                if(cfg.change > 1){
+                    cfg.change = 0;
                     return;
                 }
 
@@ -180,7 +181,7 @@ function draw_zoomable_treemap(position){
                 
                 var id = ["pack"].concat(buildId(d).reverse()).join("-");
                 d3.select('#'+ id).dispatch('click', function(){
-                    c += 1;
+                    cfg.change = cfg.change + 1;
                 });    
             
                     

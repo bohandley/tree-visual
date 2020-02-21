@@ -46,21 +46,48 @@
 		
 
 2/16/2020
-	2:00pm-
+	2:00pm-5:00pm
 		debug and solve issue of not firing corectly after changing selection of graph
 			pack view does not zoom correctly
 
 
+2/17/2020
+	6:00pm-10:00pm
+		Build responsive radial tree graph
+		Begin to pull out json asynch code in each graph to make a config
+			so that the data can be adjusted.
+
+2/19/2020
+	7:30pm-10:30
+		Do the json outside each graph drawing
+		Build a config
+		
+
+2/20/2020
+	8:30pm-10:00pm
+		Refactor the zoomable tree response to the pack zoom
+		Refactor the zoomable tree response to the pack root zoom
 
   Features:
+  	-look into the errors with the mouseovers on certain graphs
+  	-build object or config for full graphs containing zoomzoomin, c, etc
+  	-reset the graphs every time a new on is selected
+  	-reset the zooming in progress if a new graph is selected
+
+
   	-build up brushing and linking
   		highlight one, get the other
   	-Interface on right
   		focus on certain year
   		slider or control
+
   	-Tree graph is not responsive
   		collaspible tree - LOOK AT PerformanceVis
   		control to help dense views
+  		--MAKE COLLAPSIBLE TREE 
+  		--MAKE NON COLLAPSIBLE TREE 
+  			add select for these
+  			only allow non collapsible to compare to Treemap(grids)
 
   	-Connect graphs
   		sunburst selection explore hierarchy
@@ -71,7 +98,7 @@
   	-Click on one, synchronize the other if zoomable
   		NEED to fincish pack and zoomable, in pack if click on other node, cross node
   			NEED TO ZOOM OUT THEN ZOOM IN
-  			
+
   	-Onboarding
   		Brief introduction if first view, 1,2,3,4...
 

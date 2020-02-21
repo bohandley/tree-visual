@@ -26,7 +26,7 @@ function draw_sunburst(position){
 
     d3.json(FileName, function(error, root) {
         if (error) throw error;
-
+        root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
         root = d3.hierarchy(root);
         // console.log(root)
 
