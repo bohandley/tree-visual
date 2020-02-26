@@ -3,165 +3,310 @@
 // SEARCHED FOR NODE WITH THE cfg.prvClk.pack
 // we'll zoom out and then zoom in.
 function zoomableTreeResponse(d, is_root=0) {
+		
+	if (d3.select(".grandparent").size() == 0)
+		return;
 
 	if (cfg.zoomZooming){
-      console.log("Zooming in progress...")
-      return 0;
-  }
-  // ZOOM IN ON ZOOMABLE GRAPH FUNCTION
-  if(cfg.change > 1 || (cfg.zoomableTransition > 0) ) {
-      cfg.change = 0;
-      return 0;
-  }
-  
-  // build the id for the zoomable graph from the node clicked in pack
-  var originalId = ["zoomable"].concat(buildId(d).reverse()).join("-");
+		console.log("Zooming in progress...")
+		return 0;
+	}
+	// ZOOM IN ON ZOOMABLE GRAPH FUNCTION
+	if(cfg.change > 1 || (cfg.zoomableTransition > 0) ) {
+		cfg.change = 0;
+		return 0;
+	}
+	
+	
+	// build the id for the zoomable graph from the node clicked in pack
+	var zoomableTargetId = ["zoomable"].concat(buildId(d).reverse()).join("-");
 
-  var clickedPackId = ["pack"].concat(buildId(d).reverse()).join("-");
+	// PACK COULD ALSO BE RESPONSIVE RADIAL TREE, SO GIVE THIS ANOTHER NAME, clickedId
+	// build this with eith er the pack or the responsive radial tree
+	var clickedId = ["pack"].concat(buildId(d).reverse()).join("-");
 
-  var isTheSamePackEl = (clickedPackId == cfg.prvClk.pack);
+		// this could be the responsive radial tree, so how can we tell that we're storing the 
+		// prvClk.pack or the prvClk.respTree? 
+	var prevClickedId = cfg.prvClk.pack;
 
-  cfg.prvClk.pack = clickedPackId;
-  // get the id of the zoomable tree that needs to zoom
-  // what zoomable elements are exposed?
-  // select the exposed element that most closely resembles the
-  // pack view node
-  var id;
-  var idArr = originalId.split("-");
-  var idArrLength = idArr.length;
-  var newId = "";
-  var gDiff = 0;
-  var partialZoomIds = [];
-  var partialZoomArrLength = idArrLength;
+	var isTheSamePackEl = (clickedId == cfg.prvClk.pack);
 
-  var zoomableElements = d3.selectAll(".zoomable");
-
-  var grandParent = d3.select(".grandparent").attr("id");
-  // if there are no zoomable elements, it is the root
-  // and should go up as many as it takes to get to the same node
-    // what does going up mean?
+	cfg.prvClk.pack = clickedId;
 
 
-  zoomableElements.each(function(d){ 
-      var zPId = d3.select(this).attr("id");
 
-      var zPArr = zPId.split("-");
-      partialZoomArrLength = zPArr.length;
-      
-      partialZoomIds.push(zPArr);
-  });
+	
+	
+
+	
+	// get the grandparent of the zoomable tree
+	var grandParent = d3.select(".grandparent").attr("id");
+	
+
+	// build a collection of exposed zoomable elements
+	var zoomableElements = d3.selectAll(".zoomable");
+		// we'll search through this later, partialZoomIds
+		// and currently we'll reassign the partialZoomArrLength
+		// how many nodes are in the path?
+		// if it's the same amount as what the built up id/path is
+				// simple one level
+		// if it's level, then we have to zoom multiple levels
+
+		// get the pathid of the zoomable tree that needs to zoom
+	// what zoomable elements are exposed?
+	// select the exposed element that most closely resembles the
+	// pack view node
+	// var id;
+	var zoomableTargetPathArr = zoomableTargetId.split("-");
+
+	var zoomableTargetPathLength = zoomableTargetPathArr.length;
+	
+	var partialZoomArrLength = zoomableTargetPathLength;
+	
+	var partialZoomIds = [];
+
+	zoomableElements.each(function(d){ 
+		var zPId = d3.select(this).attr("id");
+
+		var zPArr = zPId.split("-");
+		partialZoomArrLength = zPArr.length;
+		
+		partialZoomIds.push(zPArr);
+	});
 
 
-  // what about if we click the great grand parent of Pack?
-  // what if we click the same element we're in in pack?
+	// how to tell that it's a zoom-out and zoom-in vs a straight zoomout?
+			// iterate with index over the clicked pack and the prev clicked pack
+				// compare each element if not equal and the curr is not null
 
-  // check if the zoom is going deeper
-  // check where the zoom is and which direction, up or down
-      // is it at the root?
-      
-      // if zooming in, down, 
-      // the partialZoomArrLength is less than the pack idArrLegth
-      
-      // if zooming out, up, 
-      // the partialZoomArrLength is greater than the pack selected idArrLength
-  if (isTheSamePackEl){
-      //zoom all the way out
-  } else if ( (zoomableElements.size() == 0 && grandParent != originalId) || is_root ){
-      cfg.zoomZooming = true;
-      // go up so many times
-      var transition = 600;
-      rGrPar = grandParent + "-root";
+	var isZoomOutAndZoomIn = false;
 
-      // Need to work on stopping click events for pack when this is going on
-      var zoomTimeOver = rGrPar.split("-").length - originalId.split("-").length;
-      var zTime = 1;
+	// Path. In a tree data structure, the sequence of 
+	// Nodes and Edges from one node to another node is called as PATH 
+	// between that two Nodes. Length of a Path is total 
+	// number of nodes in that path.
 
-      for ( zTime, rGrPar, p = Promise.resolve(); rGrPar != originalId; ){
-          p = p.then(_ => new Promise(resolve =>{
-              // if (zTime == zoomTimeOver)
-              //     cfg.zoomZooming = false;
+	var prevPath = prevClickedId.split("-");
+	var currPath = clickedId.split("-");
 
-              d3.select(".grandparent").dispatch("drill");
-              transition += 200;
-              // zTime++
-              return setTimeout(function(){
-                  if (zTime == zoomTimeOver)
-                      cfg.zoomZooming = false;
-                  
-                  zTime++;
-                  return resolve();   
-              }, transition);
-          }));
-          
-          var gArr = rGrPar.split("-");
-          gArr.pop();
-          rGrPar = gArr.join("-");
-      } 
+	var zoomOutPathArr = [];
+	var zoomInPathArr = [];
+	// the prev path is longer so we want to iterate over that to get the full length
+	// build the shortened zoom out path here
+	// but also make a collection of the leftovers
+	prevPath.forEach(function(prevNode, i){
+		var currNode = currPath[i];
 
-  } else if (partialZoomArrLength < idArrLength) {
-      cfg.zoomZooming = true;
+		if((((prevNode != currNode) && currNode != null) || isZoomOutAndZoomIn) && prevPath != ''){
+			isZoomOutAndZoomIn = true;
+			zoomInPathArr.push(currNode);
+		} else {
+			if(i==0){
+					zoomOutPathArr.push('zoomable');
+					zoomInPathArr.push('zoomable');
+			} else {
+					zoomOutPathArr.push(currNode);
+					zoomInPathArr.push(currNode);
+			}
+		}
+	});
+	// if there are no zoomable elements, it is the root
+	// and should go up as many as it takes to get to the same node
 
-      partialZoomIds.forEach(function(zoomArr){ 
-          // if the id is not present in any of the exposed zoomable elements...
-          // get the one that most closely matches it 
-          
-          var partiallyZoomedId = [];                            
-          
-          for(var i in zoomArr) {   
-              if(idArr.indexOf(zoomArr[i]) > -1){
-                  partiallyZoomedId.push(zoomArr[i]);
-              }
-          }
+	// what about if we click the great grand parent of Pack?
+	// what if we click the same element we're in in pack?
 
-          if (partiallyZoomedId.length > gDiff) {
-              newId = partiallyZoomedId.join("-");
-              gDiff = partiallyZoomedId.length;
-          }
-      });
-      
-      var extra = []; 
+	// check if the zoom is going deeper
+	// check where the zoom is and which direction, up or down
+		// is it at the root?
+		
+		// if zooming in, down, 
+		// the partialZoomArrLength is less than the pack idArrLegth
+		
+		// if zooming out, up, 
+		// the partialZoomArrLength is greater than the pack selected zoomableTargetPathLength
+	if (isTheSamePackEl){
+			//zoom all the way out
+	} else if ( (zoomableElements.size() == 0 && grandParent != zoomableTargetId) || is_root || isZoomOutAndZoomIn){
+		// either go up so many times
+			// prevClickedId = "pack-flare-1996-empty-Other"
+			// clickedId = "pack-flare-1996"
+		
+		// or go up all the way
+			// prevClickedId = "pack-flare-1996-empty-Other"
+			// clickedId = "pack-flare"
+		
+		// OR GO UP SO MANY TIMES THEN GO DOWN
+			// when going up so many times, 
+			// how will we compare the previous click
+			// to where we need to go?
+				// prevClickedId = "pack-flare-1996-empty-Other"
+				// clickedId = "pack-flare-1988-empty"
+				// zoomableTargetId = "zoomable-flare-1988-empty"
 
-      idArr.forEach(function(id){
-          if (newId.split("-").indexOf(id) == -1)
-              extra.push(id);
-      });
+					// compare, start from the root
+					// get the greatest common root
+					// zoom up to that
+							// replace the zoomableTarget with this?
 
-      cfg.zoomableTransition = idArrLength - partialZoomArrLength;
-      
-      id = newId; 
+		// reassign the zoomableTargetId here
+		if(isZoomOutAndZoomIn){
+			zoomableTargetId = zoomOutPathArr.filter(Boolean).join('-');
+			zoomableTargetIdFULL = zoomInPathArr.filter(Boolean).join('-');
+			// zoomOutDrill fun with a nested zoomIn function
+			zoomOutDrill(grandParent, zoomableTargetId, zoomableTargetIdFULL, 0);
+		} else
+			zoomOutDrill(grandParent, zoomableTargetId, '', 1);
+ 
+	} else {
+		zoomInDrill(zoomableTargetId);
+	}
 
-      var transition = 600;
-      // We're going to need to update the cfg.zoomzooming in the final setTimeout function,
-      // Need to work on stopping click events for pack when this is going on
-      var zoomTimeOver = cfg.zoomableTransition;
-      var zTime = 0;
+	return 1;
+}
 
-      for (zTime, cfg.zoomableTransition, p = Promise.resolve(); cfg.zoomableTransition >= 0; cfg.zoomableTransition--){
-          p = p.then(_ => new Promise(resolve =>{
-              
-              d3.select("#"+id).dispatch('drill')
-              id += '-' + extra.shift();
-              transition += 200;
-              
-              return setTimeout(function(){
-                  if (zTime == zoomTimeOver)
-                      cfg.zoomZooming = false;
-                  
-                  zTime++;
-                  return resolve();   
-              }, transition);
-              
-          }));
-      }  
-      
-      cfg.zoomableTransition = 0;
-   
-  } else {
-      id = originalId;
-      d3.select("#"+id).dispatch('click', function(){
-          cfg.change = cfg.change + 1;
-      });
-  }
+function zoomOutDrill(grandParent, zoomableTargetId, zoomableTargetIdFULL, stopZooming=0){
+	var zoomableTargetPathArr = zoomableTargetIdFULL.split('-');
+	var zoomableTargetPathLength = zoomableTargetPathArr.length;
 
-  return 1;
+	cfg.zoomZooming = true;
+	// go up so many times
+	var transition = 600;
+	
+	var rGrPar = grandParent + "-root";
+
+	// Need to work on stopping click events for pack when this is going on
+	var zoomTimeOver = rGrPar.split("-").length - zoomableTargetId.split("-").length;
+	var zTime = 1;
+
+	for ( zTime, rGrPar, p = Promise.resolve(); rGrPar != zoomableTargetId; ){
+		p = p.then(_ => new Promise(resolve =>{
+			// if (zTime == zoomTimeOver)
+			//     cfg.zoomZooming = false;
+
+			d3.select(".grandparent").dispatch("drill");
+			transition += 200;
+			// zTime++
+			return setTimeout(function(){
+				if (zTime == zoomTimeOver){
+					if(stopZooming)
+						cfg.zoomZooming = false;
+					else
+						zoomInDrill(zoomableTargetIdFULL, 1)    
+				}
+								
+							
+				zTime++;
+				return resolve();   
+			}, transition);
+		}));
+			
+		var gArr = rGrPar.split("-");
+		gArr.pop();
+		rGrPar = gArr.join("-");
+	} 
+}
+
+function zoomInDrill(zoomableTargetId, outAndIn=0){
+
+	var zoomableTargetPathArr = zoomableTargetId.split('-');
+	var zoomableTargetPathLength = zoomableTargetPathArr.length;
+	
+	var zoomableElements = d3.selectAll(".zoomable");
+
+	// var grandParent = d3.select(".grandparent").attr("id");
+	// if there are no zoomable elements, it is the root
+	// and should go up as many as it takes to get to the same node
+		// what does going up mean?
+
+	// build a collection of exposed zoomable elements
+		// we'll search through this later, partialZoomIds
+		// and currently we'll reassign the partialZoomArrLength
+		// how many nodes are in the path?
+		// if it's the same amount as what the built up id/path is
+				// simple one level
+		// if it's level, then we have to zoom multiple levels
+	var partialZoomArrLength = zoomableTargetPathLength;
+	var partialZoomIds = [];
+
+	zoomableElements.each(function(d){ 
+		var zPId = d3.select(this).attr("id");
+
+		var zPArr = zPId.split("-");
+		partialZoomArrLength = zPArr.length;
+		
+		partialZoomIds.push(zPArr);
+	});
+
+	// zoom in one level
+	if(partialZoomArrLength == zoomableTargetPathLength){
+		d3.select("#"+zoomableTargetId).dispatch('click', function(){
+			cfg.change = cfg.change + 1;
+			cfg.zoomZooming = false;
+		});
+
+		return;
+	}
+
+	// zoom in multiple levels
+	var newId = '';
+	var gDiff = 0;
+
+	cfg.zoomZooming = true;
+
+	partialZoomIds.forEach(function(zoomArr){ 
+		// if the pathid is not present in any of the exposed zoomable elements...
+		// get the one that most closely matches it 
+		
+		var partiallyZoomedId = [];                            
+		
+		for(var i in zoomArr) {   
+			if(zoomableTargetPathArr.indexOf(zoomArr[i]) > -1){
+				partiallyZoomedId.push(zoomArr[i]);
+			}
+		}
+
+		if (partiallyZoomedId.length > gDiff) {
+			newId = partiallyZoomedId.join("-");
+			gDiff = partiallyZoomedId.length;
+		}
+	});
+	
+	var extra = []; 
+
+	zoomableTargetPathArr.forEach(function(node){
+		if (newId.split("-").indexOf(node) == -1)
+			extra.push(node);
+	});
+
+	cfg.zoomableTransition = zoomableTargetPathLength - partialZoomArrLength;
+	
+	var partialPathId = newId; 
+
+	var transition = 600;
+	// We're going to need to update the cfg.zoomzooming in the final setTimeout function,
+	// Need to work on stopping click events for pack when this is going on
+	var zoomTimeOver = cfg.zoomableTransition;
+	var zTime = 0;
+
+	for (zTime, cfg.zoomableTransition, p = Promise.resolve(); cfg.zoomableTransition >= 0; cfg.zoomableTransition--){
+		p = p.then(_ => new Promise(resolve =>{
+			
+			d3.select("#"+partialPathId).dispatch('drill')
+			partialPathId += '-' + extra.shift();
+			transition += 200;
+			
+			return setTimeout(function(){
+				if (zTime == zoomTimeOver)
+					cfg.zoomZooming = false;
+					
+				zTime++;
+				return resolve();   
+			}, transition);
+			
+		}));
+	}  
+	
+	cfg.zoomableTransition = 0;
+
 }

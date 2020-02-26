@@ -61,12 +61,17 @@
 	7:30pm-10:30
 		Do the json outside each graph drawing
 		Build a config
-		
+
 
 2/20/2020
 	8:30pm-10:00pm
 		Refactor the zoomable tree response to the pack zoom
 		Refactor the zoomable tree response to the pack root zoom
+
+2/25/2020
+	6:30pm-11:30pm
+		Build zooming capability to zoom out and zoom in to parallel branches
+		Refactor zoomable tree response to pack view
 
   Features:
   	-look into the errors with the mouseovers on certain graphs

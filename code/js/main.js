@@ -1,5 +1,10 @@
 const config = {
+    // "change" describes when a graph has been clicked,
+    // and a second graph may also be clicked as a result of the first click,
+    // we cap this at two so the second graph does trigger the first graph again but
+    // the first graph reads "change" and returns out of the click function.
     change: 0,
+
     zoomableTransition: 0,
     zoomZooming: null,
     prvClk: {
@@ -18,18 +23,6 @@ let cfg = Object.assign({}, config);
 function resetCfg(){
     cfg = Object.assign({}, config);
 }
-// var c = 0;
-
-// var isTransitioning = {
-//     zoomable: 0
-// }
-
-// var zoomZooming;
-
-// var prvClk = {
-//     pack: '',
-//     zoomable: ''
-// }
 
 var FileData
 
