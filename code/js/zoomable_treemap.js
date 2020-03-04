@@ -1,4 +1,7 @@
 function draw_zoomable_treemap(position){
+    var position2 = position == "#g1" ? "g2" : "g1";
+    var position1 = position == "#g1" ? "g1" : "g2";
+
     var svg = d3v3.select(position);
     var width = 500;
     var height = 500;
@@ -110,7 +113,7 @@ function draw_zoomable_treemap(position){
                 .datum(d.parent)
                 .attr("id", function(d){
 
-                    return ["zoomable"].concat(buildId(d).reverse()).join("-");
+                    return [position1].concat(buildId(d).reverse()).join("-");
                 })
                 .on("click", transition)
                 .on("drill", function(d){
@@ -131,7 +134,7 @@ function draw_zoomable_treemap(position){
             g.filter(function(d) { return d._children; })
                 .classed("children zoomable", true)
                 .attr("id", function(d){
-                    return ["zoomable"].concat(buildId(d).reverse()).join("-");
+                    return [position1].concat(buildId(d).reverse()).join("-");
                 })
                 .on("drill", function(d){
                     drillTransition(d)
@@ -139,10 +142,10 @@ function draw_zoomable_treemap(position){
                 .on("click", function(d){
                     
                 
-                if(cfg.change > 1){
-                    cfg.change = 0;
-                    return;
-                }
+                    if(cfg.change > 1){
+                        cfg.change = 0;
+                        return;
+                    }
 
                     transition(d)
 
@@ -158,13 +161,13 @@ function draw_zoomable_treemap(position){
             g.append("rect")
                 .attr("class", "parent")
                 .on("mouseover", function(d){
-                    var packId = ["pack"].concat(buildId(d).reverse()).join("-");
-                    d3.select("#"+packId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                    var podition2Id = [position2].concat(buildId(d).reverse()).join("-");
+                    d3.select("#"+podition2Id).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                     d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 })
                 .on("mouseout", function(d){
-                    var packId = ["pack"].concat(buildId(d).reverse()).join("-");
-                    d3.select("#"+packId).style("stroke", "white").style("stroke-width", 0.5);
+                    var podition2Id = [position2].concat(buildId(d).reverse()).join("-");
+                    d3.select("#"+podition2Id).style("stroke", "white").style("stroke-width", 0.5);
                     d3.select(this).style("stroke", "white").style("stroke-width", 0.5);
                 })
                 .call(rect)
@@ -178,14 +181,16 @@ function draw_zoomable_treemap(position){
 
             function transition(d) {
                 // get the id of the pack that needs to zoom
-                
-                var id = ["pack"].concat(buildId(d).reverse()).join("-");
+                // check which graph is displayed opposite of the zoomable tree
+                // the opposite graph then tries to fire and then fires the zoomable tree in response
+                // and that is where the cfg.change is reset
+                var id = [position2].concat(buildId(d).reverse()).join("-");
                 d3.select('#'+ id).dispatch('click', function(){
                     cfg.change = cfg.change + 1;
                 });    
             
                     
-            
+                displaySelectedNode(d);
                 if (transitioning || !d) return;
                 transitioning = true;
 

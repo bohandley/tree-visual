@@ -1,6 +1,11 @@
 var color;
 
 function draw_pack(position){
+    var position2 = position == "#g1" ? "g2" : "g1";
+    var position1 = position == "#g1" ? "g1" : "g2";
+
+
+
     var svg = d3.select(position),
         margin = 20,
         diameter = +500,
@@ -33,7 +38,7 @@ function draw_pack(position){
             .enter().append("circle")
             .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
             .attr("id", function(d){
-                return ["pack"].concat(buildId(d).reverse()).join("-");
+                return [position1].concat(buildId(d).reverse()).join("-");
             })
             .style("fill", function(d) { 
                 if(d.parent && d.parent.data.name == "flare"){
@@ -50,24 +55,31 @@ function draw_pack(position){
             .style("stroke", "white")
             .style("stroke", 1)
             .on("click", function(d) { 
-                var response = zoomableTreeResponse(d)
+                var otherGraphSelectTag = document.getElementById("dropdown" + position2[1]);
+                var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
 
+                var response;
+                if(otherGraphType == "Zoomable_Treemap")
+                    response = zoomableTreeResponse(d, position1, position2);
+                else if(otherGraphType == "Tree") 
+                    response = treeResponse(d, position1, position2);
+                
                 if(response == 0)
                     return;
 
                 if (focus !== d) zoom(d), d3.event.stopPropagation(); 
             })
             .on("mouseover", function(d){
-                var zoomId = ["zoomable"].concat(buildId(d).reverse()).join("-");
+                var position2Id = [position2].concat(buildId(d).reverse()).join("-");
                 
-                d3.select("#"+zoomId).select(".parent").style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                d3.select("#"+position2Id).select(".parent").style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 d3.select(this).append("title").text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
 
             })
             .on("mouseout", function(d){
-                var zoomId = ["zoomable"].concat(buildId(d).reverse()).join("-");
-                d3.select("#"+zoomId).select(".parent").style("stroke", "white").style("stroke-width", 1);
+                var position2Id = [position2].concat(buildId(d).reverse()).join("-");
+                d3.select("#"+position2Id).select(".parent").style("stroke", "white").style("stroke-width", 1);
 
                 d3.select(this).style("stroke", "white").style("stroke-width", 1);
                 
@@ -83,7 +95,20 @@ function draw_pack(position){
         var node = g.selectAll("circle,text");
         svg.style("background", "white")
             .on("click", function() {
-                var response = zoomableTreeResponse(root,1)
+                var otherGraphSelectTag = document.getElementById("dropdown" + position2[1]);
+                var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
+
+                var response;
+                if(otherGraphType == "Zoomable_Treemap")
+                    response = zoomableTreeResponse(root, position1, position2, 1);
+                else if(otherGraphType == "Tree"){ 
+                    if (cfg.zoomZooming){
+                        console.log("Zooming in progress...")
+                        response = 0;
+                    } else {
+                        response = 1;//treeResponse(root, position1, position2, 1);
+                    }
+                }
 
                 if(response == 0)
                     return;
@@ -94,6 +119,8 @@ function draw_pack(position){
         zoomTo([root.x, root.y, root.r * 2 + margin]);
 
         function zoom(d) {
+            displaySelectedNode(d);
+            
             var focus0 = focus; focus = d;
             var transition = d3.transition()
                 .duration(d3.event.altKey ? 7500 : 750)

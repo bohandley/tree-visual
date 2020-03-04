@@ -14,14 +14,15 @@ const config = {
         treemap: '',
         sunburst: ''
     },
-    fileData: null
+    // selectedNode: '',
+    // fileData: null
 };
 
-let cfg = Object.assign({}, config);
+let cfg = copy(config);
 
 
 function resetCfg(){
-    cfg = Object.assign({}, config);
+    cfg = copy(config);
 }
 
 var FileData
@@ -53,41 +54,65 @@ function change_author(){
 
 }
 
-function change_tiling(position){
-    Remove_nodechildren("g" + position);
-    draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex);
-}
+function change_tiling(type, position){
+    change_map(position)
+    // // is this necessary?
+    // Remove_nodechildren("g" + position);
 
-function change_map(position){
-    resetCfg();
+    // clearVisualization(position);
 
+    // if(type == 'treemap')
+    //     draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex);
+    // else if(type =='tree')
+    //     draw_tree("#g" + position, document.getElementById("dropdown" + position + "_tree").selectedIndex);
+}       
+
+function clearVisualization(position){
     d3.select("#g" + position+ "-div")
         .html("")
         .append("svg")
         .attr("id", "g" + position)
         .attr("viewBox", "0 0 500 500");
+}
+
+function change_map(position){
+    var position2 = position == "1" ? "2" : "1";
+    var position1 = position == "1" ? "1" : "2";
+    
+    resetCfg();
+
+    loadVisualization(position1);
+
+    loadVisualization(position2);
+}
+
+function loadVisualization(position){
+    
+    clearVisualization(position);
 
     d3.select("#layout" + position + "_treemap").style("visibility", "hidden");
+    d3.select("#layout" + position + "_tree").style("visibility", "hidden");
 
     var objS = document.getElementById("dropdown" + position);
     var grade = objS.options[objS.selectedIndex].text;
 
     if(grade == "Pack"){
-        this.draw_pack("#g" + position, cfg.fileData);
+        this.draw_pack("#g" + position);
     }
     else if(grade == "Sunburst"){
-        this.draw_sunburst("#g" + position, cfg.fileData);
+        this.draw_sunburst("#g" + position);
     }
     else if(grade == "Treemap"){
         d3.select("#layout" + position + "_treemap").style("visibility", "visible");
 
-        this.draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex, cfg.fileData);
+        this.draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex);
     }
     else if(grade == "Zoomable_Treemap"){
-        this.draw_zoomable_treemap("#g" + position, cfg.fileData);
+        this.draw_zoomable_treemap("#g" + position);
     }
     else if(grade == "Tree"){
-        this.draw_tree("#g" + position, cfg.fileData);
+        d3.select("#layout" + position + "_tree").style("visibility", "visible");
+        this.draw_tree("#g" + position, document.getElementById("dropdown" + position + "_tree").selectedIndex);
     }
 
     d3.select("#g"+position).attr("viewBox", function(){
@@ -98,8 +123,6 @@ function change_map(position){
 function change_num(){
     d3.json(FileName, function(error, root) {
         if (error) throw error;
-
-        cfg.fileData = Object.assign({}, root); 
 
         document.getElementById("start_year").innerHTML = root.children[0].name;
         document.getElementById("end_year").innerHTML = root.children[root.children.length-1].name;
@@ -132,15 +155,15 @@ window.onload = function(){
 
     change_num();
 
-    d3.json(FileName, function(error, root) {
-        cfg.fileData = Object.assign({}, root);
+
+    // d3.json(FileName, function(error, root) {
     
         // this.draw_sunburst("#g1");
-        this.draw_pack("#g1", cfg.fileData);
-        // this.draw_tree("#g1");
-        //this.draw_treemap("#g1");
+        // this.draw_pack("#g2");
+        d3.select("#layout1_tree").style("visibility", "visible");
+        this.draw_tree("#g1", document.getElementById("dropdown1_tree").selectedIndex);
         //this.draw_new_treemap("#g1");    
-        this.draw_zoomable_treemap("#g2", cfg.fileData);
-    });
+        this.draw_zoomable_treemap("#g2");
+    // });
         
 }

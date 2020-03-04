@@ -73,6 +73,44 @@
 		Build zooming capability to zoom out and zoom in to parallel branches
 		Refactor zoomable tree response to pack view
 
+2/26/2020
+	6:30pm-11:30pm
+		Build responsive zooming into tree and zoomable tree
+		Begin building resposive zooming into tree and pack
+		Refactor responsive zooming to add id that corresponds to view
+
+2/27/2020
+  9:00pm-11:00pm
+    Connect pack and responsive radial tree zooming
+    Build new function for tree to respond to pack
+
+3/3/2020
+  6:00pm-11:00pm
+    Debug pack and responsive radial tree zooming
+    Debug zoomable tree and responsive radial tree
+    Build select for tree graph(regular and responsive radial)
+
+3/4/2020
+  6:30pm-10:30pm
+    Debug zoomable tree and responsive radial tree
+      need to add capability for clicking on zoomable tree and opening up multiple tree nodes
+    Complete select for the responsive tree and normal tree
+    Begin creating "selected node: " that updates when a node is clicked
+
+    RRT = responsive radial tree
+    ZT = zoomable tree
+    P = pack
+
+    Need to work out 
+      RRT clicks the same one to close and P zooms out
+        repeated node clicks, or highlight the certain node and display?
+      What about clicking on the leaves of the RRT?
+        the node's children are collapsed
+          do we compare the node to the root to get the entire leaf path to see if it's a leaf?
+          Can we create am isLeaf function?
+      What if a RRT is closed but it had previously been clicked and the ZT is displaying that node?
+        Can we re-open the RRT nodes?
+
   Features:
   	-look into the errors with the mouseovers on certain graphs
   	-build object or config for full graphs containing zoomzoomin, c, etc

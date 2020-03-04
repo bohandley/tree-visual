@@ -48,6 +48,7 @@
         <ul class="list-unstyled" id="graphInfo">
             <li id="dataInfoPapers">Number of papers: </li>
             <li id="dataInfoCitations">Number of citations: </li>
+            <li id="selected-node">Selected Node: </li>
         </ul>
         </div>
     
@@ -78,10 +79,10 @@
                                 </label>
                                 <div class="col-md-7" style="padding-right:0">
                                 <select id="dropdown1" class="layoutDropdown custom-select" onchange="change_map('1')">
-                                    <option class="optionGroup" value="Tree">Tree</option>
+                                    <option class="optionGroup" value="Tree" selected>Tree</option>
                                     <option class="optionGroup" value="Treemap">Treemap</option>
-                                    <option class="optionGroup" value="Sunburst">Zoomable_Treemap</option>
-                                    <option class="optionGroup" value="Pack" selected>Pack</option>
+                                    <option class="optionGroup" value="Zoomable_Treemap">Zoomable_Treemap</option>
+                                    <option class="optionGroup" value="Pack">Pack</option>
                                     <option class="optionGroup" value="Sunburst">Sunburst</option>
                                 </select>
                                 </div>
@@ -92,13 +93,24 @@
                                     <h2>Tiling Strategy</h2>
                                     </label>
                                     <div class="col-md-7" style="padding-right:0">
-                                    <select id="dropdown1_treemap" class="layoutDropdown custom-select" onchange="change_tiling('1')">
+                                    <select id="dropdown1_treemap" class="layoutDropdown custom-select" onchange="change_tiling('treemap', 1')">
                                         <option class="optionGroup" value="Squarify" selected>Squarify</option>
                                         <option class="optionGroup" value="Binary">Binary</option>
                                         <option class="optionGroup" value="Dice">Dice</option>
                                         <option class="optionGroup" value="Slice">Slice</option>
                                         <option class="optionGroup" value="SliceDice">SliceDice</option>
                                     </select>
+                                    </div>
+                                </div>
+                            <div id="layout1_tree" class="form-group row mb-2" style="visibility:hidden">
+                                    <label for="dropdown1_tree" class="col-md-4 col-form-label">
+                                    <h2>Tree Layout</h2>
+                                    </label>
+                                    <div class="col-md-7" style="padding-right:0">
+                                        <select id="dropdown1_tree" class="layoutDropdown custom-select" onchange="change_tiling('tree', '1')">
+                                            <option class="optionGroup" value="ResponsiveRadialTree" selected>ResponsiveRadialTree</option>
+                                            <option class="optionGroup" value="RadialTree">RadialTree</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +142,7 @@
                                     <select id="dropdown2" class="layoutDropdown custom-select" onchange="change_map('2')">
                                         <option class="optionGroup" value="Tree">Tree</option>
                                         <option class="optionGroup" value="Treemap">Treemap</option>
-                                        <option class="optionGroup" value="Sunburst" selected>Zoomable_Treemap</option>
+                                        <option class="optionGroup" value="Zoomable_Treemap" selected>Zoomable_Treemap</option>
                                         <option class="optionGroup" value="Pack">Pack</option>
                                         <option class="optionGroup" value="Sunburst">Sunburst</option>
                                     </select>
@@ -149,6 +161,17 @@
                                     <option class="optionGroup" value="Slice">Slice</option>
                                     <option class="optionGroup" value="SliceDice">SliceDice</option>
                                 </select>
+                                </div>
+                            </div>
+                            <div id="layout2_tree" class="form-group row mb-2" style="visibility:hidden">
+                                <label for="dropdown2_tree" class="col-md-4 col-form-label">
+                                <h2>Tree Layout</h2>
+                                </label>
+                                <div class="col-md-7" style="padding-right:0">
+                                    <select id="dropdown2_tree" class="layoutDropdown custom-select" onchange="change_tiling('tree', '2')">
+                                        <option class="optionGroup" value="ResponsiveRadialTree" selected>ResponsiveRadialTree</option>
+                                        <option class="optionGroup" value="RadialTree">RadialTree</option>
+                                    </select>
                                 </div>
                             </div>
                             </div>
