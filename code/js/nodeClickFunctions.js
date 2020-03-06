@@ -202,6 +202,12 @@ function zoomOutDrill(grandParent, zoomableTargetId, zoomableTargetIdFULL, stopZ
 	var zoomTimeOver = rGrPar.split("-").length - zoomableTargetId.split("-").length;
 	var zTime = 1;
 
+	// handle CT and ZT interaction bug
+	if(zoomTimeOver<zTime){
+		cfg.zoomZooming = false;
+		return;
+	}
+
 	for ( zTime, rGrPar, p = Promise.resolve(); rGrPar != zoomableTargetId; ){
 		p = p.then(_ => new Promise(resolve =>{
 			// if (zTime == zoomTimeOver)
