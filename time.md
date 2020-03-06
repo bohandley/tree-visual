@@ -92,25 +92,42 @@
 
 3/4/2020
   6:30pm-10:30pm
-    Debug zoomable tree and responsive radial tree
+    Debug zoomable tree and collapsible tree
       need to add capability for clicking on zoomable tree and opening up multiple tree nodes
     Complete select for the responsive tree and normal tree
-    Begin creating "selected node: " that updates when a node is clicked
+    Begin creating "clicked node: " that updates when a node is clicked
 
-    RRT = responsive radial tree
+3/5/2020
+  5:50pm-9:30pm
+    Complete ZT and CT open up multiple nodes in CT when ZT is clicked
+    Debug ZT and CT interaction when CT node is clicked
+    -
+    CT = collapsible tree
     ZT = zoomable tree
     P = pack
-
+    -
+    **BUG with CT: clicking on a leaf node. This breaks responsiveness with ZT abd Pack
+      Fixed 3/6 with not allowing click events to proceed from CT with ids including 'leaf'
+    -
     Need to work out 
-      RRT clicks the same one to close and P zooms out
+      CT clicks the same one to close and P zooms out
         repeated node clicks, or highlight the certain node and display?
-      What about clicking on the leaves of the RRT?
+      What about clicking on the leaves of the CT?
         the node's children are collapsed
           do we compare the node to the root to get the entire leaf path to see if it's a leaf?
           Can we create am isLeaf function?
-      What if a RRT is closed but it had previously been clicked and the ZT is displaying that node?
-        Can we re-open the RRT nodes?
-
+      completed 3/5- What if a CT is closed but it had previously been clicked and the ZT is displaying that node?
+        Can we re-open the CT nodes?
+      highlight node in other graph as drill zooming
+    -
+    **click the collapsible tree node to close it and zoomable tree responds 
+        by zooming to the clicked node <- XXX incorrect!
+          it does do this. click year in CT and ZT shows year as parent and nodes as chilcdren
+    -
+    **sunburst responsive zooming with ct, zt, pack
+    **same color for root of zommable tree and sunburst
+    **same for collapsible tree root too!
+    **select new node, reset as the new root
   Features:
   	-look into the errors with the mouseovers on certain graphs
   	-build object or config for full graphs containing zoomzoomin, c, etc

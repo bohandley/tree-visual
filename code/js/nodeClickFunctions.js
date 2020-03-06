@@ -18,12 +18,12 @@ function zoomableTreeResponse(d, position, position2, is_root=0) {
 	}
 	
 	// build the id for the zoomable graph from the node clicked in pack
-	var zoomableTargetId = [position2].concat(buildId(d).reverse()).join("-");
-
+	// var zoomableTargetId = [position2].concat(buildId(d).reverse()).join("-");
+	var zoomableTargetId = cleanNodeId(buildPositionId(d, position2));
 	// PACK COULD ALSO BE RESPONSIVE RADIAL TREE, SO GIVE THIS ANOTHER NAME, clickedId
 	// build this with eith er the pack or the responsive radial tree
-	var clickedId = [position].concat(buildId(d).reverse()).join("-");
-
+	// var clickedId = [position].concat(buildId(d).reverse()).join("-");
+	var clickedId = cleanNodeId(buildPositionId(d, position));
 		// this could be the responsive radial tree, so how can we tell that we're storing the 
 		// prvClk.pack or the prvClk.respTree? 
 	var prevClickedId = cfg.prvClk.pack;
@@ -203,8 +203,16 @@ function zoomOutDrill(grandParent, zoomableTargetId, zoomableTargetIdFULL, stopZ
 	var zTime = 1;
 
 	// handle CT and ZT interaction bug
-	if(zoomTimeOver<zTime){
-		cfg.zoomZooming = false;
+	// bug includes when rGrPar includes this-is-beyond-flare
+	if(zoomTimeOver<zTime || rGrPar.includes("this-is-beyond-flare")){
+		// var fullTargetNodeExposed = d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id") == zoomableTargetIdFULL }).size() > 0;
+		// if(!fullTargetNodeExposed)
+			d3.select("#"+ zoomableTargetIdFULL).dispatch("drill", function(){
+				cfg.zoomZooming = false;
+			});
+		// else
+			// cfg.zoomZooming = false;
+		
 		return;
 	}
 
@@ -322,6 +330,11 @@ function zoomInDrill(zoomableTargetId, outAndIn=0){
 	var zoomTimeOver = cfg.zoomableTransition;
 	var zTime = 0;
 
+	if(zoomTimeOver<zTime){
+		cfg.zoomZooming = false;
+		return;
+	}
+
 	for (zTime, cfg.zoomableTransition, p = Promise.resolve(); cfg.zoomableTransition >= 0; cfg.zoomableTransition--){
 		p = p.then(_ => new Promise(resolve =>{
 			
@@ -354,7 +367,8 @@ function treeResponse(d, position, position2, is_root=0) {
 	// IF THOSE ARE NOT AVAILABLE, CLICK THE ONE IN THE PATH AVAILABLE
 	
 	// build the id for the tree graph from the node clicked in pack
-	var targetId = [position2].concat(buildId(d).reverse()).join("-");
+	// var targetId = [position2].concat(buildId(d).reverse()).join("-");
+	var targetId = cleanNodeId(buildPositionId(d, position2));
 
 	var targetNode = d3.select("#"+targetId)
 
@@ -362,7 +376,8 @@ function treeResponse(d, position, position2, is_root=0) {
 		return 1;
 	// PACK COULD ALSO BE RESPONSIVE RADIAL TREE, SO GIVE THIS ANOTHER NAME, clickedId
 	// build this with eith er the pack or the responsive radial tree
-	var clickedId = [position].concat(buildId(d).reverse()).join("-");
+	// var clickedId = [position].concat(buildId(d).reverse()).join("-");
+	var clickedId = cleanNodeId(buildPositionId(d, position));
 
 		// this could be the responsive radial tree, so how can we tell that we're storing the 
 		// prvClk.pack or the prvClk.respTree? 
@@ -543,11 +558,13 @@ function packResponse(d, position, position2){
 	cfg.zoomZooming = true;
 
 	// build the id for the zoomable graph from the node clicked in pack
-	var targetId = [position2].concat(buildId(d).reverse()).join("-");
+	// var targetId = [position2].concat(buildId(d).reverse()).join("-");
+	var targetId = cleanNodeId(buildPositionId(d, position2));
 
 	// // PACK COULD ALSO BE RESPONSIVE RADIAL TREE, SO GIVE THIS ANOTHER NAME, clickedId
 	// // build this with eith er the pack or the responsive radial tree
-	var clickedId = [position].concat(buildId(d).reverse()).join("-");
+	// var clickedId = [position].concat(buildId(d).reverse()).join("-");
+	var clickedId = cleanNodeId(buildPositionId(d, position2)); 
 
 	// we want to check the last clicked pack noe because
 	// if it's the same, we have to treat it as the root

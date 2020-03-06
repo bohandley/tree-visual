@@ -2,6 +2,8 @@ function draw_tree(position, selectedIndex){
     var position2 = position == "#g1" ? "g2" : "g1";
     var position1 = position == "#g1" ? "g1" : "g2";
 
+    var otherGraphType = getOtherGraphType(position2);
+
     if(selectedIndex == 0){
         // var svg = d3.select(position);
         var radius = 250;
@@ -19,6 +21,7 @@ function draw_tree(position, selectedIndex){
             if (error) throw error;
 
             // filter the FileName outside of this builder
+            // FILTER JSON
             final_tree.children = final_tree.children.filter(function(el, i){ if(i<10){ return el }})
 
             /////////////Tree graph start///////////////
@@ -77,7 +80,8 @@ function draw_tree(position, selectedIndex){
               var nodeEnter = node.enter().append("g")
                   .attr("class", "node zoomable")
                   .attr("id", function(d){
-                    var id = [position1].concat(buildId(d).reverse()).join("-");
+                    // var id = [position1].concat(buildId(d).reverse()).join("-");
+                    var id = cleanNodeId(buildPositionId(d, position1));
 
                     if(d.children == null && d._children == null)
                         return "leaf-" + d.id;
@@ -87,8 +91,10 @@ function draw_tree(position, selectedIndex){
                   //.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
                   .on("drill", click)
                   .on("click", function(d){
-                    var otherGraphSelectTag = document.getElementById("dropdown" + position2[1]);
-                    var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
+                    displaySelectedNode(d);
+                    // do not allow CT click events or responsiveness if clicking a leaf
+                    if(d3.select(this).attr("id").includes("leaf"))
+                        return;
                     
                     var response;
 
@@ -247,7 +253,7 @@ function draw_tree(position, selectedIndex){
             }
             // Toggle children on click.
             function click(d) {
-              displaySelectedNode(d);
+              
               if (d.children) {
                 d._children = d.children;
                 d.children = null;
@@ -356,6 +362,8 @@ function draw_tree(position, selectedIndex){
 
         d3.json(FileName, function(error, data) {
             if (error) throw error;
+
+            data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
 
             var tree = d3.cluster().size([2 * Math.PI, radius - 100])
             var root = tree(d3.hierarchy(data)

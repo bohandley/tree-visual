@@ -4,7 +4,7 @@ function draw_pack(position){
     var position2 = position == "#g1" ? "g2" : "g1";
     var position1 = position == "#g1" ? "g1" : "g2";
 
-
+    var otherGraphType = getOtherGraphType(position2);
 
     var svg = d3.select(position),
         margin = 20,
@@ -23,6 +23,7 @@ function draw_pack(position){
         .padding(2);
 
     d3.json(FileName, function(error, root) {
+        // FILTER JSON
         root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
         // if (error) throw error;
         root = d3.hierarchy(root)
@@ -38,7 +39,7 @@ function draw_pack(position){
             .enter().append("circle")
             .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
             .attr("id", function(d){
-                return [position1].concat(buildId(d).reverse()).join("-");
+                return cleanNodeId(buildPositionId(d, position1));//[position1].concat(buildId(d).reverse()).join("-");
             })
             .style("fill", function(d) { 
                 if(d.parent && d.parent.data.name == "flare"){
@@ -55,9 +56,6 @@ function draw_pack(position){
             .style("stroke", "white")
             .style("stroke", 1)
             .on("click", function(d) { 
-                var otherGraphSelectTag = document.getElementById("dropdown" + position2[1]);
-                var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
-
                 var response;
                 if(otherGraphType == "Zoomable_Treemap")
                     response = zoomableTreeResponse(d, position1, position2);
@@ -70,15 +68,17 @@ function draw_pack(position){
                 if (focus !== d) zoom(d), d3.event.stopPropagation(); 
             })
             .on("mouseover", function(d){
-                var position2Id = [position2].concat(buildId(d).reverse()).join("-");
-                
+                // var position2Id = [position2].concat(buildId(d).reverse()).join("-");
+                var position2Id = cleanNodeId(buildPositionId(d, position2));
                 d3.select("#"+position2Id).select(".parent").style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 d3.select(this).append("title").text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
 
             })
             .on("mouseout", function(d){
-                var position2Id = [position2].concat(buildId(d).reverse()).join("-");
+                // var position2Id = [position2].concat(buildId(d).reverse()).join("-");
+                var position2Id = cleanNodeId(buildPositionId(d, position2));
+
                 d3.select("#"+position2Id).select(".parent").style("stroke", "white").style("stroke-width", 1);
 
                 d3.select(this).style("stroke", "white").style("stroke-width", 1);
@@ -95,9 +95,6 @@ function draw_pack(position){
         var node = g.selectAll("circle,text");
         svg.style("background", "white")
             .on("click", function() {
-                var otherGraphSelectTag = document.getElementById("dropdown" + position2[1]);
-                var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
-
                 var response;
                 if(otherGraphType == "Zoomable_Treemap")
                     response = zoomableTreeResponse(root, position1, position2, 1);
@@ -120,7 +117,7 @@ function draw_pack(position){
 
         function zoom(d) {
             displaySelectedNode(d);
-            
+
             var focus0 = focus; focus = d;
             var transition = d3.transition()
                 .duration(d3.event.altKey ? 7500 : 750)

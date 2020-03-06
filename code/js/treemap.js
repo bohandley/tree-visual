@@ -1,4 +1,9 @@
 function draw_treemap(position, selectindex){
+    var position2 = position == "#g1" ? "g2" : "g1";
+    var position1 = position == "#g1" ? "g1" : "g2";
+
+    var otherGraphType = getOtherGraphType(position2);
+
     var svg = d3.select(position);
     var width = 500;
     var height = 500;
@@ -15,6 +20,10 @@ function draw_treemap(position, selectindex){
 
     d3.json(FileName, function(error, data) {
         if (error) throw error;
+
+        // FILTER JSON
+        data.children = data.children.filter(function(el, i){ if(i<10){ return el }});
+
         var root = d3.hierarchy(data)
             .eachBefore(function(d) { d.data.id = (d.parent ? d.parent.data.id + "." : "") + d.data.name; })
             .sum(function(d){return d.size;})
@@ -27,7 +36,8 @@ function draw_treemap(position, selectindex){
             .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; });
         cell.append("rect")
             .attr("id", function(d) { 
-                return ["treemap"].concat(buildId(d).reverse()).splice(-1,1).join("-");
+                // return ["treemap"].concat(buildId(d).reverse()).splice(-1,1).join("-");
+                return cleanNodeId(buildPositionId(d, position1));
                 // var zoomId = ["zoomable"].concat(buildId(d).reverse()).join("-");
                 // return d.data.id; 
             })
@@ -47,17 +57,22 @@ function draw_treemap(position, selectindex){
                 return color(d.data.name);   
             })
             .on("mouseover", function(d){
-                var zoomId = ["zoomable"].concat(buildId(d).reverse()).join("-");
-                var packId = ["pack"].concat(buildId(d).reverse()).join("-");
-                d3.select("#"+zoomId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                d3.select("#"+packId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                // var zoomId = ["zoomable"].concat(buildId(d).reverse()).join("-");
+                var targetId = cleanNodeId(buildPositionId(d, position2));
+
+                // var packId = ["pack"].concat(buildId(d).reverse()).join("-");
+                // var packId = cleanNodeId(buildPositionId(d, position2)));
+                d3.select("#"+targetId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                // d3.select("#"+packId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
             })
             .on("mouseout", function(d){
-                var zoomId = ["zoomable"].concat(buildId(d).reverse()).join("-");
-                var packId = ["pack"].concat(buildId(d).reverse()).join("-");
-                d3.select("#"+zoomId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                d3.select("#"+packId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                var targetId = cleanNodeId(buildPositionId(d, position2));
+
+                // var targetId = ["zoomable"].concat(buildId(d).reverse()).join("-");
+                // var packId = ["pack"].concat(buildId(d).reverse()).join("-");
+                d3.select("#"+targetId).style("stroke", "white").style("stroke-width", 1.5).style("cursor", "pointer");
+                // d3.select("#"+packId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 d3.select(this).style("stroke", "white").style("stroke-width", 0.1);
             });
 

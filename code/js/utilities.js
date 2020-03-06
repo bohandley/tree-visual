@@ -3,28 +3,42 @@
 // handle each level, root, parent, child
 // handle invalid id characters
 // handle node names that are empty
-function buildId(d, id) {
+function buildId(d) {
 	if(d){
-		var cleanId = d.name || d.name == "" ? clean(d.name) : clean(d.data.name);
+		var id = d.name || d.name == "" ? d.name : d.data.name;
 		
-		if (cleanId == "")
-			cleanId = "empty"
+		if (id == "")
+			id = "empty"
 
-		return d.parent != null ? [cleanId, ...buildId(d.parent)] : [cleanId];
+		return d.parent != null ? [id, ...buildId(d.parent)] : [id];
 	} else {
 		return ["this-is-beyond-flare"];
 	}
 }
 
+function buildPositionId(d, position){
+	return [position].concat(buildId(d).reverse()).join("-");
+}
+
 // build this to clean all the characters that don't work in an id
-function clean(str) {
-	return str.replace("[", "").replace("]", "")
+// function clean(str) {
+// 	return str
+// }
+// cleanNodeId(buildPositionId(d, position2)));
+function cleanNodeId(str){
+	return str.replace(/ /g, "_").replace(/:/g, "_").replace("[", "").replace("]", "").replace("?","_").replace("&","_").replace(".","_").replace("/","_");
 }
 
 function displaySelectedNode(d){
 	var node = buildId(d).reverse().join("-");
 	d3.select("#selected-node").html("")
-	d3.select("#selected-node").html("Selected node: " + node);
+	d3.select("#selected-node").html("Clicked node: " + node);
+}
+
+function getOtherGraphType(position2){
+	var otherGraphSelectTag = document.getElementById("dropdown" + position2[1]);
+  var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
+  return otherGraphType;
 }
 
 function copy(o) {
