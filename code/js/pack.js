@@ -58,7 +58,7 @@ function draw_pack(position){
             .on("click", function(d) { 
                 var response;
                 if(otherGraphType == "Zoomable_Treemap")
-                    response = zoomableTreeResponse(d, position1, position2);
+                    response = zoomableTreeResponse(d, position1, position2, "Pack");
                 else if(otherGraphType == "Tree") 
                     response = treeResponse(d, position1, position2);
                 
@@ -97,7 +97,7 @@ function draw_pack(position){
             .on("click", function() {
                 var response;
                 if(otherGraphType == "Zoomable_Treemap")
-                    response = zoomableTreeResponse(root, position1, position2, 1);
+                    response = zoomableTreeResponse(root, position1, position2, "", 1);
                 else if(otherGraphType == "Tree"){ 
                     if (cfg.zoomZooming){
                         console.log("Zooming in progress...")

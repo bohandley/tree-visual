@@ -12,7 +12,7 @@ function buildId(d) {
 
 		return d.parent != null ? [id, ...buildId(d.parent)] : [id];
 	} else {
-		return ["this-is-beyond-flare"];
+		return [];// this is beyond the root
 	}
 }
 

@@ -105,7 +105,7 @@ function draw_tree(position, selectedIndex){
                     // if(d._children != null){
                     
                         if(otherGraphType == "Zoomable_Treemap")
-                            response = zoomableTreeResponse(d, position1, position2);
+                            response = zoomableTreeResponse(d, position1, position2, "Tree");
                         else if(otherGraphType == "Pack") 
                             response = packResponse(d, position1, position2);
 

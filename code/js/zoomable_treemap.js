@@ -146,16 +146,7 @@ function draw_zoomable_treemap(position){
                     
                     
 
-                    if(cfg.change > 1){
-                        // if(otherGraphType =="Tree")
-                        //     cfg.change = 0;
-                        // else{
-                        //     cfg.change = 0;
-                        //     return;    
-                        // }
-                        cfg.change = 0;
-                        return;    
-                    }
+                    
 
                     transition(d)
 
@@ -171,13 +162,13 @@ function draw_zoomable_treemap(position){
             g.append("rect")
                 .attr("class", "parent")
                 .on("mouseover", function(d){
-                    var podition2Id = cleanNodeId(buildPositionId(d, position2));//[position2].concat(buildId(d).reverse()).join("-");
-                    d3.select("#"+podition2Id).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                    var position2Id = cleanNodeId(buildPositionId(d, position2));//[position2].concat(buildId(d).reverse()).join("-");
+                    d3.select("#"+position2Id).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                     d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
                 })
                 .on("mouseout", function(d){
-                    var podition2Id = cleanNodeId(buildPositionId(d, position2));//[position2].concat(buildId(d).reverse()).join("-");
-                    d3.select("#"+podition2Id).style("stroke", "white").style("stroke-width", 0.5);
+                    var position2Id = cleanNodeId(buildPositionId(d, position2));//[position2].concat(buildId(d).reverse()).join("-");
+                    d3.select("#"+position2Id).style("stroke", "white").style("stroke-width", 0.5);
                     d3.select(this).style("stroke", "white").style("stroke-width", 0.5);
                 })
                 .call(rect)
@@ -194,12 +185,28 @@ function draw_zoomable_treemap(position){
                 // check which graph is displayed opposite of the zoomable tree
                 // the opposite graph then tries to fire and then fires the zoomable tree in response
                 // and that is where the cfg.change is reset
-
+                if(cfg.change > 1){
+                    // if(otherGraphType =="Tree")
+                    //     cfg.change = 0;
+                    // else{
+                    //     cfg.change = 0;
+                    //     return;    
+                    // }
+                    cfg.change = 0;
+                    return;    
+                }
 
                 var id = cleanNodeId(buildPositionId(d, position2));//[position2].concat(buildId(d).reverse()).join("-");
 
-                var zoomableElements = d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id") == id });
+                var zoomableElements = d3.selectAll(".zoomable")
+                    .filter(function(el){ 
+                        return d3.select(this).attr("id") == id 
+                    });
 
+                var extendedPathElements = d3.selectAll(".zoomable")
+                    .filter(function(el){ 
+                        return d3.select(this).attr("id").includes(id) && d3.select(this).attr("id") != id  
+                    });
                 if(zoomableElements.size() == 0 && otherGraphType == "Tree"){
                     cfg.zoomZooming = true;
                     // break up the id, 
@@ -233,11 +240,15 @@ function draw_zoomable_treemap(position){
                         p = p.then(_ => new Promise(resolve =>{
                             // debugger;
                             var nextNode = partialPaths[i+1];
-                            var nextNodeIsExposed = d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id") == nextNode }).size() == 0;
+                            var nextNodeIsHidden = d3.selectAll(".zoomable")
+                                .filter(function(el){ 
+                                    return d3.select(this).attr("id") == nextNode; 
+                                })
+                                .size() == 0;
 
-                            d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id") == partialPaths[i+1] }).size() == 0
+                            // d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id") == partialPaths[i+1] }).size() == 0
                             // only click the node if the next one is hidden
-                            if(nextNode != null && nextNodeIsExposed){
+                            if(nextNode != null && nextNodeIsHidden){
                                 d3.select("#"+partialPaths[i]).dispatch("drill");
                                 transition += 200;
                             } else {
@@ -250,8 +261,10 @@ function draw_zoomable_treemap(position){
                             
                             
                             return setTimeout(function(){
-                                if (i == partialPaths.length-1)
+                                if (i == partialPaths.length-1){
                                     cfg.zoomZooming = false;
+                                    cfg.change = 0;
+                                }
                                 
                                 i++
                                 // zTime++;
@@ -263,10 +276,15 @@ function draw_zoomable_treemap(position){
 
                 }
 
-                if(!cfg.zoomZooming)
+                // only click the CT node responsively if there is no path extended beyond,
+                // no elements beyond the clicked node
+                if(!cfg.zoomZooming && extendedPathElements.size() == 0){
                     d3.select('#'+ id).dispatch('click', function(){
                         cfg.change = cfg.change + 1;
-                    });    
+                    });
+                } else {
+                    cfg.change = 0;
+                }    
                     
                 displaySelectedNode(d);
                 if (transitioning || !d) return;
