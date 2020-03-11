@@ -44,7 +44,6 @@ function change_author(){
     var objD = document.getElementById("dataDropdown");
     FileName = "../datasets/" + objD.options[objD.selectedIndex].text + ".txt";
 
-
     document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
         
     change_num();
@@ -56,15 +55,6 @@ function change_author(){
 
 function change_tiling(type, position){
     change_map(position)
-    // // is this necessary?
-    // Remove_nodechildren("g" + position);
-
-    // clearVisualization(position);
-
-    // if(type == 'treemap')
-    //     draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex);
-    // else if(type =='tree')
-    //     draw_tree("#g" + position, document.getElementById("dropdown" + position + "_tree").selectedIndex);
 }       
 
 function clearVisualization(position){

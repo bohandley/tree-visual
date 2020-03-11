@@ -68,21 +68,23 @@ function draw_pack(position){
                 if (focus !== d) zoom(d), d3.event.stopPropagation(); 
             })
             .on("mouseover", function(d){
-                // var position2Id = [position2].concat(buildId(d).reverse()).join("-");
+                
                 var position2Id = cleanNodeId(buildPositionId(d, position2));
+                
                 d3.select("#"+position2Id).select(".parent").style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                
                 d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                
                 d3.select(this).append("title").text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
 
             })
             .on("mouseout", function(d){
-                // var position2Id = [position2].concat(buildId(d).reverse()).join("-");
+                
                 var position2Id = cleanNodeId(buildPositionId(d, position2));
 
                 d3.select("#"+position2Id).select(".parent").style("stroke", "white").style("stroke-width", 1);
 
                 d3.select(this).style("stroke", "white").style("stroke-width", 1);
-                
             });
 
         var text = g.selectAll("text")
@@ -95,15 +97,17 @@ function draw_pack(position){
         var node = g.selectAll("circle,text");
         svg.style("background", "white")
             .on("click", function() {
+                
                 var response;
-                if(otherGraphType == "Zoomable_Treemap")
+                
+                if(otherGraphType == "Zoomable_Treemap"){
                     response = zoomableTreeResponse(root, position1, position2, "", 1);
-                else if(otherGraphType == "Tree"){ 
+                } else if(otherGraphType == "Tree"){ 
                     if (cfg.zoomZooming){
                         console.log("Zooming in progress...")
                         response = 0;
                     } else {
-                        response = 1;//treeResponse(root, position1, position2, 1);
+                        response = 1;
                     }
                 }
 

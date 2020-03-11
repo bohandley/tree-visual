@@ -101,6 +101,22 @@
   5:50pm-9:30pm
     Complete ZT and CT open up multiple nodes in CT when ZT is clicked
     Debug ZT and CT interaction when CT node is clicked
+
+3/6/2020
+  1:30pm-5:30pm
+  Document zoomable tree function, zoomindrill and zoomoutdrill in 
+  preparation for refactoring and building the new zooming functions for sunburst
+
+3/9/2020
+  5:30-10:30pm
+  refactor ZT and P view to simplify the finding of the zoomin path and the timeout zooming
+
+3/10/2020
+  4:30pm-6:30pm
+  8:00pm-10:30pm
+  Fix bug with CT and ZT that had to do with it appearing to click
+  the previous node(used for pack) 
+  Complete responsiveness with CT & ZT, CT & P, and ZT & P
     -
     CT = collapsible tree
     ZT = zoomable tree

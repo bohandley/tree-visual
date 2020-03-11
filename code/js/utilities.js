@@ -20,11 +20,6 @@ function buildPositionId(d, position){
 	return [position].concat(buildId(d).reverse()).join("-");
 }
 
-// build this to clean all the characters that don't work in an id
-// function clean(str) {
-// 	return str
-// }
-// cleanNodeId(buildPositionId(d, position2)));
 function cleanNodeId(str){
 	return str.replace(/ /g, "_").replace(/:/g, "_").replace("[", "").replace("]", "").replace("?","_").replace("&","_").replace(".","_").replace("/","_");
 }

@@ -1,9 +1,4 @@
-// WHAT ABOUT ZOOMING TO ANOTHER NODE/BRANCH OUTSIDE THE ONE YOU"RE ON???
-// THIS IS ABLE TO BE FIGURED OUT BY COMPARING THE 
-// SEARCHED FOR NODE WITH THE cfg.prvClk.pack
-// we'll zoom out and then zoom in.
 function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
-		
 	if (d3.select(".grandparent").size() == 0)
 		return;
 
@@ -11,7 +6,7 @@ function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
 		console.log("Zooming in progress...")
 		return 0;
 	}
-	// ZOOM IN ON ZOOMABLE GRAPH FUNCTION
+	
 	if(cfg.change > 1 || (cfg.zoomableTransition > 0) ) {
 		cfg.change = 0;
 		return 0;
@@ -20,23 +15,15 @@ function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
 	// build the id for the zoomable graph from the node clicked in pack
 	// var zoomableTargetId = [position2].concat(buildId(d).reverse()).join("-");
 	var zoomableTargetId = cleanNodeId(buildPositionId(d, position2));
-	// PACK COULD ALSO BE RESPONSIVE RADIAL TREE, SO GIVE THIS ANOTHER NAME, clickedId
-	// build this with eith er the pack or the responsive radial tree
-	// var clickedId = [position].concat(buildId(d).reverse()).join("-");
+	
+	// build this with either the pack or the responsive radial tree
 	var clickedId = cleanNodeId(buildPositionId(d, position));
-		// this could be the responsive radial tree, so how can we tell that we're storing the 
-		// prvClk.pack or the prvClk.respTree? 
+		
 	var prevClickedId = cfg.prvClk.pack;
 
 	var isTheSamePackEl = (clickedId == cfg.prvClk.pack);
 
 	cfg.prvClk.pack = clickedId;
-
-
-
-	
-	
-
 	
 	// get the grandparent of the zoomable tree
 	var grandParent = d3.select(".grandparent").attr("id");
@@ -63,8 +50,8 @@ function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
 	var isZoomOutAndZoomIn = false;
 
 	// Path. In a tree data structure, the sequence of 
-	// Nodes and Edges from one node to another node is called as PATH 
-	// between that two Nodes. Length of a Path is total 
+	// Nodes and Edges from one node to another node is called a PATH 
+	// between those two Nodes. Length of a Path is total 
 	// number of nodes in that path.
 
 	var prevPath = prevClickedId.split("-");
@@ -72,6 +59,7 @@ function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
 
 	var zoomOutPathArr = [];
 	var zoomInPathArr = [];
+	
 	// the prev path is longer so we want to iterate over that to get the full length
 	// build the shortened zoom out path here
 	// but also make a collection of the leftovers
@@ -127,8 +115,8 @@ function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
 		
 		// if zooming out, up, 
 		// the partialZoomArrLength is greater than the pack selected zoomableTargetPathLength
-	if (isTheSamePackEl) {
-		//zoom all the way out
+	if (isTheSamePackEl && otherGraph == "Pack") {
+	 	//zoom all the way out
 	} else if (grandParent == zoomableTargetId){
 		// do not close the nodes of the CT graph if it is the tree
 		// and the ZT's grandparent has been clicked
@@ -136,10 +124,26 @@ function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
 			cfg.change = cfg.change + 1;
 			cfg.zoomZooming = false;
 		});
-
-		if(otherGraph == "Tree") // the tree will not close it's nodes when the ZT grandparent is clicked
-			return 0;	
-		else if(otherGraph == "Pack") // the pack will zoom out when the grandparent is clicked
+		
+		if(otherGraph == "Tree"){
+			// if cfg.change = 0, 
+			// this is when the ZT has completed it's work,
+			// started the second round in zoomableTreeResponse,
+			// exited out and reset the cfg.change
+			// THE FIRST FIRING IS STILL GOING ON
+			// FROM LN 124 WHERE IT DISPATCHES A CLICK IN THE TREE,
+			// RETURNS TO THE TREE LN 93 AND GETS BACK INTO THE
+			// SECOND zoomableTreeResponse, WHICH IT EXITS FIRST!
+			// THE SECOND FIRING ENDS FIRST, WHERE IT EXITS IN LN 11
+			// WHERE cfg.change > 1 AND ONLY AFTER THAT DO WE 
+			// GET TO THIS PART OF THE CODE
+			// (there is some leftover behavior of cfg.prvclk where it falsely
+			// thinks the same node has been)
+			if(cfg.change == 0)
+				return 1;
+			else
+				return 0;	
+		} else if(otherGraph == "Pack") // the pack will zoom out when the grandparent is clicked
 			return 1;
 	}else if ( (partialPathId == "" && grandParent != zoomableTargetId) || isZoomOutAndZoomIn || is_root){
 		// either go up so many times
@@ -165,6 +169,7 @@ function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
 
 		// reassign the zoomableTargetId here
 		if(isZoomOutAndZoomIn){
+			// remove null values from the zoom in path and the zoomout path
 			zoomableTargetId = zoomOutPathArr.filter(Boolean).join('-');
 			zoomableTargetIdFULL = zoomInPathArr.filter(Boolean).join('-');
 			// zoomOutDrill fun with a nested zoomIn function
@@ -249,8 +254,6 @@ function zoomOutDrill(grandParent, zoomableTargetId, zoomableTargetIdFULL, stopZ
 function zoomInDrill(zoomableTargetId){
 
 	var zoomableTargetPathArr = zoomableTargetId.split('-');
-
-	var position = zoomableTargetPathArr[0];
 
 	var zoomableTargetPathLength = zoomableTargetPathArr.length;
 	
