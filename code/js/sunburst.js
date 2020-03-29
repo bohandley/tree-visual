@@ -4,7 +4,6 @@ function draw_sunburst(position){
 
     var otherGraphType = getOtherGraphType(position2);
 
-
     var width = 500,
         height = 500,
         radius = (Math.min(width, height) / 2) - 10;
@@ -54,33 +53,16 @@ function draw_sunburst(position){
         .enter().append("path")
             .attr("d", arc)
             .style("fill", function(d) { 
-                if(d.parent && d.parent.data.name == "flare"){
-                    //console.log(d.data.name)
-                    return color(parseInt(d.data.name));
-                }
-                else if(d.parent){
-                    while(d.parent.data.name != "flare"){
-                        d = d.parent;
-                    }
-                    return color(parseInt(d.data.name));
-                }
-                return color(d.data.name); 
+                return getColor(d, color);
             })
             .style("stroke", "white")
             .style("stroke-width", 0.5)
-            .on("mouseover", function(d){
-                var targetId = cleanNodeId(buildPositionId(d, position2));
-                d3.select("#"+targetId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-            })
-            .on("mouseout", function(d){
-                var targetId = cleanNodeId(buildPositionId(d, position2));
-                d3.select("#"+targetId).style("stroke", "white").style("stroke-width", 0.5);
-                d3.select(this).style("stroke", "white").style("stroke-width", 0.5);
-            })
+            .attr("id", d => buildNodeOrLeafId(d, position1))
+            .on("mouseover", d => mouseoverLinking(position1, position2, d))
+            .on("mouseout", d => mouseoutLinking(position1, position2, d))
             .on("click", click)
             .append("title")
-            .text(function(d) { return d.data.name + "\n" + formatNumber(d.value); });
+            .text( d => d.data.name + "\n" + formatNumber(d.value));
     });
     
     function click(d) {

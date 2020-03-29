@@ -22,66 +22,38 @@ function draw_treemap(position, selectindex){
         if (error) throw error;
 
         // FILTER JSON
-        data.children = data.children.filter(function(el, i){ if(i<10){ return el }});
+        data.children = data.children.filter((el, i) => { 
+            if(i<10){ 
+                return el 
+            }
+        });
 
         var root = d3.hierarchy(data)
-            .eachBefore(function(d) { d.data.id = (d.parent ? d.parent.data.id + "." : "") + d.data.name; })
-            .sum(function(d){return d.size;})
-            .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
+            .eachBefore( d => d.data.id = (d.parent ? d.parent.data.id + "." : "") + d.data.name )
+            .sum( d => d.size )
+            .sort((a, b) => b.height - a.height || b.value - a.value );
 
         treemap(root);
+
         var cell = svg.selectAll("g")
             .data(root.leaves())
             .enter().append("g")
-            .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; });
+            .attr("transform", d => "translate(" + d.x0 + "," + d.y0 + ")" );
+
         cell.append("rect")
-            .attr("id", function(d) { 
-                // return ["treemap"].concat(buildId(d).reverse()).splice(-1,1).join("-");
-                return cleanNodeId(buildPositionId(d, position1));
-                // var zoomId = ["zoomable"].concat(buildId(d).reverse()).join("-");
-                // return d.data.id; 
-            })
-            .attr("width", function(d) { return d.x1 - d.x0; })
-            .attr("height", function(d) { return d.y1 - d.y0; })
-            .attr("fill", function(d) { 
-                if(d.parent && d.parent.data.name == "flare"){
-                    //console.log(d.data.name)
-                    return color(parseInt(d.data.name));
-                }
-                else if(d.parent){
-                    while(d.parent.data.name != "flare"){
-                        d = d.parent;
-                    }
-                    return color(parseInt(d.data.name));
-                }
-                return color(d.data.name);   
-            })
-            .on("mouseover", function(d){
-                // var zoomId = ["zoomable"].concat(buildId(d).reverse()).join("-");
-                var targetId = cleanNodeId(buildPositionId(d, position2));
-
-                // var packId = ["pack"].concat(buildId(d).reverse()).join("-");
-                // var packId = cleanNodeId(buildPositionId(d, position2)));
-                d3.select("#"+targetId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                // d3.select("#"+packId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-            })
-            .on("mouseout", function(d){
-                var targetId = cleanNodeId(buildPositionId(d, position2));
-
-                // var targetId = ["zoomable"].concat(buildId(d).reverse()).join("-");
-                // var packId = ["pack"].concat(buildId(d).reverse()).join("-");
-                d3.select("#"+targetId).style("stroke", "white").style("stroke-width", 1.5).style("cursor", "pointer");
-                // d3.select("#"+packId).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                d3.select(this).style("stroke", "white").style("stroke-width", 0.1);
-            });
+            .attr("id", d => buildNodeOrLeafId(d, position1))
+            .attr("width", d => d.x1 - d.x0 )
+            .attr("height", d => d.y1 - d.y0 )
+            .attr("fill", d => getColor(d, color))
+            .on("mouseover", d => mouseoverLinking(position1, position2, d))
+            .on("mouseout", d => mouseoutLinking(position1, position2, d));
 
         cell.append("clipPath")
-            .attr("id", function(d) { return "clip-" + d.data.id; })
+            .attr("id", d => "clip-" + d.data.id )
             .append("use")
-            .attr("xlink:href", function(d) { return "#" + d.data.id; });
+            .attr("xlink:href", d => "#" + d.data.id );
         
         cell.append("title")
-            .text(function(d) { return d.data.id + "\n" + format(d.value); });
+            .text( d => d.data.id + "\n" + format(d.value) );
     });
 }

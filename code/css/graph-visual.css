@@ -375,7 +375,7 @@ input, select, .panel-heading
 }
 
 .node circle {
-  fill: #fff;
+  /*fill: #fff;*/
   stroke: steelblue;
   stroke-width: 1.5px;
 }
@@ -388,5 +388,9 @@ input, select, .panel-heading
   fill: none;
   stroke: #ccc;
   stroke-width: 1.5px;
+}
+
+.selected-node {
+    /*stroke: gold !important;*/
 }
 

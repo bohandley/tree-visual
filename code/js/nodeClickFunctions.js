@@ -125,7 +125,7 @@ function zoomableTreeResponse(d, position, position2, otherGraph, is_root=0) {
 			cfg.zoomZooming = false;
 		});
 		
-		if(otherGraph == "Tree"){
+		if(otherGraph == "Collapsible_Tree"){
 			// if cfg.change = 0, 
 			// this is when the ZT has completed it's work,
 			// started the second round in zoomableTreeResponse,
@@ -349,9 +349,9 @@ function treeResponse(d, position, position2, is_root=0) {
 	
 	// build the id for the tree graph from the node clicked in pack
 	// var targetId = [position2].concat(buildId(d).reverse()).join("-");
-	var targetId = cleanNodeId(buildPositionId(d, position2));
+	var id = cleanNodeId(buildPositionId(d, position2));
 
-	var targetNode = d3.select("#"+targetId)
+	var targetNode = d3.select("#"+id)
 
 	if(targetNode.size() > 0 && targetNode.attr("class").includes("exposed"))
 		return 1;
@@ -388,7 +388,7 @@ function treeResponse(d, position, position2, is_root=0) {
  
 	} else {
 		// zoom in on the tree and expose parts
-		var targetPathArr = targetId.split('-');
+		var targetPathArr = id.split('-');
 		var targetPathLength = targetPathArr.length;
 		
 		var zoomableElements = d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id").includes(position2)});
@@ -419,10 +419,10 @@ function treeResponse(d, position, position2, is_root=0) {
 			
 			// if the shown node id is small enough and matches, is included in the clicked
 			// assign the length and save in collection
-			if(targetId.includes(zPId)){
+			if(id.includes(zPId)){
 				partialZoomArrLength = zPArr.length;
 				partialZoomIds.push(zPArr);
-			} else if (zPId.includes(targetId)){
+			} else if (zPId.includes(id)){
 				// if the target is part of the displayed nodes,
 				// then these are the paths we do not need to expand 
 				// in the tree graph as a response to the other graph
@@ -442,9 +442,9 @@ function treeResponse(d, position, position2, is_root=0) {
 
 			if(extendedPaths.length == 0){
 				// give the node a class to indicate that it is exposed after being clicked
-				d3.select("#"+targetId).attr("class", targetNode.attr("class") + " exposed");
+				d3.select("#"+id).attr("class", targetNode.attr("class") + " exposed");
 				
-				d3.select("#"+targetId).dispatch('drill', function(){
+				d3.select("#"+id).dispatch('drill', function(){
 					// cfg.change = cfg.change + 1;
 					cfg.zoomZooming = false;
 				});
@@ -494,26 +494,107 @@ function treeResponse(d, position, position2, is_root=0) {
 		var zoomTimeOver = cfg.zoomableTransition;
 		var zTime = 0;
 
-		for (zTime, cfg.zoomableTransition, p = Promise.resolve(); cfg.zoomableTransition >= 0; cfg.zoomableTransition--){
-			p = p.then(_ => new Promise(resolve =>{
-				var partialTargetNode = d3.select("#"+partialPathId);
-				var partTarClass = partialTargetNode.attr("class");
+		var zoomableElements = d3.selectAll(".zoomable")
+        .filter(function(el){ 
+            return d3.select(this).attr("id") == id;
+        });
 
-				partialTargetNode.attr("class", partTarClass + " exposed").dispatch('drill')
+    var extendedPathElements = d3.selectAll(".zoomable")
+        .filter(function(el){ 
+            return d3.select(this).attr("id").includes(id) && d3.select(this).attr("id") != id;
+        });
 
-				partialPathId += '-' + extra.shift();
-				transition += 200;
+    var targetIdArr = id.split("-");
+    var targetIdArrLength = targetIdArr.length;
+
+    var partialPaths = [];
+    // build up a collection of node paths starting with flare-<x>, build until the path == id
+    for(var i = 1; i < targetIdArrLength; i++){
+        var cpArr = copy(targetIdArr);
+        var partialPathArr = cpArr.splice(0,i+1);
+
+        var partialPath = partialPathArr.join("-");
+
+        partialPaths.push(partialPath);
+    }
+
+    var transition = 0;
+
+    for (var i = partialPaths.length, p = Promise.resolve(); i >= 0 ; i--){
+        p = p.then(_ => new Promise(resolve =>{
+            var nextNode = partialPaths[i+1];
+            var nextNodeIsHidden = d3.selectAll(".zoomable")
+                .filter(function(el){ 
+                    return d3.select(this).attr("id") == nextNode; 
+                })
+                .size() == 0;
+
+            // d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id") == partialPaths[i+1] }).size() == 0
+            // only click the node if the next one is hidden
+            if(nextNode != null && nextNodeIsHidden){
+                d3.select("#"+partialPaths[i]).dispatch("drill");
+                if(transition == 0)
+                    transition = 600;
+                else
+                    transition += 200;
+            } else if (nextNode == null){
+                // check that there is not an extra node, one more than
+                // the target that is open
+                // for example, we have g1-flare-1996-J
+                // is there an element that contains this id
+                // and has +1 node?
+                // if so, then click this
+                var extendedPathElement = d3.selectAll(".zoomable")
+                    .filter(function(el){ 
+                        var fartherInNode = d3.select(this).attr("id");
+
+                        return fartherInNode.includes(id) && 
+                            fartherInNode.split("-").length == id.split("-").length + 1; 
+                    });
+
+                // if this node that is one longer than the id and 
+                // has all the nodes in the id is not present,
+                // then drill into the CT one more time
+                if(extendedPathElement.size() == 0)
+                    d3.select("#"+partialPaths[i]).dispatch("drill");
+
+            } else {
+                // skip and check the next node
+            }                            
+            
+            return setTimeout(function(){
+                if (i == partialPaths.length-1){
+                    cfg.zoomZooming = false;
+                    cfg.change = 0;
+                }
+                
+                i++
+                // zTime++;
+                return resolve();   
+            }, transition);
+            
+        }));
+    }
+		// for (zTime, cfg.zoomableTransition, p = Promise.resolve(); cfg.zoomableTransition >= 0; cfg.zoomableTransition--){
+		// 	p = p.then(_ => new Promise(resolve =>{
+		// 		var partialTargetNode = d3.select("#"+partialPathId);
+		// 		var partTarClass = partialTargetNode.attr("class");
+
+		// 		partialTargetNode.attr("class", partTarClass + " exposed").dispatch('drill')
+
+		// 		partialPathId += '-' + extra.shift();
+		// 		transition += 200;
 				
-				return setTimeout(function(){
-					if (zTime == zoomTimeOver)
-						cfg.zoomZooming = false;
+		// 		return setTimeout(function(){
+		// 			if (zTime == zoomTimeOver)
+		// 				cfg.zoomZooming = false;
 						
-					zTime++;
-					return resolve();   
-				}, transition);
+		// 			zTime++;
+		// 			return resolve();   
+		// 		}, transition);
 				
-			}));
-		}  
+		// 	}));
+		// }  
 		
 		cfg.zoomableTransition = 0;
 		cfg.change = 0;
@@ -557,8 +638,10 @@ function packResponse(d, position, position2){
 	cfg.prvClk.pack = targetId;
 
 	// if it's the same, build the root id
-	if(isTheSamePackEl)
-		targetId = targetId.split("-").splice(0,2).join("-");
+	if(isTheSamePackEl){
+		cfg.zoomZooming = false;
+		return 1; //targetId = targetId.split("-").splice(0,2).join("-");
+	}
 	
 
 	d3.select("#"+targetId).dispatch('click', function(){

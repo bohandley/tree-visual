@@ -1,3 +1,47 @@
+
+function getColor(d, color){
+	// graphs with d.data.name
+		// treemap, radial tree, pack, sunburst
+	// graphs with d.name
+		// zoomable tree, collapsible tree
+	if(d.data){
+		if(d.parent && d.parent.data.name == "flare"){
+	        //console.log(d.data.name)
+	        return color(parseInt(d.data.name));
+	    }
+	    else if(d.parent){
+	        while(d.parent.data.name != "flare"){
+	            d = d.parent;
+	        }
+	        return color(parseInt(d.data.name));
+	    }
+	    return color(d.data.name);
+   } else {
+
+		if(d.parent && d.parent.name == "flare"){
+	        //console.log(d.data.name)
+	        return color(parseInt(d.name));
+	    }
+	    else if(d.parent){
+	        while(d.parent.name != "flare"){
+	            d = d.parent;
+	        }
+	        return color(parseInt(d.name));
+	    }
+	    return color(d.name);
+	}
+}
+
+function getComplement(rbg){
+	var vals = rbg.replace(/[^0-9,\.]+/g, "").split(",")
+
+	var complVals = vals.map(v=> 255 - v);
+
+	var complement = "rgb(" + complVals.join(", ") + ")";
+
+	return complement;
+}
+
 // build a unique id from the data name and all the parents
 // each graph has a slightly different structure, extra wrappers
 // handle each level, root, parent, child
@@ -21,10 +65,40 @@ function buildPositionId(d, position){
 }
 
 function cleanNodeId(str){
-	return str.replace(/ /g, "_").replace(/:/g, "_").replace("[", "").replace("]", "").replace("?","_").replace("&","_").replace(".","_").replace("/","_");
+	return str.replace(/ /g, "_")
+		.replace(/:/g, "_")
+		.replace("[", "")
+		.replace("]", "")
+		.replace("?","_")
+		.replace("&","_")
+		.replace(".","_")
+		.replace("/","_")
+		.replace(/,/g,"_");
+}
+
+function buildNodeOrLeafId(d, position){
+	var id = cleanNodeId(buildPositionId(d, position));
+
+	// radial tree has a different data stucture, requires d.data.name
+	if(d && d.children == null && d._children == null){		
+		var leafName = d.name ? d.name : d.data.name;
+	    return position + "-leaf-" + cleanNodeId(leafName);
+	} else
+	    return id;
 }
 
 function displaySelectedNode(d){
+	// take off class
+	d3.selectAll(".selected-node").classed("selected-node", false);
+
+	var idG1 = cleanNodeId(buildPositionId(d, "g1"));
+	var idG2 = cleanNodeId(buildPositionId(d, "g2"));
+	var node1 = d3.selectAll("#"+idG1);
+	var node2 = d3.selectAll("#"+idG2);
+
+	node1.classed("selected-node", true);
+	node2.classed("selected-node", true);
+
 	var node = buildId(d).reverse().join("-");
 	d3.select("#selected-node").html("")
 	d3.select("#selected-node").html("Clicked node: " + node);

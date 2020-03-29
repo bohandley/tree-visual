@@ -117,7 +117,53 @@
   Fix bug with CT and ZT that had to do with it appearing to click
   the previous node(used for pack) 
   Complete responsiveness with CT & ZT, CT & P, and ZT & P
-    -
+
+3/11/2020
+  5:30pm-8:30pm
+  Found bug in CT and P
+    click CT year 1987, click CT [J], click CT year 1987, click P 1987-[J]-Other,
+    starts to expose CT again, node by node, opens all node path by first click, 
+    clicks the next node which closes the CT path, breaks
+
+3/19/2020
+  8:00pm-11:00pm
+  -v remove tree dropdown and make another select option for radial tree
+  -v add class to the clicked node on all graphs 
+      v added class
+        change the border or give an indication that the selected node is selected
+        what about nodes that haven't been exposed yet?
+          need to wait until they're exposed to add the class
+  -bug: CT and Pack, open path to leaf in CT, open a second path to leaf, in pack jump
+    -to the first leaf(in another branch from root) and it closes the leaves
+
+3/26/2020
+  9:00pm-11:30pm
+    POSSIBLE WORK TODAY
+    -build up brushing and linking
+      ZT and CT done!
+      ***BUGs: fill in empty, fill in the leaf ids
+        SOLVE by filling in all " " with data, some name!
+        fill in the leaf ids
+      why is collapsible tree not highlighting?
+        the id is on g, but the circle needs to be highlighted
+      How does the ZT highlight and get highlighted
+      highlight one, get the other
+      the clicked node is identified by contrasting color***
+    
+3/28/2020
+  9:00-11:00pm
+    Complete CT highlighting with all other maps, done!
+
+3/29/2020
+  10:00am-5:00pm
+    refactor getColor(d, color) to handle d.data.name, done!
+    Complete all mouseover and mouseout event handling linkings all graphs, done!
+Next
+  -pass json into the build functions
+      filter json with slider or select?
+    -Interface on right
+      focus on certain year
+      slider or control
     CT = collapsible tree
     ZT = zoomable tree
     P = pack
@@ -148,7 +194,7 @@
   	-look into the errors with the mouseovers on certain graphs
   	-build object or config for full graphs containing zoomzoomin, c, etc
   	-reset the graphs every time a new on is selected
-  	-reset the zooming in progress if a new graph is selected
+  	-reset the zooming in progress if a new graph is selected**
 
 
   	-build up brushing and linking

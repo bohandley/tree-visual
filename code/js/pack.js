@@ -39,27 +39,17 @@ function draw_pack(position){
             .enter().append("circle")
             .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
             .attr("id", function(d){
-                return cleanNodeId(buildPositionId(d, position1));//[position1].concat(buildId(d).reverse()).join("-");
+                return buildNodeOrLeafId(d, position1);
             })
-            .style("fill", function(d) { 
-                if(d.parent && d.parent.data.name == "flare"){
-                    return color(parseInt(d.data.name));
-                }
-                else if(d.parent){
-                    while(d.parent.data.name != "flare"){
-                        d = d.parent;
-                    }
-                    return color(parseInt(d.data.name));
-                }
-                return color(d.data.name); 
-            })
+            .style("fill", d => getColor(d, color)) //returns an rbg val
             .style("stroke", "white")
             .style("stroke", 1)
             .on("click", function(d) { 
                 var response;
+                
                 if(otherGraphType == "Zoomable_Treemap")
                     response = zoomableTreeResponse(d, position1, position2, "Pack");
-                else if(otherGraphType == "Tree") 
+                else if(otherGraphType == "Collapsible_Tree") 
                     response = treeResponse(d, position1, position2);
                 
                 if(response == 0)
@@ -67,25 +57,30 @@ function draw_pack(position){
 
                 if (focus !== d) zoom(d), d3.event.stopPropagation(); 
             })
-            .on("mouseover", function(d){
-                
-                var position2Id = cleanNodeId(buildPositionId(d, position2));
-                
-                d3.select("#"+position2Id).select(".parent").style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                
-                d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                
-                d3.select(this).append("title").text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
+            .on("mouseover", d => mouseoverLinking(position1, position2, d))
+            .on("mouseout", d => mouseoutLinking(position1, position2, d));
 
-            })
-            .on("mouseout", function(d){
+        // var circleLeaves = d3.selectAll("circle.node--leaf")
+        //     .on("click", null)
+        //     .on("mouseover", function(d){
+        //         mouseoverLinking(position1, position2, d, isgr=0)
+        //         // var position2Id = cleanNodeId(buildPositionId(d, position2));
                 
-                var position2Id = cleanNodeId(buildPositionId(d, position2));
+        //         // d3.select("#"+position2Id).select(".parent").style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                
+        //         // d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                
+        //         // d3.select(this).append("title").text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
 
-                d3.select("#"+position2Id).select(".parent").style("stroke", "white").style("stroke-width", 1);
+        //     })
+        //     .on("mouseout", function(d){
+        //         mouseoutLinking(position1, position2, d, isgr=0)
+        //         // var position2Id = cleanNodeId(buildPositionId(d, position2));
 
-                d3.select(this).style("stroke", "white").style("stroke-width", 1);
-            });
+        //         // d3.select("#"+position2Id).select(".parent").style("stroke", "white").style("stroke-width", 1);
+
+        //         // d3.select(this).style("stroke", "white").style("stroke-width", 1);
+        //     });
 
         var text = g.selectAll("text")
             .data(nodes)
@@ -94,7 +89,9 @@ function draw_pack(position){
             .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
             .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
             .text(function(d) { return d.data.name; });
+
         var node = g.selectAll("circle,text");
+
         svg.style("background", "white")
             .on("click", function() {
                 
@@ -102,7 +99,7 @@ function draw_pack(position){
                 
                 if(otherGraphType == "Zoomable_Treemap"){
                     response = zoomableTreeResponse(root, position1, position2, "", 1);
-                } else if(otherGraphType == "Tree"){ 
+                } else if(otherGraphType == "Collapsible_Tree"){ 
                     if (cfg.zoomZooming){
                         console.log("Zooming in progress...")
                         response = 0;

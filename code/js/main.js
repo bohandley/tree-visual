@@ -81,7 +81,6 @@ function loadVisualization(position){
     clearVisualization(position);
 
     d3.select("#layout" + position + "_treemap").style("visibility", "hidden");
-    d3.select("#layout" + position + "_tree").style("visibility", "hidden");
 
     var objS = document.getElementById("dropdown" + position);
     var grade = objS.options[objS.selectedIndex].text;
@@ -100,9 +99,11 @@ function loadVisualization(position){
     else if(grade == "Zoomable_Treemap"){
         this.draw_zoomable_treemap("#g" + position);
     }
-    else if(grade == "Tree"){
-        d3.select("#layout" + position + "_tree").style("visibility", "visible");
-        this.draw_tree("#g" + position, document.getElementById("dropdown" + position + "_tree").selectedIndex);
+    else if(grade == "Collapsible_Tree"){
+        this.draw_collapsible_tree("#g" + position);
+    }
+    else if(grade == "Radial_Tree"){
+        this.draw_radial_tree("#g" + position);
     }
 
     d3.select("#g"+position).attr("viewBox", function(){
@@ -137,7 +138,7 @@ var dataSourcePapers, dataSourceCitations;
 window.onload = function(){
     var fader = function(color) { return d3.interpolateRgb(color, "#fff")(0.2); };
     color = d3.scaleOrdinal(d3.schemeCategory20.map(fader));
-
+    
     var objD = document.getElementById("dataDropdown");
     FileName = "../datasets/" + objD.options[objD.selectedIndex].text + ".txt";
 
@@ -150,10 +151,13 @@ window.onload = function(){
     
         // this.draw_sunburst("#g1");
         // this.draw_pack("#g2");
-        d3.select("#layout1_tree").style("visibility", "visible");
-        this.draw_tree("#g1", document.getElementById("dropdown1_tree").selectedIndex);
+        
+        // this.draw_collapsiple_tree("#g1");
         //this.draw_new_treemap("#g1");    
-        this.draw_zoomable_treemap("#g2");
+        // this.draw_zoomable_treemap("#g2");
     // });
+
+    loadVisualization("1");
+    loadVisualization("2");
         
 }

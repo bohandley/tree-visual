@@ -39,12 +39,12 @@ function draw_zoomable_treemap(position){
         .attr("y", -margin.top)
         .attr("width", width)
         .attr("height", margin.top)
-        .on("mouseover", function(){
-            d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-        })
-        .on("mouseout", function(){
-            d3.select(this).style("stroke", "white").style("stroke-width", 0.5);
-        });
+        // .on("mouseover", function(d){
+        //     mouseoverLinking(position1, position2, d, ".grandparent");
+        // })
+        // .on("mouseout", function(d){
+        //     mouseoutLinking(position1, position2, d, ".grandparent");
+        // });
 
     grandparent.append("text")
         .attr("x", 6)
@@ -114,16 +114,13 @@ function draw_zoomable_treemap(position){
         function display(d) {
             grandparent
                 .datum(d.parent)
-                .attr("id", function(d){
-
-                    return cleanNodeId(buildPositionId(d, position1));//[position1].concat(buildId(d).reverse()).join("-");
-                })
+                .attr("id", d => cleanNodeId(buildPositionId(d, position1)))
+                .on("mouseover", d => mouseoverLinking(position1, position2, d, 1))
+                .on("mouseout", d => mouseoutLinking(position1, position2, d, 1))
                 .on("click", transition)
-                .on("drill", function(d){
-                    drillTransition(d);
-                })
-            .select("text")
-                .text(name(d));
+                .on("drill", d => drillTransition(d))
+                .select("text")
+                    .text(name(d));
 
             var g1 = svg1.insert("g", ".grandparent")
                 .datum(d)
@@ -131,22 +128,19 @@ function draw_zoomable_treemap(position){
 
             var g = g1.selectAll("g")
                 .data(d._children)
+                .enter()
+                    .append("g");
+            
 
-            .enter().append("g");
+            // remove the filter to show the leaves?
+            // or just filter the leaves and add mouse events?
+            // allow the leaves to be higlighted in mouseover event
+            g.attr("id", d => buildNodeOrLeafId(d, position1));
 
             g.filter(function(d) { return d._children; })
                 .classed("children zoomable", true)
-                .attr("id", function(d){
-                    return cleanNodeId(buildPositionId(d, position1));
-                })
-                .on("drill", function(d){
-                    drillTransition(d)
-                })
-                .on("click", function(d){
-                    
-                    transition(d)
-
-                });
+                .on("drill", d => drillTransition(d))
+                .on("click", d => transition(d));
 
             g.selectAll(".child")
                 .data(function(d) { return d._children || [d]; })
@@ -156,16 +150,8 @@ function draw_zoomable_treemap(position){
 
             g.append("rect")
                 .attr("class", "parent")
-                .on("mouseover", function(d){
-                    var position2Id = cleanNodeId(buildPositionId(d, position2));
-                    d3.select("#"+position2Id).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                    d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                })
-                .on("mouseout", function(d){
-                    var position2Id = cleanNodeId(buildPositionId(d, position2));
-                    d3.select("#"+position2Id).style("stroke", "white").style("stroke-width", 0.5);
-                    d3.select(this).style("stroke", "white").style("stroke-width", 0.5);
-                })
+                .on("mouseover", d => mouseoverLinking(position1, position2, d))
+                .on("mouseout", d => mouseoutLinking(position1, position2, d))
                 .call(rect)
             .append("title")
                 .text(function(d) { return d.name + "\n" +formatNumber(d.value); });
@@ -180,122 +166,130 @@ function draw_zoomable_treemap(position){
                 // check which graph is displayed opposite of the zoomable tree
                 // the opposite graph then tries to fire and then fires the zoomable tree in response
                 // and that is where the cfg.change is reset
-                if(cfg.change > 1){
-                    cfg.change = 0;
-                    return;    
-                }
-
-                var id = cleanNodeId(buildPositionId(d, position2));
-
-                var zoomableElements = d3.selectAll(".zoomable")
-                    .filter(function(el){ 
-                        return d3.select(this).attr("id") == id 
-                    });
-
-                var extendedPathElements = d3.selectAll(".zoomable")
-                    .filter(function(el){ 
-                        return d3.select(this).attr("id").includes(id) && d3.select(this).attr("id") != id  
-                    });
-                if(zoomableElements.size() == 0 && otherGraphType == "Tree"){
-                    cfg.zoomZooming = true;
-                    // break up the id, 
-                    // find the node that is visible
-                    // click that, add one node, click that, until the built node == id
-                    var targetIdArr = id.split("-");
-                    var targetIdArrLength = targetIdArr.length;
-
-                    var partialPaths = [];
-                    // build up a collection of node paths starting with flare-<x>, build until the path == id
-                    for(var i = 1; i < targetIdArrLength; i++){
-                        var cpArr = copy(targetIdArr);
-                        var partialPathArr = cpArr.splice(0,i+1);
-
-                        var partialPath = partialPathArr.join("-");
-
-                        partialPaths.push(partialPath);
+                if(otherGraphType == "Zoomable_Treemap"){
+                    // behave normally if the other map is a collapsible tree
+                    var targetId = buildNodeOrLeafId(d, position2);                    
+                    d3.select("#"+targetId).dispatch('drill');
+                
+                } else if(otherGraphType != "Sunburst"){
+                    if(cfg.change > 1){
+                        cfg.change = 0;
+                        return;    
                     }
 
-                    // iterate through this group of paths
-                    // click the path
-                    // check if the next path is exposed
-                    // click it if so, don't click it if not
-                    // check the next path, click it if exposed, pass if not exposed
-                    // We're going to need to update the cfg.zoomzooming in the final setTimeout function,
-                    // Need to work on stopping click events for pack when this is going on
-                    var transition = 0;
+                    var id = cleanNodeId(buildPositionId(d, position2));
 
-                    for (var i = partialPaths.length, p = Promise.resolve(); i >= 0 ; i--){
-                        p = p.then(_ => new Promise(resolve =>{
-                            var nextNode = partialPaths[i+1];
-                            var nextNodeIsHidden = d3.selectAll(".zoomable")
-                                .filter(function(el){ 
-                                    return d3.select(this).attr("id") == nextNode; 
-                                })
-                                .size() == 0;
+                    var zoomableElements = d3.selectAll(".zoomable")
+                        .filter(function(el){ 
+                            return d3.select(this).attr("id") == id;
+                        });
 
-                            // d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id") == partialPaths[i+1] }).size() == 0
-                            // only click the node if the next one is hidden
-                            if(nextNode != null && nextNodeIsHidden){
-                                d3.select("#"+partialPaths[i]).dispatch("drill");
-                                if(transition == 0)
-                                    transition = 600;
-                                else
-                                    transition += 200;
-                            } else if (nextNode == null){
-                                // check that there is not an extra node, one more than
-                                // the target that is open
-                                // for example, we have g1-flare-1996-J
-                                // is there an element that contains this id
-                                // and has +1 node?
-                                // if so, then click this
-                                var extendedPathElement = d3.selectAll(".zoomable")
+                    var extendedPathElements = d3.selectAll(".zoomable")
+                        .filter(function(el){ 
+                            return d3.select(this).attr("id").includes(id) && d3.select(this).attr("id") != id;
+                        });
+                    if(zoomableElements.size() == 0 && otherGraphType == "Collapsible_Tree"){
+                        cfg.zoomZooming = true;
+                        // break up the id, 
+                        // find the node that is visible
+                        // click that, add one node, click that, until the built node == id
+                        var targetIdArr = id.split("-");
+                        var targetIdArrLength = targetIdArr.length;
+
+                        var partialPaths = [];
+                        // build up a collection of node paths starting with flare-<x>, build until the path == id
+                        for(var i = 1; i < targetIdArrLength; i++){
+                            var cpArr = copy(targetIdArr);
+                            var partialPathArr = cpArr.splice(0,i+1);
+
+                            var partialPath = partialPathArr.join("-");
+
+                            partialPaths.push(partialPath);
+                        }
+
+                        // iterate through this group of paths
+                        // click the path
+                        // check if the next path is exposed
+                        // click it if so, don't click it if not
+                        // check the next path, click it if exposed, pass if not exposed
+                        // We're going to need to update the cfg.zoomzooming in the final setTimeout function,
+                        // Need to work on stopping click events for pack when this is going on
+                        var transition = 0;
+
+                        for (var i = partialPaths.length, p = Promise.resolve(); i >= 0 ; i--){
+                            p = p.then(_ => new Promise(resolve =>{
+                                var nextNode = partialPaths[i+1];
+                                var nextNodeIsHidden = d3.selectAll(".zoomable")
                                     .filter(function(el){ 
-                                        var fartherInNode = d3.select(this).attr("id");
+                                        return d3.select(this).attr("id") == nextNode; 
+                                    })
+                                    .size() == 0;
 
-                                        return fartherInNode.includes(id) && 
-                                            fartherInNode.split("-").length == id.split("-").length + 1; 
-                                    });
-
-                                // if this node that is one longer than the id and 
-                                // has all the nodes in the id is not present,
-                                // then drill into the CT one more time
-                                if(extendedPathElement.size() == 0)
+                                // d3.selectAll(".zoomable").filter(function(el){ return d3.select(this).attr("id") == partialPaths[i+1] }).size() == 0
+                                // only click the node if the next one is hidden
+                                if(nextNode != null && nextNodeIsHidden){
                                     d3.select("#"+partialPaths[i]).dispatch("drill");
+                                    if(transition == 0)
+                                        transition = 600;
+                                    else
+                                        transition += 200;
+                                } else if (nextNode == null){
+                                    // check that there is not an extra node, one more than
+                                    // the target that is open
+                                    // for example, we have g1-flare-1996-J
+                                    // is there an element that contains this id
+                                    // and has +1 node?
+                                    // if so, then click this
+                                    var extendedPathElement = d3.selectAll(".zoomable")
+                                        .filter(function(el){ 
+                                            var fartherInNode = d3.select(this).attr("id");
 
-                            } else {
-                                // skip and check the next node
-                            }                            
-                            
-                            return setTimeout(function(){
-                                if (i == partialPaths.length-1){
-                                    cfg.zoomZooming = false;
-                                    cfg.change = 0;
-                                }
+                                            return fartherInNode.includes(id) && 
+                                                fartherInNode.split("-").length == id.split("-").length + 1; 
+                                        });
+
+                                    // if this node that is one longer than the id and 
+                                    // has all the nodes in the id is not present,
+                                    // then drill into the CT one more time
+                                    if(extendedPathElement.size() == 0)
+                                        d3.select("#"+partialPaths[i]).dispatch("drill");
+
+                                } else {
+                                    // skip and check the next node
+                                }                            
                                 
-                                i++
-                                // zTime++;
-                                return resolve();   
-                            }, transition);
-                            
-                        }));
+                                return setTimeout(function(){
+                                    if (i == partialPaths.length-1){
+                                        cfg.zoomZooming = false;
+                                        cfg.change = 0;
+                                    }
+                                    
+                                    i++
+                                    // zTime++;
+                                    return resolve();   
+                                }, transition);
+                                
+                            }));
+                        }
+
                     }
 
-                }
+                    // only click the CT node responsively if there is no path extended beyond,
+                    // no elements beyond the clicked node
 
-                // only click the CT node responsively if there is no path extended beyond,
-                // no elements beyond the clicked node
-                if(!cfg.zoomZooming && extendedPathElements.size() == 0){
-                    d3.select('#'+ id).dispatch('click', function(){
-                        cfg.change = cfg.change + 1;
-                    });
-                } else {
-                    if(cfg.change == 1)
+                    if(!cfg.zoomZooming && extendedPathElements.size() == 0){
                         d3.select('#'+ id).dispatch('click', function(){
-                            cfg.change += 1;
-                        }); 
+                            cfg.change = cfg.change + 1;
+                        });
+                    } else {
+                        if(cfg.change == 1)
+                            d3.select('#'+ id).dispatch('click', function(){
+                                cfg.change += 1;
+                            }); 
 
-                    // cfg.change = 0;
-                }    
+                        // cfg.change = 0;
+                    }
+                } 
                     
                 displaySelectedNode(d);
                 if (transitioning || !d) return;
@@ -380,17 +374,7 @@ function draw_zoomable_treemap(position){
                 .attr("width", function(d) { return x(d.x + d.dx) - x(d.x); })
                 .attr("height", function(d) { return y(d.y + d.dy) - y(d.y); })
                 .attr("fill", function(d){
-                    if(d.parent && d.parent.name == "flare"){
-                        //console.log(d.data.name)
-                        return color(parseInt(d.name));
-                    }
-                    else if(d.parent){
-                        while(d.parent.name != "flare"){
-                            d = d.parent;
-                        }
-                        return color(parseInt(d.name));
-                    }
-                    return color(d.name); 
+                    return getColor(d, color); 
                 })
                 .style("stroke", "white")
                 .style("stroke-width", 1);
