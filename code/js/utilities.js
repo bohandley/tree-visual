@@ -87,6 +87,7 @@ function buildNodeOrLeafId(d, position){
 	    return id;
 }
 
+// get the node that was clicked and display it to the interface
 function displaySelectedNode(d){
 	// take off class
 	d3.selectAll(".selected-node").classed("selected-node", false);

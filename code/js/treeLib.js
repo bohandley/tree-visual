@@ -20,7 +20,7 @@ var treeLib = (function (d3) {
 	
 	// create a path to use as a class
 	// clean the names?
-	function createPathClass(node, container) {
+	function createPathId(node, container) {
 		var pathArr = crtPathArray(node).reverse();
 
 		var pathClass = [container].concat(pathArr).join('-');
@@ -28,6 +28,7 @@ var treeLib = (function (d3) {
 		return pathClass;
 	}
 
+	// takes a d3 data object that has the node and its path, nested
 	// return an array of the path(must reverse this)
 	// recursive function to travel up the path
 	function crtPathArray(node) {
@@ -60,6 +61,14 @@ var treeLib = (function (d3) {
 			.replace(/,/g,"_");
 	}
 
+	function isLeaf(node) {
+		// radial tree has a different data stucture, requires d.data.name
+		if(node && node.children == null && node._children == null)
+		    return true;
+		else
+		    return false;
+
+	}
 
 	function getExposedNodes() {}
 
@@ -75,8 +84,12 @@ var treeLib = (function (d3) {
 	function linkHighlight() {}
 
 	return {
-		pathClass: function(node, container) {
-			return createPathClass(node, container);
+		pathId: function(node, container) {
+			return createPathId(node, container);
+		},
+
+		isLeaf: function(node) {
+			return isLeaf(node);
 		},
 
 		linkEvent: function(node) {

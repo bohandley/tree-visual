@@ -1,6 +1,7 @@
 // brushing and linking, mostly linking
 // all combinations of graphs
 // the moused and the linked
+// isgr is grandparent, behaves differently
 function mouseoverLinking(position1, position2, d, isgr=0){
 	let first = getOtherGraphType(position1);
 		second = getOtherGraphType(position2),

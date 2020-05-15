@@ -165,7 +165,9 @@
   6:00pm-9:00pm
     begin building the treeLib module
     refactor the pathId function
+    add the treeLib pathId to zoomable tree
 
+5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions
       filter json with slider or select?
