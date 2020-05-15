@@ -114,7 +114,11 @@ function draw_zoomable_treemap(position){
         function display(d) {
             grandparent
                 .datum(d.parent)
-                .attr("id", d => cleanNodeId(buildPositionId(d, position1)))
+                .attr("id", d => {
+                    // debugger;
+                    // return treeLib.pathId(d, position1);
+                    return cleanNodeId(buildPositionId(d, position1))
+                })
                 .on("mouseover", d => mouseoverLinking(position1, position2, d, 1))
                 .on("mouseout", d => mouseoutLinking(position1, position2, d, 1))
                 .on("click", transition)
@@ -135,7 +139,10 @@ function draw_zoomable_treemap(position){
             // remove the filter to show the leaves?
             // or just filter the leaves and add mouse events?
             // allow the leaves to be higlighted in mouseover event
-            g.attr("id", d => buildNodeOrLeafId(d, position1));
+            g.attr("id", d => {
+                // return treeLib.pathId(d, position1);
+                return buildNodeOrLeafId(d, position1)
+            });
 
             g.filter(function(d) { return d._children; })
                 .classed("children zoomable", true)

@@ -106,8 +106,8 @@ function displaySelectedNode(d){
 
 function getOtherGraphType(position2){
 	var otherGraphSelectTag = document.getElementById("dropdown" + position2[1]);
-  var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
-  return otherGraphType;
+	var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
+	return otherGraphType;
 }
 
 function copy(o) {

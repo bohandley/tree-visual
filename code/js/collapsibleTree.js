@@ -119,6 +119,7 @@ function draw_collapsible_tree(position){
                 });
             
             nodeEnter.append("circle")
+                .attr("class", "node-size")
                 .attr("r", 1e-6)
                 .style("fill", d => getColor(d, color))//returns an rbg val
                 .on("mouseover", d => mouseoverLinking(position1, position2, d))
@@ -153,22 +154,25 @@ function draw_collapsible_tree(position){
                 })
           
             nodeUpdate.select("circle")
+                .attr("class", "node-size")
                 .attr("r", function(d) {
-                    if(d._children != null){
-                        if(d._children.length >= 13){
-                            return 8
-                        }else if(d._children.length < 13 && d._children.length >= 7) {
-                            return 6
-                        }else if (d._children.length < 7  && d._children.length >= 3){
-                            return 4
-                        }else{
-                            return 3
-                        }
-                    }
-                    if(d.children != null){
-                      return 5;
-                    }
-                    return 2.5; 
+                    // return 5;
+                    return appearance.nodeSize;
+                    // if(d._children != null){
+                    //     if(d._children.length >= 13){
+                    //         return 8
+                    //     }else if(d._children.length < 13 && d._children.length >= 7) {
+                    //         return 6
+                    //     }else if (d._children.length < 7  && d._children.length >= 3){
+                    //         return 4
+                    //     }else{
+                    //         return 3
+                    //     }
+                    // }
+                    // if(d.children != null){
+                    //   return 5;
+                    // }
+                    // return 2.5; 
                 })
                 .style("fill", function(d) {
                     return getColor(d, color);      

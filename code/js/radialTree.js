@@ -54,11 +54,16 @@ function draw_radial_tree(position){
             `);
 
         node.append("circle")
-            //.attr("fill", d => d.children ? "#555" : "#999")
             .attr("fill", function(d){
                 return getColor(d, color);
             })
-            .attr("r", 1)
+            .attr("r", _=> {
+            	// return 5;
+            	return appearance.nodeSize*2/3;
+            })
+            .style("stroke", "steelblue")
+    		.style("stroke-width", 1)
+            .attr("class", "node-size")
             .on("mouseover", function(d){
             	mouseoverLinking(position1, position2, d);
                 // d3.select(this).style("cursor", "pointer").attr("r", 5);

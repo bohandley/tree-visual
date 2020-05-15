@@ -158,6 +158,14 @@
   10:00am-5:00pm
     refactor getColor(d, color) to handle d.data.name, done!
     Complete all mouseover and mouseout event handling linkings all graphs, done!
+
+87hrs
+
+5/14/2020
+  6:00pm-9:00pm
+    begin building the treeLib module
+    refactor the pathId function
+
 Next
   -pass json into the build functions
       filter json with slider or select?

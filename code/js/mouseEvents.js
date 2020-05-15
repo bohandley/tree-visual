@@ -251,7 +251,15 @@ function radialTreeResponseMOver(position2Id){
 	d3.select("#" + position2Id)
 		.select("circle")
 		.style("cursor", "pointer")
-		.attr("r", 5);
+		.attr("r", _=>{
+			// return 10;
+			return appearance.nodeSize;
+		})
+		.style("stroke", d => {
+    		// return getComplement(getColor(d, color));
+    		return "black";
+    	})
+    	.style("stroke-width", 1);
     
     d3.select("#" + position2Id)
     	.select("circle")
@@ -262,7 +270,12 @@ function radialTreeResponseMOver(position2Id){
 function radialTreeResponseMOut(position2Id){
 	d3.select("#"+position2Id)
 		.select("circle")
-		.attr("r", 1);
+		.attr("r", _=>{
+			// return 5;
+			return appearance.nodeSize*2/3;
+		})
+		.style("stroke", "steelblue")
+    	.style("stroke-width", 1);
 }
 
 function collapsibleTreeResponseMOver(position2Id){
@@ -273,7 +286,11 @@ function collapsibleTreeResponseMOver(position2Id){
     		return "black";
     	})
     	.style("stroke-width", 1.5)
-    	.style("cursor", "pointer");
+    	.style("cursor", "pointer")
+    	.attr("r", _=>{
+			// return 10;
+			return appearance.nodeSize * 2;
+		});
 }
 
 function collapsibleTreeResponseMOut(position2Id){
@@ -281,7 +298,11 @@ function collapsibleTreeResponseMOut(position2Id){
     	.select("circle")
     	.style("stroke", "steelblue")
     	.style("stroke-width", 1.5)
-    	.style("cursor", "pointer");
+    	.style("cursor", "pointer")
+    	.attr("r", _=>{
+			// return 5;
+			return appearance.nodeSize;
+		});
 }
 
 function zoomableTreeResponseMOver(position2Id, removeNodeForZT=0){

@@ -20,12 +20,68 @@ const config = {
 
 let cfg = copy(config);
 
-
 function resetCfg(){
     cfg = copy(config);
 }
 
-var FileData
+const appearanceCfg = {
+    nodeSize: 5
+}
+
+let appearance = copy(appearanceCfg);
+
+function resetAppearanceCfg(){
+    appearance =  copy(appearanceCfg);
+}
+
+var FileData;
+
+// initHelp(elements1, elements2, currentGraph, graphic1, graphic2, svgs);
+// $("#help").on("click", function(){
+//     helpOnClick(elements1, elements2, currentGraph, graphic1, graphic2, svgs);
+// });
+function setupNodesizeScalar(dataset=null) {
+    // switch(dataset.graphSize) 
+    // {
+    //   case "Small":
+    //       nodesizeScale = 1.3;
+    //     break;
+    //   case "Medium":
+    //       nodesizeScale = 1.0;
+    //     break;
+    //   case "Large":
+    //       nodesizeScale = 0.9;
+    //     break;
+    // }
+    let nodesizeScale = 1.3;
+    let slider = $("#nodesizeScalar");
+    let min_ = 2;
+    let max_ = 6;
+    slider.prop('min', min_);
+    slider.prop('max', max_);
+    slider.prop('step', 0.1);
+    $("#nodesizeScaleMin").text(min_);
+    $("#nodesizeScaleMax").text(max_);
+    slider.prop("value", nodesizeScale);
+
+    $("#nodesizeScalar").on('input', function(){
+        appearance.nodeSize = $("#nodesizeScalar").prop("value");
+
+        d3.selectAll("circle.node-size")
+            .attr("r", appearance.nodeSize);
+        // simulations.forEach(x => x.force('collision', d3.forceCollide(NODE_RADIUS * nodesizeScale)));
+        // svgs.forEach(x => updateDrawing(x, currentNeighbors));
+    });
+}
+
+$(document).ready(function(){
+    setupNodesizeScalar();
+
+    // $('#nodeSizeScalar').on('input', function() {
+    //     console.log($("#nodesizeScalar").prop("value"));
+    // });
+})
+
 
 function Remove_nodechildren(id){
     var parent = document.getElementById(id)
@@ -138,7 +194,7 @@ var dataSourcePapers, dataSourceCitations;
 window.onload = function(){
     var fader = function(color) { return d3.interpolateRgb(color, "#fff")(0.2); };
     color = d3.scaleOrdinal(d3.schemeCategory20.map(fader));
-    
+
     var objD = document.getElementById("dataDropdown");
     FileName = "../datasets/" + objD.options[objD.selectedIndex].text + ".txt";
 
