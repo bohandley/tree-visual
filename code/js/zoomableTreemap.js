@@ -396,5 +396,7 @@ function draw_zoomable_treemap(position){
                 ? name(d.parent) + "." + d.name
                 : d.name;
         }
+
+        d3.select("svg#"+position1).dispatch('doneDrawing');
     });
 }

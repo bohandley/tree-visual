@@ -24,6 +24,8 @@ function resetCfg(){
     cfg = copy(config);
 }
 
+treeLib.buildConfig(['g1', 'g2']);
+
 const appearanceCfg = {
     nodeSize: 5
 }
@@ -119,11 +121,18 @@ function clearVisualization(position){
         .append("svg")
         .attr("id", "g" + position)
         .attr("viewBox", "0 0 500 500");
+
+    d3.select("svg#g"+position).on('doneDrawing', function(){
+        var objS = document.getElementById("dropdown" + position);
+        var grade = objS.options[objS.selectedIndex].text;
+        treeLib.updateConfig(grade,'g'+position);
+    });
 }
 
+// update both maps if one is changed
 function change_map(position){
-    var position2 = position == "1" ? "2" : "1";
-    var position1 = position == "1" ? "1" : "2";
+    var position2 = position == '1' ? '2' : '1';
+    var position1 = position == '1' ? '1' : '2';
     
     resetCfg();
 
@@ -154,6 +163,7 @@ function loadVisualization(position){
     }
     else if(grade == "Zoomable_Treemap"){
         this.draw_zoomable_treemap("#g" + position);
+        
     }
     else if(grade == "Collapsible_Tree"){
         this.draw_collapsible_tree("#g" + position);
@@ -162,10 +172,14 @@ function loadVisualization(position){
         this.draw_radial_tree("#g" + position);
     }
 
+    
+
     d3.select("#g"+position).attr("viewBox", function(){
         return "0 0 500 500";
     })
 }
+
+
 
 function change_num(){
     d3.json(FileName, function(error, root) {

@@ -167,6 +167,13 @@
     refactor the pathId function
     add the treeLib pathId to zoomable tree
 
+5/18/2020
+  7:30pm-10:30pm
+    buildConfig()
+    updateConfig()
+    think through the type, id, pathRestr, exposedNodes
+    NOW NEED TO add callback!
+    
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions

@@ -245,5 +245,7 @@ function draw_collapsible_tree(position){
                 d.children = null;
             }
         }
+
+        d3.select("svg#"+position1).dispatch('doneDrawing');
     });
 }

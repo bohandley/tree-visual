@@ -141,5 +141,7 @@ function draw_pack(position){
             node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
             circle.attr("r", function(d) { return d.r * k; });
         }
+
+        d3.select("svg#"+position1).dispatch('doneDrawing');
     });
 }

@@ -1,23 +1,125 @@
 var treeLib = (function (d3) {
 
 	// if sunburst is passed in, calculate the restriction
-	var config = [
-		{
-			type: '',
-			container: '',
-			pathRestr: null,
-			exposedNodes: [],
-			//highlightedNode: ''
-		},
-		{
-			type:'',
-			container: '',
-			pathRestr: null,
-			exposedNodes: [],
-			// highlightedNode: ''
-		}
-	];
+	// dummy config for setup
+	var dummyContainer = {
+		type: '', // name of visualization
+		id: '', // id of container
+		pathRestr: null, // amount of layers of nodes shown in visualization
+		exposedNodes: [], // collection of all nodes exposed, or clickable
+		highlightedNode: '', // the current highlighted node
+		callback: function() {}, // the callback for when the other visualization is clicked
+		lastClickedNode: ''
+	};
+
+	// dummy config for now, load this on load of the page
+	var dummyConfig = {
+		containers: [],
+		zoomableTransition: 0, // used to figure out how deep to zoom
+	    transitioning: 0, //zoomZooming: null,
+	    currentSelectedNode: ''
+	};
+
+	var config;
+
+	// var config = {
+	// 	containers: [],
+		// 	{
+		// 		type: '',
+		// 		container: '',
+		// 		pathRestr: null,
+		// 		exposedNodes: [],
+		// 		//highlightedNode: '',
+				// callback: transition callback,
+				// last clicked node: '',
+
+		// 	},
+		// 	{
+		// 		type:'',
+		// 		container: '',
+		// 		pathRestr: null,
+		// 		exposedNodes: [],
+		// 		// highlightedNode: '',
+				// callback: transition callback,
+				// last clicked node: ''
+		// 	},
+
+		// ],
+		// DON'T DO CHANGE, ONLY DO TRANSITIONING: BOOLEAN
+		// // "change" describes when a graph has been clicked,
+	 //    // and a second graph may also be clicked as a result of the first click,
+	 //    // we cap this at two so the second graph does trigger the first graph again but
+	 //    // the first graph reads "change" and returns out of the click function.
+	 //    change: 0,
+
+	//     zoomableTransition: 0, // used to figure out how deep to zom
+	//     transitioning: 0, //zoomZooming: null,
+	//     // prvClk: {
+	//     //     pack: '',
+	//     //     zoomable:'',
+	//     //     tree: '',
+	//     //     treemap: '',
+	//     //     sunburst: ''
+	//     // },
+	//     currentSelectedNode: '',
+	//     // fileData: null
+	// };
 	
+	// takes an array of svg ids that contain the visualizations
+	// build the config on opening the app
+	// update the config whenever a new graph is chosen
+	function buildConfig(ids) {
+		var containers = ids.map(id => {
+			var container = copy(dummyContainer);
+
+			container.id = id;
+
+			return container;
+		});
+
+		config = copy(dummyConfig);
+
+		config.containers = containers;
+	}
+
+	function updateConfig(type, id) {
+		container = config.containers.find(el => {
+			return el.id == id;
+		});
+
+		// type: '', // name of visualization
+		// id: '', // id of container
+		// pathRestr: null, // amount of layers of nodes shown in visualization
+		// exposedNodes: [], // collection of all nodes exposed, or clickable
+		// highlightedNode: '', // the current highlighted node
+		// callback: function() {}, // the callback for when the other visualization is clicked
+		// lastClickedNode: ''
+		container.type = type;
+
+		// find all the exposed nodes
+		var idsForRestr = []
+
+		// how do we know if the exposed nodes are g or circles?
+		var node = 'g';
+
+		if (type == 'Pack' || type == 'Collapsible_Tree')
+			node = 'circle';
+		
+		var exposedNodes = d3.select('#' + id).selectAll(node).filter(function(el) {
+		    var el = d3.select(this).attr('id');
+		    if (el != null){
+		    	idsForRestr.push(el);
+		        return el.includes(id);
+		    }
+		});
+
+		container.exposedNodes = exposedNodes;
+		
+		container.pathRestr = idsForRestr.map(el => el.split('-').length).filter(onlyUnique).length;
+		// set the callback
+
+	}
+
 	// create a path to use as a class
 	// clean the names?
 	function createPathId(node, container) {
@@ -67,7 +169,6 @@ var treeLib = (function (d3) {
 		    return true;
 		else
 		    return false;
-
 	}
 
 	function getExposedNodes() {}
@@ -83,7 +184,33 @@ var treeLib = (function (d3) {
 
 	function linkHighlight() {}
 
+	function copy(o) {
+		var _out, v, _key;
+		_out = Array.isArray(o) ? [] : {};
+		for (_key in o) {
+			v = o[_key];
+			_out[_key] = (typeof v === 'object' && v !== null) ? copy(v) : v;
+		}
+		return _out;
+	}
+
+	function onlyUnique(value, index, self) { 
+	    return self.indexOf(value) === index;
+	}
+
 	return {
+		buildConfig: function(ids) {
+			buildConfig(ids);
+		},
+
+		updateConfig: function(type, id) {
+			updateConfig(type, id);
+		},
+
+		config() {
+			return config;
+		},
+
 		pathId: function(node, container) {
 			return createPathId(node, container);
 		},
