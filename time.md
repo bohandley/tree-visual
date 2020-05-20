@@ -173,6 +173,12 @@
     updateConfig()
     think through the type, id, pathRestr, exposedNodes
     NOW NEED TO add callback!
+
+5/19/2020
+  5:30pm-8:00pm
+    refactor adding the g1 or g2 to the id
+    adding the position as a class allows us to get around that g or circle selectall
+    begin adding linkedClick to  zoomable tree and collapsible tree
     
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next

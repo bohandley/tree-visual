@@ -38,6 +38,7 @@ function draw_pack(position){
             .data(nodes)
             .enter().append("circle")
             .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+            .classed(position1, true)
             .attr("id", function(d){
                 return buildNodeOrLeafId(d, position1);
             })

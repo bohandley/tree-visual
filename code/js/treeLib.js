@@ -97,15 +97,10 @@ var treeLib = (function (d3) {
 		container.type = type;
 
 		// find all the exposed nodes
+		// collection of ids
 		var idsForRestr = []
 
-		// how do we know if the exposed nodes are g or circles?
-		var node = 'g';
-
-		if (type == 'Pack' || type == 'Collapsible_Tree')
-			node = 'circle';
-		
-		var exposedNodes = d3.select('#' + id).selectAll(node).filter(function(el) {
+		var exposedNodes = d3.select('#' + id).selectAll('.' + id).filter(function(el) {
 		    var el = d3.select(this).attr('id');
 		    if (el != null){
 		    	idsForRestr.push(el);
@@ -180,7 +175,16 @@ var treeLib = (function (d3) {
 	// but if the sunburst and 
 	function getPathRestriction() {}
 
-	function linkEvent() {}
+	function linkedClick(node, otherContainerId) {
+		var pathId = createPathId(node, otherContainerId);
+		// debugger
+		d3.select('#' + pathId).dispatch('linkedClick');
+		// close if collapsible tree
+		// always display the same mount of nodes?
+		// stop the close if the more restricted graph is navigating to the root
+		// don't close if displaying all ten children
+		//
+	}
 
 	function linkHighlight() {}
 
@@ -219,8 +223,8 @@ var treeLib = (function (d3) {
 			return isLeaf(node);
 		},
 
-		linkEvent: function(node) {
-			debugger;
+		linkedClick: function(node, otherContainerId) {
+			linkedClick(node, otherContainerId);
 		},
 
 		linkHighlight() {

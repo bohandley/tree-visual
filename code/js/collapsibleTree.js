@@ -78,7 +78,7 @@ function draw_collapsible_tree(position){
                 .data(nodes, function(d) { return d.id || (d.id = ++i); });
             // Enter any new nodes at the parent's previous position.
             var nodeEnter = node.enter().append("g")
-                .attr("class", "node zoomable")
+                .attr("class", "node zoomable " + position1)
                 .attr("id", function(d){
                     // var id = [position1].concat(buildId(d).reverse()).join("-");
                     // var id = cleanNodeId(buildPositionId(d, position1));
@@ -90,29 +90,32 @@ function draw_collapsible_tree(position){
                     return buildNodeOrLeafId(d, position1);
                 })
                 //.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+                .on("linkedClick", click)
                 .on("drill", click)
                 .on("click", function(d){
                     displaySelectedNode(d);
+
+                    treeLib.linkedClick(d, position2);
                     // do not allow CT click events or responsiveness if clicking a leaf
-                    if(d3.select(this).attr("id").includes("leaf"))
-                        return;
+                    // if(d3.select(this).attr("id").includes("leaf"))
+                    //     return;
                 
-                    var response;
+                    // var response;
 
-                    // behave normally if the other map is a collapsible tree
-                    if(otherGraphType == "Collapsible_Tree"){
-                        var targetId = buildNodeOrLeafId(d, position2);                    
-                        d3.select("#"+targetId).dispatch('drill');
-                        response = 1;
-                    }
+                    // // behave normally if the other map is a collapsible tree
+                    // if(otherGraphType == "Collapsible_Tree"){
+                    //     var targetId = buildNodeOrLeafId(d, position2);                    
+                    //     d3.select("#"+targetId).dispatch('drill');
+                    //     response = 1;
+                    // }
 
-                    if(otherGraphType == "Zoomable_Treemap")
-                        response = zoomableTreeResponse(d, position1, position2, "Collapsible_Tree");
-                    else if(otherGraphType == "Pack") 
-                        response = packResponse(d, position1, position2);
+                    // if(otherGraphType == "Zoomable_Treemap")
+                    //     response = zoomableTreeResponse(d, position1, position2, "Collapsible_Tree");
+                    // else if(otherGraphType == "Pack") 
+                    //     response = packResponse(d, position1, position2);
 
-                    if(response == 0)
-                        return;
+                    // if(response == 0)
+                    //     return;
 
 
                     click(d);
@@ -227,7 +230,9 @@ function draw_collapsible_tree(position){
         
         // Toggle children on click.
         function click(d) {
-          
+            // debugger;
+            // this is where the nodes are closed
+            // if d.children, it closes the nodes
             if (d.children) {
                 d._children = d.children;
                 d.children = null;
