@@ -119,6 +119,9 @@ function draw_zoomable_treemap(position){
                     return treeLib.pathId(d, position1);
                     // return cleanNodeId(buildPositionId(d, position1))
                 })
+                .attr("data", d => {
+                    return treeLib.getLastClicked(position1);
+                })
                 .classed(position1, true)
                 .on("mouseover", d => mouseoverLinking(position1, position2, d, 1))
                 .on("mouseout", d => mouseoutLinking(position1, position2, d, 1))

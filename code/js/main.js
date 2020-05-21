@@ -100,7 +100,9 @@ function change_author(){
     resetCfg();
 
     var objD = document.getElementById("dataDropdown");
-    FileName = "../datasets/" + objD.options[objD.selectedIndex].text + ".txt";
+    // debugger
+
+    FileName = "../datasets/" + objD.value + ".txt";
 
     document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
         
@@ -208,9 +210,9 @@ var dataSourcePapers, dataSourceCitations;
 window.onload = function(){
     var fader = function(color) { return d3.interpolateRgb(color, "#fff")(0.2); };
     color = d3.scaleOrdinal(d3.schemeCategory20.map(fader));
-
+    // debugger
     var objD = document.getElementById("dataDropdown");
-    FileName = "../datasets/" + objD.options[objD.selectedIndex].text + ".txt";
+    FileName = "../datasets/" + objD.value + ".txt";
 
     document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
 

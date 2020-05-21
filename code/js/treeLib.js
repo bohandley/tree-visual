@@ -7,6 +7,7 @@ var treeLib = (function (d3) {
 		id: '', // id of container
 		pathRestr: null, // amount of layers of nodes shown in visualization
 		exposedNodes: [], // collection of all nodes exposed, or clickable
+		exposedIds: [],
 		highlightedNode: '', // the current highlighted node
 		callback: function() {}, // the callback for when the other visualization is clicked
 		lastClickedNode: ''
@@ -96,8 +97,20 @@ var treeLib = (function (d3) {
 		// lastClickedNode: ''
 		container.type = type;
 
+		computeExposedNodes(container);
+		// set the callback
+
+	}
+
+	function setLastClickedNode(node, container) {
+		container.lastClickedNode = createPathId(node, container.id);
+	}
+
+	function computeExposedNodes(container) {
 		// find all the exposed nodes
 		// collection of ids
+		var id = container.id;
+
 		var idsForRestr = []
 
 		var exposedNodes = d3.select('#' + id).selectAll('.' + id).filter(function(el) {
@@ -109,20 +122,18 @@ var treeLib = (function (d3) {
 		});
 
 		container.exposedNodes = exposedNodes;
-		
+		container.exposedIds = idsForRestr;
 		container.pathRestr = idsForRestr.map(el => el.split('-').length).filter(onlyUnique).length;
-		// set the callback
-
 	}
 
 	// create a path to use as a class
 	// clean the names?
-	function createPathId(node, container) {
+	function createPathId(node, containerId) {
 		var pathArr = crtPathArray(node).reverse();
 
-		var pathClass = [container].concat(pathArr).join('-');
+		var pathId = [containerId].concat(pathArr).join('-');
 
-		return pathClass;
+		return pathId;
 	}
 
 	// takes a d3 data object that has the node and its path, nested
@@ -176,14 +187,66 @@ var treeLib = (function (d3) {
 	function getPathRestriction() {}
 
 	function linkedClick(node, otherContainerId) {
+		config.containers.forEach(container => {
+			computeExposedNodes(container);
+			setLastClickedNode(node, container);
+		});
+		
 		var pathId = createPathId(node, otherContainerId);
-		// debugger
-		d3.select('#' + pathId).dispatch('linkedClick');
-		// close if collapsible tree
-		// always display the same mount of nodes?
-		// stop the close if the more restricted graph is navigating to the root
-		// don't close if displaying all ten children
-		//
+
+		var containersObj = getContainersObj(otherContainerId);
+
+		clickLogic(node, pathId, containersObj)
+	}
+
+	function clickLogic(node, pathId, containersObj) {
+		var otherType = containersObj.other.type;
+
+		var originalType = containersObj.original.type;
+
+		if(originalType == 'Zoomable_Treemap' && otherType == 'Collapsible_Tree'){
+			clickActionZTCT(node, pathId, containersObj)
+		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+
+		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+			
+		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+			
+		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+			
+		}
+	}
+
+	function clickActionZTCT(node, pathId, containersObj) {		
+		var originalPathId = containersObj.original.lastClickedNode;
+
+		var grandparentClicked = d3.select('#' + originalPathId + '.grandparent').empty() == false;
+
+		var rootClicked = grandparentClicked ? (d3.select('#' + originalPathId).attr('data') == null) : false;
+		
+		if (rootClicked)
+			return
+		else if (grandparentClicked){
+			var grandparentData = d3.select('#' + originalPathId).attr('data');
+			var gDLength = grandparentData.split('-').length;
+			var nodeToClose = grandparentData.split('-')[gDLength - 1];
+			var actualPathId = pathId + '-' + nodeToClose;
+			
+			d3.select('#' + actualPathId).dispatch('linkedClick');			
+		} else
+			d3.select('#' + pathId).dispatch('linkedClick');
+	}
+
+	function pathIsExposed(pathId, containers) {
+		return containers.other.exposedIds.includes(pathId);
+	}
+
+	function getContainersObj(otherContainerId) {
+		var otherContainer = config.containers.find(con => con.id == otherContainerId);
+
+		var originalContainer = config.containers.find(con => con.id != otherContainerId);
+
+		return {other: otherContainer, original: originalContainer};
 	}
 
 	function linkHighlight() {}
@@ -202,6 +265,10 @@ var treeLib = (function (d3) {
 	    return self.indexOf(value) === index;
 	}
 
+	function getLastClicked(containerId) {
+		return config.containers.find(cont => cont.id == containerId).lastClickedNode;
+	}
+
 	return {
 		buildConfig: function(ids) {
 			buildConfig(ids);
@@ -211,7 +278,7 @@ var treeLib = (function (d3) {
 			updateConfig(type, id);
 		},
 
-		config() {
+		config: function() {
 			return config;
 		},
 
@@ -227,8 +294,12 @@ var treeLib = (function (d3) {
 			linkedClick(node, otherContainerId);
 		},
 
-		linkHighlight() {
+		linkHighlight: function() {
 			debugger;
+		},
+
+		getLastClicked: function(containerId) {
+			return getLastClicked(containerId);
 		}
 	}
 

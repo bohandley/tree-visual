@@ -178,8 +178,15 @@
   5:30pm-8:00pm
     refactor adding the g1 or g2 to the id
     adding the position as a class allows us to get around that g or circle selectall
-    begin adding linkedClick to  zoomable tree and collapsible tree
+    begin adding linkedClick to zoomable tree and collapsible tree
     
+5/20/2020
+  4:30pm-8:30pm
+    refactor getColor() to not need to look for "flare"
+    Fixed the issue with authors names
+    Build the correct function between zoomable treemap and collapsible tree
+      one way from zoomable treemap to collapsible tree
+      
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions
