@@ -277,39 +277,80 @@ var treeLib = (function (d3) {
 
 	function clickActionCTZT(node, pathId, containersObj) {	
 		var originalPathId = containersObj.original.lastClickedNode;
-		//NEXT need to close all open nodes to the root, then open to the clicked node
-			// this node is not exposed in the zoomable treemap until we get to the root
+
 		var rootClicked = isRoot(node);
 
 		var willClose = node.children;
+		
+		// if the path id is contained within the longest exposed node id, it is in the same path
+		var notInExposedPath = !partialPathIsExposed(pathId, containersObj);
 
 		if (rootClicked) // do not close the nodes that match the zoomable treemap
 			return;
-		else if (willClose) { // when closing collapsible tree, find the target grandparent - 1 node and hit the grandparent until we get there
+		else if (notInExposedPath) {
+			// find the target array we want to close and zoom out of
+			var exposedArrayToClose = containersObj.original.exposedNodes._groups[0].filter(el => el.id.split("-").length > 3)
+			var exposedPathArrayToClose = exposedArrayToClose[0].id.split('-');
+			exposedPathArrayToClose.pop();
+			var exposedPathIdToClose = exposedPathArrayToClose.join('-');
+
+			// this takes care of collapsing all children of exposed node to close
+			d3.select('#' + exposedPathIdToClose).dispatch('linkedClick');
+
+			linkedEventPromise(exposedPathIdToClose, pathId, 1);
+		} else if (willClose) { // when closing collapsible tree, find the target grandparent - 1 node and hit the grandparent until we get there
+			linkedEventPromise(pathId);
+		} else {
+			d3.select('#' + pathId).dispatch('linkedClick');	
+		}
+
+		function linkedEventPromise(pathId, actualPathId, clickNewNode=0) {
+			// need to get the exposed grandparent id which is one node less than the pathId
 			var targetGrandparentArray = pathId.split('-');
 			
 			targetGrandparentArray.pop();
 
-			var exposedGrandparentLength = d3.select('.grandparent').attr('id').split('-').length;
+			var exposedGrandparentLength = d3.select('.grandparent').attr('id').split('-').length+1;
+
+			// clicking a new node means moving to a new path, so we add 1 to the exposed gr length
+			// we also need to know when to zoom in, so find the amount of clicks that need to happen before we click the new path
+			if (clickNewNode) {
+				var promiseClicks = 0;
+				exposedGrandparentLength + 1;
+				var neededClicksForNewPath = exposedGrandparentLength - targetGrandparentArray.length
+			}
 
 			var timeLength = 800;
-			
-			for (var i = exposedGrandparentLength, p = Promise.resolve(); i >= targetGrandparentArray.length ; i--){
+
+			for (var i = exposedGrandparentLength, p = Promise.resolve(); i >= targetGrandparentArray.length; i--){
                 p = p.then(_ => new Promise(resolve =>{
-					d3.select('.grandparent').dispatch('linkedClick');
+                	// if we've reached the root, we are ready to zoom up
+                	var readyToZoomIntoNewPath = (clickNewNode && promiseClicks == neededClicksForNewPath);
+
+                	if (readyToZoomIntoNewPath)
+                		d3.select('#' + actualPathId).dispatch('linkedClick');
+                	else
+						d3.select('.grandparent').dispatch('linkedClick');
 
 					return setTimeout(function(){
+						promiseClicks++
+						
 	                    return resolve();   
 	                }, timeLength);
 				}));
 			}
-		} else {
-			d3.select('#' + pathId).dispatch('linkedClick');	
+
 		}	
 	}
 
-	function pathIsExposed(pathId, containers) {
-		return containers.other.exposedIds.includes(pathId);
+	function pathIsExposed(pathId, containersObj) {
+		return containersObj.other.exposedIds.includes(pathId);
+	}
+
+	function partialPathIsExposed(pathId, containersObj) {
+		return containersObj.other.exposedIds.some(el => {
+			return el.includes(pathId);
+		});
 	}
 
 	function getContainersObj(otherContainerId) {
@@ -372,6 +413,14 @@ var treeLib = (function (d3) {
 		else
 			return false;
 	}
+
+	function collapse(d) {
+        if (d.children) {
+            d._children = d.children;
+            d._children.forEach(collapse);
+            d.children = null;
+        }
+    }
 
 	return {
 		buildConfig: function(ids) {
