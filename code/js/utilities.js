@@ -133,8 +133,12 @@ function displaySelectedNode(d){
 	node2.classed("selected-node", true);
 
 	var node = buildId(d).reverse().join("-");
+	displayedNode(node);
+}
+
+function displayedNode(node) {
 	d3.select("#selected-node").html("")
-	d3.select("#selected-node").html("Clicked node: " + node);
+	d3.select("#selected-node").html("Displayed node: " + node);
 }
 
 function getOtherGraphType(position2){

@@ -125,6 +125,7 @@ function draw_zoomable_treemap(position){
                 .classed(position1, true)
                 .on("mouseover", d => mouseoverLinking(position1, position2, d, 1))
                 .on("mouseout", d => mouseoutLinking(position1, position2, d, 1))
+                .on("linkedClick", linkedClickTransition)
                 .on("click", transition)
                 .on("drill", d => drillTransition(d))
                 .select("text")
@@ -306,11 +307,12 @@ function draw_zoomable_treemap(position){
 
                 //         // cfg.change = 0;
                 //     }
-                // } 
-                    
-                displaySelectedNode(d);
+                // }
+                
                 if (transitioning || !d) return;
                 transitioning = true;
+                treeLib.transitioning(true);
+                displaySelectedNode(d);
 
                 var g2 = display(d),
                     t1 = g1.transition().duration(750),
@@ -339,6 +341,7 @@ function draw_zoomable_treemap(position){
                 t1.remove().each("end", function() {
                     svg.style("shape-rendering", "crispEdges");
                     transitioning = false;
+                    treeLib.transitioning(false);
                 });
             }
 
@@ -379,9 +382,11 @@ function draw_zoomable_treemap(position){
 
             function linkedClickTransition(d) {                    
                 
-
                 if (transitioning || !d) return;
                 transitioning = true;
+
+                // prevent events in other containers when ZT is transitioning
+                treeLib.transitioning(true);
 
                 var g2 = display(d),
                     t1 = g1.transition().duration(750),
@@ -410,6 +415,7 @@ function draw_zoomable_treemap(position){
                 t1.remove().each("end", function() {
                     svg.style("shape-rendering", "crispEdges");
                     transitioning = false;
+                    treeLib.transitioning(false);
                 });
             }
             return g;

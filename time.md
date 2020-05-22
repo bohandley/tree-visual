@@ -186,7 +186,10 @@
     Fixed the issue with authors names
     Build the correct function between zoomable treemap and collapsible tree
       one way from zoomable treemap to collapsible tree
-      
+
+5/21/2020
+  4:30pm-
+    
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions

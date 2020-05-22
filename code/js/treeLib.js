@@ -97,16 +97,26 @@ var treeLib = (function (d3) {
 		// lastClickedNode: ''
 		container.type = type;
 
-		computeExposedNodes(container);
+		// order is important, pathRestr depends on exposed Ids
+		computeExposedNodesAndIds(container);
+		computePathRestr(container);
 		// set the callback
 
+	}
+
+	function updateTransitioning(val) {
+		config.transitioning = val;
 	}
 
 	function setLastClickedNode(node, container) {
 		container.lastClickedNode = createPathId(node, container.id);
 	}
 
-	function computeExposedNodes(container) {
+	function computePathRestr(container) {
+		container.pathRestr = container.exposedIds.map(el => el.split('-').length).filter(onlyUnique).length;
+	}
+
+	function computeExposedNodesAndIds(container) {
 		// find all the exposed nodes
 		// collection of ids
 		var id = container.id;
@@ -123,7 +133,7 @@ var treeLib = (function (d3) {
 
 		container.exposedNodes = exposedNodes;
 		container.exposedIds = idsForRestr;
-		container.pathRestr = idsForRestr.map(el => el.split('-').length).filter(onlyUnique).length;
+		
 	}
 
 	// create a path to use as a class
@@ -186,17 +196,33 @@ var treeLib = (function (d3) {
 	// but if the sunburst and 
 	function getPathRestriction() {}
 
-	function linkedClick(node, otherContainerId) {
+	// update the exposed nodes, ids, pathRestr, and last clicked node
+	function updateConfigContainers(node) {
 		config.containers.forEach(container => {
-			computeExposedNodes(container);
+			computeExposedNodesAndIds(container);
+			computePathRestr(container);
 			setLastClickedNode(node, container);
 		});
+	}
+
+	function linkedClick(node, otherContainerId) {
+		// check if transitioning
+		if (isTransitioning())
+			return;
 		
+		// update the exposed nodes, ids and path restr for each container
+		updateConfigContainers(node);
+		
+		// build the pathId for the container that should respond
 		var pathId = createPathId(node, otherContainerId);
 
+		// build an object that makes it easier to access the containers
+		// with keys original(first clicked) and other(the container that responds)
 		var containersObj = getContainersObj(otherContainerId);
 
+		// function that determines how the other container responds to the original container's click
 		clickLogic(node, pathId, containersObj)
+		
 	}
 
 	function clickLogic(node, pathId, containersObj) {
@@ -206,6 +232,18 @@ var treeLib = (function (d3) {
 
 		if(originalType == 'Zoomable_Treemap' && otherType == 'Collapsible_Tree'){
 			clickActionZTCT(node, pathId, containersObj)
+		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+
+		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+			
+		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+			
+		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+			
+		}
+		
+		if(originalType == 'Collapsible_Tree' && otherType == 'Zoomable_Treemap'){
+			clickActionCTZT(node, pathId, containersObj)
 		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
 
 		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
@@ -237,6 +275,39 @@ var treeLib = (function (d3) {
 			d3.select('#' + pathId).dispatch('linkedClick');
 	}
 
+	function clickActionCTZT(node, pathId, containersObj) {	
+		var originalPathId = containersObj.original.lastClickedNode;
+		//NEXT need to close all open nodes to the root, then open to the clicked node
+			// this node is not exposed in the zoomable treemap until we get to the root
+		var rootClicked = isRoot(node);
+
+		var willClose = node.children;
+
+		if (rootClicked) // do not close the nodes that match the zoomable treemap
+			return;
+		else if (willClose) { // when closing collapsible tree, find the target grandparent - 1 node and hit the grandparent until we get there
+			var targetGrandparentArray = pathId.split('-');
+			
+			targetGrandparentArray.pop();
+
+			var exposedGrandparentLength = d3.select('.grandparent').attr('id').split('-').length;
+
+			var timeLength = 800;
+			
+			for (var i = exposedGrandparentLength, p = Promise.resolve(); i >= targetGrandparentArray.length ; i--){
+                p = p.then(_ => new Promise(resolve =>{
+					d3.select('.grandparent').dispatch('linkedClick');
+
+					return setTimeout(function(){
+	                    return resolve();   
+	                }, timeLength);
+				}));
+			}
+		} else {
+			d3.select('#' + pathId).dispatch('linkedClick');	
+		}	
+	}
+
 	function pathIsExposed(pathId, containers) {
 		return containers.other.exposedIds.includes(pathId);
 	}
@@ -261,12 +332,45 @@ var treeLib = (function (d3) {
 		return _out;
 	}
 
+	function merge(oldObject, newObject, strict) {
+		var obj = oldObject;
+		for (var key in newObject) {
+			if (typeof obj[key] === 'object' && obj[key] !== null) {
+				merge(obj[key], newObject[key]);
+			} else {
+				if (strict) {
+					if (obj.hasOwnProperty(key)) {
+						obj[key] = newObject[key];
+					}
+				} else {
+					obj[key] = newObject[key];
+				}
+			}
+		}
+		return obj;
+	}
+
 	function onlyUnique(value, index, self) { 
 	    return self.indexOf(value) === index;
 	}
 
 	function getLastClicked(containerId) {
 		return config.containers.find(cont => cont.id == containerId).lastClickedNode;
+	}
+
+	function isTransitioning() {
+		return config.transitioning;
+	}
+
+	function getConfigContainer(containerId) {
+		return config.containers.find(el => el.id == containerId);
+	}
+
+	function isRoot(node) {
+		if (node.parent == null)
+			return true;
+		else
+			return false;
 	}
 
 	return {
@@ -300,7 +404,31 @@ var treeLib = (function (d3) {
 
 		getLastClicked: function(containerId) {
 			return getLastClicked(containerId);
+		},
+
+		transitioning: function(val) {
+			updateTransitioning(val);
+		},
+
+		isTransitioning: function() {
+			var check = isTransitioning();
+
+			// if transitioning, let the use
+			if (check)
+				console.log('Transitioning...');
+
+			return check;
+		},
+
+		getConfigContainer: function(containerId) {
+			return getConfigContainer(containerId);
+		},
+
+		isRoot: function(d) {
+			return isRoot(d);
 		}
+
+
 	}
 
 // pull in d3

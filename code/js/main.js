@@ -102,6 +102,8 @@ function change_author(){
     var objD = document.getElementById("dataDropdown");
     // debugger
 
+    displayedNode(objD.value);
+
     FileName = "../datasets/" + objD.value + ".txt";
 
     document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
@@ -212,6 +214,9 @@ window.onload = function(){
     color = d3.scaleOrdinal(d3.schemeCategory20.map(fader));
     // debugger
     var objD = document.getElementById("dataDropdown");
+
+    displayedNode(objD.value);
+
     FileName = "../datasets/" + objD.value + ".txt";
 
     document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;

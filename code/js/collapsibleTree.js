@@ -87,13 +87,26 @@ function draw_collapsible_tree(position){
                     //     return "leaf-" + cleanNodeId(d.name);
                     // else
                     //     return id;
-                    return buildNodeOrLeafId(d, position1);
+                    return treeLib.pathId(d, position1);
+                    // return buildNodeOrLeafId(d, position1);
+                })
+                .attr("data", d => {
+                    return treeLib.getLastClicked(position1);
                 })
                 //.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
                 .on("linkedClick", click)
                 .on("drill", click)
                 .on("click", function(d){
                     displaySelectedNode(d);
+
+                    var visType = treeLib.getConfigContainer(position2).type,
+                        isRoot = treeLib.isRoot(d);
+                    // prevent clicks
+                    if (visType == "Zoomable_Treemap" && isRoot)
+                        return;
+
+                    if(treeLib.isTransitioning())
+                        return;
 
                     treeLib.linkedClick(d, position2);
                     // do not allow CT click events or responsiveness if clicking a leaf
@@ -234,8 +247,7 @@ function draw_collapsible_tree(position){
             // this is where the nodes are closed
             // if d.children, it closes the nodes
             if (d.children) {
-                d._children = d.children;
-                d.children = null;
+                collapse(d);
             } else {
                 d.children = d._children;
                 d._children = null;
