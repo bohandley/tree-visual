@@ -232,8 +232,8 @@ var treeLib = (function (d3) {
 
 		if(originalType == 'Zoomable_Treemap' && otherType == 'Collapsible_Tree'){
 			clickActionZTCT(node, pathId, containersObj)
-		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
-
+		} else if (originalType == 'Zoomable_Treemap' && otherType == 'Pack') {
+			clickActionZTPack(node, pathId, containersObj)
 		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
 			
 		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
@@ -273,6 +273,19 @@ var treeLib = (function (d3) {
 			d3.select('#' + actualPathId).dispatch('linkedClick');			
 		} else
 			d3.select('#' + pathId).dispatch('linkedClick');
+	}
+
+	function clickActionZTPack(node, pathId, containersObj) {
+		debugger;
+		
+		var originalPathId = containersObj.original.lastClickedNode;
+
+		// var rootClicked = isRoot(node);
+
+		// 1. normal click/ zooms out to the correct node when grandparent clicked
+		d3.select('#' + pathId).dispatch('linkedClick');
+
+		// var willClose = node.children;
 	}
 
 	function clickActionCTZT(node, pathId, containersObj) {	
@@ -400,7 +413,12 @@ var treeLib = (function (d3) {
 	}
 
 	function isTransitioning() {
-		return config.transitioning;
+		var transitioningCheck = config.transitioning;
+
+		if (transitioningCheck == true)
+			console.log('Transitioning...');
+		
+		return transitioningCheck;
 	}
 
 	function getConfigContainer(containerId) {
@@ -408,7 +426,9 @@ var treeLib = (function (d3) {
 	}
 
 	function isRoot(node) {
-		if (node.parent == null)
+		if (!node) // root of zoomable treemap
+			return true;
+		else if (node.parent == null) // root of everything else
 			return true;
 		else
 			return false;
@@ -420,6 +440,20 @@ var treeLib = (function (d3) {
             d._children.forEach(collapse);
             d.children = null;
         }
+    }
+
+    function preventEvent(node, otherContainerId) {
+    	var visType = getConfigContainer(otherContainerId).type,
+			isRoot = treeLib.isRoot(node);
+			
+		// prevent clicks
+		if (visType == "Zoomable_Treemap" && isRoot)
+			return true; //stop event
+
+		if (isTransitioning())
+			return true; // stop event
+
+        return false;
     }
 
 	return {
@@ -444,6 +478,11 @@ var treeLib = (function (d3) {
 		},
 
 		linkedClick: function(node, otherContainerId) {
+			var prevent = preventEvent(node, otherContainerId);
+
+			if (prevent)
+				return 'prevent';
+
 			linkedClick(node, otherContainerId);
 		},
 

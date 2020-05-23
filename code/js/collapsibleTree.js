@@ -99,16 +99,10 @@ function draw_collapsible_tree(position){
                 .on("click", function(d){
                     displaySelectedNode(d);
 
-                    var visType = treeLib.getConfigContainer(position2).type,
-                        isRoot = treeLib.isRoot(d);
-                    // prevent clicks
-                    if (visType == "Zoomable_Treemap" && isRoot)
-                        return;
+                    var response = treeLib.linkedClick(d, position2);
 
-                    if(treeLib.isTransitioning())
+                    if (response == 'prevent')
                         return;
-
-                    treeLib.linkedClick(d, position2);
                     // do not allow CT click events or responsiveness if clicking a leaf
                     // if(d3.select(this).attr("id").includes("leaf"))
                     //     return;

@@ -40,21 +40,27 @@ function draw_pack(position){
             .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
             .classed(position1, true)
             .attr("id", function(d){
-                return buildNodeOrLeafId(d, position1);
+                return treeLib.pathId(d, position1);
+                // return buildNodeOrLeafId(d, position1);
             })
             .style("fill", d => getColor(d, color)) //returns an rbg val
             .style("stroke", "white")
             .style("stroke", 1)
+            .on("linkedClick", function(d) {
+                if (focus !== d) zoom(d), d3.event.stopPropagation(); 
+            })
             .on("click", function(d) { 
-                var response;
+                debugger
+                treeLib.linkedClick(d, position2);
+                // var response;
                 
-                if(otherGraphType == "Zoomable_Treemap")
-                    response = zoomableTreeResponse(d, position1, position2, "Pack");
-                else if(otherGraphType == "Collapsible_Tree") 
-                    response = treeResponse(d, position1, position2);
+                // if(otherGraphType == "Zoomable_Treemap")
+                //     response = zoomableTreeResponse(d, position1, position2, "Pack");
+                // else if(otherGraphType == "Collapsible_Tree") 
+                //     response = treeResponse(d, position1, position2);
                 
-                if(response == 0)
-                    return;
+                // if(response == 0)
+                //     return;
 
                 if (focus !== d) zoom(d), d3.event.stopPropagation(); 
             })
@@ -94,23 +100,27 @@ function draw_pack(position){
         var node = g.selectAll("circle,text");
 
         svg.style("background", "white")
+            .on("linkedClick", function() {
+                zoom(root);
+            })
             .on("click", function() {
+                debugger;
+                treeLib.linkedClick(root, position2);
+                // var response;
                 
-                var response;
-                
-                if(otherGraphType == "Zoomable_Treemap"){
-                    response = zoomableTreeResponse(root, position1, position2, "", 1);
-                } else if(otherGraphType == "Collapsible_Tree"){ 
-                    if (cfg.zoomZooming){
-                        console.log("Zooming in progress...")
-                        response = 0;
-                    } else {
-                        response = 1;
-                    }
-                }
+                // if(otherGraphType == "Zoomable_Treemap"){
+                //     response = zoomableTreeResponse(root, position1, position2, "", 1);
+                // } else if(otherGraphType == "Collapsible_Tree"){ 
+                //     if (cfg.zoomZooming){
+                //         console.log("Zooming in progress...")
+                //         response = 0;
+                //     } else {
+                //         response = 1;
+                //     }
+                // }
 
-                if(response == 0)
-                    return;
+                // if(response == 0)
+                //     return;
 
                 zoom(root);                
             });

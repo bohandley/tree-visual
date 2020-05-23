@@ -188,8 +188,14 @@
       one way from zoomable treemap to collapsible tree
 
 5/21/2020
-  4:30pm-
-    
+  4:30pm-9:30pm
+    Build almost all of the functioning from collapsible tree to zoomable treemap
+
+5/22/2020
+  4:30pm-8:30pm
+    Complete all functioning of collapsible tree and zoomable treemap
+    Begin building zoomable tree and pack functioning
+
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions
