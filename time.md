@@ -256,11 +256,27 @@
     restrictOnReturn() levels 2
 
 6/16/2020
-  4:30pm-
+  4:30pm-9:30pm
     show only exposed nodes from sunburst that correspond 
       to the exposed nodes in CT, i.e. hide nodes in sunburst even though they are on the page
       Where can we do the visibility hidden?
-      
+
+6/17/20
+  4:30pm-10:00pm
+    complete all linking between sunburst and collapsible tree
+    complete partial display for sunburst
+
+6/19/20
+  4:30pm-8:30pm
+    begin linking collapsible tree and pack
+    complete linking collapsible tree and pack
+      notable issues
+        in pack, click something that has exposed children in CT, do close the 
+          direct children of the link, leave them exposed but close all children beyond
+        jumping paths, close all extended paths in CT
+        click same node in pack, zoom to root in CT
+
+
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions
