@@ -43,15 +43,20 @@ function draw_pack(position){
                 return treeLib.pathId(d, position1);
                 // return buildNodeOrLeafId(d, position1);
             })
-            .style("fill", d => getColor(d, color)) //returns an rbg val
+            .style("fill", d => {
+                if (!d.parent)
+                    return "#e6e6e6";
+                else
+                    return getColor(d, color);
+                // getColor(d, color)
+            }) //returns an rbg val
             .style("stroke", "white")
             .style("stroke", 1)
             .on("linkedClick", function(d) {
                 if (focus !== d) zoom(d), d3.event.stopPropagation(); 
             })
             .on("click", function(d) { 
-                debugger
-                treeLib.linkedClick(d, position2);
+                    
                 // var response;
                 
                 // if(otherGraphType == "Zoomable_Treemap")
@@ -62,7 +67,20 @@ function draw_pack(position){
                 // if(response == 0)
                 //     return;
 
-                if (focus !== d) zoom(d), d3.event.stopPropagation(); 
+                // if it is a new node, zoom to it
+                //     otherwise, let the event bubble up to the root
+
+                if (focus !== d) {
+                    // debugger
+                    var response = treeLib.linkedClick(d, position2);
+
+                    // 1. prevent the response if interacting with zoomable treemap and zt is transitioning
+                    if (response == 'prevent')
+                        return;
+
+                    zoom(d); 
+                    d3.event.stopPropagation(); 
+                }
             })
             .on("mouseover", d => mouseoverLinking(position1, position2, d))
             .on("mouseout", d => mouseoutLinking(position1, position2, d));
@@ -95,7 +113,15 @@ function draw_pack(position){
             .attr("class", "label")
             .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
             .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
-            .text(function(d) { return d.data.name; });
+            .text(function(d) { 
+                var n = d.data.name;
+                
+                if (treeLib.isLeaf(d))
+                    n = n.split(' ')[0] + '...';
+                    
+                return n;
+                // return d.data.name; 
+            });
 
         var node = g.selectAll("circle,text");
 
@@ -104,8 +130,10 @@ function draw_pack(position){
                 zoom(root);
             })
             .on("click", function() {
-                debugger;
-                treeLib.linkedClick(root, position2);
+                var response = treeLib.linkedClick(root, position2);
+
+                if (response == 'prevent')
+                    return;
                 // var response;
                 
                 // if(otherGraphType == "Zoomable_Treemap"){

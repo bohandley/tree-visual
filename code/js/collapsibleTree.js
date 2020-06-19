@@ -91,7 +91,7 @@ function draw_collapsible_tree(position){
                     // return buildNodeOrLeafId(d, position1);
                 })
                 .attr("data", d => {
-                    return treeLib.getLastClicked(position1);
+                    return treeLib.getCurrentClicked(position1);
                 })
                 //.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
                 .on("linkedClick", click)
@@ -99,6 +99,9 @@ function draw_collapsible_tree(position){
                 .on("click", function(d){
                     displaySelectedNode(d);
 
+                    // prevent events when
+                    // 1. zoomable treemap is other and trying to collapse to root
+                    // 2. zoomable treemap is transitioning
                     var response = treeLib.linkedClick(d, position2);
 
                     if (response == 'prevent')
@@ -131,7 +134,14 @@ function draw_collapsible_tree(position){
             nodeEnter.append("circle")
                 .attr("class", "node-size")
                 .attr("r", 1e-6)
-                .style("fill", d => getColor(d, color))//returns an rbg val
+                .style("fill", d => { 
+                    if (!d.parent) {
+                        return "#e6e6e6";
+                    } else {
+                        return getColor(d, color);    
+                    }
+                    
+                })//returns an rbg val
                 .on("mouseover", d => mouseoverLinking(position1, position2, d))
                 .on("mouseleave", d => mouseoutLinking(position1, position2, d));
 
@@ -140,12 +150,21 @@ function draw_collapsible_tree(position){
                 .attr("dy", ".35em")
                 .attr("text-anchor", "start")
                 //.attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
-                .text(function(d) { return d.name; })
+                .text(function(d) { 
+                    if (treeLib.isLeaf(d))
+                        return d.name.split(' ')[0] + '...';
+                    else
+                        return d.name; 
+                })
                 .style("fill-opacity", 1e-6);
 
 
             nodeEnter.append("title")
                 .text(function(d) {
+                    // if (treeLib.isLeaf(d))
+                    //     return d.name.split(' ')[0] + '...';
+                    // else
+                        return d.name;
                     // if(d.name.slice(0, 2) == "HW"){
                     //     return "Correlation: " + d.correlation  + "\n" + "Difficulty Index: " + d.dindex + "\n" + "Item ID: " + d.itemID 
                     // }else{
@@ -164,7 +183,19 @@ function draw_collapsible_tree(position){
                 })
           
             nodeUpdate.select("circle")
-                .attr("class", "node-size")
+                .attr("class", function(d) {
+                    var pathId = treeLib.pathId(d, position1);
+
+                    cls = "node-size";
+                    // add the class if it was already there from the treeLib code
+
+                    cls = treeLib.addSunburstBackButtonClass(pathId, cls);
+                    // if (d3.select("#" + pathId).select("circle").attr("class").includes('sunburst-back-button')){
+                    //     cls += ' sunburst-back-button';
+                    // }
+
+                    return cls;//"node-size"
+                })
                 .attr("r", function(d) {
                     // return 5;
                     return appearance.nodeSize;
@@ -185,7 +216,12 @@ function draw_collapsible_tree(position){
                     // return 2.5; 
                 })
                 .style("fill", function(d) {
-                    return getColor(d, color);      
+                    if (!d.parent) {
+                        return "#e6e6e6";
+                    } else {
+                        return getColor(d, color);    
+                    }
+                    // return getColor(d, color);      
                 })
             
             nodeUpdate.select("text")

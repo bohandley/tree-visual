@@ -196,6 +196,71 @@
     Complete all functioning of collapsible tree and zoomable treemap
     Begin building zoomable tree and pack functioning
 
+5/24/2020
+  12:00pm-5:00pm
+    begin work on pack and zoomable tree
+    complete most, debugg zooming back
+
+5/25/2020
+  8:00pm-11:00pm
+    complete all work on pack and zoomable tree
+
+5/26/2020
+  7:00pm-11:30pm
+    begin work on sunburst and zoomable tree
+      sunburst needs the color for the return button to be the same
+      debugg highlighting, ZT is displaying two nodes
+
+5/28/2020
+  4:30pm-8:00pm
+    complete work on sunburst and zoomable tree
+    begin work on collapsible tree and sunburst
+      debug closing nodes when moving to other branches
+      do we want to close when we zoom back to the node?
+      we could show all the nodes???
+
+5/29/2020
+  4:30pm-8:30pm
+    do we show all the nodes in collapsible tree for things like the sunburst, pack?
+      it gets very busy
+    solve leaf issue with long node names
+    display leaf name shortened(not tooltip) in:
+      colapsible tree, zoomable treemap, radial tree, and pack
+    complete one way event linking with collapsible tree and sunburst
+    complete one way linking from sunburst back to collapsible tree
+    fix the highlighting with the leaf issue
+
+6/6/2020
+  7:00pm-10:00pm
+    restrict sunburst to cetain levels for ZT and CT
+      only for root and traveling away and back to root
+
+6/7/2020
+  10:00am-11:00pm
+  8:30pm-10:00pm
+    Consider restricting Sunburst on CT as we expand the paths for CT
+      show one level more but do not click on the node... 
+      How can we show what needs to be shown by the node that was clicked?
+      Currently we show the whole path but collapsible tree may show a partial path
+      Collapsible tree would then have to everything in a child of root
+      Sunburst: show level by what is exposed in CT
+      CT: show all nodes exposed for a branch if paired with sunburst?
+
+      ON CLICK OF SUNBURST if >3 do not click action, click to 3 and expose another level
+
+6/8/2020
+  7:30pm-11:00pm
+  To reset sunburst to new behavior
+    preventEvent()
+    clickActionCTSunburst()
+    restrictOnReturn() levels 2
+
+6/16/2020
+  4:30pm-
+    show only exposed nodes from sunburst that correspond 
+      to the exposed nodes in CT, i.e. hide nodes in sunburst even though they are on the page
+      Where can we do the visibility hidden?
+      
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions

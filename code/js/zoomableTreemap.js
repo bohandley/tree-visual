@@ -120,7 +120,7 @@ function draw_zoomable_treemap(position){
                     // return cleanNodeId(buildPositionId(d, position1))
                 })
                 .attr("data", d => {
-                    return treeLib.getLastClicked(position1);
+                    return treeLib.getCurrentClicked(position1);
                 })
                 .classed(position1, true)
                 .on("mouseover", d => mouseoverLinking(position1, position2, d, 1))
@@ -129,7 +129,7 @@ function draw_zoomable_treemap(position){
                 .on("click", transition)
                 .on("drill", d => drillTransition(d))
                 .select("text")
-                    .text(name(d));
+                    .text(parentName(d));
 
             var g1 = svg1.insert("g", ".grandparent")
                 .datum(d)
@@ -156,7 +156,7 @@ function draw_zoomable_treemap(position){
             g.filter(function(d) { return d._children; })
                 .classed("children zoomable " + position1, true)
                 .on("linkedClick", d => linkedClickTransition(d))
-                .on("drill", d => drillTransition(d))
+                // .on("drill", d => drillTransition(d))
                 .on("click", d => transition(d));
 
             g.selectAll(".child")
@@ -171,11 +171,28 @@ function draw_zoomable_treemap(position){
                 .on("mouseout", d => mouseoutLinking(position1, position2, d))
                 .call(rect)
             .append("title")
-                .text(function(d) { return d.name + "\n" +formatNumber(d.value); });
+                .text(function(d) { 
+                    var n = d.name;
+                    
+                    // do we want to shorten the tooltip??
+                    // if (treeLib.isLeaf(d))
+                    //     n = n.split(' ')[0] + '...';
+                        
+                    return n + "\n" +formatNumber(d.value); 
+                });
 
             g.append("text")
                 .attr("dy", ".75em")
-                .text(function(d) { return d.name; })
+                .text(function(d) { 
+                    var n = d.name;
+                    // debugger;
+                    if (treeLib.isLeaf(d))
+                        n = n.split(' ')[0] + '...';
+                        
+                    return n;
+
+                    // return d.name; 
+                })
                 .call(text);
 
             function transition(d) {
@@ -439,10 +456,28 @@ function draw_zoomable_treemap(position){
         }
 
         function name(d) {
+            // debugger
             return d.parent
                 ? name(d.parent) + "." + d.name
                 : d.name;
         }
+
+        function parentName(d) {
+            var n = name(d);
+
+            var nameArr = name(d).split('.');
+
+            
+            // debugger
+            // if (nameArr.length > 1){// && nameArr.length > 1) {
+            //     nameArr.pop();
+            //     n += ' (zoom back to ' + nameArr.join('.') + ')';
+            // } //else if (nameArr.length != 0 && nameArr == 1) {
+
+            //}
+            return n
+        }
+
 
         d3.select("svg#"+position1).dispatch('doneDrawing');
     });

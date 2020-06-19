@@ -1,38 +1,5 @@
 
 function getColor(d, color){
-	// graphs with d.data.name
-		// treemap, radial tree, pack, sunburst
-	// graphs with d.name
-		// zoomable tree, collapsible tree
-	// if(!d.parent)
-	// 	debugger;
-
-	// if(d.data){
-	// 	if(d.parent && d.parent.data.name == "flare"){
-	//         //console.log(d.data.name)
-	//         return color(parseInt(d.data.name));
-	//     }
-	//     else if(d.parent){
-	//         while(d.parent.data.name != "flare"){
-	//             d = d.parent;
-	//         }
-	//         return color(parseInt(d.data.name));
-	//     }
-	//     return color(d.data.name);
- //   } else {
-
-	// 	if(d.parent && d.parent.name == "flare"){
-	//         //console.log(d.data.name)
-	//         return color(parseInt(d.name));
-	//     }
-	//     else if(d.parent){
-	//         while(d.parent.name != "flare"){
-	//             d = d.parent;
-	//         }
-	//         return color(parseInt(d.name));
-	//     }
-	//     return color(d.name);
-	// }
 	if(d.data){
 		if(d.parent && !d.parent.parent){ //d.parent.data.name == "flare"){
 	        //console.log(d.data.name)

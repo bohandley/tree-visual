@@ -10,6 +10,7 @@ var treeLib = (function (d3) {
 		exposedIds: [],
 		highlightedNode: '', // the current highlighted node
 		callback: function() {}, // the callback for when the other visualization is clicked
+		currentClickedNode: '',
 		lastClickedNode: ''
 	};
 
@@ -84,7 +85,7 @@ var treeLib = (function (d3) {
 	}
 
 	function updateConfig(type, id) {
-		container = config.containers.find(el => {
+		var container = config.containers.find(el => {
 			return el.id == id;
 		});
 
@@ -96,24 +97,37 @@ var treeLib = (function (d3) {
 		// callback: function() {}, // the callback for when the other visualization is clicked
 		// lastClickedNode: ''
 		container.type = type;
-
+		container.currentClickedNode = '';
 		// order is important, pathRestr depends on exposed Ids
 		computeExposedNodesAndIds(container);
 		computePathRestr(container);
 		// set the callback
-
+		// debugger;
 	}
+
+	// random weird things that need to be done to reconcile differences
+	// between visualizations that can't be handled in the d3 building for each vis
+		// i.e., the root/back button in sunburst needs a single color
+			// the d3 code to build it assigns a color to every 
+	
 
 	function updateTransitioning(val) {
 		config.transitioning = val;
 	}
 
-	function setLastClickedNode(node, container) {
-		container.lastClickedNode = createPathId(node, container.id);
+	function setLastClickedAndCurrentNode(node, container) {
+		var newCurrentClickedNode = createPathId(node, container.id);
+
+		container.lastClickedNode = container.currentClickedNode;
+
+		container.currentClickedNode = newCurrentClickedNode;
 	}
 
 	function computePathRestr(container) {
-		container.pathRestr = container.exposedIds.map(el => el.split('-').length).filter(onlyUnique).length;
+		container.pathRestr = container.exposedIds.map(el => {
+			return el.split('-').length;
+		})
+		.filter(onlyUnique).length;
 	}
 
 	function computeExposedNodesAndIds(container) {
@@ -125,9 +139,25 @@ var treeLib = (function (d3) {
 
 		var exposedNodes = d3.select('#' + id).selectAll('.' + id).filter(function(el) {
 		    var el = d3.select(this).attr('id');
-		    if (el != null){
-		    	idsForRestr.push(el);
-		        return el.includes(id);
+			if (el != null){
+
+				if (container.type == 'Sunburst') {
+					// the el must include the current clicked node to know it is displayed
+					//	otherwise treat it as hidden and cannot be clicked
+					// the problem is that all nodes are present in html
+					
+					var lastClickedNode = container.currentClickedNode;
+					// debugger
+					if (el.includes(lastClickedNode)){
+						idsForRestr.push(el);
+						return true
+					} else 
+						return false;
+					
+				} else {
+					idsForRestr.push(el);
+				    return el.includes(id);
+		       }
 		    }
 		});
 
@@ -167,6 +197,7 @@ var treeLib = (function (d3) {
 	}
 
 	// remove characters that don't work with classes
+	// or are ambiguous with the '-' used to join each node
 	function cleanNodeStr(node) {
 		return node.replace(/ /g, "_")
 			.replace(/:/g, "_")
@@ -176,6 +207,7 @@ var treeLib = (function (d3) {
 			.replace("&","_")
 			.replace(".","_")
 			.replace("/","_")
+			.replace(/-/g,"_")
 			.replace(/,/g,"_");
 	}
 
@@ -199,9 +231,11 @@ var treeLib = (function (d3) {
 	// update the exposed nodes, ids, pathRestr, and last clicked node
 	function updateConfigContainers(node) {
 		config.containers.forEach(container => {
+			setLastClickedAndCurrentNode(node, container);
 			computeExposedNodesAndIds(container);
 			computePathRestr(container);
-			setLastClickedNode(node, container);
+			// setLastClickedAndCurrentNode(node, container);
+
 		});
 	}
 
@@ -234,8 +268,8 @@ var treeLib = (function (d3) {
 			clickActionZTCT(node, pathId, containersObj)
 		} else if (originalType == 'Zoomable_Treemap' && otherType == 'Pack') {
 			clickActionZTPack(node, pathId, containersObj)
-		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
-			
+		} else if (originalType == 'Zoomable_Treemap' && otherType == 'Sunburst') {
+			clickActionZTSunburst(node, pathId, containersObj)
 		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
 			
 		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
@@ -244,19 +278,43 @@ var treeLib = (function (d3) {
 		
 		if(originalType == 'Collapsible_Tree' && otherType == 'Zoomable_Treemap'){
 			clickActionCTZT(node, pathId, containersObj)
-		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+		} else if (originalType == 'Collapsible_Tree' && otherType == '') {
 
-		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+		} else if (originalType == 'Collapsible_Tree' && otherType == 'Sunburst') {
+			clickActionCTSunburst(node, pathId, containersObj)
+		} else if (originalType == 'Collapsible_Tree' && otherType == '') {
 			
-		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+		} else if (originalType == 'Collapsible_Tree' && otherType == '') {
 			
-		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
+		}
+
+		if(originalType == 'Pack' && otherType == 'Zoomable_Treemap'){
+			clickActionPackZT(node, pathId, containersObj)
+		} else if (originalType == 'Pack' && otherType == '') {
+
+		} else if (originalType == 'Pack' && otherType == '') {
+			
+		} else if (originalType == 'Pack' && otherType == '') {
+			
+		} else if (originalType == 'Pack' && otherType == '') {
+			
+		}
+
+		if(originalType == 'Sunburst' && otherType == 'Zoomable_Treemap'){
+			clickActionSunburstZT(node, pathId, containersObj)
+		} else if (originalType == 'Sunburst' && otherType == 'Collapsible_Tree') {
+			clickActionSunburstCT(node, pathId, containersObj)
+		} else if (originalType == 'Sunburst' && otherType == '') {
+			
+		} else if (originalType == 'Sunburst' && otherType == '') {
+			
+		} else if (originalType == 'Sunburst' && otherType == '') {
 			
 		}
 	}
 
 	function clickActionZTCT(node, pathId, containersObj) {		
-		var originalPathId = containersObj.original.lastClickedNode;
+		var originalPathId = containersObj.original.currentClickedNode;
 
 		var grandparentClicked = d3.select('#' + originalPathId + '.grandparent').empty() == false;
 
@@ -276,20 +334,18 @@ var treeLib = (function (d3) {
 	}
 
 	function clickActionZTPack(node, pathId, containersObj) {
-		debugger;
-		
-		var originalPathId = containersObj.original.lastClickedNode;
-
-		// var rootClicked = isRoot(node);
-
-		// 1. normal click/ zooms out to the correct node when grandparent clicked
+		// 1. normal click on child, also zooms out to the correct node when grandparent clicked
 		d3.select('#' + pathId).dispatch('linkedClick');
+	}
 
-		// var willClose = node.children;
+	function clickActionZTSunburst(node, pathId, containersObj) {
+		// debugger;
+		colorSunburstBackButton(node, containersObj.other, 'sunburst-back-button')
+		d3.select('#' + pathId).dispatch('linkedClick');
 	}
 
 	function clickActionCTZT(node, pathId, containersObj) {	
-		var originalPathId = containersObj.original.lastClickedNode;
+		// var originalPathId = containersObj.original.currentClickedNode;
 
 		var rootClicked = isRoot(node);
 
@@ -298,62 +354,451 @@ var treeLib = (function (d3) {
 		// if the path id is contained within the longest exposed node id, it is in the same path
 		var notInExposedPath = !partialPathIsExposed(pathId, containersObj);
 
-		if (rootClicked) // do not close the nodes that match the zoomable treemap
-			return;
-		else if (notInExposedPath) {
-			// find the target array we want to close and zoom out of
-			var exposedArrayToClose = containersObj.original.exposedNodes._groups[0].filter(el => el.id.split("-").length > 3)
-			var exposedPathArrayToClose = exposedArrayToClose[0].id.split('-');
-			exposedPathArrayToClose.pop();
-			var exposedPathIdToClose = exposedPathArrayToClose.join('-');
+		// if (rootClicked) // do not close the nodes that match the zoomable treemap
+		// 	return;
+		// else 
+		if (notInExposedPath || rootClicked) {
+			// find the common parent path between the current node and the last clicked node
+			var commonParent = findCommonParent(containersObj.other);
 
-			// this takes care of collapsing all children of exposed node to close
-			d3.select('#' + exposedPathIdToClose).dispatch('linkedClick');
+			// we need to find the exposed element in the collection that's path is +1 of the common parent
+			// and this element is included in the last clicked node
+			var pathLengthOfClosedOriginalNode = commonParent.split('-').length + 1;
+			
+			var lastClickedOriginalNode = containersObj.original.lastClickedNode;
 
-			linkedEventPromise(exposedPathIdToClose, pathId, 1);
+			var exposedArrayToClose = containersObj.original.exposedNodes._groups[0].filter(el => {
+				return (
+					el.id.split("-").length == pathLengthOfClosedOriginalNode && 
+					lastClickedOriginalNode.includes(el.id)
+				);
+			});
+
+			var exposedPathIdToClose = exposedArrayToClose[0].id;
+
+			d3.select('#' + exposedPathIdToClose).dispatch('linkedClick');			
+
+			linkedEventPromiseZoomOut(commonParent, pathId, 1);
 		} else if (willClose) { // when closing collapsible tree, find the target grandparent - 1 node and hit the grandparent until we get there
-			linkedEventPromise(pathId);
+			linkedEventPromiseZoomOut(pathId);
+		} else {
+			d3.select('#' + pathId).dispatch('linkedClick');	
+		}	
+	}
+
+	function clickActionCTSunburst(node, pathId, containersObj) {
+		// // add the back button class and the grandparent to the sunburst
+		colorSunburstBackButton(node, containersObj.other, 'grandparent');
+
+		var originalPathId = containersObj.original.currentClickedNode;
+
+		var rootClicked = isRoot(node);
+
+		var willClose = node.children;
+		
+		// if the path id is contained within the longest exposed node id, it is in the same path
+		// var notInExposedPath = !partialPathIsExposed(pathId, containersObj);
+		var id = containersObj.other.id;
+
+		var exposedArray = d3.select('#' + id).selectAll('.' + id).filter(function(node) {
+		    var el = d3.select(this).attr('id');
+			if (el != null){					
+				var lastClickedNode = containersObj.other.lastClickedNode;
+
+				if (el.includes(lastClickedNode) && pathId.includes(el))
+					return true;
+				else 
+					return false;
+		    }
+		});
+
+		var notInExposedPath = exposedArray.empty() ? true : false;
+
+		if (isLeaf(node)) {
+			// stop the event for sunburst
+		} else if (rootClicked || notInExposedPath){ // do not close the nodes that match the zoomable treemap
+			// Close all paths that are not in the pathID
+			// find the common parent path between the current node and the last clicked node
+			var commonParent = findCommonParent(containersObj.other);
+			// debugger;
+			// we need to find the exposed element in the collection that's path is +1 of the common parent
+			// and this element is included in the last clicked node
+			var pathLengthOfClosedOriginalNode = commonParent.split('-').length + 1;
+			
+			var lastClickedOriginalNode = containersObj.original.lastClickedNode;
+
+			var exposedArrayToClose = containersObj.original.exposedNodes._groups[0].filter(el => {
+				return (
+					el.id.split("-").length == pathLengthOfClosedOriginalNode && 
+					lastClickedOriginalNode.includes(el.id)
+				);
+			});
+			// debugger
+			if (exposedArrayToClose.length != 0) {
+				var exposedPathIdToClose = exposedArrayToClose[0].id;
+				
+				var originalNodeToClose = d3.select('#' + exposedPathIdToClose);
+				// if the original node was recently closed, the children will be null
+				// (stored in _children in the data)
+				var originalNodeHasExposedChildren = originalNodeToClose.data()[0].children;
+				
+				if (originalNodeHasExposedChildren)
+					d3.select('#' + exposedPathIdToClose).dispatch('linkedClick');
+
+				// linkedEventPromiseZoomOut(pathId);
+				if (pathId.split('-').length > 3) {
+					var restrictedLevelNode = pathId.split('-').slice(0, 3).join('-');
+
+					d3.select('#' + restrictedLevelNode).dispatch('linkedClick');
+				} else {
+					d3.select('#' + pathId).dispatch('linkedClick');
+				}
+			}
+		} else if (pathId.split('-').length > 3) {
+			// debugger
+			var restrictedLevelNode = pathId.split('-').slice(0, 3).join('-');
+
+			d3.select('#' + restrictedLevelNode).dispatch('linkedClick');
+		} else {
+			// debugger
+			d3.select('#' + pathId).dispatch('linkedClick');
+		}
+	}
+
+	function clickActionPackZT(node, pathId, containersObj) {
+		// debugger
+		var originalPathId = containersObj.original.currentClickedNode;
+
+		var rootClicked = isRoot(node);
+
+		var notInExposedPath = !partialPathIsExposed(pathId, containersObj);
+
+		// do not need to zoom back to root, but zoom to a certain level in a branch then zoom out
+		// this means that there is a partial branch path is exposed
+		// 1. find that there is a common parent that is not the root
+		var lastClickedOtherNode = containersObj.other.lastClickedNode;
+
+		var zoomOutSamePath = (lastClickedOtherNode.split('-').length - pathId.split('-').length) > 1
+
+		if (rootClicked) {
+			linkedEventPromiseZoomOut(pathId)
+		} else if (notInExposedPath) {
+			// find the common parent path between the current node and the last clicked node
+			var commonParent = findCommonParent(containersObj.other);
+
+			// we need to find the exposed element in the collection that's path is +1 of the common parent
+			// and this element is included in the last clicked node
+			var pathLengthOfClosedOriginalNode = commonParent.split('-').length + 1;
+			
+			var lastClickedOriginalNode = containersObj.original.lastClickedNode;
+
+
+			// need to zoom in
+			// what is the first
+			// is part of the pathId exposed and if so, what is the first exposed one?
+			var pathsForZoomingIn = getZoominCollection(originalPathId, containersObj);
+
+			var pathIdToStartZooming = getPathToStartZoomingIn(pathsForZoomingIn);
+			
+			// if the pathIdToStartZooming is null, then we will have to zoom out and then zoom includes
+			if (pathIdToStartZooming) {
+				var zoomingCollection = pathsForZoomingIn.filter(el => {
+					return el.includes(pathIdToStartZooming);
+				});
+
+				linkedEventPromiseZoomIn(zoomingCollection);
+				//zoom in
+			} else {
+				linkedEventPromiseZoomOut(commonParent, pathId, 1);
+			}
+		} else if (zoomOutSamePath) {
+			// add one node to the pathId
+			var justOne = false;
+
+			var addOneNode = lastClickedOtherNode.split('-').filter((el, idx) => {
+				if (el == pathId.split('-')[idx])
+					return true;
+				else if (justOne) {
+					return false;
+				} else {
+					//add the one
+					justOne = true;
+					return true;
+				}
+			}).join('-');
+
+			linkedEventPromiseZoomOut(pathId, 'Pack');
 		} else {
 			d3.select('#' + pathId).dispatch('linkedClick');	
 		}
+	}
 
-		function linkedEventPromise(pathId, actualPathId, clickNewNode=0) {
-			// need to get the exposed grandparent id which is one node less than the pathId
-			var targetGrandparentArray = pathId.split('-');
+	function clickActionSunburstZT(node, pathId, containersObj) {
+		// debugger
+		colorSunburstBackButton(node, containersObj.original, 'sunburst-back-button');
+		// 1. normal one path level click in and out
+		// 2. zoom in based off exposed nodes and the original id clicked
+		//
+
+		var originalPathId = containersObj.original.currentClickedNode;
+
+		var notInExposedPath = !partialPathIsExposed(pathId, containersObj);
+
+		if (notInExposedPath) {	
+			// get the exposed nodes that are in the path of the original container id clicked
+			var id = containersObj.original.id;
+
+			var exposedArrayToClick = d3.select('#' + id).selectAll('.' + id).filter(function(el) {
+			    var el = d3.select(this).attr('id');
+				if (el != null){					
+					var lastClickedNode = containersObj.original.lastClickedNode;
+
+					if (el.includes(lastClickedNode) && originalPathId.includes(el))
+						return true;
+					else 
+						return false;
+			    }
+			});
+
+			// build a collection of ids for the other container based of the previous collection
+			var pathsForZoomingIn = exposedArrayToClick._groups[0].map(el => {
+				return createPathId(d3.select(el).data()[0], containersObj.other.id)
+			});
+
+			// search the collection for the first path exposed in the other container
+			var pathIdToStartZooming = getPathToStartZoomingIn(pathsForZoomingIn);
 			
-			targetGrandparentArray.pop();
+			// create a new group of ids that start with this path
+			var zoomingCollection = pathsForZoomingIn.filter(el => {
+				return el.includes(pathIdToStartZooming);
+			});
 
-			var exposedGrandparentLength = d3.select('.grandparent').attr('id').split('-').length+1;
+			// zoom in with the created collection of ids
+			linkedEventPromiseZoomIn(zoomingCollection);
+		} else {
+			d3.select('#' + pathId).dispatch('linkedClick');
+		}
+	}
 
-			// clicking a new node means moving to a new path, so we add 1 to the exposed gr length
-			// we also need to know when to zoom in, so find the amount of clicks that need to happen before we click the new path
-			if (clickNewNode) {
-				var promiseClicks = 0;
-				exposedGrandparentLength + 1;
-				var neededClicksForNewPath = exposedGrandparentLength - targetGrandparentArray.length
+	function clickActionSunburstCT(node, pathId, containersObj) {
+		// debugger
+		var originalPathId = containersObj.original.currentClickedNode;
+
+		var rootClicked = isRoot(node);
+
+		var notInExposedPath = !partialPathIsExposed(pathId, containersObj);
+
+		var ccn = createPathId(node, containersObj.original.id);
+
+		// do not need to zoom back to root, but zoom to a certain level in a branch then zoom out
+		// this means that there is a partial branch path is exposed
+		// 1. find that there is a common parent that is not the root
+		var lastClickedOtherNode = containersObj.other.lastClickedNode;
+
+		var zoomOutSamePath = (lastClickedOtherNode.split('-').length - pathId.split('-').length) > 1
+
+		if (rootClicked) {
+
+			// close all the nodes that have children
+			containersObj.other.exposedIds.forEach(id => {
+				var data = d3.select('#' + id).data()[0];
+
+				if (data.children && id.split('-').length == 3)
+					d3.select('#' + id).dispatch('linkedClick');
+			});
+
+		} else if (ccn.split('-').length > 3){
+			// this clicks the correct node in sunburst and pairs with the function,
+			// to show levels in Sunburst associated with exposed levels in other vis
+			// restrictOnReturn() *should be renamed
+			// restrictOnReturn restricts the concentric arcs in the sunburst to 
+			// only show the path levels of the previous click exposed in the other vis
+			var restrictedLevelNode = ccn.split('-').slice(0, 3).join('-');
+			// debugger
+			d3.select('#' + restrictedLevelNode).dispatch('linkedClick');
+
+
+			var commonParent = findCommonParent(containersObj.other);
+			// debugger;
+			// we need to find the exposed element in the collection that's path is +1 of the common parent
+			// and this element is included in the last clicked node
+			var pathLengthOfClosedOtherNode = commonParent.split('-').length + 1;
+			
+			var lastClickedOtherNode = containersObj.other.lastClickedNode;
+
+			var exposedArrayToClose = containersObj.other.exposedNodes._groups[0].filter(el => {
+				return (
+					el.id.split("-").length == pathLengthOfClosedOtherNode && 
+					lastClickedOtherNode.includes(el.id)
+				);
+			});
+			// debugger
+			if (exposedArrayToClose.length != 0) {
+				// debugger
+				var exposedPathIdToClose = exposedArrayToClose[0].id;
+				
+				var originalNodeToClose = d3.select('#' + exposedPathIdToClose);
+				// if the original node was recently closed, the children will be null
+				// (stored in _children in the data)
+				var originalNodeHasExposedChildren = originalNodeToClose.data()[0].children;
+				
+				if (originalNodeHasExposedChildren)
+					d3.select('#' + exposedPathIdToClose).dispatch('linkedClick');
 			}
 
-			var timeLength = 800;
+			d3.select('#' + pathId).dispatch('linkedClick');
 
-			for (var i = exposedGrandparentLength, p = Promise.resolve(); i >= targetGrandparentArray.length; i--){
-                p = p.then(_ => new Promise(resolve =>{
-                	// if we've reached the root, we are ready to zoom up
-                	var readyToZoomIntoNewPath = (clickNewNode && promiseClicks == neededClicksForNewPath);
+		} else {
+			d3.select('#' + pathId).dispatch('linkedClick');
+		}
+		
+	}
 
-                	if (readyToZoomIntoNewPath)
-                		d3.select('#' + actualPathId).dispatch('linkedClick');
-                	else
-						d3.select('.grandparent').dispatch('linkedClick');
+	function linkedEventPromiseZoomIn(zoomingCollection) {
+		var clickIndex = zoomingCollection.length; // for the index
 
-					return setTimeout(function(){
-						promiseClicks++
-						
-	                    return resolve();   
-	                }, timeLength);
-				}));
+		var timeLength = 800;
+
+		for (var i = clickIndex, p = Promise.resolve(); i > 0; i--){
+			p = p.then(_ => new Promise(resolve =>{
+				if (zoomingCollection[i].split('-').length == 2)
+					d3.select('.grandparent').dispatch('linkedClick');
+				else
+					d3.select('#' + zoomingCollection[i]).dispatch('linkedClick');
+				
+				return setTimeout(function(){						
+					i++;
+					return resolve();   
+				}, timeLength);
+				
+			}));
+		}
+	}
+
+	function linkedEventPromiseZoomOut(pathId, actualPathId, clickNewNode=0) {
+		// need to get the exposed grandparent id which is one node less than the pathId
+
+		// the path id here could be longer, root or otherwise,
+		// it is the path we need to zoom back too 
+		var targetGrandparentArray = pathId.split('-');
+
+		var beginZoomOut = targetGrandparentArray.length;
+		
+		targetGrandparentArray.pop();
+
+		var exposedGrandparentLength = d3.select('.grandparent').attr('id').split('-').length+1;
+
+		if (actualPathId == 'Pack')
+			exposedGrandparentLength -= 1;
+
+		// clicking a new node means moving to a new path, so we add 1 to the exposed gr length
+		// we also need to know when to zoom in, so find the amount of clicks that need to happen before we click the new path
+		if (clickNewNode) {
+			var promiseClicks = 0;
+			// exposedGrandparentLength += 1;
+			var neededClicksForNewPath = exposedGrandparentLength - beginZoomOut
+		}
+
+		var timeLength = 800;
+		
+		for (var i = exposedGrandparentLength, p = Promise.resolve(); i >= beginZoomOut; i--){
+            p = p.then(_ => new Promise(resolve =>{
+            	// if we've reached the root, we are ready to zoom up
+            	var readyToZoomIntoNewPath = (clickNewNode && promiseClicks == neededClicksForNewPath);
+
+            	if (readyToZoomIntoNewPath) {
+            		var otherContainerId = pathId.split('-')[0];
+
+            		var containersObj = getContainersObj(otherContainerId);
+
+            		var originalPathId = containersObj.original.currentClickedNode;
+            		
+            		var pathsForZoomingIn = getZoominCollection(originalPathId, containersObj);
+
+					var pathIdToStartZooming = getPathToStartZoomingIn(pathsForZoomingIn);
+					
+					// if the pathIdToStartZooming is null, then we will have to zoom out and then zoom includes
+					if (pathIdToStartZooming) {			
+						var zoomingCollection = pathsForZoomingIn.filter(el => {
+							return el.includes(pathIdToStartZooming);
+						});
+
+						linkedEventPromiseZoomIn(zoomingCollection);
+					} else {
+						// remove the root node path
+						// pathsForZoomingIn.shift();
+						linkedEventPromiseZoomIn(pathsForZoomingIn)
+					}
+
+            		// we need to figure out how many clicks we zoom in by the path
+            		// d3.select('#' + actualPathId).dispatch('linkedClick');
+            	} else
+					d3.select('.grandparent').dispatch('linkedClick');
+
+				// timeLength += 200;
+
+				return setTimeout(function(){
+					promiseClicks++
+					
+                    return resolve();   
+                }, timeLength);
+			}));
+		}
+	}
+
+	function getZoominCollection(originalPathId, containersObj) {
+		var exposedArrayToClick = containersObj.original.exposedNodes._groups[0].filter(el => {
+			return originalPathId.includes(el.id);
+		}).sort();
+		
+		var pathsForZoomingIn = exposedArrayToClick.map(el => {
+			return createPathId(d3.select(el).data()[0], containersObj.other.id)
+		});
+
+		// return a collection of paths to zoom in based on the original id path
+		return pathsForZoomingIn;
+	}
+
+	function getPathToStartZoomingIn(pathsForZoomingIn) {
+		return pathsForZoomingIn.filter(el => {
+			var element = d3.select('#' + el);
+			return (
+				!element.empty() &&
+				!element.classed('grandparent')
+			)
+		})[0];
+	}
+
+	function findCommonParent(container) {
+		var last = container.lastClickedNode.split('-');
+
+		var current = container.currentClickedNode.split('-');
+
+		var longer, shorter;
+
+		if (last.length >= current.length) {
+			longer = last;
+			shorter = current;
+		} else {
+			longer = current;
+			shorter = last;
+		}
+
+		var commonParentArr = [],
+			brokenPath = false;
+
+		// iterate through the paths, stop when there is not a match
+		longer.forEach((el, idx) => {
+			if (el == shorter[idx] && !brokenPath)
+				commonParentArr.push(el);
+			else {
+				brokenPath = true;
 			}
+		});
 
-		}	
+		var cPar = commonParentArr.join('-');
+
+		return cPar;
 	}
 
 	function pathIsExposed(pathId, containersObj) {
@@ -404,8 +849,19 @@ var treeLib = (function (d3) {
 		return obj;
 	}
 
+	function intersect(a, b) {
+		var setA = new Set(a);
+		var setB = new Set(b);
+		var intersection = new Set([...setA].filter(x => setB.has(x)));
+		return Array.from(intersection);
+	}
+
 	function onlyUnique(value, index, self) { 
 	    return self.indexOf(value) === index;
+	}
+
+	function getCurrentClicked(containerId) {
+		return config.containers.find(cont => cont.id == containerId).currentClickedNode;
 	}
 
 	function getLastClicked(containerId) {
@@ -426,7 +882,9 @@ var treeLib = (function (d3) {
 	}
 
 	function isRoot(node) {
-		if (!node) // root of zoomable treemap
+		// the data object associated with the zoomable treemap root display is null
+		// the actual root object is only attached to an element, grandparent one level into the treemap
+		if (!node) 
 			return true;
 		else if (node.parent == null) // root of everything else
 			return true;
@@ -443,18 +901,117 @@ var treeLib = (function (d3) {
     }
 
     function preventEvent(node, otherContainerId) {
-    	var visType = getConfigContainer(otherContainerId).type,
-			isRoot = treeLib.isRoot(node);
+    	var containersObj = getContainersObj(otherContainerId),
+    		otherType = containersObj.other.type,
+    		originalType = containersObj.original.type,
+			isRoot = treeLib.isRoot(node)
+			currentClicked = createPathId(node, containersObj.original.id);
 			
 		// prevent clicks
-		if (visType == "Zoomable_Treemap" && isRoot)
+		if (originalType == 'Collapsible_Tree' && otherType == 'Zoomable_Treemap' && isRoot){
+			linkedClick(node, otherContainerId);
 			return true; //stop event
+		} else if (originalType == 'Collapsible_Tree' && otherType == 'Sunburst' && isRoot){
+			// fire off the sunburst but prevent the collapsible tree event
+			linkedClick(node, otherContainerId);
+			return true; 
+		} else if (originalType == 'Sunburst' && otherType == 'Collapsible_Tree' && currentClicked.split('-').length > 3) {
+			// debugger;
+			// if CT, show the levels that the CT is showing
+			// do the normal reaction for CT
+			linkedClick(node, otherContainerId);
+
+			
+			return true;
+		}
 
 		if (isTransitioning())
 			return true; // stop event
 
         return false;
     }
+
+    function colorSunburstBackButton(node, container, extraClass=null) {
+    	var shortestPathLength = container.exposedIds.map(el => {
+			return el.split('-').length;
+		})
+		.filter(onlyUnique)
+		.sort()[0];
+
+		var backButtonNodeLength = shortestPathLength - 1;
+
+    	var containerId = container.id;
+    	// remove all orange classes
+    	d3.select('#' + containerId).selectAll('.' + containerId)._groups[0].forEach(function(el) {
+    		// d3.select(el).classed('sunburst-back-button', false);
+
+    		// if (d3.select(el).attr('id').split('-').length == backButtonNodeLength)
+    		// 	d3.select(el).classed('sunburst-back-button', true);
+
+    		// add the grandparent class for the collapsible tree
+    		if (extraClass) {
+    			d3.select(el).classed(extraClass, false);
+
+	    		if (d3.select(el).attr('id').split('-').length == backButtonNodeLength)
+	    			d3.select(el).classed(extraClass, true);
+    		}
+
+    	});
+    }
+
+    function colorOriginalNodeLikeSunburstBackButton(container, svgType) {
+    	var containerId = container.id;
+
+    	d3.select('#' + containerId).selectAll('.' + containerId)._groups[0].forEach(function(el) {
+    		d3.select(el).select(svgType).classed('sunburst-back-button', false);
+    	});
+
+    	var currentClicked = container.currentClickedNode;
+
+    	var ccArr = currentClicked.split('-');
+
+    	ccArr.pop();
+
+    	var nodeLikeSunburstBackButton = ccArr.join('-');
+
+    	d3.select('#' + nodeLikeSunburstBackButton).select(svgType).classed('sunburst-back-button', true);
+    }
+
+    function addSunburstBackButtonClass(pathId, cls) {
+    	if (d3.select("#" + pathId).select("circle").attr("class").includes('sunburst-back-button')){
+            cls += ' sunburst-back-button';
+        }
+
+        return cls;
+    }
+
+    function shortenLeafName(node, name) {
+    	if (isLeaf(node)) {
+    		name = name.split(' ')[0] + '...';
+    	}
+
+    	return name;
+    }
+
+    function showLevels(d, levels) {
+    	if (levels == 2)
+    		return d.parent && d.parent.parent;
+    	else if (levels == 3)
+    		return d.parent && d.parent.parent && d.parent.parent.parent;
+    	else if (levels == 4)
+    		return d.parent && d.parent.parent && d.parent.parent.parent && d.parent.parent.parent.parent;
+    	else if (levels == 5)
+    		return d.parent && d.parent.parent && d.parent.parent.parent && d.parent.parent.parent.parent && d.parent.parent.parent.parent.parent;
+    }
+
+    function shuffleArray(array) {
+	    for (var i = array.length - 1; i > 0; i--) {
+	        var j = Math.floor(Math.random() * (i + 1));
+	        var temp = array[i];
+	        array[i] = array[j];
+	        array[j] = temp;
+	    }
+	}
 
 	return {
 		buildConfig: function(ids) {
@@ -494,6 +1051,10 @@ var treeLib = (function (d3) {
 			return getLastClicked(containerId);
 		},
 
+		getCurrentClicked: function(containerId) {
+			return getCurrentClicked(containerId);
+		},
+
 		transitioning: function(val) {
 			updateTransitioning(val);
 		},
@@ -514,8 +1075,91 @@ var treeLib = (function (d3) {
 
 		isRoot: function(d) {
 			return isRoot(d);
-		}
+		},
 
+		addSunburstBackButtonClass: function(pathId, cls) {
+			return addSunburstBackButtonClass(pathId, cls);
+		},
+
+		// sunburst
+		restrictLevels: function(node, levels, container2Id) {
+			var type2 = getConfigContainer(container2Id).type;
+			
+			if ((type2 == 'Collapsible_Tree')
+				|| (type2 == 'Zoomable_Treemap')
+			)
+				return showLevels(node, levels);
+		},
+
+		// sunburst
+		restrictOnReturn: function(node, container1Id, container2Id, arc) {
+			var ccn = getConfigContainer(container1Id).currentClickedNode
+				type2 = getConfigContainer(container2Id).type;
+
+ 	
+ 			var levels = ccn.split('-').length;
+            if (
+            	// levels == 2 
+            	// && 
+            	(
+            		type2 == 'Collapsible_Tree' 
+            		|| type2 == 'Zoomable_Treemap' )
+            	
+            ) {
+                if(showLevels(node, levels))
+                    return arc(0);
+                else
+                    return arc(node);    
+            } else {
+                return arc(node); 
+            }
+		},
+
+		// sunburst prevent leaf click event for ZT and CT
+		preventLeaf: function(d, containerId) {
+			return d3.select('#' + createPathId(d, containerId))
+				.attr('class').includes('leaf');
+		},
+
+		hideArcs: function(containerId, d) {
+			// give visibility to arcs that are in the clicked path
+			// when clicking greater than or equal to 4 node path length
+			// only show nodes that are part of the path 
+            var ccn = config.containers.filter(function(el) {
+                return el.id == containerId;
+            })[0].currentClickedNode;
+            var ccnLen = ccn.split('-').length;
+
+            var pathId = createPathId(d, containerId);
+            var pIdLen = pathId.split('-').length;
+
+            var pIncludesCcn = pathId.includes(ccn);
+
+            // REFACTOR THIS FOR DATA WITH LEVELS > 6
+            if (ccnLen >= 4) {
+            	if (pIdLen == 5 && pIncludesCcn) {
+            		// show the next level that includes the ccn
+            		return 'visible';
+            	} else if (pIdLen <= 4) {
+            		return 'visible';
+            	} 
+
+
+            	if (pIdLen == 6 && pIncludesCcn) {
+        			return 'visible';
+        		} else if (pIdLen == 5 && pathId.includes(ccn.split('-').slice(0,4).join('-'))) {
+        			// show nodes that the part of ccn is part of
+        			return 'visible';
+        		} 
+
+            	return 'hidden';
+            }
+            return 'visible';
+		},
+
+		shuffleArray: function(array) {
+			return shuffleArray(array);
+		}
 
 	}
 

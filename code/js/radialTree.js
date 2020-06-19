@@ -55,7 +55,10 @@ function draw_radial_tree(position){
 
         node.append("circle")
             .attr("fill", function(d){
-                return getColor(d, color);
+                if (!d.parent)
+                    return "#e6e6e6";
+                else
+                    return getColor(d, color);
             })
             .attr("r", _=> {
             	// return 5;
@@ -81,8 +84,16 @@ function draw_radial_tree(position){
             .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
             .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
             .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
-            .filter(d => d.children)
-            .text(d => d.data.name)
+            // .filter(d => d.children) // shown leaf titles
+            .text(d => {
+            	var n = d.data.name;
+                
+                if (treeLib.isLeaf(d))
+                    n = n.split(' ')[0] + '...';
+                    
+                return n;
+            	// d.data.name
+            })
             .clone(true).lower()
             .attr("stroke", "white")
             .on("mouseover", function(d){

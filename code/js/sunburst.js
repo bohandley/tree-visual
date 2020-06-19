@@ -51,21 +51,96 @@ function draw_sunburst(position){
         svg.selectAll("path")
             .data(partition(root).descendants())
         .enter().append("path")
-            .attr("d", arc)
-            .style("fill", function(d) { 
-                return getColor(d, color);
+            .attr("d", function(d){
+                // if collapsible tree comparison or zoomable tree map!!!
+                // only show the root and first level to match these
+                if (treeLib.restrictLevels(d, 2, position2))
+                    return;
+
+                return arc(d);
+            })
+            .style("fill", function(d) {
+                // if (!d.parent) {
+                //         return "#e6e6e6";
+                //     } else {
+                //         return getColor(d, color);    
+                //     }
+                if (!d.parent)
+                    return "#e6e6e6";
+                else
+                    return getColor(d, color);
             })
             .style("stroke", "white")
             .style("stroke-width", 0.5)
-            .attr("id", d => buildNodeOrLeafId(d, position1))
+            .attr("id", d => {
+                return treeLib.pathId(d, position1);
+                // buildNodeOrLeafId(d, position1)
+            })
+            .attr("class", d => {
+                var cls = treeLib.isLeaf(d) ? 'leaf cursor-default' : '';
+
+                // if (!d.parent)
+                //     cls += ' sunburst-back-button';
+
+                return cls;
+            })
+            .classed(position1, true)
             .on("mouseover", d => mouseoverLinking(position1, position2, d))
             .on("mouseout", d => mouseoutLinking(position1, position2, d))
-            .on("click", click)
+            .on('linkedClick', d => linkedClickClick(d))
+            .on("click", d => {
+                displaySelectedNode(d);
+
+                var prevent = treeLib.preventLeaf(d, position1);
+
+                if (prevent)
+                    return;
+
+                click(d);
+            })
             .append("title")
-            .text( d => d.data.name + "\n" + formatNumber(d.value));
+            .text( d => {
+                var dataName = d.data.name;
+                // do we need to shorten the title in the tooltip?
+                // if (treeLib.isLeaf(d))
+                //     dataName = dataName.split(' ')[0] + '...';
+
+                return dataName + "\n" + formatNumber(d.value)
+            });
+
+            d3.select("svg#"+position1).dispatch('doneDrawing');
     });
     
     function click(d) {
+        var response = treeLib.linkedClick(d, position2);
+
+        if (response == 'prevent')
+            return;
+
+        svg.transition()
+            .duration(750)
+            .tween("scale", function() {
+                var ccn = treeLib.config().containers[1].currentClickedNode;
+                var xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
+                    yd = d3.interpolate(y.domain(), [d.y0, 1]),
+                    yr = d3.interpolate(y.range(), [d.y0 ? 20 : 0, radius]);
+
+                
+
+                return function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); };
+            
+            })
+        .selectAll("path")
+            .attrTween("d", function(d) { 
+                return function() {
+                    // returns the arc(d) for acceptable things
+                    // to show the only first level on return to root CT & ZT
+                    return treeLib.restrictOnReturn(d, position1, position2, arc)
+                }; 
+            });
+    }
+
+    function linkedClickClick(d) {
         svg.transition()
             .duration(750)
             .tween("scale", function() {
@@ -75,7 +150,17 @@ function draw_sunburst(position){
             return function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); };
             })
         .selectAll("path")
-            .attrTween("d", function(d) { return function() { return arc(d); }; });
+            .attrTween("d", function(d) { 
+                return function() { 
+                    // return arc(d); 
+                    return treeLib.restrictOnReturn(d, position1, position2, arc);
+                }; 
+            })
+            .style("visibility", "visible")
+            .style("visibility", function(d) {
+                return treeLib.hideArcs(position1, d);
+            })
+
     }
     
     d3.select(self.frameElement).style("height", height + "px");

@@ -211,8 +211,12 @@ var dataSourcePapers, dataSourceCitations;
 
 window.onload = function(){
     var fader = function(color) { return d3.interpolateRgb(color, "#fff")(0.2); };
-    color = d3.scaleOrdinal(d3.schemeCategory20.map(fader));
-    // debugger
+    var colors = d3.schemeCategory20.map(fader);
+    
+    treeLib.shuffleArray(colors);
+    
+    color = d3.scaleOrdinal(colors);
+    
     var objD = document.getElementById("dataDropdown");
 
     displayedNode(objD.value);

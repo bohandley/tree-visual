@@ -44,7 +44,12 @@ function draw_treemap(position, selectindex){
             .attr("id", d => buildNodeOrLeafId(d, position1))
             .attr("width", d => d.x1 - d.x0 )
             .attr("height", d => d.y1 - d.y0 )
-            .attr("fill", d => getColor(d, color))
+            .attr("fill", d => {
+                if (!d.parent)
+                    return "#e6e6e6";
+                else
+                    return getColor(d, color);
+            })
             .on("mouseover", d => mouseoverLinking(position1, position2, d))
             .on("mouseout", d => mouseoutLinking(position1, position2, d));
 
