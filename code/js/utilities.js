@@ -1,16 +1,14 @@
 
 function getColor(d, color){
-	// graphs with d.data.name
-		// treemap, radial tree, pack, sunburst
-	// graphs with d.name
-		// zoomable tree, collapsible tree
 	if(d.data){
-		if(d.parent && d.parent.data.name == "flare"){
+		if(d.parent && !d.parent.parent){ //d.parent.data.name == "flare"){
 	        //console.log(d.data.name)
+	        // debugger;
 	        return color(parseInt(d.data.name));
 	    }
 	    else if(d.parent){
-	        while(d.parent.data.name != "flare"){
+	        while(d.parent.parent != null){//d.parent.data.name != "flare"){
+	        	// debugger;
 	            d = d.parent;
 	        }
 	        return color(parseInt(d.data.name));
@@ -18,12 +16,13 @@ function getColor(d, color){
 	    return color(d.data.name);
    } else {
 
-		if(d.parent && d.parent.name == "flare"){
+		if(d.parent && !d.parent.parent){ //d.parent.name == "flare"){
 	        //console.log(d.data.name)
+	        // debugger
 	        return color(parseInt(d.name));
 	    }
 	    else if(d.parent){
-	        while(d.parent.name != "flare"){
+	        while(d.parent.parent != null){//d.parent.name != "flare"){
 	            d = d.parent;
 	        }
 	        return color(parseInt(d.name));
@@ -87,6 +86,7 @@ function buildNodeOrLeafId(d, position){
 	    return id;
 }
 
+// get the node that was clicked and display it to the interface
 function displaySelectedNode(d){
 	// take off class
 	d3.selectAll(".selected-node").classed("selected-node", false);
@@ -100,8 +100,12 @@ function displaySelectedNode(d){
 	node2.classed("selected-node", true);
 
 	var node = buildId(d).reverse().join("-");
+	displayedNode(node);
+}
+
+function displayedNode(node) {
 	d3.select("#selected-node").html("")
-	d3.select("#selected-node").html("Clicked node: " + node);
+	d3.select("#selected-node").html("Displayed node: " + node);
 }
 
 function getOtherGraphType(position2){

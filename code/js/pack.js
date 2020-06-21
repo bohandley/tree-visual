@@ -38,24 +38,49 @@ function draw_pack(position){
             .data(nodes)
             .enter().append("circle")
             .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+            .classed(position1, true)
             .attr("id", function(d){
-                return buildNodeOrLeafId(d, position1);
+                return treeLib.pathId(d, position1);
+                // return buildNodeOrLeafId(d, position1);
             })
-            .style("fill", d => getColor(d, color)) //returns an rbg val
+            .style("fill", d => {
+                if (!d.parent)
+                    return "#e6e6e6";
+                else
+                    return getColor(d, color);
+                // getColor(d, color)
+            }) //returns an rbg val
             .style("stroke", "white")
             .style("stroke", 1)
-            .on("click", function(d) { 
-                var response;
-                
-                if(otherGraphType == "Zoomable_Treemap")
-                    response = zoomableTreeResponse(d, position1, position2, "Pack");
-                else if(otherGraphType == "Collapsible_Tree") 
-                    response = treeResponse(d, position1, position2);
-                
-                if(response == 0)
-                    return;
-
+            .on("linkedClick", function(d) {
                 if (focus !== d) zoom(d), d3.event.stopPropagation(); 
+            })
+            .on("click", function(d) { 
+                    
+                // var response;
+                
+                // if(otherGraphType == "Zoomable_Treemap")
+                //     response = zoomableTreeResponse(d, position1, position2, "Pack");
+                // else if(otherGraphType == "Collapsible_Tree") 
+                //     response = treeResponse(d, position1, position2);
+                
+                // if(response == 0)
+                //     return;
+
+                // if it is a new node, zoom to it
+                //     otherwise, let the event bubble up to the root
+
+                if (focus !== d) {
+                    // debugger
+                    var response = treeLib.linkedClick(d, position2);
+
+                    // 1. prevent the response if interacting with zoomable treemap and zt is transitioning
+                    if (response == 'prevent')
+                        return;
+
+                    zoom(d); 
+                    d3.event.stopPropagation(); 
+                }
             })
             .on("mouseover", d => mouseoverLinking(position1, position2, d))
             .on("mouseout", d => mouseoutLinking(position1, position2, d));
@@ -88,28 +113,42 @@ function draw_pack(position){
             .attr("class", "label")
             .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
             .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
-            .text(function(d) { return d.data.name; });
+            .text(function(d) { 
+                var n = d.data.name;
+                
+                if (treeLib.isLeaf(d))
+                    n = n.split(' ')[0] + '...';
+                    
+                return n;
+                // return d.data.name; 
+            });
 
         var node = g.selectAll("circle,text");
 
         svg.style("background", "white")
+            .on("linkedClick", function() {
+                zoom(root);
+            })
             .on("click", function() {
-                
-                var response;
-                
-                if(otherGraphType == "Zoomable_Treemap"){
-                    response = zoomableTreeResponse(root, position1, position2, "", 1);
-                } else if(otherGraphType == "Collapsible_Tree"){ 
-                    if (cfg.zoomZooming){
-                        console.log("Zooming in progress...")
-                        response = 0;
-                    } else {
-                        response = 1;
-                    }
-                }
+                var response = treeLib.linkedClick(root, position2);
 
-                if(response == 0)
+                if (response == 'prevent')
                     return;
+                // var response;
+                
+                // if(otherGraphType == "Zoomable_Treemap"){
+                //     response = zoomableTreeResponse(root, position1, position2, "", 1);
+                // } else if(otherGraphType == "Collapsible_Tree"){ 
+                //     if (cfg.zoomZooming){
+                //         console.log("Zooming in progress...")
+                //         response = 0;
+                //     } else {
+                //         response = 1;
+                //     }
+                // }
+
+                // if(response == 0)
+                //     return;
 
                 zoom(root);                
             });
@@ -141,5 +180,7 @@ function draw_pack(position){
             node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
             circle.attr("r", function(d) { return d.r * k; });
         }
+
+        d3.select("svg#"+position1).dispatch('doneDrawing');
     });
 }

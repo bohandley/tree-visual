@@ -1,11 +1,12 @@
 // brushing and linking, mostly linking
 // all combinations of graphs
 // the moused and the linked
+// isgr is grandparent, behaves differently
 function mouseoverLinking(position1, position2, d, isgr=0){
 	let first = getOtherGraphType(position1);
 		second = getOtherGraphType(position2),
-		position1Id = buildNodeOrLeafId(d, position1),
-		position2Id = buildNodeOrLeafId(d, position2);
+		position1Id = treeLib.pathId(d, position1),//buildNodeOrLeafId(d, position1),
+		position2Id = treeLib.pathId(d, position2);//buildNodeOrLeafId(d, position2);
 
 	mouseoverCT(first, second, position1Id, position2Id);
 
@@ -23,8 +24,8 @@ function mouseoverLinking(position1, position2, d, isgr=0){
 function mouseoutLinking(position1, position2, d, isgr=0){
 	let first = getOtherGraphType(position1),
 		second = getOtherGraphType(position2),
-		position1Id = buildNodeOrLeafId(d, position1),
-		position2Id = buildNodeOrLeafId(d, position2);
+		position1Id = treeLib.pathId(d, position1),//buildNodeOrLeafId(d, position1),
+		position2Id = treeLib.pathId(d, position2);//buildNodeOrLeafId(d, position2);
 
 	mouseoutCT(first, second, position1Id, position2Id);
 

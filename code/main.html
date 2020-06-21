@@ -27,6 +27,7 @@
       type="image/ico" 
       href="images/tree.ico">
 
+    <script src="js/treeLib.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/utilities.js"></script>
     <script src="js/mouseEvents.js"></script>
@@ -39,7 +40,7 @@
     <script src="js/zoomableTreemap.js"></script>
     <script src="js/main.js"></script>
     <script src="js/d3.v3.min.js"></script>
-    <script src="js/treeLib.js"></script>
+    
     <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 
@@ -60,13 +61,14 @@
             Tree<span style="color:#0C2340;">Visual</span>
             </a>
         <!-- information about graph -->
-        </div>
-        <div style="float: right" id="graphInfoDiv">
-        <ul class="list-unstyled" id="graphInfo">
-            <li id="dataInfoPapers">Number of papers: </li>
-            <li id="dataInfoCitations">Number of citations: </li>
-            <li id="selected-node">Clicked Node: </li>
-        </ul>
+        
+            <div style="float: right" id="graphInfoDiv">
+                <ul class="list-unstyled" id="graphInfo">
+                    <li id="dataInfoPapers">Number of papers: </li>
+                    <li id="dataInfoCitations">Number of citations: </li>
+                    <li id="selected-node">Clicked Node: </li>
+                </ul>
+            </div>
         </div>
     
     </nav>
@@ -100,8 +102,8 @@
                                         <option class="optionGroup" value="Radial_Tree">Radial_Tree</option>
                                         <option class="optionGroup" value="Treemap">Treemap</option>
                                         <option class="optionGroup" value="Zoomable_Treemap">Zoomable_Treemap</option>
-                                        <option class="optionGroup" value="Pack" selected>Pack</option>
-                                        <option class="optionGroup" value="Sunburst">Sunburst</option>
+                                        <option class="optionGroup" value="Pack">Pack</option>
+                                        <option class="optionGroup" value="Sunburst" selected>Sunburst</option>
                                     </select>
                                     </div>
                                 </div>
@@ -151,8 +153,8 @@
                                             <option class="optionGroup" value="Collapsible_Tree">Collapsible_Tree</option>
                                             <option class="optionGroup" value="Radial_Tree">Radial_Tree</option>
                                             <option class="optionGroup" value="Treemap">Treemap</option>
-                                            <option class="optionGroup" value="Zoomable_Treemap"  selected>Zoomable_Treemap</option>
-                                            <option class="optionGroup" value="Pack">Pack</option>
+                                            <option class="optionGroup" value="Zoomable_Treemap">Zoomable_Treemap</option>
+                                            <option class="optionGroup" value="Pack" selected>Pack</option>
                                             <option class="optionGroup" value="Sunburst">Sunburst</option>
                                         </select>
                                     </div>
@@ -198,8 +200,8 @@
                                 <div id="dataDropdownIntro" style="width: 100%; padding-bottom: 0px; margin-bottom: 24px">
                                   <select id="dataDropdown" class="custom-select mb-0" style="width:100%" onchange="change_author()">
                                     <option class="optionGroup" value="Stasko" selected>John Stasko</option>
-                                    <option class="optionGroup" value="Jiawei Han">Jiawei Han</option>
-                                    <option class="optionGroup" value="Christos">Christos Faloutsos</option>
+                                    <option class="optionGroup" value="Han">Jiawei Han</option>
+                                    <option class="optionGroup" value="Faloutsos">Christos Faloutsos</option>
                                     <option class="optionGroup" value="Leskovec">Jure Leskovec</option>
                                   </select>
                                 </div>

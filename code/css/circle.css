@@ -20,7 +20,18 @@ pointer-events: none;
 }
 
 .grandparent rect {
-  fill: orange;
+  fill: #e6e6e6;
   stroke-width: 1px;
 }
 
+.sunburst-back-button {
+	fill: #e6e6e6 !important;
+}
+
+.cursor-default {
+    cursor: default !important;
+}
+
+.cursor-default:hover {
+	/*stroke: 0.5 !important;*/
+}
