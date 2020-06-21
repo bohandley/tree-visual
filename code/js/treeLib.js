@@ -273,8 +273,8 @@ var treeLib = (function (d3) {
 			clickActionZTPack(node, pathId, containersObj);
 		} else if (originalType == 'Zoomable_Treemap' && otherType == 'Sunburst') {
 			clickActionZTSunburst(node, pathId, containersObj)
-		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
-			
+		} else if (originalType == 'Zoomable_Treemap' && otherType == 'Zoomable_Treemap') {
+			d3.select('#' + pathId).dispatch('linkedClick');
 		} else if (originalType == 'Zoomable_Treemap' && otherType == '') {
 			
 		}
@@ -285,8 +285,8 @@ var treeLib = (function (d3) {
 			clickActionCTPack(node, pathId, containersObj);
 		} else if (originalType == 'Collapsible_Tree' && otherType == 'Sunburst') {
 			clickActionCTSunburst(node, pathId, containersObj);
-		} else if (originalType == 'Collapsible_Tree' && otherType == '') {
-			
+		} else if (originalType == 'Collapsible_Tree' && otherType == 'Collapsible_Tree') {
+			d3.select('#' + pathId).dispatch('linkedClick');
 		} else if (originalType == 'Collapsible_Tree' && otherType == '') {
 			
 		}
@@ -296,9 +296,9 @@ var treeLib = (function (d3) {
 		} else if (originalType == 'Pack' && otherType == 'Collapsible_Tree') {
 			clickActionPackCT(node, pathId, containersObj);
 		} else if (originalType == 'Pack' && otherType == 'Sunburst') {
-			
-		} else if (originalType == 'Pack' && otherType == '') {
-			
+			clickActionPackSunburst(node, pathId, containersObj);
+		} else if (originalType == 'Pack' && otherType == 'Pack') {
+			d3.select('#' + pathId).dispatch('linkedClick');
 		} else if (originalType == 'Pack' && otherType == '') {
 			
 		}
@@ -308,9 +308,9 @@ var treeLib = (function (d3) {
 		} else if (originalType == 'Sunburst' && otherType == 'Collapsible_Tree') {
 			clickActionSunburstCT(node, pathId, containersObj);
 		} else if (originalType == 'Sunburst' && otherType == 'Pack') {
-			
-		} else if (originalType == 'Sunburst' && otherType == '') {
-			
+			clickActionSunburstPack(node, pathId, containersObj);
+		} else if (originalType == 'Sunburst' && otherType == 'Sunburst') {
+			d3.select('#' + pathId).dispatch('linkedClick');
 		} else if (originalType == 'Sunburst' && otherType == '') {
 			
 		}
@@ -714,6 +714,36 @@ var treeLib = (function (d3) {
 
 	}
 
+	function clickActionPackSunburst(node, pathId, containersObj) {
+		var rootClicked = isRoot(node);
+
+		var lcn = containersObj.original.lastClickedNode;
+
+		var ccn = createPathId(node, containersObj.original.id);
+
+		var sameNodeClicked = lcn == ccn;
+
+		if (rootClicked || sameNodeClicked) {
+			var container = containersObj.original.id;
+			d3.select("#"+container).selectAll("path").style("visibility", "visible");
+			d3.select('#' + pathId).dispatch('linkedClick');
+		} else if (pathId.split('-').length > 3){
+			// this clicks the correct node in sunburst and pairs with the function,
+			// to show levels in Sunburst associated with exposed levels in other vis
+			// restrictOnReturn() *should be renamed
+			// restrictOnReturn restricts the concentric arcs in the sunburst to 
+			// only show the path levels of the previous click exposed in the other vis
+			var restrictedLevelNode = pathId.split('-').slice(0, 3).join('-');
+			
+			// click the restricted node to display the sunburst from the 
+			// 3rd path level
+			d3.select('#' + restrictedLevelNode).dispatch('linkedClick');
+			
+		} else {
+			d3.select('#' + pathId).dispatch('linkedClick');	
+		}
+	}
+
 	function clickActionSunburstZT(node, pathId, containersObj) {
 		// debugger
 		colorSunburstBackButton(node, containersObj.original, 'sunburst-back-button');
@@ -830,6 +860,49 @@ var treeLib = (function (d3) {
 
 		} else {
 			d3.select('#' + pathId).dispatch('linkedClick');
+		}
+		
+	}
+
+	function clickActionSunburstPack(node, pathId, containersObj) {
+		var rootClicked = isRoot(node);
+
+		var lcn = containersObj.original.lastClickedNode;
+
+		var ccn = createPathId(node, containersObj.original.id);
+
+		var sameNodeClicked = lcn == ccn;
+
+		if (rootClicked) {
+			var container = containersObj.original.id;
+			d3.select("#"+container).selectAll("path").style("visibility", "visible");
+			d3.select('#' + pathId).dispatch('linkedClick');
+		} else if (sameNodeClicked) {
+			var rootPathOther= pathId.split('-').slice(0,2).join('-');
+
+			d3.select('#' + rootPathOther).dispatch('linkedClick');
+
+			var rootPathOriginal = ccn.split('-').slice(0,2).join('-');
+			// debugger
+			d3.select('#' + rootPathOriginal).dispatch('linkedClick');			
+
+			// clear the last clicked to allow events to continue
+			containersObj.other.currentClickedNode = '';
+			containersObj.original.currentClickedNode = '';
+
+		} else if (ccn.split('-').length > 3){
+			// this clicks the correct node in sunburst and pairs with the function,
+			// to show levels in Sunburst associated with exposed levels in other vis
+			// restrictOnReturn() *should be renamed
+			// restrictOnReturn restricts the concentric arcs in the sunburst to 
+			// only show the path levels of the previous click exposed in the other vis
+			var restrictedLevelNode = ccn.split('-').slice(0, 3).join('-');
+			// restrict the sunburst
+			d3.select('#' + restrictedLevelNode).dispatch('linkedClick');
+			// link click the pack
+			d3.select('#' + pathId).dispatch('linkedClick');
+		} else {
+			d3.select('#' + pathId).dispatch('linkedClick');	
 		}
 		
 	}
@@ -1085,7 +1158,9 @@ var treeLib = (function (d3) {
     		otherType = containersObj.other.type,
     		originalType = containersObj.original.type,
 			isRoot = treeLib.isRoot(node)
-			currentClicked = createPathId(node, containersObj.original.id);
+			currentClicked = createPathId(node, containersObj.original.id)
+			// at this point, the curren and last have not been computed
+			sameNodeClicked = containersObj.original.currentClickedNode == currentClicked;
 			
 		// prevent clicks
 		if (originalType == 'Collapsible_Tree' && otherType == 'Zoomable_Treemap' && isRoot){
@@ -1100,6 +1175,14 @@ var treeLib = (function (d3) {
 			linkedClick(node, otherContainerId);
 			return true;
 		} else if (originalType == 'Sunburst' && otherType == 'Collapsible_Tree' && currentClicked.split('-').length > 3) {
+			// debugger;
+			// if CT, show the levels that the CT is showing
+			// do the normal reaction for CT
+			linkedClick(node, otherContainerId);
+
+			
+			return true;
+		} else if (originalType == 'Sunburst' && otherType == 'Pack' && (currentClicked.split('-').length > 3 || sameNodeClicked)) {
 			// debugger;
 			// if CT, show the levels that the CT is showing
 			// do the normal reaction for CT
@@ -1281,17 +1364,27 @@ var treeLib = (function (d3) {
 
 		// sunburst
 		restrictOnReturn: function(node, container1Id, container2Id, arc) {
-			var ccn = getConfigContainer(container1Id).currentClickedNode
-				type2 = getConfigContainer(container2Id).type;
 
- 	
- 			var levels = ccn.split('-').length;
+			var originalContainer = getConfigContainer(container1Id),
+				ccn = originalContainer.currentClickedNode,
+				lcn = originalContainer.lastClickedNode,
+				type2 = getConfigContainer(container2Id).type,
+				levels = ccn.split('-').length;
+
+ 			if (type2 == 'Pack' && ( levels == 2 || levels == 1 || ccn == lcn || ccn == '')) {
+ 				return arc(node);
+ 			}
+
+
             if (
             	// levels == 2 
             	// && 
             	(
             		type2 == 'Collapsible_Tree' 
-            		|| type2 == 'Zoomable_Treemap' )
+            		|| type2 == 'Zoomable_Treemap'
+            		|| type2 == 'Pack'
+            	)
+            		
             	
             ) {
                 if(showLevels(node, levels))
@@ -1313,9 +1406,21 @@ var treeLib = (function (d3) {
 			// give visibility to arcs that are in the clicked path
 			// when clicking greater than or equal to 4 node path length
 			// only show nodes that are part of the path 
-            var ccn = config.containers.filter(function(el) {
+            var originalContainer = config.containers.filter(function(el) {
                 return el.id == containerId;
-            })[0].currentClickedNode;
+            })[0];
+
+			var otherContainer = config.containers.filter(function(el) {
+                return el.id != containerId;
+            })[0];            
+
+            var ccn = originalContainer.currentClickedNode;
+           	var lcn = originalContainer.lastClickedNode;
+           	var oType = otherContainer.type;
+           	// special handling for pack and sunburst to return to root
+           	if (ccn == lcn && oType == 'Pack')
+           		return 'visible';
+
             var ccnLen = ccn.split('-').length;
 
             var pathId = createPathId(d, containerId);

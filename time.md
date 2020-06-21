@@ -276,6 +276,17 @@
         jumping paths, close all extended paths in CT
         click same node in pack, zoom to root in CT
 
+6/20/2020
+  10:00am-12:00pm
+  6:00pm-7:00pm
+    begin pack and sunburst linking
+    complete pack and sunburst linking
+      challenges:
+        give visibility to all nodes in sunburst on return to root
+        custom show arcs for sunburst, on root show all, but 
+        nodes deeper than 3 levels show only those corresponding to pack
+        restrict action when sunburst has the same node clicked-return to root instead
+        restrict acction on sunburst when node clicked is deeper than 3
 
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
