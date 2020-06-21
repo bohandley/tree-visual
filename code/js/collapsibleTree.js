@@ -227,7 +227,11 @@ function draw_collapsible_tree(position){
             nodeUpdate.select("text")
                 .style("fill-opacity", 1)
                 .attr("transform", function(d) { 
-                    return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length + 50)  + ")"; 
+                    if (treeLib.isLeaf(d))
+                        var amt = (d.name.split(' ')[0] + '...').length + 10;
+                    else
+                        var amt = d.name.length;
+                    return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (amt + 50)  + ")"; 
                 });
                 // TODO: appropriate transform
             
