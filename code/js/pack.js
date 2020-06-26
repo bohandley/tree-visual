@@ -13,19 +13,16 @@ function draw_pack(position){
 
     var formatNumber = d3.format(",d");
 
-    // color = d3.scaleLinear()
-    //     .domain([-1, 5])
-    //     .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
-    //     .interpolate(d3.interpolateHcl);
-
     var pack = d3.pack()
         .size([diameter - margin, diameter - margin])
         .padding(2);
 
     d3.json(FileName, function(error, root) {
+        if (error) throw error;
+
         // FILTER JSON
         root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
-        // if (error) throw error;
+        
         root = d3.hierarchy(root)
             .sum(function(d) { return d.size; })
             .sort(function(a, b) { return b.value - a.value; });
@@ -34,6 +31,7 @@ function draw_pack(position){
         var focus = root,
             nodes = pack(root).descendants(),
             view;
+
         var circle = g.selectAll("circle")
             .data(nodes)
             .enter().append("circle")
@@ -41,71 +39,44 @@ function draw_pack(position){
             .classed(position1, true)
             .attr("id", function(d){
                 return treeLib.pathId(d, position1);
-                // return buildNodeOrLeafId(d, position1);
             })
             .style("fill", d => {
+                // refactor into treeLib as rootColor()
                 if (!d.parent)
                     return "#e6e6e6";
                 else
                     return getColor(d, color);
-                // getColor(d, color)
-            }) //returns an rbg val
+            })
             .style("stroke", "white")
             .style("stroke", 1)
             .on("linkedClick", function(d) {
-                if (focus !== d) zoom(d), d3.event.stopPropagation(); 
+                if (focus !== d) {
+                    zoom(d);
+                    d3.event.stopPropagation(); 
+                } else if focus === d {
+                    // prevent the bubbling of same clicked node to root
+                    d3.event.stopPropagation();
+                }
             })
             .on("click", function(d) { 
-                    
-                // var response;
-                
-                // if(otherGraphType == "Zoomable_Treemap")
-                //     response = zoomableTreeResponse(d, position1, position2, "Pack");
-                // else if(otherGraphType == "Collapsible_Tree") 
-                //     response = treeResponse(d, position1, position2);
-                
-                // if(response == 0)
-                //     return;
-
-                // if it is a new node, zoom to it
-                //     otherwise, let the event bubble up to the root
-
                 if (focus !== d) {
-                    // debugger
                     var response = treeLib.linkedClick(d, position2);
 
-                    // 1. prevent the response if interacting with zoomable treemap and zt is transitioning
+                    // prevent the intially clicked display from it's normal click action
                     if (response == 'prevent')
                         return;
 
                     zoom(d); 
                     d3.event.stopPropagation(); 
+                } else if (focus === d) {
+                    // PREVENT SAME NODE CLICK RETURN TO ROOT
+                    // do nothing and stop propagation
+                    // to prevent the event from bubbling up to the root
+                    d3.event.stopPropagation(); 
                 }
             })
             .on("mouseover", d => mouseoverLinking(position1, position2, d))
             .on("mouseout", d => mouseoutLinking(position1, position2, d));
-
-        // var circleLeaves = d3.selectAll("circle.node--leaf")
-        //     .on("click", null)
-        //     .on("mouseover", function(d){
-        //         mouseoverLinking(position1, position2, d, isgr=0)
-        //         // var position2Id = cleanNodeId(buildPositionId(d, position2));
-                
-        //         // d3.select("#"+position2Id).select(".parent").style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                
-        //         // d3.select(this).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
-                
-        //         // d3.select(this).append("title").text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
-
-        //     })
-        //     .on("mouseout", function(d){
-        //         mouseoutLinking(position1, position2, d, isgr=0)
-        //         // var position2Id = cleanNodeId(buildPositionId(d, position2));
-
-        //         // d3.select("#"+position2Id).select(".parent").style("stroke", "white").style("stroke-width", 1);
-
-        //         // d3.select(this).style("stroke", "white").style("stroke-width", 1);
-        //     });
 
         var text = g.selectAll("text")
             .data(nodes)
@@ -113,18 +84,19 @@ function draw_pack(position){
             .attr("class", "label")
             .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
             .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
-            .text(function(d) { 
+            .text(function(d) {
+                // refactor into nodeDisplayText() in treeLib
                 var n = d.data.name;
                 
                 if (treeLib.isLeaf(d))
                     n = n.split(' ')[0] + '...';
                     
                 return n;
-                // return d.data.name; 
             });
 
         var node = g.selectAll("circle,text");
 
+        // events bubble up to root unless stop propagation
         svg.style("background", "white")
             .on("linkedClick", function() {
                 zoom(root);
@@ -134,21 +106,6 @@ function draw_pack(position){
 
                 if (response == 'prevent')
                     return;
-                // var response;
-                
-                // if(otherGraphType == "Zoomable_Treemap"){
-                //     response = zoomableTreeResponse(root, position1, position2, "", 1);
-                // } else if(otherGraphType == "Collapsible_Tree"){ 
-                //     if (cfg.zoomZooming){
-                //         console.log("Zooming in progress...")
-                //         response = 0;
-                //     } else {
-                //         response = 1;
-                //     }
-                // }
-
-                // if(response == 0)
-                //     return;
 
                 zoom(root);                
             });

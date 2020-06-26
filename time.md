@@ -288,6 +288,15 @@
         restrict action when sunburst has the same node clicked-return to root instead
         restrict acction on sunburst when node clicked is deeper than 3
 
+6/25/2020
+  4:30pm-8:30pm
+    disable the pack same click return to root function
+      disable in pack d3 code
+      disable in linking
+        pack - ZT & ZT - pack
+        pack - CT & CT - pack
+        pack - Sunburst & sunburst - pack
+        
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions
