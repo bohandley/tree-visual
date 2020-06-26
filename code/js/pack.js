@@ -4,7 +4,7 @@ function draw_pack(position){
     var position2 = position == "#g1" ? "g2" : "g1";
     var position1 = position == "#g1" ? "g1" : "g2";
 
-    var otherGraphType = getOtherGraphType(position2);
+    var otherGraphType = treeLib.getOtherGraphType(position2);
 
     var svg = d3.select(position),
         margin = 20,
@@ -35,17 +35,23 @@ function draw_pack(position){
         var circle = g.selectAll("circle")
             .data(nodes)
             .enter().append("circle")
-            .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+            .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf leaf cursor-default" : "node node--root"; })
             .classed(position1, true)
             .attr("id", function(d){
                 return treeLib.pathId(d, position1);
             })
+            // .attr("class", d => {
+            //     debugger;
+            //     var cls = treeLib.isLeaf(d) ? 'leaf' : '';
+
+            //     return cls;
+            // })
             .style("fill", d => {
                 // refactor into treeLib as rootColor()
                 if (!d.parent)
                     return "#e6e6e6";
                 else
-                    return getColor(d, color);
+                    return treeLib.getColor(d, color);
             })
             .style("stroke", "white")
             .style("stroke", 1)
@@ -59,7 +65,9 @@ function draw_pack(position){
                 }
             })
             .on("click", function(d) { 
-                if (focus !== d) {
+                if (treeLib.isLeaf(d)) {
+                    d3.event.stopPropagation();
+                } else if (focus !== d) {
                     var response = treeLib.linkedClick(d, position2);
 
                     // prevent the intially clicked display from it's normal click action
@@ -75,8 +83,8 @@ function draw_pack(position){
                     d3.event.stopPropagation(); 
                 }
             })
-            .on("mouseover", d => mouseoverLinking(position1, position2, d))
-            .on("mouseout", d => mouseoutLinking(position1, position2, d));
+            .on("mouseover", d => treeLib.mouseoverLinking(position1, position2, d))
+            .on("mouseout", d => treeLib.mouseoutLinking(position1, position2, d));
 
         var text = g.selectAll("text")
             .data(nodes)
@@ -113,7 +121,7 @@ function draw_pack(position){
         zoomTo([root.x, root.y, root.r * 2 + margin]);
 
         function zoom(d) {
-            displaySelectedNode(d);
+            treeLib.displaySelectedNode(d);
 
             var focus0 = focus; focus = d;
             var transition = d3.transition()
