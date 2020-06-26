@@ -2,7 +2,7 @@ function draw_radial_tree(position){
 	var position2 = position == "#g1" ? "g2" : "g1";
     var position1 = position == "#g1" ? "g1" : "g2";
 
-    var otherGraphType = getOtherGraphType(position2);
+    var otherGraphType = treeLib.getOtherGraphType(position2);
 
 	var svg = d3.select(position);
     var radius = 250;
@@ -46,35 +46,37 @@ function draw_radial_tree(position){
             .data(root.descendants().reverse())
             .enter().append("g")
             .attr("id", function(d){
-        		return buildNodeOrLeafId(d, position1);
+        		return treeLib.pathId(d, position1);
             })
             .attr("transform", d => `
                 rotate(${d.x * 180 / Math.PI - 90})
                 translate(${d.y},0)
-            `);
+            `)
+            .attr("class", d => {
+                return treeLib.isLeaf(d) ? 'leaf' : '';
+            });
 
         node.append("circle")
             .attr("fill", function(d){
                 if (!d.parent)
                     return "#e6e6e6";
                 else
-                    return getColor(d, color);
+                    return treeLib.getColor(d, color);
             })
             .attr("r", _=> {
-            	// return 5;
             	return appearance.nodeSize*2/3;
             })
             .style("stroke", "steelblue")
     		.style("stroke-width", 1)
             .attr("class", "node-size")
+            .on("click", function(d) {
+            	treeLib.displaySelectedNode(d);
+            })
             .on("mouseover", function(d){
-            	mouseoverLinking(position1, position2, d);
-                // d3.select(this).style("cursor", "pointer").attr("r", 5);
-                // d3.select(this).append("title").text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
+            	treeLib.mouseoverLinking(position1, position2, d);
             })
             .on("mouseout", function(d){
-            	mouseoutLinking(position1, position2, d);
-                // d3.select(this).attr("r", 1);
+            	treeLib.mouseoutLinking(position1, position2, d);
             });
 
         node.append("text")
@@ -84,7 +86,6 @@ function draw_radial_tree(position){
             .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
             .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
             .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
-            // .filter(d => d.children) // shown leaf titles
             .text(d => {
             	var n = d.data.name;
                 
@@ -92,7 +93,6 @@ function draw_radial_tree(position){
                     n = n.split(' ')[0] + '...';
                     
                 return n;
-            	// d.data.name
             })
             .clone(true).lower()
             .attr("stroke", "white")

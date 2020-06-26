@@ -2,7 +2,7 @@ function draw_sunburst(position){
     var position2 = position == "#g1" ? "g2" : "g1";
     var position1 = position == "#g1" ? "g1" : "g2";
 
-    var otherGraphType = getOtherGraphType(position2);
+    var otherGraphType = treeLib.getOtherGraphType(position2);
 
     var width = 500,
         height = 500,
@@ -34,18 +34,6 @@ function draw_sunburst(position){
         // FILTER JSON
         root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
         root = d3.hierarchy(root);
-        // console.log(root)
-
-        // var year_list = new Array();
-        // for(var i =0; i < root.children.length; i++){
-        //     year_list.push(parseInt(root.children[i].data.name));
-        // }
-
-        // console.log(year_list)
-        // var color = d3.scaleLinear()
-        // .domain(year_list)
-        // .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
-        // .interpolate(d3.interpolateHcl);
 
         root.sum(function(d) { return d.size; });
         svg.selectAll("path")
@@ -60,36 +48,27 @@ function draw_sunburst(position){
                 return arc(d);
             })
             .style("fill", function(d) {
-                // if (!d.parent) {
-                //         return "#e6e6e6";
-                //     } else {
-                //         return getColor(d, color);    
-                //     }
                 if (!d.parent)
                     return "#e6e6e6";
                 else
-                    return getColor(d, color);
+                    return treeLib.getColor(d, color);
             })
             .style("stroke", "white")
             .style("stroke-width", 0.5)
             .attr("id", d => {
                 return treeLib.pathId(d, position1);
-                // buildNodeOrLeafId(d, position1)
             })
             .attr("class", d => {
                 var cls = treeLib.isLeaf(d) ? 'leaf cursor-default' : '';
 
-                // if (!d.parent)
-                //     cls += ' sunburst-back-button';
-
                 return cls;
             })
             .classed(position1, true)
-            .on("mouseover", d => mouseoverLinking(position1, position2, d))
-            .on("mouseout", d => mouseoutLinking(position1, position2, d))
+            .on("mouseover", d => treeLib.mouseoverLinking(position1, position2, d))
+            .on("mouseout", d => treeLib.mouseoutLinking(position1, position2, d))
             .on('linkedClick', d => linkedClickClick(d))
             .on("click", d => {
-                displaySelectedNode(d);
+                treeLib.displaySelectedNode(d);
 
                 var prevent = treeLib.preventLeaf(d, position1);
 
@@ -101,9 +80,6 @@ function draw_sunburst(position){
             .append("title")
             .text( d => {
                 var dataName = d.data.name;
-                // do we need to shorten the title in the tooltip?
-                // if (treeLib.isLeaf(d))
-                //     dataName = dataName.split(' ')[0] + '...';
 
                 return dataName + "\n" + formatNumber(d.value)
             });

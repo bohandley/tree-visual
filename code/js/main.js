@@ -101,7 +101,7 @@ function change_author(){
 
     var objD = document.getElementById("dataDropdown");
 
-    displayedNode(objD.value);
+    treeLib.displayedNode(objD.value);
 
     FileName = "../datasets/" + objD.value + ".txt";
 
@@ -218,7 +218,7 @@ window.onload = function(){
     
     var objD = document.getElementById("dataDropdown");
 
-    displayedNode(objD.value);
+    treeLib.displayedNode(objD.value);
 
     FileName = "../datasets/" + objD.value + ".txt";
 

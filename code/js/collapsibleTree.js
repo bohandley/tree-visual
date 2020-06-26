@@ -2,7 +2,7 @@ function draw_collapsible_tree(position){
     var position2 = position == "#g1" ? "g2" : "g1";
     var position1 = position == "#g1" ? "g1" : "g2";
 
-    var otherGraphType = getOtherGraphType(position2);
+    var otherGraphType = treeLib.getOtherGraphType(position2);
 
     // var svg = d3.select(position);
     var radius = 250;
@@ -80,15 +80,7 @@ function draw_collapsible_tree(position){
             var nodeEnter = node.enter().append("g")
                 .attr("class", "node zoomable " + position1)
                 .attr("id", function(d){
-                    // var id = [position1].concat(buildId(d).reverse()).join("-");
-                    // var id = cleanNodeId(buildPositionId(d, position1));
-
-                    // if(d.children == null && d._children == null)
-                    //     return "leaf-" + cleanNodeId(d.name);
-                    // else
-                    //     return id;
                     return treeLib.pathId(d, position1);
-                    // return buildNodeOrLeafId(d, position1);
                 })
                 .attr("data", d => {
                     return treeLib.getCurrentClicked(position1);
@@ -97,7 +89,7 @@ function draw_collapsible_tree(position){
                 .on("linkedClick", click)
                 .on("drill", click)
                 .on("click", function(d){
-                    displaySelectedNode(d);
+                    treeLib.displaySelectedNode(d);
 
                     // prevent events when
                     // 1. zoomable treemap is other and trying to collapse to root
@@ -106,27 +98,6 @@ function draw_collapsible_tree(position){
 
                     if (response == 'prevent')
                         return;
-                    // do not allow CT click events or responsiveness if clicking a leaf
-                    // if(d3.select(this).attr("id").includes("leaf"))
-                    //     return;
-                
-                    // var response;
-
-                    // // behave normally if the other map is a collapsible tree
-                    // if(otherGraphType == "Collapsible_Tree"){
-                    //     var targetId = buildNodeOrLeafId(d, position2);                    
-                    //     d3.select("#"+targetId).dispatch('drill');
-                    //     response = 1;
-                    // }
-
-                    // if(otherGraphType == "Zoomable_Treemap")
-                    //     response = zoomableTreeResponse(d, position1, position2, "Collapsible_Tree");
-                    // else if(otherGraphType == "Pack") 
-                    //     response = packResponse(d, position1, position2);
-
-                    // if(response == 0)
-                    //     return;
-
 
                     click(d);
                 });
@@ -138,12 +109,11 @@ function draw_collapsible_tree(position){
                     if (!d.parent) {
                         return "#e6e6e6";
                     } else {
-                        return getColor(d, color);    
-                    }
-                    
-                })//returns an rbg val
-                .on("mouseover", d => mouseoverLinking(position1, position2, d))
-                .on("mouseleave", d => mouseoutLinking(position1, position2, d));
+                        return treeLib.getColor(d, color);    
+                    }  
+                })
+                .on("mouseover", d => treeLib.mouseoverLinking(position1, position2, d))
+                .on("mouseleave", d => treeLib.mouseoutLinking(position1, position2, d));
 
             nodeEnter.append("text")
                 .attr("x", 10)
@@ -161,16 +131,7 @@ function draw_collapsible_tree(position){
 
             nodeEnter.append("title")
                 .text(function(d) {
-                    // if (treeLib.isLeaf(d))
-                    //     return d.name.split(' ')[0] + '...';
-                    // else
-                        return d.name;
-                    // if(d.name.slice(0, 2) == "HW"){
-                    //     return "Correlation: " + d.correlation  + "\n" + "Difficulty Index: " + d.dindex + "\n" + "Item ID: " + d.itemID 
-                    // }else{
-                    //     return "Correlation: " + d.correlation  + "\n" + "Difficulty Index: " + d.dindex
-                    // }
-
+                    return d.name;
                 });
 
 
@@ -190,14 +151,10 @@ function draw_collapsible_tree(position){
                     // add the class if it was already there from the treeLib code
 
                     cls = treeLib.addSunburstBackButtonClass(pathId, cls);
-                    // if (d3.select("#" + pathId).select("circle").attr("class").includes('sunburst-back-button')){
-                    //     cls += ' sunburst-back-button';
-                    // }
 
-                    return cls;//"node-size"
+                    return cls;
                 })
                 .attr("r", function(d) {
-                    // return 5;
                     return appearance.nodeSize;
                     // if(d._children != null){
                     //     if(d._children.length >= 13){
@@ -219,9 +176,8 @@ function draw_collapsible_tree(position){
                     if (!d.parent) {
                         return "#e6e6e6";
                     } else {
-                        return getColor(d, color);    
-                    }
-                    // return getColor(d, color);      
+                        return treeLib.getColor(d, color);    
+                    }      
                 })
             
             nodeUpdate.select("text")
@@ -233,7 +189,6 @@ function draw_collapsible_tree(position){
                         var amt = d.name.length;
                     return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (amt + 50)  + ")"; 
                 });
-                // TODO: appropriate transform
             
             var nodeExit = node.exit().transition()
                 .duration(duration)
