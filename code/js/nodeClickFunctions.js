@@ -287,7 +287,6 @@ function zoomInDrill(zoomableTargetId){
 
 		return;
 	} else if (partialZoomArrLength > zoomableTargetPathLength)
-		debugger;
 
 	cfg.zoomZooming = true;
 	

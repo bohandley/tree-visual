@@ -277,7 +277,6 @@ function draw_collapsible_tree(position){
         
         // Toggle children on click.
         function click(d) {
-            // debugger;
             // this is where the nodes are closed
             // if d.children, it closes the nodes
             if (d.children) {

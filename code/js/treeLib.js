@@ -103,7 +103,6 @@ var treeLib = (function (d3) {
 		computeExposedNodesAndIds(container);
 		computePathRestr(container);
 		// set the callback
-		// debugger;
 	}
 
 	// random weird things that need to be done to reconcile differences
@@ -148,7 +147,7 @@ var treeLib = (function (d3) {
 					// the problem is that all nodes are present in html
 					
 					var lastClickedNode = container.currentClickedNode;
-					// debugger
+
 					if (el.includes(lastClickedNode)){
 						idsForRestr.push(el);
 						return true
@@ -298,6 +297,7 @@ var treeLib = (function (d3) {
 		} else if (originalType == 'Pack' && otherType == 'Sunburst') {
 			clickActionPackSunburst(node, pathId, containersObj);
 		} else if (originalType == 'Pack' && otherType == 'Pack') {
+			debugger
 			d3.select('#' + pathId).dispatch('linkedClick');
 		} else if (originalType == 'Pack' && otherType == '') {
 			
@@ -342,7 +342,6 @@ var treeLib = (function (d3) {
 	}
 
 	function clickActionZTSunburst(node, pathId, containersObj) {
-		// debugger;
 		colorSunburstBackButton(node, containersObj.other, 'sunburst-back-button')
 		d3.select('#' + pathId).dispatch('linkedClick');
 	}
@@ -420,7 +419,6 @@ var treeLib = (function (d3) {
 			// Close all paths that are not in the pathID
 			// find the common parent path between the current node and the last clicked node
 			var commonParent = findCommonParent(containersObj.other);
-			// debugger;
 			// we need to find the exposed element in the collection that's path is +1 of the common parent
 			// and this element is included in the last clicked node
 			var pathLengthOfClosedOriginalNode = commonParent.split('-').length + 1;
@@ -433,7 +431,7 @@ var treeLib = (function (d3) {
 					lastClickedOriginalNode.includes(el.id)
 				);
 			});
-			// debugger
+			
 			if (exposedArrayToClose.length != 0) {
 				var exposedPathIdToClose = exposedArrayToClose[0].id;
 				
@@ -494,7 +492,6 @@ var treeLib = (function (d3) {
 			// Close all paths that are not in the pathID
 			// find the common parent path between the current node and the last clicked node
 			var commonParent = findCommonParent(containersObj.other);
-			// debugger;
 			// we need to find the exposed element in the collection that's path is +1 of the common parent
 			// and this element is included in the last clicked node
 			var pathLengthOfClosedOriginalNode = commonParent.split('-').length + 1;
@@ -507,7 +504,7 @@ var treeLib = (function (d3) {
 					lastClickedOriginalNode.includes(el.id)
 				);
 			});
-			// debugger
+
 			if (exposedArrayToClose.length != 0) {
 				var exposedPathIdToClose = exposedArrayToClose[0].id;
 				
@@ -529,18 +526,16 @@ var treeLib = (function (d3) {
 				}
 			}
 		} else if (pathId.split('-').length > 3) {
-			// debugger
 			var restrictedLevelNode = pathId.split('-').slice(0, 3).join('-');
 
 			d3.select('#' + restrictedLevelNode).dispatch('linkedClick');
 		} else {
-			// debugger
 			d3.select('#' + pathId).dispatch('linkedClick');
 		}
 	}
 
 	function clickActionPackZT(node, pathId, containersObj) {
-		// debugger
+		
 		var originalPathId = containersObj.original.currentClickedNode;
 
 		var rootClicked = isRoot(node);
@@ -626,7 +621,7 @@ var treeLib = (function (d3) {
 		var lastClickedOtherNode = containersObj.other.lastClickedNode;
 
 		var zoomOutSamePath = (lastClickedOtherNode.split('-').length - pathId.split('-').length) > 1
-		// debugger
+
 		if (rootClicked){
 			// close all the nodes that have children
 			containersObj.other.exposedIds.forEach(id => {
@@ -651,9 +646,11 @@ var treeLib = (function (d3) {
 					lastClickedOtherNode.includes(el.id)
 				);
 			});
-			// debugger
+			
+			// close elements of the CT that were previously clicked and
+			// are not in the pathId
 			if (exposedArrayToClose.length != 0) {
-				// debugger
+			
 				var exposedPathIdToClose = exposedArrayToClose[0].id;
 				
 				var originalNodeToClose = d3.select('#' + exposedPathIdToClose);
@@ -669,10 +666,16 @@ var treeLib = (function (d3) {
 			// if it is on the same branch and is more than one node away
 			// if it is on another branch, drill from the common parent
 			// how many nodes in the path away is it from the common parent
-			if (commonParent == '' || commonParent.split('-').length == 2) { 
+			var firstClick = commonParent == '',
+				commonParentIsRoot = commonParent.split('-').length == 2;
+
+			if (firstClick || commonParentIsRoot) { 
+				
 				if (pathId.split('-').length == 3) {
+					// normal linkedClick behavior for one level beyond the root
 					d3.select('#' + pathId).dispatch('linkedClick');
 				} else {
+					// drill into a path behavior
 					var startNum = 3;
 					var drillNode = pathId.split('-').slice(0, startNum).join('-');
 					d3.select('#' + drillNode).dispatch('linkedClick');
@@ -685,12 +688,14 @@ var treeLib = (function (d3) {
 				}
 
 			} else {
-				// all behavior beyon the first child from root
+				// all behavior beyond the first child from root
 				var pathL = pathId.split('-').length;
 				var comPL = commonParent.split('-').length;
 
 				if (pathId == commonParent) {
 					// the extra nodes are already closed, do nothing
+					// pack has already zoomed back to common parent
+					// and CT has already closed it's exposed 
 				} else if (notInExposedPath) {
 					var startNum = comPL;
 					var drillNode = pathId.split('-').slice(0,startNum).join('-');
@@ -721,9 +726,7 @@ var treeLib = (function (d3) {
 
 		var ccn = createPathId(node, containersObj.original.id);
 
-		var sameNodeClicked = lcn == ccn;
-
-		if (rootClicked || sameNodeClicked) {
+		if (rootClicked) {
 			var container = containersObj.original.id;
 			d3.select("#"+container).selectAll("path").style("visibility", "visible");
 			d3.select('#' + pathId).dispatch('linkedClick');
@@ -745,7 +748,6 @@ var treeLib = (function (d3) {
 	}
 
 	function clickActionSunburstZT(node, pathId, containersObj) {
-		// debugger
 		colorSunburstBackButton(node, containersObj.original, 'sunburst-back-button');
 		// 1. normal one path level click in and out
 		// 2. zoom in based off exposed nodes and the original id clicked
@@ -791,7 +793,6 @@ var treeLib = (function (d3) {
 	}
 
 	function clickActionSunburstCT(node, pathId, containersObj) {
-		// debugger
 		var originalPathId = containersObj.original.currentClickedNode;
 
 		var rootClicked = isRoot(node);
@@ -824,12 +825,11 @@ var treeLib = (function (d3) {
 			// restrictOnReturn restricts the concentric arcs in the sunburst to 
 			// only show the path levels of the previous click exposed in the other vis
 			var restrictedLevelNode = ccn.split('-').slice(0, 3).join('-');
-			// debugger
+
 			d3.select('#' + restrictedLevelNode).dispatch('linkedClick');
 
-
 			var commonParent = findCommonParent(containersObj.other);
-			// debugger;
+
 			// we need to find the exposed element in the collection that's path is +1 of the common parent
 			// and this element is included in the last clicked node
 			var pathLengthOfClosedOtherNode = commonParent.split('-').length + 1;
@@ -842,9 +842,9 @@ var treeLib = (function (d3) {
 					lastClickedOtherNode.includes(el.id)
 				);
 			});
-			// debugger
+
 			if (exposedArrayToClose.length != 0) {
-				// debugger
+
 				var exposedPathIdToClose = exposedArrayToClose[0].id;
 				
 				var originalNodeToClose = d3.select('#' + exposedPathIdToClose);
@@ -878,18 +878,7 @@ var treeLib = (function (d3) {
 			d3.select("#"+container).selectAll("path").style("visibility", "visible");
 			d3.select('#' + pathId).dispatch('linkedClick');
 		} else if (sameNodeClicked) {
-			var rootPathOther= pathId.split('-').slice(0,2).join('-');
-
-			d3.select('#' + rootPathOther).dispatch('linkedClick');
-
-			var rootPathOriginal = ccn.split('-').slice(0,2).join('-');
-			// debugger
-			d3.select('#' + rootPathOriginal).dispatch('linkedClick');			
-
-			// clear the last clicked to allow events to continue
-			containersObj.other.currentClickedNode = '';
-			containersObj.original.currentClickedNode = '';
-
+			// do nothing, prevent same node click in pack
 		} else if (ccn.split('-').length > 3){
 			// this clicks the correct node in sunburst and pairs with the function,
 			// to show levels in Sunburst associated with exposed levels in other vis
@@ -1175,15 +1164,12 @@ var treeLib = (function (d3) {
 			linkedClick(node, otherContainerId);
 			return true;
 		} else if (originalType == 'Sunburst' && otherType == 'Collapsible_Tree' && currentClicked.split('-').length > 3) {
-			// debugger;
 			// if CT, show the levels that the CT is showing
 			// do the normal reaction for CT
 			linkedClick(node, otherContainerId);
 
-			
 			return true;
 		} else if (originalType == 'Sunburst' && otherType == 'Pack' && (currentClicked.split('-').length > 3 || sameNodeClicked)) {
-			// debugger;
 			// if CT, show the levels that the CT is showing
 			// do the normal reaction for CT
 			linkedClick(node, otherContainerId);

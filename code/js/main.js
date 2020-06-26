@@ -100,7 +100,6 @@ function change_author(){
     resetCfg();
 
     var objD = document.getElementById("dataDropdown");
-    // debugger
 
     displayedNode(objD.value);
 

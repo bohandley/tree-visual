@@ -53,7 +53,7 @@ function draw_pack(position){
                 if (focus !== d) {
                     zoom(d);
                     d3.event.stopPropagation(); 
-                } else if focus === d {
+                } else if (focus === d) {
                     // prevent the bubbling of same clicked node to root
                     d3.event.stopPropagation();
                 }
