@@ -297,6 +297,17 @@
         xpack - CT & xCT - pack
         xpack - Sunburst & xsunburst - pack
       refactor hover linking
+
+6/26/2020
+  4:30pm-6:30pm
+    fix hover issues and linking for pack leaf nodes
+    refactor utilities
+
+6/27/2020
+  3:30pm
+    ??fix bug, restriction on sunburst and CT on load
+      issue is that the treeLib config isn't changing with radial_tree
+
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
   -pass json into the build functions

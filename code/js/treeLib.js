@@ -297,7 +297,6 @@ var treeLib = (function (d3) {
 		} else if (originalType == 'Pack' && otherType == 'Sunburst') {
 			clickActionPackSunburst(node, pathId, containersObj);
 		} else if (originalType == 'Pack' && otherType == 'Pack') {
-			debugger
 			d3.select('#' + pathId).dispatch('linkedClick');
 		} else if (originalType == 'Pack' && otherType == '') {
 			

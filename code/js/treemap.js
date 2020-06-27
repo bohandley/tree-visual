@@ -66,5 +66,7 @@ function draw_treemap(position, selectindex){
         
         cell.append("title")
             .text( d => d.data.id + "\n" + format(d.value) );
+
+        d3.select("svg#"+position1).dispatch('doneDrawing');
     });
 }

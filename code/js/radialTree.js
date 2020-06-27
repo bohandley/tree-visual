@@ -105,5 +105,6 @@ function draw_radial_tree(position){
 
         svg.attr("viewBox", autoBox);
 
+        d3.select("svg#"+position1).dispatch('doneDrawing');
     });
 }
