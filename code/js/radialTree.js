@@ -63,8 +63,8 @@ function draw_radial_tree(position){
                 else
                     return treeLib.getColor(d, color);
             })
-            .attr("r", _=> {
-            	return appearance.nodeSize*2/3;
+            .attr("r", (d)=> {
+            	return menu.getNodeSize(d, "Radial_Tree");
             })
             .style("stroke", "steelblue")
     		.style("stroke-width", 1)

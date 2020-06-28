@@ -24,49 +24,6 @@ var treeLib = (function (d3) {
 	};
 
 	var config;
-
-	// var config = {
-	// 	containers: [],
-		// 	{
-		// 		type: '',
-		// 		container: '',
-		// 		pathRestr: null,
-		// 		exposedNodes: [],
-		// 		//highlightedNode: '',
-				// callback: transition callback,
-				// last clicked node: '',
-
-		// 	},
-		// 	{
-		// 		type:'',
-		// 		container: '',
-		// 		pathRestr: null,
-		// 		exposedNodes: [],
-		// 		// highlightedNode: '',
-				// callback: transition callback,
-				// last clicked node: ''
-		// 	},
-
-		// ],
-		// DON'T DO CHANGE, ONLY DO TRANSITIONING: BOOLEAN
-		// // "change" describes when a graph has been clicked,
-	 //    // and a second graph may also be clicked as a result of the first click,
-	 //    // we cap this at two so the second graph does trigger the first graph again but
-	 //    // the first graph reads "change" and returns out of the click function.
-	 //    change: 0,
-
-	//     zoomableTransition: 0, // used to figure out how deep to zom
-	//     transitioning: 0, //zoomZooming: null,
-	//     // prvClk: {
-	//     //     pack: '',
-	//     //     zoomable:'',
-	//     //     tree: '',
-	//     //     treemap: '',
-	//     //     sunburst: ''
-	//     // },
-	//     currentSelectedNode: '',
-	//     // fileData: null
-	// };
 	
 	// takes an array of svg ids that contain the visualizations
 	// build the config on opening the app
@@ -1519,9 +1476,9 @@ var treeLib = (function (d3) {
 		d3.select("#" + position2Id)
 			.select("circle")
 			.style("cursor", "pointer")
-			.attr("r", _=>{
+			.attr("r", (d)=>{
 				// return 10;
-				return appearance.nodeSize;
+				return menu.getNodeSize(d, "Radial_Tree")*2;
 			})
 			.style("stroke", d => {
 	    		// return getComplement(getColor(d, color));
@@ -1538,9 +1495,9 @@ var treeLib = (function (d3) {
 	function radialTreeResponseMOut(position2Id){
 		d3.select("#"+position2Id)
 			.select("circle")
-			.attr("r", _=>{
+			.attr("r", (d)=>{
 				// return 5;
-				return appearance.nodeSize*2/3;
+				return menu.getNodeSize(d, "Radial_Tree");
 			})
 			.style("stroke", "steelblue")
 	    	.style("stroke-width", 1);
@@ -1555,9 +1512,9 @@ var treeLib = (function (d3) {
 	    	})
 	    	.style("stroke-width", 1.5)
 	    	.style("cursor", "pointer")
-	    	.attr("r", _=>{
+	    	.attr("r", (d)=>{
 				// return 10;
-				return appearance.nodeSize * 2;
+				return menu.getNodeSize(d) * 2;
 			});
 	}
 
@@ -1567,9 +1524,9 @@ var treeLib = (function (d3) {
 	    	.style("stroke", "steelblue")
 	    	.style("stroke-width", 1.5)
 	    	.style("cursor", "pointer")
-	    	.attr("r", _=>{
+	    	.attr("r", (d)=>{
 				// return 5;
-				return appearance.nodeSize;
+				return menu.getNodeSize(d);
 			});
 	}
 

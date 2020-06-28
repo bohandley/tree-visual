@@ -1,40 +1,17 @@
-const config = {
-    // "change" describes when a graph has been clicked,
-    // and a second graph may also be clicked as a result of the first click,
-    // we cap this at two so the second graph does trigger the first graph again but
-    // the first graph reads "change" and returns out of the click function.
-    change: 0,
-
-    zoomableTransition: 0,
-    zoomZooming: null,
-    prvClk: {
-        pack: '',
-        zoomable:'',
-        tree: '',
-        treemap: '',
-        sunburst: ''
-    },
-    // selectedNode: '',
-    // fileData: null
-};
-
-let cfg = copy(config);
-
-function resetCfg(){
-    cfg = copy(config);
-}
-
+// set up the containers in treeLib config
 treeLib.buildConfig(['g1', 'g2']);
 
-const appearanceCfg = {
-    nodeSize: 5
-}
+// // 
+// const appearanceCfg = {
+//     nodeSize: 5,
+//     proportionalSize: false
+// }
 
-let appearance = copy(appearanceCfg);
+// let appearance = copy(appearanceCfg);
 
-function resetAppearanceCfg(){
-    appearance =  copy(appearanceCfg);
-}
+// function resetAppearanceCfg(){
+//     appearance =  copy(appearanceCfg);
+// }
 
 var FileData;
 
@@ -42,47 +19,97 @@ var FileData;
 // $("#help").on("click", function(){
 //     helpOnClick(elements1, elements2, currentGraph, graphic1, graphic2, svgs);
 // });
-function setupNodesizeScalar(dataset=null) {
-    // switch(dataset.graphSize) 
-    // {
-    //   case "Small":
-    //       nodesizeScale = 1.3;
-    //     break;
-    //   case "Medium":
-    //       nodesizeScale = 1.0;
-    //     break;
-    //   case "Large":
-    //       nodesizeScale = 0.9;
-    //     break;
-    // }
-    let nodesizeScale = 1.3;
-    let slider = $("#nodesizeScalar");
-    let min_ = 2;
-    let max_ = 6;
-    slider.prop('min', min_);
-    slider.prop('max', max_);
-    slider.prop('step', 0.1);
-    $("#nodesizeScaleMin").text(min_);
-    $("#nodesizeScaleMax").text(max_);
-    slider.prop("value", nodesizeScale);
+// function setupNodesizeScalar(dataset=null) {
+//     // switch(dataset.graphSize) 
+//     // {
+//     //   case "Small":
+//     //       nodesizeScale = 1.3;
+//     //     break;
+//     //   case "Medium":
+//     //       nodesizeScale = 1.0;
+//     //     break;
+//     //   case "Large":
+//     //       nodesizeScale = 0.9;
+//     //     break;
+//     // }
+//     let nodesizeScale = 2;
+//     let slider = $("#nodesizeScalar");
+//     let min_ = 2;
+//     let max_ = 6;
+//     slider.prop('min', min_);
+//     slider.prop('max', max_);
+//     slider.prop('step', 0.1);
+//     $("#nodesizeScaleMin").text(min_);
+//     $("#nodesizeScaleMax").text(max_);
+//     slider.prop("value", nodesizeScale);
 
-    $("#nodesizeScalar").on('input', function(){
-        appearance.nodeSize = $("#nodesizeScalar").prop("value");
+//     $("#checkBoxNodeDegree").on("click", function() {
+//         if ($(this).prop("checked") == true)
+//             appearance.proportionalSize = true;
+//         else if ($(this).prop("checked") == false)
+//             appearance.proportionalSize = false;
 
-        d3.selectAll("circle.node-size")
-            .attr("r", appearance.nodeSize);
-        // simulations.forEach(x => x.force('collision', d3.forceCollide(NODE_RADIUS * nodesizeScale)));
-        // svgs.forEach(x => updateDrawing(x, currentNeighbors));
-    });
-}
+//         appearance.nodeSize = (+$("#nodesizeScalar").prop("value"));
+
+//         var proportion = appearance.nodeSize;
+
+//         d3.selectAll("circle.node-size")
+//             .attr("r", function(d) {
+//                 var amount = 1;
+
+//                 if (appearance.proportionalSize == true) {
+//                     if (d.children)
+//                         amount = d.children.length;
+
+//                     if (d._children)
+//                         amount = d._children.length;
+
+//                     if (d.data && d.data.children)
+//                         amount = d.data.children.length;
+//                 }
+                
+//                 var size = proportion * amount;
+                
+//                 return size;
+//             });
+//     });
+
+//     $("#nodesizeScalar").on('input', function(){
+//         appearance.nodeSize = (+$("#nodesizeScalar").prop("value"));
+
+//         var proportion = appearance.nodeSize;
+
+//         d3.selectAll("circle.node-size")
+//             .attr("r", function(d) {
+//                 var amount = 1;
+
+//                 if (appearance.proportionalSize == true) {
+//                     if (d.children)
+//                         amount = d.children.length;
+
+//                     if (d._children)
+//                         amount = d._children.length;
+
+//                     if (d.data && d.data.children)
+//                         amount = d.data.children.length;
+//                 }
+                
+//                 var size = proportion * amount;
+                
+//                 return size;
+//             });
+//         // simulations.forEach(x => x.force('collision', d3.forceCollide(NODE_RADIUS * nodesizeScale)));
+//         // svgs.forEach(x => updateDrawing(x, currentNeighbors));
+//     });
+// }
 
 $(document).ready(function(){
-    setupNodesizeScalar();
+    menu.setupNodesizeScalar();
 
     // $('#nodeSizeScalar').on('input', function() {
     //     console.log($("#nodesizeScalar").prop("value"));
     // });
-})
+});
 
 
 function Remove_nodechildren(id){
@@ -97,7 +124,7 @@ function Remove_nodechildren(id){
 }
 
 function change_author(){
-    resetCfg();
+    // resetCfg();
 
     var objD = document.getElementById("dataDropdown");
 
@@ -137,7 +164,7 @@ function change_map(position){
     var position2 = position == '1' ? '2' : '1';
     var position1 = position == '1' ? '1' : '2';
     
-    resetCfg();
+    // resetCfg();
 
     loadVisualization(position1);
 
