@@ -155,7 +155,7 @@ function draw_collapsible_tree(position){
                     return cls;
                 })
                 .attr("r", function(d) {
-                    return appearance.nodeSize;
+                    return menu.getNodeSize(d);
                     // if(d._children != null){
                     //     if(d._children.length >= 13){
                     //         return 8
