@@ -10,8 +10,10 @@ function draw_radial_tree(position){
     var height = 500;
 
     function autoBox() {
+        
         const {x, y, width, height} = this.getBBox();
-        return [x, y, width, height];
+        // fix strange non square issue
+        return [x, y, width, width];
     }
 
     var formatNumber = d3.format(",d");

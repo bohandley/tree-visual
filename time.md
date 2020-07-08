@@ -320,6 +320,8 @@
     place data description in same place as graph visual
     rename visualizations and change value getter
     fix bugs with hover due to name changes
+  9:00pm-10:00pm
+    fix radial tree size issue
 
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next
