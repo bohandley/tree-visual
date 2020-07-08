@@ -1595,7 +1595,8 @@ var treeLib = (function (d3) {
 
 	function getOtherGraphType(position2){
 		var otherGraphSelectTag = document.getElementById("dropdown" + position2[1]);
-		var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
+		// var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
+		var otherGraphType = otherGraphSelectTag.value;
 		return otherGraphType;
 	}
 
@@ -1831,7 +1832,7 @@ var treeLib = (function (d3) {
 		},
 
 		getOtherGraphType: function(position2){
-			getOtherGraphType(position2);
+			return getOtherGraphType(position2);
 		}
 
 	}

@@ -38,6 +38,7 @@
     <script src="js/treemap.js"></script>
     <script src="js/zoomableTreemap.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
     <script src="js/d3.v3.min.js"></script>
     
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -97,10 +98,10 @@
                                     </label>
                                     <div class="col-md-7" style="padding-right:0">
                                     <select id="dropdown1" class="layoutDropdown custom-select" onchange="change_map('1')">
-                                        <option class="optionGroup" value="Collapsible_Tree" selected>Collapsible_Tree</option>
-                                        <option class="optionGroup" value="Radial_Tree">Radial_Tree</option>
+                                        <option class="optionGroup" value="Collapsible_Tree" selected>Radial Tree (Collapsible)</option>
+                                        <option class="optionGroup" value="Radial_Tree">Radial Tree</option>
                                         <option class="optionGroup" value="Treemap">Treemap</option>
-                                        <option class="optionGroup" value="Zoomable_Treemap">Zoomable_Treemap</option>
+                                        <option class="optionGroup" value="Zoomable_Treemap">Treemap (Zoomable)</option>
                                         <option class="optionGroup" value="Pack">Pack</option>
                                         <option class="optionGroup" value="Sunburst">Sunburst</option>
                                     </select>
@@ -149,10 +150,10 @@
                     
                                     <div class="col-md-7" style="padding-right:0">
                                         <select id="dropdown2" class="layoutDropdown custom-select" onchange="change_map('2')">
-                                            <option class="optionGroup" value="Collapsible_Tree">Collapsible_Tree</option>
-                                            <option class="optionGroup" value="Radial_Tree" selected>Radial_Tree</option>
+                                            <option class="optionGroup" value="Collapsible_Tree">Radial Tree (Collapsible)</option>
+                                            <option class="optionGroup" value="Radial_Tree" selected>Radial Tree</option>
                                             <option class="optionGroup" value="Treemap">Treemap</option>
-                                            <option class="optionGroup" value="Zoomable_Treemap">Zoomable_Treemap</option>
+                                            <option class="optionGroup" value="Zoomable_Treemap">Treemap (Zoomable)</option>
                                             <option class="optionGroup" value="Pack">Pack</option>
                                             <option class="optionGroup" value="Sunburst">Sunburst</option>
                                         </select>
@@ -186,8 +187,14 @@
                     <form>
                         <h2 id="toolbar-head"
                         style="font-size: 20px; width: 100%; padding-bottom: 13px; padding-top: 20px; margin-bottom: -10px; color: #000">
-                            <b>Data Description</b>
+                          <b>Control Panel</b>
+                          <a id="about" href="javascript:void(0);" onclick="gotoAbout();" class="toolbox-link">about</a>
+                          <a id="help" href="javascript:void(0);" class="toolbox-link" style="margin-right: 10px;">help?</a>
                         </h2>
+                        <!-- <h2 id="toolbar-head"
+                        style="font-size: 20px; width: 100%; padding-bottom: 13px; padding-top: 20px; margin-bottom: -10px; color: #000">
+                            <b>Data Description</b>
+                        </h2> -->
                         <!-- end head -->
                         <hr id="hr">
 
@@ -195,7 +202,7 @@
                             <div id="sidebarIntro">
                               <!-- dataset selection -->
                               <div class="mb-4" style="width: 100%">
-                                <span style="font-size:15px"> Selected Author: </span>
+                                <!-- <span style="font-size:15px"> Selected Author: </span> -->
                                 <div id="dataDropdownIntro" style="width: 100%; padding-bottom: 0px; margin-bottom: 24px">
                                   <select id="dataDropdown" class="custom-select mb-0" style="width:100%" onchange="change_author()">
                                     <option class="optionGroup" value="Stasko" selected>John Stasko</option>
@@ -204,7 +211,7 @@
                                     <option class="optionGroup" value="Leskovec">Jure Leskovec</option>
                                   </select>
                                 </div>
-                                <div id="DataDescription">
+                                <!-- <div id="DataDescription">
                                     <span id="dataInfoName">Introduction:</span>
                                     <br/>
                                     <span id="dataInfo" style="font-size:10px">The visualization is showing <span id="enter_authorname"></span>'s publications from 
@@ -227,10 +234,10 @@
                                     <span id="graphSource">Data Source: </span>
                                     <br/>
                                     <span style="font-size:10px">Microsoft Academic Graph & Google_scholar</span>
-                                </div>
+                                </div> -->
                               </div>
                             </div>
-                        </div>
+                        <!-- </div> -->
                         <!-- <br/><br/> -->
                         <div id="accordion" class="panel-group">
                             <div id="appearancePanel" class="panel panel-default">
@@ -441,14 +448,37 @@
                         <!-- Describe Div -->
                         <div class="form-control" id="describeDiv">
                           <div id="describeDivIntro" style="margin: 2px">
-                            <span id="dataInfoName">Name:</span>
+                            <div id="DataDescription">
+                                    <!-- <span id="dataInfoName">Introduction:</span> -->
+                                    <br/>
+                                    <span id="dataInfo" style="font-size:10px">The visualization is showing <span id="enter_authorname"></span>'s publications from 
+                                    <span id="start_year"></span> to <span id="end_year"></span>.
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <span id="graphDescription">Hierarchical Data Structure:</span>
+                                    <span style="font-size:10px">
+                                        <br/>-------Publish Year
+                                        <br/>|
+                                        <br/>-----Publish Type
+                                        <br/>|
+                                        <br/>---Publisher CCF Rank
+                                        <br/>|
+                                        <br/>-Individual Paper    
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <span id="graphSource">Data Source: </span>
+                                    <br/>
+                                    <span style="font-size:10px">Microsoft Academic Graph & Google_scholar</span>
+                                </div>
+                            <!-- <span id="dataInfoName">Name:</span>
                             <span id="dataInfoType">Type of graph:</span>
                             <br/>
                             <br/>
                             <span id="graphDescription">Graph Description:</span>
-                            <!-- <br/>
-                            <br/> -->
-                            <span id="graphSource"></span>
+                            
+                            <span id="graphSource"></span> -->
                           </div>
                         </div>
 
@@ -461,4 +491,14 @@
 
     
 </body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146285645-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146285645-8');
+</script>
+
 </html>

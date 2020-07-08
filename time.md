@@ -304,9 +304,22 @@
     refactor utilities
 
 6/27/2020
-  3:30pm
+  3:30pm-6:30pm
     ??fix bug, restriction on sunburst and CT on load
       issue is that the treeLib config isn't changing with radial_tree
+    Add sidebarMenu library
+      add node scaling to this for the menu
+
+7/7/2020
+  7:00pm-9:00pm
+    begin work on google sheet
+    move code to main directory
+    rename main.html to index.html
+    add about page - connect to links in sidebar
+    add google analytics
+    place data description in same place as graph visual
+    rename visualizations and change value getter
+    fix bugs with hover due to name changes
 
 5/ /2020 NEED TO REFACTOR THAT LEAF THING
 Next

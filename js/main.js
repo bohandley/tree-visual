@@ -131,7 +131,7 @@ function change_author(){
     treeLib.displayedNode(objD.value);
 
     FileName = "../datasets/" + objD.value + ".txt";
-
+    
     document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
         
     change_num();
@@ -154,7 +154,9 @@ function clearVisualization(position){
 
     d3.select("svg#g"+position).on('doneDrawing', function(){
         var objS = document.getElementById("dropdown" + position);
-        var grade = objS.options[objS.selectedIndex].text;
+        
+        // var grade = objS.options[objS.selectedIndex].text;
+        var grade = objS.value;
         treeLib.updateConfig(grade,'g'+position);
     });
 }
@@ -178,7 +180,8 @@ function loadVisualization(position){
     d3.select("#layout" + position + "_treemap").style("visibility", "hidden");
 
     var objS = document.getElementById("dropdown" + position);
-    var grade = objS.options[objS.selectedIndex].text;
+    
+    var grade = objS.value;
 
     if(grade == "Pack"){
         this.draw_pack("#g" + position);
