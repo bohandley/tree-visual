@@ -1,114 +1,11 @@
 // set up the containers in treeLib config
 treeLib.buildConfig(['g1', 'g2']);
 
-// // 
-// const appearanceCfg = {
-//     nodeSize: 5,
-//     proportionalSize: false
-// }
-
-// let appearance = copy(appearanceCfg);
-
-// function resetAppearanceCfg(){
-//     appearance =  copy(appearanceCfg);
-// }
-
+// global variable for dataset, passed to all d3 generators
 var FileData;
-
-// initHelp(elements1, elements2, currentGraph, graphic1, graphic2, svgs);
-// $("#help").on("click", function(){
-//     helpOnClick(elements1, elements2, currentGraph, graphic1, graphic2, svgs);
-// });
-// function setupNodesizeScalar(dataset=null) {
-//     // switch(dataset.graphSize) 
-//     // {
-//     //   case "Small":
-//     //       nodesizeScale = 1.3;
-//     //     break;
-//     //   case "Medium":
-//     //       nodesizeScale = 1.0;
-//     //     break;
-//     //   case "Large":
-//     //       nodesizeScale = 0.9;
-//     //     break;
-//     // }
-//     let nodesizeScale = 2;
-//     let slider = $("#nodesizeScalar");
-//     let min_ = 2;
-//     let max_ = 6;
-//     slider.prop('min', min_);
-//     slider.prop('max', max_);
-//     slider.prop('step', 0.1);
-//     $("#nodesizeScaleMin").text(min_);
-//     $("#nodesizeScaleMax").text(max_);
-//     slider.prop("value", nodesizeScale);
-
-//     $("#checkBoxNodeDegree").on("click", function() {
-//         if ($(this).prop("checked") == true)
-//             appearance.proportionalSize = true;
-//         else if ($(this).prop("checked") == false)
-//             appearance.proportionalSize = false;
-
-//         appearance.nodeSize = (+$("#nodesizeScalar").prop("value"));
-
-//         var proportion = appearance.nodeSize;
-
-//         d3.selectAll("circle.node-size")
-//             .attr("r", function(d) {
-//                 var amount = 1;
-
-//                 if (appearance.proportionalSize == true) {
-//                     if (d.children)
-//                         amount = d.children.length;
-
-//                     if (d._children)
-//                         amount = d._children.length;
-
-//                     if (d.data && d.data.children)
-//                         amount = d.data.children.length;
-//                 }
-                
-//                 var size = proportion * amount;
-                
-//                 return size;
-//             });
-//     });
-
-//     $("#nodesizeScalar").on('input', function(){
-//         appearance.nodeSize = (+$("#nodesizeScalar").prop("value"));
-
-//         var proportion = appearance.nodeSize;
-
-//         d3.selectAll("circle.node-size")
-//             .attr("r", function(d) {
-//                 var amount = 1;
-
-//                 if (appearance.proportionalSize == true) {
-//                     if (d.children)
-//                         amount = d.children.length;
-
-//                     if (d._children)
-//                         amount = d._children.length;
-
-//                     if (d.data && d.data.children)
-//                         amount = d.data.children.length;
-//                 }
-                
-//                 var size = proportion * amount;
-                
-//                 return size;
-//             });
-//         // simulations.forEach(x => x.force('collision', d3.forceCollide(NODE_RADIUS * nodesizeScale)));
-//         // svgs.forEach(x => updateDrawing(x, currentNeighbors));
-//     });
-// }
 
 $(document).ready(function(){
     menu.setupNodesizeScalar();
-
-    // $('#nodeSizeScalar').on('input', function() {
-    //     console.log($("#nodesizeScalar").prop("value"));
-    // });
 });
 
 
@@ -121,24 +18,6 @@ function Remove_nodechildren(id){
         parent.removeChild(childrens[i]);
         }
     }
-}
-
-function change_author(){
-    // resetCfg();
-
-    var objD = document.getElementById("dataDropdown");
-
-    treeLib.displayedNode(objD.value);
-
-    FileName = "../datasets/" + objD.value + ".txt";
-    
-    document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
-        
-    change_num();
-
-    change_map("1");
-    change_map("2");
-
 }
 
 function change_tiling(type, position){
@@ -212,29 +91,6 @@ function loadVisualization(position){
     })
 }
 
-
-
-function change_num(){
-    d3.json(FileName, function(error, root) {
-        if (error) throw error;
-
-        document.getElementById("start_year").innerHTML = root.children[0].name;
-        document.getElementById("end_year").innerHTML = root.children[root.children.length-1].name;
-
-        root = d3.hierarchy(root);
-
-        dataSourcePapers = document.getElementById("dataInfoPapers");
-        dataSourceCitations = document.getElementById("dataInfoCitations");
-
-        root.sum(function(d) { return d.size; });
-        dataSourceCitations.innerHTML = "Number of citations: " + root.value;
-
-        root.sum(function(d){ return d.children? 0 : 1;});
-        dataSourcePapers.innerHTML = "Number of papers: " + root.value;
-        
-    })
-}
-
 var FileName;
 var dataSourcePapers, dataSourceCitations;
 
@@ -246,27 +102,8 @@ window.onload = function(){
     
     color = d3.scaleOrdinal(colors);
     
-    var objD = document.getElementById("dataDropdown");
-
-    treeLib.displayedNode(objD.value);
-
-    FileName = "../datasets/" + objD.value + ".txt";
-
-    document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
-
-    change_num();
-
-
-    // d3.json(FileName, function(error, root) {
+    FileName = menu.changeAuthor(FileName, 1);
     
-        // this.draw_sunburst("#g1");
-        // this.draw_pack("#g2");
-        
-        // this.draw_collapsiple_tree("#g1");
-        //this.draw_new_treemap("#g1");    
-        // this.draw_zoomable_treemap("#g2");
-    // });
-
     loadVisualization("1");
     loadVisualization("2");
         

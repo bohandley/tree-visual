@@ -21,7 +21,7 @@ function draw_radial_tree(position){
     d3.json(FileName, function(error, data) {
         if (error) throw error;
 
-        data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
+        // data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
 
         var tree = d3.cluster().size([2 * Math.PI, radius - 100])
         var root = tree(d3.hierarchy(data)
@@ -75,12 +75,13 @@ function draw_radial_tree(position){
             	treeLib.displaySelectedNode(d);
             })
             .on("mouseover", function(d){
+                // does highlighting and title text
             	treeLib.mouseoverLinking(position1, position2, d);
             })
             .on("mouseout", function(d){
             	treeLib.mouseoutLinking(position1, position2, d);
             });
-
+        
         node.append("text")
             .attr("class", "label")
             .style("font-size", 5)
@@ -98,10 +99,6 @@ function draw_radial_tree(position){
             })
             .clone(true).lower()
             .attr("stroke", "white")
-            .on("mouseover", function(d){
-                d3.select(this).style("cursor", "pointer");
-                d3.select(this).append("title").text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
-            });;
 
         //yield svg.node();
 

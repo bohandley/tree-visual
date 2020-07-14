@@ -22,11 +22,11 @@ function draw_treemap(position, selectindex){
         if (error) throw error;
 
         // FILTER JSON
-        data.children = data.children.filter((el, i) => { 
-            if(i<10){ 
-                return el 
-            }
-        });
+        // data.children = data.children.filter((el, i) => { 
+        //     if(i<10){ 
+        //         return el 
+        //     }
+        // });
 
         var root = d3.hierarchy(data)
             .eachBefore( d => d.data.id = (d.parent ? d.parent.data.id + "." : "") + d.data.name )
@@ -65,7 +65,9 @@ function draw_treemap(position, selectindex){
             .attr("xlink:href", d => "#" + d.data.id );
         
         cell.append("title")
-            .text( d => d.data.id + "\n" + format(d.value) );
+            .text( d => {
+                return d.data.id + "\n" + menu.dataInfoSizeText() +  format(d.value) 
+            });
 
         d3.select("svg#"+position1).dispatch('doneDrawing');
     });

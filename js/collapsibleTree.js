@@ -21,7 +21,7 @@ function draw_collapsible_tree(position){
 
         // filter the FileName outside of this builder
         // FILTER JSON
-        final_tree.children = final_tree.children.filter(function(el, i){ if(i<10){ return el }})
+        // final_tree.children = final_tree.children.filter(function(el, i){ if(i<10){ return el }})
 
         /////////////Tree graph start///////////////
         var difficulty_color = d3.scaleOrdinal()
@@ -57,12 +57,15 @@ function draw_collapsible_tree(position){
         // var currentTree = "Final"
 
         function drawTreeGraph(treeData){
-          root = treeData;
-          root.x0 = 400;
-          root.y0 = 0;
-          root.children.forEach(collapse); 
-          // collapse(root);
-          update(root);
+            root = treeData;
+
+
+            // root.sum(function(d) { return d.size; });
+            root.x0 = 400;
+            root.y0 = 0;
+            root.children.forEach(collapse); 
+            // collapse(root);
+            update(root);
         }
 
         drawTreeGraph(final_tree)
@@ -127,14 +130,6 @@ function draw_collapsible_tree(position){
                         return d.name; 
                 })
                 .style("fill-opacity", 1e-6);
-
-
-            nodeEnter.append("title")
-                .text(function(d) {
-                    return d.name;
-                });
-
-
                 
             // Transition nodes to their new position.
             var nodeUpdate = node.transition()
@@ -156,21 +151,6 @@ function draw_collapsible_tree(position){
                 })
                 .attr("r", function(d) {
                     return menu.getNodeSize(d);
-                    // if(d._children != null){
-                    //     if(d._children.length >= 13){
-                    //         return 8
-                    //     }else if(d._children.length < 13 && d._children.length >= 7) {
-                    //         return 6
-                    //     }else if (d._children.length < 7  && d._children.length >= 3){
-                    //         return 4
-                    //     }else{
-                    //         return 3
-                    //     }
-                    // }
-                    // if(d.children != null){
-                    //   return 5;
-                    // }
-                    // return 2.5; 
                 })
                 .style("fill", function(d) {
                     if (!d.parent) {

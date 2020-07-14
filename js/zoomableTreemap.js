@@ -47,7 +47,8 @@ function draw_zoomable_treemap(position){
 
     d3v3.json(FileName, function(root) {
         // FILTER JSON
-        root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
+        // root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
+        
         for(var i =0; i<root.children.length; i++){
             for(var j=0; j<root.children[i].children.length; j++){
                 for(var k=0; k<root.children[i].children[j].children.length; k++){
@@ -160,7 +161,7 @@ function draw_zoomable_treemap(position){
                 .text(function(d) { 
                     var n = d.name;
                         
-                    return n + "\n" +formatNumber(d.value); 
+                    return n + "\n" + menu.dataInfoSizeText() +formatNumber(d.value); 
                 });
 
             g.append("text")

@@ -332,15 +332,33 @@
     Meet with Haobin
 
 7/14/2020
-
+  11:30am-4:00pm
+  - refactor change aurthor and change number from main.ja, pull out into sidebar library
+  - create config text for specific data set type
+  - change header text for data set type
+  - change title to read "Number of Citations: " or text specific to data set type from sidebar menu config library
+  - debug issues with collapsible tree not having a value for each node(every other one has this!)
+  - debug highlighting issues with zoomable tree grandparent(do we want to show the citations?)
 
 NEXT(as of 7/14/2020)
-  Datasets
-    -add size to all leaves
-    -
-    -What's going on with the tree of life data?
+  - New Features Needed
+    - dataset filtering: create multiselects for each level(not leaves)
+    - Onboarding function for help
+    - switches instead of checkboxes
 
-  Bugs
+  - Datasets
+    - add size to all leaves
+    - What's going on with the tree of life data?
+    - trade: split into import and export
+    - trade: make sure it is valid data
+    - trade: get the size correct
+
+  - Bugs
+    - radial tree
+       when choosing a second dataset, graph is doubled
+       root.sum returns the size which changes the angle of orientation
+        if size is too large, it does not expand in a visually good manner
+    
     
   -pass json into the build functions
       filter json with slider or select?

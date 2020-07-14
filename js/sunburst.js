@@ -32,7 +32,8 @@ function draw_sunburst(position){
     d3.json(FileName, function(error, root) {
         if (error) throw error;
         // FILTER JSON
-        root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
+        // root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
+        
         root = d3.hierarchy(root);
 
         root.sum(function(d) { return d.size; });
@@ -81,7 +82,7 @@ function draw_sunburst(position){
             .text( d => {
                 var dataName = d.data.name;
 
-                return dataName + "\n" + formatNumber(d.value)
+                return dataName + "\n" + menu.dataInfoSizeText() + formatNumber(d.value)
             });
 
             d3.select("svg#"+position1).dispatch('doneDrawing');

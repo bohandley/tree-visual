@@ -1330,7 +1330,7 @@ var treeLib = (function (d3) {
 					p1IdMod = "#"+position1Id.split("-")[0]+".grandparent";
 
 		    	var path = d3.select(p1IdMod).text().split(".");
-				var lastNode = cleanNodeId(path[path.length-1]);
+				var lastNode = path[path.length-1];
 				position2Id += "-" + lastNode;
 
 		    	d3.select(p1IdMod)
@@ -1363,7 +1363,7 @@ var treeLib = (function (d3) {
 
 		    	// add the last node to the ZT grandparent d because it is missing this
 				var path = d3.select(p1IdMod).text().split(".");
-				var lastNode = cleanNodeId(path[path.length-1]);
+				var lastNode = path[path.length-1];
 				position2Id += "-" + lastNode;
 				
 		    	d3.select(p1IdMod)
@@ -1435,7 +1435,7 @@ var treeLib = (function (d3) {
 	        
 	    d3.select("#"+position2Id)
 	    	.append("title")
-	    	.text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
+	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.value); })
 	}
 
 	function packResponseMOut(position2Id){
@@ -1489,7 +1489,7 @@ var treeLib = (function (d3) {
 	    d3.select("#" + position2Id)
 	    	.select("circle")
 	    	.append("title")
-	    	.text(function(d) { return d.data.name + "\n" + formatNumber(d.value); })
+	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.value); })
 	}
 
 	function radialTreeResponseMOut(position2Id){
@@ -1504,6 +1504,8 @@ var treeLib = (function (d3) {
 	}
 
 	function collapsibleTreeResponseMOver(position2Id){
+		var formatNumber = d3.format(",d");
+
 		d3.select("#"+position2Id)
 	    	.select("circle")
 	    	.style("stroke", d => {
@@ -1516,6 +1518,15 @@ var treeLib = (function (d3) {
 				// return 10;
 				return menu.getNodeSize(d) * 2;
 			});
+
+	   
+	    d3.select("#" + position2Id)
+	    	.select("circle")
+	    	.append("title")
+            .text(function(d) {
+            	// NEED TO COMPUTE SIZE FOR EACH NODE
+                return d.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.value);
+            });
 	}
 
 	function collapsibleTreeResponseMOut(position2Id){
@@ -1781,13 +1792,10 @@ var treeLib = (function (d3) {
 		getColor: function(d, color){
 			if(d.data){
 				if(d.parent && !d.parent.parent){ 
-			        //console.log(d.data.name)
-			        // debugger;
 			        return color(parseInt(d.data.name));
 			    }
 			    else if(d.parent){
 			        while(d.parent.parent != null){
-			        	// debugger;
 			            d = d.parent;
 			        }
 			        return color(parseInt(d.data.name));
@@ -1796,8 +1804,6 @@ var treeLib = (function (d3) {
 		   } else {
 
 				if(d.parent && !d.parent.parent){ 
-			        //console.log(d.data.name)
-			        // debugger
 			        return color(parseInt(d.name));
 			    }
 			    else if(d.parent){

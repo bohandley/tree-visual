@@ -21,7 +21,7 @@ function draw_pack(position){
         if (error) throw error;
 
         // FILTER JSON
-        root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
+        // root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
         
         root = d3.hierarchy(root)
             .sum(function(d) { return d.size; })
@@ -40,12 +40,6 @@ function draw_pack(position){
             .attr("id", function(d){
                 return treeLib.pathId(d, position1);
             })
-            // .attr("class", d => {
-            //     debugger;
-            //     var cls = treeLib.isLeaf(d) ? 'leaf' : '';
-
-            //     return cls;
-            // })
             .style("fill", d => {
                 // refactor into treeLib as rootColor()
                 if (!d.parent)
