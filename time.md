@@ -323,8 +323,25 @@
   9:00pm-10:00pm
     fix radial tree size issue
 
-5/ /2020 NEED TO REFACTOR THAT LEAF THING
-Next
+7/8/2020
+  8:30am-9:30am
+    Meet with Haobin
+
+7/11/2020
+  9:00pm-9:45pm 
+    Meet with Haobin
+
+7/14/2020
+
+
+NEXT(as of 7/14/2020)
+  Datasets
+    -add size to all leaves
+    -
+    -What's going on with the tree of life data?
+
+  Bugs
+    
   -pass json into the build functions
       filter json with slider or select?
     -Interface on right
@@ -333,29 +350,7 @@ Next
     CT = collapsible tree
     ZT = zoomable tree
     P = pack
-    -
-    **BUG with CT: clicking on a leaf node. This breaks responsiveness with ZT abd Pack
-      Fixed 3/6 with not allowing click events to proceed from CT with ids including 'leaf'
-    -
-    Need to work out 
-      CT clicks the same one to close and P zooms out
-        repeated node clicks, or highlight the certain node and display?
-      What about clicking on the leaves of the CT?
-        the node's children are collapsed
-          do we compare the node to the root to get the entire leaf path to see if it's a leaf?
-          Can we create am isLeaf function?
-      completed 3/5- What if a CT is closed but it had previously been clicked and the ZT is displaying that node?
-        Can we re-open the CT nodes?
-      highlight node in other graph as drill zooming
-    -
-    **click the collapsible tree node to close it and zoomable tree responds 
-        by zooming to the clicked node <- XXX incorrect!
-          it does do this. click year in CT and ZT shows year as parent and nodes as chilcdren
-    -
-    **sunburst responsive zooming with ct, zt, pack
-    **same color for root of zommable tree and sunburst
-    **same for collapsible tree root too!
-    **select new node, reset as the new root
+
   Features:
   	-look into the errors with the mouseovers on certain graphs
   	-build object or config for full graphs containing zoomzoomin, c, etc
@@ -381,10 +376,8 @@ Next
   		sunburst selection explore hierarchy
   		zoomable tree graph
 
-  	X-Change name of circle view to packview
-
   	-Click on one, synchronize the other if zoomable
-  		NEED to fincish pack and zoomable, in pack if click on other node, cross node
+  		NEED to finish pack and zoomable, in pack if click on other node, cross node
   			NEED TO ZOOM OUT THEN ZOOM IN
 
   	-Onboarding
@@ -406,7 +399,6 @@ Next
   		linux
 
   	-Quiz component
-
 
   	-How does graphVis do it?
   		linking and brushing
