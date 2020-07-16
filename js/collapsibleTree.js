@@ -21,7 +21,7 @@ function draw_collapsible_tree(position){
 
         // filter the FileName outside of this builder
         // FILTER JSON
-        // final_tree.children = final_tree.children.filter(function(el, i){ if(i<10){ return el }})
+        final_tree.children = final_tree.children.filter(function(el, i){ if(i<10){ return el }})
 
         /////////////Tree graph start///////////////
         var difficulty_color = d3.scaleOrdinal()

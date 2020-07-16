@@ -21,7 +21,7 @@ function draw_radial_tree(position){
     d3.json(FileName, function(error, data) {
         if (error) throw error;
 
-        // data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
+        data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
 
         var tree = d3.cluster().size([2 * Math.PI, radius - 100])
         var root = tree(d3.hierarchy(data)
