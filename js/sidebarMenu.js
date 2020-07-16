@@ -139,7 +139,7 @@ var menu = (function (d3, $) {
 
         treeLib.displayedNode(objD.value);
 
-        FileName = "../datasets/" + objD.value + ".txt";
+        FileName = "datasets/" + objD.value + ".txt";
         
         document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
         

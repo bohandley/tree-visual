@@ -84,7 +84,7 @@ function draw_radial_tree(position){
         
         node.append("text")
             .attr("class", "label")
-            .style("font-size", 5)
+            .style("font-size", '8px')
             .attr("dy", "0.31em")
             .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
             .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
