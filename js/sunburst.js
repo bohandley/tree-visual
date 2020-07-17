@@ -29,14 +29,15 @@ function draw_sunburst(position){
     .append("g")
         .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 
-    d3.json(FileName, function(error, root) {
+    d3.json(FileName, function(error, data) {
         if (error) throw error;
         // FILTER JSON
-        root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
+        data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
         
-        root = d3.hierarchy(root);
+        var root = d3.hierarchy(data)
+            .sum(function(d) { return d.size; })
+            .sort(function(a, b) { return b.value - a.value; });
 
-        root.sum(function(d) { return d.size; });
         svg.selectAll("path")
             .data(partition(root).descendants())
         .enter().append("path")

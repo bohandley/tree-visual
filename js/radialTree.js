@@ -24,10 +24,10 @@ function draw_radial_tree(position){
         data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
 
         var tree = d3.cluster().size([2 * Math.PI, radius - 100])
+        
         var root = tree(d3.hierarchy(data)
-            .sort((a, b) => d3.ascending(a.data.name, b.data.name)));
-
-        root.sum(function(d) { return d.size; });
+            .sort((a, b) => d3.ascending(a.data.name, b.data.name)))
+            .sum(function(d) { return d.size; });
 
         var link = svg.append("g")
             .attr("fill", "none")

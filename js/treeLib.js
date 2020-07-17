@@ -1525,7 +1525,7 @@ var treeLib = (function (d3) {
 	    	.append("title")
             .text(function(d) {
             	// NEED TO COMPUTE SIZE FOR EACH NODE
-                return d.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.value);
+                return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.value);
             });
 	}
 

@@ -16,12 +16,16 @@ function draw_collapsible_tree(position){
 
     var formatNumber = d3.format(",d");
 
-    d3.json(FileName, function(error, final_tree) {
+    d3.json(FileName, function(error, data) {
         if (error) throw error;
 
         // filter the FileName outside of this builder
         // FILTER JSON
-        final_tree.children = final_tree.children.filter(function(el, i){ if(i<10){ return el }})
+        data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
+
+        root = d3.hierarchy(data)
+            .sum(function(d) { return d.size; })
+            .sort(function(a, b) { return b.value - a.value; });
 
         /////////////Tree graph start///////////////
         var difficulty_color = d3.scaleOrdinal()
@@ -38,8 +42,7 @@ function draw_collapsible_tree(position){
         var color_by_chapter = false
 
         var i = 0,
-            duration = 350,
-            root = final_tree;
+            duration = 350;
         
         var tree = d3v3.layout.tree()
             .size([360, 300])
@@ -68,7 +71,7 @@ function draw_collapsible_tree(position){
             update(root);
         }
 
-        drawTreeGraph(final_tree)
+        drawTreeGraph(root)
 
         function update(source){
             // Compute the new tree layout.
@@ -125,9 +128,9 @@ function draw_collapsible_tree(position){
                 //.attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
                 .text(function(d) { 
                     if (treeLib.isLeaf(d))
-                        return d.name.split(' ')[0] + '...';
+                        return d.data.name.split(' ')[0] + '...';
                     else
-                        return d.name; 
+                        return d.data.name; 
                 })
                 .style("fill-opacity", 1e-6);
                 
@@ -164,9 +167,9 @@ function draw_collapsible_tree(position){
                 .style("fill-opacity", 1)
                 .attr("transform", function(d) { 
                     if (treeLib.isLeaf(d))
-                        var amt = (d.name.split(' ')[0] + '...').length + 10;
+                        var amt = (d.data.name.split(' ')[0] + '...').length + 10;
                     else
-                        var amt = d.name.length;
+                        var amt = d.data.name.length;
                     return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (amt + 50)  + ")"; 
                 });
             

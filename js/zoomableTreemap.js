@@ -45,22 +45,24 @@ function draw_zoomable_treemap(position){
         .attr("y", 6 - margin.top)
         .attr("dy", ".75em");
 
-    d3v3.json(FileName, function(root) {
+    d3v3.json(FileName, function(data) {
         // FILTER JSON
-        root.children = root.children.filter(function(el, i){ if(i<10){ return el }})
-        
-        for(var i =0; i<root.children.length; i++){
-            for(var j=0; j<root.children[i].children.length; j++){
-                for(var k=0; k<root.children[i].children[j].children.length; k++){
-                    for(var m=0; m<root.children[i].children[j].children[k].children.length; m++){
-                        root.children[i].children[j].children[k].children[m].value = root.children[i].children[j].children[k].children[m].size;
-                    }
-                }
-            }
-        }
+        data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
+
+        // for(var i =0; i<root.children.length; i++){
+        //     for(var j=0; j<root.children[i].children.length; j++){
+        //         for(var k=0; k<root.children[i].children[j].children.length; k++){
+        //             for(var m=0; m<root.children[i].children[j].children[k].children.length; m++){
+        //                 root.children[i].children[j].children[k].children[m].value = root.children[i].children[j].children[k].children[m].size;
+        //             }
+        //         }
+        //     }
+        // }
+        var root = data;
         
         initialize(root);
         accumulate(root);
+        leafAcc(root);
         layout(root);
         display(root);
 
@@ -79,6 +81,13 @@ function draw_zoomable_treemap(position){
             return (d._children = d.children)
                 ? d.value = d.children.reduce(function(p, v) { return p + accumulate(v); }, 0)
                 : d.size;
+        }
+
+        // aggregate the number of leaves within each node
+        function leafAcc(d) {
+            return (d._children = d.children)
+                ? d.lvs = d.children.reduce(function(p, v) { return p.concat(leafAcc(v)); }, []) 
+                : [d];
         }
 
         // Compute the treemap layout recursively such that each group of siblings
