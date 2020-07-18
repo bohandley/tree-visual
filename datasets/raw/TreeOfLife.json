@@ -1,0 +1,5609 @@
+{
+   "children" : [
+      {
+         "children" : [
+            {
+               "children" : [
+                  {
+                     "name" : "Excavata",
+                     "size" : 496804
+                  },
+                  {
+                     "name" : "Amoebozoa",
+                     "size" : 1960
+                  }
+               ],
+               "name" : "Amoebozoa",
+               "size" : 498764
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Holozoa",
+                     "size" : 1498110
+                  },
+                  {
+                     "name" : "Nucletmycea",
+                     "size" : 276387
+                  },
+                  {
+                     "name" : "Aphelida",
+                     "size" : 6
+                  },
+                  {
+                     "name" : "uncultured (in Opisthokonta)",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Freshwater Microbial Opisthokonta",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Opisthokonta",
+               "size" : 1774505
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Acanthocystidae",
+                     "size" : 33
+                  },
+                  {
+                     "name" : "Heterophryidae",
+                     "size" : 11
+                  },
+                  {
+                     "name" : "H15-6",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Pterocystis sp. Oxford4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Pterocystis sp. JJP-2003",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Centroheliozoa",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Lobosea",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Spiculophrys",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Marophrys",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Raphidocystis",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Yogsothothidae",
+                     "size" : 3
+                  }
+               ],
+               "name" : "Centrohelida",
+               "size" : 55
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Rigifila",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Micronuclearia",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Rigifilida",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Apusomonadidae",
+                     "size" : 21
+                  },
+                  {
+                     "name" : "Hemimastigida",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Thecomonadea",
+               "size" : 22
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Picomonadea",
+                     "size" : 5
+                  }
+               ],
+               "name" : "Picozoa",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Diphylleia (genus in family Collodictyonidae)",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Collodictyon",
+                     "size" : 5
+                  }
+               ],
+               "name" : "Collodictyonidae",
+               "size" : 6
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Zoomastigophora",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Sarcomastigophora",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Actimonas",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Ciliophryidae",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Actimonas",
+                     "size" : 1
+                  }
+               ],
+               "name" : "uncultured marine labyrinthulid DH147-EKD10",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Actimonas",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Uncultured marine colpodean ciliate DH147-EKD23",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Actimonas",
+                     "size" : 1
+                  }
+               ],
+               "name" : "uncultured Closteriaceae",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Actimonas",
+                     "size" : 1
+                  }
+               ],
+               "name" : "uncultured Peniaceae",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Actimonas",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Caprifoliaceae environmental sample",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Actimonas",
+                     "size" : 1
+                  }
+               ],
+               "name" : "uncultured Nannochloris",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Actimonas",
+                     "size" : 1
+                  }
+               ],
+               "name" : "uncultured marine cryptophyte",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Rhodelphida",
+                     "size" : 2
+                  }
+               ],
+               "name" : "Rhodelphea",
+               "size" : 2
+            }
+         ],
+         "name" : "Eukaryota",
+         "size" : 2273370
+      },
+      {
+         "children" : [
+            {
+               "children" : [
+                  {
+                     "name" : "Coriobacteriia bacterium",
+                     "size" : 113209
+                  },
+                  {
+                     "name" : "Thermodesulfobiaceae bacterium enrichment culture clone B312109",
+                     "size" : 135
+                  },
+                  {
+                     "name" : "OPB54",
+                     "size" : 4
+                  },
+                  {
+                     "name" : "Thermolithobacterales",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "SRB2",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "uncultured Moorella group bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "D8A-2",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "NRB23",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Limnochordia",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "Candidatus Borkfalkiales",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Candidatus Borkfalkiales",
+               "size" : 113359
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Kluyvera sp. bk_32",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. CHK-3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. C6-6",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. PIC15",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera intermedia",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "Enterobacter sp. HGN-2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. OCPSB2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. C6-8",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. Iso-A4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Citrobacter sp. NG2(2010)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. V4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. PSDCB5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. 9(2009)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. MS5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. b26",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Lelliottia amnigena",
+                     "size" : 3
+                  },
+                  {
+                     "name" : "Enterobacter sp. FB105",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. HL-9",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. CIP 102343",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. B(2012)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera sp. IAL9556/98",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera sp. IAL9558/98",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera sp. IAL9557/98",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. I-Bh15-16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera ascorbata ATCC 33433",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. G-226-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera sp. DAP22",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. 15",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium F5(2009)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium hswx111",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "rainbow trout intestinal bacterium D211",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera ascorbata",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "gamma proteobacterium P8",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium RBE1CD-97",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium RBE2CD-47",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium RBE2CD-94",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Kluyvera sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera georgiana",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Kluyvera",
+               "size" : 41
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Klebsiella sp. 2009I6",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. 2009I7",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. WW2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. IED15",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. NGB-FR-120",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. Ch10057",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. TJ_DMAB",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. ND2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. sctcc7",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. sctcc8",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella planticola ATCC 33531",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. F51-1-2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Kluyvera sp. An5-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. TP2MG",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. AP11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Leclercia sp. UPMLH2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. BM15-1-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. rennanqilfy18",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. SZ7-2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. SZ015",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. Hg4-07",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. MSG6",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. 38",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. cl40",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. ICB416",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. X1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. GfU-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. L03",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Citrobacter sp. gx-42",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Leclercia sp. 1185/07",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. HQ-3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. TJ_TMA",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. ALL-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. A413",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. P3-4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. TNT1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. TNT2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. AN-4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella ornithinolytica",
+                     "size" : 7
+                  },
+                  {
+                     "name" : "Klebsiella sp. Cd-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. 99",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. LRC22",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. FCC192",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. C26(2010)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. XW721",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella ornithinolytica 10-5246",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella electrica",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. R-21934",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. 49",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. LB-2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. LSSE-H2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. D81",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. B19",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. LA11E",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium 060620-Aspo-KJ0052F01-A1-AM1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium LF53",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium LF74",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium B1(2009)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. GG53E",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. SS82E",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium spb30B3-5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium SV6XVII",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium LF78",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium SV73A",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium A45(2010)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium A47(2010)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium A52(2010)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium symbiont of Eurydema dominulus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium strain FGI 57",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium symbiont of Eurydema rugosa",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "nitrogen-fixing bacterium CANF3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Raoultella sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. enrichment culture clone HSL96",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. enrichment culture clone HSL103",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. enrichment culture clone HSL54",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. enrichment culture clone HSL78C",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. enrichment culture clone HSL101",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. enrichment culture clone DR-E5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Raoultella sp. enrichment culture clone KWE55-17",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. enrichment culture clone SRC_NBB17",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. enrichment culture clone SRC_NBB6",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Klebsiella sp. enrichment culture clone SRC_NBB7",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium enrichment culture clone MW-11",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Raoultella",
+               "size" : 89
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Morganella sp. IVCFP4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. DH17",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. DH16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. DH03",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. DH66",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. DH44",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. DH41",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. A21",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. A127",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella morganii",
+                     "size" : 5
+                  },
+                  {
+                     "name" : "Morganella sp. NiVa101",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. 2764",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. RP-42",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. CK265",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. B5-3b",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. SW8",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. Sc-GM5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. JSM 111068",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. TR-90",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. A305",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. A332",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. MH-149",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. HPC287",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. HPC286",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. 8121",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella morganii subsp. morganii",
+                     "size" : 4
+                  },
+                  {
+                     "name" : "Morganella sp. C19(2011)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. AR5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. a001-52",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. a111-140b",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella psychrotolerans",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Morganella sp. JB-T11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. TR 90",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. JB-T16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. 925",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella morganii subsp. sibonii",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Morganella sp. HK-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium NLAE-zl-C84",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. RTCE01",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Providencia sp. enrichment culture clone SRC_NBB16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Providencia sp. enrichment culture clone SRC_NBB4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. GLFB",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. Ch_ruf_3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Morganella sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. CIFTRT129",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. AZTITEMP110",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. AZTITEMP113",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. AZTITEMP111",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. AZTITEMP112",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. AZTITEMP109",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. JB424",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. EGD-HP17",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. T43-14",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. G3_4_2TO2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. G3_4_3TO2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. G3_4_4TO2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. G3_4_1BO2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. G3_4_4BO2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0525",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0706",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0575",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. G02_74_27F_1072995_004",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. G05_77_27F_1072927_035",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. ST12.14/404",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0462",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0710",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. BAB-5312",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. COD17",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0593",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. ST12.14/429",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0127",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. F04_64_27F_1072967_022",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. BAB-5316",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0652",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0922",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. BAB-5304",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. HMSC11D09",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF1375",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. F12_72_27F_1072950_086",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. CW3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. UIWRF0129",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. BN33",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. ESBL68B6_12EESBL",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. 727B5_12EMac",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. Cdnq1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. (in: Bacteria)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. AgR1187",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. AgR1190",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. H46-106",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. NCCP-1791",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Morganella sp. PT53",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Morganella (genus in domain Bacteria)",
+               "size" : 98
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Buttiauxella sp. P5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella sp. LBV 449",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. DB54",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Pantoea sp. 57917",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Pantoea sp. 57916",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella sp. UW21",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. KW14",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella sp. S19-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Erwinia sp. SK-30-7",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. TMPSB-P4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. Badong3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella agrestis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella agrestis ATCC 33320",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella sp. GC21",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella sp. S5(2012)",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella sp. 4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium LMG 5339",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium 8-gw1-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium fjat-scr-2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Buttiauxella sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Buttiauxella gaviniae",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Buttiauxella noackiae",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Buttiauxella izardii",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Buttiauxella warmboldiae",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Buttiauxella brennerae",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Buttiauxella ferragutiae",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Buttiauxella chrysanthemi",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Buttiauxella",
+               "size" : 27
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Leclercia sp. 349/07",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. Ds24",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. HJ-49",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cedecea neteri",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Enterobacter sp. B32",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. B34",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. B3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. Ag1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cedecea davisae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. D59",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. DB32",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cedecea davisae DSM 4568",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. A16-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. Bn-12",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. AR19",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cedecea sp. Of24",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium ST-3-08",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium spbL1type1-2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium FCC13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacterial endosymbiont of Drosicha pinicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacterial endosymbiont of Drosicha corpulenta",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium pp5a",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endophyte bacterium SS01",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endophyte bacterium SS05",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endophyte bacterium SS06",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Cedecea",
+               "size" : 25
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Leclercia sp. 349/07",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. Ds24",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. HJ-49",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cedecea neteri",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Enterobacter sp. B32",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. B34",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. B3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. Ag1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cedecea davisae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. D59",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. DB32",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cedecea davisae DSM 4568",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. A16-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. Bn-12",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. AR19",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cedecea sp. Of24",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium ST-3-08",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium spbL1type1-2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium FCC13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacterial endosymbiont of Drosicha pinicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacterial endosymbiont of Drosicha corpulenta",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium pp5a",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endophyte bacterium SS01",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endophyte bacterium SS05",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endophyte bacterium SS06",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Enterobacter sp. BIHB 1401",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Vibrio sp. r26",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "primary endosymbiont of Liposcelis decolor (host pop. HNZZ)",
+                     "size" : 0
+                  }
+               ],
+               "name" : "B38",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Orbaceae",
+                     "size" : 28
+                  }
+               ],
+               "name" : "Orbales",
+               "size" : 28
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Trabulsiella guamensis ATCC 49490",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Trabulsiella sp. LB10",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Salmonella sp. Co9936",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Trabulsiella sp. Of17",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Trabulsiella odontotermitis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Trabulsiella guamensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Cronobacter sp. crA1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium GK-2",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Trabulsiella",
+               "size" : 8
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Leminorella",
+                     "size" : 3
+                  },
+                  {
+                     "name" : "Budvicia",
+                     "size" : 3
+                  },
+                  {
+                     "name" : "Pragia",
+                     "size" : 2
+                  }
+               ],
+               "name" : "Budviciaceae",
+               "size" : 8
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Leminorella",
+                     "size" : 3
+                  },
+                  {
+                     "name" : "Budvicia",
+                     "size" : 3
+                  },
+                  {
+                     "name" : "Pragia",
+                     "size" : 2
+                  }
+               ],
+               "name" : "Pantoea sp. LH-CAB9",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Plesiomonas sp. F54",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Plesiomonas shigelloides",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "uncultured Plesiomonas sp.",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Plesiomonas",
+               "size" : 4
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Biostraticola tofi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Biostraticola sp. BGMRC 2031",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Biostraticola",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Enterobacter sp. JA12",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. JA11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Aranicola sp. Nj-67",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Pantoea sp. 1-CDF",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Arsenophonus endosymbiont of Trichobius yunkeri",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Hafnia sp. NP33",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Salmonella sp. Co9901",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Hafnia sp. HC2-9",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "lobster gut bacterium ABHa1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Puchtella pedicinophila",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "primary endosymbiont of Pedicinus badii",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium MK1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Psylla pyricola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Cacopsylla myrthi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Trioza magnoliae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Columbicola masoni",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Haematomyzus elephantis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Columbicola extinctus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Columbicola bacillus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Columbicola elbeli",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Columbicola fortis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Columbicola exilicornis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Dysmicoccus neobrevipes",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Erium globosum",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Vryburgia amaryllidis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Metamasius callizona",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Cosmopolites sordidus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Sphenophorus abbreviata",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Scyphophorus yuccae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Rhynchophorus palmarum",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Metamasius hemipterus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Yuccaborus frontalis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium 128",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Y-symbiont of Anomoneura mori",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Euscepes postfasciatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Pseudococcus comstocki",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Hylobius abietis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Hylobius transversovittatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium enrichment culture clone PTmrs12",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacteriaceae bacterium enrichment culture clone PTmrs11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Enterobacter sp. enrichment culture clone PTmrs17",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Sodalis sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Rhynchophorus ferrugineus (in domain Bacteria)",
+                     "size" : 0
+                  }
+               ],
+               "name" : "uncultured (in order Enterobacteriales)",
+               "size" : 43
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio pellitus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio glandium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio venosus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio sikkimensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio robustus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio dentipes",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio camelliae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium endosymbiont of Pseudococcus viburni",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Curculioniphilus",
+               "size" : 10
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio pellitus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio glandium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio venosus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio sikkimensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio robustus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio dentipes",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio camelliae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium endosymbiont of Pseudococcus viburni",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Serratia marcescens W2.3",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio pellitus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio glandium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus buchneri endosymbiont of Curculio venosus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio sikkimensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio robustus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio dentipes",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Curculioniphilus endosymbiont of Curculio camelliae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma proteobacterium endosymbiont of Pseudococcus viburni",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Serratia entomophila",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Stammerula sp. of Campiglossa doronici",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Oxyna flavipennis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Sphenella marginata",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Capitites ramulosa",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Trupanea stellata",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Trupanea amoena",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Acanthiophilus helianthi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula tephritidis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Stammerula",
+               "size" : 8
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Stammerula sp. of Campiglossa doronici",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Oxyna flavipennis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Sphenella marginata",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Capitites ramulosa",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Trupanea stellata",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Trupanea amoena",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Acanthiophilus helianthi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula tephritidis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Sodalis-like symbiont of Nippolachnus piri",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Stammerula sp. of Campiglossa doronici",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Oxyna flavipennis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Sphenella marginata",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Capitites ramulosa",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Trupanea stellata",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Trupanea amoena",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula sp. of Acanthiophilus helianthi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Stammerula tephritidis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Pantoea sp. OS-154",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Macropleicola appendiculatae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Macropleicola muticae",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Macropleicola",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Macropleicola appendiculatae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Macropleicola muticae",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Enterobacter sp. GX18",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Yersinia sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Yersinia sp. BJC15-B15",
+                     "size" : 0
+                  }
+               ],
+               "name" : "KM16",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Caldisericia",
+                     "size" : 10
+                  }
+               ],
+               "name" : "Caldiserica",
+               "size" : 10
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Caldisericia",
+                     "size" : 10
+                  }
+               ],
+               "name" : "Serratia sp. E3-2",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Caldisericia",
+                     "size" : 10
+                  }
+               ],
+               "name" : "Sodalis endosymbiont of Curculio hachijoensis",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Caldisericia",
+                     "size" : 10
+                  }
+               ],
+               "name" : "Yokenella",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Caldisericia",
+                     "size" : 10
+                  }
+               ],
+               "name" : "Enterobacter sp. KN/03/21",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Caldisericia",
+                     "size" : 10
+                  }
+               ],
+               "name" : "Yersinia sp. HME8608",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Caldisericia",
+                     "size" : 10
+                  }
+               ],
+               "name" : "Enterobacter sp. A5C",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Caldisericia",
+                     "size" : 10
+                  }
+               ],
+               "name" : "Enterobacter sp. KB52",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Schneideria nysicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Ischnodemia utricula",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Aphalaroida inermis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "primary endosymbiont of Pseudolynchia canariensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Blochmannia endosymbiont of Polyrhachis foreli",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Schneideria",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Zinderia",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Carsonella",
+                     "size" : 14
+                  }
+               ],
+               "name" : "Candidatus Carsonella",
+               "size" : 15
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Zinderia",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Carsonella",
+                     "size" : 14
+                  }
+               ],
+               "name" : "Serratia marcescens subsp. sakuensis",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Shimwellia blattae",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Shimwellia pseudoproteus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Shimwellia",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Shimwellia blattae",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Shimwellia pseudoproteus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Enterobacter hormaechei ATCC 49162",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Fimbriimonadia",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Armatimonadia",
+                     "size" : 4
+                  },
+                  {
+                     "name" : "Chthonomonadetes",
+                     "size" : 7
+                  },
+                  {
+                     "name" : "candidate division OP10 clone OPB50",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SJA-171",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SJA-176",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SBR1039",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SJA-121",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Armatimonadetes bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium GC55",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium #0319-6A24",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium #0319-6E2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SJA-43",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division WS1 bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Armatimonadetes",
+               "size" : 23
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Gracilibacteria bacterium canine oral taxon 364",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Gracilibacteria bacterium canine oral taxon 394",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Gracilibacteria bacterium canine oral taxon 291",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Gracilibacteria bacterium canine oral taxon 323",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Gracilibacteria bacterium oral taxon 873",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Gracilibacteria bacterium oral taxon 871",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Gracilibacteria bacterium oral taxon 872",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium WH3-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "mixed culture isolate koll6",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Altimarinus",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "uncultured Candidatus Gracilibacteria bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division GN10 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Parcubacteria group",
+                     "size" : 1426
+                  },
+                  {
+                     "name" : "Microgenomates group",
+                     "size" : 795
+                  },
+                  {
+                     "name" : "uncultured bacterium GKS2-30",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium GKS2-174",
+                     "size" : 0
+                  }
+               ],
+               "name" : "BD1-5",
+               "size" : 2235
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "SR1 bacterium canine oral taxon 382",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division SR1 bacterium MGEHA",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "SR1 bacterium oral taxon 875",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "SR1 bacterium oral taxon 874",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "SR1 bacterium canine oral taxon 380",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "SR1 bacterium canine oral taxon 369",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division SR1 bacterium taxon 345",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium VC2.1 Bac16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division SR1 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium X112",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division SR1 bacterium RAAC1_SR1_1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division SR1 bacterium Aalborg_AAW-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division SR1 bacterium feline oral taxon 313",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "SR1 bacterium human oral taxon HOT-874",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "SR1 bacterium human oral taxon HOT-345",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division SR1 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division SR1 bacterium CG_4_9_14_3_um_filter_40_9",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division SR1",
+               "size" : 17
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Caldatribacterium",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "bacterium enrichment culture clone AOM-SR-B16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured hydrocarbon seep bacterium GCA018",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium UASB_TL94",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured hydrocarbon seep bacterium GCA025",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "benzene mineralizing consortium clone SB-45",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "benzene mineralizing consortium clone SB-15",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division JS1",
+               "size" : 8
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "mixed culture isolate koll11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Banisveld landfill bacterium BVC56",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Omnitrophica clone OPB2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Omnitrophica bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-87",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division OP3",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Ifremeria nautilei",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Alviniconcha hessleri gill endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius algarvensis Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius ilvae Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Ifremeria nautilei gill symbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Antarctic sea ice bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "BD7-8 marine group",
+               "size" : 6
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Ifremeria nautilei",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Alviniconcha hessleri gill endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius algarvensis Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius ilvae Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Ifremeria nautilei gill symbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Antarctic sea ice bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "bacterium NTL338",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Ifremeria nautilei",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Alviniconcha hessleri gill endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius algarvensis Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius ilvae Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Ifremeria nautilei gill symbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Antarctic sea ice bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "bacterium NTL237",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Ifremeria nautilei",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Alviniconcha hessleri gill endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius algarvensis Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius ilvae Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Ifremeria nautilei gill symbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Antarctic sea ice bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "bacterium NTL344",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Ifremeria nautilei",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Alviniconcha hessleri gill endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius algarvensis Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius ilvae Gamma 3 endosymbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Ifremeria nautilei gill symbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Antarctic sea ice bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "bacterium NTL235",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Arenicellaceae",
+                     "size" : 25
+                  }
+               ],
+               "name" : "Arenicellales",
+               "size" : 25
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "bacterium SH4-10",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Planctomycete enrichment culture clone 15558",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division WWE3 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Crater Lake bacterium CL500-13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Parcubacteria group bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-58",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Crater Lake bacterium CL500-94",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Microgenomates group bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division OD1",
+               "size" : 8
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "bacterium SH4-10",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Planctomycete enrichment culture clone 15558",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division WWE3 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Crater Lake bacterium CL500-13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Parcubacteria group bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-58",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Crater Lake bacterium CL500-94",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Microgenomates group bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "bacterium S13Fe21",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "bacterium symbiont of Matsumuratettix hiroglyphicus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Vidania fulgoroideae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "beta proteobacterium endosymbiont of Reptalus melanochaetus RM1-V",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Nasuia deltocephalinicola",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Candidatus Vidania",
+               "size" : 4
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Pogonophora sp. JT-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Olavius crassitunicatus gamma-proteobacterial endosymbiont",
+                     "size" : 0
+                  }
+               ],
+               "name" : "JTB23",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "bacterium EM-19",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium 'KTK 27'",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium 'KTK 32'",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium 'KTK 14'",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium 'KTK 36'",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium 'KTK 41'",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "unidentified eubacterium clone OctSpA1-106",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured KB1 group bacterium Medee_0001",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured KB1 group bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Acetothermia bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium GR-296.II.45",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Acetothermia clone OPB14",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division KB1",
+               "size" : 12
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Babela massiliensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Verrucomicrobia bacterium YJF2-48",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Nautiliales bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium VC2.1 Bac47",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium C1-3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium VC2.1 Bac35",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Candidatus Dependentiae bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SBRH58",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Vermiphilus",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Babeliaceae bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "TM6",
+               "size" : 10
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Babela massiliensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Verrucomicrobia bacterium YJF2-48",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Nautiliales bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium VC2.1 Bac47",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium C1-3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium VC2.1 Bac35",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Candidatus Dependentiae bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SBRH58",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Vermiphilus",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Babeliaceae bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Enterobacteriaceae bacterium UYSO8",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Enterobacteriaceae bacterium secondary endosymbiont of Crisicoccus azaleae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary symbiont type-X of Acyrthosiphon pisum",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Cyphonococcus alpinus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Amonostherium lichtensioides",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Antonina pretiosa",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Australicoccus grevilleae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Melanococcus albizziae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Paracoccus nothofagicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma-symbiont of Antonina crawii",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbionts (in order Enterobacteriales)",
+               "size" : 9
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Enterobacteriaceae bacterium secondary endosymbiont of Crisicoccus azaleae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary symbiont type-X of Acyrthosiphon pisum",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Cyphonococcus alpinus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Amonostherium lichtensioides",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Antonina pretiosa",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Australicoccus grevilleae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Melanococcus albizziae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Paracoccus nothofagicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma-symbiont of Antonina crawii",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Benitsuchiphilus tojoi",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Enterobacteriaceae bacterium secondary endosymbiont of Crisicoccus azaleae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary symbiont type-X of Acyrthosiphon pisum",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Cyphonococcus alpinus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Amonostherium lichtensioides",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Antonina pretiosa",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Australicoccus grevilleae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Melanococcus albizziae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "secondary endosymbiont of Paracoccus nothofagicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "gamma-symbiont of Antonina crawii",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Aquamonas haywardensis",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Kleidoceria schneideri",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Kleidoceria",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "secondary endosymbiont of Ctenarytaina eucalypti Thao2000",
+                     "size" : 0
+                  }
+               ],
+               "name" : "secondary endosymbiont of Ctenarytaina eucalypti",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "secondary endosymbiont of Heteropsylla cubana Thao2000",
+                     "size" : 0
+                  }
+               ],
+               "name" : "secondary endosymbiont of Heteropsylla cubana",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "secondary endosymbiont of Heteropsylla cubana Thao2000",
+                     "size" : 0
+                  }
+               ],
+               "name" : "secondary endosymbiont of Calophya schini",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Columbicola gracilicapitis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Steffania adelgidicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Steffania adelgidicola str. Klausen-Leopoldsdorf",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Steffania",
+               "size" : 3
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Purcelliella pentastirinorum",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Purcelliella",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Purcelliella pentastirinorum",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Polyrhachis lamellidens",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Purcelliella pentastirinorum",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Polyrhachis hippomanes",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Purcelliella pentastirinorum",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Colobopsis nipponicus",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Purcelliella pentastirinorum",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Polyrhachis dives",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Purcelliella pentastirinorum",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Colobopsis shohki",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Camponotus ligniperdus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Blochmannia endosymbiont of Camponotus sericeiventris",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus silvicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus abdominalis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus balzani",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus socius",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sayi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia floridanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia fellah",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia chromaiodes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia herculeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ocreatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia schaefferi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia laevigatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sansabeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vafer",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia festinatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia rufipes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia castaneus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus str. BPEN",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia clarithorax",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia nearcticus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia americanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia novaeboracensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ulcerosus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vicinus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Blochmannia",
+               "size" : 27
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Camponotus ligniperdus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Blochmannia endosymbiont of Camponotus sericeiventris",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus silvicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus abdominalis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus balzani",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus socius",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sayi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia floridanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia fellah",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia chromaiodes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia herculeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ocreatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia schaefferi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia laevigatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sansabeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vafer",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia festinatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia rufipes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia castaneus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus str. BPEN",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia clarithorax",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia nearcticus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia americanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia novaeboracensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ulcerosus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vicinus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Polyrhachis ypsilon",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Camponotus ligniperdus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Blochmannia endosymbiont of Camponotus sericeiventris",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus silvicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus abdominalis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus balzani",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus socius",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sayi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia floridanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia fellah",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia chromaiodes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia herculeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ocreatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia schaefferi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia laevigatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sansabeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vafer",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia festinatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia rufipes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia castaneus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus str. BPEN",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia clarithorax",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia nearcticus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia americanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia novaeboracensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ulcerosus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vicinus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Plagiolepis manczshurica",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Camponotus ligniperdus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Blochmannia endosymbiont of Camponotus sericeiventris",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus silvicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus abdominalis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus balzani",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus socius",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sayi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia floridanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia fellah",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia chromaiodes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia herculeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ocreatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia schaefferi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia laevigatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sansabeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vafer",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia festinatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia rufipes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia castaneus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus str. BPEN",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia clarithorax",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia nearcticus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia americanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia novaeboracensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ulcerosus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vicinus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Plagiolepis pigmaea",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "endosymbiont of Camponotus ligniperdus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Blochmannia endosymbiont of Camponotus sericeiventris",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus silvicola",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus abdominalis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus balzani",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "endosymbiont of Camponotus socius",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sayi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia floridanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia fellah",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia chromaiodes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia herculeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ocreatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia schaefferi",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia laevigatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia sansabeanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vafer",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia festinatus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia rufipes",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia castaneus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia pennsylvanicus str. BPEN",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia clarithorax",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia nearcticus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia americanus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia novaeboracensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia ulcerosus",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Blochmannia vicinus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endosymbiont of Formica fusca",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Stilbonema sp. associated bacterium 1",
+                     "size" : 0
+                  }
+               ],
+               "name" : "MACA-EFT26",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "gamma proteobacterium SS-5",
+                     "size" : 0
+                  }
+               ],
+               "name" : "CK-1C4-49",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Heliothis virescens testis endosymbiont",
+                     "size" : 0
+                  }
+               ],
+               "name" : "SK259",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Solemya velum gill symbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Solemya occidentalis gill symbiont",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Milano-WF1B-44",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Solemya pervernicosa gill symbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Solemya reidi gill symbiont",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured sulfur-oxidizing symbiont bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "SC3-20",
+               "size" : 3
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "obligately oligotrophic bacterium KI89C",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "marine gamma proteobacterium HTCC2089",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "K189A clade bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "KI89A clade",
+               "size" : 3
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Acidihalobacter prosperus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "DSM 5130",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Berkiella aquae",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Berkiella cookevillensis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Trachelomonas scabra (in domain Bacteria)",
+                     "size" : 0
+                  }
+               ],
+               "name" : "NKB5",
+               "size" : 3
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Thermotogales str. BHI80-139",
+                     "size" : 0
+                  }
+               ],
+               "name" : "BHI80-139",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured actinobacterium HF0200_46I24",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured gamma proteobacterium HF4000_47G05",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured gamma proteobacterium HF0200_24F15",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium KM3-174-C5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium HERMI11",
+                     "size" : 0
+                  }
+               ],
+               "name" : "E01-9C-26 marine group",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured bacterium PHOS-HD29",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium UASB_TL15",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium TA18",
+                     "size" : 0
+                  }
+               ],
+               "name" : "TA18",
+               "size" : 3
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Desulfocaldus sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SJP-3",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SJP-2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured deep-sea bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Hydrogenedentes bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PRR-11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-III-24",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-III-29",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Candidatus Sumerlaeota bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-II-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-74",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-III-18",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-II-4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-II-34",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-III-4",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Sumerlaeia",
+                     "size" : 2
+                  }
+               ],
+               "name" : "Candidate division BRC1",
+               "size" : 17
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Pelobacter sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "unidentified bacterium wb1_H11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "saltmarsh clone LCP-67",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium mle1-16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PRR-12",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PRR-10",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-III-32a",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-III-30",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-II-5",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured soil bacterium PBS-III-9",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Latescibacteria bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division WS3",
+               "size" : 11
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured proteobacterium HOC40",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured proteobacterium HOC28",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured proteobacterium HOC31",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured proteobacterium HOC33",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured proteobacterium HOC3",
+                     "size" : 0
+                  }
+               ],
+               "name" : "HOC36",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Thioalkalivibrio sp.",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured gamma proteobacterium Sva0071",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured gamma proteobacterium Sva0864",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Sva0071",
+               "size" : 3
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Chromatiales bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Run-SP154",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Chromatiales bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "uncultured bacterium GKS2-91",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Chromatiales bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Enterobacteriaceae bacterium enrichment culture clone AP-FeEnrich23",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Chromatiales bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "uncultured bacterium W4-21b",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Chromatiales bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "uncultured anaerobic bacterium",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "bacterium enrichment culture clone R4-85B",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium SHA-114",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium TA08",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium UASB_117",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium UASB_TL20",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division TA06 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division AC1 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division GN04 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium DG_26",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium DG_24",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium DG_78",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium SM23_40",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium SM1_40",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium 32_111",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium 34_109",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium ADurb.Bin131",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium ADurb.Bin417",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division AC1 bacterium JGI MDM2 ZSED05-1-F8",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium B3_TA06",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division TA06 bacterium JGI_Cruoil_03_38_101",
+                     "size" : 0
+                  }
+               ],
+               "name" : "TA06",
+               "size" : 21
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "bacterium enrichment culture clone E2",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium enrichment culture clone E1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "toluene-degrading methanogenic consortium bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured candidate division WS6 bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-06",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-01",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWF2_33_92",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_WS6_33_547",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWC1_33_20",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWC1_36_11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium OLB20",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium OLB21",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWB1_33_6",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWF1_33_233",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWE1_34_7",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_WS6_36_26",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWE2_33_157",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWF2_39_15",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWE1_36_69",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWF1_36_8",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWD1_35_594",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWF1_35_23",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWA2_37_6",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GW2011_GWC2_36_7",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium 34_10",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium 36_33",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GWE1_33_547",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium GWF1_37_7",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium RIFOXYB1_FULL_33_14",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium RIFOXYB1_FULL_33_15",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium RIFOXYC1_FULL_33_10",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium RIFOXYC1_FULL_33_9",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "candidate division WS6 bacterium RIFOXYD1_FULL_33_8",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium CG_4_10_14_0_2_um_filter_Dojkabacteria_WS6_41_15",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium CG_4_10_14_3_um_filter_Dojkabacteria_WS6_41_9",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium CG_4_9_14_3_um_filter_150_Dojkabacteria_WS6_41_13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium HGW-Dojkabacteria-1",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium JGI CrystG Apr3-2-B17",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium JGI CrystG Apr3-4-G16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA2022",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA2177",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA2222",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA2259",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA2278",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA3081",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA4069",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA4776",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA4813",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA5209",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA5223",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA5232",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Dojkabacteria bacterium UBA5749",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division WS6",
+               "size" : 53
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "unidentified rumen bacterium RFN82",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium enrichment culture clone R4-81B",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "unidentified rumen bacterium RF3",
+                     "size" : 0
+                  }
+               ],
+               "name" : "RF3",
+               "size" : 3
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "unidentified rumen bacterium RFN82",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "bacterium enrichment culture clone R4-81B",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "unidentified rumen bacterium RF3",
+                     "size" : 0
+                  }
+               ],
+               "name" : "uncultured Banisveld landfill bacterium BVB22",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured bacterium SHA-89",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium UASB_TL56",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Aminicenantes bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Aminicenantes bacterium clone OPB95",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Aminicenantes bacterium clone OPB5",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division OP8",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured bacterium SHA-89",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium UASB_TL56",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Aminicenantes bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Aminicenantes bacterium clone OPB95",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Aminicenantes bacterium clone OPB5",
+                     "size" : 0
+                  }
+               ],
+               "name" : "uncultured soil bacterium PBS-25",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "bacterium enrichment culture clone E26",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Hyd24-12",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "bacterium enrichment culture clone AOM-SR-B28",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-64",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-56",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-07",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Microgenomates bacterium clone OPB92",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured eubacterium WCHB1-26",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured bacterium GR-296.II.4A",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "uncultured Anaerolineales bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division OP11",
+               "size" : 9
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Candidatus Atribacteria bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Atribacteria bacterium clone OPB47",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Atribacteria bacterium clone OPB72",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidate division OP9",
+               "size" : 3
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Candidatus Atribacteria bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Atribacteria bacterium clone OPB47",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Atribacteria bacterium clone OPB72",
+                     "size" : 0
+                  }
+               ],
+               "name" : "uncultured eubacterium WCHB1-60",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Candidatus Atribacteria bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Atribacteria bacterium clone OPB47",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Atribacteria bacterium clone OPB72",
+                     "size" : 0
+                  }
+               ],
+               "name" : "uncultured candidate division WS5 bacterium",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "uncultured Candidatus Atribacteria bacterium",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Atribacteria bacterium clone OPB47",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Atribacteria bacterium clone OPB72",
+                     "size" : 0
+                  }
+               ],
+               "name" : "endophytic bacterium CR1b",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Izhakiella",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "aquifer2",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "CK-1C4-19",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "aquifer1",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "SPOTSOCT00m83",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Elev-16S-509",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "ARKDMS-49",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "ARKICE-90",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "pItb-vmat-80",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "AEGEAN-245",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Skagenf62",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "FGL7S",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "BJGMM-U27",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "WN-HWB-116",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "CS-B046",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "EC3",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "PYR10d3",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "JFR0501-aaa03c07",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "aaa34a10",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "JFR0502-aaa15a10",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "PB1-aai25f07",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "CK-1C2-67",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "SS1-B-09-64",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "BD72BR169",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "SZB30",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "1013-28-CG33",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "MD2904-B13",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "OXIC-003",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "BD3-1",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "JFR0501-aaa03b09",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "196up",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Izhakiella capsodis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Izhakiella australiensis",
+                     "size" : 0
+                  }
+               ],
+               "name" : "TDNP-Wbc97-24-4-116",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Pseudocitrobacter faecalis",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Pseudocitrobacter anthropi",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Pseudocitrobacter",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Thorsellia",
+                     "size" : 4
+                  },
+                  {
+                     "name" : "Coetzeea",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Thorselliaceae",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Enterobacillus tribolii",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Enterobacillus",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Bacterium punctum",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Bacterium catenula",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Bacterium triloculare",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Bacterium enchelys",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Bacterium termo",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Bacterium",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Marinagarivorans algicola",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Marinagarivorans",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Marinagarivorans algicola",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Escherichia marmotae",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Marinagarivorans algicola",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Gibbsiella greigii",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Westeberhardia cardiocondylae",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Westeberhardia",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Lambdaproteobacteria bacterium RIFOXYC1_FULL_56_13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Lambdaproteobacteria bacterium RIFOXYD12_FULL_49_8",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Lambdaproteobacteria bacterium RIFOXYD1_FULL_56_27",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Lambdaproteobacteria bacterium RIFOXYD2_FULL_50_16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Lambdaproteobacteria bacterium RIFOXYD2_FULL_56_26",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Lambdaproteobacteria bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Lambdaproteobacteria",
+               "size" : 6
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RBG_16_60_9",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RBG_16_62_13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RBG_16_64_10",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RBG_16_64_11",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RBG_16_65_31",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RBG_16_65_34",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RBG_19FT_COMBO_61_10",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RIFCSPHIGHO2_01_60_12",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RIFCSPHIGHO2_01_FULL_61_200",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RIFCSPHIGHO2_01_FULL_65_16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RIFCSPHIGHO2_02_FULL_60_13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RIFCSPHIGHO2_02_FULL_65_16",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RIFCSPHIGHO2_12_FULL_60_33",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium RIFCSPLOWO2_01_FULL_60_18",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Muproteobacteria bacterium",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Muproteobacteria",
+               "size" : 15
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Immundisolibacteraceae",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Immundisolibacterales",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Cryosericia",
+                     "size" : 4
+                  }
+               ],
+               "name" : "Candidatus Cryosericota",
+               "size" : 4
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Limnobaculum parvum",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Limnobaculum",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Superficieibacter electus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Superficieibacter",
+               "size" : 1
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Superficieibacter electus",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Rhodothermia bacterium",
+               "size" : 0
+            }
+         ],
+         "name" : "Bacteria",
+         "size" : 116464
+      },
+      {
+         "children" : [
+            {
+               "children" : [
+                  {
+                     "name" : "Archaeoglobi",
+                     "size" : 1149
+                  },
+                  {
+                     "name" : "Methanopyri",
+                     "size" : 175
+                  }
+               ],
+               "name" : "Methanopyri",
+               "size" : 1324
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Korarchaeota",
+                     "size" : 324
+                  },
+                  {
+                     "name" : "Thaumarchaeota",
+                     "size" : 373
+                  }
+               ],
+               "name" : "Thaumarchaeota",
+               "size" : 697
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Korarchaeota",
+                     "size" : 324
+                  },
+                  {
+                     "name" : "Thaumarchaeota",
+                     "size" : 373
+                  }
+               ],
+               "name" : "Marine Hydrothermal Vent Group 1(MHVG-1)",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Korarchaeota",
+                     "size" : 324
+                  },
+                  {
+                     "name" : "Thaumarchaeota",
+                     "size" : 373
+                  }
+               ],
+               "name" : "Ancient Archaeal Group(AAG)",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Korarchaeota",
+                     "size" : 324
+                  },
+                  {
+                     "name" : "Thaumarchaeota",
+                     "size" : 373
+                  }
+               ],
+               "name" : "Marine Hydrothermal Vent Group 2(MHVG-2)",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Korarchaeota",
+                     "size" : 324
+                  },
+                  {
+                     "name" : "Thaumarchaeota",
+                     "size" : 373
+                  }
+               ],
+               "name" : "pCIRA-13",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Korarchaeota",
+                     "size" : 324
+                  },
+                  {
+                     "name" : "Thaumarchaeota",
+                     "size" : 373
+                  }
+               ],
+               "name" : "Candidatus Geoarchaeota",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "MCG-15",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "MCG-6",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "MCG-1",
+                     "size" : 2
+                  }
+               ],
+               "name" : "Candidatus Bathyarchaeota",
+               "size" : 4
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Lokiarchaeota",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Thorarchaeota",
+                     "size" : 8
+                  },
+                  {
+                     "name" : "Candidatus Heimdallarchaeota",
+                     "size" : 5
+                  },
+                  {
+                     "name" : "Candidatus Helarchaeota",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "Candidatus Odinarchaeota",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Asgard group",
+               "size" : 17
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Lokiarchaeota",
+                     "size" : 1
+                  },
+                  {
+                     "name" : "Candidatus Thorarchaeota",
+                     "size" : 8
+                  },
+                  {
+                     "name" : "Candidatus Heimdallarchaeota",
+                     "size" : 5
+                  },
+                  {
+                     "name" : "Candidatus Helarchaeota",
+                     "size" : 2
+                  },
+                  {
+                     "name" : "Candidatus Odinarchaeota",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Hadesarchaea",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Methanomethylia",
+                     "size" : 6
+                  }
+               ],
+               "name" : "Candidatus Verstraetearchaeota",
+               "size" : 6
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Geothermarchaeota archaeon",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Geothermarchaeota archaeon JdFR-13",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Geothermarchaeota archaeon JdFR-14",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Geothermarchaeota archaeon ex4572_27",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Conexivisphaera",
+                     "size" : 1
+                  }
+               ],
+               "name" : "Candidatus Geothermarchaeota",
+               "size" : 5
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Marsarchaeota group 1",
+                     "size" : 4
+                  },
+                  {
+                     "name" : "Candidatus Marsarchaeota group 2",
+                     "size" : 11
+                  }
+               ],
+               "name" : "Candidatus Marsarchaeota",
+               "size" : 15
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Nezhaarchaeota archaeon WYZ-LMO7",
+                     "size" : 0
+                  },
+                  {
+                     "name" : "Candidatus Nezhaarchaeota archaeon WYZ-LMO8",
+                     "size" : 0
+                  }
+               ],
+               "name" : "Candidatus Nezhaarchaeota",
+               "size" : 2
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Methanoliparales",
+                     "size" : 4
+                  }
+               ],
+               "name" : "Candidatus Methanoliparia",
+               "size" : 4
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Methanoliparales",
+                     "size" : 4
+                  }
+               ],
+               "name" : "Theionarchaea",
+               "size" : 0
+            },
+            {
+               "children" : [
+                  {
+                     "name" : "Candidatus Methanoliparales",
+                     "size" : 4
+                  }
+               ],
+               "name" : "TACK group archaeon",
+               "size" : 0
+            }
+         ],
+         "name" : "Archaea (domain silva:D37982/#1)",
+         "size" : 2082
+      }
+   ],
+   "name" : "arguson"
+}
