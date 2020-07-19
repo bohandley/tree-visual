@@ -101,10 +101,18 @@ window.onload = function(){
     treeLib.shuffleArray(colors);
     
     color = d3.scaleOrdinal(colors);
-    
+
     FileName = menu.changeAuthor(FileName, 1);
     
     loadVisualization("1");
     loadVisualization("2");
         
 }
+
+function updateDataset() {
+    FileName = menu.changeAuthor(FileName);
+    
+    change_map("1");
+    change_map("2");
+}
+

@@ -47,19 +47,22 @@ function draw_zoomable_treemap(position){
 
     d3v3.json(FileName, function(data) {
         // FILTER JSON
+
         data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
 
-        // for(var i =0; i<root.children.length; i++){
-        //     for(var j=0; j<root.children[i].children.length; j++){
-        //         for(var k=0; k<root.children[i].children[j].children.length; k++){
-        //             for(var m=0; m<root.children[i].children[j].children[k].children.length; m++){
-        //                 root.children[i].children[j].children[k].children[m].value = root.children[i].children[j].children[k].children[m].size;
-        //             }
-        //         }
-        //     }
-        // }
-        var root = data;
+        // refactor to handle all levels of json
+        for(var i =0; i<data.children.length; i++){
+            for(var j=0; j<data.children[i].children.length; j++){
+                for(var k=0; k<data.children[i].children[j].children.length; k++){
+                    for(var m=0; m<data.children[i].children[j].children[k].children.length; m++){
+                        data.children[i].children[j].children[k].children[m].value = data.children[i].children[j].children[k].children[m].size;
+                    }
+                }
+            }
+        }
         
+        var root = data;
+
         initialize(root);
         accumulate(root);
         leafAcc(root);

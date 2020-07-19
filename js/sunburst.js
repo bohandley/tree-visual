@@ -80,7 +80,7 @@ function draw_sunburst(position){
                 click(d);
             })
             .append("title")
-            .text( d => {
+            .text(d => {
                 var dataName = d.data.name;
 
                 return dataName + "\n" + menu.dataInfoSizeText() + formatNumber(d.value)

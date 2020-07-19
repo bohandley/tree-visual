@@ -8,13 +8,17 @@ var menu = (function (d3, $) {
 	    	author: "Number of Papers: ",
 	    	government: "Number of Offices: ",
 	    	import: "Countries imported to: ",
-	    	export: "Countries exported to: "
+	    	export: "Countries exported to: ",
+	    	trade: "Countries exported to: ",
+	    	treeoflife: "Countries exported to: "
 	    },
 	    dataInfoSizeText: {
 	    	author: "Number of Citations: ",
 	    	government: "Number of employees",
 	    	import: "Value of imports: ",
-	    	export: "Value of exports: "
+	    	export: "Value of exports: ",
+	    	trade: "Countries exported to: ",
+	    	treeoflife: "Countries exported to: "
 	    }
 	}
 
@@ -143,12 +147,7 @@ var menu = (function (d3, $) {
         
         document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
         
-        changeNum(FileName);
-
-        if (!onload) {
-        	change_map("1");
-        	change_map("2");
-    	}
+        changeNum(FileName);        
 
         return FileName;
     }
