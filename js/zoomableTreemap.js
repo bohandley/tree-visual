@@ -66,8 +66,13 @@ function draw_zoomable_treemap(position){
         initialize(root);
         accumulate(root);
         leafAcc(root);
+        sizeAcc(root)
         layout(root);
+        root = menu.processAccumulated(root, 'zoomableTreemap');
         display(root);
+
+        // process the value as either leaves or acc size depending on control panel
+        
 
         function initialize(root) {
             root.x = root.y = 0;
@@ -83,6 +88,13 @@ function draw_zoomable_treemap(position){
         function accumulate(d) {
             return (d._children = d.children)
                 ? d.value = d.children.reduce(function(p, v) { return p + accumulate(v); }, 0)
+                : d.size;
+        }
+
+        // preserve the accumulated size
+        function sizeAcc(d) {
+            return (d._children = d.children)
+                ? d.accSize = d.children.reduce(function(p, v) { return p + sizeAcc(v); }, 0)
                 : d.size;
         }
 

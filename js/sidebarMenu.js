@@ -1,6 +1,7 @@
 var menu = (function (d3, $) {
 
 	var dummyConfig = {
+		accumulated: 'leaves',
 	    nodeSize: 5,
 	    proportionalSize: false,
 	    dataType: '',
@@ -71,7 +72,7 @@ var menu = (function (d3, $) {
             config.proportionalSize = false;
 	}
 
-	function setupNodesizeScalar(dataset=null) {
+	function setupCheckBoxes(dataset=null) {
 	    let nodesizeScale = 4;
 	    let slider = $("#nodesizeScalar");
 	    let min_ = 2;
@@ -130,7 +131,7 @@ var menu = (function (d3, $) {
         })
     }
 
-    function changeAuthor(FileName, onload=0){
+    function changeDataset(FileName, onload=0){
         // resetCfg();
 
         var objD = document.getElementById("dataDropdown");
@@ -152,6 +153,41 @@ var menu = (function (d3, $) {
         return FileName;
     }
 
+    function processAccumulated(root, type=null) {
+    	var acc = config.accumulated;
+
+    	if (type != null) {
+    		if (acc == 'leaves') {
+    			leavesAccZT(root);
+    		} else if (acc == 'size') {
+
+    		}
+    	} else {
+    		if (acc == 'leaves') {
+    			root.each(el => {
+    				if (el.children) {
+    					el.value = el.leaves().length;
+    				} else {
+    					el.value = 1;
+    				}
+    			});
+    		} else if (acc == 'size') {
+    			// size has already been set by sum
+    		}
+    	}
+
+    	return root;
+    	// debugger;
+    	// make the value either the accumulated size or the accumulated leaves
+
+    }
+
+    function leavesAccZT(d) {
+        return (d._children = d.children)
+            ? d.value = d.children.reduce(function(p, v) { return p + leavesAccZT(v); }, 0)
+            : 1;
+    }
+
 	return {
 
 		getNodeSize: function(d, type=null) {
@@ -163,16 +199,16 @@ var menu = (function (d3, $) {
 			return getNodeSize(accessNodeSize(), config.proportionalSize, d) * mult;
 		},
 
-		setupNodesizeScalar: function(dataset=null) {
-			setupNodesizeScalar(dataset=null);
+		setupCheckBoxes: function(dataset=null) {
+			setupCheckBoxes(dataset=null);
 		},
 
 		changeNum: function(FileName) {
 			changeNum(FileName);
 		},
 
-		changeAuthor: function(FileName, onload) {
-			return changeAuthor(FileName, onload);
+		changeDataset: function(FileName, onload) {
+			return changeDataset(FileName, onload);
 		},
 
 		dataInfoLeavesText: function() {
@@ -183,6 +219,15 @@ var menu = (function (d3, $) {
 			return config.dataInfoSizeText[config.dataType];
 		},
 
+		updateAccumulated: function(acc) {
+			config.accumulated = acc;
+		},
+
+		config: function() { return config; },
+
+		processAccumulated: function(root, type=null) {
+			return processAccumulated(root, type);
+		}
 	}
 
 })( d3, $ );

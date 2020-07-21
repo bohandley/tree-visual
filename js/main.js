@@ -5,9 +5,48 @@ treeLib.buildConfig(['g1', 'g2']);
 var FileData;
 
 $(document).ready(function(){
-    menu.setupNodesizeScalar();
-});
+    menu.setupCheckBoxes();
 
+    // initial acc is leaves
+    $("#checkBoxAccumulatedLeaves").prop("checked", true);
+
+    $("#checkBoxAccumulatedSize").on("click", function() {
+        
+        $("#checkBoxAccumulatedLeaves").prop("checked", false)
+        // updateAccumulated();
+        // config.accumulated = 'size';
+        var isChecked = $(this).prop("checked");
+
+        if (isChecked)
+            menu.updateAccumulated('size');
+        else {
+            
+            menu.updateAccumulated('leaves');
+            $("#checkBoxAccumulatedLeaves").prop("checked", true);
+        }
+
+
+        change_map("1");
+        change_map("2");
+    });
+
+    $("#checkBoxAccumulatedLeaves").on("click", function() {
+        
+        $("#checkBoxAccumulatedSize").prop("checked", false)
+        var isChecked = $(this).prop("checked");
+        
+        if (isChecked)
+            menu.updateAccumulated('leaves');
+        else {
+            
+            menu.updateAccumulated('size');
+            $("#checkBoxAccumulatedSize").prop("checked", true);
+        }
+
+        change_map("1");
+        change_map("2");
+    });
+});
 
 function Remove_nodechildren(id){
     var parent = document.getElementById(id)
@@ -102,7 +141,7 @@ window.onload = function(){
     
     color = d3.scaleOrdinal(colors);
 
-    FileName = menu.changeAuthor(FileName, 1);
+    FileName = menu.changeDataset(FileName, 1);
     
     loadVisualization("1");
     loadVisualization("2");
@@ -110,7 +149,7 @@ window.onload = function(){
 }
 
 function updateDataset() {
-    FileName = menu.changeAuthor(FileName);
+    FileName = menu.changeDataset(FileName);
     
     change_map("1");
     change_map("2");

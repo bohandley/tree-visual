@@ -29,6 +29,12 @@ function draw_radial_tree(position){
             .sort((a, b) => d3.ascending(a.data.name, b.data.name)))
             .sum(function(d) { return d.size; });
 
+        // preserve the accSize for citations    
+        root = treeLib.preserveAccSize(root);
+
+        // process the value as either leaves or acc size depending on control panel
+        root = menu.processAccumulated(root);
+
         var link = svg.append("g")
             .attr("fill", "none")
             .attr("stroke", "#555")

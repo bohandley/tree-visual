@@ -33,6 +33,12 @@ function draw_treemap(position, selectindex){
             .sum( d => d.size )
             .sort((a, b) => b.height - a.height || b.value - a.value );
 
+        // preserve the accSize for citations    
+        root = treeLib.preserveAccSize(root);
+
+        // process the value as either leaves or acc size depending on control panel
+        root = menu.processAccumulated(root);
+
         treemap(root);
 
         var cell = svg.selectAll("g")
@@ -66,7 +72,7 @@ function draw_treemap(position, selectindex){
         
         cell.append("title")
             .text( d => {
-                return d.data.id + "\n" + menu.dataInfoSizeText() +  format(d.value) 
+                return d.data.id + "\n" + menu.dataInfoSizeText() +  format(d.accSize) 
             });
 
         d3.select("svg#"+position1).dispatch('doneDrawing');

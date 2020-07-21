@@ -340,6 +340,16 @@
   - debug issues with collapsible tree not having a value for each node(every other one has this!)
   - debug highlighting issues with zoomable tree grandparent(do we want to show the citations?)
 
+7/18/2020
+  7:00pm-9:00pm
+    Debug
+    Begin working on leaves v size accumulation
+  9:00pm-10:00pm
+    Meet with Haobin
+
+7/21/2020
+  4:30pm-8:00pm
+    Begin working hooking up leaves vs size accumulation inputs
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)
