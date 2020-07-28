@@ -7,40 +7,23 @@ var FileData;
 $(document).ready(function(){
     menu.setupCheckBoxes();
 
-    // initial acc is leaves
-    $("#checkBoxAccumulatedLeaves").prop("checked", true);
+    // initial acc is leaves, see menu.config.accumulated
+    $("#checkBoxAccumulated").prop("checked", true);
+    $(".data-info-types-span.leaves").css('opacity', 1);
+    $(".data-info-types-span.size").css('opacity', .25);
 
-    $("#checkBoxAccumulatedSize").on("click", function() {
+    $("#checkBoxAccumulated").on("click", function() {
         
-        $("#checkBoxAccumulatedLeaves").prop("checked", false)
-        // updateAccumulated();
-        // config.accumulated = 'size';
-        var isChecked = $(this).prop("checked");
-
-        if (isChecked)
-            menu.updateAccumulated('size');
-        else {
-            
-            menu.updateAccumulated('leaves');
-            $("#checkBoxAccumulatedLeaves").prop("checked", true);
-        }
-
-
-        change_map("1");
-        change_map("2");
-    });
-
-    $("#checkBoxAccumulatedLeaves").on("click", function() {
-        
-        $("#checkBoxAccumulatedSize").prop("checked", false)
         var isChecked = $(this).prop("checked");
         
-        if (isChecked)
+        if (isChecked){
             menu.updateAccumulated('leaves');
-        else {
-            
+            $(".data-info-types-span.leaves").css('opacity', 1);
+            $(".data-info-types-span.size").css('opacity', .25);
+        } else { 
             menu.updateAccumulated('size');
-            $("#checkBoxAccumulatedSize").prop("checked", true);
+            $(".data-info-types-span.leaves").css('opacity', .25);
+            $(".data-info-types-span.size").css('opacity', 1);
         }
 
         change_map("1");
@@ -142,6 +125,8 @@ window.onload = function(){
     color = d3.scaleOrdinal(colors);
 
     FileName = menu.changeDataset(FileName, 1);
+
+    menu.dataTypeSpanText();
     
     loadVisualization("1");
     loadVisualization("2");
@@ -151,7 +136,22 @@ window.onload = function(){
 function updateDataset() {
     FileName = menu.changeDataset(FileName);
     
+    menu.dataTypeSpanText();
+    // allow user to select from intermediate levels of nodes
+    // and only display them in the graph
+    // 1. iterate through data
+    // 2. make a collection of of distinct nodes from each level
+    // 3. build a multiselect for each level from the nodes
+    // 4. filter dataset on load of json
+    dataFilterSubset()
+
     change_map("1");
     change_map("2");
+}
+
+function dataFilterSubset() {
+    d3.json(FileName, function(error, data) {
+        debugger;
+    });
 }
 

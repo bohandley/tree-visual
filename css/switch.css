@@ -28,6 +28,11 @@
     transition: .4s;
 }
 
+/* custom slider color for not on off, but one or the other */
+.slider.or-other {
+    background-color: #2196F3;
+}
+
 .slider:before {
     position: absolute;
     content: "";

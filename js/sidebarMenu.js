@@ -20,6 +20,14 @@ var menu = (function (d3, $) {
 	    	export: "Value of exports: ",
 	    	trade: "Countries exported to: ",
 	    	treeoflife: "Countries exported to: "
+	    },
+	    dataInfoTypes: {
+	    	author: {size: 'Citations', leaves: 'Papers'},
+	    	government: {size: 'Employees', leaves: 'Group'},
+	    	import: {size: 'Millions', leaves: 'Countries'},
+	    	export: {size: 'Millions', leaves: 'Countries'},
+	    	trade: {size: 'MIllions', leaves: 'Countries'},
+	    	treeoflife: {size: '???', leaves: 'Species'},
 	    }
 	}
 
@@ -227,6 +235,18 @@ var menu = (function (d3, $) {
 
 		processAccumulated: function(root, type=null) {
 			return processAccumulated(root, type);
+		},
+
+		dataTypeSpanText: function() {
+			var dataType = config.dataType;
+
+			var spanText = config.dataInfoTypes[dataType];
+
+			var l = spanText.leaves;
+			var s = spanText.size;
+
+			$(".data-info-types-span.leaves").text(l);
+			$(".data-info-types-span.size").text(s);
 		}
 	}
 
