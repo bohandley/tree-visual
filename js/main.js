@@ -25,8 +25,12 @@ $(document).ready(function(){
             $(".data-info-types-span.size").css('opacity', 1);
         }
 
-        change_map("1");
-        change_map("2");
+        var locked1 = menu.isLocked('1');
+        var locked2 = menu.isLocked('2');
+
+        loadVisualization('1', locked1);
+
+        loadVisualization('2', locked2);
     });
 
     $("#checkBoxRememberLayout1").on("click", function() {
@@ -169,8 +173,12 @@ function updateDataset() {
     // 4. filter dataset on load of json
     dataFilterSubset()
 
-    change_map("1");
-    change_map("2");
+    var locked1 = menu.isLocked('1');
+    var locked2 = menu.isLocked('2');
+
+    loadVisualization('1', locked1);
+
+    loadVisualization('2', locked2);
 }
 
 function dataFilterSubset() {

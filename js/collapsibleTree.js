@@ -33,6 +33,8 @@ function draw_collapsible_tree(position){
         // process the value as either leaves or acc size depending on control panel
         root = menu.processAccumulated(root);
 
+        menu.crtScaleLog(root.value, 5);
+        
         /////////////Tree graph start///////////////
         var difficulty_color = d3.scaleOrdinal()
             .domain([0,1,2,3])

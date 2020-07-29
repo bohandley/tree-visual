@@ -3,6 +3,7 @@ var menu = (function (d3, $) {
 	const LOCK_CLOSED = '<i class="fas fa-lock"></i>';
 
 	var dummyConfig = {
+		scaleLog: function() {},
 		isLocked: {1: false, 2: false},
 		accumulated: 'leaves',
 	    nodeSize: 5,
@@ -70,14 +71,18 @@ var menu = (function (d3, $) {
 		var amount = 1;
 
         if (prpSize == true) {
-            if (d.children)
-                amount = d.children.length;
+        	amount = config.scaleLog(d.value);
 
-            if (d._children)
-                amount = d._children.length;
+        	if (amount == -Infinity)
+        		amount = .001;
+            // if (d.children)
+            //     amount = d.children.length;
 
-            if (d.data && d.data.children)
-                amount = d.data.children.length;
+            // if (d._children)
+            //     amount = d._children.length;
+
+            // if (d.data && d.data.children)
+            //     amount = d.data.children.length;
         }
         
         var size = ndSize * amount;
@@ -299,7 +304,22 @@ var menu = (function (d3, $) {
 			config.isLocked[position] = false;
 
 			lock.html(LOCK_OPEN);
+		},
+
+		crtScaleLog: function(total, range) {
+			var logScale = d3.scaleLog()
+				.domain([1, total])
+				.range([1, range])
+
+			config.scaleLog = function(val) {
+				return logScale(val);
+			}
+		},
+
+		getLogScale: function(val) {
+			return config.scaleLog(val)
 		}
+
 	}
 
 })( d3, $ );

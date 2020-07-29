@@ -35,6 +35,8 @@ function draw_radial_tree(position){
         // process the value as either leaves or acc size depending on control panel
         root = menu.processAccumulated(root);
 
+        menu.crtScaleLog(root.value, 5);
+
         var link = svg.append("g")
             .attr("fill", "none")
             .attr("stroke", "#555")
