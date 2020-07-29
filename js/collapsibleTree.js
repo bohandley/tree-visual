@@ -159,7 +159,7 @@ function draw_collapsible_tree(position){
                     return cls;
                 })
                 .attr("r", function(d) {
-                    return menu.getNodeSize(d);
+                    return menu.getNodeSize(d, position1[1]);
                 })
                 .style("fill", function(d) {
                     if (!d.parent) {

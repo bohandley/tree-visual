@@ -91,10 +91,10 @@
                     <form id="widgetsDiv1">
                         <div class="row">
                             <!-- left part -->
-                            <div class="col-sm-7" id="left-widget1">
+                            <div class="col-sm-9" id="left-widget1">
                             <!-- Layout -->
                                 <div id="layout1" class="form-group row mb-2">
-                                    <label for="dropdown1" class="col-md-4 col-form-label">
+                                    <label for="dropdown1" class="col-md-3 col-form-label">
                                     <h2>Layout</h2>
                                     </label>
                                     <div class="col-md-7" style="padding-right:0">
@@ -107,10 +107,22 @@
                                         <option class="optionGroup" value="Sunburst">Sunburst</option>
                                     </select>
                                     </div>
+                                    <div 
+                                        class="col-md-1 col-form-label" 
+                                        data-toggle="tooltip" 
+                                        data-html="true" 
+                                        data-placement="bottom"
+                                        title="Check to store the most recent layout chosen <br/> (data-specific layouts not supported)" 
+                                    >
+                                        <a id="checkBoxRememberLayout1">
+                                          <i class="fas fa-lock-open"></i>
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <div id="layout1_treemap" class="form-group row mb-2" style="visibility:hidden">
-                                    <label for="dropdown1_treemap" class="col-md-4 col-form-label">
+
+                                <div id="layout1_treemap" class="form-group row mb-2 hide-tag">
+                                    <label for="dropdown1_treemap" class="col-md-3 col-form-label">
                                     <h2>Tiling Strategy</h2>
                                     </label>
                                     <div class="col-md-7" style="padding-right:0">
@@ -123,7 +135,21 @@
                                     </select>
                                     </div>
                                 </div>
-
+                                <div  id="nodeSizeDiv1_radialtree" class="form-group hide-tag">
+                                  <div class="form-row">
+                                    <div class="col-8">
+                                      <h2 id="nodeSizeSpan" data-toggle="tooltip" title="Increase size of high-degree nodes">
+                                        Proportional Node Size
+                                      </h2>
+                                    </div>
+                                    <div class="col-4">
+                                      <label class="switch">
+                                        <input type="checkbox" id="checkBoxNodeSize1">
+                                        <span class="slider round"></span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -142,10 +168,10 @@
                     <form id="widgetsDiv2">
                         <div class="row">
                             <!-- left part -->
-                            <div class="col-sm-7" id="left-widget2">
+                            <div class="col-sm-9" id="left-widget2">
                             <!-- layout -->
                                 <div id="layout2" class="form-group row mb-2">
-                                    <label for="dropdown2" class="col-md-4 col-form-label">
+                                    <label for="dropdown2" class="col-md-3 col-form-label">
                                         <h2>Layout</h2>
                                     </label>
                     
@@ -159,10 +185,21 @@
                                             <option class="optionGroup" value="Sunburst">Sunburst</option>
                                         </select>
                                     </div>
+                                    <div 
+                                        class="col-md-1 col-form-label" 
+                                        data-toggle="tooltip" 
+                                        data-html="true" 
+                                        data-placement="bottom"
+                                        title="Check to store the most recent layout chosen <br/> (data-specific layouts not supported)" 
+                                    >
+                                        <a id="checkBoxRememberLayout2">
+                                          <i class="fas fa-lock-open"></i>
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <div id="layout2_treemap" class="form-group row mb-2" style="visibility:hidden">
-                                    <label for="dropdown2_treemap" class="col-md-4 col-form-label" >
+                                <div id="layout2_treemap" class="form-group row mb-2 hide-tag">
+                                    <label for="dropdown2_treemap" class="col-md-3 col-form-label" >
                                     <h2>Tiling Strategy</h2>
                                     </label>
                                     <div class="col-md-7" style="padding-right:0">
@@ -175,6 +212,22 @@
                                     </select>
                                     </div>
                                 </div>
+                                <div  id="nodeSizeDiv2_radialtree" class="form-group hide-tag">
+                                  <div class="form-row">
+                                    <div class="col-8">
+                                      <h2 id="nodeSizeSpan" data-toggle="tooltip" title="Increase size of high-degree nodes">
+                                        Proportional Node Size
+                                      </h2>
+                                    </div>
+                                    <div class="col-4">
+                                      <label class="switch">
+                                        <input type="checkbox" id="checkBoxNodeSize2">
+                                        <span class="slider round"></span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+
                             </div>
                         </div>
                     </form>
@@ -272,7 +325,7 @@
                                   </div>
                                 </div><!-- end colorBlindDiv -->
 
-                                <div class="form-group" id="nodeSizeDiv">
+                                <!-- <div class="form-group" id="nodeSizeDiv">
                                   <div class="form-row">
                                     <div class="col-8">
                                       <span id="nodeSizeSpan" data-toggle="tooltip" title="Increase size of high-degree nodes">
@@ -286,7 +339,7 @@
                                       </label>
                                     </div>
                                   </div>
-                                </div><!-- end nodeSizeDiv -->
+                                </div> --><!-- end nodeSizeDiv -->
 
                                 
 

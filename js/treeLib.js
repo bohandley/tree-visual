@@ -1478,7 +1478,7 @@ var treeLib = (function (d3) {
 			.style("cursor", "pointer")
 			.attr("r", (d)=>{
 				// return 10;
-				return menu.getNodeSize(d, "Radial_Tree")*2;
+				return menu.getNodeSize(d, position2Id[1], "Radial_Tree")*2;
 			})
 			.style("stroke", d => {
 	    		// return getComplement(getColor(d, color));
@@ -1497,7 +1497,7 @@ var treeLib = (function (d3) {
 			.select("circle")
 			.attr("r", (d)=>{
 				// return 5;
-				return menu.getNodeSize(d, "Radial_Tree");
+				return menu.getNodeSize(d, position2Id[1], "Radial_Tree");
 			})
 			.style("stroke", "steelblue")
 	    	.style("stroke-width", 1);
@@ -1516,7 +1516,7 @@ var treeLib = (function (d3) {
 	    	.style("cursor", "pointer")
 	    	.attr("r", (d)=>{
 				// return 10;
-				return menu.getNodeSize(d) * 2;
+				return menu.getNodeSize(d, position2Id[1]) * 2;
 			});
 
 	   
@@ -1537,7 +1537,7 @@ var treeLib = (function (d3) {
 	    	.style("cursor", "pointer")
 	    	.attr("r", (d)=>{
 				// return 5;
-				return menu.getNodeSize(d);
+				return menu.getNodeSize(d, position2Id[1]);
 			});
 	}
 

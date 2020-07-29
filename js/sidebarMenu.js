@@ -1,9 +1,12 @@
 var menu = (function (d3, $) {
+	const LOCK_OPEN = '<i class="fas fa-lock-open"></i>';
+	const LOCK_CLOSED = '<i class="fas fa-lock"></i>';
 
 	var dummyConfig = {
+		isLocked: {1: false, 2: false},
 		accumulated: 'leaves',
 	    nodeSize: 5,
-	    proportionalSize: false,
+	    proportionalSize: {1: false, 2: false},
 	    dataType: '',
 	    dataInfoLeavesText: {
 	    	author: "Number of Papers: ",
@@ -37,22 +40,33 @@ var menu = (function (d3, $) {
 	    config =  copy(dummyConfig);
 	}
 
-	function updateNodeSize() {
+	function updateNodeSize(position=null) {
 		config.nodeSize = accessNodeSize();
 
         var ndSize = config.nodeSize;
+        if (position) {
+	        d3.select("#g"+position).selectAll("circle.node-size")
+	            .attr("r", function(d) {
+	            	return getNodeSize(d, ndSize, config.proportionalSize[position]);
+	            });
+        } else {
+        	d3.select("#g1").selectAll("circle.node-size")
+	            .attr("r", function(d) {
+	            	return getNodeSize(d, ndSize, config.proportionalSize['1']);
+	            });
 
-        d3.selectAll("circle.node-size")
-            .attr("r", function(d) {
-            	return getNodeSize(ndSize, config.proportionalSize, d);
-            });
+	        d3.select("#g2").selectAll("circle.node-size")
+	            .attr("r", function(d) {
+	            	return getNodeSize(d, ndSize, config.proportionalSize['2']);
+	            });
+        }
 	}
 
 	function accessNodeSize() {
 		return (+$("#nodesizeScalar").prop("value"));
 	}
 
-	function getNodeSize(ndSize, prpSize, d) {
+	function getNodeSize(d, ndSize, prpSize=null) {
 		var amount = 1;
 
         if (prpSize == true) {
@@ -67,17 +81,18 @@ var menu = (function (d3, $) {
         }
         
         var size = ndSize * amount;
-        
+
         return size;
 	}
 
-	function updateProportionalSize(that) {
+	function updateProportionalSize(that, view) {
+		// change the config for each view if one is checked
 		var bool = $(that).prop("checked") == true;
 
 		if (bool == true)
-            config.proportionalSize = true;
+            config.proportionalSize[view] = true;
         else if (bool == false)
-            config.proportionalSize = false;
+            config.proportionalSize[view] = false;
 	}
 
 	function setupCheckBoxes(dataset=null) {
@@ -92,16 +107,20 @@ var menu = (function (d3, $) {
 	    $("#nodesizeScaleMax").text(max_);
 	    slider.prop("value", nodesizeScale);
 
-	    $("#checkBoxNodeDegree").on("click", function() {
-	    	updateProportionalSize(this);
-	    	updateNodeSize();
+	    $("#checkBoxNodeSize1").on("click", function() {
+	    	updateProportionalSize(this, '1');
+	    	updateNodeSize('1');
+	    });
+
+	    $("#checkBoxNodeSize2").on("click", function() {
+	    	updateProportionalSize(this, '2');
+	    	updateNodeSize('2');
 	    });
 
 	    $("#nodesizeScalar").on('input', function(){
 	    	updateNodeSize()
 	    });
 	}
-
 
 	function copy(o) {
 		var _out, v, _key;
@@ -198,13 +217,13 @@ var menu = (function (d3, $) {
 
 	return {
 
-		getNodeSize: function(d, type=null) {
+		getNodeSize: function(d, position, type=null) {
 			var mult = 1;
 
 			if (type == "Radial_Tree")
 				mult= 5/8;
-
-			return getNodeSize(accessNodeSize(), config.proportionalSize, d) * mult;
+			
+			return getNodeSize(d, accessNodeSize(), config.proportionalSize[position]) * mult;
 		},
 
 		setupCheckBoxes: function(dataset=null) {
@@ -247,6 +266,39 @@ var menu = (function (d3, $) {
 
 			$(".data-info-types-span.leaves").text(l);
 			$(".data-info-types-span.size").text(s);
+		},
+
+		resetProportionalSize: function(position) {
+			config.proportionalSize[position] = false;
+
+			$("#checkBoxNodeSize"+position).prop('checked', false);
+		},
+
+		changeLockPosition: function(position) {
+			var lock = $("#checkBoxRememberLayout"+position);
+
+			// change to the opposite of what the config started with
+			config.isLocked[position] = !config.isLocked[position];
+
+			var wasOpen = config.isLocked[position];
+
+			if (wasOpen)
+				lock.html(LOCK_CLOSED);
+			else
+				lock.html(LOCK_OPEN);
+
+		},
+
+		isLocked: function(position){
+			return config.isLocked[position];
+		},
+
+		unlockPosition: function(position) {
+			var lock = $("#checkBoxRememberLayout"+position);
+
+			config.isLocked[position] = false;
+
+			lock.html(LOCK_OPEN);
 		}
 	}
 
