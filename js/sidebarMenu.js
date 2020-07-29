@@ -9,21 +9,17 @@ var menu = (function (d3, $) {
 	    nodeSize: 5,
 	    proportionalSize: {1: false, 2: false},
 	    dataType: '',
-	    dataInfoLeavesText: {
+		dataInfoLeavesText: {
 	    	author: "Number of Papers: ",
 	    	government: "Number of Offices: ",
-	    	import: "Countries imported to: ",
-	    	export: "Countries exported to: ",
-	    	trade: "Countries exported to: ",
-	    	treeoflife: "Countries exported to: "
+	    	trade: "Number of Import/Export Countries: ",
+	    	treeoflife: "Number of Branches: "
 	    },
 	    dataInfoSizeText: {
 	    	author: "Number of Citations: ",
-	    	government: "Number of employees",
-	    	import: "Value of imports: ",
-	    	export: "Value of exports: ",
-	    	trade: "Countries exported to: ",
-	    	treeoflife: "Countries exported to: "
+	    	government: "Number of Employees: ",
+	    	trade: "Volume of Import/Export ($1M): ",
+	    	treeoflife: "Number of Tips: "
 	    },
 	    dataInfoTypes: {
 	    	author: {size: 'Citations', leaves: 'Papers'},
