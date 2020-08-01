@@ -11,7 +11,7 @@ var menu = (function (d3, $) {
 	    dataType: '',
 		dataInfoLeavesText: {
 	    	author: "Number of Papers: ",
-	    	government: "Number of Offices: ",
+	    	government: "Number of Branches: ",
 	    	trade: "Number of Import/Export Countries: ",
 	    	treeoflife: "Number of Branches: "
 	    },
@@ -23,7 +23,7 @@ var menu = (function (d3, $) {
 	    },
 	    dataInfoTypes: {
 	    	author: {size: 'Citations', leaves: 'Papers'},
-	    	government: {size: 'Employees', leaves: 'Group'},
+	    	government: {size: 'Employees', leaves: 'Branches'},
 	    	import: {size: 'Millions', leaves: 'Countries'},
 	    	export: {size: 'Millions', leaves: 'Countries'},
 	    	trade: {size: 'MIllions', leaves: 'Countries'},
