@@ -38,6 +38,14 @@ def AppendCsvRowToNode(node, row):
         node["size"] = size
 
 
+def ShouldSkipLine(lineCount, row):
+    # m = (lineCount % 260) / 10
+    # n = lineCount % 10
+    # return n >= 3 or m >= 15
+
+    return False
+
+
 CsvPaths = sys.argv
 CsvPaths.pop(0)
 
@@ -50,8 +58,13 @@ for csvPath in CsvPaths:
 
             root = {}
             csvReader = csv.reader(csvFile)
+
+            # Skip lines that satisfy the condition
+            lineCount = 0
             for row in csvReader:
-                AppendCsvRowToNode(root, row)
+                if not ShouldSkipLine(lineCount, row):
+                    AppendCsvRowToNode(root, row)
+                lineCount = lineCount + 1
 
             jsonText = json.dumps(root)
             jsonFile.write(jsonText)
