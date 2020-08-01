@@ -27,7 +27,7 @@ var menu = (function (d3, $) {
 	    	import: {size: 'Millions', leaves: 'Countries'},
 	    	export: {size: 'Millions', leaves: 'Countries'},
 	    	trade: {size: 'MIllions', leaves: 'Countries'},
-	    	treeoflife: {size: '???', leaves: 'Species'},
+	    	treeoflife: {size: '???', leaves: 'Species'}
 	    }
 	}
 
