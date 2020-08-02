@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="css/graph-visual.css">
     <link rel="stylesheet" href="css/circle.css">
     <link rel="stylesheet" href="css/switch.css">
+    <link rel="stylesheet" href="css/tooltip.css">
+    <link rel="stylesheet" href="css/loading.css">
+
     <link rel="icon" 
       type="image/ico" 
       href="images/tree.ico">
@@ -99,12 +102,12 @@
                                     </label>
                                     <div class="col-md-7" style="padding-right:0">
                                     <select id="dropdown1" class="layoutDropdown custom-select" onchange="change_map('1')">
-                                        <option class="optionGroup" value="Collapsible_Tree">Radial Tree (Collapsible)</option>
+                                        <option class="optionGroup" value="Pack" selected>Pack</option>
                                         <option class="optionGroup" value="Radial_Tree">Radial Tree</option>
-                                        <option class="optionGroup" value="Treemap" selected>Treemap</option>
-                                        <option class="optionGroup" value="Zoomable_Treemap">Treemap (Zoomable)</option>
-                                        <option class="optionGroup" value="Pack">Pack</option>
+                                        <option class="optionGroup" value="Collapsible_Tree">Radial Tree (Collapsible)</option>
                                         <option class="optionGroup" value="Sunburst">Sunburst</option>
+                                        <option class="optionGroup" value="Treemap">Treemap</option>
+                                        <option class="optionGroup" value="Zoomable_Treemap">Treemap (Zoomable)</option>
                                     </select>
                                     </div>
                                     <div 
@@ -127,11 +130,11 @@
                                     </label>
                                     <div class="col-md-7" style="padding-right:0">
                                     <select id="dropdown1_treemap" class="layoutDropdown custom-select" onchange="change_tiling('treemap', '1')">
-                                        <option class="optionGroup" value="Squarify" selected>Squarify</option>
-                                        <option class="optionGroup" value="Binary">Binary</option>
+                                        <option class="optionGroup" value="Binary" selected>Binary</option>
                                         <option class="optionGroup" value="Dice">Dice</option>
                                         <option class="optionGroup" value="Slice">Slice</option>
                                         <option class="optionGroup" value="SliceDice">SliceDice</option>
+                                        <option class="optionGroup" value="Squarify">Squarify</option>
                                     </select>
                                     </div>
                                 </div>
@@ -177,12 +180,12 @@
                     
                                     <div class="col-md-7" style="padding-right:0">
                                         <select id="dropdown2" class="layoutDropdown custom-select" onchange="change_map('2')">
-                                            <option class="optionGroup" value="Collapsible_Tree">Radial Tree (Collapsible)</option>
+                                            <option class="optionGroup" value="Pack">Pack</option>
                                             <option class="optionGroup" value="Radial_Tree" selected>Radial Tree</option>
+                                            <option class="optionGroup" value="Collapsible_Tree">Radial Tree (Collapsible)</option>
+                                            <option class="optionGroup" value="Sunburst">Sunburst</option>
                                             <option class="optionGroup" value="Treemap">Treemap</option>
                                             <option class="optionGroup" value="Zoomable_Treemap">Treemap (Zoomable)</option>
-                                            <option class="optionGroup" value="Pack">Pack</option>
-                                            <option class="optionGroup" value="Sunburst">Sunburst</option>
                                         </select>
                                     </div>
                                     <div 
@@ -204,11 +207,11 @@
                                     </label>
                                     <div class="col-md-7" style="padding-right:0">
                                     <select id="dropdown2_treemap" class="layoutDropdown custom-select" onchange="change_tiling('2')">
-                                        <option class="optionGroup" value="Squarify" selected>Squarify</option>
-                                        <option class="optionGroup" value="Binary">Binary</option>
+                                        <option class="optionGroup" value="Binary" selected>Binary</option>
                                         <option class="optionGroup" value="Dice">Dice</option>
                                         <option class="optionGroup" value="Slice">Slice</option>
                                         <option class="optionGroup" value="SliceDice">SliceDice</option>
+                                        <option class="optionGroup" value="Squarify">Squarify</option>
                                     </select>
                                     </div>
                                 </div>
@@ -251,7 +254,8 @@
                         </h2> -->
                         <!-- end head -->
                         <hr id="hr">
-
+                        
+                        <!-- side bar body -->
                         <div class="col-md-12" id="sidebarIntroDiv">
                             <div id="sidebarIntro">
                               <!-- dataset selection -->
@@ -259,47 +263,32 @@
                                 <!-- <span style="font-size:15px"> Selected Author: </span> -->
                                 <div id="dataDropdownIntro" style="width: 100%; padding-bottom: 0px; margin-bottom: 24px">
                                   <select id="dataDropdown" class="custom-select mb-0" style="width:100%" onchange="updateDataset()">
-                                    <option class="optionGroup" value="Stasko" data="author"  selected>John Stasko</option>
-                                    <option class="optionGroup" value="Han" data="author">Jiawei Han</option>
-                                    <option class="optionGroup" value="Faloutsos" data="author">Christos Faloutsos</option>
-                                    <option class="optionGroup" value="Leskovec" data="author">Jure Leskovec</option>
-                                    <option class="optionGroup" value="Gov_United_States" data="government">United States</option>
-                                    <option class="optionGroup" value="Gov_United_Kingdom" data="government">United Kingdom</option>
-                                    <option class="optionGroup" value="Gov_Philippines" data="government">Philippines</option>
-                                    <option class="optionGroup" value="Gov_Canadian" data="government">Canadian</option>
-                                    <option class="optionGroup" value="Trade_United_States_Mid" data="trade">United States</option>
-                                    <option class="optionGroup" value="Trade_United_Kingdom_Mid" data="trade">United Kingdom</option>
-                                    <option class="optionGroup" value="Trade_China_Mid" data="trade">China</option>
-                                    <option class="optionGroup" value="Trade_Germany_Mid" data="trade">Germany</option>
-                                    <option class="optionGroup" value="TreeOfLife" data="treeoflife" >Tree Of Life</option>
+                                    <optgroup label="Publications" id="publications">
+                                      <option class="optionGroup" value="Stasko" data="author"  selected>John Stasko</option>
+                                      <option class="optionGroup" value="Han" data="author">Jiawei Han</option>
+                                      <option class="optionGroup" value="Faloutsos" data="author">Christos Faloutsos</option>
+                                      <option class="optionGroup" value="Leskovec" data="author">Jure Leskovec</option>
+                                    </optgroup>
+                                    <optgroup label="Government" id="government">
+                                      <option class="optionGroup" value="Gov_United_States" data="government">United States</option>
+                                      <option class="optionGroup" value="Gov_United_Kingdom" data="government">United Kingdom</option>
+                                      <option class="optionGroup" value="Gov_Philippines" data="government">Philippines</option>
+                                      <option class="optionGroup" value="Gov_Canadian" data="government">Canadian</option>
+                                    </optgroup>
+                                    <optgroup label="Trade" id="trade">
+                                      <option class="optionGroup" value="Trade_United_States_Mid" data="trade">United States</option>
+                                      <option class="optionGroup" value="Trade_United_Kingdom_Mid" data="trade">United Kingdom</option>
+                                      <option class="optionGroup" value="Trade_China_Mid" data="trade">China</option>
+                                      <option class="optionGroup" value="Trade_Germany_Mid" data="trade">Germany</option>
+                                    </optgroup>
+                                    <optgroup label="Tree of Life" id="treeoflife">
+                                      <option class="optionGroup" value="TreeOfLife_Mid" data="treeoflife" >Open Tree of Life</option>
+                                    </optgroup>
                                   </select>
                                 </div>
-                                <!-- <div id="DataDescription">
-                                    <span id="dataInfoName">Introduction:</span>
-                                    <br/>
-                                    <span id="dataInfo" style="font-size:10px">The visualization is showing <span id="enter_authorname"></span>'s publications from 
-                                    <span id="start_year"></span> to <span id="end_year"></span>.
-                                    </span>
-                                    <br/>
-                                    <br/>
-                                    <span id="graphDescription">Hierarchical Data Structure:</span>
-                                    <span style="font-size:10px">
-                                        <br/>-------Publish Year
-                                        <br/>|
-                                        <br/>-----Publish Type
-                                        <br/>|
-                                        <br/>---Publisher CCF Rank
-                                        <br/>|
-                                        <br/>-Individual Paper    
-                                    </span>
-                                    <br/>
-                                    <br/>
-                                    <span id="graphSource">Data Source: </span>
-                                    <br/>
-                                    <span style="font-size:10px">Microsoft Academic Graph & Google_scholar</span>
-                                </div> -->
                               </div>
                             </div>
+
                         <!-- </div> -->
                         <!-- <br/><br/> -->
                         <div id="accordion" class="panel-group">
@@ -433,125 +422,160 @@
                                     </div>
                                   </div><!-- form-row -->
                                 </div>
-
-                                <!-- Edge Weight -->
-                                <div class="form-group my-1" id="edgeFilterDiv">
-                                  <span>Edge Weight</span>
-                                  <div class="form-row">
-                                    <div class="col-1">
-                                      <p id="edgeFilteringMin"></p>
+    
+                                <div id="filterPanel" class="panel panel-default">
+                                  <div class="panel-heading" data-toggle="collapse" data-target="#filterDiv" data-parent="#accordion">
+                                    <h2 class="panel-title" style="color: #000">Filtering</h2>
+                                    <hr/>
+                                  </div>
+                                  <div id="filterDiv" class="collapse panel-collapse panel-body">
+                                    <!-- Node Degree -->
+                                    <div class="form-group mt-3 mb-1" id="nodeDegreeDiv">
+                                      <span>Node Degree</span>
+                                      <div class="form-row">
+                                        <div class="col-1">
+                                          <p id="nodeDegreeMin"></p>
+                                        </div>
+                                        <div class="col">
+                                          <input type="range" data-toggle="tooltip" class="form-control-range" id="nodeDegreeFilter">
+                                          <div class="sliderValue"></div>
+                                        </div>
+                                        <div class="col-2">
+                                          <p id="nodeDegreeMax"></p>
+                                        </div>
+                                      </div><!-- form-row -->
                                     </div>
-                                    <div class="col">
-                                      <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeFilterSlider">
-                                      <div class="sliderValue"></div>
+    
+                                    <!-- Edge Weight -->
+                                    <div class="form-group my-1" id="edgeFilterDiv">
+                                      <span>Edge Weight</span>
+                                      <div class="form-row">
+                                        <div class="col-1">
+                                          <p id="edgeFilteringMin"></p>
+                                        </div>
+                                        <div class="col">
+                                          <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeFilterSlider">
+                                          <div class="sliderValue"></div>
+                                        </div>
+                                        <div class="col-2">
+                                          <p id="edgeFilteringMax"></p>
+                                        </div>
+                                      </div><!-- form-row -->
                                     </div>
-                                    <div class="col-2">
-                                      <p id="edgeFilteringMax"></p>
+    
+                                    <!-- Edge Length (Left) -->
+                                    <div class="form-group mt-1 mb-3" id="edgeLengthLeftDiv">
+                                      <span data-toggle="tooltip" title="Filter nodes based on edge length (in pixels) in the left graph">
+                                        Edge Length (Left)
+                                      </span>
+                                      <br/>
+                                      <div class="form-row">
+                                        <div class="col-1">
+                                          <span id="edgeLengthMinL"></span>
+                                        </div>
+                                        <div class="col">
+                                          <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeLengthSliderL">
+                                          <div class="sliderValue"></div>
+                                        </div>
+                                        <div class="col-2">
+                                          <span id="edgeLengthMaxL"></span>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div><!-- form-row -->
-                                </div>
-
-                                <!-- Edge Length (Left) -->
-                                <div class="form-group mt-1 mb-3" id="edgeLengthLeftDiv">
-                                  <span data-toggle="tooltip" title="Filter nodes based on edge length (in pixels) in the left graph">
-                                    Edge Length (Left)
-                                  </span>
-                                  <br/>
-                                  <div class="form-row">
-                                    <div class="col-1">
-                                      <span id="edgeLengthMinL"></span>
-                                    </div>
-                                    <div class="col">
-                                      <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeLengthSliderL">
-                                      <div class="sliderValue"></div>
-                                    </div>
-                                    <div class="col-2">
-                                      <span id="edgeLengthMaxL"></span>
+    
+                                    <!-- Edge Length (Right) -->
+                                    <div class="form-group mt-1 mb-3" id="edgeLengthRightDiv">
+                                      <span data-toggle="tooltip" title="Filter nodes based on edge length (in pixels) in the right graph">
+                                        Edge Length (Right)
+                                      </span>
+                                      <br/>
+                                      <div class="form-row">
+                                        <div class="col-1">
+                                          <span id="edgeLengthMinR"></span>
+                                        </div>
+                                        <div class="col">
+                                          <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeLengthSliderR">
+                                          <div class="sliderValue"></div>
+                                        </div>
+                                        <div class="col-2">
+                                          <span id="edgeLengthMaxR"></span>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-
-                                <!-- Edge Length (Right) -->
-                                <div class="form-group mt-1 mb-3" id="edgeLengthRightDiv">
-                                  <span data-toggle="tooltip" title="Filter nodes based on edge length (in pixels) in the right graph">
-                                    Edge Length (Right)
-                                  </span>
-                                  <br/>
-                                  <div class="form-row">
-                                    <div class="col-1">
-                                      <span id="edgeLengthMinR"></span>
+    
+                                <div id="selectionPanel" class="panel panel-default">
+                                  <div class="panel-heading" data-toggle="collapse" data-target="#selectionDiv" data-parent="#accordion">
+                                    <h2 class="panel-title" style="color: #000">Selection</h2>
+                                    <hr/>
+                                  </div>
+                                  <div id="selectionDiv" class="collapse panel-collapse in panel-body show">
+                                    <div class="form-group" id="opacity">
+                                      <span data-toggle="tooltip" title="Adjust the opacity of non-selected nodes and edges">Opacity</span>
+                                      <br/>
+                                      <div class="form-row" id="highlightOpacityDiv">
+                                        <div class="col-1">0</div>
+                                        <div class="col">
+                                          <input type="range" data-toggle="tooltip" class="form-control-range" id="highlightOpacity" value="0" min="0" max="1" step="0.1" disabled="disabled">
+                                          <div class="sliderValue"></div>
+                                        </div>
+                                        <div class="col-2">1</div>
+                                      </div>
                                     </div>
-                                    <div class="col">
-                                      <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeLengthSliderR">
-                                      <div class="sliderValue"></div>
+                                    <!-- Node Selection -->
+                                    <div class="form-group form-row" id="nodeSelection">
+                                      <span class="col-md-8 col-sm-7">Node</span>
+                                      <span class="col-md-4 col-sm-5 text-nowrap" id="nodeNumberSpan"></span>
+                                      <select id="nodeDropdown" class="custom-select" style="margin-bottom: 5px; margin-top: 5px"> </select>
                                     </div>
-                                    <div class="col-2">
-                                      <span id="edgeLengthMaxR"></span>
+                                    <!-- Cluster Selection -->
+                                    <div class="form-group form-row" id="clusterSelection">
+                                      <span class="col-md-8 col-sm-7">Cluster</span>
+                                      <span class="col-md-4 col-sm-5 text-nowrap" id="clusterNumberSpan"></span>
+                                      <select id="clusterDropdown" class="custom-select" style="margin-bottom: 5px; margin-top: 5px"> </select>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                            </div>
-
-                            <div id="selectionPanel" class="panel panel-default">
-                              <div class="panel-heading" data-toggle="collapse" data-target="#selectionDiv" data-parent="#accordion">
-                                <h2 class="panel-title" style="color: #000">Selection</h2>
-                                <hr/>
-                              </div>
-                              <div id="selectionDiv" class="collapse panel-collapse in panel-body show">
-                                <div class="form-group" id="opacity">
-                                  <span data-toggle="tooltip" title="Adjust the opacity of non-selected nodes and edges">Opacity</span>
-                                  <br/>
-                                  <div class="form-row" id="highlightOpacityDiv">
-                                    <div class="col-1">0</div>
-                                    <div class="col">
-                                      <input type="range" data-toggle="tooltip" class="form-control-range" id="highlightOpacity" value="0" min="0" max="1" step="0.1" disabled="disabled">
-                                      <div class="sliderValue"></div>
-                                    </div>
-                                    <div class="col-2">1</div>
-                                  </div>
-                                </div>
-                                <!-- Node Selection -->
-                                <div class="form-group form-row" id="nodeSelection">
-                                  <span class="col-md-8 col-sm-7">Node</span>
-                                  <span class="col-md-4 col-sm-5 text-nowrap" id="nodeNumberSpan"></span>
-                                  <select id="nodeDropdown" class="custom-select" style="margin-bottom: 5px; margin-top: 5px"> </select>
-                                </div>
-                                <!-- Cluster Selection -->
-                                <div class="form-group form-row" id="clusterSelection">
-                                  <span class="col-md-8 col-sm-7">Cluster</span>
-                                  <span class="col-md-4 col-sm-5 text-nowrap" id="clusterNumberSpan"></span>
-                                  <select id="clusterDropdown" class="custom-select" style="margin-bottom: 5px; margin-top: 5px"> </select>
-                                </div>
-                              </div>
                             </div>
                         </div>
                         <!-- Describe Div -->
                         <div class="form-control" id="describeDiv">
-                          <div id="describeDivIntro" style="margin: 2px">
-                            <div id="DataDescription">
-                                    <!-- <span id="dataInfoName">Introduction:</span> -->
-                                    <br/>
-                                    <span id="dataInfo" style="font-size:10px">The visualization is showing <span id="enter_authorname"></span>'s publications from 
-                                    <span id="start_year"></span> to <span id="end_year"></span>.
+                            <div id="describeDivIntro" style="margin: 2px">
+                                <div id="DataDescription">
+                                    <span id="dataInfoName">
+                                        <b>Name:</b><span id="dataName"></span>
                                     </span>
                                     <br/>
                                     <br/>
-                                    <span id="graphDescription">Hierarchical Data Structure:</span>
-                                    <span style="font-size:10px">
-                                        <br/>-------Publish Year
-                                        <br/>|
-                                        <br/>-----Publish Type
-                                        <br/>|
-                                        <br/>---Publisher CCF Rank
-                                        <br/>|
-                                        <br/>-Individual Paper    
+                                    <span id="treeDescription">
+                                        <b>Description:</b>
+                                        <br/>
+                                        <span id="dataInfo">The visualization is showing <span id="enter_authorname"></span>'s publications from 
+                                        <span id="start_year"></span> to <span id="end_year"></span>.
                                     </span>
                                     <br/>
                                     <br/>
-                                    <span id="graphSource">Data Source: </span>
+                                    <span id="treeHierarchy">
+                                        <b>Tree hierarchy:</b>
+                                        <span>
+                                            <br/>-------Publish Year
+                                            <br/>|
+                                            <br/>-----Publish Type
+                                            <br/>|
+                                            <br/>---Publisher CCF Rank
+                                            <br/>|
+                                            <br/>-Individual Paper    
+                                        </span>
+                                    </span>
                                     <br/>
-                                    <span style="font-size:10px">Microsoft Academic Graph & Google_scholar</span>
+                                    <br/>
+                                    <span id="graphSource">
+                                        <b>Source: </b>
+                                        <br/>
+                                        <span>Microsoft Academic Graph & Google_scholar</span>
+                                    </span>
+                                    <br/>
                                 </div>
                             <!-- <span id="dataInfoName">Name:</span>
                             <span id="dataInfoType">Type of graph:</span>
@@ -560,9 +584,10 @@
                             <span id="graphDescription">Graph Description:</span>
                             
                             <span id="graphSource"></span> -->
-                          </div>
+                            </div>
                         </div>
-
+                        <!-- Describe Div -->
+                        <!-- End of side bar body -->
                     </form>
                 </div>
             </div>
@@ -572,6 +597,7 @@
 
     
 </body>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146285645-8"></script>
 <script>

@@ -366,10 +366,6 @@ input, select, .panel-heading
     cursor: pointer;
 }
 
-#DataDescription{
-    font-size: 12px;
-}
-
 .node {
   cursor: pointer;
 }
