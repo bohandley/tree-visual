@@ -390,4 +390,6 @@ input, select, .panel-heading
     /*stroke: gold !important;*/
 }
 
-
+.hide-tag {
+    display: none;
+}

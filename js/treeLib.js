@@ -1435,7 +1435,7 @@ var treeLib = (function (d3) {
 	        
 	    d3.select("#"+position2Id)
 	    	.append("title")
-	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.value); })
+	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.accSize); })
 	}
 
 	function packResponseMOut(position2Id){
@@ -1478,7 +1478,7 @@ var treeLib = (function (d3) {
 			.style("cursor", "pointer")
 			.attr("r", (d)=>{
 				// return 10;
-				return menu.getNodeSize(d, "Radial_Tree")*2;
+				return menu.getNodeSize(d, position2Id[1], "Radial_Tree")*2;
 			})
 			.style("stroke", d => {
 	    		// return getComplement(getColor(d, color));
@@ -1489,7 +1489,7 @@ var treeLib = (function (d3) {
 	    d3.select("#" + position2Id)
 	    	.select("circle")
 	    	.append("title")
-	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.value); })
+	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.accSize); })
 	}
 
 	function radialTreeResponseMOut(position2Id){
@@ -1497,7 +1497,7 @@ var treeLib = (function (d3) {
 			.select("circle")
 			.attr("r", (d)=>{
 				// return 5;
-				return menu.getNodeSize(d, "Radial_Tree");
+				return menu.getNodeSize(d, position2Id[1], "Radial_Tree");
 			})
 			.style("stroke", "steelblue")
 	    	.style("stroke-width", 1);
@@ -1516,7 +1516,7 @@ var treeLib = (function (d3) {
 	    	.style("cursor", "pointer")
 	    	.attr("r", (d)=>{
 				// return 10;
-				return menu.getNodeSize(d) * 2;
+				return menu.getNodeSize(d, position2Id[1]) * 2;
 			});
 
 	   
@@ -1525,7 +1525,7 @@ var treeLib = (function (d3) {
 	    	.append("title")
             .text(function(d) {
             	// NEED TO COMPUTE SIZE FOR EACH NODE
-                return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.value);
+                return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.accSize);
             });
 	}
 
@@ -1537,7 +1537,7 @@ var treeLib = (function (d3) {
 	    	.style("cursor", "pointer")
 	    	.attr("r", (d)=>{
 				// return 5;
-				return menu.getNodeSize(d);
+				return menu.getNodeSize(d, position2Id[1]);
 			});
 	}
 
@@ -1839,6 +1839,10 @@ var treeLib = (function (d3) {
 
 		getOtherGraphType: function(position2){
 			return getOtherGraphType(position2);
+		},
+
+		preserveAccSize: function(root) {
+			return root.each(el => el.accSize = el.value);
 		}
 
 	}

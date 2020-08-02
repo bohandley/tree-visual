@@ -1,12 +1,17 @@
 var menu = (function (d3, $) {
+	const LOCK_OPEN = '<i class="fas fa-lock-open"></i>';
+	const LOCK_CLOSED = '<i class="fas fa-lock"></i>';
 
 	var dummyConfig = {
+		scaleLog: function() {},
+		isLocked: {1: false, 2: false},
+		accumulated: 'leaves',
 	    nodeSize: 5,
-	    proportionalSize: false,
+	    proportionalSize: {1: false, 2: false},
 	    dataType: '',
-	    dataInfoLeavesText: {
+		dataInfoLeavesText: {
 	    	author: "Number of Papers: ",
-	    	government: "Number of Offices: ",
+	    	government: "Number of Branches: ",
 	    	trade: "Number of Import/Export Countries: ",
 	    	treeoflife: "Number of Branches: "
 	    },
@@ -15,6 +20,14 @@ var menu = (function (d3, $) {
 	    	government: "Number of Employees: ",
 	    	trade: "Volume of Import/Export ($1M): ",
 	    	treeoflife: "Number of Tips: "
+	    },
+	    dataInfoTypes: {
+	    	author: {size: 'Citations', leaves: 'Papers'},
+	    	government: {size: 'Employees', leaves: 'Branches'},
+	    	import: {size: 'Millions', leaves: 'Countries'},
+	    	export: {size: 'Millions', leaves: 'Countries'},
+	    	trade: {size: 'MIllions', leaves: 'Countries'},
+	    	treeoflife: {size: '???', leaves: 'Species'}
 	    }
 	}
 
@@ -24,50 +37,66 @@ var menu = (function (d3, $) {
 	    config =  copy(dummyConfig);
 	}
 
-	function updateNodeSize() {
+	function updateNodeSize(position=null) {
 		config.nodeSize = accessNodeSize();
 
         var ndSize = config.nodeSize;
+        if (position) {
+	        d3.select("#g"+position).selectAll("circle.node-size")
+	            .attr("r", function(d) {
+	            	return getNodeSize(d, ndSize, config.proportionalSize[position]);
+	            });
+        } else {
+        	d3.select("#g1").selectAll("circle.node-size")
+	            .attr("r", function(d) {
+	            	return getNodeSize(d, ndSize, config.proportionalSize['1']);
+	            });
 
-        d3.selectAll("circle.node-size")
-            .attr("r", function(d) {
-            	return getNodeSize(ndSize, config.proportionalSize, d);
-            });
+	        d3.select("#g2").selectAll("circle.node-size")
+	            .attr("r", function(d) {
+	            	return getNodeSize(d, ndSize, config.proportionalSize['2']);
+	            });
+        }
 	}
 
 	function accessNodeSize() {
 		return (+$("#nodesizeScalar").prop("value"));
 	}
 
-	function getNodeSize(ndSize, prpSize, d) {
+	function getNodeSize(d, ndSize, prpSize=null) {
 		var amount = 1;
 
         if (prpSize == true) {
-            if (d.children)
-                amount = d.children.length;
+        	amount = config.scaleLog(d.value);
 
-            if (d._children)
-                amount = d._children.length;
+        	if (amount == -Infinity)
+        		amount = .001;
+            // if (d.children)
+            //     amount = d.children.length;
 
-            if (d.data && d.data.children)
-                amount = d.data.children.length;
+            // if (d._children)
+            //     amount = d._children.length;
+
+            // if (d.data && d.data.children)
+            //     amount = d.data.children.length;
         }
         
         var size = ndSize * amount;
-        
+
         return size;
 	}
 
-	function updateProportionalSize(that) {
+	function updateProportionalSize(that, view) {
+		// change the config for each view if one is checked
 		var bool = $(that).prop("checked") == true;
 
 		if (bool == true)
-            config.proportionalSize = true;
+            config.proportionalSize[view] = true;
         else if (bool == false)
-            config.proportionalSize = false;
+            config.proportionalSize[view] = false;
 	}
 
-	function setupNodesizeScalar(dataset=null) {
+	function setupCheckBoxes(dataset=null) {
 	    let nodesizeScale = 4;
 	    let slider = $("#nodesizeScalar");
 	    let min_ = 2;
@@ -79,16 +108,20 @@ var menu = (function (d3, $) {
 	    $("#nodesizeScaleMax").text(max_);
 	    slider.prop("value", nodesizeScale);
 
-	    $("#checkBoxNodeDegree").on("click", function() {
-	    	updateProportionalSize(this);
-	    	updateNodeSize();
+	    $("#checkBoxNodeSize1").on("click", function() {
+	    	updateProportionalSize(this, '1');
+	    	updateNodeSize('1');
+	    });
+
+	    $("#checkBoxNodeSize2").on("click", function() {
+	    	updateProportionalSize(this, '2');
+	    	updateNodeSize('2');
 	    });
 
 	    $("#nodesizeScalar").on('input', function(){
 	    	updateNodeSize()
 	    });
 	}
-
 
 	function copy(o) {
 		var _out, v, _key;
@@ -126,7 +159,7 @@ var menu = (function (d3, $) {
         })
     }
 
-    function changeAuthor(FileName, onload=0){
+    function changeDataset(FileName, onload=0){
         // resetCfg();
 
         var objD = document.getElementById("dataDropdown");
@@ -148,27 +181,62 @@ var menu = (function (d3, $) {
         return FileName;
     }
 
+    function processAccumulated(root, type=null) {
+    	var acc = config.accumulated;
+
+    	if (type != null) {
+    		if (acc == 'leaves') {
+    			leavesAccZT(root);
+    		} else if (acc == 'size') {
+
+    		}
+    	} else {
+    		if (acc == 'leaves') {
+    			root.each(el => {
+    				if (el.children) {
+    					el.value = el.leaves().length;
+    				} else {
+    					el.value = 1;
+    				}
+    			});
+    		} else if (acc == 'size') {
+    			// size has already been set by sum
+    		}
+    	}
+
+    	return root;
+    	// debugger;
+    	// make the value either the accumulated size or the accumulated leaves
+
+    }
+
+    function leavesAccZT(d) {
+        return (d._children = d.children)
+            ? d.value = d.children.reduce(function(p, v) { return p + leavesAccZT(v); }, 0)
+            : 1;
+    }
+
 	return {
 
-		getNodeSize: function(d, type=null) {
+		getNodeSize: function(d, position, type=null) {
 			var mult = 1;
 
 			if (type == "Radial_Tree")
 				mult= 5/8;
-
-			return getNodeSize(accessNodeSize(), config.proportionalSize, d) * mult;
+			
+			return getNodeSize(d, accessNodeSize(), config.proportionalSize[position]) * mult;
 		},
 
-		setupNodesizeScalar: function(dataset=null) {
-			setupNodesizeScalar(dataset=null);
+		setupCheckBoxes: function(dataset=null) {
+			setupCheckBoxes(dataset=null);
 		},
 
 		changeNum: function(FileName) {
 			changeNum(FileName);
 		},
 
-		changeAuthor: function(FileName, onload) {
-			return changeAuthor(FileName, onload);
+		changeDataset: function(FileName, onload) {
+			return changeDataset(FileName, onload);
 		},
 
 		dataInfoLeavesText: function() {
@@ -178,6 +246,75 @@ var menu = (function (d3, $) {
 		dataInfoSizeText: function() {
 			return config.dataInfoSizeText[config.dataType];
 		},
+
+		updateAccumulated: function(acc) {
+			config.accumulated = acc;
+		},
+
+		config: function() { return config; },
+
+		processAccumulated: function(root, type=null) {
+			return processAccumulated(root, type);
+		},
+
+		dataTypeSpanText: function() {
+			var dataType = config.dataType;
+
+			var spanText = config.dataInfoTypes[dataType];
+
+			var l = spanText.leaves;
+			var s = spanText.size;
+
+			$(".data-info-types-span.leaves").text(l);
+			$(".data-info-types-span.size").text(s);
+		},
+
+		resetProportionalSize: function(position) {
+			config.proportionalSize[position] = false;
+
+			$("#checkBoxNodeSize"+position).prop('checked', false);
+		},
+
+		changeLockPosition: function(position) {
+			var lock = $("#checkBoxRememberLayout"+position);
+
+			// change to the opposite of what the config started with
+			config.isLocked[position] = !config.isLocked[position];
+
+			var wasOpen = config.isLocked[position];
+
+			if (wasOpen)
+				lock.html(LOCK_CLOSED);
+			else
+				lock.html(LOCK_OPEN);
+
+		},
+
+		isLocked: function(position){
+			return config.isLocked[position];
+		},
+
+		unlockPosition: function(position) {
+			var lock = $("#checkBoxRememberLayout"+position);
+
+			config.isLocked[position] = false;
+
+			lock.html(LOCK_OPEN);
+		},
+
+		crtScaleLog: function(total, range) {
+			var logScale = d3.scaleLog()
+				.domain([1, total])
+				.range([1, range])
+
+			config.scaleLog = function(val) {
+				return logScale(val);
+			}
+		},
+
+		getLogScale: function(val) {
+			return config.scaleLog(val)
+		}
 
 	}
 

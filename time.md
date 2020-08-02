@@ -340,6 +340,31 @@
   - debug issues with collapsible tree not having a value for each node(every other one has this!)
   - debug highlighting issues with zoomable tree grandparent(do we want to show the citations?)
 
+7/18/2020
+  7:00pm-9:00pm
+    Debug
+    Begin working on leaves v size accumulation
+  9:00pm-10:00pm
+    Meet with Haobin
+
+7/21/2020
+  4:30pm-8:00pm
+    Begin working hooking up leaves vs size accumulation inputs
+
+7/25/2020
+  12:00pm-4:pm
+    work on leaves and size accumulation
+  9:00pm-10:00pm
+    Meet with Haobin
+
+
+7/28
+  4:30pm-8:30pm
+    work on size and leaves accumulation
+    work on layout lock
+    work on changing leaves or size text in control panel
+    NEED TO ADD TILING TO LOCKED CONFIG
+    NEED TO USE LOG TO DISPLAY THE SIZE OF THE NODES
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

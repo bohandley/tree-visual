@@ -26,7 +26,13 @@ function draw_pack(position){
         var root = d3.hierarchy(data)
             .sum(function(d) { return d.size; })
             .sort(function(a, b) { return b.value - a.value; });
-            
+        
+        // preserve the accSize     
+        root = treeLib.preserveAccSize(root);
+        
+        // process the value as either leaves or acc size depending on control panel
+        root = menu.processAccumulated(root);
+
         var focus = root,
             nodes = pack(root).descendants(),
             view;

@@ -27,6 +27,14 @@ function draw_collapsible_tree(position){
             .sum(function(d) { return d.size; })
             .sort(function(a, b) { return b.value - a.value; });
 
+        // preserve the accSize for citations    
+        root = treeLib.preserveAccSize(root);
+
+        // process the value as either leaves or acc size depending on control panel
+        root = menu.processAccumulated(root);
+
+        menu.crtScaleLog(root.value, 5);
+        
         /////////////Tree graph start///////////////
         var difficulty_color = d3.scaleOrdinal()
             .domain([0,1,2,3])
@@ -153,7 +161,7 @@ function draw_collapsible_tree(position){
                     return cls;
                 })
                 .attr("r", function(d) {
-                    return menu.getNodeSize(d);
+                    return menu.getNodeSize(d, position1[1]);
                 })
                 .style("fill", function(d) {
                     if (!d.parent) {
