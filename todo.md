@@ -6,10 +6,11 @@
 
 - [ ] Change Info position from left to right
 - [ ] Change title bar height to match GraphVisual
+- [ ] Move path string to the bottom
 
 
 
-#### Tree Graph
+#### Tree Visual Section
 
 - [x] Sort layout option alphabetically
 
@@ -29,3 +30,10 @@
 
 - [ ] Page flickering on some browser when point to tree nodes, According collapsing or expansion 
 
+
+
+
+
+### Tree Visual
+
+- [ ] Fix zoomable treemap for all datesets
