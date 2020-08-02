@@ -38,6 +38,12 @@ function draw_sunburst(position){
             .sum(function(d) { return d.size; })
             .sort(function(a, b) { return b.value - a.value; });
 
+        // preserve the accSize for citations    
+        root = treeLib.preserveAccSize(root);        
+
+        // process the value as either leaves or acc size depending on control panel
+        root = menu.processAccumulated(root);
+
         svg.selectAll("path")
             .data(partition(root).descendants())
         .enter().append("path")
@@ -83,7 +89,7 @@ function draw_sunburst(position){
             .text(d => {
                 var dataName = d.data.name;
 
-                return dataName + "\n" + menu.dataInfoSizeText() + formatNumber(d.value)
+                return dataName + "\n" + menu.dataInfoSizeText() + formatNumber(d.accSize)
             });
 
             d3.select("svg#"+position1).dispatch('doneDrawing');

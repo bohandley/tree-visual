@@ -29,6 +29,14 @@ function draw_radial_tree(position){
             .sort((a, b) => d3.ascending(a.data.name, b.data.name)))
             .sum(function(d) { return d.size; });
 
+        // preserve the accSize for citations    
+        root = treeLib.preserveAccSize(root);
+
+        // process the value as either leaves or acc size depending on control panel
+        root = menu.processAccumulated(root);
+
+        menu.crtScaleLog(root.value, 5);
+
         var link = svg.append("g")
             .attr("fill", "none")
             .attr("stroke", "#555")
@@ -66,7 +74,7 @@ function draw_radial_tree(position){
                     return treeLib.getColor(d, color);
             })
             .attr("r", (d)=> {
-            	return menu.getNodeSize(d, "Radial_Tree");
+            	return menu.getNodeSize(d, position1[1], "Radial_Tree");
             })
             .style("stroke", "steelblue")
     		.style("stroke-width", 1)

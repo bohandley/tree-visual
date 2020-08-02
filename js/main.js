@@ -5,9 +5,42 @@ treeLib.buildConfig(['g1', 'g2']);
 var FileData;
 
 $(document).ready(function(){
-    menu.setupNodesizeScalar();
-});
+    menu.setupCheckBoxes();
 
+    // initial acc is leaves, see menu.config.accumulated
+    $("#checkBoxAccumulated").prop("checked", true);
+    $(".data-info-types-span.leaves").css('opacity', 1);
+    $(".data-info-types-span.size").css('opacity', .25);
+
+    $("#checkBoxAccumulated").on("click", function() {     
+        var isChecked = $(this).prop("checked");
+        
+        if (isChecked){
+            menu.updateAccumulated('leaves');
+            $(".data-info-types-span.leaves").css('opacity', 1);
+            $(".data-info-types-span.size").css('opacity', .25);
+        } else { 
+            menu.updateAccumulated('size');
+            $(".data-info-types-span.leaves").css('opacity', .25);
+            $(".data-info-types-span.size").css('opacity', 1);
+        }
+
+        var locked1 = menu.isLocked('1');
+        var locked2 = menu.isLocked('2');
+
+        loadVisualization('1', locked1);
+
+        loadVisualization('2', locked2);
+    });
+
+    $("#checkBoxRememberLayout1").on("click", function() {
+        menu.changeLockPosition('1');
+    });
+
+    $("#checkBoxRememberLayout2").on("click", function() {
+        menu.changeLockPosition('2');
+    });    
+});
 
 function Remove_nodechildren(id){
     var parent = document.getElementById(id)
@@ -42,21 +75,36 @@ function clearVisualization(position){
 
 // update both maps if one is changed
 function change_map(position){
+    // unlock the changed map
+    menu.unlockPosition(position);
+
+    // which map was changed?
     var position2 = position == '1' ? '2' : '1';
     var position1 = position == '1' ? '1' : '2';
     
     // resetCfg();
+    // reset both maps when one layout is changed 
+    // remember to lock the choices???
+    var locked1 = menu.isLocked(position1);
+    var locked2 = menu.isLocked(position2)
 
-    loadVisualization(position1);
+    loadVisualization(position1, locked1);
 
-    loadVisualization(position2);
+    loadVisualization(position2, locked2);
 }
 
-function loadVisualization(position){
-    
+function loadVisualization(position, locked){
+
     clearVisualization(position);
 
-    d3.select("#layout" + position + "_treemap").style("visibility", "hidden");
+    // hide specific tags for treemap and radial trees
+    $("#layout" + position + "_treemap").addClass("hide-tag");
+    $("#nodeSizeDiv" + position + "_radialtree").addClass("hide-tag");
+
+    // various resets on changing a layout unless locked
+    if (!locked) {
+        menu.resetProportionalSize(position);
+    }
 
     var objS = document.getElementById("dropdown" + position);
     
@@ -69,7 +117,7 @@ function loadVisualization(position){
         this.draw_sunburst("#g" + position);
     }
     else if(grade == "Treemap"){
-        d3.select("#layout" + position + "_treemap").style("visibility", "visible");
+        $("#layout" + position + "_treemap").removeClass("hide-tag");
 
         this.draw_treemap("#g" + position, document.getElementById("dropdown" + position + "_treemap").selectedIndex);
     }
@@ -78,9 +126,11 @@ function loadVisualization(position){
         
     }
     else if(grade == "Collapsible_Tree"){
+        $("#nodeSizeDiv" + position + "_radialtree").removeClass("hide-tag");
         this.draw_collapsible_tree("#g" + position);
     }
     else if(grade == "Radial_Tree"){
+        $("#nodeSizeDiv" + position + "_radialtree").removeClass("hide-tag");
         this.draw_radial_tree("#g" + position);
     }
 
@@ -102,7 +152,9 @@ window.onload = function(){
     
     color = d3.scaleOrdinal(colors);
 
-    FileName = menu.changeAuthor(FileName, 1);
+    FileName = menu.changeDataset(FileName, 1);
+
+    menu.dataTypeSpanText();
     
     loadVisualization("1");
     loadVisualization("2");
@@ -110,9 +162,28 @@ window.onload = function(){
 }
 
 function updateDataset() {
-    FileName = menu.changeAuthor(FileName);
+    FileName = menu.changeDataset(FileName);
     
-    change_map("1");
-    change_map("2");
+    menu.dataTypeSpanText();
+    // allow user to select from intermediate levels of nodes
+    // and only display them in the graph
+    // 1. iterate through data
+    // 2. make a collection of of distinct nodes from each level
+    // 3. build a multiselect for each level from the nodes
+    // 4. filter dataset on load of json
+    dataFilterSubset()
+
+    var locked1 = menu.isLocked('1');
+    var locked2 = menu.isLocked('2');
+
+    loadVisualization('1', locked1);
+
+    loadVisualization('2', locked2);
+}
+
+function dataFilterSubset() {
+    d3.json(FileName, function(error, data) {
+        debugger;
+    });
 }
 

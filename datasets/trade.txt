@@ -1,0 +1,667 @@
+{
+  "name": "Trade",
+  "children": [
+    {
+      "name": "2018",
+      "children": [
+        {
+          "name": "Export",
+          "children": [
+            {
+              "name": "Animal",
+              "children": [
+                { "name": "Germany", "size": 5245.2 },
+                { "name": "Turkey", "size": 2198.81 },
+                { "name": "Iran, Islamic Rep.", "size": 680.56 },
+                { "name": "Romania", "size": 597.68 },
+                { "name": "Tajikistan", "size": 260.54 },
+                { "name": "Pakistan", "size": 231.85 },
+                { "name": "Poland", "size": 157.13 },
+                { "name": "Hong Kong,China", "size": 69.24 }
+              ]
+            },
+            {
+              "name": "Vegetable",
+              "children": [
+                { "name": "India", "size": 709868.04 },
+                { "name": "Pakistan", "size": 474692.03 },
+                { "name": "Iran, Islamic Rep.", "size": 32264.62 },
+                { "name": "Iraq", "size": 25700.78 },
+                { "name": "China", "size": 24345.42 },
+                { "name": "Turkey", "size": 24052.47 },
+                { "name": "United Arab Emirates", "size": 23287.31 },
+                { "name": "Saudi Arabia", "size": 13161.94 },
+                { "name": "Kazakhstan", "size": 8780.4 }
+              ]
+            },
+            {
+              "name": "Food Products",
+              "children": [
+                { "name": "India", "size": 7590.75 },
+                { "name": "Tajikistan", "size": 1413.0 },
+                { "name": "Pakistan", "size": 1061.57 },
+                { "name": "United Arab Enirates", "size": 850.34 },
+                { "name": "Iraq", "size": 626.81 },
+                { "name": "Kyrgyz Republic", "size": 476.29 },
+                { "name": "France", "size": 282.24 },
+                { "name": "United Kingdom", "size": 280.1 },
+                { "name": "vietnam", "size": 183.92 },
+                { "name": "Uzbekistan", "size": 147.36 }
+              ]
+            },
+            {
+              "name": "Hides and Skins",
+              "children": [
+                { "name": "Turkey", "size": 13623.86 },
+                { "name": "Pakistan", "size": 11828.14 },
+                { "name": "Finland", "size": 2453.53 },
+                { "name": "Hong Kong,China", "size": 1631.91 },
+                { "name": "Uzbekistan", "size": 302.43 },
+                { "name": "China", "size": 165.46 },
+                { "name": "Tajikistan", "size": 142.91 },
+                { "name": "Tutkmrnidysn", "size": 35.12 },
+                { "name": "Iran, Islamic Rep.", "size": 25.26 }
+              ]
+            },
+            {
+              "name": "Wood",
+              "children": [
+                { "name": "Pakistan", "size": 853.89 },
+                { "name": "Unted States", "size": 38.16 },
+                { "name": "United Kingdom", "size": 31.09 },
+                { "name": "Canada", "size": 25.49 },
+                { "name": "United Arab Enirates", "size": 11.51 },
+                { "name": "New Zealand", "size": 7.53 },
+                { "name": "Netherlands", "size": 5.3 },
+                { "name": "Vietnam", "size": 4.8 },
+                { "name": "Australia", "size": 4.69 }
+              ]
+            },
+            {
+              "name": "Textiles and Colthing",
+              "children": [
+                { "name": "Pakistan", "size": 70054.86 },
+                { "name": "China", "size": 30473.71 },
+                { "name": "Germany", "size": 2231.49 },
+                { "name": "Turkey", "size": 2005.95 },
+                { "name": "United States", "size": 1828.63 },
+                { "name": "United Kingdom", "size": 1819.07 },
+                { "name": "Iran, Islamic Rep.", "size": 1481.09 },
+                { "name": "Tajikistan", "size": 1298.55 },
+                { "name": "United Arab Enirates", "size": 1206.88 }
+              ]
+            },
+            {
+              "name": "Footwear",
+              "children": [
+                { "name": "Tajikistan", "size": 250.94 },
+                { "name": "Kyrgyz Republic", "size": 15.14 },
+                { "name": "United arab Emirates", "size": 4.0 },
+                { "name": "Turkey", "size": 1.3 }
+              ]
+            },
+            {
+              "name": "Stone and Glass",
+              "children": [
+                { "name": "United States", "size": 219.76 },
+                { "name": "India", "size": 65.08 },
+                { "name": "Tajikistan", "size": 27.53 },
+                { "name": "Pakistan", "size": 7.57 },
+                { "name": "Russian Feseration", "size": 0.7 }
+              ]
+            },
+            {
+              "name": "Metals",
+              "children": [
+                { "name": "United Arab Emirates", "size": 3854.69 },
+                { "name": "Iran, Islamic Rep.", "size": 3683.89 },
+                { "name": "Turkey", "size": 922.11 },
+                { "name": "India", "size": 219.1 },
+                { "name": "Indonesia", "size": 108.06 },
+                { "name": "Germany", "size": 47.01 },
+                { "name": "Austria", "size": 14.94 },
+                { "name": "Tajikistan", "size": 13.83 },
+                { "name": "Sweden", "size": 11.51 }
+              ]
+            },
+            {
+              "name": "Mach and Elec",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 1448.9 },
+                { "name": "Uzbekistan", "size": 325.97 },
+                { "name": "Tajikstan", "size": 323.65 },
+                { "name": "United Kingdom", "size": 296.56 },
+                { "name": "Slovak Republic", "size": 124.68 },
+                { "name": "United Arab Enirates", "size": 119.1 },
+                { "name": "United States", "size": 47.33 },
+                { "name": "Pakistan", "size": 36.31 },
+                { "name": "Germany", "size": 29.51 }
+              ]
+            },
+            {
+              "name": "Transportation",
+              "children": [
+                { "name": "United Arab Enirates", "size": 1640.49 },
+                { "name": "Pakistan", "size": 1031.18 },
+                { "name": "Turkey", "size": 730.8 },
+                { "name": "Tajikistan", "size": 480.65 },
+                { "name": "Germany", "size": 461.84 },
+                { "name": "South Africa", "size": 209.09 },
+                { "name": "Ukraine", "size": 10.77 },
+                { "name": "France", "size": 3.58 },
+                { "name": "China", "size": 2.94 }
+              ]
+            },
+            {
+              "name": "Miscellaneous",
+              "children": [
+                { "name": "Pakistan", "size": 575.47 },
+                { "name": "United arab Enirates", "size": 502.24 },
+                { "name": "Turkey", "size": 386.36 },
+                { "name": "Tajikistan", "size": 113.91 },
+                { "name": "Iran, Islamic Rep.", "size": 65.77 },
+                { "name": "United States", "size": 62.53 },
+                { "name": "United Kingdom", "size": 19.61 },
+                { "name": "India", "size": 18.74 },
+                { "name": "Uabekistan", "size": 16.55 }
+              ]
+            },
+            {
+              "name": "Agricultural Raw Mater",
+              "children": [
+                { "name": "India", "size": 204566.7 },
+                { "name": "Pakistan", "size": 32768.86 },
+                { "name": "Turkey", "size": 16955.47 },
+                { "name": "Germany", "size": 5245.36 },
+                { "name": "Finland", "size": 2453.53 },
+                { "name": "Irap", "size": 1176.06 },
+                { "name": "Iran, Islamic Rep.", "size": 798.05 },
+                { "name": "Romania", "size": 597.68 },
+                { "name": "United Arab Emirates", "size": 519.03 }
+              ]
+            },
+            {
+              "name": "Chemical",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 495.97 },
+                { "name": "Pakistan", "size": 293.43 },
+                { "name": "Tajilistan", "size": 141.42 },
+                { "name": "India", "size": 8.15 },
+                { "name": "United Arab Emirates", "size": 0.2 }
+              ]
+            },
+            {
+              "name": "Food",
+              "children": [
+                { "name": "India", "size": 512906.19 },
+                { "name": "Pakistan", "size": 452448.22 },
+                { "name": "Iran, Islamic Rep.", "size": 31491.83 },
+                { "name": "Iraq", "size": 24412.64 },
+                { "name": "China", "size": 24205.89 },
+                { "name": "United Arab Emirates", "size": 23656.8 },
+                { "name": "Turkdy", "size": 22886.76 },
+                { "name": "Saudi Arabia", "size": 13183.24 },
+                { "name": "Kazahstan", "size": 8795.81 },
+                { "name": "Tajikistan", "size": 6452.01 }
+              ]
+            },
+            {
+              "name": "Fuel",
+              "children": [
+                { "name": "Pakistan", "size": 178799.96 },
+                { "name": "Tajikistan", "size": 0.45 }
+              ]
+            },
+            {
+              "name": "Manufactures",
+              "children": [
+                { "name": "Pakistan", "size": 38627.57 },
+                { "name": "United Arab Emirates", "size": 6707.26 },
+                { "name": "Iran, Islamic Rep.", "size": 5657.54 },
+                { "name": "Germany", "size": 2311.03 },
+                { "name": "Turkey", "size": 2296.21 },
+                { "name": "United States", "size": 2200.5 },
+                { "name": "Hong Kong.China", "size": 1597.62 },
+                { "name": "India", "size": 1148.8 },
+                { "name": "Kazahstan", "size": 8795.81 },
+                { "name": "Tajikistan", "size": 6452.01 }
+              ]
+            },
+            { "name": "Ores and Metals" },
+            { "name": "Textiles" },
+            { "name": "Machinery and Transport Equipment " },
+            { "name": "Raw materials" },
+            { "name": "Intermediate goods" },
+            { "name": "Consumer goods " },
+            { "name": "Capital goods" }
+          ]
+        },
+        {
+          "name": "Import",
+          "children": [
+            {
+              "name": "Animal",
+              "children": [
+                { "name": "Pakistan", "size": 122468.44 },
+                { "name": "United States", "size": 51651.73 },
+                { "name": "Iran, Islamic Rep.", "size": 39893.78 },
+                { "name": "Kazakhstan", "size": 38114.12 },
+                { "name": "India", "size": 27708.34 },
+                { "name": "Uzbekistan", "size": 22473.6 },
+                { "name": "Ireland", "size": 9420.15 },
+                { "name": "France", "size": 7977.52 },
+                { "name": "Turkmenistan", "size": 7536.65 },
+                { "name": "Poland", "size": 5135.01 }
+              ]
+            },
+            {
+              "name": "Vegetable",
+              "children": [
+                { "name": "Kazakhstan", "size": 1289931.71 },
+                { "name": "Pakistan", "size": 795685.55 },
+                { "name": "Myanmar", "size": 537976.91 },
+                { "name": "Uzbekistan", "size": 492552.24 },
+                { "name": "Iran, Islamic Rep.", "size": 186677.1 },
+                { "name": "Kenya", "size": 161530.1 },
+                { "name": "india", "size": 117532.17 },
+                { "name": "Vietnam", "size": 106090.03 },
+                { "name": "Russian Federation", "size": 78439.11 },
+                { "name": "China", "size": 31170.3 }
+              ]
+            },
+            {
+              "name": "Food Products",
+              "children": [
+                { "name": "Pakistan", "size": 434266.83 },
+                { "name": "india", "size": 84174.62 },
+                { "name": "Korea,Rep.", "size": 79415.97 },
+                { "name": "Iran, Islamic Rep.", "size": 73132.22 },
+                { "name": "United Arab Emirates", "size": 48132.76 },
+                { "name": "Japan", "size": 11940.24 },
+                { "name": "Kazakhstan", "size": 9912.1 },
+                { "name": "Swaziland", "size": 7815.55 },
+                { "name": "Turkey", "size": 7605.78 },
+                { "name": "Indonesia", "size": 5958.78 }
+              ]
+            },
+            {
+              "name": "Minerals",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 1113.68 },
+                { "name": "Pakistan", "size": 3587.68 },
+                { "name": "India", "size": 663.61 },
+                { "name": "China", "size": 368.12 },
+                { "name": "Uzbekistan", "size": 202.39 },
+                { "name": "Turkey", "size": 134.75 },
+                { "name": "Kazakhstan", "size": 92.4 },
+                { "name": "Tajikistan", "size": 47.29 },
+                { "name": "Turkmenistan", "size": 35.89 },
+                { "name": "United States", "size": 19.68 }
+              ]
+            },
+            {
+              "name": "Fuels",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 893474.09 },
+                { "name": "Turkmenistan", "size": 616253.11 },
+                { "name": "Unspecified", "size": 172881.58 },
+                { "name": "Kazahstan", "size": 137573.91 },
+                { "name": "United Arab Emirates", "size": 67339.52 },
+                { "name": "Russian Federation", "size": 15464.29 },
+                { "name": "Uzbekistan", "size": 14350.15 },
+                { "name": "Azerbaijan", "size": 6344.67 },
+                { "name": "China", "size": 2700.54 },
+                { "name": "India", "size": 2444.03 }
+              ]
+            },
+            {
+              "name": "Chemicals",
+              "children": [
+                { "name": "Pakistan", "size": 131517.99 },
+                { "name": "China", "size": 89334.43 },
+                { "name": "Iran, Islamic Rep.", "size": 86813.05 },
+                { "name": "Uzbekistan", "size": 69063.5 },
+                { "name": "Turkmenistan", "size": 63025.32 },
+                { "name": "India", "size": 54135.75 },
+                { "name": "Australia", "size": 21187.73 },
+                { "name": "Turkey", "size": 16725.04 },
+                { "name": "Indonesia", "size": 15441.21 },
+                { "name": "Kazahstan", "size": 13769.54 }
+              ]
+            },
+            {
+              "name": "Plastic or Rubber",
+              "children": [
+                { "name": "China", "size": 277306.79 },
+                { "name": "Iran, Islamic Rep.", "size": 138460.91 },
+                { "name": "Japan", "size": 30553.71 },
+                { "name": "Pakistan", "size": 26818.7 },
+                { "name": "United Arab Emirates", "size": 22263.33 },
+                { "name": "India", "size": 13283.16 },
+                { "name": "Oman", "size": 8609.04 },
+                { "name": "Korea,Rep.", "size": 5305.27 },
+                { "name": "Thailand", "size": 4830.19 },
+                { "name": "Unspecified", "size": 4361.03 }
+              ]
+            },
+            {
+              "name": "Hides and Skins",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 16012.46 },
+                { "name": "United Arab Emirates", "size": 13591.73 },
+                { "name": "Pakistan", "size": 13176.42 },
+                { "name": "China", "size": 9729.85 },
+                { "name": "India", "size": 468.48 },
+                { "name": "United States", "size": 265.95 },
+                { "name": "Turkey", "size": 206.72 },
+                { "name": "Russian Federation", "size": 71.6 },
+                { "name": "Saudi Arabia", "size": 60.01 },
+                { "name": "United Kingdom", "size": 37.19 }
+              ]
+            },
+            {
+              "name": "Wood",
+              "children": [
+                { "name": "China", "size": 121996.98 },
+                { "name": "Russian Federation", "size": 104278.97 },
+                { "name": "Pakistan", "size": 100029.13 },
+                { "name": "Iran, Islamic Rep.", "size": 55228.77 },
+                { "name": "Kazahstan", "size": 24910.75 },
+                { "name": "Turkey", "size": 23741.57 },
+                { "name": "Indonesia", "size": 22621.39 },
+                { "name": "United Arab Emirates", "size": 17496.02 },
+                { "name": "India", "size": 13081.8 },
+                { "name": "Malaysia", "size": 6384056.0 }
+              ]
+            },
+            {
+              "name": "Textiles and Colthing",
+              "children": [
+                { "name": "China", "size": 856581.87 },
+                { "name": "India", "size": 117053.48 },
+                { "name": "Iran, Islamic Rep.", "size": 49797.58 },
+                { "name": "Pakistan", "size": 35668.74 },
+                { "name": "Korea,Rep.", "size": 8294.0 },
+                { "name": "Turkey", "size": 6627.48 },
+                { "name": "Uzbekistan", "size": 1785.3 },
+                { "name": "Japan", "size": 861.26 },
+                { "name": "Kenya", "size": 505.49 },
+                { "name": "United Arab Emirates", "size": 483.83 }
+              ]
+            },
+            {
+              "name": "Footwear",
+              "children": [
+                { "name": "Pakistan", "size": 68546.95 },
+                { "name": "China", "size": 52901.46 },
+                { "name": "Iran, Islamic Rep.", "size": 9855.71 },
+                { "name": "Unspecified", "size": 4731.59 },
+                { "name": "India", "size": 4225.33 },
+                { "name": "Uzbekistan", "size": 3083.71 },
+                { "name": "United Arab Emirates", "size": 1535.38 },
+                { "name": "Ukraine", "size": 1137.69 },
+                { "name": "Turkey", "size": 915.33 },
+                { "name": "Thailand", "size": 893.3 }
+              ]
+            },
+            {
+              "name": "Stone and Glass",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 363334.6 },
+                { "name": "Pakistan", "size": 287193.17 },
+                { "name": "Tajikistan", "size": 85736.02 },
+                { "name": "China", "size": 52908.83 },
+                { "name": "Turkmenistan", "size": 6355.5 },
+                { "name": "Indonesia", "size": 4988.01 },
+                { "name": "India", "size": 2334.6 },
+                { "name": "France", "size": 1652.15 },
+                { "name": "Turkey", "size": 1507.6 },
+                { "name": "United Arab Emirates", "size": 1090.27 }
+              ]
+            },
+            {
+              "name": "Metals",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 310351.07 },
+                { "name": "China", "size": 168553.92 },
+                { "name": "Uzbekistan", "size": 159332.86 },
+                { "name": "India", "size": 112823.24 },
+                { "name": "Russian Federation", "size": 92676.97 },
+                { "name": "Kazakhstan", "size": 60756.32 },
+                { "name": "Pakistan", "size": 56036.25 },
+                { "name": "Turkey", "size": 33435.16 },
+                { "name": "United Arab Emirates", "size": 24841.0 },
+                { "name": "Tajikistan", "size": 12217.56 }
+              ]
+            },
+            {
+              "name": "Mach and Elec",
+              "children": [
+                { "name": "China", "size": 406859.72 },
+                { "name": "India", "size": 126727.32 },
+                { "name": "Iran, Islamic Rep.", "size": 124021.76 },
+                { "name": "Pakistan", "size": 64991.2 },
+                { "name": "Turkey", "size": 24501.9 },
+                { "name": "Japan", "size": 20192.99 },
+                { "name": "Italy", "size": 14643.0 },
+                { "name": "Germany", "size": 12538.42 },
+                { "name": "United Arab Emirates", "size": 11706.99 },
+                { "name": "Lithuania", "size": 11224.73 }
+              ]
+            },
+            {
+              "name": "Transportation",
+              "children": [
+                { "name": "Japan", "size": 501566.85 },
+                { "name": "Germany", "size": 82257.19 },
+                { "name": "China", "size": 57607.57 },
+                { "name": "Korea,Rep.", "size": 25258.04 },
+                { "name": "Iran, Islamic Rep.", "size": 20179.47 },
+                { "name": "Canada", "size": 18691.77 },
+                { "name": "United States", "size": 17365.23 },
+                { "name": "India", "size": 15075.05 },
+                { "name": "Unspecified", "size": 12895.85 },
+                { "name": "Russian Federation", "size": 8774.59 }
+              ]
+            },
+            {
+              "name": "Miscellaneous",
+              "children": [
+                { "name": "Uzbekistan", "size": 334578.2 },
+                { "name": "Japan", "size": 261068.62 },
+                { "name": "China", "size": 197504.03 },
+                { "name": "Iran, Islamic Rep.", "size": 153325.73 },
+                { "name": "Tajikistan", "size": 75375.8 },
+                { "name": "Turkmenistan", "size": 60616.51 },
+                { "name": "Pakistan", "size": 27001.47 },
+                { "name": "Turkey", "size": 21094.76 },
+                { "name": "India", "size": 16851.3 },
+                { "name": "Korea,Rep.", "size": 15416.36 }
+              ]
+            },
+            {
+              "name": "Agricultural Raw Mater",
+              "children": [
+                { "name": "Russian Federation", "size": 101.347 },
+                { "name": "Pakistan", "size": 80428.02 },
+                { "name": "Kazakhstan", "size": 23995.18 },
+                { "name": "India", "size": 21868.0 },
+                { "name": "Iran, Islamic Rep.", "size": 18097.96 },
+                { "name": "China", "size": 12361.14 },
+                { "name": "Turkey", "size": 5118.3 },
+                { "name": "United Arab Emirates", "size": 1466.18 },
+                { "name": "Malaysia", "size": 1419.7 },
+                { "name": "Saudi Arabia", "size": 1060.18 }
+              ]
+            },
+            {
+              "name": "Chemical",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 166017.04 },
+                { "name": "Pakistan", "size": 121800.28 },
+                { "name": "China", "size": 64698.04 },
+                { "name": "India", "size": 54429.53 },
+                { "name": "United Arab Emirates", "size": 19675.45 },
+                { "name": "Turkey", "size": 17197.85 },
+                { "name": "Indonesia", "size": 15319.08 },
+                { "name": "Germany", "size": 13505.9 },
+                { "name": "Uzbekistan", "size": 8933.56 },
+                { "name": "Oman", "size": 8716.33 }
+              ]
+            },
+            {
+              "name": "Food",
+              "children": [
+                { "name": "Kazakhstan", "size": 1289692.26 },
+                { "name": "Pakistan", "size": 1261930.83 },
+                { "name": "Malaysia", "size": 538803.74 },
+                { "name": "Uzbekistan", "size": 496340.68 },
+                { "name": "Iran, Islamic Rep.", "size": 275453.23 },
+                { "name": "India", "size": 206348.44 },
+                { "name": "kenya", "size": 161530.1 },
+                { "name": "Vietnam", "size": 111464.73 },
+                { "name": "Korea,Rep.", "size": 79947.73 },
+                { "name": "Russian Federation", "size": 78618.15 }
+              ]
+            },
+            {
+              "name": "Fuel",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 901408.94 },
+                { "name": "Turkmenistan", "size": 616253.11 },
+                { "name": "Unspecified", "size": 172881.58 },
+                { "name": "Kazakhstan", "size": 137573.91 },
+                { "name": "United Arab Emirates", "size": 68885.95 },
+                { "name": "China", "size": 19983.74 },
+                { "name": "Russian Federation", "size": 15485.32 },
+                { "name": "Uzbekistan", "size": 14785.96 },
+                { "name": "Azerbaijan", "size": 6344.67 },
+                { "name": "Pakistan", "size": 3069.85 }
+              ]
+            },
+            {
+              "name": "Manufactures",
+              "children": [
+                { "name": "China", "size": 2112330.23 },
+                { "name": "Iran, Islamic Rep.", "size": 1038417.55 },
+                { "name": "Japan", "size": 762674.98 },
+                { "name": "Pakistan", "size": 636701.29 },
+                { "name": "india", "size": 468686.13 },
+                { "name": "Uzbekistan", "size": 354484.42 },
+                { "name": "Tajikistan", "size": 171419.13 },
+                { "name": "Turkey", "size": 115481.04 },
+                { "name": "Russian Federation", "size": 104705.77 },
+                { "name": "United Arab Emirates", "size": 82491.69 }
+              ]
+            },
+            {
+              "name": "Ores and Metals",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 12567.05 },
+                { "name": "Pakistan", "size": 3803.42 },
+                { "name": "Kazakhstan", "size": 2871.41 },
+                { "name": "China", "size": 1585.87 },
+                { "name": "Austria", "size": 1422.18 },
+                { "name": "Turkey", "size": 1318.61 },
+                { "name": "India", "size": 677.09 },
+                { "name": "Australia", "size": 222.5 },
+                { "name": "Kyrgyz Republic", "size": 206.86 },
+                { "name": "Uzbekistan", "size": 202.39 }
+              ]
+            },
+            {
+              "name": "Textiles",
+              "children": [
+                { "name": "China", "size": 831051.06 },
+                { "name": "India", "size": 116421.86 },
+                { "name": "Iran, Islamic Rep.", "size": 23528.81 },
+                { "name": "Pakistan", "size": 14923.97 },
+                { "name": "Korea,Rep.", "size": 8231.89 },
+                { "name": "Turkey", "size": 6635.02 },
+                { "name": "Uzbekistan", "size": 1830.72 },
+                { "name": "Japan", "size": 861.26 },
+                { "name": "Kenya", "size": 505.49 },
+                { "name": "United States", "size": 470.29 }
+              ]
+            },
+            {
+              "name": "Machinery and Transport Equipment",
+              "children": [
+                { "name": "Japan", "size": 472993.24 },
+                { "name": "China", "size": 469061.28 },
+                { "name": "Iran, Islamic Rep.", "size": 144713.97 },
+                { "name": "India", "size": 142631.83 },
+                { "name": "Pakistan", "size": 70925.47 },
+                { "name": "Turkey", "size": 34273.67 },
+                { "name": "United States", "size": 23960.1 },
+                { "name": "Germany", "size": 23797.69 },
+                { "name": "Canada", "size": 18555.31 },
+                { "name": "Italy", "size": 14776.77 }
+              ]
+            },
+            {
+              "name": "Raw materials",
+              "children": [
+                { "name": "Iran, Islamic Rep.", "size": 763600.63 },
+                { "name": "Turkmenistan", "size": 477308.68 },
+                { "name": "India", "size": 180012.62 },
+                { "name": "Unspecified", "size": 165567.02 },
+                { "name": "Kazakhstan", "size": 154529.81 },
+                { "name": "Pakistan", "size": 123582.34 },
+                { "name": "Uzbekistan", "size": 52622.17 },
+                { "name": "China", "size": 15393.15 },
+                { "name": "United States", "size": 13991.71 },
+                { "name": "Tajikiatan", "size": 10944.8 }
+              ]
+            },
+            {
+              "name": "Intermediate goods",
+              "children": [
+                { "name": "Kazakhstan", "size": 1008068.26 },
+                { "name": "China", "size": 888878.37 },
+                { "name": "Pakistan", "size": 776312.34 },
+                { "name": "Iran, Islamic Rep.", "size": 604764.28 },
+                { "name": "Malaysia", "size": 538236.93 },
+                { "name": "Uzbekistan", "size": 384329.0 },
+                { "name": "India", "size": 188604.99 },
+                { "name": "United Arab Emirates", "size": 101397.03 },
+                { "name": "Tajikistan", "size": 85935.44 },
+                { "name": "Russian Federation", "size": 82198.1 }
+              ]
+            },
+            {
+              "name": "Consumer goods",
+              "children": [
+                { "name": "China", "size": 625095.87 },
+                { "name": "Pakistan", "size": 552280.71 },
+                { "name": "Iran, Islamic Rep.", "size": 369965.09 },
+                { "name": "India", "size": 169299.77 },
+                { "name": "Kenya", "size": 163439.29 },
+                { "name": "Turkmenistan", "size": 150178.64 },
+                { "name": "Kazakhstan", "size": 148095.35 },
+                { "name": "vietnam", "size": 104159.62 },
+                { "name": "United Arab Emirates", "size": 90622.61 },
+                { "name": "Korea,Rep.", "size": 84678.7 }
+              ]
+            },
+            {
+              "name": "Capital goods",
+              "children": [
+                { "name": "Japan", "size": 637930.11 },
+                { "name": "Uzbekistan", "size": 333914.97 },
+                { "name": "China", "size": 265264.22 },
+                { "name": "Iran, Islamic Rep.", "size": 222280.9 },
+                { "name": "Tajikistan", "size": 75237.01 },
+                { "name": "Pakistan", "size": 72035.68 },
+                { "name": "Turkmenistan", "size": 59050.24 },
+                { "name": "Germany", "size": 24321.54 },
+                { "name": "Turkey", "size": 23898.91 },
+                { "name": "United States", "size": 23439.33 }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
