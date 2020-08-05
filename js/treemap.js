@@ -18,7 +18,9 @@ function draw_treemap(position, selectindex){
         .round(true)
         .paddingInner(1);
 
-    d3.json(FileName, function(error, data) {
+    var filename = menu.getFileName();
+
+    d3.json(filename, function(error, data) {
         if (error) throw error;
 
         // FILTER JSON

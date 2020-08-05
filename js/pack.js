@@ -17,7 +17,9 @@ function draw_pack(position){
         .size([diameter - margin, diameter - margin])
         .padding(2);
 
-    d3.json(FileName, function(error, data) {
+    var filename = menu.getFileName();
+
+    d3.json(filename, function(error, data) {
         if (error) throw error;
 
         // FILTER JSON

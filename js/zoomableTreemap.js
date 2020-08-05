@@ -45,7 +45,9 @@ function draw_zoomable_treemap(position){
         .attr("y", 6 - margin.top)
         .attr("dy", ".75em");
 
-    d3v3.json(FileName, function(data) {
+    var filename = menu.getFileName();
+
+    d3v3.json(filename, function(data) {
         // FILTER JSON
 
         data.children = data.children.filter(function(el, i){ if(i<10){ return el }})

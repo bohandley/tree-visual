@@ -141,9 +141,6 @@ function loadVisualization(position, locked){
     })
 }
 
-var FileName;
-var dataSourcePapers, dataSourceCitations;
-
 window.onload = function(){
     var fader = function(color) { return d3.interpolateRgb(color, "#fff")(0.2); };
     var colors = d3.schemeCategory20.map(fader);
@@ -152,7 +149,9 @@ window.onload = function(){
     
     color = d3.scaleOrdinal(colors);
 
-    FileName = menu.changeDataset(FileName, 1);
+    menu.changeDataset(1);
+
+    menu.dataFilterSubset();
 
     menu.dataTypeSpanText();
     
@@ -162,7 +161,7 @@ window.onload = function(){
 }
 
 function updateDataset() {
-    FileName = menu.changeDataset(FileName);
+    menu.changeDataset();
     
     menu.dataTypeSpanText();
     // allow user to select from intermediate levels of nodes
@@ -171,7 +170,8 @@ function updateDataset() {
     // 2. make a collection of of distinct nodes from each level
     // 3. build a multiselect for each level from the nodes
     // 4. filter dataset on load of json
-    dataFilterSubset()
+
+    menu.dataFilterSubset();
 
     var locked1 = menu.isLocked('1');
     var locked2 = menu.isLocked('2');
@@ -181,9 +181,4 @@ function updateDataset() {
     loadVisualization('2', locked2);
 }
 
-function dataFilterSubset() {
-    d3.json(FileName, function(error, data) {
-        debugger;
-    });
-}
 

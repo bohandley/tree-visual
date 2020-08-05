@@ -3,6 +3,8 @@ var menu = (function (d3, $) {
 	const LOCK_CLOSED = '<i class="fas fa-lock"></i>';
 
 	var dummyConfig = {
+		filename: '',
+		filters: {},
 		scaleLog: function() {},
 		isLocked: {1: false, 2: false},
 		accumulated: 'leaves',
@@ -133,8 +135,8 @@ var menu = (function (d3, $) {
 		return _out;
 	}
 
-	function changeNum(FileName){
-        d3.json(FileName, function(error, root) {
+	function changeNum(filename){
+        d3.json(filename, function(error, root) {
             if (error) throw error;
 
             document.getElementById("start_year").innerHTML = root.children[0].name;
@@ -156,10 +158,10 @@ var menu = (function (d3, $) {
             root.sum(function(d) { return d.size; });
             dataSourceSize.innerHTML = szTxt  + root.value;
             
-        })
+        });
     }
 
-    function changeDataset(FileName, onload=0){
+    function changeDataset(onload=0){
         // resetCfg();
 
         var objD = document.getElementById("dataDropdown");
@@ -172,13 +174,13 @@ var menu = (function (d3, $) {
 
         treeLib.displayedNode(objD.value);
 
-        FileName = "datasets/" + objD.value + ".txt";
+        var filename = "datasets/" + objD.value + ".txt";
         
+        config.filename = filename;
+
         document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
         
-        changeNum(FileName);        
-
-        return FileName;
+        changeNum(filename);        
     }
 
     function processAccumulated(root, type=null) {
@@ -216,6 +218,41 @@ var menu = (function (d3, $) {
             : 1;
     }
 
+    function dataFilterSubset() {
+    	var filename = config.filename;
+
+    	d3.json(filename, function(error, data) {
+    		var root = d3.hierarchy(data);
+    		var collection = {};
+    		// get all the levels
+    		root.each(function(d){
+    			var obj = findLevels(d, 0, d.data.name);
+    			var levels = obj.levels;
+    			var name = obj.name;
+
+    			if (levels == 0) return;
+
+    			if (collection[levels]) {
+    				if (!collection[levels].includes(name))
+    					collection[levels] = collection[levels].concat([name]);
+    			} else
+    				collection[levels] = [name];
+    		});	
+
+    		function findLevels(d, levels, name) {
+    			
+    			if (d.parent == null || d.children == null)
+    				return {levels: levels, name: name};
+    			else {
+    				d = d.parent;
+    				levels += 1;
+    				return findLevels(d, levels, name)
+    			}
+    		}
+	        // debugger;
+	    });
+    }
+
 	return {
 
 		getNodeSize: function(d, position, type=null) {
@@ -235,8 +272,8 @@ var menu = (function (d3, $) {
 			changeNum(FileName);
 		},
 
-		changeDataset: function(FileName, onload) {
-			return changeDataset(FileName, onload);
+		changeDataset: function(onload) {
+			return changeDataset(onload);
 		},
 
 		dataInfoLeavesText: function() {
@@ -314,6 +351,14 @@ var menu = (function (d3, $) {
 
 		getLogScale: function(val) {
 			return config.scaleLog(val)
+		},
+
+		dataFilterSubset: function() {
+		    dataFilterSubset();
+		},
+
+		getFileName: function() {
+			return config.filename;
 		}
 
 	}
