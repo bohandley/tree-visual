@@ -4,9 +4,9 @@
 
 #### Header
 
-- [ ] Change Info position from left to right
-- [ ] Change title bar height to match GraphVisual
-- [ ] Move path string to the bottom
+- [x] Change Info position from left to right
+- [x] Change title bar height to match GraphVisual
+- [x] Move path string to the bottom
 
 
 
@@ -36,4 +36,5 @@
 
 ### Tree Visual
 
-- [ ] Fix zoomable treemap for all datesets
+- [x] Fix (size => value) function in zoomable treemap
+- [ ] Zoomable tree map is not zoomable

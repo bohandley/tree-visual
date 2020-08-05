@@ -64,15 +64,14 @@
                 <a class="navbar-brand" id="brand-name" href="/" data-step="3" data-intro="Tree Visual" data-position="right" data-scrollTo="tooltip">
                     Tree<span style="color: #0c2340;">Visual</span>
                 </a>
-                <!-- information about graph -->
+            </div>
 
-                <div style="float: right;" id="graphInfoDiv">
-                    <ul class="list-unstyled" id="graphInfo">
-                        <li id="data-info-leaves">Number of papers:</li>
-                        <li id="data-info-size">Number of citations:</li>
-                        <li id="selected-node">Clicked Node:</li>
-                    </ul>
-                </div>
+            <!-- information about graph -->
+            <div style="float: right;" id="graphInfoDiv">
+                <ul class="list-unstyled" id="graphInfo">
+                    <li id="data-info-leaves">Number of papers:</li>
+                    <li id="data-info-size">Number of citations:</li>
+                </ul>
             </div>
         </nav>
 
@@ -233,6 +232,10 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+
+                    <div id="graphsBottomDiv">
+                        <span id="selected-node">Clicked Node:</span>
                     </div>
                 </div>
 
@@ -552,40 +555,40 @@
                                     </div>
                                     <!-- end of filter panel -->
                                 </div>
+                            </div>
 
-                                <!-- describe div -->
-                                <div class="form-control" id="describeDiv">
-                                    <div id="describeDivIntro" style="margin: 2px;">
-                                        <div id="DataDescription">
-                                            <span id="dataInfoName"> <b>Name:</b><span id="dataName"></span> </span>
+                            <!-- description body -->
+                            <div class="form-control" id="describeDiv">
+                                <div id="describeDivIntro" style="margin: 2px;">
+                                    <div id="DataDescription">
+                                        <span id="dataInfoName"> <b>Name:</b><span id="dataName"></span> </span>
+                                        <br />
+                                        <br />
+                                        <span id="treeDescription">
+                                            <b>Description:</b>
                                             <br />
-                                            <br />
-                                            <span id="treeDescription">
-                                                <b>Description:</b>
-                                                <br />
-                                                <span id="dataInfo">
-                                                    The visualization is showing <span id="enter_authorname"></span>'s publications from <span id="start_year"></span> to <span id="end_year"></span> .
-                                                </span>
+                                            <span id="dataInfo">
+                                                The visualization is showing <span id="enter_authorname"></span>'s publications from <span id="start_year"></span> to <span id="end_year"></span> .
                                             </span>
+                                        </span>
+                                        <br />
+                                        <br />
+                                        <span id="treeHierarchy">
+                                            <b>Tree hierarchy:</b>
+                                            <span> <br />-------Publish Year <br />| <br />-----Publish Type <br />| <br />---Publisher CCF Rank <br />| <br />-Individual Paper </span>
+                                        </span>
+                                        <br />
+                                        <br />
+                                        <span id="graphSource">
+                                            <b>Source: </b>
                                             <br />
-                                            <br />
-                                            <span id="treeHierarchy">
-                                                <b>Tree hierarchy:</b>
-                                                <span> <br />-------Publish Year <br />| <br />-----Publish Type <br />| <br />---Publisher CCF Rank <br />| <br />-Individual Paper </span>
-                                            </span>
-                                            <br />
-                                            <br />
-                                            <span id="graphSource">
-                                                <b>Source: </b>
-                                                <br />
-                                                <span>Microsoft Academic Graph & Google_scholar</span>
-                                            </span>
-                                            <br />
-                                        </div>
+                                            <span>Microsoft Academic Graph & Google_scholar</span>
+                                        </span>
+                                        <br />
                                     </div>
                                 </div>
-                                <!-- end of describe div -->
                             </div>
+
                             <!-- end of sidebar body -->
                         </form>
                     </div>
