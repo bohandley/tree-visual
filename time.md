@@ -365,6 +365,12 @@
     work on changing leaves or size text in control panel
     NEED TO ADD TILING TO LOCKED CONFIG
     NEED TO USE LOG TO DISPLAY THE SIZE OF THE NODES
+
+    Fixing color issue
+    Fixing text at bottom
+    Page flickering in window browser
+    Slider tooltip and browser
+    Fixing zoomable treemap issue
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)
