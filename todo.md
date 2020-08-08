@@ -20,9 +20,10 @@
 
 - [x] Data source grouping by data type
 - [x] Change description font style to match GraphVisual
-  - [ ] Sync description text with current data source
+  - [x] Sync description text with current data source
 - [x] Change switch style from checkbox to round switch
 - [ ] Slider tooltip (title & slider button)
+- [ ] Disabled slider's style is not correct
 
 
 

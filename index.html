@@ -5,7 +5,6 @@
     <title>TreeVisual</title>
 
     <head>
-        <script src="lib/intro.js"></script>
         <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.css" />
         <link rel="stylesheet" href="lib/introjs.css" />
         <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/demo.css" />
@@ -286,7 +285,6 @@
                                     </div>
                                 </div>
 
-                                <!-- filter panel -->
                                 <div id="accordion" class="panel-group">
                                     <!-- appearance panel -->
                                     <div id="appearancePanel" class="panel panel-default">
@@ -313,20 +311,21 @@
                                             <!-- end colorBlindDiv -->
 
                                             <!-- <div class="form-group" id="nodeSizeDiv">
-                                      <div class="form-row">
-                                        <div class="col-8">
-                                          <span id="nodeSizeSpan" data-toggle="tooltip" title="Increase size of high-degree nodes">
-                                            Proportional Node Size
-                                          </span>
-                                        </div>
-                                        <div class="col-4">
-                                          <label class="switch">
-                                            <input type="checkbox" id="checkBoxNodeDegree">
-                                            <span class="slider round"></span>
-                                          </label>
-                                        </div>
-                                      </div>
-                                    </div> --><!-- end nodeSizeDiv -->
+                                            <div class="form-row">
+                                                <div class="col-8">
+                                                <span id="nodeSizeSpan" data-toggle="tooltip" title="Increase size of high-degree nodes">
+                                                    Proportional Node Size
+                                                </span>
+                                                </div>
+                                                <div class="col-4">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="checkBoxNodeDegree">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                </div>
+                                            </div>
+                                            </div> -->
+                                            <!-- end nodeSizeDiv -->
 
                                             <div class="form-group" id="edgeThicknessDiv">
                                                 <div class="form-row">
@@ -361,24 +360,6 @@
                                                 </div>
                                             </div>
 
-                                            <!--<div class="form-group" id="edgeBundling">-->
-                                            <!--<div class="form-row">-->
-                                            <!--<div class="col-8">-->
-                                            <!--<span id="edgeBundlingSpan" data-toggle="tooltip" title="Bundle close edges together to reduce occlusion">-->
-                                            <!--Edge Bundling-->
-                                            <!--</span>-->
-                                            <!--</div>-->
-                                            <!--<div class="col-4">-->
-                                            <!--<label class="switch">-->
-                                            <!--<input type="checkbox" id="bundling">-->
-                                            <!--<input type="checkbox" id="bundling1" style="display:none">-->
-                                            <!--<input type="checkbox" id="bundling2" style="display:none">-->
-                                            <!--<span class="slider round"></span>-->
-                                            <!--</label>-->
-                                            <!--</div>-->
-                                            <!--</div>-->
-                                            <!--</div>&lt;!&ndash; end edgeBundlingDiv &ndash;&gt;-->
-
                                             <div class="form-group mt-3 mb-1" id="nodesizeScalarDiv">
                                                 <label>Node Size</label>
                                                 <div class="form-row">
@@ -393,7 +374,6 @@
                                                         <p id="nodesizeScaleMax"></p>
                                                     </div>
                                                 </div>
-                                                <!-- form-row -->
                                             </div>
                                             <!-- end nodeSizeScalarDiv -->
                                         </div>
@@ -415,7 +395,7 @@
                                                         <p id="nodeDegreeMin"></p>
                                                     </div>
                                                     <div class="col">
-                                                        <input type="range" data-toggle="tooltip" class="form-control-range" id="nodeDegreeFilter" />
+                                                        <input id="nodeDegreeFilter" type="range" data-toggle="tooltip" class="form-control-range" />
                                                         <div class="sliderValue"></div>
                                                     </div>
                                                     <div class="col-2">
@@ -424,136 +404,43 @@
                                                 </div>
                                                 <!-- form-row -->
                                             </div>
-
-                                            <div id="filterPanel" class="panel panel-default">
-                                                <div class="panel-heading" data-toggle="collapse" data-target="#filterDiv" data-parent="#accordion">
-                                                    <h2 class="panel-title" style="color: #000;">Filtering</h2>
-                                                    <hr />
-                                                </div>
-                                                <div id="filterDiv" class="collapse panel-collapse panel-body">
-                                                    <!-- Node Degree -->
-                                                    <div class="form-group mt-3 mb-1" id="nodeDegreeDiv">
-                                                        <span>Node Degree</span>
-                                                        <div class="form-row">
-                                                            <div class="col-1">
-                                                                <p id="nodeDegreeMin"></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <input type="range" data-toggle="tooltip" class="form-control-range" id="nodeDegreeFilter" />
-                                                                <div class="sliderValue"></div>
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <p id="nodeDegreeMax"></p>
-                                                            </div>
-                                                        </div>
-                                                        <!-- form-row -->
-                                                    </div>
-
-                                                    <!-- Edge Weight -->
-                                                    <div class="form-group my-1" id="edgeFilterDiv">
-                                                        <span>Edge Weight</span>
-                                                        <div class="form-row">
-                                                            <div class="col-1">
-                                                                <p id="edgeFilteringMin"></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeFilterSlider" />
-                                                                <div class="sliderValue"></div>
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <p id="edgeFilteringMax"></p>
-                                                            </div>
-                                                        </div>
-                                                        <!-- form-row -->
-                                                    </div>
-
-                                                    <!-- Edge Length (Left) -->
-                                                    <div class="form-group mt-1 mb-3" id="edgeLengthLeftDiv">
-                                                        <span data-toggle="tooltip" title="Filter nodes based on edge length (in pixels) in the left graph">
-                                                            Edge Length (Left)
-                                                        </span>
-                                                        <br />
-                                                        <div class="form-row">
-                                                            <div class="col-1">
-                                                                <span id="edgeLengthMinL"></span>
-                                                            </div>
-                                                            <div class="col">
-                                                                <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeLengthSliderL" />
-                                                                <div class="sliderValue"></div>
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <span id="edgeLengthMaxL"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Edge Length (Right) -->
-                                                    <div class="form-group mt-1 mb-3" id="edgeLengthRightDiv">
-                                                        <span data-toggle="tooltip" title="Filter nodes based on edge length (in pixels) in the right graph">
-                                                            Edge Length (Right)
-                                                        </span>
-                                                        <br />
-                                                        <div class="form-row">
-                                                            <div class="col-1">
-                                                                <span id="edgeLengthMinR"></span>
-                                                            </div>
-                                                            <div class="col">
-                                                                <input type="range" data-toggle="tooltip" class="form-control-range" id="edgeLengthSliderR" />
-                                                                <div class="sliderValue"></div>
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <span id="edgeLengthMaxR"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div id="selectionPanel" class="panel panel-default">
-                                                <div class="panel-heading" data-toggle="collapse" data-target="#selectionDiv" data-parent="#accordion">
-                                                    <h2 class="panel-title" style="color: #000;">Selection</h2>
-                                                    <hr />
-                                                </div>
-                                                <div id="selectionDiv" class="collapse panel-collapse in panel-body show">
-                                                    <div class="form-group" id="opacity">
-                                                        <span data-toggle="tooltip" title="Adjust the opacity of non-selected nodes and edges">Opacity</span>
-                                                        <br />
-                                                        <div class="form-row" id="highlightOpacityDiv">
-                                                            <div class="col-1">0</div>
-                                                            <div class="col">
-                                                                <input
-                                                                    type="range"
-                                                                    data-toggle="tooltip"
-                                                                    class="form-control-range"
-                                                                    id="highlightOpacity"
-                                                                    value="0"
-                                                                    min="0"
-                                                                    max="1"
-                                                                    step="0.1"
-                                                                    disabled="disabled"
-                                                                />
-                                                                <div class="sliderValue"></div>
-                                                            </div>
-                                                            <div class="col-2">1</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Node Selection -->
-                                                    <div class="form-group form-row" id="nodeSelection">
-                                                        <span class="col-md-8 col-sm-7">Node</span>
-                                                        <span class="col-md-4 col-sm-5 text-nowrap" id="nodeNumberSpan"></span>
-                                                        <select id="nodeDropdown" class="custom-select" style="margin-bottom: 5px; margin-top: 5px;"> </select>
-                                                    </div>
-                                                    <!-- Cluster Selection -->
-                                                    <div class="form-group form-row" id="clusterSelection">
-                                                        <span class="col-md-8 col-sm-7">Cluster</span>
-                                                        <span class="col-md-4 col-sm-5 text-nowrap" id="clusterNumberSpan"></span>
-                                                        <select id="clusterDropdown" class="custom-select" style="margin-bottom: 5px; margin-top: 5px;"> </select>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <!-- end of filter panel -->
+
+                                    <!-- selection panel -->
+                                    <div id="selectionPanel" class="panel panel-default">
+                                        <div class="panel-heading" data-toggle="collapse" data-target="#selectionDiv" data-parent="#accordion">
+                                            <h2 class="panel-title" style="color: #000;">Selection</h2>
+                                            <hr />
+                                        </div>
+                                        <div id="selectionDiv" class="collapse panel-collapse in panel-body show">
+                                            <div class="form-group mt-3 mb-1" id="highlightOpacityDiv">
+                                                <span data-toggle="tooltip" title data-original-title="Adjust the opacity of non-selected nodes and edges">Opacity</span>
+                                                <div class="form-row">
+                                                    <div class="col-1">0</div>
+                                                    <div class="col">
+                                                        <input type="range" data-toggle="tooltip" class="form-control-range" id="highlightOpacity" value="0" min="0" max="1" step="0.1" disabled />
+                                                        <div class="sliderValue"></div>
+                                                    </div>
+                                                    <div class="col-2">1</div>
+                                                </div>
+                                            </div>
+                                            <!-- Node Selection -->
+                                            <div class="form-group form-row" id="nodeSelection">
+                                                <span class="col-md-8 col-sm-7">Node</span>
+                                                <span class="col-md-4 col-sm-5 text-nowrap" id="nodeNumberSpan"></span>
+                                                <select id="nodeDropdown" class="custom-select" style="margin-bottom: 5px; margin-top: 5px;"> </select>
+                                            </div>
+                                            <!-- Cluster Selection -->
+                                            <div class="form-group form-row" id="clusterSelection">
+                                                <span class="col-md-8 col-sm-7">Cluster</span>
+                                                <span class="col-md-4 col-sm-5 text-nowrap" id="clusterNumberSpan"></span>
+                                                <select id="clusterDropdown" class="custom-select" style="margin-bottom: 5px; margin-top: 5px;"> </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of selection panel -->
                                 </div>
                             </div>
 
@@ -563,7 +450,7 @@
                                     <div id="DataDescription">
                                         <span>
                                             <b>Name:</b>
-                                            <span id="treeName"></span> 
+                                            <span id="treeName"></span>
                                         </span>
                                         <br />
                                         <br />
