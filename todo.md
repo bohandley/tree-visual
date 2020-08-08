@@ -25,6 +25,8 @@
 - [x] Change switch style from checkbox to round switch
 - [x] Slider tooltip (title & slider button)
 - [ ] Disabled slider's style is not correct
+- [ ] Node size slider is not synced at startup
+- [ ] Filtering panel slider
 
 
 
