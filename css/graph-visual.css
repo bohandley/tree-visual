@@ -392,3 +392,8 @@ input, select, .panel-heading
 .hide-tag {
     display: none;
 }
+
+.container-fluid {
+    width: 100vw;
+    overflow: hidden;
+}

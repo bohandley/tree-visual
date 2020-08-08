@@ -242,7 +242,7 @@ function setupToolTips()
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     // initiate footer tooltip, and set hidden
-    updateFooterText(TOOLTIP.SVG_HOVER, "hidden");
+    //updateFooterText(TOOLTIP.SVG_HOVER, "hidden");
   });
 }
 

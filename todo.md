@@ -13,6 +13,7 @@
 #### Tree Visual Section
 
 - [x] Sort layout option alphabetically
+- [ ] Change node tooltip style to match GraphVisual
 
 
 
@@ -22,14 +23,14 @@
 - [x] Change description font style to match GraphVisual
   - [x] Sync description text with current data source
 - [x] Change switch style from checkbox to round switch
-- [ ] Slider tooltip (title & slider button)
+- [x] Slider tooltip (title & slider button)
 - [ ] Disabled slider's style is not correct
 
 
 
 #### Miscellaneous
 
-- [ ] Page flickering on some browser when point to tree nodes, According collapsing or expansion 
+- [x] Page flickering on some browser when point to tree nodes, According collapsing or expansion 
 
 
 
@@ -38,4 +39,4 @@
 ### Tree Visual
 
 - [x] Fix (size => value) function in zoomable treemap
-- [ ] Zoomable tree map is not zoomable
+- [ ] Fix zoomable tree map click event
