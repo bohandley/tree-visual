@@ -69,8 +69,8 @@ function draw_zoomable_treemap(position){
         accumulate(root);
         leafAcc(root);
         sizeAcc(root)
-        layout(root);
         root = menu.processAccumulated(root, 'zoomableTreemap');
+        layout(root);
         display(root);
 
         // process the value as either leaves or acc size depending on control panel
@@ -97,7 +97,7 @@ function draw_zoomable_treemap(position){
         function sizeAcc(d) {
             return (d._children = d.children)
                 ? d.accSize = d.children.reduce(function(p, v) { return p + sizeAcc(v); }, 0)
-                : d.size;
+                : d.accSize = d.size;
         }
 
         // aggregate the number of leaves within each node
@@ -187,7 +187,7 @@ function draw_zoomable_treemap(position){
                 .text(function(d) { 
                     var n = d.name;
                         
-                    return n + "\n" + menu.dataInfoSizeText() +formatNumber(d.value); 
+                    return n + "\n" + menu.dataInfoSizeText() +formatNumber(d.accSize); 
                 });
 
             g.append("text")

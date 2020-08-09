@@ -213,9 +213,15 @@ var menu = (function (d3, $) {
     }
 
     function leavesAccZT(d) {
-        return (d._children = d.children)
-            ? d.value = d.children.reduce(function(p, v) { return p + leavesAccZT(v); }, 0)
-            : 1;
+        if (d._children) {
+        	d.value = d.lvs.length;
+        	d._children.forEach(leavesAccZT);
+        } else {
+        	d.value = 1;
+        }
+        // return (d._children = d.children)
+        //     ? d.value = d.children.reduce(function(p, v) { return p + leavesAccZT(v); }, 0)
+        //     : 1;
     }
 
     function dataFilterSubset() {
