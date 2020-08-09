@@ -10,21 +10,21 @@ var menu = (function (d3, $) {
 	    proportionalSize: {1: false, 2: false},
 	    dataType: '',
 		dataInfoLeavesText: {
-	    	author: "Number of Papers: ",
-	    	government: "Number of Branches: ",
-	    	trade: "Number of Import/Export Countries: ",
-	    	treeoflife: "Number of Branches: "
+	    	author: value => `Number of Papers: ${value}`,
+	    	government: value => `Number of Branches: ${value}`,
+	    	trade: value => `Number of Import/Export Countries: ${value}`,
+	    	treeoflife: value => `Number of Species: ${value}`
 	    },
 	    dataInfoSizeText: {
-	    	author: "Number of Citations: ",
-	    	government: "Number of Employees: ",
-	    	trade: "Volume of Import/Export ($1M): ",
-	    	treeoflife: "Number of Tips: "
+	    	author: value => `Number of Citations: ${value}`,
+	    	government: value => "" /*`Number of Employees: ${value}`*/, // no employee data available
+	    	trade: value => `Volume of Import/Export ($ Thousand): ${Math.floor(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+	    	treeoflife: value => `Number of Tips: ${value}` // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
 	    },
 	    dataInfoTypes: {
 	    	author: {size: 'Citations', leaves: 'Papers'},
 	    	government: {size: 'Employees', leaves: 'Branches'},
-	    	trade: {size: 'MIllions', leaves: 'Countries'},
+	    	trade: {size: 'Thousands', leaves: 'Countries'},
 	    	treeoflife: {size: 'Tips', leaves: 'Species'}
 		},
 		dataDescription: {
@@ -73,11 +73,13 @@ var menu = (function (d3, $) {
         } else {
         	d3.select("#g1").selectAll("circle.node-size")
 	            .attr("r", function(d) {
+					// TODO: pass "Radial_Tree" in
 	            	return getNodeSize(d, ndSize, config.proportionalSize['1']);
 	            });
 
 	        d3.select("#g2").selectAll("circle.node-size")
 	            .attr("r", function(d) {
+					// TODO: pass "Radial_Tree" in
 	            	return getNodeSize(d, ndSize, config.proportionalSize['2']);
 	            });
         }
@@ -87,7 +89,7 @@ var menu = (function (d3, $) {
 		return (+$("#nodesizeScalar").prop("value"));
 	}
 
-	function getNodeSize(d, ndSize, prpSize=null) {
+	function getNodeSize(d, ndSize, prpSize=null, type=null) {
 		var amount = 1;
 
         if (prpSize == true) {
@@ -103,11 +105,12 @@ var menu = (function (d3, $) {
 
             // if (d.data && d.data.children)
             //     amount = d.data.children.length;
-        }
+		}
+		
+		if (type == "Radial_Tree")
+			amount = amount * 5/8;
         
-        var size = ndSize * amount;
-
-        return size;
+        return ndSize * amount;
 	}
 
 	function updateProportionalSize(that, view) {
@@ -122,9 +125,9 @@ var menu = (function (d3, $) {
 
 	function setupCheckBoxes(dataset=null) {
 	    let nodesizeScale = 4;
-	    let slider = $("#nodesizeScalar");
 	    let min_ = 2;
 	    let max_ = 6;
+	    let slider = $("#nodesizeScalar");
 	    slider.prop('min', min_);
 	    slider.prop('max', max_);
 	    slider.prop('step', 0.1);
@@ -143,8 +146,8 @@ var menu = (function (d3, $) {
 	    });
 
 	    $("#nodesizeScalar").on('input', function(){
-	    	updateNodeSize()
-	    });
+	    	updateNodeSize();
+		});
 	}
 
 	function copy(o) {
@@ -172,15 +175,12 @@ var menu = (function (d3, $) {
 
             dataSourceLeaves = document.getElementById("data-info-leaves");
             dataSourceSize = document.getElementById("data-info-size");
-			
-            var chldTxt = config.dataInfoLeavesText[dataType];
-            var szTxt = config.dataInfoSizeText[dataType];
 
             root.sum(function(d){ return d.children? 0 : 1;});
-            dataSourceLeaves.innerHTML = chldTxt+ root.value;
+            dataSourceLeaves.innerHTML = config.dataInfoLeavesText[dataType](root.value);
 
             root.sum(function(d) { return d.size; });
-            dataSourceSize.innerHTML = szTxt  + root.value;
+            dataSourceSize.innerHTML = config.dataInfoSizeText[dataType](root.value);
         })
     }
 
@@ -244,12 +244,7 @@ var menu = (function (d3, $) {
 	return {
 
 		getNodeSize: function(d, position, type=null) {
-			var mult = 1;
-
-			if (type == "Radial_Tree")
-				mult= 5/8;
-			
-			return getNodeSize(d, accessNodeSize(), config.proportionalSize[position]) * mult;
+			return getNodeSize(d, accessNodeSize(), config.proportionalSize[position], type);
 		},
 
 		setupCheckBoxes: function(dataset=null) {
@@ -264,12 +259,12 @@ var menu = (function (d3, $) {
 			return changeDataset(FileName, onload);
 		},
 
-		dataInfoLeavesText: function() {
-			return config.dataInfoLeavesText[config.dataType];
+		dataInfoLeavesText: function(value) {
+			return config.dataInfoLeavesText[config.dataType](value);
 		},
 
-		dataInfoSizeText: function() {
-			return config.dataInfoSizeText[config.dataType];
+		dataInfoSizeText: function(value) {
+			return config.dataInfoSizeText[config.dataType](value);
 		},
 
 		updateAccumulated: function(acc) {
@@ -340,7 +335,6 @@ var menu = (function (d3, $) {
 		getLogScale: function(val) {
 			return config.scaleLog(val)
 		}
-
 	}
 
 })( d3, $ );

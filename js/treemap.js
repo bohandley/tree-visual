@@ -72,7 +72,7 @@ function draw_treemap(position, selectindex){
         
         cell.append("title")
             .text( d => {
-                return d.data.id + "\n" + menu.dataInfoSizeText() +  format(d.accSize) 
+                return d.data.id + "\n" + menu.dataInfoSizeText(d.accSize);
             });
 
         d3.select("svg#"+position1).dispatch('doneDrawing');

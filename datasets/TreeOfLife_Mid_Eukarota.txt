@@ -1,0 +1,840 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Rhodophyta",
+                                            "size": 440235
+                                        },
+                                        {
+                                            "name": "Glaucophyta",
+                                            "size": 25
+                                        }
+                                    ],
+                                    "name": "Glaucophyta",
+                                    "size": 440260
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "SAR",
+                                            "size": 53050
+                                        },
+                                        {
+                                            "name": "Haptophyta",
+                                            "size": 481
+                                        }
+                                    ],
+                                    "name": "Haptophyta",
+                                    "size": 53531
+                                }
+                            ],
+                            "name": "Haptophyta",
+                            "size": 493791
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Euglenozoa",
+                                            "size": 2305
+                                        },
+                                        {
+                                            "name": "Jakobida",
+                                            "size": 566
+                                        }
+                                    ],
+                                    "name": "Jakobida",
+                                    "size": 2871
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Difamus",
+                                            "size": 135
+                                        },
+                                        {
+                                            "name": "Carpediemonas sp. NY0171",
+                                            "size": 3
+                                        }
+                                    ],
+                                    "name": "Carpediemonas frisia",
+                                    "size": 139
+                                },
+                                {
+                                    "name": "Ergobibamus",
+                                    "size": 2
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Iotanema",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Caviomonadidae",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Excavata",
+                            "size": 3013
+                        }
+                    ],
+                    "name": "Excavata",
+                    "size": 496804
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Parachaos",
+                                            "size": 284
+                                        },
+                                        {
+                                            "name": "Dermamoeba",
+                                            "size": 190
+                                        }
+                                    ],
+                                    "name": "Dermamoeba",
+                                    "size": 474
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Diderma simplex",
+                                            "size": 4
+                                        }
+                                    ],
+                                    "name": "Diderma deplanatum",
+                                    "size": 5
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Diderma floriforme",
+                                            "size": 1078
+                                        },
+                                        {
+                                            "name": "Lepidoderma tigrinum",
+                                            "size": 4
+                                        },
+                                        {
+                                            "name": "Goceviidae",
+                                            "size": 17
+                                        }
+                                    ],
+                                    "name": "Lepidoderma neoperforatum",
+                                    "size": 1113
+                                }
+                            ],
+                            "name": "Lepidoderma neoperforatum",
+                            "size": 1592
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Vermistella",
+                                            "size": 116
+                                        },
+                                        {
+                                            "name": "Mayorella (genus in phylum Amoebozoa)",
+                                            "size": 7
+                                        }
+                                    ],
+                                    "name": "Mayorella",
+                                    "size": 123
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Sappinia",
+                                            "size": 3
+                                        },
+                                        {
+                                            "name": "Thecamoeba",
+                                            "size": 10
+                                        },
+                                        {
+                                            "name": "Stenamoeba",
+                                            "size": 6
+                                        },
+                                        {
+                                            "name": "Stratorugosa",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Thecamoebida",
+                                    "size": 20
+                                }
+                            ],
+                            "name": "Thecamoebida",
+                            "size": 143
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Diderma microsporum",
+                                    "size": 2
+                                }
+                            ],
+                            "name": "Diderma microsporum",
+                            "size": 3
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Difflugia gramen",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Difflugia",
+                                    "size": 28
+                                },
+                                {
+                                    "name": "Cucurbitella (genus in phylum Amoebozoa)",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "Sexangularia",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "Lagenodifflugia",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Difflugiidae",
+                            "size": 31
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Squamamoeba",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Cutosea",
+                            "size": 1
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Ceratiomyxa fruticulosa",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Ceratiomyxa",
+                                    "size": 5
+                                }
+                            ],
+                            "name": "Ceratiomyxaceae",
+                            "size": 5
+                        },
+                        {
+                            "name": "Endostelium",
+                            "size": 3
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Netzelia",
+                                    "size": 4
+                                }
+                            ],
+                            "name": "Netzeliidae",
+                            "size": 4
+                        },
+                        {
+                            "name": "Paradermamoeba",
+                            "size": 1
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Baileyi",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "Pseudodifflugia (genus in phylum Amoebozoa)",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "Clypeolina (genus in phylum Amoebozoa)",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Pseudodifflugiidae (family in phylum Amoebozoa)",
+                            "size": 3
+                        },
+                        {
+                            "name": "Microglomus",
+                            "size": 1
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Echinosteliopsis",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Echinosteliopsidaceae",
+                            "size": 2
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Phryganella (genus in phylum Amoebozoa)",
+                                    "size": 3
+                                }
+                            ],
+                            "name": "Phryganellidae",
+                            "size": 3
+                        },
+                        {
+                            "name": "WIM5",
+                            "size": 3
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Lesquereusia",
+                                    "size": 4
+                                },
+                                {
+                                    "name": "Pomoriella",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "Microquadrula",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Lesquereusiidae",
+                            "size": 6
+                        },
+                        {
+                            "name": "Physarina",
+                            "size": 4
+                        },
+                        {
+                            "name": "Trabrooksia",
+                            "size": 1
+                        },
+                        {
+                            "name": "Elaeomyxaceae",
+                            "size": 3
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Pellita",
+                                    "size": 2
+                                }
+                            ],
+                            "name": "Pellitidae",
+                            "size": 2
+                        },
+                        {
+                            "name": "Mycamoeba",
+                            "size": 1
+                        }
+                    ],
+                    "name": "Amoebozoa",
+                    "size": 1960
+                }
+            ],
+            "name": "Amoebozoa",
+            "size": 498764
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Porifera",
+                                            "size": 1497330
+                                        },
+                                        {
+                                            "name": "Ctenophora (phylum ncbi:10197)",
+                                            "size": 203
+                                        },
+                                        {
+                                            "name": "Mesozoa",
+                                            "size": 157
+                                        }
+                                    ],
+                                    "name": "Metazoa",
+                                    "size": 1497690
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Craspedida",
+                                            "size": 172
+                                        },
+                                        {
+                                            "name": "Acanthoecida",
+                                            "size": 99
+                                        },
+                                        {
+                                            "name": "Amphimonadidae",
+                                            "size": 2
+                                        },
+                                        {
+                                            "name": "Clade L",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Choanoflagellida",
+                                    "size": 274
+                                }
+                            ],
+                            "name": "Choanoflagellida",
+                            "size": 1497964
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Ichthyophonae",
+                                            "size": 126
+                                        },
+                                        {
+                                            "name": "Dermocystida",
+                                            "size": 14
+                                        }
+                                    ],
+                                    "name": "Ichthyosporea",
+                                    "size": 140
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Ministeriida",
+                                            "size": 5
+                                        }
+                                    ],
+                                    "name": "Filasterea",
+                                    "size": 5
+                                }
+                            ],
+                            "name": "Filasterea",
+                            "size": 145
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Corallochytridae",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Corallochytrida",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Corallochytrea",
+                            "size": 1
+                        }
+                    ],
+                    "name": "Holozoa",
+                    "size": 1498110
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Blastocladiales",
+                                            "size": 273671
+                                        },
+                                        {
+                                            "name": "Neocallimastigales",
+                                            "size": 1148
+                                        },
+                                        {
+                                            "name": "Lobulomycetales",
+                                            "size": 6
+                                        },
+                                        {
+                                            "name": "Gromochytriales",
+                                            "size": 2
+                                        },
+                                        {
+                                            "name": "Liebetanzomyces",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Liebetanzomyces",
+                                    "size": 274831
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Microsporea",
+                                            "size": 1483
+                                        },
+                                        {
+                                            "name": "Rudimicrosporea",
+                                            "size": 31
+                                        },
+                                        {
+                                            "name": "Mitosporidium",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Microsporidia",
+                                    "size": 1515
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Rozella allomycis",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Rozella (genus in kingdom Fungi)",
+                                    "size": 6
+                                }
+                            ],
+                            "name": "Fungi",
+                            "size": 276352
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Nucleariidae",
+                                            "size": 16
+                                        }
+                                    ],
+                                    "name": "Nucleariida",
+                                    "size": 16
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Fonticulidae",
+                                            "size": 3
+                                        }
+                                    ],
+                                    "name": "Fonticulida",
+                                    "size": 3
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Rozellidae",
+                                            "size": 9
+                                        }
+                                    ],
+                                    "name": "Rozellida",
+                                    "size": 9
+                                }
+                            ],
+                            "name": "Discicristoidea",
+                            "size": 28
+                        },
+                        {
+                            "name": "LKM11",
+                            "size": 5
+                        },
+                        {
+                            "name": "LKM15",
+                            "size": 2
+                        }
+                    ],
+                    "name": "Nucletmycea",
+                    "size": 276387
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "name": "Amoeboaphelidium",
+                                    "size": 3
+                                },
+                                {
+                                    "name": "Paraphelidium",
+                                    "size": 3
+                                }
+                            ],
+                            "name": "Aphelidea",
+                            "size": 6
+                        }
+                    ],
+                    "name": "Aphelida",
+                    "size": 6
+                },
+                {
+                    "name": "uncultured (in Opisthokonta)",
+                    "size": 1
+                }
+            ],
+            "name": "Opisthokonta",
+            "size": 1774505
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "name": "Choanocystis",
+                            "size": 5
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Raphidiophrys",
+                                    "size": 7
+                                },
+                                {
+                                    "name": "Polyplacocystis",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Raphidiophryidae",
+                            "size": 8
+                        },
+                        {
+                            "name": "Pterocystis",
+                            "size": 8
+                        },
+                        {
+                            "name": "Acanthocystis",
+                            "size": 12
+                        }
+                    ],
+                    "name": "Acanthocystidae",
+                    "size": 33
+                },
+                {
+                    "children": [
+                        {
+                            "name": "Heterophrys",
+                            "size": 2
+                        },
+                        {
+                            "name": "Chlamydaster",
+                            "size": 1
+                        },
+                        {
+                            "name": "Sphaerastrum",
+                            "size": 1
+                        },
+                        {
+                            "name": "Oxnerella (genus in order Centrohelida)",
+                            "size": 1
+                        }
+                    ],
+                    "name": "Heterophryidae",
+                    "size": 11
+                },
+                {
+                    "name": "H15-6",
+                    "size": 1
+                },
+                {
+                    "name": "Spiculophrys",
+                    "size": 1
+                },
+                {
+                    "name": "Marophrys",
+                    "size": 1
+                },
+                {
+                    "name": "Raphidocystis",
+                    "size": 1
+                },
+                {
+                    "children": [
+                        {
+                            "name": "Yogsothoth",
+                            "size": 2
+                        }
+                    ],
+                    "name": "Yogsothothidae",
+                    "size": 3
+                }
+            ],
+            "name": "Centrohelida",
+            "size": 55
+        },
+        {
+            "children": [
+                {
+                    "name": "Rigifila",
+                    "size": 1
+                },
+                {
+                    "name": "Micronuclearia",
+                    "size": 1
+                }
+            ],
+            "name": "Rigifilida",
+            "size": 2
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "name": "Apusomonas",
+                            "size": 2
+                        },
+                        {
+                            "name": "Fabomonas",
+                            "size": 1
+                        },
+                        {
+                            "name": "Amastigomonas",
+                            "size": 9
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Thecamonas trahens",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "Thecamonas oxoniensis",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Thecamonas",
+                            "size": 2
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Multimonas media",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Multimonas",
+                            "size": 2
+                        },
+                        {
+                            "name": "Chelonemonas",
+                            "size": 2
+                        }
+                    ],
+                    "name": "Apusomonadidae",
+                    "size": 21
+                },
+                {
+                    "name": "Hemimastigida",
+                    "size": 1
+                }
+            ],
+            "name": "Thecomonadea",
+            "size": 22
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Picomonas",
+                                            "size": 3
+                                        }
+                                    ],
+                                    "name": "Picomonadidae",
+                                    "size": 3
+                                }
+                            ],
+                            "name": "Picomonadida",
+                            "size": 3
+                        }
+                    ],
+                    "name": "Picomonadea",
+                    "size": 5
+                }
+            ],
+            "name": "Picozoa",
+            "size": 5
+        },
+        {
+            "children": [
+                {
+                    "name": "Diphylleia (genus in family Collodictyonidae)",
+                    "size": 1
+                },
+                {
+                    "name": "Collodictyon",
+                    "size": 5
+                }
+            ],
+            "name": "Collodictyonidae",
+            "size": 6
+        },
+        {
+            "name": "Sarcomastigophora",
+            "size": 1
+        },
+        {
+            "children": [
+                {
+                    "name": "Actimonas",
+                    "size": 1
+                }
+            ],
+            "name": "Ciliophryidae",
+            "size": 1
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "name": "Rhodelphis",
+                                    "size": 2
+                                }
+                            ],
+                            "name": "Rhodelphidae",
+                            "size": 2
+                        }
+                    ],
+                    "name": "Rhodelphida",
+                    "size": 2
+                }
+            ],
+            "name": "Rhodelphea",
+            "size": 2
+        }
+    ],
+    "name": "Eukaryota",
+    "size": 2273370
+}

@@ -130,8 +130,8 @@
                                                 <option class="optionGroup" value="Binary" selected>Binary</option>
                                                 <option class="optionGroup" value="Dice">Dice</option>
                                                 <option class="optionGroup" value="Slice">Slice</option>
-                                                <option class="optionGroup" value="SliceDice">SliceDice</option>
-                                                <option class="optionGroup" value="Squarify">Squarify</option>
+                                                <option class="optionGroup" value="SliceDice">Slice & Dice</option>
+                                                <option class="optionGroup" value="Squarify">Squarified</option>
                                             </select>
                                         </div>
                                     </div>
@@ -208,8 +208,8 @@
                                                 <option class="optionGroup" value="Binary" selected>Binary</option>
                                                 <option class="optionGroup" value="Dice">Dice</option>
                                                 <option class="optionGroup" value="Slice">Slice</option>
-                                                <option class="optionGroup" value="SliceDice">SliceDice</option>
-                                                <option class="optionGroup" value="Squarify">Squarify</option>
+                                                <option class="optionGroup" value="SliceDice">Slice & Dice</option>
+                                                <option class="optionGroup" value="Squarify">Squarified</option>
                                             </select>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@
                     </div>
 
                     <div id="graphsBottomDiv" style="margin: 10px;">
-                        <span id="selected-node">Clicked Node:</span>
+                        Selected Node: <span id="selected-node"></span>
                     </div>
                 </div>
 
@@ -259,26 +259,28 @@
                                         <!-- <span style="font-size:15px"> Selected Author: </span> -->
                                         <div id="dataDropdownIntro" style="width: 100%; padding-bottom: 0px; margin-bottom: 24px;">
                                             <select id="dataDropdown" class="custom-select mb-0" style="width: 100%;" onchange="updateDataset()">
-                                                <optgroup label="Publications" id="publications">
-                                                    <option class="optionGroup" value="Stasko" data="author" selected>John Stasko</option>
-                                                    <option class="optionGroup" value="Han" data="author">Jiawei Han</option>
+                                                <optgroup label="Publication" id="publication">
                                                     <option class="optionGroup" value="Faloutsos" data="author">Christos Faloutsos</option>
+                                                    <option class="optionGroup" value="Han" data="author">Jiawei Han</option>
+                                                    <option class="optionGroup" value="Stasko" data="author" selected>John Stasko</option>
                                                     <option class="optionGroup" value="Leskovec" data="author">Jure Leskovec</option>
                                                 </optgroup>
                                                 <optgroup label="Government" id="government">
-                                                    <option class="optionGroup" value="Gov_United_States" data="government">United States</option>
-                                                    <option class="optionGroup" value="Gov_United_Kingdom" data="government">United Kingdom</option>
+                                                    <option class="optionGroup" value="Gov_Canada" data="government">Canada</option>
                                                     <option class="optionGroup" value="Gov_Philippines" data="government">Philippines</option>
-                                                    <option class="optionGroup" value="Gov_Canadian" data="government">Canadian</option>
+                                                    <option class="optionGroup" value="Gov_United_Kingdom" data="government">United Kingdom</option>
+                                                    <option class="optionGroup" value="Gov_United_States" data="government">United States</option>
                                                 </optgroup>
                                                 <optgroup label="Trade" id="trade">
-                                                    <option class="optionGroup" value="Trade_United_States_Mid" data="trade">United States</option>
-                                                    <option class="optionGroup" value="Trade_United_Kingdom_Mid" data="trade">United Kingdom</option>
                                                     <option class="optionGroup" value="Trade_China_Mid" data="trade">China</option>
                                                     <option class="optionGroup" value="Trade_Germany_Mid" data="trade">Germany</option>
+                                                    <option class="optionGroup" value="Trade_United_Kingdom_Mid" data="trade">United Kingdom</option>
+                                                    <option class="optionGroup" value="Trade_United_States_Mid" data="trade">United States</option>
                                                 </optgroup>
-                                                <optgroup label="Tree of Life" id="treeoflife">
-                                                    <option class="optionGroup" value="TreeOfLife_Mid" data="treeoflife">Open Tree of Life</option>
+                                                <optgroup label="Tree Taxonomy" id="treeoflife">
+                                                    <option class="optionGroup" value="TreeOfLife_Mid_Archaea" data="treeoflife">Archaea</option>
+                                                    <option class="optionGroup" value="TreeOfLife_Mid_Bacteria" data="treeoflife">Bacteria</option>
+                                                    <option class="optionGroup" value="TreeOfLife_Mid_Eukarota" data="treeoflife">Eukarota</option>
                                                 </optgroup>
                                             </select>
                                         </div>
@@ -348,7 +350,7 @@
                                                 <div class="form-row">
                                                     <div class="col-8">
                                                         <span id="accumulatedSpan" data-toggle="tooltip" title="Display Value by Accumulated Leaves or Size">
-                                                            Size by <span class="data-info-types-span leaves"></span>/<span class="data-info-types-span size"></span>
+                                                            Size by #&nbsp;<span class="data-info-types-span leaves"></span>/<span class="data-info-types-span size"></span>
                                                         </span>
                                                     </div>
                                                     <div class="col-4">

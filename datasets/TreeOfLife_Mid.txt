@@ -3353,7 +3353,7 @@
           "size": 4
         }
       ],
-      "name": "Archaea (domain silva:D37982/#1)",
+      "name": "Archaea",
       "size": 2082
     }
   ],

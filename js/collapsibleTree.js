@@ -134,12 +134,7 @@ function draw_collapsible_tree(position){
                 .attr("dy", ".35em")
                 .attr("text-anchor", "start")
                 //.attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
-                .text(function(d) { 
-                    if (treeLib.isLeaf(d))
-                        return d.data.name.split(' ')[0] + '...';
-                    else
-                        return d.data.name; 
-                })
+                .text(d => treeLib.getNodeDisplayName(d.data.name))
                 .style("fill-opacity", 1e-6);
                 
             // Transition nodes to their new position.
@@ -175,9 +170,9 @@ function draw_collapsible_tree(position){
                 .style("fill-opacity", 1)
                 .attr("transform", function(d) { 
                     if (treeLib.isLeaf(d))
-                        var amt = (d.data.name.split(' ')[0] + '...').length + 10;
+                        var amt = treeLib.getNodeDisplayName(d.data.name).length + 10;
                     else
-                        var amt = d.data.name.length;
+                        var amt = treeLib.getNodeDisplayName(d.data.name).length;
                     return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (amt + 50)  + ")"; 
                 });
             

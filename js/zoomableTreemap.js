@@ -188,7 +188,7 @@ function draw_zoomable_treemap(position) {
                 .text(function (d) {
                     var n = d.name;
 
-                    return n + "\n" + menu.dataInfoSizeText() + formatNumber(d.value);
+                    return n + "\n" + menu.dataInfoSizeText(d.value);
                 });
 
             g.append("text")

@@ -46,7 +46,7 @@ function draw_sunburst(position){
 
         svg.selectAll("path")
             .data(partition(root).descendants())
-        .enter().append("path")
+            .enter().append("path")
             .attr("d", function(d){
                 // if collapsible tree comparison or zoomable tree map!!!
                 // only show the root and first level to match these
@@ -89,7 +89,7 @@ function draw_sunburst(position){
             .text(d => {
                 var dataName = d.data.name;
 
-                return dataName + "\n" + menu.dataInfoSizeText() + formatNumber(d.accSize)
+                return dataName + "\n" + menu.dataInfoSizeText(d.accSize)
             });
 
             d3.select("svg#"+position1).dispatch('doneDrawing');

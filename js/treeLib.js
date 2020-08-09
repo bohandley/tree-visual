@@ -1194,14 +1194,6 @@ var treeLib = (function (d3) {
         return cls;
     }
 
-    function shortenLeafName(node, name) {
-    	if (isLeaf(node)) {
-    		name = name.split(' ')[0] + '...';
-    	}
-
-    	return name;
-    }
-
     function showLevels(d, levels) {
     	if (levels == 2)
     		return d.parent && d.parent.parent;
@@ -1435,7 +1427,7 @@ var treeLib = (function (d3) {
 	        
 	    d3.select("#"+position2Id)
 	    	.append("title")
-	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.accSize); })
+	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText(d.accSize); })
 	}
 
 	function packResponseMOut(position2Id){
@@ -1489,7 +1481,7 @@ var treeLib = (function (d3) {
 	    d3.select("#" + position2Id)
 	    	.select("circle")
 	    	.append("title")
-	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.accSize); })
+	    	.text(function(d) { return d.data.name + "\n" + menu.dataInfoSizeText(d.accSize); })
 	}
 
 	function radialTreeResponseMOut(position2Id){
@@ -1525,7 +1517,7 @@ var treeLib = (function (d3) {
 	    	.append("title")
             .text(function(d) {
             	// NEED TO COMPUTE SIZE FOR EACH NODE
-                return d.data.name + "\n" + menu.dataInfoSizeText() +  formatNumber(d.accSize);
+                return d.data.name + "\n" + menu.dataInfoSizeText(d.accSize);
             });
 	}
 
@@ -1600,8 +1592,7 @@ var treeLib = (function (d3) {
 	}
 
 	function displayedNode(node) {
-		d3.select("#selected-node").html("")
-		d3.select("#selected-node").html("Displayed node: " + node);
+		d3.select("#selected-node").html(node);
 	}
 
 	function getOtherGraphType(position2){
@@ -1609,6 +1600,14 @@ var treeLib = (function (d3) {
 		// var otherGraphType = otherGraphSelectTag.options[otherGraphSelectTag.selectedIndex].text;
 		var otherGraphType = otherGraphSelectTag.value;
 		return otherGraphType;
+	}
+
+	function getNodeDisplayName(name) {
+		// TODO: adaptive name?
+		if (name.length > 10)
+			return name.split(' ')[0] + '...';
+		else
+			return name
 	}
 
 	return {
@@ -1792,25 +1791,25 @@ var treeLib = (function (d3) {
 		getColor: function(d, color){
 			if(d.data){
 				if(d.parent && !d.parent.parent){ 
-			        return color(parseInt(d.data.name));
+			        return color(hashString(d.data.name));
 			    }
 			    else if(d.parent){
 			        while(d.parent.parent != null){
 			            d = d.parent;
 			        }
-			        return color(parseInt(d.data.name));
+			        return color(hashString(d.data.name));
 			    }
 			    return color(d.data.name);
 		   } else {
 
 				if(d.parent && !d.parent.parent){ 
-			        return color(parseInt(d.name));
+			        return color(hashString(d.name));
 			    }
 			    else if(d.parent){
 			        while(d.parent.parent != null){
 			            d = d.parent;
 			        }
-			        return color(parseInt(d.name));
+			        return color(hashString(d.name));
 			    }
 			    return color(d.name);
 			}
@@ -1843,7 +1842,9 @@ var treeLib = (function (d3) {
 
 		preserveAccSize: function(root) {
 			return root.each(el => el.accSize = el.value);
-		}
+		},
+
+		getNodeDisplayName: getNodeDisplayName
 
 	}
 
