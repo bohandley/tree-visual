@@ -150,7 +150,7 @@ var treeLib = (function (d3) {
         }
     }
 
-    // remove characters that don't work with classes
+    // remove characters from a specific node name that don't work with classes
     // or are ambiguous with the '-' used to join each node
     function cleanNodeStr(node) {
         return node
@@ -165,7 +165,8 @@ var treeLib = (function (d3) {
             .replace(/-/g, "_")
             .replace(/,/g, "_")
             .replace("(", "_")
-            .replace(")", "_");
+            .replace(")", "_")
+            .replace("#", "_");
     }
 
     function isLeaf(node) {
