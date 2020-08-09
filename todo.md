@@ -4,14 +4,16 @@
 
 #### Header
 
-- [ ] Change Info position from left to right
-- [ ] Change title bar height to match GraphVisual
+- [x] Change Info position from left to right
+- [x] Change title bar height to match GraphVisual
+- [x] Move path string to the bottom
 
 
 
-#### Tree Graph
+#### Tree Visual Section
 
 - [x] Sort layout option alphabetically
+- [ ] Change node tooltip style to match GraphVisual
 
 
 
@@ -19,13 +21,24 @@
 
 - [x] Data source grouping by data type
 - [x] Change description font style to match GraphVisual
-  - [ ] Sync description text with current data source
+  - [x] Sync description text with current data source
 - [x] Change switch style from checkbox to round switch
-- [ ] Slider tooltip (title & slider button)
+- [x] Slider tooltip (title & slider button)
+- [ ] Disabled slider's style is not correct
+- [ ] Node size slider is not synced at startup
+- [ ] Filtering panel slider
 
 
 
 #### Miscellaneous
 
-- [ ] Page flickering on some browser when point to tree nodes, According collapsing or expansion 
+- [x] Page flickering on some browser when point to tree nodes, According collapsing or expansion 
 
+
+
+
+
+### Tree Visual
+
+- [x] Fix (size => value) function in zoomable treemap
+- [ ] Fix zoomable tree map click event

@@ -1,4 +1,4 @@
-function draw_zoomable_treemap(position){
+function draw_zoomable_treemap(position) {
     var position2 = position == "#g1" ? "g2" : "g1";
     var position1 = position == "#g1" ? "g1" : "g2";
 
@@ -8,71 +8,69 @@ function draw_zoomable_treemap(position){
     var width = 500;
     var height = 500;
 
-    var margin = {top: 20, right: 0, bottom: 0, left: 0},
+    var margin = { top: 20, right: 0, bottom: 0, left: 0 },
         formatNumber = d3v3.format(",d"),
         transitioning;
-    
+
     height = 500 - margin.top - margin.bottom;
 
-    var x = d3v3.scale.linear()
-        .domain([0, width])
-        .range([0, width]);
+    var x = d3v3.scale.linear().domain([0, width]).range([0, width]);
 
-    var y = d3v3.scale.linear()
-        .domain([0, height])
-        .range([0, height]);
+    var y = d3v3.scale.linear().domain([0, height]).range([0, height]);
 
-    var treemap = d3v3.layout.treemap()
-        .children(function(d, depth) { return depth ? null : d._children; })
-        .sort(function(a, b) { return b.value - a.value; })
-        .ratio(height / width * 0.5 * (1 + Math.sqrt(5)))
+    var treemap = d3v3.layout
+        .treemap()
+        .children(function (d, depth) {
+            return depth ? null : d._children;
+        })
+        .sort(function (a, b) {
+            return b.value - a.value;
+        })
+        .ratio((height / width) * 0.5 * (1 + Math.sqrt(5)))
         .round(false);
 
-    var svg1 = svg.append("g")
+    var svg1 = svg
+        .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
         .style("shape-rendering", "crispEdges");
 
-    var grandparent = svg1.append("g")
-        .attr("class", "grandparent");
+    var grandparent = svg1.append("g").attr("class", "grandparent");
 
-    grandparent.append("rect")
-        .attr("y", -margin.top)
-        .attr("width", width)
-        .attr("height", margin.top)
+    grandparent.append("rect").attr("y", -margin.top).attr("width", width).attr("height", margin.top);
 
-    grandparent.append("text")
+    grandparent
+        .append("text")
         .attr("x", 6)
         .attr("y", 6 - margin.top)
         .attr("dy", ".75em");
 
-    d3v3.json(FileName, function(data) {
+    d3v3.json(FileName, function (data) {
         // FILTER JSON
 
-        data.children = data.children.filter(function(el, i){ if(i<10){ return el }})
-
-        // refactor to handle all levels of json
-        for(var i =0; i<data.children.length; i++){
-            for(var j=0; j<data.children[i].children.length; j++){
-                for(var k=0; k<data.children[i].children[j].children.length; k++){
-                    for(var m=0; m<data.children[i].children[j].children[k].children.length; m++){
-                        data.children[i].children[j].children[k].children[m].value = data.children[i].children[j].children[k].children[m].size;
-                    }
-                }
+        data.children = data.children.filter(function (el, i) {
+            if (i < 10) {
+                return el;
             }
+        });
+
+        // assign value of leaf node from size (if there is no size, value is set to 1)
+        function sizeToValue(node) {
+            if (node.children) node.children.forEach(sizeToValue);
+            else node.value = node.size ? node.size : 1;
         }
-        
+
         var root = data;
 
+        sizeToValue(root);
         initialize(root);
         accumulate(root);
         leafAcc(root);
-        sizeAcc(root)
+        sizeAcc(root);
         layout(root);
-        root = menu.processAccumulated(root, 'zoomableTreemap');
+        root = menu.processAccumulated(root, "zoomableTreemap");
         display(root);
 
         // process the value as either leaves or acc size depending on control panel
-        
 
         function initialize(root) {
             root.x = root.y = 0;
@@ -87,21 +85,27 @@ function draw_zoomable_treemap(position){
         // the children being overwritten when when layout is computed.
         function accumulate(d) {
             return (d._children = d.children)
-                ? d.value = d.children.reduce(function(p, v) { return p + accumulate(v); }, 0)
+                ? (d.value = d.children.reduce(function (p, v) {
+                      return p + accumulate(v);
+                  }, 0))
                 : d.size;
         }
 
         // preserve the accumulated size
         function sizeAcc(d) {
             return (d._children = d.children)
-                ? d.accSize = d.children.reduce(function(p, v) { return p + sizeAcc(v); }, 0)
+                ? (d.accSize = d.children.reduce(function (p, v) {
+                      return p + sizeAcc(v);
+                  }, 0))
                 : d.size;
         }
 
         // aggregate the number of leaves within each node
         function leafAcc(d) {
             return (d._children = d.children)
-                ? d.lvs = d.children.reduce(function(p, v) { return p.concat(leafAcc(v)); }, []) 
+                ? (d.lvs = d.children.reduce(function (p, v) {
+                      return p.concat(leafAcc(v));
+                  }, []))
                 : [d];
         }
 
@@ -114,101 +118,99 @@ function draw_zoomable_treemap(position){
         // coordinates. This lets us use a viewport to zoom.
         function layout(d) {
             if (d._children) {
-            treemap.nodes({_children: d._children});
-            d._children.forEach(function(c) {
-                c.x = d.x + c.x * d.dx;
-                c.y = d.y + c.y * d.dy;
-                c.dx *= d.dx;
-                c.dy *= d.dy;
-                c.parent = d;
-                layout(c);
-            });
+                treemap.nodes({ _children: d._children });
+                d._children.forEach(function (c) {
+                    c.x = d.x + c.x * d.dx;
+                    c.y = d.y + c.y * d.dy;
+                    c.dx *= d.dx;
+                    c.dy *= d.dy;
+                    c.parent = d;
+                    layout(c);
+                });
             }
         }
 
         // if I click something that is zoomable in circle,
         // but that thing is hidden in zoomable tree,
         // then I have to simulate a click on each level of zoomable tree
-        // to get deeper into 
+        // to get deeper into
         function display(d) {
             grandparent
                 .datum(d.parent)
-                .attr("id", d => {
+                .attr("id", (d) => {
                     return treeLib.pathId(d, position1);
                 })
-                .attr("data", d => {
+                .attr("data", (d) => {
                     return treeLib.getCurrentClicked(position1);
                 })
                 .classed(position1, true)
-                .on("mouseover", d => treeLib.mouseoverLinking(position1, position2, d, 1))
-                .on("mouseout", d => treeLib.mouseoutLinking(position1, position2, d, 1))
+                .on("mouseover", (d) => treeLib.mouseoverLinking(position1, position2, d, 1))
+                .on("mouseout", (d) => treeLib.mouseoutLinking(position1, position2, d, 1))
                 .on("linkedClick", linkedClickTransition)
                 .on("click", transition)
-                .on("drill", d => drillTransition(d))
+                .on("drill", (d) => drillTransition(d))
                 .select("text")
-                    .text(parentName(d));
+                .text(parentName(d));
 
-            var g1 = svg1.insert("g", ".grandparent")
-                .datum(d)
-                .attr("class", "depth");
+            var g1 = svg1.insert("g", ".grandparent").datum(d).attr("class", "depth");
 
-            var g = g1.selectAll("g")
-                .data(d._children)
-                .enter()
-                    .append("g");
-            
-            g.attr("id", d => {
+            var g = g1.selectAll("g").data(d._children).enter().append("g");
+
+            g.attr("id", (d) => {
                 return treeLib.pathId(d, position1);
-            })
-            .attr("class", d => {
-                return treeLib.isLeaf(d) ? 'leaf' : '';
+            }).attr("class", (d) => {
+                return treeLib.isLeaf(d) ? "leaf" : "";
             });
 
             // only add the class and event listeners to nodes with children
-            g.filter(function(d) { return d._children; })
+            g.filter(function (d) {
+                return d._children;
+            })
                 .classed("children zoomable " + position1, true)
-                .on("linkedClick", d => linkedClickTransition(d))
-                .on("click", d => transition(d));
+                .on("linkedClick", (d) => linkedClickTransition(d))
+                .on("click", (d) => transition(d));
 
             g.selectAll(".child")
-                .data(function(d) { return d._children || [d]; })
-            .enter().append("rect")
+                .data(function (d) {
+                    return d._children || [d];
+                })
+                .enter()
+                .append("rect")
                 .attr("class", "child")
                 .call(rect);
 
             g.append("rect")
                 .attr("class", "parent")
-                .on("mouseover", d => treeLib.mouseoverLinking(position1, position2, d))
-                .on("mouseout", d => treeLib.mouseoutLinking(position1, position2, d))
+                .on("mouseover", (d) => treeLib.mouseoverLinking(position1, position2, d))
+                .on("mouseout", (d) => treeLib.mouseoutLinking(position1, position2, d))
                 .call(rect)
-            .append("title")
-                .text(function(d) { 
+                .append("title")
+                .text(function (d) {
                     var n = d.name;
-                        
-                    return n + "\n" + menu.dataInfoSizeText() +formatNumber(d.value); 
+
+                    return n + "\n" + menu.dataInfoSizeText() + formatNumber(d.value);
                 });
 
             g.append("text")
                 .attr("dy", ".75em")
-                .text(function(d) { 
+                .text(function (d) {
                     var n = d.name;
 
-                    if (treeLib.isLeaf(d))
-                        n = n.split(' ')[0] + '...';
-                        
+                    if (treeLib.isLeaf(d)) n = n.split(" ")[0] + "...";
+
                     return n;
                 })
                 .call(text);
 
             function transition(d) {
                 treeLib.linkedClick(d, position2);
-                
+
                 if (transitioning || !d) return;
 
                 transitioning = true;
-                
+
                 treeLib.transitioning(true);
-                
+
                 treeLib.displaySelectedNode(d);
 
                 var g2 = display(d),
@@ -223,7 +225,9 @@ function draw_zoomable_treemap(position){
                 svg.style("shape-rendering", null);
 
                 // Draw child nodes on top of parent nodes.
-                svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
+                svg.selectAll(".depth").sort(function (a, b) {
+                    return a.depth - b.depth;
+                });
 
                 // Fade-in entering text.
                 g2.selectAll("text").style("fill-opacity", 0);
@@ -235,17 +239,16 @@ function draw_zoomable_treemap(position){
                 t2.selectAll("rect").call(rect);
 
                 // Remove the old node when the transition is finished.
-                t1.remove().each("end", function() {
+                t1.remove().each("end", function () {
                     svg.style("shape-rendering", "crispEdges");
                     transitioning = false;
                     treeLib.transitioning(false);
                 });
             }
 
-            function drillTransition(d) {                    
-            
+            function drillTransition(d) {
                 if (transitioning || !d) return;
-                
+
                 transitioning = true;
 
                 var g2 = display(d),
@@ -260,7 +263,9 @@ function draw_zoomable_treemap(position){
                 svg.style("shape-rendering", null);
 
                 // Draw child nodes on top of parent nodes.
-                svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
+                svg.selectAll(".depth").sort(function (a, b) {
+                    return a.depth - b.depth;
+                });
 
                 // Fade-in entering text.
                 g2.selectAll("text").style("fill-opacity", 0);
@@ -272,14 +277,13 @@ function draw_zoomable_treemap(position){
                 t2.selectAll("rect").call(rect);
 
                 // Remove the old node when the transition is finished.
-                t1.remove().each("end", function() {
+                t1.remove().each("end", function () {
                     svg.style("shape-rendering", "crispEdges");
                     transitioning = false;
                 });
             }
 
-            function linkedClickTransition(d) {                    
-                
+            function linkedClickTransition(d) {
                 if (transitioning || !d) return;
                 transitioning = true;
 
@@ -298,7 +302,9 @@ function draw_zoomable_treemap(position){
                 svg.style("shape-rendering", null);
 
                 // Draw child nodes on top of parent nodes.
-                svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
+                svg.selectAll(".depth").sort(function (a, b) {
+                    return a.depth - b.depth;
+                });
 
                 // Fade-in entering text.
                 g2.selectAll("text").style("fill-opacity", 0);
@@ -310,7 +316,7 @@ function draw_zoomable_treemap(position){
                 t2.selectAll("rect").call(rect);
 
                 // Remove the old node when the transition is finished.
-                t1.remove().each("end", function() {
+                t1.remove().each("end", function () {
                     svg.style("shape-rendering", "crispEdges");
                     transitioning = false;
                     treeLib.transitioning(false);
@@ -320,36 +326,45 @@ function draw_zoomable_treemap(position){
         }
 
         function text(text) {
-            text.attr("x", function(d) { return x(d.x) + 6; })
-                .attr("y", function(d) { return y(d.y) + 6; });
+            text.attr("x", function (d) {
+                return x(d.x) + 6;
+            }).attr("y", function (d) {
+                return y(d.y) + 6;
+            });
         }
 
         function rect(rect) {
-            rect.attr("x", function(d) { return x(d.x); })
-                .attr("y", function(d) { return y(d.y); })
-                .attr("width", function(d) { return x(d.x + d.dx) - x(d.x); })
-                .attr("height", function(d) { return y(d.y + d.dy) - y(d.y); })
-                .attr("fill", function(d){
-                    return treeLib.getColor(d, color); 
+            rect.attr("x", function (d) {
+                return x(d.x);
+            })
+                .attr("y", function (d) {
+                    return y(d.y);
+                })
+                .attr("width", function (d) {
+                    return x(d.x + d.dx) - x(d.x);
+                })
+                .attr("height", function (d) {
+                    return y(d.y + d.dy) - y(d.y);
+                })
+                .attr("fill", function (d) {
+                    return treeLib.getColor(d, color);
                 })
                 .style("stroke", "white")
                 .style("stroke-width", 1);
         }
 
         function name(d) {
-            return d.parent
-                ? name(d.parent) + "." + d.name
-                : d.name;
+            return d.parent ? name(d.parent) + "." + d.name : d.name;
         }
 
         function parentName(d) {
             var n = name(d);
 
-            var nameArr = name(d).split('.');
+            var nameArr = name(d).split(".");
 
-            return n
+            return n;
         }
 
-        d3.select("svg#"+position1).dispatch('doneDrawing');
+        d3.select("svg#" + position1).dispatch("doneDrawing");
     });
 }
