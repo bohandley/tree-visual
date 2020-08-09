@@ -23,14 +23,38 @@ var menu = (function (d3, $) {
             trade: "Volume of Import/Export ($1M): ",
             treeoflife: "Number of Tips: ",
         },
-        dataInfoTypes: {
-            author: { size: "Citations", leaves: "Papers" },
-            government: { size: "Employees", leaves: "Branches" },
-            import: { size: "Millions", leaves: "Countries" },
-            export: { size: "Millions", leaves: "Countries" },
-            trade: { size: "MIllions", leaves: "Countries" },
-            treeoflife: { size: "???", leaves: "Species" },
-        },
+	    dataInfoTypes: {
+	    	author: {size: 'Citations', leaves: 'Papers'},
+	    	government: {size: 'Employees', leaves: 'Branches'},
+	    	trade: {size: 'MIllions', leaves: 'Countries'},
+	    	treeoflife: {size: 'Tips', leaves: 'Branches'}
+		},
+        dataDescription: {
+			author: {
+				name: 'Publications',
+				desc: (dsName, root) => `The visualization is showing ${dsName}\'s publications from ${root.children[0].name} to ${root.children[root.children.length-1].name}.`,
+				hierarchy: '-------Publish Year <br/>| <br/>-----Publish Type <br/>| <br/>---Publisher CCF Rank <br/>| <br/>-Individual Paper',
+				source: 'Microsoft Academic Graph & Google_scholar'
+			},
+	    	government: {
+				name: 'Government Structure',
+				desc: (dsName, root) => `The visualization is showing the government structure of ${dsName}.`,
+				hierarchy: '-------First Level <br/>| <br/>-----Second Level <br/>| <br/>---Third Level <br/>| <br/>-Fourth Level',
+				source: 'Government Official Websites'
+			},
+	    	trade: {
+				name: 'Trade',
+				desc: (dsName, root) => `The visualization is showing ${dsName}\'s trade data.`,
+				hierarchy: '-----In/Export <br/>| <br/>---Product <br/>| <br/>-Partner Country',
+				source: 'World Integrated Trade Solution - World Bank'
+			},
+	    	treeoflife: {
+				name: 'Tree of Life',
+				desc: (dsName, root) => `The visualization is showing ${dsName}\'s publications from 1987 to 2017.`,
+				hierarchy: '-------Cellular <br/>| <br/>-----Level 1 <br/>| <br/>---Level 2 <br/>| <br/>-Level ...',
+				source: 'Open Tree of Life'
+			},
+		}
     };
 
     var config = copy(dummyConfig);
@@ -88,67 +112,71 @@ var menu = (function (d3, $) {
         var size = ndSize * amount;
 
         return size;
-    }
+	}
 
-    function updateProportionalSize(that, view) {
-        // change the config for each view if one is checked
-        var bool = $(that).prop("checked") == true;
+	function updateProportionalSize(that, view) {
+		// change the config for each view if one is checked
+		var bool = $(that).prop("checked") == true;
 
-        if (bool == true) config.proportionalSize[view] = true;
-        else if (bool == false) config.proportionalSize[view] = false;
-    }
+		if (bool == true)
+            config.proportionalSize[view] = true;
+        else if (bool == false)
+            config.proportionalSize[view] = false;
+	}
 
-    function setupCheckBoxes(dataset = null) {
-        let nodesizeScale = 4;
-        let slider = $("#nodesizeScalar");
-        let min_ = 2;
-        let max_ = 6;
-        slider.prop("min", min_);
-        slider.prop("max", max_);
-        slider.prop("step", 0.1);
-        $("#nodesizeScaleMin").text(min_);
-        $("#nodesizeScaleMax").text(max_);
-        slider.prop("value", nodesizeScale);
+	function setupCheckBoxes(dataset=null) {
+	    let nodesizeScale = 4;
+	    let slider = $("#nodesizeScalar");
+	    let min_ = 2;
+	    let max_ = 6;
+	    slider.prop('min', min_);
+	    slider.prop('max', max_);
+	    slider.prop('step', 0.1);
+	    $("#nodesizeScaleMin").text(min_);
+	    $("#nodesizeScaleMax").text(max_);
+	    slider.prop("value", nodesizeScale);
 
-        $("#checkBoxNodeSize1").on("click", function () {
-            updateProportionalSize(this, "1");
-            updateNodeSize("1");
-        });
+	    $("#checkBoxNodeSize1").on("click", function() {
+	    	updateProportionalSize(this, '1');
+	    	updateNodeSize('1');
+	    });
 
-        $("#checkBoxNodeSize2").on("click", function () {
-            updateProportionalSize(this, "2");
-            updateNodeSize("2");
-        });
+	    $("#checkBoxNodeSize2").on("click", function() {
+	    	updateProportionalSize(this, '2');
+	    	updateNodeSize('2');
+	    });
 
-        $("#nodesizeScalar").on("input", function () {
-            updateNodeSize();
-        });
-    }
+	    $("#nodesizeScalar").on('input', function(){
+	    	updateNodeSize()
+	    });
+	}
 
-    function copy(o) {
-        var _out, v, _key;
-        _out = Array.isArray(o) ? [] : {};
-        for (_key in o) {
-            v = o[_key];
-            _out[_key] = typeof v === "object" && v !== null ? copy(v) : v;
-        }
-        return _out;
-    }
+	function copy(o) {
+		var _out, v, _key;
+		_out = Array.isArray(o) ? [] : {};
+		for (_key in o) {
+			v = o[_key];
+			_out[_key] = (typeof v === 'object' && v !== null) ? copy(v) : v;
+		}
+		return _out;
+	}
 
-    function changeNum(filename) {
-        d3.json(filename, function (error, root) {
-            if (error) throw error;
+	function changeNum(FileName, datasetName){
+        d3.json(FileName, function(error, root) {
+			if (error) throw error;
+			
+			var dataType = config.dataType;
 
-            document.getElementById("start_year").innerHTML = root.children[0].name;
-            document.getElementById("end_year").innerHTML = root.children[root.children.length - 1].name;
+			document.getElementById("treeName").innerHTML = config.dataDescription[dataType].name;
+			document.getElementById("treeDescription").innerHTML = config.dataDescription[dataType].desc(datasetName, root);
+			document.getElementById("treeHierarchy").innerHTML = config.dataDescription[dataType].hierarchy;
+			document.getElementById("treeSource").innerHTML = config.dataDescription[dataType].source;
 
             root = d3.hierarchy(root);
 
             dataSourceLeaves = document.getElementById("data-info-leaves");
             dataSourceSize = document.getElementById("data-info-size");
-
-            var dataType = config.dataType;
-
+			
             var chldTxt = config.dataInfoLeavesText[dataType];
             var szTxt = config.dataInfoSizeText[dataType];
 
@@ -157,11 +185,9 @@ var menu = (function (d3, $) {
             });
             dataSourceLeaves.innerHTML = chldTxt + root.value;
 
-            root.sum(function (d) {
-                return d.size;
-            });
-            dataSourceSize.innerHTML = szTxt + root.value;
-        });
+            root.sum(function(d) { return d.size; });
+            dataSourceSize.innerHTML = szTxt  + root.value;
+        })
     }
 
     function changeDataset(onload = 0) {
@@ -181,7 +207,7 @@ var menu = (function (d3, $) {
 
         config.filename = filename;
 
-        document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
+        // document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
 
         changeNum(filename);
     }

@@ -55,25 +55,24 @@ function draw_zoomable_treemap(position) {
             }
         });
 
-        // refactor to handle all levels of json
-        for (var i = 0; i < data.children.length; i++) {
-            for (var j = 0; j < data.children[i].children.length; j++) {
-                for (var k = 0; k < data.children[i].children[j].children.length; k++) {
-                    for (var m = 0; m < data.children[i].children[j].children[k].children.length; m++) {
-                        data.children[i].children[j].children[k].children[m].value = data.children[i].children[j].children[k].children[m].size;
-                    }
-                }
-            }
+        // assign value of leaf node from size (if there is no size, value is set to 1)
+        function sizeToValue(node) {
+            if (node.children) node.children.forEach(sizeToValue);
+            else node.value = node.size ? node.size : 1;
         }
 
         var root = data;
 
+        sizeToValue(root);
         initialize(root);
         accumulate(root);
         leafAcc(root);
         sizeAcc(root);
+
+        // change value attribute for each node based on control panel area seletion
         root = menu.processAccumulated(root, "zoomableTreemap");
         layout(root);
+
         display(root);
 
         // process the value as either leaves or acc size depending on control panel

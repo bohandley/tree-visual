@@ -354,7 +354,6 @@ b
 /* help */
 #rememberLayoutSpan1, #rememberLayoutSpan2,
 #colorBlindSpan, #nodeSizeSpan, #edgeThicknessSpan, #edgeBundlingSpan,
-#edgeLengthLeftDiv span[data-toggle="tooltip"], #edgeLengthRightDiv span[data-toggle="tooltip"],
 #opacity span
 {
     cursor: help;
@@ -364,10 +363,6 @@ b
 input, select, .panel-heading
 {
     cursor: pointer;
-}
-
-#DataDescription{
-    font-size: 12px;
 }
 
 .node {
@@ -396,4 +391,9 @@ input, select, .panel-heading
 
 .hide-tag {
     display: none;
+}
+
+.container-fluid {
+    width: 100vw;
+    overflow: hidden;
 }
