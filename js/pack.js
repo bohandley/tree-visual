@@ -24,11 +24,7 @@ function draw_pack(position) {
         if (error) throw error;
 
         // FILTER JSON
-        data.children = data.children.filter(function (el, i) {
-            if (i < 10) {
-                return el;
-            }
-        });
+        data = menu.filterJson(data);
 
         var root = d3
             .hierarchy(data)

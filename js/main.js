@@ -43,6 +43,7 @@ $(document).ready(function () {
 
     setupSliderValueTooltip();
     setupToolTips();
+    setupFilterEvent();
 });
 
 function Remove_nodechildren(id) {
@@ -165,7 +166,7 @@ function updateDataset() {
     // 3. build a multiselect for each level from the nodes
     // 4. filter dataset on load of json
 
-    menu.dataFilterSubset();
+    menu.dataFilterSubset()
 
     var locked1 = menu.isLocked("1");
     var locked2 = menu.isLocked("2");
@@ -173,6 +174,19 @@ function updateDataset() {
     loadVisualization("1", locked1);
 
     loadVisualization("2", locked2);
+}
+
+function setupFilterEvent() {
+    $(document).on('spc', function(e){
+      $("#filter-levels").on("click", function() {
+            var locked1 = menu.isLocked("1");
+            var locked2 = menu.isLocked("2");
+
+            loadVisualization("1", locked1);
+
+            loadVisualization("2", locked2);
+        });
+    });
 }
 
 function setupSliderValueTooltip() {

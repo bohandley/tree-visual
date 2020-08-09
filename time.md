@@ -383,6 +383,15 @@
     Debug Zoomable Treemap for accumulated leaves
   9:00pm-10:00pm
     Meet with Haobin
+
+8/9/2020
+  11:00am-6:30pm
+    Fully implement the filtering
+      create multiselects from select picker
+      add config.levelFilters to be updated everytime another node is selected
+      only redraw when button is clicked
+      add listener in main.js to redraw with filters
+      recursive function to filter levels based on stored data in config.levelFilters
     
 NEXT(as of 7/14/2020)
   - New Features Needed

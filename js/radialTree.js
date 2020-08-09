@@ -22,11 +22,7 @@ function draw_radial_tree(position) {
     d3.json(filename, function (error, data) {
         if (error) throw error;
 
-        data.children = data.children.filter(function (el, i) {
-            if (i < 10) {
-                return el;
-            }
-        });
+        data = menu.filterJson(data);
 
         var tree = d3.cluster().size([2 * Math.PI, radius - 100]);
 

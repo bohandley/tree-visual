@@ -48,12 +48,7 @@ function draw_zoomable_treemap(position) {
 
     d3v3.json(filename, function (data) {
         // FILTER JSON
-
-        data.children = data.children.filter(function (el, i) {
-            if (i < 10) {
-                return el;
-            }
-        });
+        data = menu.filterJson(data);
 
         // assign value of leaf node from size (if there is no size, value is set to 1)
         function sizeToValue(node) {

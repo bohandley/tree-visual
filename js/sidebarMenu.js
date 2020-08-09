@@ -1,10 +1,11 @@
 var menu = (function (d3, $) {
     const LOCK_OPEN = '<i class="fas fa-lock-open"></i>';
     const LOCK_CLOSED = '<i class="fas fa-lock"></i>';
+	
 
     var dummyConfig = {
         filename: "",
-        filters: {},
+        levelFilters: {},
         scaleLog: function () {},
         isLocked: { 1: false, 2: false },
         accumulated: "leaves",
@@ -278,8 +279,100 @@ var menu = (function (d3, $) {
                     return findLevels(d, levels, name);
                 }
             }
-            // debugger;
+
+            // clear all previous selects
+            $("#filterDiv").empty();
+
+            // set the levelFilters to the original collection, no presets yet
+            config.levelFilters = collection;
+
+            createSelectPickers(collection);
+
+            // select all
+            // https://developer.snapappointments.com/bootstrap-select/methods/
+            $('.selectpicker').selectpicker('selectAll');
+
+            // create the filter button
+            $("#filterDiv").append("<button type='button' class='btn btn-primary filter-levels-button' id='filter-levels'>Apply Filters</button>");
+
+            $(".bs-actionsbox").addClass("actionbox-centering");
+
+            $("#filterDiv").find("button")
+            	.addClass("filter-levels-class");
+
+            // trigger the spc event to add the listener in main.js to #filterDiv
+            // which has access to updateDataset(), which is also in main.js
+            $('body').trigger('spc');
         });
+    }
+
+    function createSelectPickers(collection) {
+    	Object.keys(collection).forEach(function(level) {
+	    	var selectPicker = `<div id="selectpicker-filter-level-` + level +`" class="form-group mt-3 mb-1">
+				<span>Level ` + level + `</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-3">
+								<select id="filter-level-` + level + `" class="selectpicker" multiple data-actions-box="true">
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>`;
+
+			$("#filterDiv").append(selectPicker);
+
+			var select = d3.select("#filter-level-" + level);
+
+		    var filterOptions = select.selectAll("option")
+	            .data(collection[level])
+	            .enter()
+	            .append("option");
+		        
+		    filterOptions
+		        .text(d => d)
+		        .attr("value", d => d)
+		        .attr("title", d => d);
+
+		    $("#filter-level-" + level).selectpicker("refresh");
+
+		    $("#filter-level-" + level).on('change', function() {
+		    	var selections = $(this).val();
+		    	// updat the filter in the config
+		    	config.levelFilters[level] = selections;
+		    	// debugger;
+		    });
+
+		});
+    }
+
+    function filterJson(json) {
+    	var levelFilters = config.levelFilters;
+
+    	var filters = Object.keys(config.levelFilters).reduce(function(acc, el) {
+    		return acc.concat(levelFilters[el]);
+    	}, [])
+    	
+    	filterData(json, filters);
+
+    	return json;
+    }
+
+    function filterData(node, filters) {
+        if (node.children) {
+        	node.children = node.children.filter(el=> {
+        		if (el.children && filters.includes(el.name))
+        			return 1;
+        		else if(!el.children) // don't filter the leaves
+        			return 1;
+        		else
+        			return 0;
+        	});
+
+        	node.children.forEach(function(el) {
+        		filterData(el, filters);
+        	});
+        }
     }
 
     return {
@@ -384,5 +477,10 @@ var menu = (function (d3, $) {
         getFileName: function () {
             return config.filename;
         },
+
+
+        filterJson: function(json) {
+        	return filterJson(json);
+        }
     };
 })(d3, $);
