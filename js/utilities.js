@@ -49,10 +49,10 @@ function chunk(arr, len) {
 }
 
 function hashString(str) {
-	let hash = 0;
-	for (let i = 0; i < str.length; i++) {
-		let char = str.charCodeAt(i);
-		hash = (hash << 6) + (hash << 16) - hash + char;
-	}
-	return hash;
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        let char = str.charCodeAt(i);
+        hash = (hash << 6) + (hash << 16) - hash + char;
+    }
+    return hash;
 }

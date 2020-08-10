@@ -63,12 +63,11 @@ function draw_treemap(position, selectindex) {
         cell.append("clipPath")
             .attr("id", (d) => "clip-" + d.data.id)
             .append("use")
-            .attr("xlink:href", d => "#" + d.data.id );
-        
-        cell.append("title")
-            .text( d => {
-                return d.data.id + "\n" + menu.dataInfoSizeText(d.accSize);
-            });
+            .attr("xlink:href", (d) => "#" + d.data.id);
+
+        cell.append("title").text((d) => {
+            return d.data.id + "\n" + menu.dataInfoSizeText(d.accSize);
+        });
 
         d3.select("svg#" + position1).dispatch("doneDrawing");
     });

@@ -1545,14 +1545,11 @@ var treeLib = (function (d3) {
         return otherGraphType;
     }
 
-    
-	function getNodeDisplayName(name) {
-		// TODO: adaptive name?
-		if (name.length > 10)
-			return name.split(' ')[0] + '...';
-		else
-			return name
-	}
+    function getNodeDisplayName(name) {
+        // TODO: adaptive name?
+        if (name.length > 10) return name.split(" ")[0] + "...";
+        else return name;
+    }
 
     return {
         buildConfig: function (ids) {
@@ -1774,9 +1771,8 @@ var treeLib = (function (d3) {
         preserveAccSize: function (root) {
             return root.each((el) => (el.accSize = el.value));
         },
-        
-		getNodeDisplayName: getNodeDisplayName
 
+        getNodeDisplayName: getNodeDisplayName,
     };
 
     // pull in d3
