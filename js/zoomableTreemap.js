@@ -44,14 +44,11 @@ function draw_zoomable_treemap(position) {
         .attr("y", 6 - margin.top)
         .attr("dy", ".75em");
 
-    d3v3.json(FileName, function (data) {
-        // FILTER JSON
+    var filename = menu.getFileName();
 
-        data.children = data.children.filter(function (el, i) {
-            if (i < 10) {
-                return el;
-            }
-        });
+    d3v3.json(filename, function (data) {
+        // FILTER JSON
+        data = menu.filterJson(data);
 
         // assign value of leaf node from size (if there is no size, value is set to 1)
         function sizeToValue(node) {
@@ -66,8 +63,11 @@ function draw_zoomable_treemap(position) {
         accumulate(root);
         leafAcc(root);
         sizeAcc(root);
-        layout(root);
+
+        // change value attribute for each node based on control panel area seletion
         root = menu.processAccumulated(root, "zoomableTreemap");
+        layout(root);
+
         display(root);
 
         // process the value as either leaves or acc size depending on control panel
@@ -97,7 +97,7 @@ function draw_zoomable_treemap(position) {
                 ? (d.accSize = d.children.reduce(function (p, v) {
                       return p + sizeAcc(v);
                   }, 0))
-                : d.size;
+                : (d.accSize = d.size);
         }
 
         // aggregate the number of leaves within each node

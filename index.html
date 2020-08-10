@@ -18,11 +18,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="lib/popper.min.js"></script>
         <script src="lib/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
         <script src="lib/intro.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="lib/d3-ForceEdgeBundling.js"></script>
         <script src="https://cdn.rawgit.com/upphiminn/d3.ForceBundle/2b406b8567fcad0a6c2922c84cd4bceb0c374bc5/d3-ForceEdgeBundling.js"></script>
 
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
         <link rel="stylesheet" href="css/graph-visual.css" />
         <link rel="stylesheet" href="css/circle.css" />
         <link rel="stylesheet" href="css/switch.css" />
@@ -389,23 +392,7 @@
                                             <hr />
                                         </div>
                                         <div id="filterDiv" class="collapse panel-collapse panel-body">
-                                            <!-- Node Degree -->
-                                            <div class="form-group mt-3 mb-1" id="nodeDegreeDiv">
-                                                <span>Node Degree</span>
-                                                <div class="form-row">
-                                                    <div class="col-1">
-                                                        <p id="nodeDegreeMin"></p>
-                                                    </div>
-                                                    <div class="col">
-                                                        <input id="nodeDegreeFilter" type="range" data-toggle="tooltip" class="form-control-range" />
-                                                        <div class="sliderValue"></div>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <p id="nodeDegreeMax"></p>
-                                                    </div>
-                                                </div>
-                                                <!-- form-row -->
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <!-- end of filter panel -->

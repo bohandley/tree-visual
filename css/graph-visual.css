@@ -392,3 +392,25 @@ input, select, .panel-heading
 .hide-tag {
     display: none;
 }
+
+.container-fluid {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.filter-levels-class {
+    width: 75% !important;
+    left: -17px;
+    top: 5px;
+    bottom: 5px;
+}
+
+.filter-levels-button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.actionbox-centering {
+    left: 16px;
+    position: relative;
+}

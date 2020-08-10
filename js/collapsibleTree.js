@@ -16,16 +16,13 @@ function draw_collapsible_tree(position) {
 
     var formatNumber = d3.format(",d");
 
-    d3.json(FileName, function (error, data) {
+    var filename = menu.getFileName();
+
+    d3.json(filename, function (error, data) {
         if (error) throw error;
 
-        // filter the FileName outside of this builder
         // FILTER JSON
-        data.children = data.children.filter(function (el, i) {
-            if (i < 10) {
-                return el;
-            }
-        });
+        data = menu.filterJson(data);
 
         root = d3
             .hierarchy(data)

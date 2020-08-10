@@ -357,7 +357,6 @@
   9:00pm-10:00pm
     Meet with Haobin
 
-
 7/28
   4:30pm-8:30pm
     work on size and leaves accumulation
@@ -365,6 +364,35 @@
     work on changing leaves or size text in control panel
     NEED TO ADD TILING TO LOCKED CONFIG
     NEED TO USE LOG TO DISPLAY THE SIZE OF THE NODES
+    Fixing color issue
+    Fixing text at bottom
+    Page flickering in window browser
+    Slider tooltip and browser
+    Fixing zoomable treemap issue
+    102
+
+8/1/2020
+  12:30pm-4:30pm
+    begin working on filtering by multiselect
+  9:00pm-10:00pm
+    Meet with Haobin
+
+8/8/2020
+  2:00pm-7:00pm
+    Code review
+    Debug Zoomable Treemap for accumulated leaves
+  9:00pm-10:00pm
+    Meet with Haobin
+
+8/9/2020
+  11:00am-6:30pm
+    Fully implement the filtering
+      create multiselects from select picker
+      add config.levelFilters to be updated everytime another node is selected
+      only redraw when button is clicked
+      add listener in main.js to redraw with filters
+      recursive function to filter levels based on stored data in config.levelFilters
+    
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)
