@@ -51,7 +51,7 @@ var menu = (function (d3, $) {
             },
             treeoflife: {
                 name: "Tree of Life",
-                desc: (dsName, root) => `The visualization is showing ${dsName}\'s publications from 1987 to 2017.`,
+                desc: (dsName, root) => `The visualization is showing ${dsName}\'s tree taxonomy.`,
                 hierarchy: "-------Cellular <br/>| <br/>-----Level 1 <br/>| <br/>---Level 2 <br/>| <br/>-Level ...",
                 source: "Open Tree of Life",
             },
@@ -209,7 +209,7 @@ var menu = (function (d3, $) {
 
         // document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
 
-        changeNum(filename);
+        changeNum(filename, objD.options[objD.selectedIndex].text);
     }
 
     function processAccumulated(root, type = null) {
@@ -384,8 +384,8 @@ var menu = (function (d3, $) {
             setupCheckBoxes((dataset = null));
         },
 
-        changeNum: function (FileName) {
-            changeNum(FileName);
+        changeNum: function (FileName, datasetName) {
+            changeNum(FileName, datasetName);
         },
 
         changeDataset: function (onload) {
