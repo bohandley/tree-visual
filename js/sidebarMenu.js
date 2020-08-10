@@ -1,33 +1,36 @@
 var menu = (function (d3, $) {
-	const LOCK_OPEN = '<i class="fas fa-lock-open"></i>';
-	const LOCK_CLOSED = '<i class="fas fa-lock"></i>';
+    const LOCK_OPEN = '<i class="fas fa-lock-open"></i>';
+    const LOCK_CLOSED = '<i class="fas fa-lock"></i>';
+	
 
-	var dummyConfig = {
-		scaleLog: function() {},
-		isLocked: {1: false, 2: false},
-		accumulated: 'leaves',
-	    nodeSize: 5,
-	    proportionalSize: {1: false, 2: false},
-	    dataType: '',
-		dataInfoLeavesText: {
-	    	author: "Number of Papers: ",
-	    	government: "Number of Branches: ",
-	    	trade: "Number of Import/Export Countries: ",
-	    	treeoflife: "Number of Branches: "
-	    },
-	    dataInfoSizeText: {
-	    	author: "Number of Citations: ",
-	    	government: "Number of Employees: ",
-	    	trade: "Volume of Import/Export ($1M): ",
-	    	treeoflife: "Number of Tips: "
-	    },
+    var dummyConfig = {
+        filename: "",
+        levelFilters: {},
+        scaleLog: function () {},
+        isLocked: { 1: false, 2: false },
+        accumulated: "leaves",
+        nodeSize: 5,
+        proportionalSize: { 1: false, 2: false },
+        dataType: "",
+        dataInfoLeavesText: {
+            author: "Number of Papers: ",
+            government: "Number of Branches: ",
+            trade: "Number of Import/Export Countries: ",
+            treeoflife: "Number of Branches: ",
+        },
+        dataInfoSizeText: {
+            author: "Number of Citations: ",
+            government: "Number of Employees: ",
+            trade: "Volume of Import/Export ($1M): ",
+            treeoflife: "Number of Tips: ",
+        },
 	    dataInfoTypes: {
 	    	author: {size: 'Citations', leaves: 'Papers'},
 	    	government: {size: 'Employees', leaves: 'Branches'},
 	    	trade: {size: 'MIllions', leaves: 'Countries'},
-	    	treeoflife: {size: 'Tips', leaves: 'Species'}
+	    	treeoflife: {size: 'Tips', leaves: 'Branches'}
 		},
-		dataDescription: {
+        dataDescription: {
 			author: {
 				name: 'Publications',
 				desc: (dsName, root) => `The visualization is showing ${dsName}\'s publications from ${root.children[0].name} to ${root.children[root.children.length-1].name}.`,
@@ -53,48 +56,50 @@ var menu = (function (d3, $) {
 				source: 'Open Tree of Life'
 			},
 		}
-	}
+    };
 
-	var config = copy(dummyConfig);
+    var config = copy(dummyConfig);
 
-	function resetMenuCfg(){
-	    config =  copy(dummyConfig);
-	}
+    function resetMenuCfg() {
+        config = copy(dummyConfig);
+    }
 
-	function updateNodeSize(position=null) {
-		config.nodeSize = accessNodeSize();
+    function updateNodeSize(position = null) {
+        config.nodeSize = accessNodeSize();
 
         var ndSize = config.nodeSize;
         if (position) {
-	        d3.select("#g"+position).selectAll("circle.node-size")
-	            .attr("r", function(d) {
-	            	return getNodeSize(d, ndSize, config.proportionalSize[position]);
-	            });
+            d3.select("#g" + position)
+                .selectAll("circle.node-size")
+                .attr("r", function (d) {
+                    return getNodeSize(d, ndSize, config.proportionalSize[position]);
+                });
         } else {
-        	d3.select("#g1").selectAll("circle.node-size")
-	            .attr("r", function(d) {
-	            	return getNodeSize(d, ndSize, config.proportionalSize['1']);
-	            });
+            d3.select("#g1")
+                .selectAll("circle.node-size")
+                .attr("r", function (d) {
+                    return getNodeSize(d, ndSize, config.proportionalSize["1"]);
+                });
 
-	        d3.select("#g2").selectAll("circle.node-size")
-	            .attr("r", function(d) {
-	            	return getNodeSize(d, ndSize, config.proportionalSize['2']);
-	            });
+            d3.select("#g2")
+                .selectAll("circle.node-size")
+                .attr("r", function (d) {
+                    return getNodeSize(d, ndSize, config.proportionalSize["2"]);
+                });
         }
-	}
+    }
 
-	function accessNodeSize() {
-		return (+$("#nodesizeScalar").prop("value"));
-	}
+    function accessNodeSize() {
+        return +$("#nodesizeScalar").prop("value");
+    }
 
-	function getNodeSize(d, ndSize, prpSize=null) {
-		var amount = 1;
+    function getNodeSize(d, ndSize, prpSize = null) {
+        var amount = 1;
 
         if (prpSize == true) {
-        	amount = config.scaleLog(d.value);
+            amount = config.scaleLog(d.value);
 
-        	if (amount == -Infinity)
-        		amount = .001;
+            if (amount == -Infinity) amount = 0.001;
             // if (d.children)
             //     amount = d.children.length;
 
@@ -104,7 +109,7 @@ var menu = (function (d3, $) {
             // if (d.data && d.data.children)
             //     amount = d.data.children.length;
         }
-        
+
         var size = ndSize * amount;
 
         return size;
@@ -176,171 +181,306 @@ var menu = (function (d3, $) {
             var chldTxt = config.dataInfoLeavesText[dataType];
             var szTxt = config.dataInfoSizeText[dataType];
 
-            root.sum(function(d){ return d.children? 0 : 1;});
-            dataSourceLeaves.innerHTML = chldTxt+ root.value;
+            root.sum(function (d) {
+                return d.children ? 0 : 1;
+            });
+            dataSourceLeaves.innerHTML = chldTxt + root.value;
 
             root.sum(function(d) { return d.size; });
             dataSourceSize.innerHTML = szTxt  + root.value;
         })
     }
 
-    function changeDataset(FileName, onload=0){
+    function changeDataset(onload = 0) {
         // resetCfg();
 
         var objD = document.getElementById("dataDropdown");
 
         // change the data-info-children, data-info-sie text
         // dependent on the selected dataset data attribute
-        var dataType = d3.select(objD.selectedOptions[0]).attr("data")
+        var dataType = d3.select(objD.selectedOptions[0]).attr("data");
 
         config.dataType = dataType;
 
         treeLib.displayedNode(objD.value);
 
-        FileName = "datasets/" + objD.value + ".txt";
-        
-        let datasetName = objD.options[objD.selectedIndex].text;
-        
-        changeNum(FileName, datasetName);
+        var filename = "datasets/" + objD.value + ".txt";
 
-        return FileName;
+        config.filename = filename;
+
+        // document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
+
+        changeNum(filename);
     }
 
-    function processAccumulated(root, type=null) {
-    	var acc = config.accumulated;
+    function processAccumulated(root, type = null) {
+        var acc = config.accumulated;
 
-    	if (type != null) {
-    		if (acc == 'leaves') {
-    			leavesAccZT(root);
-    		} else if (acc == 'size') {
+        if (type != null) {
+            if (acc == "leaves") {
+                leavesAccZT(root);
+            } else if (acc == "size") {
+            }
+        } else {
+            if (acc == "leaves") {
+                root.each((el) => {
+                    if (el.children) {
+                        el.value = el.leaves().length;
+                    } else {
+                        el.value = 1;
+                    }
+                });
+            } else if (acc == "size") {
+                // size has already been set by sum
+            }
+        }
 
-    		}
-    	} else {
-    		if (acc == 'leaves') {
-    			root.each(el => {
-    				if (el.children) {
-    					el.value = el.leaves().length;
-    				} else {
-    					el.value = 1;
-    				}
-    			});
-    		} else if (acc == 'size') {
-    			// size has already been set by sum
-    		}
-    	}
-
-    	return root;
-    	// debugger;
-    	// make the value either the accumulated size or the accumulated leaves
-
+        return root;
+        // debugger;
+        // make the value either the accumulated size or the accumulated leaves
     }
 
     function leavesAccZT(d) {
-        return (d._children = d.children)
-            ? d.value = d.children.reduce(function(p, v) { return p + leavesAccZT(v); }, 0)
-            : 1;
+        if (d._children) {
+            d.value = d.lvs.length;
+            d._children.forEach(leavesAccZT);
+        } else {
+            d.value = 1;
+        }
+        // return (d._children = d.children)
+        //     ? d.value = d.children.reduce(function(p, v) { return p + leavesAccZT(v); }, 0)
+        //     : 1;
     }
 
-	return {
+    function dataFilterSubset() {
+        var filename = config.filename;
 
-		getNodeSize: function(d, position, type=null) {
-			var mult = 1;
+        d3.json(filename, function (error, data) {
+            var root = d3.hierarchy(data);
+            var collection = {};
+            // get all the levels
+            root.each(function (d) {
+                var obj = findLevels(d, 0, d.data.name);
+                var levels = obj.levels;
+                var name = obj.name;
 
-			if (type == "Radial_Tree")
-				mult= 5/8;
-			
-			return getNodeSize(d, accessNodeSize(), config.proportionalSize[position]) * mult;
-		},
+                if (levels == 0) return;
 
-		setupCheckBoxes: function(dataset=null) {
-			setupCheckBoxes(dataset=null);
-		},
+                if (collection[levels]) {
+                    if (!collection[levels].includes(name)) collection[levels] = collection[levels].concat([name]);
+                } else collection[levels] = [name];
+            });
 
-		changeNum: function(FileName, datasetName) {
-			changeNum(FileName, datasetName);
-		},
+            function findLevels(d, levels, name) {
+                if (d.parent == null || d.children == null) return { levels: levels, name: name };
+                else {
+                    d = d.parent;
+                    levels += 1;
+                    return findLevels(d, levels, name);
+                }
+            }
 
-		changeDataset: function(FileName, onload) {
-			return changeDataset(FileName, onload);
-		},
+            // clear all previous selects
+            $("#filterDiv").empty();
 
-		dataInfoLeavesText: function() {
-			return config.dataInfoLeavesText[config.dataType];
-		},
+            // set the levelFilters to the original collection, no presets yet
+            config.levelFilters = collection;
 
-		dataInfoSizeText: function() {
-			return config.dataInfoSizeText[config.dataType];
-		},
+            createSelectPickers(collection);
 
-		updateAccumulated: function(acc) {
-			config.accumulated = acc;
-		},
+            // select all
+            // https://developer.snapappointments.com/bootstrap-select/methods/
+            $('.selectpicker').selectpicker('selectAll');
 
-		config: function() { return config; },
+            // create the filter button
+            $("#filterDiv").append("<button type='button' class='btn btn-primary filter-levels-button' id='filter-levels'>Apply Filters</button>");
 
-		processAccumulated: function(root, type=null) {
-			return processAccumulated(root, type);
-		},
+            $(".bs-actionsbox").addClass("actionbox-centering");
 
-		dataTypeSpanText: function() {
-			var dataType = config.dataType;
+            $("#filterDiv").find("button")
+            	.addClass("filter-levels-class");
 
-			var spanText = config.dataInfoTypes[dataType];
+            // trigger the spc event to add the listener in main.js to #filterDiv
+            // which has access to updateDataset(), which is also in main.js
+            $('body').trigger('spc');
+        });
+    }
 
-			var l = spanText.leaves;
-			var s = spanText.size;
+    function createSelectPickers(collection) {
+    	Object.keys(collection).forEach(function(level) {
+	    	var selectPicker = `<div id="selectpicker-filter-level-` + level +`" class="form-group mt-3 mb-1">
+				<span>Level ` + level + `</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-3">
+								<select id="filter-level-` + level + `" class="selectpicker" multiple data-actions-box="true">
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>`;
 
-			$(".data-info-types-span.leaves").text(l);
-			$(".data-info-types-span.size").text(s);
-		},
+			$("#filterDiv").append(selectPicker);
 
-		resetProportionalSize: function(position) {
-			config.proportionalSize[position] = false;
+			var select = d3.select("#filter-level-" + level);
 
-			$("#checkBoxNodeSize"+position).prop('checked', false);
-		},
+		    var filterOptions = select.selectAll("option")
+	            .data(collection[level])
+	            .enter()
+	            .append("option");
+		        
+		    filterOptions
+		        .text(d => d)
+		        .attr("value", d => d)
+		        .attr("title", d => d);
 
-		changeLockPosition: function(position) {
-			var lock = $("#checkBoxRememberLayout"+position);
+		    $("#filter-level-" + level).selectpicker("refresh");
 
-			// change to the opposite of what the config started with
-			config.isLocked[position] = !config.isLocked[position];
+		    $("#filter-level-" + level).on('change', function() {
+		    	var selections = $(this).val();
+		    	// updat the filter in the config
+		    	config.levelFilters[level] = selections;
+		    	// debugger;
+		    });
 
-			var wasOpen = config.isLocked[position];
+		});
+    }
 
-			if (wasOpen)
-				lock.html(LOCK_CLOSED);
-			else
-				lock.html(LOCK_OPEN);
+    function filterJson(json) {
+    	var levelFilters = config.levelFilters;
 
-		},
+    	var filters = Object.keys(config.levelFilters).reduce(function(acc, el) {
+    		return acc.concat(levelFilters[el]);
+    	}, [])
+    	
+    	filterData(json, filters);
 
-		isLocked: function(position){
-			return config.isLocked[position];
-		},
+    	return json;
+    }
 
-		unlockPosition: function(position) {
-			var lock = $("#checkBoxRememberLayout"+position);
+    function filterData(node, filters) {
+        if (node.children) {
+        	node.children = node.children.filter(el=> {
+        		if (el.children && filters.includes(el.name))
+        			return 1;
+        		else if(!el.children) // don't filter the leaves
+        			return 1;
+        		else
+        			return 0;
+        	});
 
-			config.isLocked[position] = false;
+        	node.children.forEach(function(el) {
+        		filterData(el, filters);
+        	});
+        }
+    }
 
-			lock.html(LOCK_OPEN);
-		},
+    return {
+        getNodeSize: function (d, position, type = null) {
+            var mult = 1;
 
-		crtScaleLog: function(total, range) {
-			var logScale = d3.scaleLog()
-				.domain([1, total])
-				.range([1, range])
+            if (type == "Radial_Tree") mult = 5 / 8;
 
-			config.scaleLog = function(val) {
-				return logScale(val);
-			}
-		},
+            return getNodeSize(d, accessNodeSize(), config.proportionalSize[position]) * mult;
+        },
 
-		getLogScale: function(val) {
-			return config.scaleLog(val)
-		}
+        setupCheckBoxes: function (dataset = null) {
+            setupCheckBoxes((dataset = null));
+        },
 
-	}
+        changeNum: function (FileName) {
+            changeNum(FileName);
+        },
 
-})( d3, $ );
+        changeDataset: function (onload) {
+            return changeDataset(onload);
+        },
+
+        dataInfoLeavesText: function () {
+            return config.dataInfoLeavesText[config.dataType];
+        },
+
+        dataInfoSizeText: function () {
+            return config.dataInfoSizeText[config.dataType];
+        },
+
+        updateAccumulated: function (acc) {
+            config.accumulated = acc;
+        },
+
+        config: function () {
+            return config;
+        },
+
+        processAccumulated: function (root, type = null) {
+            return processAccumulated(root, type);
+        },
+
+        dataTypeSpanText: function () {
+            var dataType = config.dataType;
+
+            var spanText = config.dataInfoTypes[dataType];
+
+            var l = spanText.leaves;
+            var s = spanText.size;
+
+            $(".data-info-types-span.leaves").text(l);
+            $(".data-info-types-span.size").text(s);
+        },
+
+        resetProportionalSize: function (position) {
+            config.proportionalSize[position] = false;
+
+            $("#checkBoxNodeSize" + position).prop("checked", false);
+        },
+
+        changeLockPosition: function (position) {
+            var lock = $("#checkBoxRememberLayout" + position);
+
+            // change to the opposite of what the config started with
+            config.isLocked[position] = !config.isLocked[position];
+
+            var wasOpen = config.isLocked[position];
+
+            if (wasOpen) lock.html(LOCK_CLOSED);
+            else lock.html(LOCK_OPEN);
+        },
+
+        isLocked: function (position) {
+            return config.isLocked[position];
+        },
+
+        unlockPosition: function (position) {
+            var lock = $("#checkBoxRememberLayout" + position);
+
+            config.isLocked[position] = false;
+
+            lock.html(LOCK_OPEN);
+        },
+
+        crtScaleLog: function (total, range) {
+            var logScale = d3.scaleLog().domain([1, total]).range([1, range]);
+
+            config.scaleLog = function (val) {
+                return logScale(val);
+            };
+        },
+
+        getLogScale: function (val) {
+            return config.scaleLog(val);
+        },
+
+        dataFilterSubset: function () {
+            dataFilterSubset();
+        },
+
+        getFileName: function () {
+            return config.filename;
+        },
+
+
+        filterJson: function(json) {
+        	return filterJson(json);
+        }
+    };
+})(d3, $);
