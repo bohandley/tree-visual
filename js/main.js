@@ -37,9 +37,9 @@ $(document).ready(function () {
         menu.changeLockPosition("1");
     });
 
-    $("#checkBoxRememberLayout2").on("click", function() {
-        menu.changeLockPosition('2');
-    });    
+    $("#checkBoxRememberLayout2").on("click", function () {
+        menu.changeLockPosition("2");
+    });
 
     setupSliderValueTooltip();
     setupToolTips();
@@ -166,7 +166,7 @@ function updateDataset() {
     // 3. build a multiselect for each level from the nodes
     // 4. filter dataset on load of json
 
-    menu.dataFilterSubset()
+    menu.dataFilterSubset();
 
     var locked1 = menu.isLocked("1");
     var locked2 = menu.isLocked("2");
@@ -177,8 +177,8 @@ function updateDataset() {
 }
 
 function setupFilterEvent() {
-    $(document).on('spc', function(e){
-      $("#filter-levels").on("click", function() {
+    $(document).on("spc", function (e) {
+        $("#filter-levels").on("click", function () {
             var locked1 = menu.isLocked("1");
             var locked2 = menu.isLocked("2");
 
@@ -190,9 +190,9 @@ function setupFilterEvent() {
 }
 
 function setupSliderValueTooltip() {
-    sidebarSliderDivs = ['#nodesizeScalarDiv', '#nodeDegreeDiv', '#highlightOpacityDiv'];
+    sidebarSliderDivs = ["#nodesizeScalarDiv", "#nodeDegreeDiv", "#highlightOpacityDiv"];
     sliderDivs = sidebarSliderDivs;
-    $.each(sliderDivs, function(index, sliderDiv){
+    $.each(sliderDivs, function (index, sliderDiv) {
         setupEachSlider(sliderDiv);
     });
 }
@@ -200,56 +200,53 @@ function setupSliderValueTooltip() {
 // set up one slider's value displaying effect
 function setupEachSlider(sliderDivName) {
     var sliderDiv = $(sliderDivName),
-      slider = $('input', sliderDiv),
-      valueText = $('.sliderValue', sliderDiv),
-      thumbwidth = 20;
-  
+        slider = $("input", sliderDiv),
+        valueText = $(".sliderValue", sliderDiv),
+        thumbwidth = 20;
+
     function setTooltip() {
-      var value = slider.val();
-      var percent = (value - slider.attr('min'))/(slider.attr('max') - slider.attr('min'));
-      var thumbCorrect = thumbwidth * (percent - 0.5) * -1,
-        textPos = Math.round((percent * slider.width()) - thumbwidth/4 + thumbCorrect);
-      valueText.css('left', textPos);
-      valueText.css('top', 25);
-      valueText.text(value);
+        var value = slider.val();
+        var percent = (value - slider.attr("min")) / (slider.attr("max") - slider.attr("min"));
+        var thumbCorrect = thumbwidth * (percent - 0.5) * -1,
+            textPos = Math.round(percent * slider.width() - thumbwidth / 4 + thumbCorrect);
+        valueText.css("left", textPos);
+        valueText.css("top", 25);
+        valueText.text(value);
     }
-  
+
     function setSliderEvent() {
-      slider.on('input.slider change.slider keyup.slider mouseover.slider', function() {
-        setTooltip();
-        valueText.css('visibility', 'visible');
-      });
-  
-      slider.on('mouseout.slider', function() {
-        valueText.css('visibility', 'hidden');
-      });
-  
-      // when window size changes
-      $(window).on('resize.slider', function() {
-        setTooltip();
-      });
+        slider.on("input.slider change.slider keyup.slider mouseover.slider", function () {
+            setTooltip();
+            valueText.css("visibility", "visible");
+        });
+
+        slider.on("mouseout.slider", function () {
+            valueText.css("visibility", "hidden");
+        });
+
+        // when window size changes
+        $(window).on("resize.slider", function () {
+            setTooltip();
+        });
     }
-  
+
     setSliderEvent();
 }
 
 /**
  * initiates the hover tool tips
  */
-function setupToolTips()
-{
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-    // initiate footer tooltip, and set hidden
-    //updateFooterText(TOOLTIP.SVG_HOVER, "hidden");
-  });
+function setupToolTips() {
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        // initiate footer tooltip, and set hidden
+        //updateFooterText(TOOLTIP.SVG_HOVER, "hidden");
+    });
 }
 
 /**
  * mouseover and mouseout handler for showing and hiding tooltips
  */
-function mouseOverOut(element, text)
-{
-  element.on("mouseover", () => updateFooterText(text, "visible"))
-    .on("mouseout", () => updateFooterText(text, "hidden"));
+function mouseOverOut(element, text) {
+    element.on("mouseover", () => updateFooterText(text, "visible")).on("mouseout", () => updateFooterText(text, "hidden"));
 }

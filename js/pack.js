@@ -106,14 +106,7 @@ function draw_pack(position) {
             .style("display", function (d) {
                 return d.parent === root ? "inline" : "none";
             })
-            .text(function (d) {
-                // refactor into nodeDisplayText() in treeLib
-                var n = d.data.name;
-
-                if (treeLib.isLeaf(d)) n = n.split(" ")[0] + "...";
-
-                return n;
-            });
+            .text((d) => treeLib.getNodeDisplayName(d.data.name));
 
         var node = g.selectAll("circle,text");
 

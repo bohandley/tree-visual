@@ -1161,14 +1161,6 @@ var treeLib = (function (d3) {
         return cls;
     }
 
-    function shortenLeafName(node, name) {
-        if (isLeaf(node)) {
-            name = name.split(" ")[0] + "...";
-        }
-
-        return name;
-    }
-
     function showLevels(d, levels) {
         if (levels == 2) return d.parent && d.parent.parent;
         else if (levels == 3) return d.parent && d.parent.parent && d.parent.parent.parent;
@@ -1553,6 +1545,12 @@ var treeLib = (function (d3) {
         return otherGraphType;
     }
 
+    function getNodeDisplayName(name) {
+        // TODO: adaptive name?
+        if (name.length > 10) return name.split(" ")[0] + "...";
+        else return name;
+    }
+
     return {
         buildConfig: function (ids) {
             buildConfig(ids);
@@ -1721,22 +1719,22 @@ var treeLib = (function (d3) {
         getColor: function (d, color) {
             if (d.data) {
                 if (d.parent && !d.parent.parent) {
-                    return color(parseInt(d.data.name));
+                    return color(hashString(d.data.name));
                 } else if (d.parent) {
                     while (d.parent.parent != null) {
                         d = d.parent;
                     }
-                    return color(parseInt(d.data.name));
+                    return color(hashString(d.data.name));
                 }
                 return color(d.data.name);
             } else {
                 if (d.parent && !d.parent.parent) {
-                    return color(parseInt(d.name));
+                    return color(hashString(d.name));
                 } else if (d.parent) {
                     while (d.parent.parent != null) {
                         d = d.parent;
                     }
-                    return color(parseInt(d.name));
+                    return color(hashString(d.name));
                 }
                 return color(d.name);
             }
@@ -1773,6 +1771,8 @@ var treeLib = (function (d3) {
         preserveAccSize: function (root) {
             return root.each((el) => (el.accSize = el.value));
         },
+
+        getNodeDisplayName: getNodeDisplayName,
     };
 
     // pull in d3

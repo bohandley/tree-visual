@@ -100,7 +100,7 @@ function draw_sunburst(position) {
             .text((d) => {
                 var dataName = d.data.name;
 
-                return dataName + "\n" + menu.dataInfoSizeText() + formatNumber(d.accSize);
+                return dataName + "\n" + menu.dataInfoSizeText(d.accSize);
             });
 
         d3.select("svg#" + position1).dispatch("doneDrawing");

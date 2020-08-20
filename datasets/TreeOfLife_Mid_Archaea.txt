@@ -1,0 +1,518 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Halobacteria",
+                                            "size": 771
+                                        },
+                                        {
+                                            "name": "Methanomicrobiales",
+                                            "size": 145
+                                        }
+                                    ],
+                                    "name": "Methanomicrobiales",
+                                    "size": 916
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Methanosarcinales",
+                                            "size": 183
+                                        },
+                                        {
+                                            "name": "Methanocellales",
+                                            "size": 8
+                                        }
+                                    ],
+                                    "name": "Methanocellales",
+                                    "size": 191
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "ANME-1a",
+                                            "size": 4
+                                        },
+                                        {
+                                            "name": "ANME-1b",
+                                            "size": 4
+                                        }
+                                    ],
+                                    "name": "ANME-1",
+                                    "size": 9
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Methanonatronarchaeales",
+                                            "size": 2
+                                        }
+                                    ],
+                                    "name": "ST-12K10A",
+                                    "size": 4
+                                }
+                            ],
+                            "name": "AK5",
+                            "size": 1122
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Archaeoglobaceae",
+                                            "size": 27
+                                        }
+                                    ],
+                                    "name": "Archaeoglobales",
+                                    "size": 27
+                                }
+                            ],
+                            "name": "Archaeoglobi",
+                            "size": 27
+                        }
+                    ],
+                    "name": "Archaeoglobi",
+                    "size": 1149
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Methanococcaceae",
+                                            "size": 23
+                                        },
+                                        {
+                                            "name": "Methanocaldococcus",
+                                            "size": 15
+                                        }
+                                    ],
+                                    "name": "Methanococcales",
+                                    "size": 38
+                                }
+                            ],
+                            "name": "Methanococci",
+                            "size": 38
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Methanobacteriales",
+                                            "size": 129
+                                        }
+                                    ],
+                                    "name": "Methanobacteria",
+                                    "size": 129
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Methanopyraceae",
+                                            "size": 7
+                                        }
+                                    ],
+                                    "name": "Methanopyri",
+                                    "size": 8
+                                }
+                            ],
+                            "name": "Methanopyri",
+                            "size": 137
+                        }
+                    ],
+                    "name": "Methanopyri",
+                    "size": 175
+                }
+            ],
+            "name": "Methanopyri",
+            "size": 1324
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Thermococcaceae",
+                                            "size": 114
+                                        }
+                                    ],
+                                    "name": "Thermococcales",
+                                    "size": 114
+                                }
+                            ],
+                            "name": "Thermococci",
+                            "size": 115
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Crenarchaeota",
+                                            "size": 202
+                                        },
+                                        {
+                                            "name": "Nanoarchaeota",
+                                            "size": 3
+                                        }
+                                    ],
+                                    "name": "Nanoarchaeota",
+                                    "size": 205
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Candidatus Korarchaeum",
+                                            "size": 1
+                                        },
+                                        {
+                                            "name": "Candidatus Methanodesulfokores",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Korarchaeota",
+                                    "size": 4
+                                }
+                            ],
+                            "name": "Korarchaeota",
+                            "size": 209
+                        }
+                    ],
+                    "name": "Korarchaeota",
+                    "size": 324
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Ferroplasmaceae",
+                                            "size": 29
+                                        },
+                                        {
+                                            "name": "Terrestrial Miscellaneous Gp(TMEG)",
+                                            "size": 3
+                                        },
+                                        {
+                                            "name": "Deep Sea Hydrothermal Vent Gp 2(DHVEG-2)",
+                                            "size": 9
+                                        },
+                                        {
+                                            "name": "Marine Group II",
+                                            "size": 40
+                                        },
+                                        {
+                                            "name": "Marine Benthic Group D and DHVEG-1",
+                                            "size": 19
+                                        },
+                                        {
+                                            "name": "Marine Group III",
+                                            "size": 27
+                                        },
+                                        {
+                                            "name": "20c-4",
+                                            "size": 5
+                                        },
+                                        {
+                                            "name": "pMC2A24",
+                                            "size": 2
+                                        },
+                                        {
+                                            "name": "KTK 4A",
+                                            "size": 1
+                                        },
+                                        {
+                                            "name": "VC2.1 Arc6",
+                                            "size": 2
+                                        },
+                                        {
+                                            "name": "Cuniculiplasmataceae",
+                                            "size": 2
+                                        }
+                                    ],
+                                    "name": "Thermoplasmatales",
+                                    "size": 153
+                                },
+                                {
+                                    "name": "MSBL1",
+                                    "size": 35
+                                },
+                                {
+                                    "name": "Kazan-3A-21",
+                                    "size": 2
+                                },
+                                {
+                                    "name": "Marine Benthic Group E",
+                                    "size": 8
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Methanomassiliicoccaceae",
+                                            "size": 2
+                                        },
+                                        {
+                                            "name": "Candidatus Methanomethylophilaceae",
+                                            "size": 1
+                                        }
+                                    ],
+                                    "name": "Methanomassiliicoccales",
+                                    "size": 3
+                                },
+                                {
+                                    "name": "WCHA1-57",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "20a-9",
+                                    "size": 2
+                                },
+                                {
+                                    "name": "South African Goldmine Gp(SAGMEG)",
+                                    "size": 9
+                                },
+                                {
+                                    "name": "19c-33",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Thermoplasmata",
+                            "size": 218
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Cenarchaeales",
+                                            "size": 7
+                                        },
+                                        {
+                                            "name": "Candidatus Nitrosoarchaeum",
+                                            "size": 2
+                                        }
+                                    ],
+                                    "name": "Marine Group I",
+                                    "size": 63
+                                },
+                                {
+                                    "name": "Terrestrial Hot Spring Gp(THSCG)",
+                                    "size": 9
+                                },
+                                {
+                                    "name": "pSL12",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "Marine Benthic Group A",
+                                    "size": 7
+                                },
+                                {
+                                    "name": "Soil Crenarchaeotic Group(SCG)",
+                                    "size": 18
+                                },
+                                {
+                                    "name": "Miscellaneous Crenarchaeotic Group",
+                                    "size": 20
+                                },
+                                {
+                                    "name": "Marine Benthic Group B",
+                                    "size": 7
+                                },
+                                {
+                                    "name": "D-F10",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "Group C3",
+                                    "size": 1
+                                },
+                                {
+                                    "name": "South African Gold Mine Gp 1(SAGMCG-1)",
+                                    "size": 4
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Nitrososphaerales",
+                                            "size": 4
+                                        }
+                                    ],
+                                    "name": "Nitrososphaeria",
+                                    "size": 5
+                                }
+                            ],
+                            "name": "Thaumarchaeota",
+                            "size": 155
+                        }
+                    ],
+                    "name": "Thaumarchaeota",
+                    "size": 373
+                }
+            ],
+            "name": "Thaumarchaeota",
+            "size": 697
+        },
+        {
+            "children": [
+                {
+                    "name": "MCG-15",
+                    "size": 1
+                },
+                {
+                    "name": "MCG-6",
+                    "size": 1
+                },
+                {
+                    "name": "MCG-1",
+                    "size": 2
+                }
+            ],
+            "name": "Candidatus Bathyarchaeota",
+            "size": 4
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "name": "Lokiarchaeum",
+                            "size": 1
+                        }
+                    ],
+                    "name": "Candidatus Lokiarchaeota",
+                    "size": 1
+                },
+                {
+                    "name": "Candidatus Thorarchaeota",
+                    "size": 8
+                },
+                {
+                    "name": "Candidatus Heimdallarchaeota",
+                    "size": 5
+                },
+                {
+                    "name": "Candidatus Helarchaeota",
+                    "size": 2
+                },
+                {
+                    "name": "Candidatus Odinarchaeota",
+                    "size": 1
+                }
+            ],
+            "name": "Asgard group",
+            "size": 17
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Candidatus Methanomethylicus",
+                                            "size": 2
+                                        },
+                                        {
+                                            "name": "Candidatus Methanosuratus",
+                                            "size": 2
+                                        }
+                                    ],
+                                    "name": "Candidatus Methanomethyliaceae",
+                                    "size": 5
+                                }
+                            ],
+                            "name": "Candidatus Methanomethyliales",
+                            "size": 5
+                        }
+                    ],
+                    "name": "Candidatus Methanomethylia",
+                    "size": 6
+                }
+            ],
+            "name": "Candidatus Verstraetearchaeota",
+            "size": 6
+        },
+        {
+            "children": [
+                {
+                    "name": "Conexivisphaera",
+                    "size": 1
+                }
+            ],
+            "name": "Candidatus Geothermarchaeota",
+            "size": 5
+        },
+        {
+            "children": [
+                {
+                    "name": "Candidatus Marsarchaeota group 1",
+                    "size": 4
+                },
+                {
+                    "name": "Candidatus Marsarchaeota group 2",
+                    "size": 11
+                }
+            ],
+            "name": "Candidatus Marsarchaeota",
+            "size": 15
+        },
+        {
+            "name": "Candidatus Nezhaarchaeota",
+            "size": 2
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "name": "Candidatus Methanoliparum",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Candidatus Methanoliparaceae",
+                            "size": 1
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "Candidatus Methanolliviera",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Candidatus Methanollivieraceae",
+                            "size": 3
+                        }
+                    ],
+                    "name": "Candidatus Methanoliparales",
+                    "size": 4
+                }
+            ],
+            "name": "Candidatus Methanoliparia",
+            "size": 4
+        }
+    ],
+    "name": "Archaea",
+    "size": 2082
+}

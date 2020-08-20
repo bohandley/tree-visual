@@ -66,7 +66,7 @@ function draw_treemap(position, selectindex) {
             .attr("xlink:href", (d) => "#" + d.data.id);
 
         cell.append("title").text((d) => {
-            return d.data.id + "\n" + menu.dataInfoSizeText() + format(d.accSize);
+            return d.data.id + "\n" + menu.dataInfoSizeText(d.accSize);
         });
 
         d3.select("svg#" + position1).dispatch("doneDrawing");

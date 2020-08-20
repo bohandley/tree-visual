@@ -47,3 +47,12 @@ function chunk(arr, len) {
 
     return chunks;
 }
+
+function hashString(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        let char = str.charCodeAt(i);
+        hash = (hash << 6) + (hash << 16) - hash + char;
+    }
+    return hash;
+}

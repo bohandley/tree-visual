@@ -107,13 +107,7 @@ function draw_radial_tree(position) {
             .attr("x", (d) => (d.x < Math.PI === !d.children ? 6 : -6))
             .attr("text-anchor", (d) => (d.x < Math.PI === !d.children ? "start" : "end"))
             .attr("transform", (d) => (d.x >= Math.PI ? "rotate(180)" : null))
-            .text((d) => {
-                var n = d.data.name;
-
-                if (treeLib.isLeaf(d)) n = n.split(" ")[0] + "...";
-
-                return n;
-            })
+            .text((d) => treeLib.getNodeDisplayName(d.data.name))
             .clone(true)
             .lower()
             .attr("stroke", "white");

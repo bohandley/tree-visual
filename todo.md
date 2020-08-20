@@ -26,7 +26,7 @@
 - [x] Slider tooltip (title & slider button)
 - [ ] Disabled slider's style is not correct
 - [ ] Node size slider is not synced at startup
-- [ ] Filtering panel slider
+- [ ] Filtering panel not shown completely (under graph panel)
 
 
 
@@ -41,4 +41,4 @@
 ### Tree Visual
 
 - [x] Fix (size => value) function in zoomable treemap
-- [ ] Fix zoomable tree map click event
+- [x] Fix zoomable tree map click event
