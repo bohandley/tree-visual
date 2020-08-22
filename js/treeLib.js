@@ -1715,24 +1715,24 @@ var treeLib = (function (d3) {
         getColor: function (d, color) {
             if (d.data) {
                 if (d.parent && !d.parent.parent) {
-                    return color(hashString(d.data.name));
+                    return menu.color(d.data.name);
                 } else if (d.parent) {
                     while (d.parent.parent != null) {
                         d = d.parent;
                     }
-                    return color(hashString(d.data.name));
+                    return menu.color(d.data.name);
                 }
-                return color(d.data.name);
+                return menu.color(d.data.name);
             } else {
                 if (d.parent && !d.parent.parent) {
-                    return color(hashString(d.name));
+                    return menu.color(d.name);
                 } else if (d.parent) {
                     while (d.parent.parent != null) {
                         d = d.parent;
                     }
-                    return color(hashString(d.name));
+                    return menu.color(d.name);
                 }
-                return color(d.name);
+                return menu.color(d.name);
             }
         },
 

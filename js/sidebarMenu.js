@@ -5,6 +5,19 @@ var menu = (function (d3, $) {
     var dummyConfig = {
         scaleLog: function () {},
         isLocked: { 1: false, 2: false },
+        palettes: [
+            (function () {
+                var colors = d3.schemeCategory10.map((c) => d3.interpolateRgb(c, "#fff")(0.2));
+                treeLib.shuffleArray(colors);
+                return d3.scaleOrdinal(colors);
+            })(),
+            (function () {
+                var colors = Array.from({ length: 10 }, (x, i) => i / 9).map((t) => d3.interpolateRgb("#202020", "#e0e0e0")(t));
+                treeLib.shuffleArray(colors);
+                return d3.scaleOrdinal(colors);
+            })(),
+        ],
+        curPaletteIndex: 0,
         accumulated: "leaves",
         nodeSize: 5,
         proportionalSize: { 1: false, 2: false },
@@ -154,6 +167,42 @@ var menu = (function (d3, $) {
 
         $("#nodesizeScalar").on("input", function () {
             updateNodeSize();
+        });
+
+        // initial acc is leaves, see menu.config.accumulated
+        $("#checkBoxAccumulated").prop("checked", true);
+        $(".data-info-types-span.leaves").css("opacity", 1);
+        $(".data-info-types-span.size").css("opacity", 0.25);
+
+        $("#checkBoxAccumulated").on("click", function () {
+            var isChecked = $(this).prop("checked");
+
+            if (isChecked) {
+                menu.updateAccumulated("leaves");
+                $(".data-info-types-span.leaves").css("opacity", 1);
+                $(".data-info-types-span.size").css("opacity", 0.25);
+            } else {
+                menu.updateAccumulated("size");
+                $(".data-info-types-span.leaves").css("opacity", 0.25);
+                $(".data-info-types-span.size").css("opacity", 1);
+            }
+
+            refreshVisualizations();
+        });
+
+        $("#checkBoxRememberLayout1").on("click", function () {
+            menu.changeLockPosition("1");
+        });
+
+        $("#checkBoxRememberLayout2").on("click", function () {
+            menu.changeLockPosition("2");
+        });
+
+        $("#checkBoxColorBlind").on("click", function () {
+            var isChecked = $(this).prop("checked");
+            config.curPaletteIndex = isChecked ? 1 : 0;
+
+            refreshVisualizations();
         });
     }
 
@@ -389,6 +438,14 @@ var menu = (function (d3, $) {
         }
     }
 
+    function refreshVisualizations() {
+        var locked1 = menu.isLocked("1");
+        var locked2 = menu.isLocked("2");
+
+        loadVisualization("1", locked1);
+        loadVisualization("2", locked2);
+    }
+
     return {
         getNodeSize: function (d, position, type = null) {
             return getNodeSize(d, accessNodeSize(), config.proportionalSize[position], type);
@@ -490,6 +547,10 @@ var menu = (function (d3, $) {
 
         filterJson: function (json) {
             return filterJson(json);
+        },
+
+        color: function (val) {
+            return config.palettes[config.curPaletteIndex](val);
         },
     };
 })(d3, $);
