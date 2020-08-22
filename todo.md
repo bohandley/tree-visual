@@ -27,6 +27,10 @@
 - [ ] Disabled slider's style is not correct
 - [ ] Node size slider is not synced at startup
 - [ ] Filtering panel not shown completely (under graph panel)
+- [ ] Filter preset
+- [ ] Filter bug when switching dataset
+- [ ] Color palette
+- [ ] Edge Sickness (move to radial tree)
 
 
 
@@ -42,3 +46,4 @@
 
 - [x] Fix (size => value) function in zoomable treemap
 - [x] Fix zoomable tree map click event
+- [ ] Trim the tree of life dataset
