@@ -56,6 +56,11 @@ var menu = (function (d3, $) {
                 source: "Open Tree of Life",
             },
         },
+        filterPreset: {
+            author: (level, set) => (level == 1 ? set.slice(0, 12) : set), // first 12 for level 1
+            trade: (level, set) => (level == 2 ? set.slice(0, 5) : set), // first 5 for level 2
+            treeoflife: (level, set) => set.slice(0, 10), // first 10 for all levels
+        },
     };
 
     var config = copy(dummyConfig);
@@ -287,10 +292,6 @@ var menu = (function (d3, $) {
 
             createSelectPickers(collection);
 
-            // select all
-            // https://developer.snapappointments.com/bootstrap-select/methods/
-            $(".selectpicker").selectpicker("selectAll");
-
             // create the filter button
             $("#filterDiv").append("<button type='button' class='btn btn-primary filter-levels-button' id='filter-levels'>Apply Filters</button>");
 
@@ -336,14 +337,27 @@ var menu = (function (d3, $) {
                 .attr("value", (d) => d)
                 .attr("title", (d) => d);
 
-            $("#filter-level-" + level).selectpicker("refresh");
+            var curFilter = $("#filter-level-" + level);
 
-            $("#filter-level-" + level).on("change", function () {
+            curFilter.selectpicker("refresh");
+
+            curFilter.on("change", function () {
                 var selections = $(this).val();
                 // updat the filter in the config
                 config.levelFilters[level] = selections;
                 // debugger;
             });
+
+            // use preset from config if available
+            var preset = config.filterPreset[config.dataType];
+            if (preset) {
+                curFilter.selectpicker("val", preset(level, collection[level]));
+            } else {
+                // select all
+                // https://developer.snapappointments.com/bootstrap-select/methods/
+                // $(".selectpicker").selectpicker("selectAll");
+                curFilter.selectpicker("selectAll");
+            }
         });
     }
 

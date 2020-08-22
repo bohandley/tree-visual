@@ -102,6 +102,7 @@ function loadVisualization(position, locked) {
     // hide specific tags for treemap and radial trees
     $("#layout" + position + "_treemap").addClass("hide-tag");
     $("#nodeSizeDiv" + position + "_radialtree").addClass("hide-tag");
+    $("#edgeThicknessDiv" + position + "_radialtree").addClass("hide-tag");
 
     // various resets on changing a layout unless locked
     if (!locked) {
@@ -124,9 +125,11 @@ function loadVisualization(position, locked) {
         this.draw_zoomable_treemap("#g" + position);
     } else if (grade == "Collapsible_Tree") {
         $("#nodeSizeDiv" + position + "_radialtree").removeClass("hide-tag");
+        $("#edgeThicknessDiv" + position + "_radialtree").removeClass("hide-tag");
         this.draw_collapsible_tree("#g" + position);
     } else if (grade == "Radial_Tree") {
         $("#nodeSizeDiv" + position + "_radialtree").removeClass("hide-tag");
+        $("#edgeThicknessDiv" + position + "_radialtree").removeClass("hide-tag");
         this.draw_radial_tree("#g" + position);
     }
 
