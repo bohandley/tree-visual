@@ -14,6 +14,7 @@
 
 - [x] Sort layout option alphabetically
 - [ ] Change node tooltip style to match GraphVisual
+- [ ] Edge thickness of radial tree
 
 
 
