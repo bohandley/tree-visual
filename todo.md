@@ -14,6 +14,7 @@
 
 - [x] Sort layout option alphabetically
 - [ ] Change node tooltip style to match GraphVisual
+- [ ] Edge thickness of radial tree
 
 
 
@@ -27,6 +28,10 @@
 - [ ] Disabled slider's style is not correct
 - [ ] Node size slider is not synced at startup
 - [ ] Filtering panel not shown completely (under graph panel)
+- [x] Filter preset
+- [ ] Filter bug when switching dataset
+- [x] Color blind palette
+- [x] Edge thickness (move to radial tree)
 
 
 
@@ -42,3 +47,4 @@
 
 - [x] Fix (size => value) function in zoomable treemap
 - [x] Fix zoomable tree map click event
+- [x] Trim the tree of life dataset

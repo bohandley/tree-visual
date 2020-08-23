@@ -21,9 +21,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
         <script src="lib/intro.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="lib/d3-ForceEdgeBundling.js"></script>
-        <script src="https://cdn.rawgit.com/upphiminn/d3.ForceBundle/2b406b8567fcad0a6c2922c84cd4bceb0c374bc5/d3-ForceEdgeBundling.js"></script>
         <script src="lib/d3.v3.min.js"></script>
+        <script src="lib/d3-ForceEdgeBundling.js"></script>
 
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css" />
@@ -47,8 +46,6 @@
         <script src="js/zoomableTreemap.js"></script>
         <script src="js/main.js"></script>
         <script src="js/about.js"></script>
-
-        <script src="https://d3js.org/d3.v4.min.js"></script>
     </head>
 
     <body>
@@ -153,6 +150,21 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div id="edgeThicknessDiv1_radialtree" class="form-group  hide-tag">
+                                        <div class="form-row">
+                                            <div class="col-8">
+                                                <h2 id="edgeThicknessSpan" data-toggle="tooltip" title="Increase edge thickness based on weight">
+                                                    Edge Thickness
+                                                </h2>
+                                            </div>
+                                            <div class="col-4">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="checkBoxEdgeThickness" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -231,6 +243,21 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div id="edgeThicknessDiv2_radialtree" class="form-group  hide-tag">
+                                        <div class="form-row">
+                                            <div class="col-8">
+                                                <h2 id="edgeThicknessSpan" data-toggle="tooltip" title="Increase edge thickness based on weight">
+                                                    Edge Thickness
+                                                </h2>
+                                            </div>
+                                            <div class="col-4">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="checkBoxEdgeThickness" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -279,9 +306,9 @@
                                                     <option class="optionGroup" value="Trade_United_States" data="trade">United States</option>
                                                 </optgroup>
                                                 <optgroup label="Tree Taxonomy" id="treeoflife">
-                                                    <option class="optionGroup" value="TreeOfLife_Archaea" data="treeoflife">Archaea</option>
-                                                    <option class="optionGroup" value="TreeOfLife_Bacteria" data="treeoflife">Bacteria</option>
-                                                    <option class="optionGroup" value="TreeOfLife_Eukaryota" data="treeoflife">Eukaryota</option>
+                                                    <option class="optionGroup" value="TreeOfLife_Archaea_Small" data="treeoflife">Archaea</option>
+                                                    <option class="optionGroup" value="TreeOfLife_Bacteria_Small" data="treeoflife">Bacteria</option>
+                                                    <option class="optionGroup" value="TreeOfLife_Eukaryota_Small" data="treeoflife">Eukaryota</option>
                                                 </optgroup>
                                             </select>
                                         </div>
@@ -312,40 +339,6 @@
                                                 </div>
                                             </div>
                                             <!-- end colorBlindDiv -->
-
-                                            <!-- <div class="form-group" id="nodeSizeDiv">
-                                            <div class="form-row">
-                                                <div class="col-8">
-                                                <span id="nodeSizeSpan" data-toggle="tooltip" title="Increase size of high-degree nodes">
-                                                    Proportional Node Size
-                                                </span>
-                                                </div>
-                                                <div class="col-4">
-                                                <label class="switch">
-                                                    <input type="checkbox" id="checkBoxNodeDegree">
-                                                    <span class="slider round"></span>
-                                                </label>
-                                                </div>
-                                            </div>
-                                            </div> -->
-                                            <!-- end nodeSizeDiv -->
-
-                                            <div class="form-group" id="edgeThicknessDiv">
-                                                <div class="form-row">
-                                                    <div class="col-8">
-                                                        <span id="edgeThicknessSpan" data-toggle="tooltip" title="Increase edge thickness based on weight">
-                                                            Edge Thickness
-                                                        </span>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <label class="switch">
-                                                            <input type="checkbox" id="checkBoxEdgeThickness" />
-                                                            <span class="slider round"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end edgeThicknessDiv -->
 
                                             <div class="form-group" id="accumulatedDiv">
                                                 <div class="form-row">

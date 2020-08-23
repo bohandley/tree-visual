@@ -7,40 +7,6 @@ var FileData;
 $(document).ready(function () {
     menu.setupCheckBoxes();
 
-    // initial acc is leaves, see menu.config.accumulated
-    $("#checkBoxAccumulated").prop("checked", true);
-    $(".data-info-types-span.leaves").css("opacity", 1);
-    $(".data-info-types-span.size").css("opacity", 0.25);
-
-    $("#checkBoxAccumulated").on("click", function () {
-        var isChecked = $(this).prop("checked");
-
-        if (isChecked) {
-            menu.updateAccumulated("leaves");
-            $(".data-info-types-span.leaves").css("opacity", 1);
-            $(".data-info-types-span.size").css("opacity", 0.25);
-        } else {
-            menu.updateAccumulated("size");
-            $(".data-info-types-span.leaves").css("opacity", 0.25);
-            $(".data-info-types-span.size").css("opacity", 1);
-        }
-
-        var locked1 = menu.isLocked("1");
-        var locked2 = menu.isLocked("2");
-
-        loadVisualization("1", locked1);
-
-        loadVisualization("2", locked2);
-    });
-
-    $("#checkBoxRememberLayout1").on("click", function () {
-        menu.changeLockPosition("1");
-    });
-
-    $("#checkBoxRememberLayout2").on("click", function () {
-        menu.changeLockPosition("2");
-    });
-
     setupSliderValueTooltip();
     setupToolTips();
     setupFilterEvent();
@@ -102,6 +68,7 @@ function loadVisualization(position, locked) {
     // hide specific tags for treemap and radial trees
     $("#layout" + position + "_treemap").addClass("hide-tag");
     $("#nodeSizeDiv" + position + "_radialtree").addClass("hide-tag");
+    $("#edgeThicknessDiv" + position + "_radialtree").addClass("hide-tag");
 
     // various resets on changing a layout unless locked
     if (!locked) {
@@ -124,9 +91,11 @@ function loadVisualization(position, locked) {
         this.draw_zoomable_treemap("#g" + position);
     } else if (grade == "Collapsible_Tree") {
         $("#nodeSizeDiv" + position + "_radialtree").removeClass("hide-tag");
+        $("#edgeThicknessDiv" + position + "_radialtree").removeClass("hide-tag");
         this.draw_collapsible_tree("#g" + position);
     } else if (grade == "Radial_Tree") {
         $("#nodeSizeDiv" + position + "_radialtree").removeClass("hide-tag");
+        $("#edgeThicknessDiv" + position + "_radialtree").removeClass("hide-tag");
         this.draw_radial_tree("#g" + position);
     }
 
@@ -136,15 +105,6 @@ function loadVisualization(position, locked) {
 }
 
 window.onload = function () {
-    var fader = function (color) {
-        return d3.interpolateRgb(color, "#fff")(0.2);
-    };
-    var colors = d3.schemeCategory20.map(fader);
-
-    treeLib.shuffleArray(colors);
-
-    color = d3.scaleOrdinal(colors);
-
     menu.changeDataset(1);
 
     menu.dataFilterSubset();

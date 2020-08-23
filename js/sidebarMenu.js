@@ -5,6 +5,19 @@ var menu = (function (d3, $) {
     var dummyConfig = {
         scaleLog: function () {},
         isLocked: { 1: false, 2: false },
+        palettes: [
+            (function () {
+                var colors = d3.schemeCategory10.map((c) => d3.interpolateRgb(c, "#fff")(0.2));
+                treeLib.shuffleArray(colors);
+                return d3.scaleOrdinal(colors);
+            })(),
+            (function () {
+                var colors = Array.from({ length: 10 }, (x, i) => i / 9).map((t) => d3.interpolateRgb("#202020", "#e0e0e0")(t));
+                treeLib.shuffleArray(colors);
+                return d3.scaleOrdinal(colors);
+            })(),
+        ],
+        curPaletteIndex: 0,
         accumulated: "leaves",
         nodeSize: 5,
         proportionalSize: { 1: false, 2: false },
@@ -55,6 +68,11 @@ var menu = (function (d3, $) {
                 hierarchy: "-------Cellular <br/>| <br/>-----Level 1 <br/>| <br/>---Level 2 <br/>| <br/>-Level ...",
                 source: "Open Tree of Life",
             },
+        },
+        filterPreset: {
+            author: (level, set) => (level == 1 ? set.slice(0, 12) : set), // first 12 for level 1
+            trade: (level, set) => (level == 2 ? set.slice(0, 5) : set), // first 5 for level 2
+            treeoflife: (level, set) => set.slice(0, 10), // first 10 for all levels
         },
     };
 
@@ -149,6 +167,42 @@ var menu = (function (d3, $) {
 
         $("#nodesizeScalar").on("input", function () {
             updateNodeSize();
+        });
+
+        // initial acc is leaves, see menu.config.accumulated
+        $("#checkBoxAccumulated").prop("checked", true);
+        $(".data-info-types-span.leaves").css("opacity", 1);
+        $(".data-info-types-span.size").css("opacity", 0.25);
+
+        $("#checkBoxAccumulated").on("click", function () {
+            var isChecked = $(this).prop("checked");
+
+            if (isChecked) {
+                menu.updateAccumulated("leaves");
+                $(".data-info-types-span.leaves").css("opacity", 1);
+                $(".data-info-types-span.size").css("opacity", 0.25);
+            } else {
+                menu.updateAccumulated("size");
+                $(".data-info-types-span.leaves").css("opacity", 0.25);
+                $(".data-info-types-span.size").css("opacity", 1);
+            }
+
+            refreshVisualizations();
+        });
+
+        $("#checkBoxRememberLayout1").on("click", function () {
+            menu.changeLockPosition("1");
+        });
+
+        $("#checkBoxRememberLayout2").on("click", function () {
+            menu.changeLockPosition("2");
+        });
+
+        $("#checkBoxColorBlind").on("click", function () {
+            var isChecked = $(this).prop("checked");
+            config.curPaletteIndex = isChecked ? 1 : 0;
+
+            refreshVisualizations();
         });
     }
 
@@ -287,10 +341,6 @@ var menu = (function (d3, $) {
 
             createSelectPickers(collection);
 
-            // select all
-            // https://developer.snapappointments.com/bootstrap-select/methods/
-            $(".selectpicker").selectpicker("selectAll");
-
             // create the filter button
             $("#filterDiv").append("<button type='button' class='btn btn-primary filter-levels-button' id='filter-levels'>Apply Filters</button>");
 
@@ -336,14 +386,27 @@ var menu = (function (d3, $) {
                 .attr("value", (d) => d)
                 .attr("title", (d) => d);
 
-            $("#filter-level-" + level).selectpicker("refresh");
+            var curFilter = $("#filter-level-" + level);
 
-            $("#filter-level-" + level).on("change", function () {
+            curFilter.selectpicker("refresh");
+
+            curFilter.on("change", function () {
                 var selections = $(this).val();
                 // updat the filter in the config
                 config.levelFilters[level] = selections;
                 // debugger;
             });
+
+            // use preset from config if available
+            var preset = config.filterPreset[config.dataType];
+            if (preset) {
+                curFilter.selectpicker("val", preset(level, collection[level]));
+            } else {
+                // select all
+                // https://developer.snapappointments.com/bootstrap-select/methods/
+                // $(".selectpicker").selectpicker("selectAll");
+                curFilter.selectpicker("selectAll");
+            }
         });
     }
 
@@ -373,6 +436,14 @@ var menu = (function (d3, $) {
                 filterData(el, filters);
             });
         }
+    }
+
+    function refreshVisualizations() {
+        var locked1 = menu.isLocked("1");
+        var locked2 = menu.isLocked("2");
+
+        loadVisualization("1", locked1);
+        loadVisualization("2", locked2);
     }
 
     return {
@@ -476,6 +547,10 @@ var menu = (function (d3, $) {
 
         filterJson: function (json) {
             return filterJson(json);
+        },
+
+        color: function (val) {
+            return config.palettes[config.curPaletteIndex](val);
         },
     };
 })(d3, $);

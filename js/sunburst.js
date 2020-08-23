@@ -97,11 +97,7 @@ function draw_sunburst(position) {
                 click(d);
             })
             .append("title")
-            .text((d) => {
-                var dataName = d.data.name;
-
-                return dataName + "\n" + menu.dataInfoSizeText(d.accSize);
-            });
+            .text((d) => d.data.name + "\n" + menu.dataInfoSizeText(d.accSize));
 
         d3.select("svg#" + position1).dispatch("doneDrawing");
     });
