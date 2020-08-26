@@ -1543,9 +1543,22 @@ var treeLib = (function (d3) {
     }
 
     function getNodeDisplayName(name) {
-        // TODO: adaptive name?
-        if (name.length > 10) return name.split(" ")[0] + "...";
-        else return name;
+        const MAX_NAME_LENGTH = 12;
+
+        if (name.length > MAX_NAME_LENGTH) {
+            wordList = name.split(" ");
+            let firstWordName = wordList[0];
+            if (firstWordName.length <= MAX_NAME_LENGTH - 3) {
+                let i = 1;
+                while (i < wordList.length && firstWordName.length + wordList[i].length <= MAX_NAME_LENGTH - 4) {
+                    firstWordName += " " + wordList[i];
+                    i += 1;
+                }
+                return firstWordName + "...";
+            } else return name.substr(0, MAX_NAME_LENGTH - 3) + "...";
+        }
+
+        return name;
     }
 
     return {
