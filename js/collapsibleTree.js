@@ -52,18 +52,18 @@ function draw_collapsible_tree(position) {
         var i = 0,
             duration = 350;
 
-        var tree = d3.layout
+        var tree = d3v3.layout
             .tree()
             .size([360, 300])
             .separation(function (a, b) {
                 return (a.parent == b.parent ? 1 : 10) / a.depth;
             });
 
-        var diagonal = d3.svg.diagonal.radial().projection(function (d) {
+        var diagonal = d3v3.svg.diagonal.radial().projection(function (d) {
             return [d.y, (d.x / 180) * Math.PI];
         });
 
-        var treesvg = d3
+        var treesvg = d3v3
             .select(position)
             .append("svg")
             .attr("width", 650)

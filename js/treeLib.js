@@ -166,6 +166,7 @@ var treeLib = (function (d3) {
             .replace(/,/g, "_")
             .replace("(", "_")
             .replace(")", "_")
+            .replace("'", "_")
             .replace("#", "_");
     }
 
