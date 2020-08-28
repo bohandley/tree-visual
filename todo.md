@@ -14,7 +14,7 @@
 
 - [x] Sort layout option alphabetically
 - [ ] Change node tooltip style to match GraphVisual
-- [ ] Edge thickness of radial tree
+- [ ] ~~Edge thickness of radial tree~~
 
 
 
@@ -25,11 +25,11 @@
   - [x] Sync description text with current data source
 - [x] Change switch style from checkbox to round switch
 - [x] Slider tooltip (title & slider button)
-- [ ] Disabled slider's style is not correct
+- [ ] ~~Disabled slider's style is not correct~~
 - [ ] Node size slider is not synced at startup
 - [ ] Filtering panel not shown completely (under graph panel)
 - [x] Filter preset
-- [ ] Filter bug when switching dataset
+- [ ] ~~Filter bug when switching dataset~~
 - [x] Color blind palette
 - [x] Edge thickness (move to radial tree)
 
