@@ -1531,8 +1531,7 @@ var treeLib = (function (d3) {
     }
 
     function displayedNode(node) {
-        d3.select("#selected-node").html("");
-        d3.select("#selected-node").html("Displayed node: " + node);
+        d3.select("#selected-node").html(node);
     }
 
     function getOtherGraphType(position2) {
