@@ -1218,6 +1218,8 @@ var treeLib = (function (d3) {
         mouseoutTreemap(first, second, position1Id, position2Id);
 
         mouseoutSunburst(first, second, position1Id, position2Id);
+
+
     }
 
     function mouseoverCT(first, second, position1Id, position2Id) {
@@ -1560,6 +1562,72 @@ var treeLib = (function (d3) {
         return name;
     }
 
+    /***
+     * computes the width of the text for labels
+     * @param text the text to measure
+     * @returns {*[width, height]} of the text element
+     */
+    function getTextWidth(text) {
+        let textWidthDiv = document.getElementById("textWidthDiv");
+        textWidthDiv.innerHTML = text;
+        let height = textWidthDiv.clientHeight + 5;
+        let width = textWidthDiv.clientWidth + 5;
+
+        return [width, height];
+    }
+
+    /**
+     * add a hover nodeId text beside nodes
+     */
+    function addNodeIdText(svg, d, text) {
+        const NODE_RADIUS = 5;
+        const GRAPH_WIDTH = 150;
+
+        let wh = getTextWidth(text);
+        let width = wh[0];
+        let height = wh[1];
+        let x = Math.cos(d.x - Math.PI / 2) * d.y;
+        let y = Math.sin(d.x - Math.PI / 2) * d.y;
+
+        x = x + 1.5 * NODE_RADIUS;
+        y = y + 3.5 * NODE_RADIUS;
+        // deal with top side, right-top corner and right side specially
+        let xborder = GRAPH_WIDTH - width;
+        let yborder = NODE_RADIUS * 3;
+        /*if (x <= xborder && y <= yborder) {
+            // top side
+            y = y + 1.25 * NODE_RADIUS;
+        } else if (x > xborder && y <= yborder) {
+            // right-top corder
+            x = x - width - NODE_RADIUS / 2;
+            y = y + 1.25 * NODE_RADIUS;
+        } else if (x > xborder && y > yborder) {
+            // right side
+            x = x - width - NODE_RADIUS;
+        }*/
+
+        svg.selectAll("g.nodeNameHoverContainer").remove();
+        let textg = svg.append("g").attr("class", "nodeNameHoverContainer").style("opacity", 0.9);
+        textg
+            .append("rect")
+            .attr("x", x)
+            .attr("y", y - 0.8 * height)
+            .attr("class", "nodeNameHover")
+            .attr("width", 1.35 * width)
+            .attr("height", height);
+        textg
+            .append("text")
+            .attr("x", x + width * 0.05)
+            .attr("y", y)
+            .text(text)
+            .style("font-size", "0.7em")
+            .attr("class", "nodeNameText");
+    }
+
+    function removeNodeIdText(svg) {
+        svg.selectAll("g.nodeNameHoverContainer").remove();
+    }
+
     return {
         buildConfig: function (ids) {
             buildConfig(ids);
@@ -1782,6 +1850,10 @@ var treeLib = (function (d3) {
         },
 
         getNodeDisplayName: getNodeDisplayName,
+
+        addNodeIdText: addNodeIdText,
+
+        removeNodeIdText: removeNodeIdText,
     };
 
     // pull in d3

@@ -95,9 +95,11 @@ function draw_radial_tree(position) {
             .on("mouseover", function (d) {
                 // does highlighting and title text
                 treeLib.mouseoverLinking(position1, position2, d);
+                treeLib.addNodeIdText(svg, d, d.data.name + "\n" + menu.dataInfoSizeText(d.accSize));
             })
             .on("mouseout", function (d) {
                 treeLib.mouseoutLinking(position1, position2, d);
+                treeLib.removeNodeIdText(svg);
             });
 
         node.append("text")
