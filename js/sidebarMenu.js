@@ -35,13 +35,13 @@ var menu = (function (d3, $) {
                 `Volume of Import/Export ($ Thousand): ${Math.floor(value)
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-            treeoflife: (value) => `Number of Tips: ${value}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
+            treeoflife: (value) => `Number of Actual Leaves: ${value}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataInfoTypes: {
             author: { size: "Citations", leaves: "Papers" },
             government: { size: "Employees", leaves: "Branches" },
             trade: { size: "Thousands", leaves: "Countries" },
-            treeoflife: { size: "Tips", leaves: "Species" },
+            treeoflife: { size: "Actual Leaves", leaves: "Species" },
         },
         dataDescription: {
             author: {
@@ -70,9 +70,10 @@ var menu = (function (d3, $) {
             },
         },
         filterPreset: {
-            author: (level, set) => (level == 1 ? set.slice(0, 12) : set), // first 12 for level 1
+            author: (level, set) => (level == 1 ? set.slice(0, 10) : set), // first 10 for level 1
             trade: (level, set) => (level == 2 ? set.slice(0, 5) : set), // first 5 for level 2
             treeoflife: (level, set) => set.slice(0, 10), // first 10 for all levels
+            government: (level, set) => (set.length > 20 ? set.filter((e, i) => i % 2 == 0) : set), // intervene select for large set
         },
     };
 

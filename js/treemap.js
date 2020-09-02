@@ -10,7 +10,7 @@ function draw_treemap(position, selectindex) {
 
     var format = d3.format(",d");
 
-    var tilings = [d3.treemapResquarify, d3.treemapBinary, d3.treemapDice, d3.treemapSlice, d3.treemapSliceDice];
+    var tilings = [d3.treemapBinary, d3.treemapDice, d3.treemapSlice, d3.treemapSliceDice, d3.treemapResquarify];
 
     var treemap = d3.treemap().tile(tilings[selectindex]).size([width, height]).round(true).paddingInner(1);
 
