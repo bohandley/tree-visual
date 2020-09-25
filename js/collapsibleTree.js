@@ -145,7 +145,7 @@ function draw_collapsible_tree(position) {
                 .attr("dy", ".35em")
                 .attr("text-anchor", "start")
                 //.attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
-                .text((d) => treeLib.getNodeDisplayName(d.data.name))
+                .text((d) => treeLib.getNodeDisplayName(d.data.name, menu.config().removeText))
                 .style("fill-opacity", 1e-6);
 
             // Transition nodes to their new position.

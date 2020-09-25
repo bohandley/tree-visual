@@ -84,7 +84,7 @@ function draw_radial_tree(position) {
                 else return treeLib.getColor(d, color);
             })
             .attr("r", (d) => {
-                return menu.getNodeSize(d, position1[1], "Radial_Tree");
+                return menu.getNodeSize(d, position1[1], menu.config().proportionalSize[position1[1]], "Radial_Tree");
             })
             .style("stroke", "steelblue")
             .style("stroke-width", 1)
@@ -107,7 +107,7 @@ function draw_radial_tree(position) {
             .attr("x", (d) => (d.x < Math.PI === !d.children ? 6 : -6))
             .attr("text-anchor", (d) => (d.x < Math.PI === !d.children ? "start" : "end"))
             .attr("transform", (d) => (d.x >= Math.PI ? "rotate(180)" : null))
-            .text((d) => treeLib.getNodeDisplayName(d.data.name))
+            .text((d) => treeLib.getNodeDisplayName(d.data.name, menu.config().removeText))
             .clone(true)
             .lower()
             .attr("stroke", "white");

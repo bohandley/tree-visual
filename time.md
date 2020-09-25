@@ -393,6 +393,15 @@
       add listener in main.js to redraw with filters
       recursive function to filter levels based on stored data in config.levelFilters
     
+ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
+
+9/23/2020
+  6:00pm-10:00pm
+    Debug radial tree node size mouseover issue
+    Debug size difference of nodes between radial tree and radial tree collapsible
+    Add remove text option
+    Add commas for all numbers >= 1,000
+
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

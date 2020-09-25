@@ -1414,7 +1414,7 @@ var treeLib = (function (d3) {
             .style("cursor", "pointer")
             .attr("r", (d) => {
                 // return 10;
-                return menu.getNodeSize(d, position2Id[1], "Radial_Tree") * 2;
+                return menu.getNodeSize(d, position2Id[1]) * 2  * 3/4;
             })
             .style("stroke", (d) => {
                 // return getComplement(getColor(d, color));
@@ -1433,7 +1433,7 @@ var treeLib = (function (d3) {
             .select("circle")
             .attr("r", (d) => {
                 // return 5;
-                return menu.getNodeSize(d, position2Id[1], "Radial_Tree");
+                return menu.getNodeSize(d, position2Id[1]);
             })
             .style("stroke", "steelblue")
             .style("stroke-width", 1);
@@ -1541,7 +1541,11 @@ var treeLib = (function (d3) {
         return otherGraphType;
     }
 
-    function getNodeDisplayName(name) {
+    function getNodeDisplayName(name, removeText=false) {
+    	if (removeText)
+			return '';
+
+
         const MAX_NAME_LENGTH = 12;
 
         if (name.length > MAX_NAME_LENGTH) {
@@ -1552,12 +1556,14 @@ var treeLib = (function (d3) {
                 while (i < wordList.length && firstWordName.length + wordList[i].length <= MAX_NAME_LENGTH - 4) {
                     firstWordName += " " + wordList[i];
                     i += 1;
-                }
-                return firstWordName + "...";
-            } else return name.substr(0, MAX_NAME_LENGTH - 3) + "...";
+                }    
+            	return firstWordName + "...";
+            } else {
+          		return name.substr(0, MAX_NAME_LENGTH - 3) + "...";
+            }
         }
 
-        return name;
+    	return name;
     }
 
     return {

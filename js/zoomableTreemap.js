@@ -150,7 +150,16 @@ function draw_zoomable_treemap(position) {
                 .on("click", transition)
                 .on("drill", (d) => drillTransition(d))
                 .select("text")
-                .text(parentName(d));
+                .text((d) => {
+                    var remove = menu.config().removeText;
+
+                    if (remove)
+                        return '';
+                    else if (!d)
+                        return root.name;
+                    else
+                        return parentName(d)
+                });
 
             var g1 = svg1.insert("g", ".grandparent").datum(d).attr("class", "depth");
 
@@ -190,6 +199,11 @@ function draw_zoomable_treemap(position) {
             g.append("text")
                 .attr("dy", ".75em")
                 .text(function (d) {
+                    var remove = menu.config().removeText;
+
+                    if (remove)
+                        return '';
+
                     var n = d.name;
 
                     if (treeLib.isLeaf(d)) n = n.split(" ")[0] + "...";
