@@ -231,7 +231,6 @@ var menu = (function (d3, $) {
 
         			return treeLib.getNodeDisplayName(name, remove)
         		});
-            // debugger;
         });
     }
 
@@ -320,7 +319,6 @@ var menu = (function (d3, $) {
         }
 
         return root;
-        // debugger;
         // make the value either the accumulated size or the accumulated leaves
     }
 
@@ -425,7 +423,6 @@ var menu = (function (d3, $) {
                 var selections = $(this).val();
                 // updat the filter in the config
                 config.levelFilters[level] = selections;
-                // debugger;
             });
 
             // use preset from config if available

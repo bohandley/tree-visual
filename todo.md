@@ -1,5 +1,60 @@
 ## Treevisual TODO Tracking List
 
+### 2021 Todo list 
+
+#### Menu: Selection, add and include the following
+
+- [] Add dropdown with “Leaf Node”
+	- [] multiselect
+	- [] Collection of all leaf nodes
+	- [] Disable or deactivate leaf nodes that are filtered out
+	- [] Select by leaf and if id is repeated, select all
+
+- [x] Remove cluster EK
+
+#### Filtering on Data Selection
+
+- [] Distinct about what we trim on initial view 
+	- [] for example, don’t trim the author, 
+	- [] don’t trim if the browser can handle it
+
+#### Bugs
+
+- [] Tree taxonomy select text is too wide, stretching options and not visible
+- [] Size by country in trade value is incorrect 
+	- [] label or country is not unique, so showing this in the count?
+	- [] This is repeated in import and export, i.e., U.S. happens multiple times
+- [] Replicate this! Bug switch from tree to author, greyed Sunburst
+- [] Header accumulated leaves, show the count after the filter or on initial display with filter
+	- [] Number of total leaves, total value display
+- [] Include actual colorblind palette
+	- [] use from PerformanceVis
+
+
+#### Data set adjustment
+
+- [] Tree Taxonomy is too big, reduce size
+- [] Get number of employees from google for government
+
+#### Formatting 
+
+- [] Trade value is in dollar amount or dollars
+- [] Show the number displayed versus the filtered displayed
+	- [] displayed leaves / total leaves
+	- [] displayed value / total value
+  - [] I.e. number of papers displayed/total, just like graph visual
+
+#### Visual hint to give users a clue on prefiltering
+- [] Show a red dot in the top right corner to have a hint like graph viz
+	- [] “We’ve already done some pre-filtering for you
+
+#### Linking behavior
+
+- [] In leaf node list, highlight all the leafs with similar names?
+
+
+
+### (2020 list below, archived, thank you Haobin!)
 ### Page structure & style
 
 #### Header
@@ -48,3 +103,5 @@
 - [x] Fix (size => value) function in zoomable treemap
 - [x] Fix zoomable tree map click event
 - [x] Trim the tree of life dataset
+
+
