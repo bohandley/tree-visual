@@ -1596,7 +1596,6 @@ var treeLib = (function (d3) {
         },
 
         linkHighlight: function () {
-            debugger;
         },
 
         getLastClicked: function (containerId) {
