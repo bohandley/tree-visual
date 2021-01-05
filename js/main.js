@@ -150,7 +150,7 @@ function setupFilterEvent() {
 }
 
 function setupSliderValueTooltip() {
-    sidebarSliderDivs = ["#nodesizeScalarDiv", "#nodeDegreeDiv", "#highlightOpacityDiv"];
+    sidebarSliderDivs = ["#nodesizeScalarDiv", "#nodeDegreeDiv"];
     sliderDivs = sidebarSliderDivs;
     $.each(sliderDivs, function (index, sliderDiv) {
         setupEachSlider(sliderDiv);
