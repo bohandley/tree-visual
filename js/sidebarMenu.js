@@ -13,7 +13,23 @@ var menu = (function (d3, $) {
                 return d3.scaleOrdinal(colors);
             })(),
             (function () {
-                var colors = Array.from({ length: 10 }, (x, i) => i / 9).map((t) => d3.interpolateRgb("#202020", "#e0e0e0")(t));
+                var colors = [//Array.from({ length: 10 }, (x, i) => i / 9).map((t) => d3.interpolateRgb("#202020", "#e0e0e0")(t));
+                    d3.rgb(0,0,0),
+                    d3.rgb(0,73,73),
+                    d3.rgb(0,146,146),
+                    d3.rgb(255,109,182),
+                    d3.rgb(255,182,119),
+                    d3.rgb(73,0,146),
+                    d3.rgb(0,109,219),
+                    d3.rgb(182,109,255),
+                    d3.rgb(109,182,255),
+                    d3.rgb(182,219,255),
+                    d3.rgb(146,0,0),
+                    d3.rgb(146,73,0),
+                    d3.rgb(219,209,0),
+                    d3.rgb(36,255,36),
+                    d3.rgb(255,255,109),
+                ];
                 treeLib.shuffleArray(colors);
                 return d3.scaleOrdinal(colors);
             })(),
@@ -411,7 +427,12 @@ var menu = (function (d3, $) {
             var filterOptions = select.selectAll("option").data(collection[level]).enter().append("option");
 
             filterOptions
-                .text((d) => d)
+                .text((d) => {
+                    if(d.length > 12) // tree taxomony is too long
+                        return d.slice(0,12) + "...";
+                    else
+                        return d
+                })
                 .attr("value", (d) => d)
                 .attr("title", (d) => d);
 
