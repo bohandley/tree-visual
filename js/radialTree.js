@@ -20,9 +20,14 @@ function draw_radial_tree(position) {
     var filename = menu.getFileName();
 
     d3.json(filename, function (error, data) {
-        if (error) throw error;
+        var originalData = copy(data);
 
-        data = menu.filterJson(data);
+        // FILTER JSON
+        var data = menu.filterJson(data);
+
+        var filteredData = copy(data);
+
+        menu.changeNum(originalData, filteredData);
 
         var tree = d3.cluster().size([2 * Math.PI, radius - 100]);
 

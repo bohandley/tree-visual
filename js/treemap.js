@@ -17,10 +17,14 @@ function draw_treemap(position, selectindex) {
     var filename = menu.getFileName();
 
     d3.json(filename, function (error, data) {
-        if (error) throw error;
+        var originalData = copy(data);
 
         // FILTER JSON
-        data = menu.filterJson(data);
+        var data = menu.filterJson(data);
+
+        var filteredData = copy(data);
+
+        menu.changeNum(originalData, filteredData);
 
         var root = d3
             .hierarchy(data)

@@ -25,8 +25,8 @@
 	- [ ] label or country is not unique, so showing this in the count?
 	- [ ] This is repeated in import and export, i.e., U.S. happens multiple times
 - [ ] Replicate this! Bug switch from tree to author, greyed Sunburst
-- [ ] Header accumulated leaves, show the count after the filter or on initial display with filter
-	- [ ] Number of total leaves, total value display
+- [X] Header accumulated leaves, show the count after the filter or on initial display with filter
+	- [X] Number of total leaves, total value display
 - [X] Include actual colorblind palette
 	- [X] use from PerformanceVis
 
@@ -39,10 +39,10 @@
 #### Formatting 
 
 - [ ] Trade value is in dollar amount or dollars
-- [ ] Show the number displayed versus the filtered displayed
-	- [ ] displayed leaves / total leaves
-	- [ ] displayed value / total value
-  - [ ] I.e. number of papers displayed/total, just like graph visual
+- [X] Show the number displayed versus the filtered displayed
+	- [X] displayed leaves / total leaves
+	- [X] displayed value / total value
+  - [X] I.e. number of papers displayed/total, just like graph visual
 
 #### Visual hint to give users a clue on prefiltering
 - [ ] Show a red dot in the top right corner to have a hint like graph viz

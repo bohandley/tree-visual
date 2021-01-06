@@ -41,17 +41,16 @@ var menu = (function (d3, $) {
         removeText: false,
         dataType: "",
         dataInfoLeavesText: {
-            author: (value) => `Number of Papers: ${addCommas(value)}`,
-            government: (value) => `Number of Branches: ${addCommas(value)}`,
-            trade: (value) => `Number of Import/Export Countries: ${addCommas(value)}`,
-            treeoflife: (value) => `Number of Species: ${addCommas(value)}`,
+            author: (filtered, total) => `Filtered Papers/Total Papers: ${addCommas(filtered)}/${addCommas(total)}`,
+            government: (filtered, total) => `Filtered Branches/Total Branches: ${addCommas(filtered)}/${addCommas(total)}`,
+            trade: (filtered, total) => `Filtered Import/Export Countries/Total Import/Export Countries: ${addCommas(filtered)}/${addCommas(total)}`,
+            treeoflife: (filtered, total) => `Filtered Species/Total Species: ${addCommas(filtered)}/${addCommas(total)}`,
         },
         dataInfoSizeText: {
-            author: (value) => `Number of Citations: ${addCommas(value)}`,
-            government: (value) => "" /*`Number of Employees: ${value}`*/, // no employee data available
-            trade: (value) =>
-                `Volume of Import/Export ($ Thousand): ${addCommas(value)}`,
-            treeoflife: (value) => `Number of Species Covered in Taxonomy: ${addCommas(value)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
+            author: (filtered, total) => `Filtered Citation/Total Citations: ${addCommas(filtered)}/${addCommas(total)}`,
+            government: (filtered, total) => "" /*`Number of Employees: ${filtered,total}`*/, // no employee data available
+            trade: (filtered, total) => `Filtered Volume/Total Volume of Import/Export ($ Thousand): ${addCommas(filtered)}/${addCommas(total)}`,
+            treeoflife: (filtered, total) => `Filtered Species/Total Species Covered in Taxonomy: ${addCommas(filtered)}/${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataInfoTypes: {
             author: { size: "Citations", leaves: "Papers" },
@@ -273,20 +272,20 @@ var menu = (function (d3, $) {
             document.getElementById("treeHierarchy").innerHTML = config.dataDescription[dataType].hierarchy;
             document.getElementById("treeSource").innerHTML = config.dataDescription[dataType].source;
 
-            root = d3.hierarchy(root);
+            // root = d3.hierarchy(root);
 
-            dataSourceLeaves = document.getElementById("data-info-leaves");
-            dataSourceSize = document.getElementById("data-info-size");
+            // dataSourceLeaves = document.getElementById("data-info-leaves");
+            // dataSourceSize = document.getElementById("data-info-size");
 
-            root.sum(function (d) {
-                return d.children ? 0 : 1;
-            });
-            dataSourceLeaves.innerHTML = config.dataInfoLeavesText[dataType](root.value);
+            // root.sum(function (d) {
+            //     return d.children ? 0 : 1;
+            // });
+            // dataSourceLeaves.innerHTML = config.dataInfoLeavesText[dataType](root.value);
 
-            root.sum(function (d) {
-                return d.size;
-            });
-            dataSourceSize.innerHTML = config.dataInfoSizeText[dataType](root.value);
+            // root.sum(function (d) {
+            //     return d.size;
+            // });
+            // dataSourceSize.innerHTML = config.dataInfoSizeText[dataType](root.value);
         });
     }
 
@@ -510,8 +509,35 @@ var menu = (function (d3, $) {
             setupCheckBoxes((dataset = null));
         },
 
-        changeNum: function (FileName, datasetName) {
-            changeNum(FileName, datasetName);
+        changeNum: function (originalRoot, filteredRoot) {
+            // Refactor this function
+            var dataType = config.dataType;
+
+            originalRoot = d3.hierarchy(originalRoot);
+            filteredRoot = d3.hierarchy(filteredRoot);
+
+            dataSourceLeaves = document.getElementById("data-info-leaves");
+            dataSourceSize = document.getElementById("data-info-size");
+
+            originalRoot.sum(function (d) {
+                return d.children ? 0 : 1;
+            });
+
+            filteredRoot.sum(function (d) {
+                return d.children ? 0 : 1;
+            });
+
+            dataSourceLeaves.innerHTML = config.dataInfoLeavesText[dataType](filteredRoot.value, originalRoot.value);
+
+            originalRoot.sum(function (d) {
+                return d.size;
+            });
+
+            filteredRoot.sum(function (d) {
+                return d.size;
+            });
+
+            dataSourceSize.innerHTML = config.dataInfoSizeText[dataType](filteredRoot.value, originalRoot.value);
         },
 
         changeDataset: function (onload) {

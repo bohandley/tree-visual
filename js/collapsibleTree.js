@@ -19,10 +19,14 @@ function draw_collapsible_tree(position) {
     var filename = menu.getFileName();
 
     d3.json(filename, function (error, data) {
-        if (error) throw error;
+        var originalData = copy(data);
 
         // FILTER JSON
-        data = menu.filterJson(data);
+        var data = menu.filterJson(data);
+
+        var filteredData = copy(data);
+
+        menu.changeNum(originalData, filteredData);
 
         root = d3
             .hierarchy(data)
