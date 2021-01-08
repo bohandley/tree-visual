@@ -281,6 +281,7 @@ var treeLib = (function (d3) {
 
             d3.select("#" + actualPathId).dispatch("linkedClick");
         } else d3.select("#" + pathId).dispatch("linkedClick");
+
     }
 
     function clickActionZTPack(node, pathId, containersObj) {
@@ -1183,10 +1184,10 @@ var treeLib = (function (d3) {
     }
 
     function mouseoverLinking(position1, position2, d, isgr = 0) {
-        let first = getOtherGraphType(position1);
-        (second = getOtherGraphType(position2)),
-            (position1Id = treeLib.pathId(d, position1)), //buildNodeOrLeafId(d, position1),
-            (position2Id = treeLib.pathId(d, position2)); //buildNodeOrLeafId(d, position2);
+        let first = getOtherGraphType(position1),
+            second = getOtherGraphType(position2),
+            position1Id = treeLib.pathId(d, position1), //buildNodeOrLeafId(d, position1),
+            position2Id = treeLib.pathId(d, position2); //buildNodeOrLeafId(d, position2);
 
         mouseoverCT(first, second, position1Id, position2Id);
 
@@ -1206,7 +1207,15 @@ var treeLib = (function (d3) {
             second = getOtherGraphType(position2),
             position1Id = treeLib.pathId(d, position1), //buildNodeOrLeafId(d, position1),
             position2Id = treeLib.pathId(d, position2); //buildNodeOrLeafId(d, position2);
-
+        
+        if (d) {
+            var name = d.name || d.name == "" ? d.name : d.data.name;
+            // do not do mouse out styling if the leaf is selected from the menu Leaf Selection
+            if (menu.config().leafSelection.includes(name)){
+                return
+            }
+        }
+        
         mouseoutCT(first, second, position1Id, position2Id);
 
         mouseoutZT(first, second, position1Id, position2Id, d, isgr);
@@ -1787,6 +1796,12 @@ var treeLib = (function (d3) {
         },
 
         getNodeDisplayName: getNodeDisplayName,
+
+        cleanNodeStr: function (node) {
+            return cleanNodeStr(node);
+        },
+
+
     };
 
     // pull in d3

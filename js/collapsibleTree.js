@@ -231,6 +231,10 @@ function draw_collapsible_tree(position) {
                 d.x0 = d.x;
                 d.y0 = d.y;
             });
+            
+            setTimeout(function(){
+                menu.checkLeafSelection();
+            }, 351)
         }
 
         // Toggle children on click.

@@ -47,6 +47,9 @@ function change_map(position) {
     // unlock the changed map
     menu.unlockPosition(position);
 
+    // what does the locked element mean for this?
+    menu.resetLeafSelection();
+
     // which map was changed?
     var position2 = position == "1" ? "2" : "1";
     var position1 = position == "1" ? "1" : "2";
@@ -127,6 +130,8 @@ function updateDataset() {
     // 4. filter dataset on load of json
 
     menu.dataFilterSubset();
+
+    menu.resetLeafSelection();
 
     var locked1 = menu.isLocked("1");
     var locked2 = menu.isLocked("2");

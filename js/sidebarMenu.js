@@ -40,6 +40,7 @@ var menu = (function (d3, $) {
         proportionalSize: { 1: false, 2: false },
         removeText: false,
         dataType: "",
+        leafSelection: [],
         dataInfoLeavesText: {
             author: (filtered, total) => `Filtered Papers/Total Papers: ${addCommas(filtered)}/${addCommas(total)}`,
             government: (filtered, total) => `Filtered Branches/Total Branches: ${addCommas(filtered)}/${addCommas(total)}`,
@@ -362,7 +363,7 @@ var menu = (function (d3, $) {
                 var name = obj.name;
 
                 if (levels == 0) return;
-
+                // get distinct ids for nodes in each level
                 if (collection[levels]) {
                     if (!collection[levels].includes(name)) collection[levels] = collection[levels].concat([name]);
                 } else collection[levels] = [name];
@@ -379,18 +380,15 @@ var menu = (function (d3, $) {
 
             // clear all previous selects
             $("#filterDiv").empty();
-
+            $("#selectionDiv").empty();
             // set the levelFilters to the original collection, no presets yet
             config.levelFilters = collection;
 
-            createSelectPickers(collection);
+            createFilterSelectPickers(collection);
 
+            createSelectionSelectPicker(root.leaves())
             // create the filter button
             $("#filterDiv").append("<button type='button' class='btn btn-primary filter-levels-button' id='filter-levels'>Apply Filters</button>");
-
-            $(".bs-actionsbox").addClass("actionbox-centering");
-
-            $("#filterDiv").find("button").addClass("filter-levels-class");
 
             // trigger the spc event to add the listener in main.js to #filterDiv
             // which has access to updateDataset(), which is also in main.js
@@ -398,30 +396,126 @@ var menu = (function (d3, $) {
         });
     }
 
-    function createSelectPickers(collection) {
+    function createSelectionSelectPicker(leaves) {
+        // create a unique set of leaves
+        var leafNames = [...new Set(leaves.map(leaf => leaf.data.name))];
+
+        var leafOptions = leafNames.map(function(leaf){
+
+            var option = {};
+
+            option.text = leaf;
+
+            option.value = leaf;
+
+            return option;
+        });
+
+        var select = multiselectHtml("#selectionDiv", "leaf-selection", "Leaves")
+
+        var filterOptions = select.selectAll("option").data(leafOptions).enter().append("option");
+
+        filterOptions
+            .text((d) => {
+                if(d.text.length > 12) // tree taxomony is too long
+                    return d.text.slice(0,12) + "...";
+                else
+                    return d.text
+            })
+            .attr("value", (d) => d.value)
+            .attr("title", (d) => d.text);
+
+        var leafSelect = $("#leaf-selection");
+
+        leafSelect.selectpicker("refresh");
+
+        leafSelect.selectpicker({"width": "auto"})
+        leafSelect.on("change", function () {
+            var vals = $(this).val();
+
+            config.leafSelection = vals;
+
+            leafSelectEvent(vals);
+        });
+
+    }
+
+    function leafSelectEvent(vals) {      
+        // highlight all the selected leaves and normalize all no selected
+        // iterate through
+        // selected node act as if moused over
+        // non selected nodes lower opacity
+        // if none selected revert to normal opacity
+        collectLeaves("g1", vals);
+        collectLeaves("g2", vals);
+    }
+
+    function collectLeaves(position, vals) {
+        // get the type of 
+        var nodeType = d3.select("#"+position).selectAll(".leaf")._groups[0][0];
+        
+        if (nodeType) {
+            d3.selectAll(nodeType.nodeName)._groups[0].forEach(function(node){
+                highlightLeavesSelection(vals, node)                
+            });
+        } else {
+            var graphType = treeLib.getOtherGraphType(position);
+
+            // could be the zoomable tree map or collapsible tree that don;t have exposed leaves
+            if (graphType == "Zoomable_Treemap") {
+                d3.selectAll("g")._groups[0].forEach(function(node){
+                    highlightLeavesSelection(vals, node)                
+                });
+            } else if (graphType == "Collapsible_Tree") {
+                d3.selectAll("circle")._groups[0].forEach(function(node){
+                    highlightLeavesSelection(vals, node)                
+                });
+            }
+        }
+    }
+
+    function highlightLeavesSelection(vals, node) {
+        if (node.__data__ == undefined)
+            return
+
+        var nodeName;
+        
+        if (!node.__data__.hasOwnProperty("data"))
+            nodeName = node.__data__.name;
+        else
+            nodeName = node.__data__.data.name;
+
+        var id = "#"+node.id;
+        if (id == "#")
+            return
+
+        var d = d3.select(id).data()[0];
+
+        if (vals.length == 0){
+            // if no leaves are selected everything is normal
+            treeLib.mouseoutLinking("g1", "g2", d);
+            d3.select(id).style("opacity", 1);
+        } else if (!vals.includes(nodeName)) {
+            // if the node is not in the collection lower opacity
+            treeLib.mouseoutLinking("g1", "g2", d);
+            d3.select(id).style("opacity", .5);
+        } else if (vals.includes(nodeName) || vals.length == 0) { 
+            // if leaves are selected
+            // we act as if they are moused over, on auto
+            // and just in case we give them 1 opacity
+            treeLib.mouseoverLinking("g1", "g2", d);
+            d3.select(id).style("opacity", 1);
+        }
+    }
+
+    function createFilterSelectPickers(collection) {
         Object.keys(collection).forEach(function (level) {
-            var selectPicker =
-                `<div id="selectpicker-filter-level-` +
-                level +
-                `" class="form-group mt-3 mb-1">
-				<span>Level ` +
-                level +
-                `</span>
-					<div class="container">
-						<div class="row">
-							<div class="col-3">
-								<select id="filter-level-` +
-                level +
-                `" class="selectpicker" multiple data-actions-box="true">
-								</select>
-							</div>
-						</div>
-					</div>
-				</div>`;
 
-            $("#filterDiv").append(selectPicker);
+            var id = "filter-level-" + level;
+            
+            var title = "Level " + level;
 
-            var select = d3.select("#filter-level-" + level);
+            var select = multiselectHtml("#filterDiv", id, title)
 
             var filterOptions = select.selectAll("option").data(collection[level]).enter().append("option");
 
@@ -456,6 +550,34 @@ var menu = (function (d3, $) {
                 curFilter.selectpicker("selectAll");
             }
         });
+    }
+
+    function multiselectHtml(appendTo, id, title) {
+
+        var selectPicker = `<div id="selectpicker-` + id + `" class="form-group mt-3 mb-1"> 
+            <span>` + title + `</span>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <select 
+                                id="` + id + `" 
+                                class="selectpicker" 
+                                data-live-search="true" 
+                                multiple data-actions-box="true" 
+                                data-width="175px"
+                                noneSelectedText = ""
+
+                            >
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+
+        $(appendTo).append(selectPicker);
+
+        // return the multiselect
+        return d3.select("#" + id);
     }
 
     function filterJson(json) {
@@ -633,5 +755,15 @@ var menu = (function (d3, $) {
         color: function (val) {
             return config.palettes[config.curPaletteIndex](val);
         },
+
+        checkLeafSelection() {
+            var vals = $('#leaf-selection').val();
+            leafSelectEvent(vals);
+        },
+
+        resetLeafSelection() {
+            $('#leaf-selection').selectpicker('deselectAll');
+            config.leafSelection = [];
+        }
     };
 })(d3, $);

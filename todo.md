@@ -4,11 +4,11 @@
 
 #### Menu: Selection, add and include the following
 
-- [ ] Add dropdown with “Leaf Node”
-	- [ ] multiselect
-	- [ ] Collection of all leaf nodes
+- [X] Add dropdown with “Leaf Nodes”
+	- [X] multiselect
+	- [X] Collection of all leaf nodes
 	- [ ] Disable or deactivate leaf nodes that are filtered out
-	- [ ] Select by leaf and if id is repeated, select all
+	- [X] Select by leaf and if id is repeated, select all
 
 - [x] Remove cluster EK
 

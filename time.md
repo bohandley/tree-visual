@@ -402,6 +402,25 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
     Add remove text option
     Add commas for all numbers >= 1,000
 
+2021 REMEMBER TO ADD TIME FROM FALL FOR UNDERGRADS AS WELL AS THIS TIME
+
+1/6/2021
+  8:00pm-12:30
+    Fix select text bug
+    Show filtered leaves/total leaves
+    Show filtered size/total size
+    add colorblind palette
+
+1/7/2021
+  1:30-3:00pm
+    generate the selection select for leaves from the selected data
+  5:30-11:30pm
+    highlight leaves based on leaves present
+    debug
+    refactor leaves selection
+    add code to handle non exposed leaves
+    clean and refactor code to include in zoomable treemap and collapsible tree
+
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

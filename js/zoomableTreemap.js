@@ -260,6 +260,11 @@ function draw_zoomable_treemap(position) {
                     transitioning = false;
                     treeLib.transitioning(false);
                 });
+
+                setTimeout(function(){
+
+                    menu.checkLeafSelection();
+                }, 775)
             }
 
             function drillTransition(d) {
@@ -297,6 +302,11 @@ function draw_zoomable_treemap(position) {
                     svg.style("shape-rendering", "crispEdges");
                     transitioning = false;
                 });
+
+                setTimeout(function(){
+                    menu.checkLeafSelection();
+                }, 775)
+                
             }
 
             function linkedClickTransition(d) {
@@ -337,6 +347,10 @@ function draw_zoomable_treemap(position) {
                     transitioning = false;
                     treeLib.transitioning(false);
                 });
+
+                setTimeout(function(){
+                    menu.checkLeafSelection();
+                }, 775)
             }
             return g;
         }

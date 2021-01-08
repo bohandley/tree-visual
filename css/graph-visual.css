@@ -398,7 +398,7 @@ input, select, .panel-heading
     overflow: hidden;
 }
 
-.filter-levels-class {
+.center-multiselect-buttons {
     width: 75% !important;
     left: -17px;
     top: 5px;
@@ -413,4 +413,8 @@ input, select, .panel-heading
 .actionbox-centering {
     left: 16px;
     position: relative;
+}
+
+.btn-group.btn-group-sm.btn-block {
+    /*margin-left: -15px;*/
 }
