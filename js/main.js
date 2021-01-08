@@ -147,6 +147,8 @@ function setupFilterEvent() {
             var locked1 = menu.isLocked("1");
             var locked2 = menu.isLocked("2");
 
+            menu.resetLeafSelection();
+
             loadVisualization("1", locked1);
 
             loadVisualization("2", locked2);

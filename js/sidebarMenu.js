@@ -563,10 +563,10 @@ var menu = (function (d3, $) {
                                 id="` + id + `" 
                                 class="selectpicker" 
                                 data-live-search="true" 
-                                multiple data-actions-box="true" 
+                                multiple 
+                                data-actions-box="true" 
                                 data-width="175px"
-                                noneSelectedText = ""
-
+                                data-height="100px"
                             >
                             </select>
                         </div>
@@ -595,11 +595,12 @@ var menu = (function (d3, $) {
     function filterData(node, filters) {
         if (node.children) {
             node.children = node.children.filter((el) => {
-                if (el.children && filters.includes(el.name)) return 1;
-                else if (!el.children)
-                    // don't filter the leaves
+                if (el.children && filters.includes(el.name)) 
                     return 1;
-                else return 0;
+                else if (!el.children)// don't filter the leaves
+                    return 1;
+                else 
+                    return 0;
             });
 
             node.children.forEach(function (el) {
@@ -622,6 +623,38 @@ var menu = (function (d3, $) {
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
+    function disableFilteredLeavesSelection(originalRoot, filteredRoot) {
+        var disabledleaves = originalRoot.leaves().reduce((acc, leaf) => {
+            var isFiltered = !filteredRoot.leaves().find(l=>{
+                return l.data.name == leaf.data.name;
+            });
+
+            if(isFiltered)
+                return acc.concat([leaf.data.name]);
+            else
+                return acc;
+        }, []);
+
+       
+        d3.selectAll("#leaf-selection")
+            .selectAll("option")
+            .property("disabled", d => {
+                if (disabledleaves.includes(d.value)){
+                    return true;
+                } else {
+                    return false;
+                }
+            }).sort(function(a,b){
+                var aval = disabledleaves.includes(a.value) ? 1 : 0,
+                    bval = disabledleaves.includes(b.value) ? 1 : 0;
+
+                return d3.ascending(aval, bval)
+            });;
+                
+                
+        $("#leaf-selection").selectpicker("refresh");
+    }
+
     return {
         getNodeSize: function (d, position, type = null) {
             return getNodeSize(d, accessNodeSize(), config.proportionalSize[position], type);
@@ -638,8 +671,11 @@ var menu = (function (d3, $) {
             originalRoot = d3.hierarchy(originalRoot);
             filteredRoot = d3.hierarchy(filteredRoot);
 
-            dataSourceLeaves = document.getElementById("data-info-leaves");
-            dataSourceSize = document.getElementById("data-info-size");
+            // disable the leaves selection options that are filtered
+            disableFilteredLeavesSelection(originalRoot, filteredRoot);
+
+            var dataSourceLeaves = document.getElementById("data-info-leaves");
+            var dataSourceSize = document.getElementById("data-info-size");
 
             originalRoot.sum(function (d) {
                 return d.children ? 0 : 1;

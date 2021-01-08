@@ -7,7 +7,7 @@
 - [X] Add dropdown with “Leaf Nodes”
 	- [X] multiselect
 	- [X] Collection of all leaf nodes
-	- [ ] Disable or deactivate leaf nodes that are filtered out
+	- [X] Disable or deactivate leaf nodes that are filtered out
 	- [X] Select by leaf and if id is repeated, select all
 
 - [x] Remove cluster EK

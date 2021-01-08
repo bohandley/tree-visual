@@ -421,6 +421,10 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
     add code to handle non exposed leaves
     clean and refactor code to include in zoomable treemap and collapsible tree
 
+1/8/2021
+  11:00am-2:30pm
+    Disable leaf selection that are filtered out
+    
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)
