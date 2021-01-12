@@ -21,9 +21,9 @@
 #### Bugs
 
 - [X] Tree taxonomy select text is too wide, stretching options and not visible
-- [ ] Size by country in trade value is incorrect 
-	- [ ] label or country is not unique, so showing this in the count?
-	- [ ] This is repeated in import and export, i.e., U.S. happens multiple times
+- [X] Size by country in trade value is incorrect 
+	- [X] label or country is not unique, so showing this in the count?
+	- [X] This is repeated in import and export, i.e., U.S. happens multiple times
 - [ ] Replicate this! Bug switch from tree to author, greyed Sunburst
 - [X] Header accumulated leaves, show the count after the filter or on initial display with filter
 	- [X] Number of total leaves, total value display

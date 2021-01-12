@@ -677,12 +677,40 @@ var menu = (function (d3, $) {
             var dataSourceLeaves = document.getElementById("data-info-leaves");
             var dataSourceSize = document.getElementById("data-info-size");
 
+            var ogRoot = {};
             originalRoot.sum(function (d) {
-                return d.children ? 0 : 1;
+                var num = 0
+                if (d.children){
+                    // return 0;
+                } else {
+                    // debugger
+                    if(ogRoot[d.name]) {
+                        // return 0;
+                    } else {
+                        ogRoot[d.name] = true;
+                        num = 1;
+                    }
+                }
+                
+                return num;
             });
 
+            var filtRoot = {};
             filteredRoot.sum(function (d) {
-                return d.children ? 0 : 1;
+                var num = 0
+                if (d.children){
+                    // return 0;
+                } else {
+                    // debugger
+                    if(filtRoot[d.name]) {
+                        // return 0;
+                    } else {
+                        filtRoot[d.name] = true;
+                        num = 1;
+                    }
+                }
+                
+                return num;
             });
 
             dataSourceLeaves.innerHTML = config.dataInfoLeavesText[dataType](filteredRoot.value, originalRoot.value);

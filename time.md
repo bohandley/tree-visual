@@ -424,6 +424,11 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
 1/8/2021
   11:00am-2:30pm
     Disable leaf selection that are filtered out
+
+1/11/2021
+  11:15pm-11:45pm
+    Import Export by country number does not sum with duplicated countries
+
     
 NEXT(as of 7/14/2020)
   - New Features Needed
