@@ -50,7 +50,7 @@
 
 #### Linking behavior
 
-- [ ] In leaf node list, highlight all the leafs with similar names?
+- [X] In leaf node list, highlight all the leafs with similar names?
 
 
 
