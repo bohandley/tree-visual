@@ -429,7 +429,22 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
   11:15pm-11:45pm
     Import Export by country number does not sum with duplicated countries
 
-    
+2/4/21
+  5:00pm-7:00pm
+  begin debugging and changing text
+
+2/5/21
+  1:30pm-4:00pm
+  6:30pm-10:00pm
+  - add full text to filter subset selectpicker
+  - add full text to leaf selectpicker
+  - fix loading issue due to order of accessing data and updating config
+    - remove window onload, pull out dataType and filename
+    - update data summary with stored values
+  - remove extra d3.json in loading(can refactor one more out)
+  - fix node size update
+  - store data in menu config to use in d3 drawings
+  
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

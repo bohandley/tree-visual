@@ -38,7 +38,7 @@ function draw_pack(position) {
             .sort(function (a, b) {
                 return b.value - a.value;
             });
-
+        
         // preserve the accSize
         root = treeLib.preserveAccSize(root);
 

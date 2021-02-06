@@ -2,14 +2,47 @@
 treeLib.buildConfig(["g1", "g2"]);
 
 // global variable for dataset, passed to all d3 generators
-var FileData;
+var dataGlobal,
+    leavesGlobals,
+    dataFilterSubsetGlobal;
 
 $(document).ready(function () {
+    updateDataTypeAndFileName();
+    // // get the filename and datatype for the initial dataset 
+    // var objD = document.getElementById("dataDropdown");
+
+    // var dataType = d3.select(objD.selectedOptions[0]).attr("data");
+
+    // // update the stored dataType in menu config
+    // menu.updateConfig("dataType", dataType)
+
+    // // update the selected node in treeLib
+    // treeLib.displayedNode(objD.value);
+
+    // var filename = "datasets/" + objD.value + ".txt";
+
+    // // update the stored filename in menu config
+    // menu.updateConfig("filename", filename)
+        
     menu.setupCheckBoxes();
 
     setupSliderValueTooltip();
     setupToolTips();
-    setupFilterEvent();
+
+    menu.dataFilterSubset();
+    // after the dataFilterSubset has completed, the spc event is called
+    $(document).on("spc", function (e) {
+        addSelectpickerTitles();
+
+        setupFilterEvent();
+
+        menu.changeDataset(1);
+
+        menu.dataTypeSpanText();
+
+        loadVisualization("1");
+        loadVisualization("2");
+    });
 });
 
 function Remove_nodechildren(id) {
@@ -108,20 +141,36 @@ function loadVisualization(position, locked) {
 }
 
 window.onload = function () {
-    menu.changeDataset(1);
+    // menu.changeDataset(1);
 
-    menu.dataFilterSubset();
+    // menu.dataFilterSubset();
 
-    menu.dataTypeSpanText();
+    // menu.dataTypeSpanText();
 
-    loadVisualization("1");
-    loadVisualization("2");
+    // loadVisualization("1");
+    // loadVisualization("2");
 };
 
-function updateDataset() {
-    menu.changeDataset();
+function updateDataTypeAndFileName() {
+    // get the filename and datatype for the initial dataset 
+    var objD = document.getElementById("dataDropdown");
 
-    menu.dataTypeSpanText();
+    var dataType = d3.select(objD.selectedOptions[0]).attr("data");
+
+    // update the stored dataType in menu config
+    menu.updateConfig("dataType", dataType)
+
+    // update the selected node in treeLib
+    treeLib.displayedNode(objD.value);
+
+    var filename = "datasets/" + objD.value + ".txt";
+
+    // update the stored filename in menu config
+    menu.updateConfig("filename", filename)
+}
+
+function updateDataset() {
+    updateDataTypeAndFileName();
     // allow user to select from intermediate levels of nodes
     // and only display them in the graph
     // 1. iterate through data
@@ -131,14 +180,22 @@ function updateDataset() {
 
     menu.dataFilterSubset();
 
-    menu.resetLeafSelection();
+    $(document).on("spc", function (e) {
+        addSelectpickerTitles();
 
-    var locked1 = menu.isLocked("1");
-    var locked2 = menu.isLocked("2");
+        menu.resetLeafSelection();
 
-    loadVisualization("1", locked1);
+        menu.changeDataset();
 
-    loadVisualization("2", locked2);
+        menu.dataTypeSpanText();
+
+        var locked1 = menu.isLocked("1");
+        var locked2 = menu.isLocked("2");
+
+        loadVisualization("1", locked1);
+
+        loadVisualization("2", locked2);
+    });
 }
 
 function setupFilterEvent() {
@@ -152,8 +209,28 @@ function setupFilterEvent() {
             loadVisualization("1", locked1);
 
             loadVisualization("2", locked2);
-        });
+        });        
     });
+}
+
+function addSelectpickerTitles() {
+    // add the titles to the menus only after the selectpickers have been drawn
+    setTimeout(_=> {
+        leavesGlobals.forEach((opt,i) => {
+            var option = $('#selectpicker-leaf-selection').find('ul.dropdown-menu li')[i];
+
+            $(option).prop("title", opt.text);
+        });
+
+        Object.keys(dataFilterSubsetGlobal).forEach(level => {
+            dataFilterSubsetGlobal[level].forEach((subset,i) => {
+                var option = $('#selectpicker-filter-level-' + level).find('ul.dropdown-menu li')[i];
+
+                $(option).prop("title", subset);
+            });
+            
+        });
+    }, 1000)
 }
 
 function setupSliderValueTooltip() {

@@ -2,6 +2,116 @@
 
 ### 2021 Todo list 
 
+
+### 2021-01-13 testing comments
+
+### Firebox as the browser
+
+#### General Issues
+
+- [X] When I first visit the website, one of the two visualization panels does not show up. I need to reload the page or switch to a different visual form (e.g., Pack -> Radial Tree) to bring up the visualization. 
+	- [ ] add a loading gif
+- [ ] The first time I tried "Color Blind Palette", it took quite a while to apply. 
+- [X] When I switch between data sets in different types, the visualization panels do not update well, I have to refresh again to get it right. 
+- [X] When "Proportional Node Size" is on, changing "Node Size" does not take effect, until I switch back and force "Proportional Node Size". 
+
+ 
+- [ ] Hint for the lock icon: 
+	- [ ] "Check to store the most recent layout chosen (data-specific layouts not supported)" -> "Check to store the most recent layout chosen" (I thought the bracket is only for GraphVisual)
+
+- [X] Hint for "Size by #???/???"
+	- [X] "Display Value by Accumulated Leaves or Size" -> "Display node size based on given quantity"
+
+- [X] Hint for "Remove Text"
+	- [X]"Reduce the length of text displayed in visualizations" -> "Hide node labels"
+	- [X] "Remove Text" -> "Hide Label"
+
+- [X] Show the full label of each leaf node in the tooltip when mousing over the displayed items under "Leaves". 
+- [X] Show the full label of the data subset parents in the filter selects title
+- [ ] The section of leaves does not clear itself when the visualizations are reloaded or refreshed by other interactions (the visualization does not show the selected nodes but the "Leaves" box does).
+
+
+
+#### Publication Data Sets
+
+- [ ] "Size by #Papers/Citations" -> "Size by # Papers / # Citations"
+
+- [ ] Description:
+	- [X] "The visualization is showing John Stasko's publications from 1987 to 2017." -> "The tree shows John Stasko's publications from 1987 to 2017." (do the same for other data sets)
+
+- [ ] Source:
+	- [ ] Microsoft Academic Graph & Google_scholar -> Microsoft Academic Graph & Google Scholar
+
+- [ ] Filtered Papers/Total Papers: -> Number of papers (displayed / total):
+
+- [ ] Filtered Citation/Total Citations: -> Number of citations (displayed / total):
+
+- [ ] Update the above two labels to node labels accordingly.
+
+- [ ] I saw node labels like "522/NaN".
+
+
+#### Government Data Sets===
+
+- [ ] "Size by #Branches/Employees" -> "Size by # Branches / # Employees"
+
+- [ ] When I switch to # Employees, the visualization does not show up correctly (for Pack, Sunburst, Treemap, or Treemap (zoomable) layout). I guess we do not have the employee data? Do we?
+
+- [ ] Description:
+	- [X] "The visualization is showing the government structure of Canada." -> "The tree shows the government structure of Canada." (do the same for other data sets)
+
+
+- [ ] Tree hierarchy: 
+	- [ ] Should they be all the same (First Level to Fourth Level) regardless of which country is chosen?
+
+- [ ] Filtered Branches/Total Branches: -> Number of branches (displayed / total):
+
+- [ ] Should we have "Number of employees (displayed / total)" as well?
+
+- [ ] Update the above two labels to node labels accordingly.
+
+- [ ] We need to check node labels carefully, for example, US government data, I saw "The Supreme Court of The" (removing "The" at the end) "United States" (missing something at the end)
+
+- [ ] I suggest we correct this in the data file directly in one careful pass.
+
+
+#### Trade Data Sets
+
+- [ ] "Size by #Countries/Thousands" -> "Size by # Countries / # 1,000 USD"
+
+- [ ] Description:
+	- [X] "The visualization is showing China's trade data." -> "The tree shows China's trade data in 2018." (do the same for other data sets)
+
+- [ ] Filtered Import/Export Countries/Total Import/Export Countries: -> Number of countries (displayed / total):
+
+- [ ] Filtered Volume/Total Volume of Import/Export ($ Thousand): -> Number of 1,000 USD (displayed / total):
+
+- [ ] Update the above two labels to node labels accordingly.
+
+- [ ] The above two labels do not seem to update as I add filtering. 
+
+- [ ] I saw node labels like "19,909,491/NaN". 
+
+
+#### Tree Taxonomy Data Sets
+
+- [ ] Could we also have four data sets here like the other types of data? So, we could have 16 in total?
+
+- [ ] "Size by #Species/#Species" -> "Size by # Species in Truncated / Full Taxonomy"
+
+- [ ] Display either "Size by # Species in Truncated Taxonomy" or "Size by # Species in Full Taxonomy"
+
+- [ ] Description:
+	- [X] "The visualization is showing Archaea's tree taxonomy." -> "The tree shows the taxonomy of Archaea." (do the same for other data sets)
+	- [ ] Filtered Species/Total Species: -> Number of species in truncated taxonomy (displayed / total):
+	- [ ] Filtered Species/Total Species Covered in Taxonomy: -> Number of species in full taxonomy (displayed / total):
+
+- [ ] Update the above two labels to node labels accordingly.
+
+- [ ] I saw node labels like "35/NaN". 
+
+
+
 #### Menu: Selection, add and include the following
 
 - [X] Add dropdown with “Leaf Nodes”

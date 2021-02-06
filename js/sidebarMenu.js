@@ -3,6 +3,7 @@ var menu = (function (d3, $) {
     const LOCK_CLOSED = '<i class="fas fa-lock"></i>';
 
     var dummyConfig = {
+        root: null,
     	rootName: '',
         scaleLog: function () {},
         isLocked: { 1: false, 2: false },
@@ -62,25 +63,25 @@ var menu = (function (d3, $) {
         dataDescription: {
             author: {
                 name: "Publications",
-                desc: (dsName, root) => `The visualization is showing ${dsName}\'s publications from ${root.children[0].name} to ${root.children[root.children.length - 1].name}.`,
+                desc: (dsName, root) => `The tree shows ${dsName}\'s publications from ${root.children[0].name} to ${root.children[root.children.length - 1].name}.`,
                 hierarchy: "-------Publish Year <br/>| <br/>-----Publish Type <br/>| <br/>---Publisher CCF Rank <br/>| <br/>-Individual Paper",
                 source: "Microsoft Academic Graph & Google_scholar",
             },
             government: {
                 name: "Government Structure",
-                desc: (dsName, root) => `The visualization is showing the government structure of ${dsName}.`,
+                desc: (dsName, root) => `The tree shows the government structure of ${dsName}.`,
                 hierarchy: "-------First Level <br/>| <br/>-----Second Level <br/>| <br/>---Third Level <br/>| <br/>-Fourth Level",
                 source: "Government Official Websites",
             },
             trade: {
                 name: "Trade",
-                desc: (dsName, root) => `The visualization is showing ${dsName}\'s trade data.`,
+                desc: (dsName, root) => `The tree shows ${dsName}\'s trade data.`,
                 hierarchy: "-----In/Export <br/>| <br/>---Product <br/>| <br/>-Partner Country",
                 source: "World Integrated Trade Solution - World Bank",
             },
             treeoflife: {
                 name: "Tree of Life",
-                desc: (dsName, root) => `The visualization is showing ${dsName}\'s tree taxonomy.`,
+                desc: (dsName, root) => `The tree shows ${dsName}\'s tree taxonomy.`,
                 hierarchy: "-------Cellular <br/>| <br/>-----Level 1 <br/>| <br/>---Level 2 <br/>| <br/>-Level ...",
                 source: "Open Tree of Life",
             },
@@ -101,34 +102,31 @@ var menu = (function (d3, $) {
 
     function updateNodeSize(position = null) {
         config.nodeSize = accessNodeSize();
-        
-        var type = treeLib.getOtherGraphType("g"+position);
-
-        if (!config.proportionalSize[position])
-        	type = null;
 
         var ndSize = config.nodeSize;
         
-
-
         if (position) {
+            var type = treeLib.getOtherGraphType("g"+position);
+
             d3.select("#g" + position)
                 .selectAll("circle.node-size")
                 .attr("r", function (d) {
                     return getNodeSize(d, ndSize, config.proportionalSize[position], type);
                 });
         } else {
+            var type1 = treeLib.getOtherGraphType("g1");
+            var type2 = treeLib.getOtherGraphType("g2");
         	// for updating the slider node size
             d3.select("#g1")
                 .selectAll("circle.node-size")
                 .attr("r", function (d) {
-                    return getNodeSize(d, ndSize, config.proportionalSize["1"], type);
+                    return getNodeSize(d, ndSize, config.proportionalSize["1"], type1);
                 });
 
             d3.select("#g2")
                 .selectAll("circle.node-size")
                 .attr("r", function (d) {
-                    return getNodeSize(d, ndSize, config.proportionalSize["2"], type);
+                    return getNodeSize(d, ndSize, config.proportionalSize["2"], type2);
                 });
         }
     }
@@ -260,56 +258,15 @@ var menu = (function (d3, $) {
         return _out;
     }
 
-    function changeNum(FileName, datasetName) {
-        d3.json(FileName, function (error, root) {
-            if (error) throw error;
+    function changeDataSummary(FileName, datasetName) {
+        var dataType = config.dataType;
 
-            var dataType = config.dataType;
+        var root = config.root;
 
-            config.rootName = root.name;
-
-            document.getElementById("treeName").innerHTML = config.dataDescription[dataType].name;
-            document.getElementById("treeDescription").innerHTML = config.dataDescription[dataType].desc(datasetName, root);
-            document.getElementById("treeHierarchy").innerHTML = config.dataDescription[dataType].hierarchy;
-            document.getElementById("treeSource").innerHTML = config.dataDescription[dataType].source;
-
-            // root = d3.hierarchy(root);
-
-            // dataSourceLeaves = document.getElementById("data-info-leaves");
-            // dataSourceSize = document.getElementById("data-info-size");
-
-            // root.sum(function (d) {
-            //     return d.children ? 0 : 1;
-            // });
-            // dataSourceLeaves.innerHTML = config.dataInfoLeavesText[dataType](root.value);
-
-            // root.sum(function (d) {
-            //     return d.size;
-            // });
-            // dataSourceSize.innerHTML = config.dataInfoSizeText[dataType](root.value);
-        });
-    }
-
-    function changeDataset(onload = 0) {
-        // resetCfg();
-
-        var objD = document.getElementById("dataDropdown");
-
-        // change the data-info-children, data-info-sie text
-        // dependent on the selected dataset data attribute
-        var dataType = d3.select(objD.selectedOptions[0]).attr("data");
-
-        config.dataType = dataType;
-
-        treeLib.displayedNode(objD.value);
-
-        var filename = "datasets/" + objD.value + ".txt";
-
-        config.filename = filename;
-
-        // document.getElementById("enter_authorname").innerHTML = objD.options[objD.selectedIndex].text;
-
-        changeNum(filename, objD.options[objD.selectedIndex].text);
+        document.getElementById("treeName").innerHTML = config.dataDescription[dataType].name;
+        document.getElementById("treeDescription").innerHTML = config.dataDescription[dataType].desc(datasetName, root);
+        document.getElementById("treeHierarchy").innerHTML = config.dataDescription[dataType].hierarchy;
+        document.getElementById("treeSource").innerHTML = config.dataDescription[dataType].source;
     }
 
     function processAccumulated(root, type = null) {
@@ -354,6 +311,10 @@ var menu = (function (d3, $) {
         var filename = config.filename;
 
         d3.json(filename, function (error, data) {
+            config.root = data;
+
+            config.rootName = data.name;
+
             var root = d3.hierarchy(data);
             var collection = {};
             // get all the levels
@@ -378,10 +339,12 @@ var menu = (function (d3, $) {
                 }
             }
 
+            dataFilterSubsetGlobal = collection;
             // clear all previous selects
             $("#filterDiv").empty();
             $("#selectionDiv").empty();
             // set the levelFilters to the original collection, no presets yet
+            debugger
             config.levelFilters = collection;
 
             createFilterSelectPickers(collection);
@@ -410,6 +373,8 @@ var menu = (function (d3, $) {
 
             return option;
         });
+
+        leavesGlobals = leafOptions;
 
         var select = multiselectHtml("#selectionDiv", "leaf-selection", "Leaves")
 
@@ -726,8 +691,10 @@ var menu = (function (d3, $) {
             dataSourceSize.innerHTML = config.dataInfoSizeText[dataType](filteredRoot.value, originalRoot.value);
         },
 
-        changeDataset: function (onload) {
-            return changeDataset(onload);
+        changeDataset: function () {
+            var objD = document.getElementById("dataDropdown");
+
+            changeDataSummary(config.filename, objD.options[objD.selectedIndex].text);
         },
 
         dataInfoLeavesText: function (value) {
@@ -828,6 +795,12 @@ var menu = (function (d3, $) {
         resetLeafSelection() {
             $('#leaf-selection').selectpicker('deselectAll');
             config.leafSelection = [];
+        },
+
+        updateConfig(key, value) {
+            config[key] = value;
         }
+
+
     };
 })(d3, $);
