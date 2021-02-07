@@ -43,29 +43,29 @@ var menu = (function (d3, $) {
         dataType: "",
         leafSelection: [],
         dataInfoLeavesText: {
-            author: (filtered, total) => `Filtered Papers/Total Papers: ${addCommas(filtered)}/${addCommas(total)}`,
-            government: (filtered, total) => `Filtered Branches/Total Branches: ${addCommas(filtered)}/${addCommas(total)}`,
-            trade: (filtered, total) => `Filtered Import/Export Countries/Total Import/Export Countries: ${addCommas(filtered)}/${addCommas(total)}`,
-            treeoflife: (filtered, total) => `Filtered Species/Total Species: ${addCommas(filtered)}/${addCommas(total)}`,
+            author: (filtered, total) => `Number of papers (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
+            government: (filtered, total) => `Number of branches (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
+            trade: (filtered, total) => `Number of countries (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
+            treeoflife: (filtered, total) => `Number of species in truncated taxonomy (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
         },
         dataInfoSizeText: {
-            author: (filtered, total) => `Filtered Citation/Total Citations: ${addCommas(filtered)}/${addCommas(total)}`,
-            government: (filtered, total) => "" /*`Number of Employees: ${filtered,total}`*/, // no employee data available
-            trade: (filtered, total) => `Filtered Volume/Total Volume of Import/Export ($ Thousand): ${addCommas(filtered)}/${addCommas(total)}`,
-            treeoflife: (filtered, total) => `Filtered Species/Total Species Covered in Taxonomy: ${addCommas(filtered)}/${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
+            author: (filtered, total) => `Number of citations (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
+            government: (filtered, total) => `Number of employees (displayed / total) ${addCommas(filtered)}/${addCommas(total)}`, // no employee data available
+            trade: (filtered, total) => `Number of 1,000 USD (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
+            treeoflife: (filtered, total) => `Number of species in full taxonomy (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataInfoTypes: {
             author: { size: "Citations", leaves: "Papers" },
             government: { size: "Employees", leaves: "Branches" },
-            trade: { size: "Thousands", leaves: "Countries" },
-            treeoflife: { size: "#Species Covered in Taxonomy", leaves: "Species" },
+            trade: { size: "1,000 USD", leaves: "Countries" },
+            treeoflife: { size: "Species in Full Taxonomy", leaves: "Species in Truncated Taxonomy" },
         },
         dataDescription: {
             author: {
                 name: "Publications",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s publications from ${root.children[0].name} to ${root.children[root.children.length - 1].name}.`,
                 hierarchy: "-------Publish Year <br/>| <br/>-----Publish Type <br/>| <br/>---Publisher CCF Rank <br/>| <br/>-Individual Paper",
-                source: "Microsoft Academic Graph & Google_scholar",
+                source: "Microsoft Academic Graph & Google Scholar",
             },
             government: {
                 name: "Government Structure",
@@ -210,6 +210,7 @@ var menu = (function (d3, $) {
             }
 
             refreshVisualizations();
+            $("#leaf-selection").selectpicker('deselectAll');
         });
 
         $("#checkBoxRememberLayout1").on("click", function () {
@@ -225,6 +226,7 @@ var menu = (function (d3, $) {
             config.curPaletteIndex = isChecked ? 1 : 0;
 
             refreshVisualizations();
+            $("#leaf-selection").selectpicker('deselectAll');
         });
 
         $("#checkBoxRemoveText").on("click", function () {

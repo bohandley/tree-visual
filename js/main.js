@@ -1,28 +1,13 @@
 // set up the containers in treeLib config
 treeLib.buildConfig(["g1", "g2"]);
 
-// global variable for dataset, passed to all d3 generators
+// global variable for dataset, passed to all d3 generators in the future
 var dataGlobal,
     leavesGlobals,
     dataFilterSubsetGlobal;
 
 $(document).ready(function () {
     updateDataTypeAndFileName();
-    // // get the filename and datatype for the initial dataset 
-    // var objD = document.getElementById("dataDropdown");
-
-    // var dataType = d3.select(objD.selectedOptions[0]).attr("data");
-
-    // // update the stored dataType in menu config
-    // menu.updateConfig("dataType", dataType)
-
-    // // update the selected node in treeLib
-    // treeLib.displayedNode(objD.value);
-
-    // var filename = "datasets/" + objD.value + ".txt";
-
-    // // update the stored filename in menu config
-    // menu.updateConfig("filename", filename)
         
     menu.setupCheckBoxes();
 
