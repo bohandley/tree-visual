@@ -43,21 +43,27 @@ var menu = (function (d3, $) {
         dataType: "",
         leafSelection: [],
         dataInfoLeavesText: {
-            author: (filtered, total) => `Number of papers (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
-            government: (filtered, total) => `Number of branches (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
-            trade: (filtered, total) => `Number of countries (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
-            treeoflife: (filtered, total) => `Number of species in truncated taxonomy (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
+            author: (filtered, total) => `Number of papers (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
+            government: (filtered, total) => `Number of branches (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
+            trade: (filtered, total) => `Number of countries (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
+            treeoflife: (filtered, total) => `Number of species in truncated taxonomy (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
         },
         dataInfoSizeText: {
-            author: (filtered, total) => `Number of citations (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
-            government: (filtered, total) => `Number of employees (displayed / total) ${addCommas(filtered)}/${addCommas(total)}`, // no employee data available
-            trade: (filtered, total) => `Number of 1,000 USD (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`,
-            treeoflife: (filtered, total) => `Number of species in full taxonomy (displayed / total): ${addCommas(filtered)}/${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
+            author: (filtered, total) => `Number of citations (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
+            government: (filtered, total) => `Number of employees (displayed / total) ${addCommas(filtered)} / ${addCommas(total)}`, // no employee data available
+            trade: (filtered, total) => `Number of 1mil USD (displayed / total): ${divideByThous(filtered)} / ${divideByThous(total)}`,
+            treeoflife: (filtered, total) => `Number of species in full taxonomy (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
+        },
+        dataNodeSizeText: {
+            author: (filtered) => `Number of citations: ${addCommas(filtered)}`,
+            government: (filtered) => `Number of employees ${addCommas(filtered)}`, // no employee data available
+            trade: (filtered) => `Number of 1mil USD: ${divideByThous(filtered)}`,
+            treeoflife: (filtered) => `Number of species in full taxonomy: ${addCommas(filtered)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataInfoTypes: {
             author: { size: "Citations", leaves: "Papers" },
             government: { size: "Employees", leaves: "Branches" },
-            trade: { size: "1,000 USD", leaves: "Countries" },
+            trade: { size: "1mil USD", leaves: "Countries" },
             treeoflife: { size: "Species in Full Taxonomy", leaves: "Species in Truncated Taxonomy" },
         },
         dataDescription: {
@@ -346,7 +352,6 @@ var menu = (function (d3, $) {
             $("#filterDiv").empty();
             $("#selectionDiv").empty();
             // set the levelFilters to the original collection, no presets yet
-            debugger
             config.levelFilters = collection;
 
             createFilterSelectPickers(collection);
@@ -590,6 +595,13 @@ var menu = (function (d3, $) {
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
+    function divideByThous(value) {
+        var val1 = value/1000;
+        val2 = addCommas(val1);
+        debugger;
+        return val2;
+    }
+
     function disableFilteredLeavesSelection(originalRoot, filteredRoot) {
         var disabledleaves = originalRoot.leaves().reduce((acc, leaf) => {
             var isFiltered = !filteredRoot.leaves().find(l=>{
@@ -703,8 +715,8 @@ var menu = (function (d3, $) {
             return config.dataInfoLeavesText[config.dataType](value);
         },
 
-        dataInfoSizeText: function (value) {
-            return config.dataInfoSizeText[config.dataType](value);
+        dataNodeSizeText: function (value) {
+            return config.dataNodeSizeText[config.dataType](value);
         },
 
         updateAccumulated: function (acc) {

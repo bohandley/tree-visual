@@ -1380,7 +1380,7 @@ var treeLib = (function (d3) {
 
         d3.select("#" + position2Id)
             .append("title")
-            .text((d) => d.data.name + "\n" + menu.dataInfoSizeText(d.accSize));
+            .text((d) => d.data.name + "\n" + menu.dataNodeSizeText(d.accSize));
     }
 
     function packResponseMOut(position2Id) {
@@ -1434,7 +1434,10 @@ var treeLib = (function (d3) {
         d3.select("#" + position2Id)
             .select("circle")
             .append("title")
-            .text((d) => d.data.name + "\n" + menu.dataInfoSizeText(d.accSize));
+            .text((d) => {
+                var text = d.data.name + "\n" + menu.dataNodeSizeText(d.accSize)
+                return text;
+            });
     }
 
     function radialTreeResponseMOut(position2Id) {
@@ -1469,7 +1472,7 @@ var treeLib = (function (d3) {
             .append("title")
             .text(
                 // NEED TO COMPUTE SIZE FOR EACH NODE
-                (d) => d.data.name + "\n" + menu.dataInfoSizeText(d.accSize)
+                (d) => d.data.name + "\n" + menu.dataNodeSizeText(d.accSize)
             );
     }
 

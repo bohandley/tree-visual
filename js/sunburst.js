@@ -102,7 +102,7 @@ function draw_sunburst(position) {
                 click(d);
             })
             .append("title")
-            .text((d) => d.data.name + "\n" + menu.dataInfoSizeText(d.accSize));
+            .text((d) => d.data.name + "\n" + menu.dataNodeSizeText(d.accSize));
 
         d3.select("svg#" + position1).dispatch("doneDrawing");
     });

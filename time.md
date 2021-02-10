@@ -444,7 +444,11 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
   - remove extra d3.json in loading(can refactor one more out)
   - fix node size update
   - store data in menu config to use in d3 drawings
-  
+
+2/6/21
+  9:00pm-11:30pm
+  - fix descriptions
+  - fix bug with leaf selection
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)
