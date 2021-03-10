@@ -95,7 +95,7 @@ var menu = (function (d3, $) {
         filterPreset: {
             author: (level, set) => (level == 1 ? set.slice(0, 10) : set), // first 10 for level 1
             trade: (level, set) => (level == 2 ? set.slice(0, 5) : set), // first 5 for level 2
-            treeoflife: (level, set) => (level == 1 ? set.slice(0, 10) : set), // first 10 for all levels
+            treeoflife: (level, set) => (set),//(level == 1 ? set.slice(0, 10) : set), // first 10 for all levels
             government: (level, set) => (set.length > 20 ? set.filter((e, i) => i % 2 == 0) : set), // intervene select for large set
         },
     };
