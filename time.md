@@ -449,6 +449,30 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
   9:00pm-11:30pm
   - fix descriptions
   - fix bug with leaf selection
+
+3/3/21
+  6:00pm to 9:00pm
+  - create the anura tree of life data set
+
+3/4/21
+  7:00pm to 11:00pm
+  - rework/refactor the anura tree of life data set
+
+3/5/21
+  7:00pm to 10:30pm
+  - create the carnivora data set
+
+3/6/21
+  9:00pm to 11:30pm
+  - complete the carnivora data set
+
+3/8/21
+  6:00pm to 10:30pm
+  - complete the peliconformes data set
+
+3/9/21
+  9:30pm to 11:00pm
+  - complete the shrew mole and tenrec data set.
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

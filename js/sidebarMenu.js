@@ -46,25 +46,25 @@ var menu = (function (d3, $) {
             author: (filtered, total) => `Number of papers (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
             government: (filtered, total) => `Number of branches (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
             trade: (filtered, total) => `Number of countries (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
-            treeoflife: (filtered, total) => `Number of species in truncated taxonomy (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
+            treeoflife: (filtered, total) => `Number of species taxonomy (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
         },
         dataInfoSizeText: {
             author: (filtered, total) => `Number of citations (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
             government: (filtered, total) => `Number of employees (displayed / total) ${addCommas(filtered)} / ${addCommas(total)}`, // no employee data available
             trade: (filtered, total) => `Number of 1mil USD (displayed / total): ${divideByThous(filtered)} / ${divideByThous(total)}`,
-            treeoflife: (filtered, total) => `Number of species in full taxonomy (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
+            treeoflife: (filtered, total) => `Number of subspecies in taxonomy (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataNodeSizeText: {
             author: (filtered) => `Number of citations: ${addCommas(filtered)}`,
             government: (filtered) => `Number of employees ${addCommas(filtered)}`, // no employee data available
             trade: (filtered) => `Number of 1mil USD: ${divideByThous(filtered)}`,
-            treeoflife: (filtered) => `Number of species in full taxonomy: ${addCommas(filtered)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
+            treeoflife: (filtered) => `Number of subspecies in taxonomy: ${addCommas(filtered)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataInfoTypes: {
             author: { size: "Citations", leaves: "Papers" },
             government: { size: "Employees", leaves: "Branches" },
             trade: { size: "1mil USD", leaves: "Countries" },
-            treeoflife: { size: "Species in Full Taxonomy", leaves: "Species in Truncated Taxonomy" },
+            treeoflife: { size: "Subspecies in Taxonomy", leaves: "Species in Taxonomy" },
         },
         dataDescription: {
             author: {
@@ -88,14 +88,14 @@ var menu = (function (d3, $) {
             treeoflife: {
                 name: "Tree of Life",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s tree taxonomy.`,
-                hierarchy: "-------Cellular <br/>| <br/>-----Level 1 <br/>| <br/>---Level 2 <br/>| <br/>-Level ...",
+                hierarchy: "-------Order <br/>| <br/>-----Family <br/>| <br/>---Genus <br/>| <br/>-Species - Common Name",
                 source: "Open Tree of Life",
             },
         },
         filterPreset: {
             author: (level, set) => (level == 1 ? set.slice(0, 10) : set), // first 10 for level 1
             trade: (level, set) => (level == 2 ? set.slice(0, 5) : set), // first 5 for level 2
-            treeoflife: (level, set) => set.slice(0, 10), // first 10 for all levels
+            treeoflife: (level, set) => (level == 1 ? set.slice(0, 10) : set), // first 10 for all levels
             government: (level, set) => (set.length > 20 ? set.filter((e, i) => i % 2 == 0) : set), // intervene select for large set
         },
     };
@@ -513,6 +513,7 @@ var menu = (function (d3, $) {
 
             // use preset from config if available
             var preset = config.filterPreset[config.dataType];
+            
             if (preset) {
                 curFilter.selectpicker("val", preset(level, collection[level]));
             } else {

@@ -82,7 +82,7 @@
 
 #### Tree Taxonomy Data Sets
 
-- [ ] Could we also have four data sets here like the other types of data? So, we could have 16 in total?
+- [X] Could we also have four data sets here like the other types of data? So, we could have 16 in total?
 
 - [X] "Size by #Species/#Species" -> "Size by # Species in Truncated / Full Taxonomy"
 

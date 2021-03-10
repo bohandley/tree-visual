@@ -1,0 +1,331 @@
+{
+	"name":"Afrosoricida",
+	"children": [
+		{
+			"name":"Potamogalidae",
+			"children": [
+				{
+					"name":"Micropotamogale",
+					"children":[
+						{
+							"name":"M.lamottei - Nimba otter shrew",
+							"size":1
+						},
+						{
+							"name":"M.ruwenzorii - Ruwenzori otter shrew",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Potamogale",
+					"children":[
+						{
+							"name":"P.velox - Giant otter shrew",
+							"size":1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Tenrecidae",
+			"children": [
+				{
+					"name":"Geogale",
+					"children":[
+						{
+							"name":"G.aurita - Large-eared tenrec",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Microgale",
+					"children":[
+						{
+							"name":"M.brevicaudata - Short-tailed shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.cowani - Cowan's shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.drouhardi - Drouhard's shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.dryas - Dryad shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.fotsifotsy - Pale shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.gracilis - Gracile shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.gymnorhyncha - Naked-nosed shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.jenkinsae - Jenkins's shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.jobihely - Northern shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.longicaudata - Lesser long-tailed shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.majori - Major's long-tailed tenrec",
+							"size":1
+						},
+						{
+							"name":"M.mergulus - Web-footed tenrec",
+							"size":1
+						},
+						{
+							"name":"M.monticola - Montane shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.nasoloi - Nasolo's shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.parvula - Pygmy shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.principula - Greater long-tailed shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.pusilla - Least shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.soricoides - Shrew-toothed shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.taiva - Taiva shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"M.thomasi - Thomas's shrew tenrec",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Nesogale",
+					"children":[
+						{
+							"name":"N.dobsoni - Dobson's shrew tenrec",
+							"size":1
+						},
+						{
+							"name":"N.talazaci - Talazac's shrew tenrec",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Oryzorictes",
+					"children":[
+						{
+							"name":"O.hova - Mole-like rice tenrec",
+							"size":1
+						},
+						{
+							"name":"O.tetradactylus - Four-toed rice tenrec",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Echinops",
+					"children":[
+						{
+							"name":"E.telfairi - Lesser hedgehog tenrec",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Hemicentetes",
+					"children":[
+						{
+							"name":"H.nigriceps - Highland streaked tenrec",
+							"size":1
+						},
+						{
+							"name":"H.semispinosus - Lowland streaked tenrec",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Setifer",
+					"children":[
+						{
+							"name":"S.setosus - Greater hedgehog tenrec",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Tenrec",
+					"children":[
+						{
+							"name":"T.ecaudatus - Tailless tenrec",
+							"size":1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Chrysochloridae",
+			"children": [
+				{
+					"name":"Carpitalpa",
+					"children":[
+						{
+							"name":"C.arendsi - Arends' golden mole",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Chlorotalpa",
+					"children":[
+						{
+							"name":"C.duthieae - Duthie's golden mole",
+							"size":1
+						},
+						{
+							"name":"C.sclateri - Sclater's golden mole",
+							"size":4
+						}
+					]
+				},
+				{
+					"name":"Chrysochloris",
+					"children":[
+						{
+							"name":"C.asiatica - Cape golden mole",
+							"size":1
+						},
+						{
+							"name":"C.visagiei - Visagie's golden mole",
+							"size":1
+						},
+						{
+							"name":"C.stuhlmanni - Stuhlmann's golden mole",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Chrysospalax",
+					"children":[
+						{
+							"name":"C.trevelyani - Giant golden mole",
+							"size":1
+						},
+						{
+							"name":"C.villosus - Rough-haired golden mole",
+							"size":6
+						}
+					]
+				},
+				{
+					"name":"Cryptochloris",
+					"children":[
+						{
+							"name":"C.wintoni - De Winton's golden mole",
+							"size":1
+						},
+						{
+							"name":"C.zyli - Van Zyl's golden mole",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Eremitalpa",
+					"children":[
+						{
+							"name":"E.granti - Grant's golden mole",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Amblysomus",
+					"children":[
+						{
+							"name":"A.corriae - Fynbos golden mole",
+							"size":2
+						},
+						{
+							"name":"A.hottentotus - Hottentot golden mole",
+							"size":5
+						},
+						{
+							"name":"A.marleyi - Marley's golden mole",
+							"size":1
+						},
+						{
+							"name":"A.robustus - Robust golden mole",
+							"size":1
+						},
+						{
+							"name":"A.septentrionalis - Highveld golden mole",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Calcochloris",
+					"children":[
+						{
+							"name":"C.leucorhinus - Congo golden mole",
+							"size":2
+						},
+						{
+							"name":"C.obtusirostris - Yellow golden mole",
+							"size":1
+						},
+						{
+							"name":"C.tytonis - Somali golden mole",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Neamblysomus",
+					"children":[
+						{
+							"name":"N.julianae - Juliana's golden mole",
+							"size":1
+						},
+						{
+							"name":"N.gunningi - Gunning's golden mole",
+							"size":1
+						}
+					]
+				}
+			]
+		}
+	]
+}

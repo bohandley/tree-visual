@@ -1,0 +1,1202 @@
+{
+	"name": "Carnivora",
+	"children": [
+		{
+			"name":"Canidae",
+			"children": [
+				{
+					"name":"Canis",
+					"children":[
+						{
+							"name":"C.lupus - Gray wolf",
+							"size":38
+						},
+						{
+							"name":"C.latrans - Coyote",
+							"size":19
+						},
+						{
+							"name":"C.lupaster - African golden wolf",
+							"size":6
+						},
+						{
+							"name":"C.simensis - Ethiopian wolf",
+							"size":2
+						},
+						{
+							"name":"C.aureus - Golden jackal",
+							"size":7
+						}
+					]
+				},
+				{
+					"name":"Cuon",
+					"children":[
+						{
+							"name":"C.alpinus - Dhole",
+							"size":10
+						}
+					]
+				},
+				{
+					"name":"Lupulella",
+					"children":[
+						{
+							"name":"L.adusta - Side-striped jackal",
+							"size":7
+						},
+						{
+							"name":"L.mesomelas - Black-backed jackal",
+							"size":2
+						}
+					]	
+				},
+				{
+					"name":"Lycaon",
+					"children":[
+						{
+							"name":"L.pictus - African wild dog",
+							"size":5
+						}
+					]
+				},
+				{
+					"name":"Atelocynus",
+					"children":[
+						{
+							"name":"A.microtis - Short-eared dog",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Cerdocyon",
+					"children":[
+						{
+							"name":"C.thous - Crab-eating fox",
+							"size":5
+						}
+					]
+				},
+				{
+					"name":"Chrysocyon",
+					"children":[
+						{
+							"name":"C.brachyurus - Maned wolf",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Dusicyon",
+					"children":[
+						{
+							"name":"D.australis - Falkland Islands wolf",
+							"size":1
+						},
+						{
+							"name":"D.avus",
+							"size":1
+						},
+						{
+							"name":"D.cultridens",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Lycalopex",
+					"children":[
+						{
+							"name":"L.culpaeus - Andean fox",
+							"size":5
+						},
+						{
+							"name":"L.fulvipes - Darwin's fox",
+							"size":1
+						},
+						{
+							"name":"L.griseus - South American gray fox",
+							"size":1
+						},
+						{
+							"name":"L.gymnocercus - Pampas fox",
+							"size":5
+						},
+						{
+							"name":"L.sechurae - Sechuran fox",
+							"size":1
+						},
+						{
+							"name":"L.vetulus - Hoary fox",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Speothos",
+					"children":[
+						{
+							"name":"L.pictus - Bush dog",
+							"size":3
+						}
+					]
+				},
+				{
+					"name":"Nyctereutes",
+					"children":[
+						{
+							"name":"N.procyonoides - Raccoon dog",
+							"size":5
+						}
+					]
+				},
+				{
+					"name":"Otocyon",
+					"children":[
+						{
+							"name":"O.megalotis - Bat-eared fox",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Vulpes",
+					"children":[
+						{
+							"name":"V.bengalensis - Bengal fox",
+							"size":1
+						},
+						{
+							"name":"V.cana - Blanford's fox",
+							"size":1
+						},
+						{
+							"name":"V.chama - Cape fox",
+							"size":1
+						},
+						{
+							"name":"V.corsac - Corsac fox",
+							"size":3
+						},
+						{
+							"name":"V.ferrilata - Tibetan sand fox",
+							"size":1
+						},
+						{
+							"name":"V.lagopus - Arctic fox",
+							"size":4
+						},
+						{
+							"name":"V.macrotis - Kit fox",
+							"size":8
+						},
+						{
+							"name":"V.pallida - Pale fox",
+							"size":5
+						},
+						{
+							"name":"V.rueppellii - Rüppell's fox",
+							"size":5
+						},
+						{
+							"name":"V.velox - Swift fox",
+							"size":2
+						},
+						{
+							"name":"V.vulpes - Red fox",
+							"size":43
+						},
+						{
+							"name":"V.zerda - Fennec fox",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Urocyon",
+					"children":[
+						{
+							"name":"U.cinereoargenteus - Gray fox",
+							"size":16
+						},
+						{
+							"name":"U.littoralis - Island fox",
+							"size":6
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Ursidae",
+			"children": [
+				{
+					"name":"Ursus",
+					"children":[
+						{
+							"name":"U.americanus - American black bear",
+							"size":16
+						},
+						{
+							"name":"U.arctos - Brown bear",
+							"size":15
+						},
+						{
+							"name":"U.maritimus - Polar bear",
+							"size":2
+						},
+						{
+							"name":"U.hibetanus - Asian black bear",
+							"size":7
+						},
+						{
+							"name":"U.malayanus - Sun bear",
+							"size":2
+						},
+						{
+							"name":"U.ursinus - Sloth bear",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Ailuropoda",
+					"children":[
+						{
+							"name":"A.melanoleuca - Giant panda",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Tremarctos",
+					"children":[
+						{
+							"name":"T.ornatus - Spectacled bear",
+							"size":1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Procyonidae",
+			"children": [
+				{
+					"name":"Bassariscus",
+					"children":[
+						{
+							"name":"B.astutus - Ring-tailed cat",
+							"size":4
+						},
+						{
+							"name":"B.sumichrasti - Cacomistle",
+							"size":5
+						}
+					]
+				},
+				{
+					"name":"Procyon",
+					"children":[
+						{
+							"name":"P.lotor - Raccoon",
+							"size":22
+						},
+						{
+							"name":"P.cancrivorus - Crab-eating raccoon",
+							"size":4
+						},
+						{
+							"name":"P.pygmaeus - Pygmy raccoon",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Nasua",
+					"children":[
+						{
+							"name":"N.narica - White-nosed coati",
+							"size":4
+						},
+						{
+							"name":"N.nausa - South American coati",
+							"size":13
+						}
+					]
+				},
+				{
+					"name":"Nasuella",
+					"children":[
+						{
+							"name":"N.meridensis - Eastern dwarf coati",
+							"size":1
+						},
+						{
+							"name":"N.olivacea - Western dwarf coati",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Bassaricyon",
+					"children":[
+						{
+							"name":"B.alleni - Eastern lowland olingo",
+							"size":1
+						},
+						{
+							"name":"B.gabbii - Northern olingo",
+							"size":3
+						},
+						{
+							"name":"B.medius - Western lowland olingo",
+							"size":2
+						},
+						{
+							"name":"B.neblina - Olinguito",
+							"size":4
+						}
+					]
+				},
+				{
+					"name":"Potos",
+					"children":[
+						{
+							"name":"P.flavus - Kinkajou",
+							"size":8
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Mustelidae",
+			"children": [
+				{
+					"name":"Taxidea",
+					"children":[
+						{
+							"name":"T.taxus - American badger",
+							"size":4
+						}
+					]
+				},
+				{
+					"name":"Mellivora",
+					"children":[
+						{
+							"name":"M.capensis - Honey badger",
+							"size":12
+						}
+					]
+				},
+				{
+					"name":"Arctonyx",
+					"children":[
+						{
+							"name":"A.collaris - Hog badger",
+							"size":6
+						}
+					]
+				},
+				{
+					"name":"Martes",
+					"children":[
+						{
+							"name":"M.americana - American marten ",
+							"size":14
+						},
+						{
+							"name":"M.flavigula - Yellow-throated marten",
+							"size":9
+						},
+						{
+							"name":"M.foina - Beech marten",
+							"size":11
+						},
+						{
+							"name":"M.gwatkinsii - Nilgiri marten",
+							"size":1
+						},
+						{
+							"name":"M.martes - European pine marten",
+							"size":1
+						},
+						{
+							"name":"M.melampus - Japanese marten",
+							"size":2
+						},
+						{
+							"name":"M.zibellina - Sable",
+							"size":17
+						}
+					]
+				},
+				{
+					"name":"Lontra",
+					"children":[
+						{
+							"name":"L.canadensis - North American river otter",
+							"size":7
+						},
+						{
+							"name":"L.felina - Marine otter",
+							"size":1
+						},
+						{
+							"name":"L.longicaudis - Neotropical otter",
+							"size":6
+						},
+						{
+							"name":"L.provocax - Southern river otter",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Mustelinae",
+					"children":[
+						{
+							"name":"M.africana - Amazon weasel",
+							"size":2
+						},
+						{
+							"name":"M.altaica - Mountain weasel",
+							"size":1
+						},
+						{
+							"name":"M.erminea - Stoat (ermine)",
+							"size":37
+						},
+						{
+							"name":"M.eversmannii - Steppe polecat",
+							"size":7
+						},
+						{
+							"name":"M.felipei - Colombian weasel",
+							"size":1
+						},
+						{
+							"name":"M.frenata - Long-tailed weasel",
+							"size":42
+						},
+						{
+							"name":"M.itatsi - Japanese weasel",
+							"size":1
+						},
+						{
+							"name":"M.kathiah - Yellow-bellied weasel",
+							"size":2
+						},
+						{
+							"name":"M.lutreola - European mink",
+							"size":7
+						}
+					]
+				},
+				{
+					"name":"Gulo",
+					"children":[
+						{
+							"name":"G.gulo - Wolverine",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Neovison",
+					"children":[
+						{
+							"name":"N.vison - American mink",
+							"size":15
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Viverridae",
+			"children": [
+				{
+					"name":"Viverra",
+					"children":[
+						{
+							"name":"V.zibetha - Large Indian civet",
+							"size":5
+						},
+						{
+							"name":"V.tangalunga - Malayan civet",
+							"size":1
+						},
+						{
+							"name":"V.civettina - Malabar large-spotted civet",
+							"size":1
+						},
+						{
+							"name":"V.megaspila - Large-spotted civet",
+							"size":1
+						},
+						{
+							"name":"",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Viverricula",
+					"children":[
+						{
+							"name":"V.indica - Small Indian civet",
+							"size":9
+						}
+					]
+				},
+				{
+					"name":"Civettictis",
+					"children":[
+						{
+							"name":"C.civetta - African civet",
+							"size":6
+						}
+					]
+				},
+				{
+					"name":"Hemigalus",
+					"children":[
+						{
+							"name":"H.derbyanus - Banded palm civet",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Cynogale",
+					"children":[
+						{
+							"name":"C.bennettii - Otter civet",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Diplogale",
+					"children":[
+						{
+							"name":"D.hosei - Hose's palm civet",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Macrogalidia",
+					"children":[
+						{
+							"name":"M.musschenbroekii - Sulawesi palm civet",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Chrotogale",
+					"children":[
+						{
+							"name":"C.owstoni - Owston's palm civet",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Paradoxurus",
+					"children":[
+						{
+							"name":"P.hermaphroditus - Asian palm civet",
+							"size":1
+						},
+						{
+							"name":"P.zeylonensis - Golden palm civet",
+							"size":1
+						},
+						{
+							"name":"P.jerdoni - Brown palm civet",
+							"size":2
+						}
+
+					]
+				},
+				{
+					"name":"Arctictis",
+					"children":[
+						{
+							"name":"A.binturong - Binturong",
+							"size":9
+						}
+					]
+				},
+				{
+					"name":"Paguma",
+					"children":[
+						{
+							"name":"P.larvata - Masked palm civet",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Arctogalidia",
+					"children":[
+						{
+							"name":"A.trivirgata - Small-toothed palm civet",
+							"size":14
+						}
+					]
+				},
+				{
+					"name":"Genetta",
+					"children":[
+						{
+							"name":"G.genetta - Common genet",
+							"size":30
+						},
+						{
+							"name":"G.tigrina - Cape genet",
+							"size":1
+						},
+						{
+							"name":"G.maculata - Rusty-spotted genet",
+							"size":12
+						},
+						{
+							"name":"G.pardina - Pardine genet",
+							"size":1
+						},
+						{
+							"name":"G.abyssinica - Abyssinian genet",
+							"size":1
+						},
+						{
+							"name":"G.poensis - King genet",
+							"size":1
+						},
+						{
+							"name":"G.servalina - Servaline genet",
+							"size":5
+						}
+					]
+				},
+				{
+					"name":"Poiana",
+					"children":[
+						{
+							"name":"P.richardsonii - Central African oyan",
+							"size":1
+						},
+						{
+							"name":"P.leightoni - West African oyan",
+							"size":1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Hyaenidae",
+			"children": [
+				{
+					"name":"Hyaena",
+					"children":[
+						{
+							"name":"H.hyaena - Striped hyena",
+							"size":1
+						},
+						{
+							"name":"H.brunnea - Brown hyena",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Crocuta",
+					"children":[
+						{
+							"name":"C.crocuta - Spotted hyena",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Proteles",
+					"children":[
+						{
+							"name":"P.cristata - Aardwolf",
+							"size":1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Felidae",
+			"children": [
+				{
+					"name":"Acinonyx",
+					"children":[
+						{
+							"name":"A.jubatus - Cheetah",
+							"size":4
+						}
+					]
+				},
+				{
+					"name":"Caracal",
+					"children":[
+						{
+							"name":"C.caracal - Caracal",
+							"size":3
+						},
+						{
+							"name":"C.aurata - African golden cat",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Catopuma",
+					"children":[
+						{
+							"name":"C.temminckii - Asian golden cat",
+							"size":2
+						},
+						{
+							"name":"C.badia - Bay cat",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Felis",
+					"children":[
+						{
+							"name":"F.catus - Domestic cat",
+							"size":1
+						},
+						{
+							"name":"F.silvestris - European wildcat",
+							"size":2
+						},
+						{
+							"name":"F.chaus - Jungle cat",
+							"size":3
+						},
+						{
+							"name":"F.lybica - African wildcat",
+							"size":3
+						},
+						{
+							"name":"Black-footed cat F.nigripes",
+							"size":1
+						},
+						{
+							"name":"F.margarita - Sand cat",
+							"size":2
+						},
+						{
+							"name":"F.bieti - Chinese mountain cat",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Herpailurus",
+					"children":[
+						{
+							"name":"H.yagouaroundi - Jaguarundi",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Leopardus",
+					"children":[
+						{
+							"name":"L.pardalis - Ocelot",
+							"size":9
+						},
+						{
+							"name":"L.tigrinus - Oncilla",
+							"size":4
+						},
+						{
+							"name":"L.colocolo - Pampas cat",
+							"size":11
+						},
+						{
+							"name":"L.guigna - Kodkod",
+							"size":2
+						},
+						{
+							"name":"L.wiedii - Margay",
+							"size":3
+						},
+						{
+							"name":"L.geoffroyi - Geoffroy's cat",
+							"size":5
+						},
+						{
+							"name":"L.jacobitus - Andean mountain cat",
+							"size":1
+						},
+						{
+							"name":"L.guttulus - Southern tiger cat",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Leptailurus",
+					"children":[
+						{
+							"name":"L.serval - Serval",
+							"size":3
+						}
+					]
+				},
+				{
+					"name":"Lynx",
+					"children":[
+						{
+							"name":"L.lynx - Eurasian lynx",
+							"size":6
+						},
+						{
+							"name":"L.rufus - Bobcat",
+							"size":13
+						},
+						{
+							"name":"L.canadensis - Canada lynx",
+							"size":3
+						},
+						{
+							"name":"L.pardinus - Iberian lynx",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Otocolobus",
+					"children":[
+						{
+							"name":"O.manul - Pallas's cat",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Pardofelis",
+					"children":[
+						{
+							"name":"P.marmorata - Marbled cat",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Prionailurus",
+					"children":[
+						{
+							"name":"P.bengalensis - Leopard cat",
+							"size":2
+						},
+						{
+							"name":"P.javanensis - Sunda leopard cat",
+							"size":2
+						},
+						{
+							"name":"P.viverrinus - Flat-headed cat",
+							"size":1
+						},
+						{
+							"name":"P.viverrinus - Fishing cat",
+							"size":1
+						},
+						{
+							"name":"P.rubiginosus - Rusty-spotted cat",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Puma",
+					"children":[
+						{
+							"name":"P.concolor - Cougar",
+							"size":2
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Otariidae",
+			"children": [
+				{
+					"name":"Arctocephalus",
+					"children":[
+						{
+							"name":"A.gazella - Antarctic fur seal",
+							"size":1
+						},
+						{
+							"name":"A.townsendi - Guadalupe fur seal",
+							"size":1
+						},
+						{
+							"name":"A.philippii - Juan Fernández fur seal",
+							"size":1
+						},
+						{
+							"name":"A.galapagoensis - Galápagos fur seal",
+							"size":1
+						},
+						{
+							"name":"A.pusillus - Brown fur seal",
+							"size":2
+						},
+						{
+							"name":"A.forsteri - New Zealand fur seal",
+							"size":1
+						},
+						{
+							"name":"A.tropicalis - Subantarctic fur seal",
+							"size":1
+						},
+						{
+							"name":"A.australis - South American fur seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Callorhinus",
+					"children":[
+						{
+							"name":"C.ursinus - Northern fur seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Eumetopias",
+					"children":[
+						{
+							"name":"E.jubatus - Steller sea lion",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Neophoca",
+					"children":[
+						{
+							"name":"N.cinerea - Australian sea lion",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Otaria",
+					"children":[
+						{
+							"name":"O.flavescens - South American sea lion",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Phocarctos",
+					"children":[
+						{
+							"name":"P.hookeri - New Zealand sea lion",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Zalophus",
+					"children":[
+						{
+							"name":"Z.californianus - California sea lion",
+							"size":1
+						},
+						{
+							"name":"Z.wollebaeki - Galápagos sea lion",
+							"size":1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Odobenidae",
+			"children": [
+				{
+					"name":"Odobenus",
+					"children":[
+						{
+							"name":"O.rosmarus - Walrus",
+							"size":2
+						}
+					]
+				}
+			]
+		},
+		{
+			"name":"Phocidae",
+			"children": [
+				{
+					"name":"Monachus",
+					"children":[
+						{
+							"name":"M.monachus - Mediterranean monk seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Neomonachus",
+					"children":[
+						{
+							"name":"N.schauinslandi - Hawaiian monk seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Mirounga",
+					"children":[
+						{
+							"name":"M.angustirostris - Northern elephant seal",
+							"size":1
+						},
+						{
+							"name":"M.leonina - Southern elephant seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Ommatophoca",
+					"children":[
+						{
+							"name":"O.rossi - Ross seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Lobodon",
+					"children":[
+						{
+							"name":"L.carcinophagus - Crabeater seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Hydrurga",
+					"children":[
+						{
+							"name":"H.leptonyx - Leopard seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Leptonychotes",
+					"children":[
+						{
+							"name":"L.weddellii - Weddell seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Cystophora",
+					"children":[
+						{
+							"name":"C.cristata - Hooded seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Erignathus",
+					"children":[
+						{
+							"name":"E.barbatus - Bearded seal",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Phoca",
+					"children":[
+						{
+							"name":"P.vitulina - Harbor seal",
+							"size":5
+						},
+						{
+							"name":"P.largha - Spotted seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Pusa",
+					"children":[
+						{
+							"name":"P.hispida - Ringed seal",
+							"size":5
+						},
+						{
+							"name":"P.sibirica - Baikal seal",
+							"size":1
+						},
+						{
+							"name":"P.caspica - Caspian seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Pagophilus",
+					"children":[
+						{
+							"name":"P.groenlandicus - Harp seal",
+							"size":2
+						}
+					]
+				},
+				{
+					"name":"Histriophoca",
+					"children":[
+						{
+							"name":"H.fasciata - Ribbon seal",
+							"size":1
+						}
+					]
+				},
+				{
+					"name":"Halichoerus",
+					"children":[
+						{
+							"name":"H.grypus - Grey seal",
+							"size":2
+						}
+					]
+				}
+			]
+		}
+	]
+}
