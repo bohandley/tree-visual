@@ -10,7 +10,7 @@ function draw_treemap(position, selectindex) {
 
     var format = d3.format(",d");
 
-    var tilings = [d3.treemapBinary, d3.treemapDice, d3.treemapSlice, d3.treemapSliceDice, d3.treemapResquarify];
+    var tilings = [d3.treemapBinary, d3.treemapDice, d3.treemapSlice, d3.treemapSliceDice];//, d3.treemapResquarify];
 
     var treemap = d3.treemap().tile(tilings[selectindex]).size([width, height]).round(true).paddingInner(1);
 
@@ -69,7 +69,26 @@ function draw_treemap(position, selectindex) {
             .append("use")
             .attr("xlink:href", (d) => "#" + d.data.id);
 
-        cell.append("title").text((d) => d.data.id + "\n" + menu.dataNodeSizeText(d.accSize));
+        cell.append("title").text((d) => newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize));
+
+        function newline(id) {
+            var storedId = id;
+            var idLen = id.split(".").length;
+
+            var newId = id.split(".").map(function(el,idx){
+                var dashLength = idLen - idx;
+                var dash = "--".repeat(dashLength);
+
+                if (idx == storedId.split(".").length - 1){
+                    return dash + " " + el + "\n";
+                } else {
+                    return dash + " " + el + "\n | \n";
+                }
+
+            }).join("");
+
+            return newId;
+        }
 
         d3.select("svg#" + position1).dispatch("doneDrawing");
     });

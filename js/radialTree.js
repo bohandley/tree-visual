@@ -91,7 +91,8 @@ function draw_radial_tree(position) {
             .attr("r", (d) => {
                 return menu.getNodeSize(d, position1[1], menu.config().proportionalSize[position1[1]], "Radial_Tree");
             })
-            .style("stroke", "steelblue")
+            .style("stroke", "#555")
+            .attr("stroke-opacity", 0.4)
             .style("stroke-width", 1)
             .attr("class", "node-size")
             .on("click", function (d) {

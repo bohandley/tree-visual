@@ -473,6 +473,17 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
 3/9/21
   9:30pm to 11:00pm
   - complete the shrew mole and tenrec data set.
+
+3/22/21
+  7:00pm-11:30pm
+  - update about page
+  - break the "selected node" text, add "=>" or " " to show the level
+  - for title in treemap, have a line break between levels 
+  - space for tree of life datasets "name (description)"
+  - remove proportional node size, default, always on
+    - remove the lock icon, because we have the implicit lock
+  - remove squarify tiling strategy for the tree map, leave binary
+
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

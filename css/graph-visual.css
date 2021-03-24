@@ -371,8 +371,9 @@ input, select, .panel-heading
 
 .node circle {
   /*fill: #fff;*/
-  stroke: steelblue;
+  stroke: #555;
   stroke-width: 1.5px;
+  /*stroke-opacity: 0.4;*/
 }
 
 .node text {

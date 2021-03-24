@@ -63,7 +63,7 @@ function clearVisualization(position) {
 // update both maps if one is changed
 function change_map(position) {
     // unlock the changed map
-    menu.unlockPosition(position);
+    // menu.unlockPosition(position);
 
     // what does the locked element mean for this?
     menu.resetLeafSelection();
@@ -75,15 +75,15 @@ function change_map(position) {
     // resetCfg();
     // reset both maps when one layout is changed
     // remember to lock the choices???
-    var locked1 = menu.isLocked(position1);
-    var locked2 = menu.isLocked(position2);
+    // var locked1 = menu.isLocked(position1);
+    // var locked2 = menu.isLocked(position2);
 
-    loadVisualization(position1, locked1);
+    loadVisualization(position1);//, locked1);
 
-    loadVisualization(position2, locked2);
+    loadVisualization(position2);//, locked2);
 }
 
-function loadVisualization(position, locked) {
+function loadVisualization(position){//, locked) {
     clearVisualization(position);
 
     // hide specific tags for treemap and radial trees
@@ -92,9 +92,9 @@ function loadVisualization(position, locked) {
     $("#edgeThicknessDiv" + position + "_radialtree").addClass("hide-tag");
 
     // various resets on changing a layout unless locked
-    if (!locked) {
-        menu.resetProportionalSize(position);
-    }
+    // if (!locked) {
+    //     // menu.resetProportionalSize(position);
+    // }
 
     var objS = document.getElementById("dropdown" + position);
 
@@ -174,28 +174,27 @@ function updateDataset() {
 
         menu.dataTypeSpanText();
 
-        var locked1 = menu.isLocked("1");
-        var locked2 = menu.isLocked("2");
+        // var locked1 = menu.isLocked("1");
+        // var locked2 = menu.isLocked("2");
 
-        loadVisualization("1", locked1);
+        loadVisualization("1")//, locked1);
 
-        loadVisualization("2", locked2);
+        loadVisualization("2")//, locked2);
     });
 }
 
 function setupFilterEvent() {
-    $(document).on("spc", function (e) {
-        $("#filter-levels").on("click", function () {
-            var locked1 = menu.isLocked("1");
-            var locked2 = menu.isLocked("2");
+    $("#filter-levels").on("click", function () {
+        // var locked1 = menu.isLocked("1");
+        // var locked2 = menu.isLocked("2");
 
-            menu.resetLeafSelection();
+        menu.resetLeafSelection();
 
-            loadVisualization("1", locked1);
+        loadVisualization("1");//, locked1);
 
-            loadVisualization("2", locked2);
-        });        
-    });
+        loadVisualization("2");//, locked2);
+    });        
+
 }
 
 function addSelectpickerTitles() {

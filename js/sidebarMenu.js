@@ -6,7 +6,7 @@ var menu = (function (d3, $) {
         root: null,
     	rootName: '',
         scaleLog: function () {},
-        isLocked: { 1: false, 2: false },
+        // isLocked: { 1: true, 2: true },
         palettes: [
             (function () {
                 var colors = d3.schemeCategory10.map((c) => d3.interpolateRgb(c, "#fff")(0.2));
@@ -38,7 +38,7 @@ var menu = (function (d3, $) {
         curPaletteIndex: 0,
         accumulated: "leaves",
         nodeSize: 5,
-        proportionalSize: { 1: false, 2: false },
+        proportionalSize: { 1: true, 2: true },
         removeText: false,
         dataType: "",
         leafSelection: [],
@@ -70,25 +70,25 @@ var menu = (function (d3, $) {
             author: {
                 name: "Publications",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s publications from ${root.children[0].name} to ${root.children[root.children.length - 1].name}.`,
-                hierarchy: "-------Publish Year <br/>| <br/>-----Publish Type <br/>| <br/>---Publisher CCF Rank <br/>| <br/>-Individual Paper",
+                hierarchy: "--------Publish Year <br/>| <br/>------Publish Type <br/>| <br/>----Publisher CCF Rank <br/>| <br/>--Individual Paper",
                 source: "Microsoft Academic Graph & Google Scholar",
             },
             government: {
                 name: "Government Structure",
                 desc: (dsName, root) => `The tree shows the government structure of ${dsName}.`,
-                hierarchy: "-------First Level <br/>| <br/>-----Second Level <br/>| <br/>---Third Level <br/>| <br/>-Fourth Level",
+                hierarchy: "--------First Level <br/>| <br/>------Second Level <br/>| <br/>----Third Level <br/>| <br/>--Fourth Level",
                 source: "Government Official Websites",
             },
             trade: {
                 name: "Trade",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s trade data.`,
-                hierarchy: "-----In/Export <br/>| <br/>---Product <br/>| <br/>-Partner Country",
+                hierarchy: "------In/Export <br/>| <br/>----Product <br/>| <br/>--Partner Country",
                 source: "World Integrated Trade Solution - World Bank",
             },
             treeoflife: {
                 name: "Tree of Life",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s tree taxonomy.`,
-                hierarchy: "-------Order <br/>| <br/>-----Family <br/>| <br/>---Genus <br/>| <br/>-Species - Common Name",
+                hierarchy: "--------Order <br/>| <br/>------Family <br/>| <br/>----Genus <br/>| <br/>--Species - Common Name",
                 source: "Open Tree of Life",
             },
         },
@@ -219,13 +219,13 @@ var menu = (function (d3, $) {
             $("#leaf-selection").selectpicker('deselectAll');
         });
 
-        $("#checkBoxRememberLayout1").on("click", function () {
-            menu.changeLockPosition("1");
-        });
+        // $("#checkBoxRememberLayout1").on("click", function () {
+        //     menu.changeLockPosition("1");
+        // });
 
-        $("#checkBoxRememberLayout2").on("click", function () {
-            menu.changeLockPosition("2");
-        });
+        // $("#checkBoxRememberLayout2").on("click", function () {
+        //     menu.changeLockPosition("2");
+        // });
 
         $("#checkBoxColorBlind").on("click", function () {
             var isChecked = $(this).prop("checked");
@@ -583,11 +583,11 @@ var menu = (function (d3, $) {
     }
 
     function refreshVisualizations() {
-        var locked1 = menu.isLocked("1");
-        var locked2 = menu.isLocked("2");
+        // var locked1 = menu.isLocked("1");
+        // var locked2 = menu.isLocked("2");
 
-        loadVisualization("1", locked1);
-        loadVisualization("2", locked2);
+        loadVisualization("1")//, locked1);
+        loadVisualization("2")//, locked2);
     }
 
     function addCommas(value) {
@@ -599,7 +599,7 @@ var menu = (function (d3, $) {
     function divideByThous(value) {
         var val1 = value/1000;
         val2 = addCommas(val1);
-        debugger;
+        
         return val2;
     }
 
@@ -745,34 +745,34 @@ var menu = (function (d3, $) {
         },
 
         resetProportionalSize: function (position) {
-            config.proportionalSize[position] = false;
+            // config.proportionalSize[position] = false;
 
-            $("#checkBoxNodeSize" + position).prop("checked", false);
+            // $("#checkBoxNodeSize" + position).prop("checked", false);
         },
 
-        changeLockPosition: function (position) {
-            var lock = $("#checkBoxRememberLayout" + position);
+        // changeLockPosition: function (position) {
+        //     var lock = $("#checkBoxRememberLayout" + position);
 
-            // change to the opposite of what the config started with
-            config.isLocked[position] = !config.isLocked[position];
+        //     // change to the opposite of what the config started with
+        //     config.isLocked[position] = !config.isLocked[position];
 
-            var wasOpen = config.isLocked[position];
+        //     var wasOpen = config.isLocked[position];
 
-            if (wasOpen) lock.html(LOCK_CLOSED);
-            else lock.html(LOCK_OPEN);
-        },
+        //     if (wasOpen) lock.html(LOCK_CLOSED);
+        //     else lock.html(LOCK_OPEN);
+        // },
 
-        isLocked: function (position) {
-            return config.isLocked[position];
-        },
+        // isLocked: function (position) {
+        //     return config.isLocked[position];
+        // },
 
-        unlockPosition: function (position) {
-            var lock = $("#checkBoxRememberLayout" + position);
+        // unlockPosition: function (position) {
+        //     var lock = $("#checkBoxRememberLayout" + position);
 
-            config.isLocked[position] = false;
+        //     config.isLocked[position] = false;
 
-            lock.html(LOCK_OPEN);
-        },
+        //     lock.html(LOCK_OPEN);
+        // },
 
         crtScaleLog: function (total, range) {
             var logScale = d3.scaleLog().domain([1, total]).range([1, range]);

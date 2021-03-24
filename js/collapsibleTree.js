@@ -140,6 +140,7 @@ function draw_collapsible_tree(position) {
                         return treeLib.getColor(d, color);
                     }
                 })
+                .attr("stroke-opacity", 0.4)
                 .on("mouseover", (d) => treeLib.mouseoverLinking(position1, position2, d))
                 .on("mouseleave", (d) => treeLib.mouseoutLinking(position1, position2, d));
 

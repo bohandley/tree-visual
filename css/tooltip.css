@@ -8,7 +8,7 @@
 /* Tooltip text */
 .tooltipx .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    /*width: 120px;*/
     bottom: 100%;
     left: 50%;
     margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */

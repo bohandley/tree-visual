@@ -2,6 +2,80 @@
 
 ### 2021 Todo list 
 
+### 2021 March
+- [X] update about page
+		- [ ] leave the reference out for now, is there anything we can add in
+- [ ] do the help, onboarding 
+
+- [X] break the "selected node" text, add "=>" or " " to show the level
+	- [ ] use smaller font, spaces
+	- [ ] consistent format, 
+- [X] for title in treemap, have a line break between levels 
+	one line using arrows
+- [X] space for tree of life datasets "name (description)"
+- [ ] can we do transition on filter?
+- [X] remove proportional node size, default, always on
+	- [X] remove the lock icon, because we have the implicit lock
+- [X] remove squarify tiling strategy for the tree map, leave binary
+- [ ] grey out the # key for size by # 
+- [X] broke filter when removing lock, fix this
+- [ ] only load the visualization that has changed, not both
+- [ ] get size value for government employees
+- [ ] take out color that is similar to white grey root color
+- [ ] pick a color for highlighting nodes in radial tree doesn't clash, use similar color for edges
+- [ ] Number of 1mil USD -> Number of USD (Million)
+- [ ] We should order (e.g., alphabetical) items shown in the Selection dropdown list to help users make the selection.
+- [ ] Remove highlighting For zoomable treemap, when mouse over the root, no need to bold the label's font.
+- [ ] Make all dropdown lists' actual width, not just optons widths as wide as possible when the browser's window is resized. 
+- [ ] zoomable treemap size is 0 for all node sizes, fix in display
+- [ ] Publication data, [R] [J] [C], what [R] stands for? If it means "Other", we should use [O] maybe?
+- [ ] levels 2 and 3 in the filter
+- [ ] data cleaning for government
+
+When you switch between for example, # Papers to # Citations, make sure '#' in # Papers also gets the gray color. Do the same for all data sets. 
+
+When I show any government data, with a Sunburst view, the switching from # Branches to # Employees creates inconsistency (I guess this is because there is no employee number data as "Number of employees" label shows 0 / 0). 
+
+For trade data, import data should use a color rather than gray for non-root nodes, currently, they are not quite distinguishable in tree layouts. 
+
+For all tree nodes, using black color for the node's boundary would look clearer. 
+
+Number of 1mil USD -> Number of USD (Million)
+
+
+
+We should order (e.g., alphabetical) items shown in the Selection dropdown list to help users make the selection.
+
+
+
+For zoomable treemap, when mouse over the root, no need to bold the label's font.
+
+
+
+Make all dropdown lists' widths as wide as possible when the browser's window is resized. 
+
+
+
+Make "Proportional Node Size" default and remove the toggle. 
+
+
+
+Make "Lock" feature default and remove both icons from the interface. 
+
+
+
+Zoomable treemap, when showing a leaf node, it is not clickable, the label shown at the bottom of the screen does not display leaf node info. Regular treemaps have no such problem. 
+
+
+
+Publication data, [R] [J] [C], what [R] stands for? If it means "Other", we should use [O] maybe?
+
+
+
+If possible, consider only updating the view that has been changed or needs change. For example, if I switch from Sunburst to Treemap on the left visualization panel, only the left panel should be updated. 
+
+
+
 
 ### 2021-01-13 testing comments
 

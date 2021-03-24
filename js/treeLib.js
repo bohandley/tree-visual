@@ -123,10 +123,14 @@ var treeLib = (function (d3) {
 
     // create a path to use as a class
     // clean the names?
-    function createPathId(node, containerId) {
-        var pathArr = crtPathArray(node).reverse();
+    function createPathId(node, containerId, clean=1) {
 
-        var pathId = [containerId].concat(pathArr).join("-");
+        var pathArr = crtPathArray(node, clean).reverse();
+
+        if (clean)
+            var pathId = [containerId].concat(pathArr).join("-");
+        else
+            var pathId = pathArr.join(" => ");
 
         return pathId;
     }
@@ -134,7 +138,7 @@ var treeLib = (function (d3) {
     // takes a d3 data object that has the node and its path, nested
     // return an array of the path(must reverse this)
     // recursive function to travel up the path
-    function crtPathArray(node) {
+    function crtPathArray(node, clean=1) {
         if (node) {
             var nd = node.name || node.name == "" ? node.name : node.data.name;
 
@@ -142,7 +146,8 @@ var treeLib = (function (d3) {
             if (nd == "") nd = "empty";
 
             // clean the string to prepare it to be a class
-            nd = cleanNodeStr(nd);
+            if (clean)
+                nd = cleanNodeStr(nd);
 
             return node.parent != null ? [nd, ...crtPathArray(node.parent)] : [nd];
         } else {
@@ -1429,6 +1434,7 @@ var treeLib = (function (d3) {
                 // return getComplement(getColor(d, color));
                 return "black";
             })
+            .attr("stroke-opacity", 1)
             .style("stroke-width", 1);
 
         d3.select("#" + position2Id)
@@ -1447,7 +1453,8 @@ var treeLib = (function (d3) {
                 // return 5;
                 return menu.getNodeSize(d, position2Id[1]);
             })
-            .style("stroke", "steelblue")
+            .style("stroke", "#555")
+            .attr("stroke-opacity", 0.4)
             .style("stroke-width", 1);
     }
 
@@ -1461,6 +1468,7 @@ var treeLib = (function (d3) {
                 return "black";
             })
             .style("stroke-width", 1.5)
+            .attr("stroke-opacity", 1)
             .style("cursor", "pointer")
             .attr("r", (d) => {
                 // return 10;
@@ -1479,7 +1487,8 @@ var treeLib = (function (d3) {
     function collapsibleTreeResponseMOut(position2Id) {
         d3.select("#" + position2Id)
             .select("circle")
-            .style("stroke", "steelblue")
+            .style("stroke", "#555")
+            .attr("stroke-opacity", 0.4)
             .style("stroke-width", 1.5)
             .style("cursor", "pointer")
             .attr("r", (d) => {
@@ -1543,6 +1552,7 @@ var treeLib = (function (d3) {
     }
 
     function displayedNode(node) {
+
         d3.select("#selected-node").html(node);
     }
 
@@ -1778,12 +1788,15 @@ var treeLib = (function (d3) {
             node1.classed("selected-node", true);
             node2.classed("selected-node", true);
 
-            var node = idG1
-                .split("-")
-                .slice(1, idG1.length - 1)
-                .join("-");
+            // var node = idG1
+            //     .split("-")
+            //     .slice(1, idG1.length - 1)
+            //     .join("-");
+            // show the id with => between levels
+            var nodeString = createPathId(d, "", 0);
 
-            displayedNode(node);
+
+            displayedNode(nodeString);
         },
 
         displayedNode: function (node) {
