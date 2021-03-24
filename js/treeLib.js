@@ -1302,7 +1302,10 @@ var treeLib = (function (d3) {
                 var lastNode = path[path.length - 1];
                 position2Id += "-" + lastNode;
 
-                d3.select(p1IdMod).style("stroke", "black").style("stroke-width", 1.5).style("cursor", "pointer");
+                d3.select(p1IdMod)
+                    // .style("stroke", "black")
+                    // .style("stroke-width", 1.5)
+                    // .style("cursor", "pointer");
             } else {
                 d3.select("#" + position1Id)
                     .select(".parent")
@@ -1319,6 +1322,7 @@ var treeLib = (function (d3) {
     }
 
     function mouseoutZT(first, second, position1Id, position2Id, d, isgr) {
+
         if (first == "Zoomable_Treemap") {
             if (d == null || isgr) {
                 //(el1 == ".grandparent"){
@@ -1331,7 +1335,7 @@ var treeLib = (function (d3) {
                 var lastNode = path[path.length - 1];
                 position2Id += "-" + lastNode;
 
-                d3.select(p1IdMod).style("stroke", "").style("stroke-width", 0.5);
+                // d3.select(p1IdMod).style("stroke", "").style("stroke-width", 0.5);
             } else {
                 d3.select("#" + position1Id)
                     .select(".parent")
@@ -1520,12 +1524,12 @@ var treeLib = (function (d3) {
             var grandparentNode = d3.select("#" + position2Id + ".grandparent");
 
             grandparentNode
-                .style("stroke", (d) => {
-                    // return getComplement(getColor(d, color));
-                    return "black";
-                })
-                .style("stroke-width", 1.5)
-                .style("cursor", "pointer");
+                // .style("stroke", (d) => {
+                //     // return getComplement(getColor(d, color));
+                //     return "black";
+                // })
+                // .style("stroke-width", 1.5)
+                // .style("cursor", "pointer");
         }
     }
 
@@ -1547,7 +1551,7 @@ var treeLib = (function (d3) {
 
             var grandparentNode = d3.select("#" + position2Id + ".grandparent");
 
-            grandparentNode.style("stroke", "").style("stroke-width", 0.5);
+            // grandparentNode.style("stroke", "").style("stroke-width", 0.5);
         }
     }
 
