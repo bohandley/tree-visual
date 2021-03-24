@@ -57,14 +57,14 @@ var menu = (function (d3, $) {
         dataNodeSizeText: {
             author: (filtered) => `Number of citations: ${addCommas(filtered)}`,
             government: (filtered) => `Number of employees ${addCommas(filtered)}`, // no employee data available
-            trade: (filtered) => `Number of 1mil USD: ${divideByThous(filtered)}`,
+            trade: (filtered) => `Number of USD (Million): ${divideByThous(filtered)}`,
             treeoflife: (filtered) => `Number of subspecies in taxonomy: ${addCommas(filtered)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataInfoTypes: {
-            author: { size: "Citations", leaves: "Papers" },
-            government: { size: "Employees", leaves: "Branches" },
-            trade: { size: "1mil USD", leaves: "Countries" },
-            treeoflife: { size: "Subspecies in Taxonomy", leaves: "Species in Taxonomy" },
+            author: { size: "# Citations", leaves: "# Papers" },
+            government: { size: "# Employees", leaves: "# Branches" },
+            trade: { size: "# USD (Million)", leaves: "# Countries" },
+            treeoflife: { size: "# Subspecies in Taxonomy", leaves: "# Species in Taxonomy" },
         },
         dataDescription: {
             author: {

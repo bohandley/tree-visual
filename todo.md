@@ -17,7 +17,7 @@
 - [X] remove proportional node size, default, always on
 	- [X] remove the lock icon, because we have the implicit lock
 - [X] remove squarify tiling strategy for the tree map, leave binary
-- [ ] grey out the # key for size by # 
+- [X] grey out the # key for size by # 
 - [X] broke filter when removing lock, fix this
 - [ ] only load the visualization that has changed, not both
 - [ ] get size value for government employees
