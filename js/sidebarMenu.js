@@ -437,8 +437,6 @@ var menu = (function (d3, $) {
                 highlightLeavesSelection(vals, node)                
             });
         } else {
-
-            debugger
             var graphType = treeLib.getOtherGraphType(position);
 
             // could be the zoomable tree map or collapsible tree that don;t have exposed leaves
