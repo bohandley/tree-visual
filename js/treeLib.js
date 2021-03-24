@@ -1389,7 +1389,11 @@ var treeLib = (function (d3) {
 
         d3.select("#" + position2Id)
             .append("title")
-            .text((d) => d.data.name + "\n" + menu.dataNodeSizeText(d.accSize));
+            .text((d) => {
+                var name = d.data.name;
+                var size = menu.dataNodeSizeText(d.accSize);
+                return name + "\n" + size;
+        });
     }
 
     function packResponseMOut(position2Id) {

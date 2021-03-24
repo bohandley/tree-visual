@@ -200,7 +200,10 @@ function draw_zoomable_treemap(position) {
                 .on("mouseout", (d) => treeLib.mouseoutLinking(position1, position2, d))
                 .call(rect)
                 .append("title")
-                .text((d) => d.name + "\n" + menu.dataNodeSizeText(d.value));
+                .text((d) => {
+                    
+                    return d.name + "\n" + menu.dataNodeSizeText(d.accSize)
+            });
 
             g.append("text")
                 .attr("dy", ".75em")
