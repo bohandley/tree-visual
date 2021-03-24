@@ -19,7 +19,7 @@
 - [X] remove squarify tiling strategy for the tree map, leave binary
 - [X] grey out the # key for size by # 
 - [X] broke filter when removing lock, fix this
-- [ ] only load the visualization that has changed, not both
+- [X] only load the visualization that has changed, not both
 - [ ] get size value for government employees
 - [X] take out color that is similar to white grey root color
 - [X] pick a color for highlighting nodes in radial tree doesn't clash, use similar color for edges
