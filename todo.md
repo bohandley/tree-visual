@@ -21,8 +21,8 @@
 - [X] broke filter when removing lock, fix this
 - [ ] only load the visualization that has changed, not both
 - [ ] get size value for government employees
-- [ ] take out color that is similar to white grey root color
-- [ ] pick a color for highlighting nodes in radial tree doesn't clash, use similar color for edges
+- [X] take out color that is similar to white grey root color
+- [X] pick a color for highlighting nodes in radial tree doesn't clash, use similar color for edges
 - [ ] Number of 1mil USD -> Number of USD (Million)
 - [ ] We should order (e.g., alphabetical) items shown in the Selection dropdown list to help users make the selection.
 - [ ] Remove highlighting For zoomable treemap, when mouse over the root, no need to bold the label's font.

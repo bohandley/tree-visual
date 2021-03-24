@@ -53,7 +53,7 @@ var menu = (function (d3, $) {
         dataInfoSizeText: {
             author: (filtered, total) => `Number of citations (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`,
             government: (filtered, total) => `Number of employees (displayed / total) ${addCommas(filtered)} / ${addCommas(total)}`, // no employee data available
-            trade: (filtered, total) => `Number of 1mil USD (displayed / total): ${divideByThous(filtered)} / ${divideByThous(total)}`,
+            trade: (filtered, total) => `Number of USD (Million) (displayed / total): ${divideByThous(filtered)} / ${divideByThous(total)}`,
             treeoflife: (filtered, total) => `Number of subspecies in taxonomy (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataNodeSizeText: {
