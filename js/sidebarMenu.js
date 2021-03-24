@@ -10,6 +10,8 @@ var menu = (function (d3, $) {
         palettes: [
             (function () {
                 var colors = d3.schemeCategory10.map((c) => d3.interpolateRgb(c, "#fff")(0.2));
+                // remove grey color
+                colors = colors.filter(c=> c != "rgb(153, 153, 153)");
                 treeLib.shuffleArray(colors);
                 return d3.scaleOrdinal(colors);
             })(),
