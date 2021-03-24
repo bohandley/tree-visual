@@ -23,8 +23,8 @@
 - [ ] get size value for government employees
 - [X] take out color that is similar to white grey root color
 - [X] pick a color for highlighting nodes in radial tree doesn't clash, use similar color for edges
-- [ ] Number of 1mil USD -> Number of USD (Million)
-- [ ] We should order (e.g., alphabetical) items shown in the Selection dropdown list to help users make the selection.
+- [X] Number of 1mil USD -> Number of USD (Million)
+- [X] We should order (e.g., alphabetical) items shown in the Selection dropdown list to help users make the selection.
 - [ ] Remove highlighting For zoomable treemap, when mouse over the root, no need to bold the label's font.
 - [ ] Make all dropdown lists' actual width, not just optons widths as wide as possible when the browser's window is resized. 
 - [ ] zoomable treemap size is 0 for all node sizes, fix in display

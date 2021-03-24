@@ -341,7 +341,8 @@ var menu = (function (d3, $) {
             });
 
             function findLevels(d, levels, name) {
-                if (d.parent == null || d.children == null) return { levels: levels, name: name };
+                if (d.parent == null || d.children == null) 
+                    return { levels: levels, name: name };
                 else {
                     d = d.parent;
                     levels += 1;
@@ -372,6 +373,8 @@ var menu = (function (d3, $) {
         // create a unique set of leaves
         var leafNames = [...new Set(leaves.map(leaf => leaf.data.name))];
 
+        leafNames.sort();
+        
         var leafOptions = leafNames.map(function(leaf){
 
             var option = {};
@@ -403,7 +406,8 @@ var menu = (function (d3, $) {
 
         leafSelect.selectpicker("refresh");
 
-        leafSelect.selectpicker({"width": "auto"})
+        leafSelect.selectpicker({"width": "auto"});
+
         leafSelect.on("change", function () {
             var vals = $(this).val();
 
@@ -484,6 +488,8 @@ var menu = (function (d3, $) {
 
     function createFilterSelectPickers(collection) {
         Object.keys(collection).forEach(function (level) {
+            
+            collection[level].sort()
 
             var id = "filter-level-" + level;
             
