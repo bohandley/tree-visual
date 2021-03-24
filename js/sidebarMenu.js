@@ -437,6 +437,8 @@ var menu = (function (d3, $) {
                 highlightLeavesSelection(vals, node)                
             });
         } else {
+
+            debugger
             var graphType = treeLib.getOtherGraphType(position);
 
             // could be the zoomable tree map or collapsible tree that don;t have exposed leaves
@@ -445,7 +447,7 @@ var menu = (function (d3, $) {
                     highlightLeavesSelection(vals, node)                
                 });
             } else if (graphType == "Collapsible_Tree") {
-                d3.selectAll("circle")._groups[0].forEach(function(node){
+                d3.selectAll("g")._groups[0].forEach(function(node){
                     highlightLeavesSelection(vals, node)                
                 });
             }
@@ -472,17 +474,20 @@ var menu = (function (d3, $) {
         if (vals.length == 0){
             // if no leaves are selected everything is normal
             treeLib.mouseoutLinking("g1", "g2", d);
-            d3.select(id).style("opacity", 1);
+            d3.select(node)
+                .style("opacity", 1);
         } else if (!vals.includes(nodeName)) {
             // if the node is not in the collection lower opacity
             treeLib.mouseoutLinking("g1", "g2", d);
-            d3.select(id).style("opacity", .5);
+            d3.select(node)
+                .style("opacity", .5);
         } else if (vals.includes(nodeName) || vals.length == 0) { 
             // if leaves are selected
             // we act as if they are moused over, on auto
             // and just in case we give them 1 opacity
             treeLib.mouseoverLinking("g1", "g2", d);
-            d3.select(id).style("opacity", 1);
+            d3.select(node)
+                .style("opacity", 1);
         }
     }
 
