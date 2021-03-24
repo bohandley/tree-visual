@@ -374,7 +374,7 @@ var menu = (function (d3, $) {
         var leafNames = [...new Set(leaves.map(leaf => leaf.data.name))];
 
         leafNames.sort();
-        
+
         var leafOptions = leafNames.map(function(leaf){
 
             var option = {};
@@ -395,7 +395,7 @@ var menu = (function (d3, $) {
         filterOptions
             .text((d) => {
                 if(d.text.length > 12) // tree taxomony is too long
-                    return d.text.slice(0,12) + "...";
+                    return d.text.slice(0,16) + "...";
                 else
                     return d.text
             })
@@ -502,7 +502,7 @@ var menu = (function (d3, $) {
             filterOptions
                 .text((d) => {
                     if(d.length > 12) // tree taxomony is too long
-                        return d.slice(0,12) + "...";
+                        return d.slice(0,16) + "...";
                     else
                         return d
                 })
@@ -539,14 +539,14 @@ var menu = (function (d3, $) {
             <span>` + title + `</span>
                 <div class="container">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-12">
                             <select 
                                 id="` + id + `" 
                                 class="selectpicker" 
                                 data-live-search="true" 
                                 multiple 
                                 data-actions-box="true" 
-                                data-width="175px"
+                                data-width="100%"
                                 data-height="100px"
                             >
                             </select>

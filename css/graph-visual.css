@@ -395,7 +395,7 @@ input, select, .panel-heading
 }
 
 .container-fluid {
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
