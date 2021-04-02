@@ -427,5 +427,8 @@ input, select, .panel-heading
     font-family: Arial;
     padding: 4px 6px;
     box-shadow: 0 0 5px grey;
+}
 
+#treemap-tooltip p {
+    margin: 0;
 }

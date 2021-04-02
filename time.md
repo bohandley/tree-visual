@@ -484,6 +484,15 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
     - remove the lock icon, because we have the implicit lock
   - remove squarify tiling strategy for the tree map, leave binary
 
+4/1/21
+  7:00pm-11:00pm
+  - add onboarding hints
+
+4/2/21
+  10:00am-3:00pm
+  - clean onboarding hints and implement collapse and show
+  - mimic a title to allow for text length for treemap hover
+
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

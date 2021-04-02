@@ -76,18 +76,28 @@ function draw_treemap(position, selectindex) {
             .attr('style', 'position: absolute; opacity: 0;');
 
         cell.on('mouseover', function(d) {
-            d3.select('#treemap-tooltip')
+            let treemapTooltip = d3.select('#treemap-tooltip')
+
+            treemapTooltip
                 .style('left', (d3.event.pageX+10) + 'px')
                 .style('top', (d3.event.pageY+10) + 'px')
 
-            let text = newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize);
+            let text1 = newline(d.data.id);
+            let text2 = menu.dataNodeSizeText(d.accSize);
+
+            treemapTooltip
+                .append("p")
+                .text(text1);
+
+            treemapTooltip
+                .append("p")
+                .text(text2)
             
             let tooltipTimer = setTimeout(function(){
-                d3.select('#treemap-tooltip')
-                    .transition()
-                    .duration(200)
-                    .style('opacity', 1)
-                    .text(text)    
+                treemapTooltip
+                .transition()
+                .duration(200)
+                .style('opacity', 1) 
             }, 1000)
             
 
@@ -95,6 +105,7 @@ function draw_treemap(position, selectindex) {
         .on('mouseout', function() {
             d3.select('#treemap-tooltip')
                 .style('opacity', 0)
+                // .html("");
         })
         .on('mousemove', function() {
             // d3.select('#treemap-tooltip')
