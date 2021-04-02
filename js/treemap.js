@@ -69,11 +69,66 @@ function draw_treemap(position, selectindex) {
             .append("use")
             .attr("xlink:href", (d) => "#" + d.data.id);
 
-        cell.append("svg:title").text((d) => {
-             return newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize)
-            })
-            .attr("class", "treemap-title");
+        // create the custom tooltip to display the whole text
+        d3.select('body')
+            .append('div')
+            .attr('id', 'treemap-tooltip')
+            .attr('style', 'position: absolute; opacity: 0;');
 
+        cell.on('mouseover', function(d) {
+            d3.select('#treemap-tooltip')
+                .style('left', (d3.event.pageX+10) + 'px')
+                .style('top', (d3.event.pageY+10) + 'px')
+
+            let text = newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize);
+            
+            let tooltipTimer = setTimeout(function(){
+                d3.select('#treemap-tooltip')
+                    .transition()
+                    .duration(200)
+                    .style('opacity', 1)
+                    .text(text)    
+            }, 1000)
+            
+
+        })
+        .on('mouseout', function() {
+            d3.select('#treemap-tooltip')
+                .style('opacity', 0)
+        })
+        .on('mousemove', function() {
+            // d3.select('#treemap-tooltip')
+            //     .style('left', (d3.event.pageX+10) + 'px')
+            //     .style('top', (d3.event.pageY+10) + 'px')
+        })
+
+        // cell.append("svg:title").text((d) => {
+        //      return newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize)
+        //     })
+        //     .style("width", "1000px");
+
+          // create a tooltip
+    //       var div = d3.select("body").append("div") 
+    // .attr("class", "tooltip")               
+    // .style("opacity", 0);
+    //     let tooltip = cell.append("g")
+    //         .attr("class", "treemap-title")
+    //         .attr("transform", "translate(20,20)")
+    //         .attr("opacity", .9)
+
+    //     let rect = tooltip.append("rect")
+            
+    //         rect.attr("rx", 100)
+    //         .attr("width", 100)
+    //         .attr("height", 100)
+
+
+        // let treemapText = tooltip.append("text")
+
+        // treemapText.text((d) => {
+        //      return newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize)
+        //     })
+        
         function newline(id) {
             var storedId = id;
             var idLen = id.split(".").length;

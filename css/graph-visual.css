@@ -420,10 +420,12 @@ input, select, .panel-heading
     /*margin-left: -15px;*/
 }
 
-.treemap-title[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 1000px;
+#treemap-tooltip {
+    border-radius: 1px;
+    background-color: #f3f2f2;
+    font-size: x-small;
+    font-family: Arial;
+    padding: 4px 6px;
+    box-shadow: 0 0 5px grey;
+
 }
