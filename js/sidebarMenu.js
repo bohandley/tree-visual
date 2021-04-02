@@ -361,7 +361,11 @@ var menu = (function (d3, $) {
 
             createSelectionSelectPicker(root.leaves())
             // create the filter button
-            $("#filterDiv").append("<button type='button' class='btn btn-primary filter-levels-button' id='filter-levels'>Apply Filters</button>");
+            $("#filterDiv").append(`
+                <div style="width: 50%; margin: 0 auto;">
+                <button type='button' class='btn btn-primary filter-levels-button' id='filter-levels'>Apply Filters</button>
+                </div>
+                `);
 
             // trigger the spc event to add the listener in main.js to #filterDiv
             // which has access to updateDataset(), which is also in main.js

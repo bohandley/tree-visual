@@ -7,12 +7,16 @@ var dataGlobal,
     dataFilterSubsetGlobal;
 
 $(document).ready(function () {
+
     updateDataTypeAndFileName();
         
     menu.setupCheckBoxes();
 
     setupSliderValueTooltip();
+
     setupToolTips();
+
+    setupOnboarding();
 
     menu.dataFilterSubset();
     // after the dataFilterSubset has completed, the spc event is called
@@ -29,6 +33,14 @@ $(document).ready(function () {
         loadVisualization("2");
     });
 });
+
+function setupOnboarding() {
+    hintsSetup.onboarding();
+
+    $("#help").on("click", function(){
+        hintsSetup.onboarding();
+    });
+}
 
 function Remove_nodechildren(id) {
     var parent = document.getElementById(id);

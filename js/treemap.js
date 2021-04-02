@@ -69,21 +69,28 @@ function draw_treemap(position, selectindex) {
             .append("use")
             .attr("xlink:href", (d) => "#" + d.data.id);
 
-        cell.append("title").text((d) => newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize));
+        cell.append("svg:title").text((d) => {
+             return newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize)
+            })
+            .attr("class", "treemap-title");
 
         function newline(id) {
             var storedId = id;
             var idLen = id.split(".").length;
 
             var newId = id.split(".").map(function(el,idx){
-                var dashLength = idLen - idx;
-                var dash = "--".repeat(dashLength);
+                if (idx == storedId.split(".").length - 1)
+                    return el;
+                else
+                    return el + " => ";
+                // var dashLength = idLen - idx;
+                // var dash = "--".repeat(dashLength);
 
-                if (idx == storedId.split(".").length - 1){
-                    return dash + " " + el + "\n";
-                } else {
-                    return dash + " " + el + "\n | \n";
-                }
+                // if (idx == storedId.split(".").length - 1){
+                //     return dash + " " + el + "\n";
+                // } else {
+                //     return dash + " " + el + "\n | \n";
+                // }
 
             }).join("");
 

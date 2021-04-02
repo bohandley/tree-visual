@@ -419,3 +419,11 @@ input, select, .panel-heading
 .btn-group.btn-group-sm.btn-block {
     /*margin-left: -15px;*/
 }
+
+.treemap-title[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 1000px;
+}
