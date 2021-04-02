@@ -5,11 +5,11 @@
 ### 2021 March
 - [X] update about page
 		- [ ] leave the reference out for now, is there anything we can add in
-- [ ] do the help, onboarding 
+- [X] do the help, onboarding 
 
 - [X] break the "selected node" text, add "=>" or " " to show the level
-	- [ ] use smaller font, spaces
-	- [ ] consistent format, 
+	- [X] use smaller font, spaces
+	- [X] consistent format, 
 - [X] for title in treemap, have a line break between levels 
 	one line using arrows
 - [X] space for tree of life datasets "name (description)"
