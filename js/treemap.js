@@ -105,7 +105,7 @@ function draw_treemap(position, selectindex) {
         .on('mouseout', function() {
             d3.select('#treemap-tooltip')
                 .style('opacity', 0)
-                // .html("");
+                .html("");
         })
         .on('mousemove', function() {
             // d3.select('#treemap-tooltip')
