@@ -75,6 +75,8 @@ function draw_treemap(position, selectindex) {
             .attr('id', 'treemap-tooltip')
             .attr('style', 'position: absolute; opacity: 0;');
 
+        let tooltipTimer;
+
         cell.on('mouseover', function(d) {
             let treemapTooltip = d3.select('#treemap-tooltip')
 
@@ -93,7 +95,7 @@ function draw_treemap(position, selectindex) {
                 .append("p")
                 .text(text2)
             
-            let tooltipTimer = setTimeout(function(){
+            tooltipTimer = setTimeout(function(){
                 treemapTooltip
                 .transition()
                 .duration(200)
@@ -103,6 +105,8 @@ function draw_treemap(position, selectindex) {
 
         })
         .on('mouseout', function() {
+            clearTimeout(tooltipTimer);
+
             d3.select('#treemap-tooltip')
                 .style('opacity', 0)
                 .html("");
@@ -143,9 +147,14 @@ function draw_treemap(position, selectindex) {
         function newline(id) {
             var storedId = id;
             var idLen = id.split(".").length;
+            var pathEls = id.split(".");
 
-            var newId = id.split(".").map(function(el,idx){
-                if (idx == storedId.split(".").length - 1)
+            var newId = pathEls.map(function(el,idx){
+                // check the end, some leaves end with '.'
+                let fullLength = storedId.split(".").length;
+
+                // don't add the => for the last element
+                if (idx == fullLength - 1 || pathEls[idx + 1] == '')
                     return el;
                 else
                     return el + " => ";

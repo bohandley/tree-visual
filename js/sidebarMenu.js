@@ -9,9 +9,9 @@ var menu = (function (d3, $) {
         // isLocked: { 1: true, 2: true },
         palettes: [
             (function () {
-                var colors = d3.schemeCategory10.map((c) => d3.interpolateRgb(c, "#fff")(0.2));
+                var colors = d3.schemeCategory20.map((c) => d3.interpolateRgb(c, "#fff")(0.2));
                 // remove grey color
-                colors = colors.filter(c=> c != "rgb(153, 153, 153)");
+                colors = colors.filter(c=> c != "rgb(210, 210, 210)");
                 treeLib.shuffleArray(colors);
                 return d3.scaleOrdinal(colors);
             })(),

@@ -2,6 +2,13 @@
 
 ### 2021 Todo list 
 
+### April
+- [ ] fix title bug in pink treemap
+- [ ] use different browser to see if sort with different browser, chrome, safari, firefox
+- [ ] go through label in government, spelling check
+- [X] more colors? schemeCategory20
+
+
 ### 2021 March
 - [X] update about page
 		- [ ] leave the reference out for now, is there anything we can add in
