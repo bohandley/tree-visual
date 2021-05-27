@@ -38,7 +38,7 @@ function setupOnboarding() {
     hintsSetup.onboarding();
 
     $("#help").on("click", function(){
-        hintsSetup.onboarding();
+        hintsSetup.help();
     });
 }
 
@@ -212,6 +212,7 @@ function setupFilterEvent() {
 function addSelectpickerTitles() {
     // add the titles to the menus only after the selectpickers have been drawn
     setTimeout(_=> {
+
         leavesGlobals.forEach((opt,i) => {
             var option = $('#selectpicker-leaf-selection').find('ul.dropdown-menu li')[i];
 

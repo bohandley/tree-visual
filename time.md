@@ -392,7 +392,9 @@
       only redraw when button is clicked
       add listener in main.js to redraw with filters
       recursive function to filter levels based on stored data in config.levelFilters
-    
+
+120.5 hrs
+
 ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
 
 9/23/2020
@@ -492,6 +494,13 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
   10:00am-3:00pm
   - clean onboarding hints and implement collapse and show
   - mimic a title to allow for text length for treemap hover
+
+61 hours + 4hrs + time with undergrads???
+
+5/26/21
+  9:00pm-
+  - update hints
+  - update about page
 
 NEXT(as of 7/14/2020)
   - New Features Needed

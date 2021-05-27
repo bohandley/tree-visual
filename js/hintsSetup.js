@@ -8,17 +8,17 @@ var hintsSetup = (function (d3, $) {
 			steps: [
 				{
 					element: ".graphInsideDiv1",
-			    intro: "This panel shows the drawing of the graph. Click on a node to select it.",
+			    intro: "This panel shows the drawing of the tree. Click on a node to select it.",
 			    position: "right"
 				},
 				{
 					element: "#widgetsDiv1",
-			    intro: "Use these widgets to modify the graph layout.",
+			    intro: "Use these widgets to modify the tree layout.",
 			    position: "top"
 				},
 				{
 					element: "#graphInfoDiv",
-			    intro: "Here we display the numbers of leaves and accumulated leaf size data.",
+			    intro: "Here we display the numbers of leaves and accumulated attribute values of leaves.",
 			    position: "bottom"
 				},
 				{
@@ -28,17 +28,17 @@ var hintsSetup = (function (d3, $) {
 				},
 				{
 					element: "#appearancePanel",
-			    intro: "Toggle to adjust the general appearance of the graph drawing.<br><br>This section and the two sections below can be folded/unfolded.",
+			    intro: "Toggle to adjust the general appearance of the tree drawing.<br><br>This section and the two sections below can be folded/unfolded.",
 			    position: "left"
 				},
 				{
 					 element: "#filterPanel",
-			    intro: "Filter nodes by parents in levels between the root and the leaves. This cannot be used when a selection is active.",
+			    intro: "Prune tree branches based on the labels of intermediate nodes. This cannot be used when a selection is active.",
 			    position: "left"
 				},
 				{
 					element: "#selectionPanel",
-			    intro: "Select one leaf or leaves to highlight, and adjust the unselected part's opacity.",
+			    intro: "Select one leaf or leaves to highlight. Automatically adjust the unselected nodes' opacity.",
 			    position: "left"
 				},
 				{
@@ -68,28 +68,40 @@ var hintsSetup = (function (d3, $) {
 	    $("#filterDiv").collapse("hide");
 	}
 
+	function hintList() {
+		let intro = introJs();
+
+		intro.setOptions(config.options)
+			.start()
+			.onbeforechange(function (targetElement) {
+				// debugger;
+				// resetSection(targetElement, elements1, elements2, currentGraph, graphic1, graphic2, svgs);
+			})
+			.onchange(function (targetElement) {
+				// debugger;
+				// resetForBackwards(targetElement, elements1, elements2, currentGraph, graphic1, graphic2, svgs);
+				openSection(targetElement);
+			})
+			.onafterchange(function (targetElement) {
+				// debugger;
+				// resetFilterBackwards(targetElement, svgs, currentGraph);
+			})
+			.onexit(() => {
+				foldSection()
+			});
+	}
+
+
 	return {
 		onboarding() {
-			let intro = introJs();
+			if (localStorage.getItem("hasLoadBefore") == null) {
+				hintList();
+				localStorage.setItem("hasLoadBefore", true);
+			}
+		},
 
-			intro.setOptions(config.options)
-				.start()
-				.onbeforechange(function (targetElement) {
-					// debugger;
-					// resetSection(targetElement, elements1, elements2, currentGraph, graphic1, graphic2, svgs);
-				})
-				.onchange(function (targetElement) {
-					// debugger;
-					// resetForBackwards(targetElement, elements1, elements2, currentGraph, graphic1, graphic2, svgs);
-					openSection(targetElement);
-				})
-				.onafterchange(function (targetElement) {
-					// debugger;
-					// resetFilterBackwards(targetElement, svgs, currentGraph);
-				})
-				.onexit(() => {
-					foldSection()
-				});
+		help() {
+			hintList()
 		}
 	}
 

@@ -398,8 +398,8 @@ var menu = (function (d3, $) {
 
         filterOptions
             .text((d) => {
-                if(d.text.length > 12) // tree taxomony is too long
-                    return d.text.slice(0,16) + "...";
+                if(d.text.length > 20) // tree taxomony is too long
+                    return d.text.slice(0,21) + "...";
                 else
                     return d.text
             })
@@ -508,8 +508,8 @@ var menu = (function (d3, $) {
 
             filterOptions
                 .text((d) => {
-                    if(d.length > 12) // tree taxomony is too long
-                        return d.slice(0,16) + "...";
+                    if(d.length > 20) // tree taxomony is too long
+                        return d.slice(0,21) + "...";
                     else
                         return d
                 })
@@ -616,9 +616,9 @@ var menu = (function (d3, $) {
         val2 = addCommas(val1);
         
         return val2;
-    }
+    
+function disableFilteredLeavesSelection(originalRoot, filteredRoot) {
 
-    function disableFilteredLeavesSelection(originalRoot, filteredRoot) {
         var disabledleaves = originalRoot.leaves().reduce((acc, leaf) => {
             var isFiltered = !filteredRoot.leaves().find(l=>{
                 return l.data.name == leaf.data.name;
@@ -645,8 +645,23 @@ var menu = (function (d3, $) {
 
                 return d3.ascending(aval, bval)
             });;
-                
-                
+        
+        // sort the leaves Globals
+        lDisabled = leavesGlobals.filter(function(a){
+            return disabledleaves.includes(a.value);
+        });
+
+        lDisabled.sort((a,b)=> a.value - b.value);
+
+        lEnabled = leavesGlobals.filter(function(a){
+            return !disabledleaves.includes(a.value);
+        });
+
+        lEnabled.sort((a,b)=> a.value - b.value);
+
+        // sort and alphabetize
+        leavesGlobals = lEnabled.concat(lDisabled);
+
         $("#leaf-selection").selectpicker("refresh");
     }
 
@@ -666,9 +681,9 @@ var menu = (function (d3, $) {
             originalRoot = d3.hierarchy(originalRoot);
             filteredRoot = d3.hierarchy(filteredRoot);
 
-            // disable the leaves selection options that are filtered
+            
             disableFilteredLeavesSelection(originalRoot, filteredRoot);
-
+        
             var dataSourceLeaves = document.getElementById("data-info-leaves");
             var dataSourceSize = document.getElementById("data-info-size");
 

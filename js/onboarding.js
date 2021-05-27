@@ -9,12 +9,12 @@ introGuide.setOptions({
 introGuide.addSteps([
     {
         element: "#graphInsideDiv1",
-        intro: "This panel shows the drawing of the graph. Click on a node to select it, and de-select by clicking on empty space.",
+        intro: "This panel shows the drawing of the tree. Click on a node to select it, and de-select by clicking on empty space.",
         position: "right",
     },
     {
         element: "#widgetsDiv1",
-        intro: "Use these widgets to modify the graph layout.",
+        intro: "Use these widgets to modify the tree layout.",
         position: "top",
     },
     {

@@ -13,85 +13,45 @@
                 <!-- aboutDiv -->
                 <div class="col-lg-10 col-9 row my-3" id="aboutDiv">
                     <p>
-                        TreeVisual is an educational tool that provides an accessible web interface 
-                        for students to explore and interact with hierarchical data visualizations 
-                        of real-world data sets. A variety of modern tree layout algorithms 
-                        (including animations and fully interactive views) allow users to discover 
-                        patterns, relationships, and other properties of these data
-                        sets, which are drawn from a broad spectrum of fields, including 
-                        research, government, trade, and biology. Users learn how to compare 
-                        and evaluate different hierarchical visualizations in side-by-side panels, 
-                        which can be tweaked and augmented by various interactions. 
-                        Filtering and selection make even very dense views easy to visualize and
-                        understand.
+                        TreeVisual is an educational tool that provides an accessible web interface for students to explore and interact with hierarchical data visualizations of real-world data sets. A variety of modern tree layout algorithms (including animations and fully interactive views) allow users to discover patterns, relationships, and other properties from the underlying data. The data sets are drawn from various applications, including publication and citation, government structure, import and export, and the tree of life. Users learn how to compare and evaluate different tree visualizations in side-by-side panels, which can be tweaked and augmented by various interactions. Filtering and selection make even very dense views easy to visualize and understand.
                     </p>
                     <div>
                         <p id="motivation" class="h4">Motivation</p>
                         <p>
-                            Tree diagrams are used to respresent hierarchical data structures in a 
-                            graphical form. They are given the name "tree" because classic representations
-                            resemble a tree, with the root at the base or beginning of the view and leaves at the
-                            end. Many different kinds of data can be respresented in a hierarchical format,
-                            such as govenerment structures, the tree of life, import and export data, and many more.
-                            Tree visualization is a fundamental topic in information visualization and thus is an essential part of a data 
-                            visualization course.
+                            Tree diagrams are used to represent hierarchical data structures in a graphical form. They are given the name "tree" because classic representations resemble a tree, with the root at the base or beginning of the view and leaves at the end. Many different kinds of data can be represented in a hierarchical format, such as organizational structures, species taxonomy, etc. Tree visualization is a fundamental topic of information visualization, making it an essential part of a data visualization course.
                         </p>
                     </div>
                     <div>
                         <p id="layouts" class="h4">Layouts</p>
                         <p>
-                            TreeVisual supports several layouts athat are intereactive and show various levels of each data structure. Some layouts are
-                            best suited for viewing leaves while others allow the user to dive into the structure from the root.
-                            Treemaps display a single layer of the tree structure at a time while radial trees can display 
-                            the entire hierarchical structure.
+                            TreeVisual supports several layouts that are interactive and show various levels of each hierarchical structure. Some layouts are best suited for viewing leaves, while others allow users to dive into the hierarchical structure. For example, treemaps [1] display a single level of the tree structure at a time, while radial trees can show the entire hierarchical structure simultaneously.
                         </p>
                         
                         <p>
-                            The treemaps are divided into two layouts, a standard treemap displaying 
-                            leaves and a zoomable treemap. The zoomable treemap allows the user to explore each 
-                            level of the hierarchy, zooming in or out by clicking the parent of the displayed nodes. 
-                            The standard treemap displays all the data's leaves in a variety of ways. The binary tiling strategy
-                            recursively partitions the specified nodes into an approximately-balanced binary tree, choosing horizontal 
-                            partitioning for wide rectangles and vertical partitioning for tall rectangles.
-                            The slice divides the rectangular area specified by x0, y0, x1, y1 vertically according the value of each of the 
-                            specified node’s children while the dice divides them horizontally. The slice and dice displays
-                            nodes alternately horizontally and vertically. (Need citations?)
+                            TreeVisual includes two treemap layouts, a standard treemap displaying leaves only and a zoomable treemap. The zoomable treemap [2] allows users to explore each level of the hierarchy, zooming in or out by clicking the parent of the displayed nodes. The standard treemap shows all the leaves in a variety of ways. The binary tiling strategy recursively partitions the specified nodes into an approximately balanced binary tree, choosing horizontal partitioning for wide rectangles and vertical partitioning for tall rectangles. The slice strategy divides the rectangular area vertically according to the attribute of each of the specified node's children, while the dice strategy divides them horizontally. The slice and dice strategy displays nodes horizontally and vertically in an alternative manner.
                         </p>
 
                         <p>
-                            The radial tree diagrams are closer to more traditional hierarchical views.
-                            Both diagrams display sets of children for each node from the root all the way
-                            to the leaves. The collapsible radial tree will expose the children of any node that is 
-                            clicked.
+                            The radial tree diagrams are closer to more traditional hierarchical views. The standard radial tree automatically displays all the nodes from the root level to the leaf level. The collapsible radial tree [3] exposes a node's children via animated transition upon clicking on that node.
                         </p>
 
                         <p>
-                            Two additional views are used in TreeVisual, pack and sunburst. Pack diagrams
-                            use containment or nesting in circles to represent the hierarchiy. The size of each
-                            node's circle represents a cumulative size of the quantitative dimension of each leaf.
-                            The sunburst diagram depicts each paren/child relationship by concentric circles. 
-                            The circle in the centre represents the root node, with the hierarchy moving outward from the center.
-                            By clicking any node the user may zoom into a view showing the clicked node and children of the node.
+                            Besides treemaps and radial trees, TreeVisual also includes two additional layouts: pack and sunburst. The pack diagram uses nested circles to represent the hierarchy. The size of each node's circle represents the accumulated attribute values of its leaves. The sunburst diagram [4] depicts parent-children relationships by concentric rings. In this layout, the circle at the center represents the root, while each successive ring moving outward represents a tree level. By clicking on any node, users zoom into the subtree rooted at the clicked node. Clicking on the circle at the center brings the view a level up of the hierarchy. 
                         </p>
                     </div>
                     <div>
                         <p id="data" class="h4">Data sets</p>
                         <p>
-                            TreeVisual comes with a set of example data sets from various fields. The data sets are drawn from various sources 
-                            including publication data, government, trade and the tree of life.
-                            
+                            TreeVisual comes with a set of example data sets from various fields. The data sets are drawn from different sources, including publication and citation, government structure, import and export, and the tree of life.
                         </p>
                     </div>
                     <div>
                         <p id="interactions" class="h4">Interactions</p>
                         <p>
-                            TreeVisual provides essential interaction functions to allow users to compare different graph layouts in two side-by-side panels. There are options to adjust the
-                            appearance of the graph. For example, users can change the size of the nodes either in general or by a value computed by accumulated leaves or a value of an accumulated
-                            size attribute on each leaf.
+                            TreeVisual provides essential interaction functions to allow users to compare different layouts in two side-by-side panels. There are options to adjust the layout appearance. For example, users can change the node's size either in general or by an attribute accumulated over its leaves.
                         </p>
                         <p>
-                            Besides changing the appearance, users can filter the drawings by each level, selecting any node between the root and leaves. Additionally,
-                            users can select leaves in the graph or in a list to highlight them. The nodes are colored by the children of the root node.
+                            Besides changing the appearance, users can filter the drawing by pruning each level based on its labels and clicking on the "Apply Filters" button. They can also select any leaf nodes. Additionally, users can mouse over a node in the tree layout for highlighting. The descendent nodes are colored based on the colors assigned to the immediate children of the root.
                         </p>
                     </div>
                     <div>
@@ -104,12 +64,7 @@
                         </ul>
                         <p></p>
                         <ul>
-                            <li>Alexander Mascoli ~ 09/2018-12/2018</li>
-                            <li>Ahmed Farag ~ 02/2019-05/2019</li>
-                            <li>Kekoa Wong ~ 02/2019-05/2019</li>
-                            <li>Kyle Weingartner ~ 04/2019-10/2019</li>
-                            <li>Wenqing Chang ~ 07/2019-08/2019</li>
-                            <li>Shuzhan Wang ~ 07/2019-08/2019</li>
+                            <li>Haobin Duan ~ 07/2020-08/2020</li>
                         </ul>
                     </div>
                     <div>
@@ -119,25 +74,10 @@
                     <strike>
                     <div>
                         <p id="references" class="h4">References</p>
-                        <p><a id="cit1">[1]</a> T. Dwyer, "Scalable, Versatile and Simple Constrained Graph Layout," Comput. Graph. Forum, vol. 28, no. 3, pp. 991-998, 2009.</p>
-                        <p><a id="cit2">[2]</a> S. Hachul and M. Jünger, "Drawing Large Graphs with a Potential-Field-Based Multilevel Algorithm," Proc. Graph Drawing, pp. 285-295, 2005.</p>
-                        <p>
-                            <a id="cit3">[3]</a> M. Jacomy, T. Venturini, S. Heymann, and M. Bastian, "ForceAtlas2, A Continuous Graph Layout Algorithm for Handy Network Visualization Designed for the
-                            Gephi Software," PLoS ONE, vol. 9, no. 6., p. e98679, 2014.
-                        </p>
-                        <p><a id="cit4">[4]</a> S. Martin, W. M. Brown, and R. Klavans, "OpenOrd: An Open-Source Toolbox for Large Graph Layout," Proc. Vis. Data Anal., 2011.</p>
-                        <p><a id="cit5">[5]</a> Y. Hu, "Efficient, High-Quality Force-Directed Graph Drawing," The Mathematica Journal, vol. 10, no. 1, pp. 37-71, 2005.</p>
-                        <p><a id="cit6">[6]</a> J. Barnes and P. Hut, "A Hierarchical O(N log N) Force-calculation Algorithm," Nature, vol. 324, no. 6096, pp. 446, 1986.</p>
-                        <p>
-                            <a id="cit7">[7]</a> R. A. Rossi and N. K. Ahmed, "Network Data Repository | The First Interactive Network Data Repository," Available: http://networkrepository.com
-                            [Accessed: 20-Aug-2019].
-                        </p>
-                        <p><a id="cit8">[8]</a> J. Leskovec and A. Krevl, "SNAP: Stanford Network Analysis Project," Available: https://snap.stanford.edu [Accessed: 20-Aug-2019].</p>
-                        <p><a id="cit9">[9]</a> T. Davis, Y. Hu, and S. Kolodziej, "The SuiteSparse Matrix Collection," Available: https://sparse.tamu.edu [Accessed: 20-Aug-2019].</p>
-                        <p>
-                            <a id="cit10">[10]</a> V. D. Blondel, J.-L. Guillaume, R. Lambiotte, and E. Lefebvre, "Fast unfolding of communities in large networks," Journal of Statistical Mechanics:
-                            Theory and Experiment, vol. 2008, no. 10. p. P10008, 2008.
-                        </p>
+                        <p><a id="cit1">[1]</a> B. Shneiderman, "Tree Visualization with Tree-Maps: 2-D Space-Filling Approach," ACM Trans. Graph., vol. 11, no. 1, pp. 92-99, 1992.</p>
+                        <p><a id="cit2">[2]</a> R. Blanch and E. Lecolinet, "Browsing Zoomable Treemaps: Structure-Aware Multi-Scale Navigation Techniques," IEEE Trans. Vis. Comput. Graph., vol. 13, no. 6, pp. 1248-1253, 2007.</p>
+                        <p><a id="cit3">[3]</a> K.-P. Yee, D. Fisher, R. Dhamija, and M. Hearst, "Animated Exploration of Dynamic Graphs with Radial Layout,"  Proc. IEEE InfoVis, pp. 43-50, 2001.</p>
+                        <p><a id="cit4">[4]</a> J. T. Stasko and E. Zhang, "Focus+Context Display and Navigation Techniques for Enhancing Radial, Space-Filling Hierarchy Visualizations," Proc. IEEE InfoVis, pp. 57-65, 2000.</p>
                     </div>
                     </strike>
                 </div>

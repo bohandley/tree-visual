@@ -1,6 +1,57 @@
 ## Treevisual TODO Tracking List
 
-### 2021 Todo list 
+### 2021 Todo list
+
+### May/June
+
+#### Onboarding
+
+- [X] the graph -> the tree
+- [X] the graph layout -> the tree layout
+- [X] accumulated leaf size data -> accumulated attribute values of leaves
+- [X] the graph drawing -> the tree drawing
+- [X] Filter nodes by parents in leaves between the root and the leaves. -> Prune tree branches based on the labels of intermediate nodes. 
+- [X] to highlight, and adjust the unselected part's opacity. -> to highlight. Automatically adjust the unselected nodes' opacity.  
+
+#### About Page
+
+- [X] All changes from email on 4/8/21
+- [X] The onboarding function should show up automatically only when a user uses the program for the first time. If the user revisits the program, then he/she can activate this by clicking on 'help?'.
+createSelectionSelectPicker
+	gives a title to the options in the original html before instantiating the seletpicker
+	creates the leafGlobals
+	figure out the disabled
+	resort the leaf globals from the disabled
+	then create the li titles
+#### Dropdown box
+
+- [ ] The dropdown box often shows (...) at the end for some entries. Sometimes, there are no additional characters there so "..." is unnecessary. In other cases, when the length of the box is long, we only use a fraction of it with "..." showing, which is not desired. 
+- [X] sort and alphabetize titles
+
+####  Datasets
+Could you go over the data so that they are formatted consistently? The problems I see so far are:
+
+- [ ] publication/citation data: 
+	- [ ] Some publications capitalize every single character, some capitalize the first character of the first word, and some capitalize each word's first character. In general, we can do the following: only capitalize the first character of the first word. Exceptions are: if there is a ':' then the first character of the next word is capitalized as well. For special terms, we capitalize them as well. Using my publications as examples: 
+	- [ ] In situ visualization for large-scale combustion simulations (only capitalize the first character of the first word)
+	- [ ] Parallel hierarchical visualization of large time-varying 3D vector fields
+	- [ ] (3D is a special term, 'D' should be capitalized)
+	- [ ] TransGraph: Hierarchical exploration of transition relationships in time-varying volumetric data
+		- [ ] ("TransGraph" is a special term, so 'G' is capitalized as well. 'H' in "Hierarchical" is also capitalized since "Hierarchical" is right after ':')
+	- [ ] If you have doubts or are unsure about some publication titles, please send them to me for an edit. 
+
+- [ ] government data: 
+	- [ ] Canada: I found typos (Branche, Fedral) in Level 1 (Governer) in Level 2; Repeated entries in Level 2 (Governer General, Judicial/Judiciary, Legislative); Level 2 and Level 3 both have the same entries (Governer/Governor General). In the leave nodes, I found the same entries (House of Commons/House of commons), "Senate(" should be "Senate (". Filtering shows five levels, while the data description shows four levels. I also question if the data are actually correct (where is the source of data?
+	- [ ] Philippines: Executive branch -> Executive Branch (do the same for other entries). I did not check other issues as the Canada data set, but I see they could happen here as well. 
+	- [ ] I did not check UK and US data. 
+	- [ ] I would suggest we go over each government data set and check carefully. 
+
+- [ ] trade data:
+	- [ ] Capital goods -> Capital Goods (do the same for other entries). 
+
+- [ ] tree of live data:
+	- [ ] I cannot tell most names there, but it would be good to see if any of the issues we found for the rest of three categories (publication/citation, government, trade) of data sets remain here as well. If yes, please correct them.
+
 
 ### April
 - [ ] fix title bug in pink treemap
