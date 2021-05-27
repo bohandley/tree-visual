@@ -616,8 +616,9 @@ var menu = (function (d3, $) {
         val2 = addCommas(val1);
         
         return val2;
-    
-function disableFilteredLeavesSelection(originalRoot, filteredRoot) {
+    }
+
+    function disableFilteredLeavesSelection(originalRoot, filteredRoot) {
 
         var disabledleaves = originalRoot.leaves().reduce((acc, leaf) => {
             var isFiltered = !filteredRoot.leaves().find(l=>{
@@ -681,9 +682,10 @@ function disableFilteredLeavesSelection(originalRoot, filteredRoot) {
             originalRoot = d3.hierarchy(originalRoot);
             filteredRoot = d3.hierarchy(filteredRoot);
 
-            
-            disableFilteredLeavesSelection(originalRoot, filteredRoot);
-        
+            // disable the leaves selection options that are filtered
+            // setTimeout(function(){
+                disableFilteredLeavesSelection(originalRoot, filteredRoot);
+            // }, 1200)
             var dataSourceLeaves = document.getElementById("data-info-leaves");
             var dataSourceSize = document.getElementById("data-info-size");
 
