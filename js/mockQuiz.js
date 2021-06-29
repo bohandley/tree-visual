@@ -154,12 +154,9 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 					hasBeenAnswered = true;
 			});
 		} else if (type == "text") {
-			$("#questions input").each((idx,el) => {
-				if ($(el).val() != "")
-					hasBeenAnswered = true;
-			});
+			hasBeenAnswered = $("#questions textarea").val() != "";
 		}
-
+		
 		return hasBeenAnswered;
 	}		
 // create a quiz
