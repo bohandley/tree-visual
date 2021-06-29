@@ -30,7 +30,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"A Multimedia Office Filing System",
+                           "name":"A multimedia office filing system",
                            "size":45
                         }
                      ]
@@ -49,11 +49,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Design Considerations for a Message File Server",
+                           "name":"Design considerations for a message file server",
                            "size":98
                         },
                         {
-                           "name":"Signature files: an access method for documents and its analytical performance evaluation",
+                           "name":"Signature files: An access method for documents and its analytical performance evaluation",
                            "size":288
                         }
                      ]
@@ -72,7 +72,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Access Methods for Documents",
+                           "name":"Access methods for documents",
                            "size":4
                         }
                      ]
@@ -86,7 +86,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Signature files: design and performance comparison of some signature extraction methods",
+                           "name":"Signature files: Design and performance comparison of some signature extraction methods",
                            "size":57
                         }
                      ]
@@ -133,11 +133,11 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"A Multimedia Document Server",
+                           "name":"A multimedia document server",
                            "size":10
                         },
                         {
-                           "name":"Design and Performance Considerations for an Optical Disk-Based, Multimedia Object Server",
+                           "name":"Design and performance considerations for an pptical disk-based, multimedia object server",
                            "size":46
                         }
                      ]
@@ -156,7 +156,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"The R+-Tree: A Dynamic Index for Multi-Dimensional Objects",
+                           "name":"The R+-Tree: A dynamic index for multi-dimensional objects",
                            "size":981
                         }
                      ]
@@ -169,11 +169,11 @@
                            "size":2
                         },
                         {
-                           "name":"High Performance Engineering Information Systems.",
+                           "name":"High performance engineering information systems.",
                            "size":0
                         },
                         {
-                           "name":"PSQL: An Efficient Pictorial Database System.",
+                           "name":"PSQL: An efficient pictorial database system.",
                            "size":0
                         }
                      ]
@@ -246,7 +246,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Signature files: an integrated access method for text and attributes, suitable for optical disk storage",
+                           "name":"Signature files: An integrated access method for text and attributes, suitable for optical disk storage",
                            "size":15
                         }
                      ]
@@ -306,7 +306,7 @@
                            "size":42
                         },
                         {
-                           "name":"Spatial access methods using fractals: algorithms and performance evaluation",
+                           "name":"Spatial access methods using fractals: Algorithms and performance evaluation",
                            "size":9
                         }
                      ]
@@ -339,11 +339,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"DOT: A Spatial Access Method Using Fractals",
+                           "name":"DOT: A spatial access method using fractals",
                            "size":40
                         },
                         {
-                           "name":"Predictive Load Control for Flexible Buffer Allocation",
+                           "name":"Predictive load control for flexible buffer allocation",
                            "size":43
                         }
                      ]
@@ -407,7 +407,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"On B-Tree Indices for Skewed Distributions",
+                           "name":"On B-Tree indices for skewed distributions",
                            "size":38
                         }
                      ]
@@ -416,15 +416,15 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Design Issues For High Performance Engineering Information Systems",
+                           "name":"Design issues for high performance engineering information systems",
                            "size":0
                         },
                         {
-                           "name":"Diamond-Tree: An Index Structure for High-Dimensionality Approximate Searching",
+                           "name":"Diamond-Tree: An index structure for high-dimensionality approximate searching",
                            "size":1
                         },
                         {
-                           "name":"Hybrid Index Organizations for Text Databases",
+                           "name":"Hybrid index organizations for text databases",
                            "size":32
                         }
                      ]
@@ -480,7 +480,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Efficient Similarity Search In Sequence Databases",
+                           "name":"Efficient similarity search in sequence databases",
                            "size":1393
                         }
                      ]
@@ -522,11 +522,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Hilbert R-tree: An Improved R-tree using Fractals",
+                           "name":"Hilbert R-tree: An improved R-tree using fractals",
                            "size":419
                         },
                         {
-                           "name":"Similarity Searching in Large Image Databases",
+                           "name":"Similarity searching in large image databases",
                            "size":43
                         }
                      ]
@@ -539,7 +539,7 @@
                            "size":20
                         },
                         {
-                           "name":"Declustering R-Tree on Multi-Computer Architectures",
+                           "name":"Declustering R-Tree on multi-computer architectures",
                            "size":0
                         },
                         {
@@ -561,11 +561,11 @@
                            "size":1284
                         },
                         {
-                           "name":"QBISM: extending a DBMS to support 3D medical images",
+                           "name":"QBISM: Extending a DBMS to support 3D medical images",
                            "size":38
                         },
                         {
-                           "name":"Quest: a project on database mining",
+                           "name":"Quest: A project on database mining",
                            "size":18
                         }
                      ]
@@ -574,7 +574,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Beyond uniformity and independence: analysis of R-trees using the concept of fractal dimension",
+                           "name":"Beyond uniformity and independence: Analysis of R-trees using the concept of fractal dimension",
                            "size":204
                         }
                      ]
@@ -583,7 +583,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Information filtering and retrieval: overview, issues and directions",
+                           "name":"Information filtering and retrieval: Overview, issues and directions",
                            "size":7
                         },
                         {
@@ -601,7 +601,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"The TV-tree: an index structure for high-dimensional data",
+                           "name":"The TV-tree: An index structure for high-dimensional data",
                            "size":422
                         }
                      ]
@@ -647,7 +647,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"FastMap: a fast algorithm for indexing, data-mining and visualization of traditional and multimedia datasets",
+                           "name":"FastMap: A fast algorithm for indexing, data-mining and visualization of traditional and multimedia datasets",
                            "size":773
                         },
                         {
@@ -693,7 +693,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Analysis of n-Dimensional Quadtrees using the Hausdorff Fractal Dimension",
+                           "name":"Analysis of n-dimensional quadtrees using the Hausdorff fractal dimension",
                            "size":25
                         },
                         {
@@ -706,11 +706,11 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Bulletin of the Technical Committee on",
+                           "name":"Bulletin of the technical committee on",
                            "size":0
                         },
                         {
-                           "name":"Declustering Spatial Databases on a Multi-Computer Architecture",
+                           "name":"Declustering Spatial Databases on a multi-computer architecture",
                            "size":55
                         },
                         {
@@ -718,7 +718,7 @@
                            "size":5
                         },
                         {
-                           "name":"Feature Normalization for Video Indexing and Retrieval",
+                           "name":"Feature normalization for video indexing and retrieval",
                            "size":4
                         },
                         {
@@ -726,7 +726,7 @@
                            "size":1
                         },
                         {
-                           "name":"Searching Multimedia Databases by Content",
+                           "name":"Searching multimedia databases by content",
                            "size":220
                         }
                      ]
@@ -773,11 +773,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Multidimensional Access Methods: Trees Have Grown Everywhere",
+                           "name":"Multidimensional access methods: Trees have grown everywhere",
                            "size":23
                         },
                         {
-                           "name":"Recovering Information from Summary Data",
+                           "name":"Recovering information from summary data",
                            "size":45
                         }
                      ]
@@ -786,7 +786,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Data Mining at CALD-CMU: Tools, Experiences and Research Directions",
+                           "name":"Data mining at CALD-CMU: Tools, experiences and research directions",
                            "size":0
                         },
                         {
@@ -856,7 +856,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Relaxing the Uniformity and Independence Assumptions Using the Concept of Fractal Dimension",
+                           "name":"Relaxing the uniformity and independence assumptions using the concept of fractal dimension",
                            "size":21
                         }
                      ]
@@ -875,15 +875,15 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Active Storage For Large-Scale Data Mining and Multimedia Applications",
+                           "name":"Active storage For large-scale data mining and multimedia applications",
                            "size":40
                         },
                         {
-                           "name":"MindReader: Querying Databases Through Multiple Examples",
+                           "name":"MindReader: Querying databases through multiple examples",
                            "size":425
                         },
                         {
-                           "name":"Ratio Rules: A New Paradigm for Fast, Quantifiable Data Mining",
+                           "name":"Ratio rules: A new paradigm for fast,qQuantifiable data mining",
                            "size":42
                         }
                      ]
@@ -892,15 +892,15 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"1-D Time Sequences",
+                           "name":"1-D time sequences",
                            "size":0
                         },
                         {
-                           "name":"2-D Color Images",
+                           "name":"2-D color images",
                            "size":0
                         },
                         {
-                           "name":"Compressed representation of a data base that permits AD HOC querying",
+                           "name":"Compressed representation of a data base that permits ad hoc querying",
                            "size":0
                         },
                         {
@@ -908,31 +908,31 @@
                            "size":1
                         },
                         {
-                           "name":"Indexing Large Collections of Tumor-Like Shapes",
+                           "name":"Indexing large collections of tumor-like shapes",
                            "size":0
                         },
                         {
-                           "name":"Introduction to Relational DBMS",
+                           "name":"Introduction to relational DBMS",
                            "size":0
                         },
                         {
-                           "name":"Packed R-trees Using Fractals",
+                           "name":"Packed R-trees using fractals",
                            "size":11
                         },
                         {
-                           "name":"Primary Key Access Methods",
+                           "name":"Primary key access methods",
                            "size":0
                         },
                         {
-                           "name":"Secondary Key Access Methods",
+                           "name":"Secondary key access methods",
                            "size":0
                         },
                         {
-                           "name":"Spatial Access Methods (SAMS)",
+                           "name":"Spatial access methods (SAMS)",
                            "size":0
                         },
                         {
-                           "name":"Sub-Pattern Matching",
+                           "name":"Sub-pattern matching",
                            "size":0
                         }
                      ]
@@ -959,7 +959,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Selectivity estimation of Window queries for line segment datasets",
+                           "name":"Selectivity estimation of window queries for line segment datasets",
                            "size":7
                         }
                      ]
@@ -1009,11 +1009,11 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Automated Learning and Discovery: State-Of-The-Art and Research Topics in a Rapidly Growing Field",
+                           "name":"Automated learning and discovery: State-of-the-art and research topics in a Rapidly Growing Field",
                            "size":10
                         },
                         {
-                           "name":"What does Internet look like? Empirical Laws of the Internet Topology",
+                           "name":"What does Internet look like? Empirical laws of the Internet topology",
                            "size":4
                         }
                      ]
@@ -1050,11 +1050,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"FALCON: Feedback Adaptive Loop for Content-Based Retrieval",
+                           "name":"FALCON: Feedback adaptive loop for content-based retrieval",
                            "size":114
                         },
                         {
-                           "name":"Fast Time Sequence Indexing for Arbitrary Lp Norms",
+                           "name":"Fast time sequence indexing for arbitrary Lp norms",
                            "size":448
                         }
                      ]
@@ -1063,27 +1063,27 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Active Disk Architecture for Databases",
+                           "name":"Active disk architecture for databases",
                            "size":15
                         },
                         {
-                           "name":"Active Disk Architecture for Databases (CMU-CS-00-145)",
+                           "name":"Active disk architecture for databases (CMU-CS-00-145)",
                            "size":0
                         },
                         {
-                           "name":"Data Mining on an OLTP System (Nearly) for Free (CMU-CS-99-151)",
+                           "name":"Data mining on an OLTP system (nearly) for free (CMU-CS-99-151)",
                            "size":0
                         },
                         {
-                           "name":"Searching, Data Mining and Visualization of Multimedia Data",
+                           "name":"Searching, data mining and visualization of multimedia data",
                            "size":0
                         },
                         {
-                           "name":"Slim-Trees: High Performance Metric Trees Minimizing Overlap Between Nodes",
+                           "name":"Slim-Trees: High performance metric trees minimizing overlap between nodes",
                            "size":198
                         },
                         {
-                           "name":"Trends and Patterns of WWW Browsing Behavior",
+                           "name":"Trends and patterns of WWW browsing behavior",
                            "size":6
                         }
                      ]
@@ -1109,7 +1109,7 @@
                            "size":111
                         },
                         {
-                           "name":"Distance Exponent: A New Concept for Selectivity Estimation in Metric Trees",
+                           "name":"Distance exponent: A new concept for selectivity estimation in metric trees",
                            "size":34
                         },
                         {
@@ -1154,7 +1154,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"NetCube: A Scalable Tool for Fast Data Mining and Compression",
+                           "name":"NetCube: A scalable tool for fast data mining and compression",
                            "size":19
                         }
                      ]
@@ -1167,11 +1167,11 @@
                            "size":0
                         },
                         {
-                           "name":"Multimedia Queries by Example and Relevance Feedback",
+                           "name":"Multimedia queries by example and relevance feedback",
                            "size":5
                         },
                         {
-                           "name":"The Connectivity and Fault-Tolerance of the Internet Topology",
+                           "name":"The connectivity and fault-tolerance of the Internet topology",
                            "size":42
                         }
                      ]
@@ -1189,7 +1189,7 @@
                            "size":115
                         },
                         {
-                           "name":"Tri-plots: scalable tools for multidimensional data mining",
+                           "name":"Tri-plots: Scalable tools for multidimensional data mining",
                            "size":22
                         }
                      ]
@@ -1198,7 +1198,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"VideoGraph: a new tool for video mining and classification",
+                           "name":"VideoGraph: A new tool for video mining and classification",
                            "size":11
                         }
                      ]
@@ -1252,7 +1252,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"How to Use Fractal Dimension to Find Correlations between Attributes",
+                           "name":"How to use fractal dimension to find correlations between attributes",
                            "size":18
                         }
                      ]
@@ -1261,7 +1261,7 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"Fundamentals of Scheduling and Performance of Video Tape Libraries",
+                           "name":"Fundamentals of scheduling and performance of video tape libraries",
                            "size":9
                         }
                      ]
@@ -1270,11 +1270,11 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Data Mining Meets Performance Evaluation: Fast Algorithms for Modeling Bursty Traffic (CMU-CS-01-101)",
+                           "name":"Data mining meets performance evaluation: Fast algorithms for modeling bursty traffic (CMU-CS-01-101)",
                            "size":0
                         },
                         {
-                           "name":"Data Visualization in RDBMS.",
+                           "name":"Data visualization in RDBMS.",
                            "size":10
                         },
                         {
@@ -1282,15 +1282,15 @@
                            "size":3
                         },
                         {
-                           "name":"Experimental algorithmics: from algorithm design to robust and efficient software",
+                           "name":"Experimental algorithmics: From algorithm design to robust and efficient software",
                            "size":4
                         },
                         {
-                           "name":"Indexing Values in Continuous Field Databases",
+                           "name":"Indexing values in continuous field databases",
                            "size":2
                         },
                         {
-                           "name":"VideoCube: A Novel Tool for Video Mining and Classification",
+                           "name":"VideoCube: A novel tool for video mining and classification",
                            "size":26
                         }
                      ]
@@ -1304,15 +1304,15 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"ANF: a fast and scalable tool for data mining in massive graphs",
+                           "name":"ANF: A fast and scalable tool for data mining in massive graphs",
                            "size":206
                         },
                         {
-                           "name":"Data mining meets performance evaluation: fast algorithms for modeling bursty traffic",
+                           "name":"Data mining meets performance evaluation: Fast algorithms for modeling bursty traffic",
                            "size":140
                         },
                         {
-                           "name":"Making every bit count: fast nonlinear axis scaling",
+                           "name":"Making every bit count: Fast nonlinear axis scaling",
                            "size":3
                         }
                      ]
@@ -1321,11 +1321,11 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"F4: large-scale automated forecasting using fractals",
+                           "name":"F4: Large-scale automated forecasting using fractals",
                            "size":27
                         },
                         {
-                           "name":"Future directions in data mining: streams, networks, self-similarity and power laws",
+                           "name":"Future directions in data mining: Streams, networks, self-similarity and power laws",
                            "size":1
                         },
                         {
@@ -1338,7 +1338,7 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"FastCARS: fast, correlation-aware sampling for network data mining",
+                           "name":"FastCARS: Fast, correlation-aware sampling for network data mining",
                            "size":5
                         }
                      ]
@@ -1356,7 +1356,7 @@
                            "size":113
                         },
                         {
-                           "name":"ImageMap: an image indexing method based on spatial similarity",
+                           "name":"ImageMap: An image indexing method based on spatial similarity",
                            "size":82
                         },
                         {
@@ -1409,7 +1409,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Next Generation Data Mining Tools: Power Laws and Self-similarity for Graphs, Streams and Traditional Data",
+                           "name":"Next generation data mining tools: Power laws and self-similarity for graphs, streams and traditional data",
                            "size":5
                         }
                      ]
@@ -1418,7 +1418,7 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"Cross-Outlier Detection",
+                           "name":"Cross-Outlier detection",
                            "size":32
                         }
                      ]
@@ -1427,19 +1427,19 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Adaptive, Hands-Off Stream Mining (CMU-CS-02-205)",
+                           "name":"Adaptive, hands-Off stream mining (CMU-CS-02-205)",
                            "size":0
                         },
                         {
-                           "name":"Advanced Database Systems",
+                           "name":"Advanced database systems",
                            "size":0
                         },
                         {
-                           "name":"Eliciting User Expectations for Data Behavior via Invariant Templates",
+                           "name":"Eliciting user expectations for data behavior via invariant templates",
                            "size":3
                         },
                         {
-                           "name":"Informed Prefetching of Collective Input/Output Requests",
+                           "name":"Informed prefetching of collective input/output requests",
                            "size":0
                         }
                      ]
@@ -1453,7 +1453,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"LOCI: fast outlier detection using the local correlation integral",
+                           "name":"LOCI: Fast outlier detection using the local correlation integral",
                            "size":468
                         }
                      ]
@@ -1466,7 +1466,7 @@
                            "size":405
                         },
                         {
-                           "name":"The power-method: a comprehensive estimation technique for multi-dimensional queries",
+                           "name":"The power-method: A comprehensive estimation technique for multi-dimensional queries",
                            "size":9
                         }
                      ]
@@ -1521,11 +1521,11 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"AutoSplit: Fast and Scalable Discovery of Hidden Variables in Stream and Multimedia Databases",
+                           "name":"AutoSplit: Fast and scalable discovery of hidden variables in stream and multimedia databases",
                            "size":13
                         },
                         {
-                           "name":"OBE: Outlier by Example",
+                           "name":"OBE: Outlier by example",
                            "size":22
                         },
                         {
@@ -1538,15 +1538,15 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Automated Assistance for Eliciting User Expectations.",
+                           "name":"Automated assistance for eliciting User expectations.",
                            "size":4
                         },
                         {
-                           "name":"Example-based Outlier Detection with Relevance Feedback",
+                           "name":"Example-based outlier detection with relevance feedback",
                            "size":4
                         },
                         {
-                           "name":"Storage Device Performance Prediction with CART Models (CMU-PDL-04-103)",
+                           "name":"Storage device performance prediction with CART models (CMU-PDL-04-103)",
                            "size":0
                         },
                         {
@@ -1580,7 +1580,7 @@
                            "size":178
                         },
                         {
-                           "name":"GCap: Graph-based Automatic Image Captioning",
+                           "name":"GCap: Graph-based automatic image captioning",
                            "size":73
                         },
                         {
@@ -1605,7 +1605,7 @@
                            "size":67
                         },
                         {
-                           "name":"MMSS: multi-modal story-oriented video summarization",
+                           "name":"MMSS: Multi-modal story-oriented video summarization",
                            "size":11
                         },
                         {
@@ -1645,7 +1645,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Detecting Semantic Anomalies in Truck Weigh-in-Motion Traffic Data Using Data Mining",
+                           "name":"Detecting semantic anomalies in truck weigh-in-motion traffic data using data mining",
                            "size":11
                         }
                      ]
@@ -1673,7 +1673,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Realistic, mathematically tractable graph generation and evolution, using kronecker multiplication",
+                           "name":"Realistic, mathematically tractable graph generation and evolution, using Kronecker multiplication",
                            "size":205
                         }
                      ]
@@ -1682,11 +1682,11 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Mining Time Series Data.",
+                           "name":"Mining Time Series Data",
                            "size":2
                         },
                         {
-                           "name":"MultiMap: Preserving Disk Locality for Multidimensional Datasets (CMU-PDL-05-102)",
+                           "name":"MultiMap: Preserving disk locality for multidimensional datasets (CMU-PDL-05-102)",
                            "size":0
                         }
                      ]
@@ -1704,15 +1704,15 @@
                            "size":68
                         },
                         {
-                           "name":"AutoLag: automatic discovery of lag correlations in stream data",
+                           "name":"AutoLag: Automatic discovery of lag correlations in stream data",
                            "size":8
                         },
                         {
-                           "name":"BRAID: stream mining through group lag correlations",
+                           "name":"BRAID: Stream mining through group lag correlations",
                            "size":106
                         },
                         {
-                           "name":"Graphs over time: densification laws, shrinking diameters and possible explanations",
+                           "name":"Graphs over time: Densification laws, shrinking diameters and possible explanations",
                            "size":1089
                         },
                         {
@@ -1733,7 +1733,7 @@
                            "size":38
                         },
                         {
-                           "name":"FTW: fast similarity search under the time warping distance",
+                           "name":"FTW: Fast similarity search under the time warping distance",
                            "size":145
                         },
                         {
@@ -1754,15 +1754,15 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"A Comparative Study of Feature Vector-Based Topic Detection Schemes A Comparative Study of Feature Vector-Based Topic Detection Schemes",
+                           "name":"A comparative study of feature vector-based topic detection schemes",
                            "size":7
                         },
                         {
-                           "name":"DEVELOPING A SYSTEM FOR THE RETRIEVAL OF MELODIES FROM WEB REPOSITORIES",
+                           "name":"Developing a system for the retrieval of melodies from Web repositories",
                            "size":0
                         },
                         {
-                           "name":"POWERFUL TOOLS FOR DATA MINING: FRACTALS, POWER LAWS, SVD AND MORE",
+                           "name":"Powerful tools for data mining: Fractals, power laws, SVD and more",
                            "size":0
                         }
                      ]
@@ -1798,7 +1798,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Example-Based Outlier Detection for High Dimensional Datasets",
+                           "name":"Example-based outlier detection for high dimensional datasets",
                            "size":5
                         }
                      ]
@@ -1817,11 +1817,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"GMine: a system for scalable, interactive graph visualization and mining",
+                           "name":"GMine: A system for scalable, interactive graph visualization and mining",
                            "size":22
                         },
                         {
-                           "name":"InteMon: intelligent system monitoring on large clusters",
+                           "name":"InteMon: Intelligent system monitoring on large clusters",
                            "size":15
                         }
                      ]
@@ -1843,7 +1843,7 @@
                            "size":0
                         },
                         {
-                           "name":"SuperGraph Visualization",
+                           "name":"SuperGraph visualization",
                            "size":11
                         }
                      ]
@@ -1861,7 +1861,7 @@
                            "size":36
                         },
                         {
-                           "name":"Center-piece subgraphs: problem definition and fast solutions",
+                           "name":"Center-piece subgraphs: Problem definition and fast solutions",
                            "size":172
                         },
                         {
@@ -1890,7 +1890,7 @@
                            "size":18
                         },
                         {
-                           "name":"Fast Random Walk with Restart and Its Applications",
+                           "name":"Fast random walk with restart and its applications",
                            "size":443
                         }
                      ]
@@ -1917,7 +1917,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Spatial Query Estimation without the Local Uniformity Assumption",
+                           "name":"Spatial query estimation without the local uniformity assumption",
                            "size":3
                         }
                      ]
@@ -1930,7 +1930,7 @@
                            "size":383
                         },
                         {
-                           "name":"InteMon: continuous mining of sensor data in large-scale self-infrastructures",
+                           "name":"InteMon: Continuous mining of sensor data in large-scale self-infrastructures",
                            "size":25
                         }
                      ]
@@ -1962,7 +1962,7 @@
                            "size":0
                         },
                         {
-                           "name":"Probabilistic Tensor Analysis with Akaike and Bayesian Information Criteria",
+                           "name":"Probabilistic tensor analysis with akaike and bayesian information criteria",
                            "size":9
                         }
                      ]
@@ -1971,15 +1971,15 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Cross-Modal Correlation Mining Using Graph Algorithms",
+                           "name":"Cross-Modal correlation mining using graph algorithms",
                            "size":1
                         },
                         {
-                           "name":"Dimensionality Reduction and Forecasting on Streams",
+                           "name":"Dimensionality reduction and forecasting on streams",
                            "size":5
                         },
                         {
-                           "name":"Using Utility to Provision Storage Systems (CMU-PDL-07-106)",
+                           "name":"Using utility to provision storage systems (CMU-PDL-07-106)",
                            "size":0
                         }
                      ]
@@ -2001,7 +2001,7 @@
                            "size":131
                         },
                         {
-                           "name":"GraphScope: parameter-free mining of large time-evolving graphs",
+                           "name":"GraphScope: Parameter-free mining of large time-evolving graphs",
                            "size":322
                         },
                         {
@@ -2009,7 +2009,7 @@
                            "size":8
                         },
                         {
-                           "name":"Netprobe: a fast and scalable system for fraud detection in online auction networks",
+                           "name":"Netprobe: A fast and scalable system for fraud detection in online auction networks",
                            "size":223
                         },
                         {
@@ -2021,7 +2021,7 @@
                            "size":135
                         },
                         {
-                           "name":"Stream Monitoring under the Time Warping Distance",
+                           "name":"Stream monitoring under the time warping distance",
                            "size":135
                         }
                      ]
@@ -2030,7 +2030,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"A Max Margin Framework on Image Annotation and Multimodal Image Retrieval",
+                           "name":"A max margin framework on image annotation and multimodal image retrieval",
                            "size":8
                         },
                         {
@@ -2047,11 +2047,11 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"Boosting k-Nearest Neighbor Queries Estimating Suitable Query Radii",
+                           "name":"Boosting k-nearest neighbor queries estimating suitable query radii",
                            "size":2
                         },
                         {
-                           "name":"Information Survival Threshold in Sensor and P2P Networks",
+                           "name":"Information survival threshold in sensor and P2P networks",
                            "size":47
                         }
                      ]
@@ -2064,7 +2064,7 @@
                            "size":6
                         },
                         {
-                           "name":"On the Scalability and Adaptability for Multimodal Retrieval and Annotation",
+                           "name":"On the scalability and adaptability for multimodal retrieval and annotation",
                            "size":2
                         }
                      ]
@@ -2078,11 +2078,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"TKDE Guidelines for Survey Papers",
+                           "name":"TKDE guidelines for survey papers",
                            "size":0
                         },
                         {
-                           "name":"The Omni-family of all-purpose access methods: a simple and effective way to make similarity search more efficient",
+                           "name":"The omni-family of all-purpose access methods: A simple and effective way to make similarity search more efficient",
                            "size":33
                         }
                      ]
@@ -2139,7 +2139,7 @@
                            "size":6
                         },
                         {
-                           "name":"Hierarchical, Parameter-Free Community Discovery",
+                           "name":"Hierarchical, parameter-Free community discovery",
                            "size":39
                         },
                         {
@@ -2152,7 +2152,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"15-826: Multimedia Databases and Data Mining",
+                           "name":"15-826: Multimedia databases and data mining",
                            "size":1
                         },
                         {
@@ -2160,7 +2160,7 @@
                            "size":0
                         },
                         {
-                           "name":"Graph Mining Techniques for Social Media Analysis",
+                           "name":"Graph mining techniques for social media analysis",
                            "size":2
                         }
                      ]
@@ -2178,19 +2178,19 @@
                            "size":79
                         },
                         {
-                           "name":"Compact Similarity Joins",
+                           "name":"Compact similarity joins",
                            "size":10
                         },
                         {
-                           "name":"Cut-and-stitch: efficient parallel learning of linear dynamical systems on smps",
+                           "name":"Cut-and-stitch: Efficient parallel learning of linear dynamical systems on smps",
                            "size":7
                         },
                         {
-                           "name":"Mobile call graphs: beyond power-law and lognormal distributions",
+                           "name":"Mobile call graphs: Beyond power-law and lognormal distributions",
                            "size":121
                         },
                         {
-                           "name":"Monitoring Network Evolution using MDL",
+                           "name":"Monitoring network evolution using MDL",
                            "size":38
                         },
                         {
@@ -2198,7 +2198,7 @@
                            "size":43
                         },
                         {
-                           "name":"Social networks: looking ahead",
+                           "name":"Social networks: Looking ahead",
                            "size":1
                         },
                         {
@@ -2210,7 +2210,7 @@
                            "size":95
                         },
                         {
-                           "name":"Weighted graphs and disconnected components: patterns and a generator",
+                           "name":"Weighted graphs and disconnected components: Patterns and a generator",
                            "size":96
                         }
                      ]
@@ -2227,7 +2227,7 @@
                            "size":16
                         },
                         {
-                           "name":"GRAPHITE: A Visual Query System for Large Graphs",
+                           "name":"GRAPHITE: A visual query system for large graphs",
                            "size":26
                         },
                         {
@@ -2239,7 +2239,7 @@
                            "size":2
                         },
                         {
-                           "name":"RTM: Laws and a Recursive Generator for Weighted Time-Evolving Graphs",
+                           "name":"RTM: Laws and a recursive generator for weighted time-evolving graphs",
                            "size":29
                         }
                      ]
@@ -2261,7 +2261,7 @@
                            "size":15
                         },
                         {
-                           "name":"Toward a Comprehensive Model in Internet Auction Fraud Detection",
+                           "name":"Toward a comprehensive model in Internet auction fraud detection",
                            "size":26
                         },
                         {
@@ -2279,7 +2279,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"C-DEM: a multi-modal query system for Drosophila Embryo databases",
+                           "name":"C-DEM: A multi-modal query system for Drosophila Embryo databases",
                            "size":3
                         }
                      ]
@@ -2288,7 +2288,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Bayesian Tensor Approach for 3-D Face Modeling",
+                           "name":"Bayesian tensor approach for 3-D face modeling",
                            "size":80
                         },
                         {
@@ -2296,11 +2296,11 @@
                            "size":120
                         },
                         {
-                           "name":"Random walk with restart: fast solutions and applications",
+                           "name":"Random walk with restart: Fast solutions and applications",
                            "size":165
                         },
                         {
-                           "name":"Two heads better than one: pattern discovery in time-evolving multi-aspect data",
+                           "name":"Two heads better than one: Pattern discovery in time-evolving multi-aspect data",
                            "size":23
                         }
                      ]
@@ -2309,7 +2309,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Efficient Sensor Placement Optimization for Securing Large Water Distribution Networks",
+                           "name":"Efficient sensor placement optimization for securing large water distribution networks",
                            "size":164
                         },
                         {
@@ -2317,7 +2317,7 @@
                            "size":282
                         },
                         {
-                           "name":"Less is More: Sparse Graph Mining with Compact Matrix Decomposition",
+                           "name":"Less is more: Sparse graph mining with compact matrix decomposition",
                            "size":42
                         },
                         {
@@ -2349,27 +2349,27 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Direction-Aware Proximity on Graphs",
+                           "name":"Direction-Aware proximity on graphs",
                            "size":0
                         },
                         {
-                           "name":"Future Directions in Tensor-Based Computation and Modeling",
+                           "name":"Future directions in tensor-based computation and modeling",
                            "size":13
                         },
                         {
-                           "name":"Graph Mining: Patterns, Generators and Tools",
+                           "name":"Graph mining: Patterns, generators and tools",
                            "size":1
                         },
                         {
-                           "name":"Large Graph Mining: Patterns, Tools and Case Studies",
+                           "name":"Large graph mining: Patterns, tools and case studies",
                            "size":0
                         },
                         {
-                           "name":"Modeling Blog Dynamics.",
+                           "name":"Modeling blog dynamics",
                            "size":96
                         },
                         {
-                           "name":"NetCube: Fast, Approximate Database Queries Using Bayesian Networks",
+                           "name":"NetCube: Fast, approximate database queries using Bayesian networks",
                            "size":0
                         }
                      ]
@@ -2383,11 +2383,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"BBM: bayesian browsing model from petabyte-scale data",
+                           "name":"BBM: Bayesian browsing model from petabyte-scale data",
                            "size":42
                         },
                         {
-                           "name":"BGP-lens: patterns and anomalies in internet routing updates",
+                           "name":"BGP-lens: Patterns and anomalies in internet routing updates",
                            "size":18
                         },
                         {
@@ -2395,23 +2395,23 @@
                            "size":129
                         },
                         {
-                           "name":"DOULION: counting triangles in massive graphs with a coin",
+                           "name":"DOULION: Counting triangles in massive graphs with a coin",
                            "size":141
                         },
                         {
-                           "name":"DynaMMo: mining and summarization of coevolving sequences with missing values",
+                           "name":"DynaMMo: Mining and summarization of coevolving sequences with missing values",
                            "size":60
                         },
                         {
-                           "name":"Large human communication networks: patterns and a utility-driven generator",
+                           "name":"Large human communication networks: Patterns and a utility-driven generator",
                            "size":35
                         },
                         {
-                           "name":"SHIFTR: a user-directed, link-based system for ad hoc sensemaking of large heterogeneous data collections",
+                           "name":"SHIFTR: A user-directed, link-based system for ad hoc sensemaking of large heterogeneous data collections",
                            "size":1
                         },
                         {
-                           "name":"SNARE: a link analytic system for graph labeling and risk detection",
+                           "name":"SNARE: A link analytic system for graph labeling and risk detection",
                            "size":58
                         }
                      ]
@@ -2420,15 +2420,15 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"EigenSpokes: Surprising Patterns and Scalable Community Chipping in Large Graphs",
+                           "name":"EigenSpokes: Surprising patterns and scalable community chipping in large graphs",
                            "size":36
                         },
                         {
-                           "name":"PEGASUS: A Peta-Scale Graph Mining System Implementation and Observations",
+                           "name":"PEGASUS: A peta-scale graph mining system implementation and observations",
                            "size":428
                         },
                         {
-                           "name":"iPoG: fast interactive proximity querying on graphs",
+                           "name":"iPoG: Fast interactive proximity querying on graphs",
                            "size":9
                         }
                      ]
@@ -2437,7 +2437,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Spectral Counting of Triangles in Power-Law Networks via Element-Wise Sparsification",
+                           "name":"Spectral counting of triangles in power-law networks via element-wise sparsification",
                            "size":18
                         },
                         {
@@ -2464,7 +2464,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"ACM Fellows honored",
+                           "name":"ACM fellows honored",
                            "size":0
                         }
                      ]
@@ -2483,19 +2483,19 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"BASSET: scalable gateway finder in large graphs",
+                           "name":"BASSET: Scalable gateway finder in large graphs",
                            "size":5
                         },
                         {
-                           "name":"Kronecker Graphs: An Approach to Modeling Networks",
+                           "name":"Kronecker graphs: An approach to modeling networks",
                            "size":344
                         },
                         {
-                           "name":"OddBall: spotting anomalies in weighted graphs",
+                           "name":"OddBall: Spotting anomalies in weighted graphs",
                            "size":192
                         },
                         {
-                           "name":"TWave: high-order analysis of spatiotemporal data",
+                           "name":"TWave: High-order analysis of spatiotemporal data",
                            "size":0
                         }
                      ]
@@ -2504,15 +2504,15 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Analysis of large multi-modal social networks: patterns and a generator",
+                           "name":"Analysis of large multi-modal social networks: Patterns and a generator",
                            "size":16
                         },
                         {
-                           "name":"HCDF: A Hybrid Community Discovery Framework",
+                           "name":"HCDF: A hybrid community discovery framework",
                            "size":32
                         },
                         {
-                           "name":"SBAD: sequence based attack detection via sequence comparison",
+                           "name":"SBAD: Sequence based attack detection via sequence comparison",
                            "size":6
                         },
                         {
@@ -2520,7 +2520,7 @@
                            "size":51
                         },
                         {
-                           "name":"Virus propagation on time-varying networks: theory and immunization algorithms",
+                           "name":"Virus propagation on time-varying networks: Theory and immunization algorithms",
                            "size":66
                         }
                      ]
@@ -2529,11 +2529,11 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"BoLeRO: a principled technique for including bone length constraints in motion capture occlusion filling",
+                           "name":"BoLeRO: A principled technique for including bone length constraints in motion capture occlusion filling",
                            "size":16
                         },
                         {
-                           "name":"Community Evolution and Change Point Detection in Time-Evolving Graphs",
+                           "name":"Community evolution and change point detection in time-evolving graphs",
                            "size":1
                         },
                         {
@@ -2545,23 +2545,23 @@
                            "size":95
                         },
                         {
-                           "name":"Got the Flu (or Mumps)? Check the Eigenvalue!",
+                           "name":"Got the flu (or mumps)? Check the eigenvalue!",
                            "size":10
                         },
                         {
-                           "name":"Graph Mining: Laws and Generators",
+                           "name":"Graph mining: Laws and generators",
                            "size":10
                         },
                         {
-                           "name":"Polonium: Tera-Scale Graph Mining for Malware Detection",
+                           "name":"Polonium: Tera-scale graph mining for malware detection",
                            "size":22
                         },
                         {
-                           "name":"Proximity Tracking on Dynamic Bipartite Graphs: Problem Definitions and Fast Solutions",
+                           "name":"Proximity tracking on dynamic bipartite graphs: Problem definitions and fast solutions",
                            "size":0
                         },
                         {
-                           "name":"Structured Max Margin Learning on Image Annotation and Multimodal Image Retrieval",
+                           "name":"Structured max margin learning on image annotation and multimodal image retrieval",
                            "size":0
                         }
                      ]
@@ -2587,7 +2587,7 @@
                            "size":0
                         },
                         {
-                           "name":"Metric forensics: a multi-level approach for mining volatile graphs",
+                           "name":"Metric forensics: A multi-level approach for mining volatile graphs",
                            "size":23
                         }
                      ]
@@ -2596,23 +2596,23 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"EigenDiagnostics: Spotting Connection Patterns and Outliers in Large Graphs",
+                           "name":"EigenDiagnostics: Spotting connection patterns and outliers in large graphs",
                            "size":2
                         },
                         {
-                           "name":"On the Vulnerability of Large Graphs",
+                           "name":"On the vulnerability of large graphs",
                            "size":68
                         },
                         {
-                           "name":"Patterns on the Connected Components of Terabyte-Scale Graphs",
+                           "name":"Patterns on the connected components of terabyte-scale graphs",
                            "size":17
                         },
                         {
-                           "name":"QMAS: Querying, Mining and Summarization of Multi-modal Databases",
+                           "name":"QMAS: Querying, mining and summarization of multi-modal databases",
                            "size":5
                         },
                         {
-                           "name":"ValuePick: Towards a Value-Oriented Dual-Goal Recommender System",
+                           "name":"ValuePick: Towards a value-oriented dual-goal recommender ystem",
                            "size":4
                         }
                      ]
@@ -2621,7 +2621,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"An Intrinsic Graphical Signature Based on Alert Correlation Analysis for Intrusion Detection",
+                           "name":"An intrinsic graphical signature based on alert correlation analysis for intrusion detection",
                            "size":8
                         },
                         {
@@ -2648,11 +2648,11 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Bayesian Browsing Model: Exact Inference of Document Relevance from Petabyte-Scale Data",
+                           "name":"Bayesian browsing model: Exact inference of document relevance from petabyte-scale data",
                            "size":13
                         },
                         {
-                           "name":"Fast Discovery of Group Lag Correlations in Streams",
+                           "name":"Fast discovery of group lag correlations in streams",
                            "size":2
                         }
                      ]
@@ -2661,7 +2661,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Efficient Parallel Learning of Hidden Markov Chain Models on SMPs",
+                           "name":"Efficient parallel learning of hidden Markov chain models on SMPs",
                            "size":0
                         },
                         {
@@ -2684,11 +2684,11 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Spectral analysis for billion-scale graphs: discoveries and implementation",
+                           "name":"Spectral analysis for billion-scale graphs: Discoveries and implementation",
                            "size":46
                         },
                         {
-                           "name":"Unifying guilt-by-association approaches: theorems and fast algorithms",
+                           "name":"Unifying guilt-by-association approaches: Theorems and fast algorithms",
                            "size":32
                         },
                         {
@@ -2701,27 +2701,27 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"A Highly Scalable and Adaptable Co-Learning Framework on Multimodal Data Mining in a Multimedia Database",
+                           "name":"A highly scalable and adaptable co-learning framework on multimodal data mining in a multimedia Database",
                            "size":0
                         },
                         {
-                           "name":"Epidemic spread in mobile Ad Hoc networks: determining the tipping point",
+                           "name":"Epidemic spread in mobile ad hoc networks: Determining the tipping point",
                            "size":24
                         },
                         {
-                           "name":"Obfuscated malicious JavaScript detection by Causal Relations Finding",
+                           "name":"Obfuscated malicious JavaScript detection by causal relations finding",
                            "size":5
                         },
                         {
-                           "name":"Polonium: Tera-Scale Graph Mining and Inference for Malware Detection",
+                           "name":"Polonium: tera-scale graph mining and inference for malware detection",
                            "size":49
                         },
                         {
-                           "name":"RolX: Role Extraction and Mining in Large Networks",
+                           "name":"RolX: Role extraction and mining in large networks",
                            "size":4
                         },
                         {
-                           "name":"Statistical Properties of Social Networks",
+                           "name":"Statistical properties of social networks",
                            "size":20
                         }
                      ]
@@ -2735,11 +2735,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Apolo: interactive large graph sensemaking by combining machine learning and visualization",
+                           "name":"Apolo: Interactive large graph sensemaking by combining machine learning and visualization",
                            "size":8
                         },
                         {
-                           "name":"Apolo: making sense of large network data by combining rich user interaction and machine learning",
+                           "name":"Apolo: Making sense of large network data by combining rich user interaction and machine learning",
                            "size":80
                         },
                         {
@@ -2751,7 +2751,7 @@
                            "size":94
                         },
                         {
-                           "name":"GBASE: a scalable and general graph management system",
+                           "name":"GBASE: A scalable and general graph management system",
                            "size":66
                         },
                         {
@@ -2759,7 +2759,7 @@
                            "size":37
                         },
                         {
-                           "name":"ThermoCast: a cyber-physical forecasting model for datacenters",
+                           "name":"ThermoCast: A cyber-physical forecasting model for datacenters",
                            "size":55
                         }
                      ]
@@ -2768,7 +2768,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Mobile Phone Graph Evolution: Findings, Model and Interpretation",
+                           "name":"Mobile phone graph evolution: Findings, model and interpretation",
                            "size":1
                         },
                         {
@@ -2776,7 +2776,7 @@
                            "size":1
                         },
                         {
-                           "name":"Threshold Conditions for Arbitrary Cascade Models on Arbitrary Networks",
+                           "name":"Threshold conditions for arbitrary cascade models on arbitrary networks",
                            "size":41
                         }
                      ]
@@ -2794,7 +2794,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"MultiAspectForensics: Pattern Mining on Large-Scale Heterogeneous Networks with Tensor Analysis",
+                           "name":"MultiAspectForensics: Pattern mining on large-scale heterogeneous networks with tensor analysis",
                            "size":47
                         }
                      ]
@@ -2808,7 +2808,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"HADI: Mining Radii of Large Graphs",
+                           "name":"HADI: Mining radii of large graphs",
                            "size":68
                         }
                      ]
@@ -2857,15 +2857,15 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Fast Robustness Estimation in Large Social Graphs: Communities and Anomaly Detection",
+                           "name":"Fast robustness estimation in large social graphs: Communities and anomaly detection",
                            "size":15
                         },
                         {
-                           "name":"ParCube: sparse parallelizable tensor decompositions",
+                           "name":"ParCube: Sparse parallelizable tensor decompositions",
                            "size":66
                         },
                         {
-                           "name":"Structural Analysis in Multi-Relational Social Networks",
+                           "name":"Structural analysis in multi-relational social networks",
                            "size":12
                         }
                      ]
@@ -2874,23 +2874,23 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"An Analysis of a Blogosphere using SVD and PARAFAC Decomposition",
+                           "name":"An analysis of a blogosphere using SVD and PARAFAC decomposition",
                            "size":0
                         },
                         {
-                           "name":"Axiomatic Analysis of Co-occurrence Similarity Functions",
+                           "name":"Axiomatic analysis of co-occurrence similarity functions",
                            "size":0
                         },
                         {
-                           "name":"Fast Anomaly Discovery Given Duplicates",
+                           "name":"Fast anomaly discovery given duplicates",
                            "size":1
                         },
                         {
-                           "name":"NetSimile: A Scalable Approach to Size-Independent Network Similarity",
+                           "name":"NetSimile: A scalable approach to size-independent network similarity",
                            "size":16
                         },
                         {
-                           "name":"QUEST--Query Environment for Science Teaching",
+                           "name":"QUEST--Query environment for science teaching",
                            "size":0
                         }
                      ]
@@ -2904,7 +2904,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"EigenBot: foiling spamming botnets with matrix algebra",
+                           "name":"EigenBot: Foiling spamming botnets with matrix algebra",
                            "size":1
                         },
                         {
@@ -2912,27 +2912,27 @@
                            "size":40
                         },
                         {
-                           "name":"Managing and mining large graphs: patterns and algorithms",
+                           "name":"Managing and mining large graphs: Patterns and algorithms",
                            "size":6
                         },
                         {
-                           "name":"OPAvion: mining and visualization in large graphs",
+                           "name":"OPAvion: Mining and visualization in large graphs",
                            "size":15
                         },
                         {
-                           "name":"Panel on Mining the Big Data",
+                           "name":"Panel on mining the big data",
                            "size":0
                         },
                         {
-                           "name":"RainMon: an integrated approach to mining bursty timeseries monitoring data",
+                           "name":"RainMon: An integrated approach to mining bursty timeseries monitoring data",
                            "size":12
                         },
                         {
-                           "name":"TourViz: interactive visualization of connection pathways in large graphs",
+                           "name":"TourViz: Interactive visualization of connection pathways in large graphs",
                            "size":4
                         },
                         {
-                           "name":"Winner takes all: competing viruses or ideas on fair-play networks",
+                           "name":"Winner takes all: Competing viruses or ideas on fair-play networks",
                            "size":49
                         }
                      ]
@@ -2941,7 +2941,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"EigenSP: A More Accurate Shortest Path Distance Estimation on Large-Scale Networks",
+                           "name":"EigenSP: A more accurate shortest path distance estimation on large-scale networks",
                            "size":0
                         },
                         {
@@ -2953,7 +2953,7 @@
                            "size":67
                         },
                         {
-                           "name":"Interacting viruses in networks: can both survive?",
+                           "name":"Interacting viruses in networks: Can both survive?",
                            "size":43
                         },
                         {
@@ -2961,15 +2961,15 @@
                            "size":19
                         },
                         {
-                           "name":"Rise and fall patterns of information diffusion: model and implications",
+                           "name":"Rise and fall patterns of information diffusion: Model and implications",
                            "size":119
                         },
                         {
-                           "name":"RolX: structural role extraction & mining in large graphs",
+                           "name":"RolX: Structural role extraction & mining in large graphs",
                            "size":61
                         },
                         {
-                           "name":"Spotting Culprits in Epidemics: How Many and Which Ones?",
+                           "name":"Spotting culprits in epidemics: How many and which ones?",
                            "size":72
                         },
                         {
@@ -2982,11 +2982,11 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Interactively and Visually Exploring Tours of Marked Nodes in Large Graphs",
+                           "name":"Interactively and visually exploring tours of marked nodes in large graphs",
                            "size":1
                         },
                         {
-                           "name":"TensorSplat: Spotting Latent Anomalies in Time",
+                           "name":"TensorSplat: Spotting latent anomalies in time",
                            "size":11
                         }
                      ]
@@ -3000,7 +3000,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Competing memes propagation on networks: a case study of composite networks",
+                           "name":"Competing memes propagation on networks: A case study of composite networks",
                            "size":17
                         },
                         {
@@ -3008,11 +3008,11 @@
                            "size":3
                         },
                         {
-                           "name":"V-SMART-join: a scalable mapreduce framework for all-pair similarity joins of multisets and vectors",
+                           "name":"V-SMART-join: A scalable mapreduce framework for all-pair similarity joins of multisets and vectors",
                            "size":79
                         },
                         {
-                           "name":"gbase: an efficient analysis platform for large graphs",
+                           "name":"gbase: An efficient analysis platform for large graphs",
                            "size":26
                         }
                      ]
@@ -3025,7 +3025,7 @@
                            "size":4
                         },
                         {
-                           "name":"Graph Mining: Laws, Tools, and Case Studies",
+                           "name":"Graph mining: Laws, tools, and case studies",
                            "size":12
                         }
                      ]
@@ -3034,7 +3034,7 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"Gateway finder in large graphs: problem definitions and fast solutions",
+                           "name":"Gateway finder in large graphs: Problem definitions and fast solutions",
                            "size":3
                         }
                      ]
@@ -3043,15 +3043,15 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Application of the Ant Colony Optimization Algorithm to the Influence-Maximization Problem",
+                           "name":"Application of the ant colony optimization algorithm to the influence-maximization problem",
                            "size":0
                         },
                         {
-                           "name":"MultiAspectForensics: mining large heterogeneous networks using tensor",
+                           "name":"MultiAspectForensics: Mining large heterogeneous networks using tensor",
                            "size":1
                         },
                         {
-                           "name":"TOP-10 DATA MINING CASE STUDIES",
+                           "name":"Top 10 data mining case studies",
                            "size":4
                         }
                      ]
@@ -3070,11 +3070,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"EEG-MINE: Mining and Understanding Epilepsy Data",
+                           "name":"EEG-MINE: Mining and understanding epilepsy data",
                            "size":1
                         },
                         {
-                           "name":"Fast Outlier Detection Despite the Duplicates",
+                           "name":"Fast outlier detection despite the duplicates",
                            "size":0
                         }
                      ]
@@ -3096,7 +3096,7 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"F-Trail: Finding Patterns in Taxi Trajectories",
+                           "name":"F-Trail: Finding patterns in taxi trajectories",
                            "size":9
                         }
                      ]
@@ -3105,31 +3105,31 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Clustering Methods for Moderate-to-High Dimensionality Data",
+                           "name":"Clustering methods for moderate-to-high dimensionality data",
                            "size":0
                         },
                         {
-                           "name":"Dimensionality Reduction and Filtering on Time Series Sensor Streams",
+                           "name":"Dimensionality reduction and filtering on time series sensor streams",
                            "size":1
                         },
                         {
-                           "name":"Large Scale Tensor Decompositions: Algorithmic Developments and Applications.",
+                           "name":"Large scale tensor decompositions: Algorithmic developments and applications.",
                            "size":11
                         },
                         {
-                           "name":"MidiFind: Similarity Search and Popularity Mining in Large MIDI Databases",
+                           "name":"MidiFind: Similarity search and popularity mining in large MIDI databases",
                            "size":2
                         },
                         {
-                           "name":"Mining Large Graphs",
+                           "name":"Mining large graphs",
                            "size":1
                         },
                         {
-                           "name":"Related Work and Concepts",
+                           "name":"Related work and concepts",
                            "size":0
                         },
                         {
-                           "name":"Scoup-SMT: Scalable Coupled Sparse Matrix-Tensor Factorization",
+                           "name":"Scoup-SMT: Scalable coupled sparse matrix-tensor factorization",
                            "size":4
                         }
                      ]
@@ -3143,7 +3143,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"CopyCatch: stopping group attacks by spotting lockstep behavior in social networks",
+                           "name":"CopyCatch: Stopping group attacks by spotting lockstep behavior in social networks",
                            "size":71
                         },
                         {
@@ -3155,11 +3155,11 @@
                            "size":4
                         },
                         {
-                           "name":"The self-feeding process: a unifying model for communication dynamics in the web",
+                           "name":"The self-feeding process: A unifying model for communication dynamics in the Web",
                            "size":10
                         },
                         {
-                           "name":"Why people hate your app: making sense of user feedback in a mobile app store",
+                           "name":"Why people hate your app: Making sense of user feedback in a mobile app store",
                            "size":73
                         }
                      ]
@@ -3172,7 +3172,7 @@
                            "size":15
                         },
                         {
-                           "name":"Mixed Membership Subspace Clustering",
+                           "name":"Mixed membership subspace clustering",
                            "size":1
                         }
                      ]
@@ -3205,7 +3205,7 @@
                            "size":29
                         },
                         {
-                           "name":"TSum: fast, principled table summarization",
+                           "name":"TSum: Fast, principled table summarization",
                            "size":0
                         }
                      ]
@@ -3219,15 +3219,15 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Competing Memes Propagation on Networks: A Network Science Perspective",
+                           "name":"Competing memes propagation on networks: A network science perspective",
                            "size":27
                         },
                         {
-                           "name":"Halite: Fast and Scalable Multiresolution Local-Correlation Clustering",
+                           "name":"Halite: Fast and scalable multiresolution local-correlation clustering",
                            "size":11
                         },
                         {
-                           "name":"Large Graph Analysis in the GMine System",
+                           "name":"Large graph analysis in the GMine system",
                            "size":11
                         }
                      ]
@@ -3236,7 +3236,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Big graph mining: algorithms and discoveries",
+                           "name":"Big graph mining: Algorithms and discoveries",
                            "size":37
                         }
                      ]
@@ -3245,7 +3245,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Coercively Adjusted Auto Regression Model for Forecasting in Epilepsy EEG",
+                           "name":"Coercively adjusted auto regression model for forecasting in epilepsy EEG",
                            "size":8
                         },
                         {
@@ -3268,19 +3268,19 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Beyond Blocks: Hyperbolic Community Detection",
+                           "name":"Beyond blocks: Hyperbolic community detection",
                            "size":6
                         },
                         {
-                           "name":"Fast Nearest Neighbor Search on Large Time-Evolving Graphs",
+                           "name":"Fast nearest neighbor search on large time-evolving graphs",
                            "size":2
                         },
                         {
-                           "name":"Interestingness-Driven Diffusion Process Summarization in Dynamic Networks",
+                           "name":"Interestingness-driven diffusion process summarization in synamic networks",
                            "size":19
                         },
                         {
-                           "name":"Revisit Behavior in Social Media: The Phoenix-R Model and Discoveries",
+                           "name":"Revisit behavior in social media: The Phoenix-R model and discoveries",
                            "size":13
                         },
                         {
@@ -3293,15 +3293,15 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"Beyond Poisson: Modeling Inter-Arrival Time of Requests in a Datacenter",
+                           "name":"Beyond Poisson: Modeling inter-arrival time of requests in a datacenter",
                            "size":8
                         },
                         {
-                           "name":"Fault-Tolerant Concept Detection in Information Networks",
+                           "name":"Fault-Tolerant concept detection in information networks",
                            "size":0
                         },
                         {
-                           "name":"Inferring Strange Behavior from Connectivity Pattern in Social Networks",
+                           "name":"Inferring strange behavior from connectivity pattern in social networks",
                            "size":19
                         },
                         {
@@ -3309,7 +3309,7 @@
                            "size":2
                         },
                         {
-                           "name":"Net-Ray: Visualizing and Mining Billion-Scale Graphs",
+                           "name":"Net-Ray: Visualizing and mining billion-scale graphs",
                            "size":8
                         }
                      ]
@@ -3318,23 +3318,23 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Data Streams: Models and Algorithms",
+                           "name":"Data streams: Models and algorithms",
                            "size":334
                         },
                         {
-                           "name":"Fraud Detection Using Social Network Analysis, A Case Study",
+                           "name":"Fraud detection using social network analysis, a case study",
                            "size":0
                         },
                         {
-                           "name":"Linearized and Turbo Belief Propagation",
+                           "name":"Linearized and turbo belief propagation",
                            "size":1
                         },
                         {
-                           "name":"Link Mining: Models, Algorithms, and Applications",
+                           "name":"Link mining: Models, algorithms, and applications",
                            "size":43
                         },
                         {
-                           "name":"PowerScope: Early Event Detection and Identification in Electric Power Systems",
+                           "name":"PowerScope: Early event detection and identification in electric power systems",
                            "size":0
                         }
                      ]
@@ -3348,19 +3348,19 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"AutoPlait: automatic mining of co-evolving time sequences",
+                           "name":"AutoPlait: Automatic mining of co-evolving time sequences",
                            "size":26
                         },
                         {
-                           "name":"CatchSync: catching synchronized behavior in large directed graphs",
+                           "name":"CatchSync: Catching synchronized behavior in large directed graphs",
                            "size":33
                         },
                         {
-                           "name":"CoBaFi: collaborative bayesian filtering",
+                           "name":"CoBaFi: Collaborative bayesian filtering",
                            "size":19
                         },
                         {
-                           "name":"Detecting anomalies in dynamic rating data: a robust probabilistic model for rating evolution",
+                           "name":"Detecting anomalies in dynamic rating data: A robust probabilistic model for rating evolution",
                            "size":15
                         },
                         {
@@ -3368,11 +3368,11 @@
                            "size":10
                         },
                         {
-                           "name":"Good-enough brain model: challenges, algorithms and discoveries in multi-subject experiments",
+                           "name":"Good-enough brain model: Challenges, algorithms and discoveries in multi-subject experiments",
                            "size":6
                         },
                         {
-                           "name":"Large graph mining: patterns, cascades, fraud detection, and algorithms",
+                           "name":"Large graph mining: Patterns, cascades, fraud detection, and algorithms",
                            "size":2
                         },
                         {
@@ -3401,7 +3401,7 @@
                            "size":8
                         },
                         {
-                           "name":"Spotting Suspicious Link Behavior with fBox: An Adversarial Perspective",
+                           "name":"Spotting suspicious link behavior with fBox: An adversarial perspective",
                            "size":14
                         }
                      ]
@@ -3428,11 +3428,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"HEigen: Spectral Analysis for Billion-Scale Graphs",
+                           "name":"HEigen: Spectral analysis for billion-scale graphs",
                            "size":27
                         },
                         {
-                           "name":"SlashBurn: Graph Compression and Mining beyond Caveman Communities",
+                           "name":"SlashBurn: Graph compression and mining beyond caveman communities",
                            "size":28
                         }
                      ]
@@ -3454,7 +3454,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"On Constructing Seminal Paper Genealogy",
+                           "name":"On constructing seminal paper genealogy",
                            "size":7
                         },
                         {
@@ -3481,7 +3481,7 @@
                            "size":12
                         },
                         {
-                           "name":"Perseus: an interactive large-scale graph mining and visualization tool",
+                           "name":"Perseus: An interactive large-scale graph mining and visualization tool",
                            "size":4
                         }
                      ]
@@ -3499,15 +3499,15 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"ND-SYNC: Detecting Synchronized Fraud Activities",
+                           "name":"ND-SYNC: Detecting synchronized fraud activities",
                            "size":2
                         },
                         {
-                           "name":"Retweeting Activity on Twitter: Signs of Deception",
+                           "name":"Retweeting activity on Twitter: Signs of deception",
                            "size":3
                         },
                         {
-                           "name":"SocNL: Bayesian Label Propagation with Confidence",
+                           "name":"SocNL: Bayesian label propagation with confidence",
                            "size":1
                         }
                      ]
@@ -3516,15 +3516,15 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"GeoTense: Spotting Patterns in Geo-Social Networks with Tensors",
+                           "name":"GeoTense: Spotting patterns in geo-social networks with tensors",
                            "size":0
                         },
                         {
-                           "name":"Machine Beats Experts: Automatic Discovery of Skill Models for Data-Driven Online Course Refinement.",
+                           "name":"Machine beats experts: Automatic discovery of skill models for data-driven online course refinement.",
                            "size":2
                         },
                         {
-                           "name":"Spotting Anomalies in Cyber Physical Datasets: The case of Mobility Data",
+                           "name":"Spotting anomalies in cyber physical datasets: The case of mobility data",
                            "size":0
                         }
                      ]
@@ -3538,11 +3538,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Essential Web Pages Are Easy to Find",
+                           "name":"Essential Web pages are easy to find",
                            "size":2
                         },
                         {
-                           "name":"Extracting Taxonomies from Bipartite Graphs",
+                           "name":"Extracting taxonomies from bipartite graphs",
                            "size":1
                         },
                         {
@@ -3550,19 +3550,19 @@
                            "size":25
                         },
                         {
-                           "name":"RSC: Mining and Modeling Temporal Activity in Social Media",
+                           "name":"RSC: Mining and modeling temporal activity in social media",
                            "size":12
                         },
                         {
-                           "name":"The Web as a Jungle: Non-Linear Dynamical Systems for Co-evolving Online Activities",
+                           "name":"The Web as a jungle: Non-linear dynamical systems for co-evolving online activities",
                            "size":11
                         },
                         {
-                           "name":"TimeCrunch: Interpretable Dynamic Graph Summarization",
+                           "name":"TimeCrunch: Interpretable dynamic graph summarization",
                            "size":8
                         },
                         {
-                           "name":"Why Do You Follow Him?: Multilinear Analysis on Twitter",
+                           "name":"Why do you follow him?: Multilinear analysis on Twitter",
                            "size":0
                         }
                      ]
@@ -3571,27 +3571,27 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"A General Suspiciousness Metric for Dense Blocks in Multimodal Data",
+                           "name":"A general suspiciousness metric for dense blocks in multimodal data",
                            "size":14
                         },
                         {
-                           "name":"Automatic Taxonomy Extraction from Bipartite Graphs",
+                           "name":"Automatic taxonomy extraction from bipartite graphs",
                            "size":0
                         },
                         {
-                           "name":"Education, Learning and Information Theory",
+                           "name":"Education, learning and information theory",
                            "size":0
                         },
                         {
-                           "name":"Graph-Based User Behavior Modeling: From Prediction to Fraud Detection",
+                           "name":"Graph-based user behavior modeling: From prediction to fraud detection",
                            "size":0
                         },
                         {
-                           "name":"Modeling Website Popularity Competition in the Attention-Activity Marketplace",
+                           "name":"Modeling website popularity competition in the attention-activity marketplace",
                            "size":8
                         },
                         {
-                           "name":"Translation Invariant Word Embeddings",
+                           "name":"Translation invariant word embeddings",
                            "size":7
                         }
                      ]
@@ -3600,7 +3600,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Fraud Detection through Graph-Based User Behavior Modeling",
+                           "name":"Fraud detection through graph-based user behavior modeling",
                            "size":3
                         },
                         {
@@ -3608,11 +3608,11 @@
                            "size":5
                         },
                         {
-                           "name":"Location based Social Network analysis using Tensors and Signal Processing tools",
+                           "name":"Location based social network analysis using tensors and signal processing tools",
                            "size":2
                         },
                         {
-                           "name":"Multimodal graph-based analysis over the DBLP repository: critical discoveries and hypotheses",
+                           "name":"Multimodal graph-based analysis over the DBLP repository: Critical discoveries and hypotheses",
                            "size":2
                         },
                         {
@@ -3630,7 +3630,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Universal and Distinct Properties of Communication Dynamics: How to Generate Realistic Inter-event Times",
+                           "name":"Universal and distinct properties of communication dynamics: How to generate realistic inter-event Times",
                            "size":3
                         }
                      ]
@@ -3652,7 +3652,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Anomaly detection in dynamic networks: a survey",
+                           "name":"Anomaly detection in dynamic networks: A survey",
                            "size":18
                         },
                         {
@@ -3675,7 +3675,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Matrices, Compression, Learning Curves: Formulation, and the GroupNteach Algorithms",
+                           "name":"Matrices, compression, learning curves: Formulation, and the groupNteach algorithms",
                            "size":0
                         }
                      ]
@@ -3684,7 +3684,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"M-Zoom: Fast Dense-Block Detection in Tensors with Quality Guarantees",
+                           "name":"M-Zoom: Fast dense-block detection in tensors with quality guarantees",
                            "size":3
                         }
                      ]
@@ -3693,7 +3693,7 @@
                      "name":"C",
                      "children":[
                         {
-                           "name":"FastStep: Scalable Boolean Matrix Decomposition",
+                           "name":"FastStep: Scalable boolean matrix decomposition",
                            "size":0
                         }
                      ]
@@ -3702,27 +3702,27 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Adaptive, Automatic Stream Mining",
+                           "name":"Adaptive, automatic stream mining",
                            "size":0
                         },
                         {
-                           "name":"Data Mining In Large Sets Of Complex Data",
+                           "name":"Data mining In large sets Of complex data",
                            "size":0
                         },
                         {
-                           "name":"M3A: Model, MetaModel, and Anomaly Detection in Web Searches",
+                           "name":"M3A: Model, metamodel, and anomaly detection in Web searches",
                            "size":0
                         },
                         {
-                           "name":"Mining Online Music Listening Trajectories.",
+                           "name":"Mining online music listening trajectories.",
                            "size":0
                         },
                         {
-                           "name":"Mining and Forecasting of Big Time-series data",
+                           "name":"Mining and forecasting of big time-series data",
                            "size":0
                         },
                         {
-                           "name":"PNP: Fast Path Ensemble Method for Movie Design",
+                           "name":"PNP: Fast path ensemble method for movie design",
                            "size":0
                         }
                      ]
@@ -3736,19 +3736,19 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"CatchTartan: Representing and Summarizing Dynamic Multicontextual Behaviors",
+                           "name":"CatchTartan: Representing and summarizing dynamic multicontextual behaviors",
                            "size":2
                         },
                         {
-                           "name":"Mining Big Time-series Data on the Web",
+                           "name":"Mining big time-series data on the Web",
                            "size":1
                         },
                         {
-                           "name":"Non-Linear Mining of Competing Local Activities",
+                           "name":"Non-linear mining of competing local activities",
                            "size":7
                         },
                         {
-                           "name":"TribeFlow: Mining & Predicting User Trajectories",
+                           "name":"TribeFlow: Mining & predicting user trajectories",
                            "size":2
                         }
                      ]
@@ -3757,35 +3757,35 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"BIRDNEST: Bayesian Inference for Ratings-Fraud Detection",
+                           "name":"BIRDNEST: Bayesian inference for ratings-fraud detection",
                            "size":4
                         },
                         {
-                           "name":"Beyond Sigmoids: The NetTide Model for Social Network Growth, and Its Applications",
+                           "name":"Beyond sigmoids: The NetTide model for social network growth, and its applications",
                            "size":0
                         },
                         {
-                           "name":"Come-and-Go Patterns of Group Evolution: A Dynamic Model",
+                           "name":"Come-and-go patterns of group evolution: A dynamic model",
                            "size":0
                         },
                         {
-                           "name":"EdgeCentric: Anomaly Detection in Edge-Attributed Networks",
+                           "name":"EdgeCentric: Anomaly detection in edge-attributed networks",
                            "size":2
                         },
                         {
-                           "name":"Efficient and Distributed Algorithms for Large-Scale Generalized Canonical Correlations Analysis",
+                           "name":"Efficient and distributed algorithms for large-scale generalized canonical correlations analysis",
                            "size":0
                         },
                         {
-                           "name":"FRAUDAR: Bounding Graph Fraud in the Face of Camouflage",
+                           "name":"FRAUDAR: Bounding graph fraud in the face of camouflage",
                            "size":4
                         },
                         {
-                           "name":"PIN-TRUST: Fast Trust Propagation Exploiting Positive, Implicit, and Negative Information",
+                           "name":"PIN-TRUST: Fast trust propagation exploiting positive, implicit, and negative information",
                            "size":1
                         },
                         {
-                           "name":"Vote-and-Comment: Modeling the Coevolution of User Interactions in Social Voting Web Sites",
+                           "name":"Vote-and-comment: Modeling the coevolution of user interactions in social voting Web sites",
                            "size":0
                         }
                      ]
@@ -3808,19 +3808,19 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Catching Synchronized Behaviors in Large Networks: A Graph Mining Approach",
+                           "name":"Catching synchronized behaviors in large networks: A graph mining approach",
                            "size":5
                         },
                         {
-                           "name":"Mining billion-scale tensors: algorithms and discoveries",
+                           "name":"Mining billion-scale tensors: Algorithms and discoveries",
                            "size":1
                         },
                         {
-                           "name":"Node Immunization on Large Graphs: Theory and Algorithms",
+                           "name":"Node immunization on large graphs: Theory and algorithms",
                            "size":3
                         },
                         {
-                           "name":"Spotting Suspicious Behaviors in Multimodal Data: A General Metric and Algorithms",
+                           "name":"Spotting suspicious behaviors in multimodal data: A general metric and algorithms",
                            "size":1
                         }
                      ]
@@ -3829,7 +3829,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Eigen-Optimization on Large Graphs by Edge Manipulation",
+                           "name":"Eigen-optimization on large graphs by edge manipulation",
                            "size":1
                         },
                         {
@@ -3841,7 +3841,7 @@
                            "size":2
                         },
                         {
-                           "name":"Multimodal Data Mining in a Multimedia Database Based on Structured Max Margin Learning",
+                           "name":"Multimodal data mining in a multimedia database based on structured max margin learning",
                            "size":0
                         }
                      ]
@@ -3854,11 +3854,11 @@
                            "size":0
                         },
                         {
-                           "name":"Robust Data-Driven State Estimation for Smart Grid",
+                           "name":"Robust data-driven state estimation for smart grid",
                            "size":3
                         },
                         {
-                           "name":"Suspicious Behavior Detection: Current Trends and Future Directions",
+                           "name":"Suspicious behavior detection: Current trends and future directions",
                            "size":9
                         }
                      ]
@@ -3877,7 +3877,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"ZooBP: belief propagation for heterogeneous networks",
+                           "name":"ZooBP: Belief propagation for heterogeneous networks",
                            "size":0
                         }
                      ]
@@ -3886,23 +3886,23 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"DAPs: Mining using Change-Point Detection of Epileptic Activity Time Series Data.",
+                           "name":"DAPs: Mining using change-point detection of epileptic activity time series data",
                            "size":0
                         },
                         {
-                           "name":"Fast, Warped Graph Embedding: Unifying Framework and One-Click Algorithm",
+                           "name":"Fast, warped graph embedding: Unifying framework and one-click algorithm",
                            "size":0
                         },
                         {
-                           "name":"HoloScope: Topology-and-Spike Aware Fraud Detection",
+                           "name":"HoloScope: Topology-and-spike aware fraud detection",
                            "size":0
                         },
                         {
-                           "name":"OEC: Open-Ended Classification for Future-Proof Link-Fraud Detection",
+                           "name":"OEC: Open-ended classification for future-proof link-fraud detection",
                            "size":0
                         },
                         {
-                           "name":"Self-Driving Database Management Systems.",
+                           "name":"Self-driving database management systems",
                            "size":7
                         }
                      ]
@@ -3916,11 +3916,11 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"AutoCyclone: Automatic Mining of Cyclic Online Activities with Robust Tensor Factorization",
+                           "name":"AutoCyclone: Automatic mining of cyclic online activities with robust tensor factorization",
                            "size":0
                         },
                         {
-                           "name":"Skew-Resistant Graph Partitioning",
+                           "name":"Skew-resistant graph partitioning",
                            "size":0
                         }
                      ]
@@ -3929,11 +3929,11 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"D-Cube: Dense-Block Detection in Terabyte-Scale Tensors",
+                           "name":"D-Cube: Dense-block detection in terabyte-scale tensors",
                            "size":0
                         },
                         {
-                           "name":"S-HOT: Scalable High-Order Tucker Decomposition",
+                           "name":"S-HOT: Scalable high-order tucker decomposition",
                            "size":1
                         }
                      ]
@@ -3947,7 +3947,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Ecosystem on the Web: non-linear mining and forecasting of co-evolving online activities",
+                           "name":"Ecosystem on the Web: Non-linear mining and forecasting of co-evolving online activities",
                            "size":0
                         }
                      ]
@@ -3956,7 +3956,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Nonlinear Dynamics of Information Diffusion in Social Networks",
+                           "name":"Nonlinear dynamics of information diffusion in social networks",
                            "size":0
                         }
                      ]
@@ -3965,15 +3965,15 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Facebook wall posts: a model of user behaviors",
+                           "name":"Facebook wall posts: A model of user behaviors",
                            "size":0
                         },
                         {
-                           "name":"Tensor Decomposition for Signal Processing and Machine Learning",
+                           "name":"Tensor decomposition for signal processing and machine learning",
                            "size":13
                         },
                         {
-                           "name":"Tensors for Data Mining and Data Fusion: Models, Applications, and Scalable Algorithms",
+                           "name":"Tensors for data mining and data fusion: Models, applications, and scalable algorithms",
                            "size":10
                         }
                      ]

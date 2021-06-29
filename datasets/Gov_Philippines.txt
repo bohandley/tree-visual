@@ -1,48 +1,65 @@
 {
-  "name": "Government of The Philippines",
-  "children": [
+  "name":"The Philippines",
+  "children":[
     {
-      "name": "Local Government",
-      "children": [
+      "name":"Nation",
+      "children":[
         {
-          "name": "President of the Philippines",
-          "children": [
+          "name":"Executive",
+          "children":[
             {
-              "name": "Provinces",
-              "children": [
+              "name":"President",
+              "size":1
+            },
+            {
+              "name":"Vice President",
+              "size":1
+            },
+            {
+              "name":"Cabinet",
+              "size":8
+            }
+          ]
+        },
+        {
+          "name":"Legislative",
+          "children":[
+            {
+              "name":"Congress",
+              "children":[
                 {
-                  "name": "Component cities",
-                  "children": [{ "name": "Barangays" }]
+                  "name":"Senate",
+                  "size":24
                 },
                 {
-                  "name": "Municipalities",
-                  "children": [{ "name": "Barangays" }]
+                  "name":"House of Representatives",
+                  "size":270
                 }
               ]
+            }
+          ]
+        },
+        {
+          "name":"Judicial",
+          "children":[
+            {
+              "name":"Supreme Court",
+              "size":15
             },
             {
-              "name": "Cities independent from a province",
-              "children": [{ "name": "Barangays" }]
-            },
-            {
-              "name": "Autonomous Regions",
-              "children": [
+              "name":"Other Courts",
+              "children":[
                 {
-                  "name": "Province",
-                  "children": [
-                    {
-                      "name": "Component Cities",
-                      "children": [{ "name": "Barangays" }]
-                    },
-                    {
-                      "name": "Municipalites",
-                      "children": [{ "name": "Barangays" }]
-                    }
-                  ]
+                  "name":"Court of Appeals",
+                  "size":69
                 },
                 {
-                  "name": "Cities independent from a province",
-                  "children": [{ "name": "Barangays" }]
+                  "name":"Sandiganbayan",
+                  "size":15
+                },
+                {
+                  "name":"Court of Tax Appeals",
+                  "size":9
                 }
               ]
             }
@@ -51,84 +68,142 @@
       ]
     },
     {
-      "name": "Unitary state",
-      "children": [
-        { "name": "Presidential Representative and Democratic" },
-        { "name": "Constitutional Republic" }
+      "name":"Autonomous Region",
+      "children":[
+        {
+          "name":"Executive(AR)",
+          "children":[
+            {
+              "name":"Regional Governor",
+              "size":1
+            }
+          ]
+        },
+        {
+          "name":"Legislative(AR)",
+          "children":[
+            {
+              "name":"Regional Legislative Assembly",
+              "size":24
+            }
+          ]
+        },
+        {
+          "name":"Judicial(AR)",
+          "children":[
+            {
+              "name":"Regional Trial Courts",
+              "size":12
+            },
+            {
+              "name":"Shari'a District Courts",
+              "size":5
+            }
+          ]
+        }
       ]
     },
     {
-      "name": "Three Interdependent Branches",
-      "children": [
+      "name":"Province",
+      "children":[
         {
-          "name": "Legislative branch",
-          "children": [
+          "name":"Executive(Pr)",
+          "children":[
             {
-              "name": "National Government",
-              "children": [
-                { "name": "Senate" },
-                { "name": "House of Representatives" }
-              ]
+              "name":"Governor",
+              "size":1
             },
             {
-              "name": "Local Government",
-              "children": [
-                { "name": "Sangguniang Panlalawigan" },
-                { "name": "Regional Legislative Assembly" },
-                { "name": "Sangguniang Panlungsod" },
-                { "name": "Sangguniang Bayan" },
-                { "name": "Sangguniang Barangay" }
-              ]
+              "name":"Vice Governor",
+              "size":1
             }
           ]
         },
         {
-          "name": "Executive branch",
-          "children": [
+          "name":"Legislative(Pr)",
+          "children":[
             {
-              "name": "National Government",
-              "children": [
-                { "name": "President" },
-                { "name": "Vice-President" },
-                { "name": "Cabinet Secretaries" }
-              ]
+              "name":"Provincial Assembly",
+              "size":8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"Municipality or City",
+      "children":[
+        {
+          "name":"Executive(M or C)",
+          "children":[
+            {
+              "name":"Mayor",
+              "size":1
             },
             {
-              "name": "Local Government",
-              "children": [
-                { "name": "Provincial/Regional Governor" },
-                { "name": "Provincial/Regional Vice-Governor" },
-                { "name": "City/Municipal Mayor" },
-                { "name": "City/Municipal Vice-Mayor" },
-                { "name": "Barangay Captain/Barangay Chairman" }
-              ]
+              "name":"Vice Mayor",
+              "size":1
             }
           ]
         },
         {
-          "name": "Judicial branch",
-          "children": [
+          "name":"Legislative(M or C)",
+          "children":[
             {
-              "name": "Lower Collegiate Courts",
-              "children": [
-                { "name": "Court of Appeals" },
-                { "name": "Court of Tax Appeals" },
-                { "name": "Sandiganbayan" }
-              ]
+              "name":"Municipal/City Assembly",
+              "size":8
+            }
+          ]
+        },
+        {
+          "name":"Judicial(M or C)",
+          "children":[
+            {
+              "name":"Metroplitan Trial Courts",
+              "size":1
             },
             {
-              "name": "Regular Courts",
-              "children": [
-                { "name": "Regional Trial Courts" },
-                { "name": "Municipal Circuit Trial Courts" }
-              ]
+              "name":"Municipal Trial Courts in Cities",
+              "size":1
             },
             {
-              "name": "Muslim Courts",
-              "children": [
-                { "name": "Sharia District Courts" },
-                { "name": "Sharia Circuit Courts yessy" }
-              ]
+              "name":"Municipal Trial Courts",
+              "size":1
+            },
+            {
+              "name":"Municipal Circuit Trial Courts",
+              "size":1
+            },
+            {
+              "name":"Shari'a Trial Courts",
+              "size":1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"Barangay",
+      "children":[
+        {
+          "name":"Executive(B)",
+          "children":[
+            {
+              "name":"Barangay Captain",
+              "size":1
+            }
+          ]
+        },
+        {
+          "name":"Legislative(Pr)",
+          "children":[
+            {
+              "name":"Barangay Assembly",
+              "size":8
+            },
+            {
+              "name":"Youth Assembly",
+              "size":7
             }
           ]
         }

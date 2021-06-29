@@ -47,6 +47,9 @@
         <script src="js/main.js"></script>
         <script src="js/about.js"></script>
         <script src="js/hintsSetup.js"></script>
+        <script src="js/quizQuestions.js"></script>
+        <script src="js/mockQuiz.js"></script>
+
     </head>
 
     <body>
@@ -281,9 +284,6 @@
                                                     <option class="optionGroup" value="Trade_United_States" data="trade">United States</option>
                                                 </optgroup>
                                                 <optgroup label="Tree Taxonomy" id="treeoflife">
-                                                    <!-- <option class="optionGroup" value="TreeOfLife_Archaea_Small" data="treeoflife">Archaea</option>
-                                                    <option class="optionGroup" value="TreeOfLife_Bacteria_Small" data="treeoflife">Bacteria</option>
-                                                    <option class="optionGroup" value="TreeOfLife_Eukaryota_Small" data="treeoflife">Eukaryota</option> -->
                                                     <option class="optionGroup" value="TreeOfLife_Anura" data="treeoflife">Anura (Frogs & Toads)</option>
                                                     <option class="optionGroup" value="TreeOfLife_Carnivora" data="treeoflife">Carnivora (Cats & Dogs)</option>
                                                     <option class="optionGroup" value="TreeOfLife_Pelecaniformes" data="treeoflife">Pelecaniformes (Waterbirds)</option>
@@ -295,6 +295,21 @@
                                 </div>
 
                                 <div id="accordion" class="panel-group">
+                                    <!-- hidden data panel -->
+                                    <div id="dataPanel" class="panel panel-default" style="display:none;">
+                                        <div class="panel-heading" data-toggle="collapse" data-target="#dataDiv" data-parent="#accordion">
+                                            <h2 class="panel-title" style="color: #000;">Data</h2>
+                                            <hr />
+                                        </div>
+                                        <div id="dataDiv" class="collapse panel-collapse in panel-body show">
+                                            <!-- Leaf Selection -->
+                                            <!-- - [] Add dropdown with “Leaf Node”
+                                                - [] multiselect
+                                                - [] Collection of all leaf nodes
+                                                - [] Disable or deactivate leaf nodes that are filtered out
+                                                - [] Select by leaf and if id is repeated, select all -->
+                                        </div>
+                                    </div>
                                     <!-- appearance panel -->
                                     <div id="appearancePanel" class="panel panel-default">
                                         <div class="panel-heading" data-toggle="collapse" data-target="#appearanceDiv" data-parent="#accordion">
@@ -401,35 +416,37 @@
                             </div>
                             <br>
                             <!-- description body -->
-                            <div class="form-control" id="describeDiv">
-                                <div id="describeDivIntro" style="margin: 2px;">
-                                    <div id="DataDescription">
-                                        <span>
-                                            <b>Name:</b>
-                                            <span id="treeName"></span>
-                                        </span>
-                                        <br />
-                                        <br />
-                                        <span>
-                                            <b>Description:</b>
+                            <div id="describeDivContainer">
+                                <div class="form-control" id="describeDiv">
+                                    <div id="describeDivIntro" style="margin: 2px;">
+                                        <div id="DataDescription">
+                                            <span>
+                                                <b>Name:</b>
+                                                <span id="treeName"></span>
+                                            </span>
                                             <br />
-                                            <span id="treeDescription"></span>
-                                        </span>
-                                        <br />
-                                        <br />
-                                        <span>
-                                            <b>Tree hierarchy:</b>
                                             <br />
-                                            <span id="treeHierarchy"></span>
-                                        </span>
-                                        <br />
-                                        <br />
-                                        <span>
-                                            <b>Source: </b>
+                                            <span>
+                                                <b>Description:</b>
+                                                <br />
+                                                <span id="treeDescription"></span>
+                                            </span>
                                             <br />
-                                            <span id="treeSource">Microsoft Academic Graph & Google_scholar</span>
-                                        </span>
-                                        <br />
+                                            <br />
+                                            <span>
+                                                <b>Tree hierarchy:</b>
+                                                <br />
+                                                <span id="treeHierarchy"></span>
+                                            </span>
+                                            <br />
+                                            <br />
+                                            <span>
+                                                <b>Source: </b>
+                                                <br />
+                                                <span id="treeSource">Microsoft Academic Graph & Google_scholar</span>
+                                            </span>
+                                            <br />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

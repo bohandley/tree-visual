@@ -497,11 +497,62 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
 
 61 hours + 4hrs + time with undergrads???
 
+-add at least 12 hours for the additional 4hrs left off from last pay period and at least 8 for work with undergrads
 5/26/21
-  9:00pm-
+  9:00pm-12:00pm
   - update hints
   - update about page
 
+6/1/21
+  6:00pm-8:00pm
+  - update Canada govt dataset
+
+6/2/21
+  7:00pm-8:00pm
+  - fix Canada govt dataset
+
+6/3/21
+  4:00pm-6:00pm
+  -redo Philippines govt dataset
+
+6/15/21
+  7:00pm-10:00pm
+  -redo UK government dataset
+
+6/17/21
+  8:00pm-11:00pm
+  -redo US government dataset
+
+6/21/21
+  9:00pm-12:00am
+  -edit the Faloutsos dataset
+
+6/23/21
+  9:00pm-12:00am
+  -architect the quiz
+
+6/25/21
+  9:00pm-1:00am
+  -begin building the mockquiz
+
+6/26/21
+  7:00pm-11:30pm
+  -building the mockquiz
+
+6/27/21
+  7:00pm-12:00pm
+  - building the mockquiz
+  - set up questions
+  - select dataSet
+  - select layout
+  - iterate through questions
+
+6/28/21
+  7:00pm - 10:30pm
+  - build quiz to take answers
+  - check that answer is answered
+  - debug
+  
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

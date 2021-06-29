@@ -5,6 +5,12 @@ treeLib.buildConfig(["g1", "g2"]);
 var dataGlobal,
     leavesGlobals,
     dataFilterSubsetGlobal;
+let MODE = "Study"
+
+if (confirm("Would you like to take the mock quiz?"))
+    MODE = 'Mock Quiz';
+
+// const MODE = 'Assessment';
 
 $(document).ready(function () {
 
@@ -19,6 +25,15 @@ $(document).ready(function () {
     setupOnboarding();
 
     menu.dataFilterSubset();
+
+    if (MODE == "Mock Quiz") {
+        mockQuiz.hideDataSelect();
+        mockQuiz.hideG2Elements();
+        mockQuiz.setupQuestionContainer();
+        // updateDataSelect
+        mockQuiz.moveDescribeDiv();
+        mockQuiz.runQuiz(quizQuestions.questions);
+    }
     // after the dataFilterSubset has completed, the spc event is called
     $(document).on("spc", function (e) {
         addSelectpickerTitles();
@@ -30,7 +45,10 @@ $(document).ready(function () {
         menu.dataTypeSpanText();
 
         loadVisualization("1");
+
+        
         loadVisualization("2");
+
     });
 });
 
@@ -89,6 +107,7 @@ function change_map(position) {
     // remember to lock the choices???
     // var locked1 = menu.isLocked(position1);
     // var locked2 = menu.isLocked(position2);
+    
     loadVisualization(position)
     // loadVisualization(position1);//, locked1);
 
@@ -96,6 +115,10 @@ function change_map(position) {
 }
 
 function loadVisualization(position){//, locked) {
+    if (MODE != "Study" && position == "2")
+        return
+
+
     clearVisualization(position);
 
     // hide specific tags for treemap and radial trees

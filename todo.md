@@ -4,6 +4,30 @@
 
 ### May/June
 
+#### Quiz
+
+
+ for the question
+- [ ] hide the data select tag
+	- [ ] fire the select as the questions move
+- [ ] replace the data select with the data description
+- [ ] replace the right diagram with a question
+- [ ] a question has
+	- [ ] a data set
+		- [ ] updates the data set in the menu
+		- [ ] loads the data description
+	- [ ] a selected tree diagram
+		- [ ] still allowed to switch the tree diagram
+	- [ ] text 
+	- [ ] has a set of answers 
+	- [ ] has a correct answer for a question
+	- [ ] has a type, radio, text, etc
+	- [ ] an order
+- [ ] accepts an event for each question to click an answer
+- [ ] submit an answer with name and quiz type
+- [ ] has a backend that
+
+
 #### Onboarding
 
 - [X] the graph -> the tree
@@ -31,7 +55,9 @@ createSelectionSelectPicker
 ####  Datasets
 Could you go over the data so that they are formatted consistently? The problems I see so far are:
 
-- [ ] publication/citation data: 
+- [ ] publication/citation data:
+	- [ ] add source url, google scholar and microsoft academic graph
+	- [X] Faloutsos 
 	- [ ] Some publications capitalize every single character, some capitalize the first character of the first word, and some capitalize each word's first character. In general, we can do the following: only capitalize the first character of the first word. Exceptions are: if there is a ':' then the first character of the next word is capitalized as well. For special terms, we capitalize them as well. Using my publications as examples: 
 	- [ ] In situ visualization for large-scale combustion simulations (only capitalize the first character of the first word)
 	- [ ] Parallel hierarchical visualization of large time-varying 3D vector fields
@@ -40,16 +66,19 @@ Could you go over the data so that they are formatted consistently? The problems
 		- [ ] ("TransGraph" is a special term, so 'G' is capitalized as well. 'H' in "Hierarchical" is also capitalized since "Hierarchical" is right after ':')
 	- [ ] If you have doubts or are unsure about some publication titles, please send them to me for an edit. 
 
-- [ ] government data: 
-	- [ ] Canada: I found typos (Branche, Fedral) in Level 1 (Governer) in Level 2; Repeated entries in Level 2 (Governer General, Judicial/Judiciary, Legislative); Level 2 and Level 3 both have the same entries (Governer/Governor General). In the leave nodes, I found the same entries (House of Commons/House of commons), "Senate(" should be "Senate (". Filtering shows five levels, while the data description shows four levels. I also question if the data are actually correct (where is the source of data?
-	- [ ] Philippines: Executive branch -> Executive Branch (do the same for other entries). I did not check other issues as the Canada data set, but I see they could happen here as well. 
-	- [ ] I did not check UK and US data. 
-	- [ ] I would suggest we go over each government data set and check carefully. 
+- [X] government data: 
+	- [ ] add data source for the govt, url to click
+	- [X] Canada: I found typos (Branche, Fedral) in Level 1 (Governer) in Level 2; Repeated entries in Level 2 (Governer General, Judicial/Judiciary, Legislative); Level 2 and Level 3 both have the same entries (Governer/Governor General). In the leave nodes, I found the same entries (House of Commons/House of commons), "Senate(" should be "Senate (". Filtering shows five levels, while the data description shows four levels. I also question if the data are actually correct (where is the source of data?
+	- [X] Philippines: Executive branch -> Executive Branch (do the same for other entries). I did not check other issues as the Canada data set, but I see they could happen here as well. 
+	- [X] I did not check UK and US data. 
+	- [X] I would suggest we go over each government data set and check carefully. 
 
 - [ ] trade data:
+	- [ ] add source data url
 	- [ ] Capital goods -> Capital Goods (do the same for other entries). 
 
 - [ ] tree of live data:
+	- [ ] add source data url
 	- [ ] I cannot tell most names there, but it would be good to see if any of the issues we found for the rest of three categories (publication/citation, government, trade) of data sets remain here as well. If yes, please correct them.
 
 

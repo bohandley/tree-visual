@@ -1581,16 +1581,21 @@ var treeLib = (function (d3) {
         if (name.length > MAX_NAME_LENGTH) {
             wordList = name.split(" ");
             let firstWordName = wordList[0];
-            if (firstWordName.length <= MAX_NAME_LENGTH - 3) {
-                let i = 1;
-                while (i < wordList.length && firstWordName.length + wordList[i].length <= MAX_NAME_LENGTH - 4) {
-                    firstWordName += " " + wordList[i];
-                    i += 1;
-                }    
-            	return firstWordName + "...";
-            } else {
-          		return name.substr(0, MAX_NAME_LENGTH - 3) + "...";
-            }
+
+            if(firstWordName.length + 1 == MAX_NAME_LENGTH)
+                return firstWordName + '...';
+            else
+                return name.substr(0, MAX_NAME_LENGTH) + '...';
+            // if (firstWordName.length <= MAX_NAME_LENGTH - 3) {
+            //     let i = 1;
+            //     while (i < wordList.length && firstWordName.length + wordList[i].length <= MAX_NAME_LENGTH - 4) {
+            //         firstWordName += " " + wordList[i];
+            //         i += 1;
+            //     }    
+            // 	return firstWordName + "...";
+            // } else {
+          		// return name.substr(0, MAX_NAME_LENGTH - 3) + "...";
+            // }
         }
 
     	return name;

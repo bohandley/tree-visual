@@ -1,172 +1,214 @@
 {
-    "name": "The Constitution",
-    "children": [
+  "name":"The Constitution",
+  "children":[
+    {
+      "name":"Legislative Branch",
+      "children":[
         {
-            "name": "Legislative Branch",
-            "children": [
-                {
-                    "name": "The Congress"
-                },
-                {
-                    "name": "Senate House"
-                },
-                {
-                    "name": "Architect Of The Capitol"
-                },
-                {
-                    "name": "Congressional Budget Office"
-                },
-                {
-                    "name": "Government Accountability Office"
-                },
-                {
-                    "name": "Government Publishing Office"
-                },
-                {
-                    "name": "Library Of Congress"
-                },
-                {
-                    "name": "United States Botanic Garden"
-                }
-            ]
+          "name":"The Congress",
+          "children":[
+            {
+              "name":"Senate",
+              "size":100
+            },
+            {
+              "name":"House of Representatives",
+              "size":435
+            }
+          ]
         },
         {
-            "name": "Executive Branch",
-            "children": [
-                {
-                    "name": "The President"
-                },
-                {
-                    "name": "The Vice President"
-                },
-                {
-                    "name": "Executive Office Of The President"
-                },
-                {
-                    "name": "Council Of Economic Advisers"
-                },
-                {
-                    "name": "Council On Environmental Quality"
-                },
-                {
-                    "name": "National Security Council"
-                },
-                {
-                    "name": "Office Of Administration"
-                },
-                {
-                    "name": "Office Of Management And Budget"
-                },
-                {
-                    "name": "Office Of National Drug Control Policy"
-                },
-                {
-                    "name": "Office Of Science And Technology Policy"
-                },
-                {
-                    "name": "Office Of The United States Trade"
-                },
-                {
-                    "name": "Representative"
-                },
-                {
-                    "name": "Office Of The Vice President"
-                },
-                {
-                    "name": "White House Office"
-                },
-                {
-                    "name": "Department",
-                    "children": [
-                        {
-                            "name": "Department Of Aqriculiture"
-                        },
-                        {
-                            "name": "Department Of Commerce"
-                        },
-                        {
-                            "name": "Department Of Defense"
-                        },
-                        {
-                            "name": "Department Of Education"
-                        },
-                        {
-                            "name": "Department Of Energy"
-                        },
-                        {
-                            "name": "Department Of Health And Human Services"
-                        },
-                        {
-                            "name": "Department Of Homeland Security"
-                        },
-                        {
-                            "name": "Department Of Housing And Urban Development"
-                        },
-                        {
-                            "name": "Department Of The Interior"
-                        },
-                        {
-                            "name": "Department Of Justice"
-                        },
-                        {
-                            "name": "Department Of Labor"
-                        },
-                        {
-                            "name": "Department Of State"
-                        },
-                        {
-                            "name": "Department Of Transportation"
-                        },
-                        {
-                            "name": "Department Of Thetreasury"
-                        },
-                        {
-                            "name": "Department Of Veterans Affairs"
-                        }
-                    ]
-                }
-            ]
+          "name":"Architect of the Capitol",
+          "size":2000
         },
         {
-            "name": "Judicial Branch",
-            "children": [
-                {
-                    "name": "The Supreme Court Of The"
-                },
-                {
-                    "name": "United States"
-                },
-                {
-                    "name": "Adminis Trative Office Of The United Courts"
-                },
-                {
-                    "name": "Federal Judicial Center"
-                },
-                {
-                    "name": "Territorial Courts"
-                },
-                {
-                    "name": "United States Courts Of Appeals"
-                },
-                {
-                    "name": "United States Court Of Appeals For The Armes Forces"
-                },
-                {
-                    "name": "Unites States Court Of Appeals For Veterans Claims"
-                },
-                {
-                    "name": "Unites States District Courts"
-                },
-                {
-                    "name": "United States Court Of Federal Claims"
-                },
-                {
-                    "name": "United Stated Sentencing Commission"
-                },
-                {
-                    "name": "United States Tax Court"
-                }
-            ]
+          "name":"Congressional Budget Office",
+          "size":260
+        },
+        {
+          "name":"Government Accountability Office",
+          "size":3015
+        },
+        {
+          "name":"Government Publishing Office",
+          "size":1920
+        },
+        {
+          "name":"Library of Congress",
+          "size":3105
+        },
+        {
+          "name":"United States Botanic Garden",
+          "size":65
         }
-    ]
+      ]
+    },
+    {
+      "name":"Executive Branch",
+      "children":[
+        {
+          "name":"The President",
+          "size":1
+        },
+        {
+          "name":"The Vice President",
+          "size":1
+        },
+        {
+          "name":"Executive Office of the President",
+          "size":1800
+        },
+        {
+          "name":"Council of Economic Advisers",
+          "size":35
+        },
+        {
+          "name":"Council on Environmental Quality",
+          "size":13
+        },
+        {
+          "name":"National Security Council",
+          "size":4
+        },
+        {
+          "name":"Office of Administration",
+          "size":225
+        },
+        {
+          "name":"Office of Management And Budget",
+          "size":529
+        },
+        {
+          "name":"Office of National Drug Control Policy",
+          "size":98
+        },
+        {
+          "name":"Office of Science and Technology Policy",
+          "size":45
+        },
+        {
+          "name":"Office of the United States Trade",
+          "size":200
+        },
+        {
+          "name":"Office Of The Vice President",
+          "size":100
+        },
+        {
+          "name":"US Departments",
+          "children":[
+            {
+              "name":"Agriculture",
+              "size":100000
+            },
+            {
+              "name":"Commerce",
+              "size":44608
+            },
+            {
+              "name":"Defense",
+              "size":2800000
+            },
+            {
+              "name":"Education",
+              "size":4400
+            },
+            {
+              "name":"Energy",
+              "size":14000
+            },
+            {
+              "name":"Health And Human Services",
+              "size":79540
+            },
+            {
+              "name":"Homeland Security",
+              "size":240000
+            },
+            {
+              "name":"Housing And Urban Development",
+              "size":8416
+            },
+            {
+              "name":"Interior",
+              "size":70000
+            },
+            {
+              "name":"Justice",
+              "size":113114
+            },
+            {
+              "name":"Labor",
+              "size":17450
+            },
+            {
+              "name":"State",
+              "size":69000
+            },
+            {
+              "name":"Transportation",
+              "size":55000
+            },
+            {
+              "name":"Treasury",
+              "size":86049
+            },
+            {
+              "name":"Veterans Affairs",
+              "size":377805
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"Judicial Branch",
+      "children":[
+        {
+          "name":"Supreme Court",
+          "size":9
+        },
+        {
+          "name":"Administrative Office of the United States Courts",
+          "size":1200
+        },
+        {
+          "name":"Federal Judicial Center",
+          "size":128
+        },
+        {
+          "name":"Territorial Courts",
+          "size":3
+        },
+        {
+          "name":"United States Courts of Appeals",
+          "size":13
+        },
+        {
+          "name":"United States Court of Appeals for The Armed Forces",
+          "size":5
+        },
+        {
+          "name":"United States Court of Appeals for Veterans Claims",
+          "size":7
+        },
+        {
+          "name":"United States District Courts",
+          "size":94
+        },
+        {
+          "name":"United States Court of Federal Claims",
+          "size":16
+        },
+        {
+          "name":"United States Sentencing Commission",
+          "size":100
+        },
+        {
+          "name":"United States Tax Court",
+          "size":19
+        }
+      ]
+    }
+  ]
 }

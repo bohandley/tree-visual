@@ -1,251 +1,140 @@
 {
-  "name": "Departments of the Government of the United Kingdom",
-  "children": [
+  "name":"United Kingdom",
+  "children":[
     {
-      "name": "Attorney General's Office",
-      "children": [
-        { "name": "Suella Braverman MP" },
-        { "name": "Michael Ellis QC MP" }
-      ]
+      "name":"Monarch",
+      "size":1
     },
     {
-      "name": "Cabinet Office",
-      "children": [
-        { "name": "The Rt Hon. Boris Johnson MP" },
-        { "name": "The Rt Hon. Michael Gove MP" },
-        { "name": "The Rt Hon. The Baroness Evans of Bowes Park" },
-        { "name": "Amanda Milling MP" },
-        { "name": "The Rt Hon. Jacob Rees-Mogg MP" },
-        { "name": "Honorary Commander The Rt Hon. Penny Mordaunt MP" },
-        { "name": "Chloe Smith MP" },
-        { "name": "The Rt Hon. The Lord Agnew of Oulton" },
-        { "name": "The Rt Hon. The Lord True" },
-        { "name": "Julia Lopez MP" },
-        { "name": "Johnny Mercer MP" }
-      ]
-    },
-    {
-      "name": "Department for Business, Energy and Industrial Strategy",
-      "children": [
-        { "name": "The Rt Hon. Alok Sharma MP" },
-        { "name": "The Rt Hon. Kwasi Kwarteng MP" },
-        { "name": "The Rt Hon. The Lord Grimstone of Boscobel" },
-        { "name": "Amanda Solloway MP" },
-        { "name": "Paul Scully MP" },
-        { "name": "Nadhim Zahawi MP" },
-        { "name": "The Rt Hon. The Lord Callanan" }
-      ]
-    },
-    {
-      "name": "Department for Digital, Culture, Media and Sport",
-      "children": [
-        { "name": "The Rt Hon. Oliver Dowden" },
-        { "name": "Caroline Dinenage MP" },
-        { "name": "The Rt Hon. John Whittingdale MP" },
-        { "name": "Matt Warman MP" },
-        { "name": "Nigel Huddleston MP" },
-        { "name": "The Rt Hon. The Baroness Barran MBE" }
-      ]
-    },
-    {
-      "name": "Department for Education",
-      "children": [
-        { "name": "The Rt Hon. Gavin Williamson MP" },
-        { "name": "Michelle Donelan MP" },
-        { "name": "The Rt Hon. Nick Gibb MP" },
-        { "name": "Vicky Ford MP" },
-        { "name": "Gillian Keegan MP" },
-        { "name": "The Rt Hon. The Baroness Berridge" }
-      ]
-    },
-    {
-      "name": "Department for Environment, Food and Rural Affairs",
-      "children": [
-        { "name": "The Rt Hon. George Eustice MP" },
-        { "name": "The Rt Hon. The Lord Goldsmith of Richmond Park" },
-        { "name": "The Hon. Rebecca Pow MP" },
-        { "name": "The Rt Hon. The Lord Gardiner of Kimble" },
-        { "name": "The Hon. Victoria Prentis MP" }
-      ]
-    },
-    {
-      "name": "Department for International Development",
-      "children": [
-        { "name": "The Rt Hon. Anne-Marie Trevelyan MP" },
-        { "name": "The Rt Hon. James Cleverly MP" },
-        { "name": "The Rt Hon. The Lord Goldsmith of Richmond Park PC" },
-        { "name": "Nigel Adams MP" },
-        { "name": "The Rt Hon. The Lord Ahmad of Wimbledon" },
-        { "name": "James Duddridge MP" },
-        { "name": "Wendy Morton MP" },
-        { "name": "The Rt Hon. The Baroness Sugg" }
-      ]
-    },
-    {
-      "name": "Department for International Trade",
-      "children": [
-        { "name": "The Rt Hon. Liz Truss MP" },
-        { "name": "The Rt Hon. Greg Hands MP" },
-        { "name": "The Rt Hon. The Lord Grimstone of Boscobel" },
-        { "name": "Graham Stuart MP" },
-        { "name": "Kemi Badenoch MP" },
-        { "name": "The Rt Hon. The Baroness Berridge" },
-        { "name": "Ranil Jayawardena MP" }
-      ]
-    },
-    {
-      "name": "Department for Transport",
-      "children": [
-        { "name": "he Rt Hon. Grant Shapps MP" },
-        { "name": "Chris Heaton-Harris MP" },
-        { "name": "Andrew Stephenson MP" },
-        { "name": "The Rt Hon. Baroness Vere of Norbiton" },
-        { "name": "Rachel Maclean MP" },
-        { "name": "Kelly Tolhurst MP" }
-      ]
-    },
-    {
-      "name": "Department for Work and Pensions",
-      "children": [
-        { "name": "The Rt Hon. Th\u00e9r\u00e8se Coffey MP" },
-        { "name": "Justin Tomlinson MP" },
-        { "name": "Will Quince MP" },
-        { "name": "Mims Davies MP" },
-        { "name": "Guy Opperman MP" },
-        { "name": "Baroness Stedman-Scott" }
-      ]
-    },
-    {
-      "name": "Department of Health and Social Care",
-      "children": [
-        { "name": "The Rt Hon. Matt Hancock MP" },
-        { "name": "Edward Argar MP" },
-        { "name": "Nadine Dorries MP" },
-        { "name": "Helen Whately MP" },
-        { "name": "Jo Churchill MP" },
-        { "name": "The Rt Hon. The Lord Bethell" }
-      ]
-    },
-    {
-      "name": "Foreign and Commonwealth Office",
-      "children": [
-        { "name": "The Rt Hon. Dominic Raab MP" },
-        { "name": "The Rt Hon. James Cleverly MP" },
-        { "name": "The Rt Hon. The Lord Goldsmith of Richmond Park PC" },
-        { "name": "Nigel Adams MP" },
-        { "name": "The Rt Hon. The Lord Ahmad of Wimbledon" },
-        { "name": "James Duddridge MP" },
-        { "name": "Wendy Morton MP" },
-        { "name": "The Rt Hon. The Baroness Sugg" }
-      ]
-    },
-    {
-      "name": "HM Treasury",
-      "children": [
-        { "name": "The Rt Hon. Boris Johnson MP" },
-        { "name": "The Rt Hon. Rishi Sunak MP" },
-        { "name": "The Rt Hon. Stephen Barclay MP" },
-        { "name": "The Rt Hon. Mark Spencer MP" },
-        { "name": "The Rt Hon. Jesse Norman MP" },
-        { "name": "The Rt Hon. The Lord Agnew of Oulton" },
-        { "name": "John Glen MP" },
-        { "name": "Kemi Badenoch MP" }
-      ]
-    },
-    {
-      "name": "Home Office",
-      "children": [
-        { "name": "he Rt Hon. Priti Patel MP" },
-        { "name": "The Rt Hon. James Brokenshire MP" },
-        { "name": "Kit Malthouse MP" },
-        { "name": "The Rt Hon. The Baroness Williams of Trafford" },
-        { "name": "Lord Greenhalgh" },
-        { "name": "Victoria Atkins MP" },
-        { "name": "Kevin Foster MP" },
-        { "name": "Chris Philp MP" }
-      ]
-    },
-    {
-      "name": "Ministry of Defence",
-      "children": [
-        { "name": "The Rt Hon. Ben Wallace MP" },
-        { "name": "Jeremy Quin MP" },
-        { "name": "The Rt Hon. The Baroness Goldie DL" },
-        { "name": "James Heappey MP" },
-        { "name": "Johnny Mercer MP" }
-      ]
-    },
-    {
-      "name": "Ministry of Housing, Communities and Local Government",
-      "children": [
-        { "name": "The Rt Hon. Robert Jenrick MP" },
-        { "name": "Simon Clarke MP" },
-        { "name": "The Rt Hon. Christopher Pincher MP" },
-        { "name": "The Lord Greenhalgh" },
-        { "name": "Luke Hall MP" }
-      ]
-    },
-    {
-      "name": "Ministry of Justice",
-      "children": [
-        { "name": "Robert Buckland QC MP" },
-        { "name": "The Rt Hon. Lord Keen of Elie QC" },
-        { "name": "Lucy Frazer QC MP" },
-        { "name": "Kit Malthouse MP" },
-        { "name": "Alex Chalk MP" },
-        { "name": "Chris Philp MP" }
-      ]
-    },
-    {
-      "name": "Northern Ireland Office",
-      "children": [
-        { "name": "The Rt Hon. Brandon Lewis MP" },
-        { "name": "The Rt Hon. Robin Walker MP" }
-      ]
-    },
-    {
-      "name": "Office of the Advocate General for Scotland",
-      "children": [
+      "name":"Executive",
+      "children":[
         {
-          "name": "The Right Honourable Lynda Clark Baroness Clark of Calton PC QC"
+          "name":"Prime Minister",
+          "size":1
         },
         {
-          "name": "The Right Honourable Neil Davidson Baron Davidson of Glen Clova QC"
+          "name":"Cabinet",
+          "size":22
         },
         {
-          "name": "The Right Honourable Jim Wallace Baron Wallace of Tankerness PC QC"
-        },
-        { "name": "The Right Honourable Richard Keen Baron Keen of Elie QC" }
-      ]
-    },
-    {
-      "name": "Office of the Leader of the House of Commons",
-      "children": [
-        {
-          "name": "The Right Honourable Jacob Rees-Mogg MP for North East Somerset"
+          "name":"Departments",
+          "children":[
+            {
+              "name":"Attorney General's Office",
+              "size":2
+            },
+            {
+              "name":"Department for Business, Energy and Industrial Strategy",
+              "size":7
+            },
+            {
+              "name":"Department for Digital, Culture, Media and Sport",
+              "size":6
+            },
+            {
+              "name":"Department for Education",
+              "size":6
+            },
+            {
+              "name":"Department for Environment, Food and Rural Affairs",
+              "size":5
+            },
+            {
+              "name":"Department for International Development",
+              "size":8
+            },
+            {
+              "name":"Department for International Trade",
+              "size":7
+            },
+            {
+              "name":"Department for Transport",
+              "size":7
+            },
+            {
+              "name":"Department for Work and Pensions",
+              "size":6
+            },
+            {
+              "name":"Department of Health and Social Care",
+              "size":7
+            },
+            {
+              "name":"Foreign and Commonwealth Office",
+              "size":8
+            },
+            {
+              "name":"HM Treasury",
+              "size":8
+            },
+            {
+              "name":"Home Office",
+              "size":8
+            },
+            {
+              "name":"Ministry of Defence",
+              "size":5
+            },
+            {
+              "name":"Ministry of Housing, Communities and Local Government",
+              "size":5
+            },
+            {
+              "name":"Ministry of Justice",
+              "size":6
+            },
+            {
+              "name":"Northern Ireland Office",
+              "size":2
+            },
+            {
+              "name":"Office of the Advocate General for Scotland",
+              "size":4
+            },
+            {
+              "name":"Scotland Office",
+              "size":3
+            },
+            {
+              "name":"Wales Office",
+              "size":2
+            }
+          ]
         }
       ]
     },
     {
-      "name": "Office of the Leader of the House of Lords",
-      "children": [
-        { "name": "The Rt Hon. The Lord Ashton of Hyde PC" },
-        { "name": "The Rt Hon. The Earl of Courtown" }
+      "name":"Parliament",
+      "children":[
+        {
+          "name":"Office of the Leader of the House of Commons",
+          "size":1
+        },
+        {
+          "name":"Office of the Leader of the House of Lords",
+          "size":2
+        },
+        {
+          "name":"House of Commons",
+          "size":650
+        },
+        {
+          "name":"House of Lords",
+          "size":830
+        }
       ]
     },
     {
-      "name": "Scotland Office",
-      "children": [
-        { "name": "The Rt Hon. Alister Jack MP" },
-        { "name": "Iain Stewart MP" },
-        { "name": "David Duguid MP" }
-      ]
-    },
-    {
-      "name": "Wales Office",
-      "children": [
-        { "name": "The Rt Hon. Simon Hart MP" },
-        { "name": "David Davies MP" }
+      "name":"Judiciary",
+      "children":[
+        {
+          "name":"Supreme Court",
+          "size":12
+        },
+        {
+          "name":"Court of Appeal",
+          "size":39
+        }
       ]
     }
   ]

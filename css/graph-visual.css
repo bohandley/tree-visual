@@ -432,3 +432,7 @@ input, select, .panel-heading
 #treemap-tooltip p {
     margin: 0;
 }
+
+#describeDiv {
+    margin-bottom: 10px;
+}
