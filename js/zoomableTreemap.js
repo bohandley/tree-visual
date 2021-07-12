@@ -76,6 +76,8 @@ function draw_zoomable_treemap(position) {
 
         display(root);
 
+        treeLib.displaySelectedNode(root);
+
         // process the value as either leaves or acc size depending on control panel
 
         function initialize(root) {

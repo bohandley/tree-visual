@@ -45,6 +45,8 @@ function draw_pack(position) {
         // process the value as either leaves or acc size depending on control panel
         root = menu.processAccumulated(root);
 
+        treeLib.displaySelectedNode(root);
+
         var focus = root,
             nodes = pack(root).descendants(),
             view;

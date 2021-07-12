@@ -63,6 +63,8 @@ function draw_sunburst(position) {
         // process the value as either leaves or acc size depending on control panel
         root = menu.processAccumulated(root);
 
+        treeLib.displaySelectedNode(root);
+
         svg.selectAll("path")
             .data(partition(root).descendants())
             .enter()

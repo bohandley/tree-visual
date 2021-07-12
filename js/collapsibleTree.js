@@ -43,6 +43,8 @@ function draw_collapsible_tree(position) {
         // process the value as either leaves or acc size depending on control panel
         root = menu.processAccumulated(root);
 
+        treeLib.displaySelectedNode(root);
+
         menu.crtScaleLog(root.value, 5);
 
         /////////////Tree graph start///////////////
@@ -83,8 +85,10 @@ function draw_collapsible_tree(position) {
             // root.sum(function(d) { return d.size; });
             root.x0 = 400;
             root.y0 = 0;
+            root.x = 400;
+            root.y = 0;
             root.children.forEach(collapse);
-            // collapse(root);
+            //collapse(root);
             update(root);
         }
 

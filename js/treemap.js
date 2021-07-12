@@ -38,6 +38,8 @@ function draw_treemap(position, selectindex) {
         // process the value as either leaves or acc size depending on control panel
         root = menu.processAccumulated(root);
 
+        treeLib.displaySelectedNode(root);
+
         treemap(root);
 
         var cell = svg
