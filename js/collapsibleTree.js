@@ -85,8 +85,6 @@ function draw_collapsible_tree(position) {
             // root.sum(function(d) { return d.size; });
             root.x0 = 400;
             root.y0 = 0;
-            root.x = 400;
-            root.y = 0;
             root.children.forEach(collapse);
             //collapse(root);
             update(root);
