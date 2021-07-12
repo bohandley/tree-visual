@@ -5,7 +5,8 @@ treeLib.buildConfig(["g1", "g2"]);
 var dataGlobal,
     leavesGlobals,
     dataFilterSubsetGlobal;
-let MODE = "Study"
+let MODE = "Study";
+let datasetMetaFile = './datasets/datasetMeta.json';
 
 if (confirm("Would you like to take the mock quiz?"))
     MODE = 'Mock Quiz';
@@ -172,7 +173,10 @@ window.onload = function () {
 };
 
 function updateDataTypeAndFileName() {
-    // get the filename and datatype for the initial dataset 
+    // get the filename and datatype for the initial dataset
+
+    d3.json(datasetMetaFile, (e,d) => console.log(d));
+    
     var objD = document.getElementById("dataDropdown");
 
     var dataType = d3.select(objD.selectedOptions[0]).attr("data");
