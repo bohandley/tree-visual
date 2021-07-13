@@ -5,7 +5,7 @@ treeLib.buildConfig(["g1", "g2"]);
 var dataGlobal,
     leavesGlobals,
     dataFilterSubsetGlobal;
-let MODE = "Study"
+let MODE = "Study";
 
 if (confirm("Would you like to take the mock quiz?"))
     MODE = 'Mock Quiz';
@@ -23,8 +23,6 @@ $(document).ready(function () {
     setupToolTips();
 
     setupOnboarding();
-
-    menu.dataFilterSubset();
 
     if (MODE == "Mock Quiz") {
         mockQuiz.hideDataSelect();
@@ -172,31 +170,51 @@ window.onload = function () {
 };
 
 function updateDataTypeAndFileName() {
-    // get the filename and datatype for the initial dataset 
-    var objD = document.getElementById("dataDropdown");
+    // get the filename and datatype for the initial dataset
 
-    var dataType = d3.select(objD.selectedOptions[0]).attr("data");
+    d3.select('#dataDropdown')
+        .selectAll('optgroup')
+        .data(datasetDescription)
+        .enter().append('optgroup')
+        .attr("label", d => d.label)
+        .attr("id", d => d.id)
+        .selectAll('option')
+        .data(d => d.options.filter(op => MODE == "Study"? op.mode == MODE : true))
+        .enter().append('option')
+        .attr('value', d => d.value)
+        .attr('data', d => d.data)
+        .text(d => d.name);
+    
+    let initialSelected = d3.select('#dataDropdown').select('option');
+    initialSelected.attr('selected', 'selected');
 
-    // update the stored dataType in menu config
-    menu.updateConfig("dataType", dataType)
+    let selectedDataType = initialSelected.attr('data');
+    let selectedDataValue = initialSelected.attr('value');
 
-    // update the selected node in treeLib
-    treeLib.displayedNode(objD.value);
+    menu.updateConfig("dataType", selectedDataType);
+    treeLib.displayedNode(selectedDataValue);
+    let filename = "datasets/" + selectedDataValue + ".txt";
+    menu.updateConfig("filename", filename);
+    menu.dataFilterSubset();
 
-    var filename = "datasets/" + objD.value + ".txt";
-
-    // update the stored filename in menu config
-    menu.updateConfig("filename", filename)
 }
 
 function updateDataset() {
-    updateDataTypeAndFileName();
+
     // allow user to select from intermediate levels of nodes
     // and only display them in the graph
     // 1. iterate through data
     // 2. make a collection of of distinct nodes from each level
     // 3. build a multiselect for each level from the nodes
     // 4. filter dataset on load of json
+
+    let objD = $('#dataDropdown option:selected');
+    let selectedDataValue = objD.attr('value');
+    let filename = "datasets/" + selectedDataValue + ".txt";
+    menu.updateConfig("filename", filename);
+
+    let selectedDataType = objD.attr('data');
+    menu.updateConfig("dataType", selectedDataType);
 
     menu.dataFilterSubset();
 

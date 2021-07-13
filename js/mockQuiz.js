@@ -8,9 +8,8 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 	// 	- [ ] fire the select as the questions move
 	const updateDataSelect = (q) => {
 		let dataSet = q.tree.dataSet;
-		$("#dataDropdown").val(dataSet).trigger("change");
-
-		$("#dataDropdown option:eq("+ dataSet +")").prop("selected", true);
+		$("#dataDropdown option[value='"+ dataSet +"']").prop("selected", true);
+		$("#dataDropdown").trigger("change");
 	}
 
 	// - [ ] replace the data select with the data description
@@ -124,7 +123,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		// change the dataSets in quizQuestions
 		updateDataSelect(q);
 		selectLayouts(q);
-		i++
+		i++;
 		$("#bNext").on("click", () => {
 			// check that an answer has been selected or typed
 			if (!hasBeenAnswered(q) && !confirm("The question has not been answered. Proceed anyway?"))
