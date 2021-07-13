@@ -172,7 +172,8 @@ var treeLib = (function (d3) {
             .replace("(", "_")
             .replace(")", "_")
             .replace("'", "_")
-            .replace("#", "_");
+            .replace("#", "_")
+            .replace("+", "_");
     }
 
     function isLeaf(node) {

@@ -106,10 +106,10 @@ function change_map(position) {
     // var locked1 = menu.isLocked(position1);
     // var locked2 = menu.isLocked(position2);
     
-    loadVisualization(position)
-    // loadVisualization(position1);//, locked1);
+    // loadVisualization(position)
+    loadVisualization(position1);//, locked1);
 
-    // loadVisualization(position2);//, locked2);
+    loadVisualization(position2);//, locked2);
 }
 
 function loadVisualization(position){//, locked) {

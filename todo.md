@@ -2,7 +2,13 @@
 
 ### 2021 Todo list
 
-### May/June
+### May/June/July
+
+#### Bugs
+- [X] zoomable tree issue with Faloutsos data set having a + character in leaf
+- [X] collapsible tree d.x = NaN on collapsing root
+- [X] Linking events breaks because of only drawing one diagram when changing one viewing window
+
 
 #### Quiz
 

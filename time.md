@@ -552,7 +552,15 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
   - build quiz to take answers
   - check that answer is answered
   - debug
-  
+
+7/12/21
+  Meet with Yuheng 7/6, debug, code review
+    6 hours
+
+7/13/21
+  Meet with Yuheng
+  1 hour
+
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)
