@@ -1,5 +1,9 @@
 {
    "name":"Stasko",
+   "source": [
+      "https://academic.microsoft.com/author/2087252583/publication",
+      "https://scholar.google.com/citations?user=2PxFftgAAAAJ&hl=en"
+   ],
    "children":[
       {
          "name":"1987",

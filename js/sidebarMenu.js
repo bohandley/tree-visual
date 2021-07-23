@@ -73,25 +73,29 @@ var menu = (function (d3, $) {
                 name: "Publications",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s publications from ${root.children[0].name} to ${root.children[root.children.length - 1].name}.`,
                 hierarchy: "--------Publish Year <br/>| <br/>------Publish Type <br/>| <br/>----Publisher CCF Rank <br/>| <br/>--Individual Paper",
-                source: "Microsoft Academic Graph & Google Scholar",
+                source: (root) => `<a href=${root.source[0]} target="_blank">Microsoft Academic Graph</a> & <a href=${root.source[1]} target="_blank">Google Scholar</a>`,
+                //"Microsoft Academic Graph & Google Scholar",
             },
             government: {
                 name: "Government Structure",
                 desc: (dsName, root) => `The tree shows the government structure of ${dsName}.`,
                 hierarchy: "--------First Level <br/>| <br/>------Second Level <br/>| <br/>----Third Level <br/>| <br/>--Fourth Level",
-                source: "Government Official Websites",
+                source: (root) => `<a href=${root.source} target="_blank">Government Official Websites</a>`,
+                //"Government Official Websites",
             },
             trade: {
                 name: "Trade",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s trade data.`,
                 hierarchy: "------In/Export <br/>| <br/>----Product <br/>| <br/>--Partner Country",
-                source: "World Integrated Trade Solution - World Bank",
+                source: (root) => `World Integrated Trade Solution - World Bank`,
+                //"World Integrated Trade Solution - World Bank",
             },
             treeoflife: {
                 name: "Tree of Life",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s tree taxonomy.`,
                 hierarchy: "--------Order <br/>| <br/>------Family <br/>| <br/>----Genus <br/>| <br/>--Species - Common Name",
-                source: "Open Tree of Life",
+                source: (root) => `Open Tree of Life`,
+                //"Open Tree of Life",
             },
         },
         filterPreset: {
@@ -276,7 +280,7 @@ var menu = (function (d3, $) {
         document.getElementById("treeName").innerHTML = config.dataDescription[dataType].name;
         document.getElementById("treeDescription").innerHTML = config.dataDescription[dataType].desc(datasetName, root);
         document.getElementById("treeHierarchy").innerHTML = config.dataDescription[dataType].hierarchy;
-        document.getElementById("treeSource").innerHTML = config.dataDescription[dataType].source;
+        document.getElementById("treeSource").innerHTML = config.dataDescription[dataType].source(root);
     }
 
     function processAccumulated(root, type = null) {

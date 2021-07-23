@@ -1,5 +1,9 @@
 {
    "name":"Faloutsos",
+   "source": [
+      "https://academic.microsoft.com/author/2198983026/publication",
+      "https://scholar.google.com/citations?user=nd8lQQIAAAAJ&hl=en"
+   ],
    "children":[
       {
          "name":"1982",

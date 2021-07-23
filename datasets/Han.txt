@@ -1,1 +1,2351 @@
-{"name":"Han", "children": [{"name":"1990", "children": [{"name":"[C]", "children": [{"name":"A", "children": [{"name":"An attribute-oriented approach for learning classification rules from relational databases", "size": 53}]}]}]}, {"name":"1992", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Knowledge Discovery in Databases: An Attribute-Oriented Approach", "size": 340}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Distance-associated join indices for spatial range search", "size": 38}]}]}]}, {"name":"1993", "children": [{"name":"[O]", "children": [{"name":"Other", "children": [{"name":"Discovery of General Knowledge in Large Spatial Databases", "size": 115}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Data-driven discovery of quantitative rules in relational databases", "size": 324}]}]}]}, {"name":"1994", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Join Index Hierarchies for Supporting Efficient Navigations in Object-Oriented Databases", "size": 43}]}]}, {"name":"[J]", "children": [{"name":"C", "children": [{"name":"Multimedia network file servers: multichannel delay-sensitive data retrieval", "size": 33}]}]}]}, {"name":"1995", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Discovery of Multiple-Level Association Rules from Large Databases", "size": 855}]}, {"name":"Other", "children": [{"name":"Discovery of Spatial Association Rules in Geographic Information Databases", "size": 522}, {"name":"Meta-Rule-Guided Mining of Association Rules in Relational Databases.", "size": 85}]}]}, {"name":"[C]", "children": [{"name":"B", "children": [{"name":"Mining knowledge at multiple concept levels", "size": 70}]}]}]}, {"name":"1996", "children": [{"name":"[O]", "children": [{"name":"Other", "children": [{"name":"DMQL: A Data Mining Query Language for Relational Databases", "size": 253}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Maintenance of discovered association rules in large databases: an incremental updating technique", "size": 615}]}, {"name":"Other", "children": [{"name":"A fast distributed algorithm for mining association rules", "size": 336}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Data mining: an overview from a database perspective", "size": 1388}, {"name":"Intelligent query answering by knowledge discovery techniques", "size": 77}]}]}]}, {"name":"1997", "children": [{"name":"[O]", "children": [{"name":"Other", "children": [{"name":"DBMiner: a system for data mining in relational databases and data warehouses", "size": 56}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"GeoMiner: a system prototype for spatial data mining", "size": 161}]}, {"name":"Other", "children": [{"name":"Generalization and decision tree induction: efficient classification in data mining", "size": 97}]}]}]}, {"name":"1998", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Selective Materialization: An Efficient Method for Spatial Data Cube Construction", "size": 122}, {"name":"Stock movement prediction and N-dimensional inter-transaction association rules", "size": 76}]}, {"name":"Other", "children": [{"name":"An Efficient Two-Step Method for Classification of Spatial Data", "size": 83}, {"name":"Issues for On-Line Analytical Mining of Data Warehouses", "size": 36}, {"name":"Mining multimedia data", "size": 87}, {"name":"OLAP Mining: An Integration of OLAP with Data Mining", "size": 138}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Exploratory mining and pruning optimizations of constrained associations rules", "size": 645}, {"name":"MultiMediaMiner: a system prototype for multimedia data mining", "size": 74}]}, {"name":"Other", "children": [{"name":"Discovering Web access patterns and trends by applying OLAP and data mining technology on Web logs", "size": 390}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Towards on-line analytical mining in large databases", "size": 129}]}, {"name":"B", "children": [{"name":"Generalization-based data mining in object-oriented databases using an object cube model", "size": 54}]}, {"name":"C", "children": [{"name":"Knowledge representation and discovery based on linguistic atoms", "size": 50}]}]}]}, {"name":"1999", "children": [{"name":"[O]", "children": [{"name":"Other", "children": [{"name":"Efficient Polygon Amalgamation Methods for Spatial OLAP and Spatial Data Mining", "size": 34}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Breaking the barrier of transactions: mining inter-transaction association rules", "size": 68}, {"name":"Efficient mining of partial periodic patterns in time series database", "size": 453}, {"name":"Optimization of constrained frequent set queries with 2-variable constraints", "size": 154}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Mining multiple-level association rules in large databases", "size": 268}]}, {"name":"Other", "children": [{"name":"Constraint-based, multidimensional data mining", "size": 147}]}]}]}, {"name":"2000", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Mining Frequent Itemsets Using Support Constraints", "size": 117}]}, {"name":"C", "children": [{"name":"Mining Access Patterns Efficiently from Web Logs", "size": 392}]}, {"name":"Other", "children": [{"name":"Methods and system for mining frequent patterns", "size": 0}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"FreeSpan: frequent pattern-projected sequential pattern mining", "size": 559}, {"name":"Mining frequent patterns without candidate generation", "size": 4275}, {"name":"Mining recurrent items in multimedia with progressive resolution refinement", "size": 68}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Beyond intratransaction association analysis: mining multidimensional intertransaction association rules", "size": 115}, {"name":"Mining frequent patterns by pattern-growth: methodology and implications", "size": 203}, {"name":"Object-based selective materialization for efficient implementation of spatial data cubes", "size": 135}]}]}]}, {"name":"2001", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Mining Multi-Dimensional Constrained Gradients in Data Cubes", "size": 47}]}, {"name":"Other", "children": [{"name":"Constraint-based clustering in large databases", "size": 125}, {"name":"Fault-Tolerant Frequent Pattern Mining: Problems and Challenges.", "size": 70}, {"name":"Geographic Data Mining and Knowledge Discovery", "size": 512}, {"name":"RecTree: An Efficient Collaborative Filtering Method", "size": 89}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Efficient computation of Iceberg cubes with complex measures", "size": 197}, {"name":"Mining frequent itemsets with convertible constraints", "size": 276}, {"name":"Spatial clustering in the presence of obstacles", "size": 130}]}, {"name":"B", "children": [{"name":"CMAR: accurate and efficient classification based on multiple class-association rules", "size": 854}, {"name":"H-mine: hyper-structure mining of frequent patterns in large databases", "size": 262}, {"name":"Mining top-n local outliers in large databases", "size": 212}, {"name":"Multi-dimensional sequential pattern mining", "size": 148}]}]}]}, {"name":"2002", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"How Can Data Mining Help Bio-Data Analysis?", "size": 33}, {"name":"Multi-dimensional regression analysis of time-series data streams", "size": 240}, {"name":"Quotient cube: how to summarize the semantics of a data cube", "size": 147}, {"name":"Top Down FP-Growth for Association Rule Mining", "size": 84}]}, {"name":"Other", "children": [{"name":"Mining Frequent Patterns in Data Streams at Multiple Time Granularities", "size": 399}, {"name":"Profit Mining: From Patterns to Actions", "size": 74}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Mining frequent item sets by opportunistic projection", "size": 153}, {"name":"Mining long sequential patterns in a noisy environment", "size": 141}]}, {"name":"B", "children": [{"name":"Mining sequential patterns with constraints in large databases", "size": 191}, {"name":"Mining top-k frequent closed patterns without minimum support", "size": 194}, {"name":"On computing condensed frequent pattern bases", "size": 56}, {"name":"PEBL: positive example based learning for Web page classification using SVM", "size": 198}, {"name":"gSpan: graph-based substructure pattern mining", "size": 1365}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"CLARANS: a method for clustering objects for spatial data mining", "size": 595}, {"name":"Constrained frequent pattern mining: a pattern-growth view", "size": 90}]}, {"name":"Other", "children": [{"name":"Automated Classification of Construction Project Documents", "size": 71}, {"name":"Data mining for Web intelligence", "size": 125}, {"name":"Emerging scientific applications in data mining", "size": 54}]}]}]}, {"name":"2003", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"A framework for clustering evolving data streams", "size": 1050}, {"name":"Star-cubing: computing iceberg cubes by top-down and bottom-up integration", "size": 115}]}, {"name":"Other", "children": [{"name":"Online Mining of Changes from Data Streams: Research Problems and Preliminary Results", "size": 86}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"CLOSET+: searching for the best strategies for mining frequent closed itemsets", "size": 482}, {"name":"Classifying large data sets using SVMs with hierarchical clusters", "size": 163}, {"name":"CloseGraph: mining closed frequent graph patterns", "size": 481}, {"name":"Mining concept-drifting data streams using ensemble classifiers", "size": 783}]}, {"name":"B", "children": [{"name":"Text classification from positive and unlabeled documents", "size": 41}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Efficient mining of intertransaction association rules", "size": 122}, {"name":"Pushing support constraints into association rules mining", "size": 60}]}, {"name":"Other", "children": [{"name":"Cancer classification using gene expression data", "size": 152}]}]}]}, {"name":"2004", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"A framework for projected clustering of high dimensional data streams", "size": 349}, {"name":"High-dimensional OLAP: a minimal cubing approach", "size": 91}]}, {"name":"B", "children": [{"name":"From sequential pattern mining to structured pattern mining: a pattern-growth approach", "size": 26}, {"name":"Mining thick skylines over large databases", "size": 53}]}, {"name":"Other", "children": [{"name":"Data Mining: Concepts and Techniques", "size": 2}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"BIDE: efficient mining of frequent closed sequences", "size": 410}, {"name":"CrossMine: efficient classification across multiple database relations", "size": 89}, {"name":"Graph indexing: a frequent structure-based approach", "size": 408}, {"name":"IncSpan: incremental mining of sequential patterns in large database", "size": 175}, {"name":"MAIDS: mining alarming incidents from data streams", "size": 75}, {"name":"Mining scale-free networks using geodesic clustering", "size": 61}, {"name":"On demand classification of data streams", "size": 197}]}, {"name":"B", "children": [{"name":"Clustering moving objects", "size": 158}, {"name":"Discovering complex matchings across web query interfaces: a correlation mining approach", "size": 119}]}, {"name":"C", "children": [{"name":"MM-Cubing: computing Iceberg cubes by factorizing the lattice space", "size": 36}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Mining sequential patterns by pattern-growth: the PrefixSpan approach", "size": 734}, {"name":"PEBL: Web page classification without negative examples", "size": 173}]}, {"name":"B", "children": [{"name":"Mining Frequent Patterns without Candidate Generation: A Frequent-Pattern Tree Approach", "size": 1345}, {"name":"Pushing Convertible Constraints in Frequent Itemset Mining", "size": 104}]}]}]}, {"name":"2005", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Mining compressed frequent-pattern sets", "size": 153}, {"name":"Self-Tuning Spectral Clustering", "size": 1059}]}, {"name":"B", "children": [{"name":"Community mining from multi-relational networks", "size": 99}]}, {"name":"Other", "children": [{"name":"SOBER: statistical model-based bug localization", "size": 2}, {"name":"Sequential Pattern Mining by Pattern-Growth: Principles and Extensions", "size": 26}, {"name":"Using Graph Model for Face Analysis", "size": 61}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Mining closed relational graphs with connectivity constraints", "size": 10}, {"name":"Parallel mining of closed sequential patterns", "size": 64}, {"name":"Substructure similarity search in graph databases", "size": 209}, {"name":"Summarizing itemset patterns: a profile-based approach", "size": 134}]}, {"name":"Other", "children": [{"name":"Mining hidden community in heterogeneous social networks", "size": 113}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Document clustering using locality preserving indexing", "size": 300}, {"name":"Graph indexing based on discriminative frequent structure analysis", "size": 76}, {"name":"TFP: an efficient algorithm for mining top-k frequent closed itemsets", "size": 145}]}, {"name":"B", "children": [{"name":"Making SVMs Scalable to Large Data Sets using Hierarchical Cluster Indexing", "size": 35}, {"name":"On High Dimensional Projected Clustering of Data Streams", "size": 27}, {"name":"TSP: Mining top-k closed sequential patterns", "size": 50}]}, {"name":"C", "children": [{"name":"Stream Cube: An Architecture for Multi-Dimensional Analysis of Data Streams", "size": 119}]}, {"name":"Other", "children": [{"name":"Mining coherent dense subgraphs across massive biological networks for functional discovery", "size": 215}]}]}]}, {"name":"2006", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Answering top-k queries with multi-dimensional selections: the ranking cube approach", "size": 51}, {"name":"Flowcube: constructing RFID flowcubes for multi-dimensional analysis of commodity flows", "size": 79}, {"name":"LinkClus: efficient clustering via heterogeneous semantic links", "size": 91}, {"name":"Towards robust indexing for ranked queries", "size": 56}]}, {"name":"Other", "children": [{"name":"Motion-Alert: automatic anomaly detection in massive moving objects", "size": 11}, {"name":"Ranking outliers using symmetric neighborhood relationship", "size": 0}, {"name":"Warehousing and Mining Massive RFID Data Sets", "size": 34}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"C-Cubing: Efficient Computation of Closed Cubes by Aggregation-Based Checking", "size": 36}, {"name":"Extracting redundancy-aware top-k patterns", "size": 78}, {"name":"Failure proximity: a fault localization-based approach", "size": 92}, {"name":"GPLAG: detection of software plagiarism by program dependence graph analysis", "size": 208}, {"name":"Generating semantic annotations for frequent patterns with context analysis", "size": 45}, {"name":"Ranking objects based on relationships", "size": 49}, {"name":"Searching Substructures with Superimposed Distance", "size": 34}, {"name":"Warehousing and Analyzing Massive RFID Data Sets", "size": 227}]}, {"name":"B", "children": [{"name":"Mining compressed commodity workflows from massive RFID data sets", "size": 57}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"A framework for on-demand classification of evolving data streams", "size": 74}, {"name":"Efficient classification across multiple database relations: a CrossMine approach", "size": 53}, {"name":"Feature-based similarity search in graph structures", "size": 50}, {"name":"Orthogonal Laplacianfaces for Face Recognition", "size": 467}, {"name":"Regression Cubes with Lossless Compression and Aggregation", "size": 33}, {"name":"Statistical Debugging: A Hypothesis Testing-Based Approach", "size": 173}]}]}]}, {"name":"2007", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Adaptive fastest path computation on a road network: a traffic mining approach", "size": 146}, {"name":"Isometric projection", "size": 86}, {"name":"Towards graph containment search and indexing", "size": 59}, {"name":"gPrune: a constraint pushing framework for graph pattern mining", "size": 54}]}, {"name":"B", "children": [{"name":"A general framework for mining concept-drifting data streams with skewed distributions", "size": 99}, {"name":"Association Mining in Large Databases: A Re-examination of Its Measures", "size": 37}]}, {"name":"C", "children": [{"name":"Traffic density-based discovery of hot routes in road networks", "size": 116}]}, {"name":"Other", "children": [{"name":"Spectral Regression for Dimensionality Reduction", "size": 41}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Cost-Conscious Cleaning of Massive RFID Data Sets", "size": 47}, {"name":"Discriminative Frequent Pattern Analysis for Effective Classification", "size": 223}, {"name":"Learning a Spatially Smooth Subspace for Face Recognition", "size": 205}, {"name":"Mining Colossal Frequent Patterns by Core Pattern Fusion", "size": 67}, {"name":"Object Distinction: Distinguishing Objects with Identical Names", "size": 61}, {"name":"Progressive and selective merge: computing top-k with ad-hoc ranking functions", "size": 54}, {"name":"Spectral regression: a unified subspace learning framework for content-based image retrieval", "size": 54}, {"name":"The Multi-Relational Skyline Operator", "size": 43}, {"name":"Trajectory clustering: a partition-and-group framework", "size": 586}]}, {"name":"B", "children": [{"name":"Efficient Kernel Discriminant Analysis via Spectral Regression", "size": 85}, {"name":"On Appropriate Assumptions to Mine Data Streams: Analysis and Practice", "size": 91}, {"name":"Regularized locality preserving indexing via spectral regression", "size": 63}, {"name":"Spectral Regression: A Unified Approach for Sparse Subspace Learning", "size": 110}, {"name":"gApprox: Mining Frequent Approximate Patterns from a Massive Network", "size": 51}]}, {"name":"Other", "children": [{"name":"Semi-supervised Discriminant Analysis", "size": 372}, {"name":"Spectral Regression for Efficient Regularized Subspace Learning", "size": 227}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Frequent Closed Sequence Mining without Candidate Maintenance", "size": 113}]}, {"name":"B", "children": [{"name":"Frequent pattern mining: current status and future directions", "size": 756}]}, {"name":"Other", "children": [{"name":"Constraint-based sequential pattern mining: the pattern-growth methods", "size": 130}, {"name":"H-Mine: Fast and space-preserving frequent pattern mining in large databases", "size": 30}]}]}]}, {"name":"2008", "children": [{"name":"[O]", "children": [{"name":"Other", "children": [{"name":"Data Mining: Know It All", "size": 45}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Direct Discriminative Pattern Mining for Effective Classification", "size": 127}, {"name":"Direct mining of discriminative and essential frequent patterns via model-based search tree", "size": 79}, {"name":"Knowledge transfer via multiple model local structure mapping", "size": 148}, {"name":"Mining significant graph patterns by leap search", "size": 156}, {"name":"Trajectory Outlier Detection: A Partition-and-Detect Framework", "size": 182}]}, {"name":"B", "children": [{"name":"A Practical Approach to Classify Evolving Data Streams: Training with Limited Amount of Labeled Data", "size": 83}, {"name":"Dustminer: troubleshooting interactive complexity bugs in sensor networks", "size": 87}, {"name":"Graph OLAP: Towards Online Analytical Processing on Graphs", "size": 74}, {"name":"Mining preferences from superior and inferior examples", "size": 49}, {"name":"Modeling hidden topics on document manifold", "size": 98}, {"name":"Non-negative Matrix Factorization on Manifold", "size": 173}, {"name":"Stream Sequential Pattern Mining with Precise Error Bounds", "size": 31}, {"name":"Text Cube: Computing IR Measures for Multidimensional Text Database Analysis", "size": 71}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Learning a Maximum Margin Subspace for Image Retrieval", "size": 141}, {"name":"SRDA: An Efficient Algorithm for Large-Scale Discriminant Analysis", "size": 276}, {"name":"Truth Discovery with Multiple Conflicting Information Providers on the Web", "size": 270}]}, {"name":"Other", "children": [{"name":"Classifying Data Streams with Skewed Class Distributions and Concept Drifts", "size": 61}]}]}]}, {"name":"2009", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Graph-based Consensus Maximization among Multiple Supervised and Unsupervised Models", "size": 50}]}, {"name":"B", "children": [{"name":"Integrating Novel Class Detection with Classification for Concept-Drifting Data Streams", "size": 48}, {"name":"Near-optimal supervised feature selection among frequent subgraphs", "size": 65}, {"name":"Topic cube: Topic modeling for OLAP on multidimensional text databases", "size": 67}]}, {"name":"Other", "children": [{"name":"Mining Heterogeneous Information Networks by Exploring the Power of Links", "size": 47}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Classification of software behaviors for failure detection: a discriminative pattern mining approach", "size": 100}, {"name":"Efficient Mining of Closed Repetitive Gapped Subsequences from a Sequence Database", "size": 66}, {"name":"Ranking-based clustering of heterogeneous information networks with star network schema", "size": 230}, {"name":"Temporal Outlier Detection in Vehicle Traffic Data", "size": 58}]}, {"name":"B", "children": [{"name":"Exploring social tagging graph for web object classification", "size": 77}, {"name":"P-Rank: a comprehensive structural similarity measure over information networks", "size": 113}, {"name":"iTopicModel: Information Network-Integrated Topic Modeling", "size": 68}]}, {"name":"Other", "children": [{"name":"RankClus: integrating clustering with ranking for heterogeneous information network analysis", "size": 192}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"A particle-and-density based evolutionary clustering method for dynamic networks", "size": 109}, {"name":"Mining graph patterns efficiently via randomized summaries", "size": 21}, {"name":"Promotion analysis in multi-dimensional space", "size": 37}]}, {"name":"B", "children": [{"name":"Graph OLAP: a multi-dimensional framework for graph data analysis", "size": 45}]}]}]}, {"name":"2010", "children": [{"name":"[O]", "children": [{"name":"B", "children": [{"name":"Classification and novel class detection of data streams in a dynamic feature space", "size": 36}, {"name":"Graph regularized transductive classification on heterogeneous information networks", "size": 84}, {"name":"Incremental clustering for trajectories", "size": 49}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"CETR: content extraction via tag ratios", "size": 62}, {"name":"Keyword extraction for social snippets", "size": 35}, {"name":"LINKREC: a unified framework for link recommendation with user attributes and graph structure", "size": 55}, {"name":"Mining advisor-advisee relationships from research publication networks", "size": 103}, {"name":"Mining periodic behaviors for moving objects", "size": 124}, {"name":"MoveMine: mining moving object databases", "size": 52}, {"name":"PET: a statistical model for popular events tracking in social communities", "size": 108}, {"name":"The wisdom of social multimedia: using flickr for prediction and forecast", "size": 74}]}, {"name":"B", "children": [{"name":"Addressing Concept-Evolution in Concept-Drifting Data Streams", "size": 59}, {"name":"Mining topic-level influence in heterogeneous networks", "size": 148}, {"name":"On community outliers and their efficient detection in information networks", "size": 75}, {"name":"Privacy-aware regression modeling of participatory sensing data", "size": 48}, {"name":"SHRINK: a structural clustering algorithm for detecting hierarchical communities in networks", "size": 62}, {"name":"Tru-Alarm: Trustworthiness Analysis of Sensor Networks in Cyber-Physical Systems", "size": 46}, {"name":"gSkeletonClu: Density-Based Network Clustering via Structure-Connected Tree Division or Agglomeration", "size": 32}]}, {"name":"Other", "children": [{"name":"A Unified Framework for Link Recommendation Using Random Walks", "size": 65}, {"name":"Community evolution detection in dynamic heterogeneous information networks", "size": 45}, {"name":"Fast computation of SimRank for static and dynamic information networks", "size": 85}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"On graph query optimization in large networks", "size": 117}, {"name":"Survey on social tagging techniques", "size": 145}, {"name":"Swarm: mining relaxed temporal moving object clusters", "size": 144}]}, {"name":"B", "children": [{"name":"Re-examination of interestingness measures in pattern mining: a unified framework", "size": 64}]}]}]}, {"name":"2011", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"Mining Top-K Large Structural Patterns in a Massive Network", "size": 32}]}, {"name":"B", "children": [{"name":"Generalized Fisher score for feature selection", "size": 101}]}, {"name":"Other", "children": [{"name":"Challenges and Opportunities with Big Data 2011-1", "size": 9}, {"name":"Joint feature selection and subspace learning", "size": 63}, {"name":"Pathsim: Meta path-based top-k similarity search in heterogeneous information networks", "size": 277}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Differentially private data cubes: optimizing noise sources and consistency", "size": 74}, {"name":"Geographical topic discovery and comparison", "size": 172}, {"name":"Graph cube: on warehousing and OLAP multidimensional networks", "size": 79}, {"name":"Learning online discussion structures by conditional random fields", "size": 29}, {"name":"Probabilistic topic models with biased propagation on heterogeneous information networks", "size": 66}, {"name":"Ranking-based classification of heterogeneous information networks", "size": 78}]}, {"name":"B", "children": [{"name":"Correlated multi-label feature selection", "size": 26}, {"name":"The Joint Inference of Topic Diffusion and Evolution in Social Communities", "size": 40}]}, {"name":"Other", "children": [{"name":"Co-author Relationship Prediction in Heterogeneous Bibliographic Networks", "size": 161}, {"name":"Geo-Friends Recommendation in GPS-based Cyber-physical Social Network", "size": 39}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Classification and Novel Class Detection in Concept-Drifting Data Streams under Time Constraints", "size": 141}, {"name":"Graph Regularized Nonnegative Matrix Factorization for Data Representation", "size": 576}, {"name":"Laplacian Regularized Gaussian Mixture Model for Data Clustering", "size": 62}, {"name":"Locally Consistent Concept Factorization for Document Clustering", "size": 105}, {"name":"Mining Discriminative Patterns for Classifying Trajectories on Road Networks", "size": 54}, {"name":"Speed up kernel discriminant analysis", "size": 78}]}, {"name":"B", "children": [{"name":"Methods for mining frequent items in data streams: an overview", "size": 56}]}, {"name":"Other", "children": [{"name":"MoveMine: Mining moving object data for discovery of animal movement patterns", "size": 57}]}]}]}, {"name":"2012", "children": [{"name":"[O]", "children": [{"name":"B", "children": [{"name":"Community trend outlier detection using soft temporal pattern mining", "size": 29}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"Integrating community matching and outlier detection for mining evolutionary community outliers", "size": 51}, {"name":"On Discovery of Traveling Companions from Streaming Trajectories", "size": 59}]}, {"name":"B", "children": [{"name":"Event-based social networks: linking the online and offline social worlds", "size": 112}, {"name":"Predicting Links in Multi-relational and Heterogeneous Networks", "size": 46}, {"name":"When will it happen?: relationship prediction in heterogeneous information networks", "size": 107}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"A Bayesian approach to discovering truth from conflicting sources for data integration", "size": 134}, {"name":"Relation strength-aware clustering of heterogeneous information networks with incomplete attributes", "size": 62}]}, {"name":"B", "children": [{"name":"Facing the reality of data stream classification: coping with scarcity of labeled data", "size": 42}, {"name":"Learning influence from heterogeneous social networks", "size": 26}, {"name":"Mining Heterogeneous Information Networks: Principles and Methodologies", "size": 93}, {"name":"Survey on web spam detection: principles and algorithms", "size": 77}]}, {"name":"Other", "children": [{"name":"Latent Community Topic Analysis: Integration of Community Discovery with Topic Modeling", "size": 35}]}]}]}, {"name":"2013", "children": [{"name":"[O]", "children": [{"name":"Other", "children": [{"name":"Clustered Support Vector Machines", "size": 36}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"A phrase mining framework for recursive construction of a topical hierarchy", "size": 25}, {"name":"Mining collective intelligence in diverse groups", "size": 41}]}, {"name":"B", "children": [{"name":"Mining evidences for named entity disambiguation", "size": 44}]}, {"name":"Other", "children": [{"name":"An exploration of discussion threads in social news sites: a case study of the Reddit community", "size": 17}, {"name":"Recommendation in heterogeneous information networks with implicit user feedback", "size": 30}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Classification and Adaptive Novel Class Detection of Feature-Evolving Data Streams", "size": 41}, {"name":"Mining heterogeneous information networks: a structural analysis approach", "size": 62}, {"name":"On Exploiting Transient Social Contact Patterns for Data Forwarding in Delay-Tolerant Networks", "size": 67}, {"name":"PathSelClus: Integrating Meta-Path Selection with User-Guided Object Clustering in Heterogeneous Information Networks", "size": 19}, {"name":"Revealing Density-Based Clustering Structure from the Core-Connected Tree of a Network", "size": 24}]}, {"name":"Other", "children": [{"name":"A framework of traveling companion discovery on trajectory data streams", "size": 26}]}]}]}, {"name":"2014", "children": [{"name":"[O]", "children": [{"name":"A", "children": [{"name":"A confidence-aware approach for truth discovery on long-tail data", "size": 39}, {"name":"Scalable topical phrase mining from text corpora", "size": 38}, {"name":"Splitter: mining fine-grained sequential patterns in semantic trajectories", "size": 28}]}, {"name":"Other", "children": [{"name":"Frequent Pattern Mining", "size": 56}, {"name":"Link Mining: Models, Algorithms, and Applications", "size": 43}]}]}, {"name":"[C]", "children": [{"name":"A", "children": [{"name":"ClusCite: effective citation recommendation by information network-based clustering", "size": 19}, {"name":"Resolving conflicts in heterogeneous data by truth discovery and source reliability estimation", "size": 66}, {"name":"Top-K interesting subgraph discovery in information networks", "size": 22}]}, {"name":"B", "children": [{"name":"Personalized entity recommendation: a heterogeneous information network approach", "size": 61}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Outlier Detection for Temporal Data: A Survey", "size": 112}]}, {"name":"B", "children": [{"name":"Outlier Detection for Temporal Data", "size": 52}]}, {"name":"Other", "children": [{"name":"Facile synthesis of few-layer-thick carbon nitride nanosheets by liquid ammonia-assisted lithiation method and their photocatalytic redox properties", "size": 13}]}]}]}, {"name":"2015", "children": [{"name":"[C]", "children": [{"name":"A", "children": [{"name":"ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering", "size": 11}, {"name":"FaitCrowd: Fine Grained Truth Discovery for Crowdsourced Data Aggregation", "size": 23}, {"name":"Mining Quality Phrases from Massive Text Corpora", "size": 21}, {"name":"On the Discovery of Evolving Truth", "size": 19}, {"name":"STREAMCUBE: Hierarchical spatio-temporal hashtag clustering for event exploration over the Twitter stream", "size": 26}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"Entity Linking with a Knowledge Base: Issues, Techniques, and Solutions", "size": 77}]}]}]}, {"name":"2016", "children": [{"name":"[C]", "children": [{"name":"A", "children": [{"name":"GeoBurst: Real-Time Local Event Detection in Geo-Tagged Tweet Streams", "size": 7}]}]}, {"name":"[J]", "children": [{"name":"A", "children": [{"name":"A Survey on Truth Discovery", "size": 29}]}]}]}]}
+{
+  "name": "Han",
+  "source": [
+      "https://academic.microsoft.com/author/2121939561/publication",
+      "https://scholar.google.com/citations?user=Kv9AbjMAAAAJ&hl=en"
+  ],
+  "children": [
+    {
+      "name": "1990",
+      "children": [
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "An attribute-oriented approach for learning classification rules from relational databases",
+                  "size": 53
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1992",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Knowledge Discovery in Databases: An Attribute-Oriented Approach",
+                  "size": 340
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Distance-associated join indices for spatial range search",
+                  "size": 38
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1993",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Discovery of General Knowledge in Large Spatial Databases",
+                  "size": 115
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Data-driven discovery of quantitative rules in relational databases",
+                  "size": 324
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1994",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Join Index Hierarchies for Supporting Efficient Navigations in Object-Oriented Databases",
+                  "size": 43
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "C",
+              "children": [
+                {
+                  "name": "Multimedia network file servers: multichannel delay-sensitive data retrieval",
+                  "size": 33
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1995",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Discovery of Multiple-Level Association Rules from Large Databases",
+                  "size": 855
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Discovery of Spatial Association Rules in Geographic Information Databases",
+                  "size": 522
+                },
+                {
+                  "name": "Meta-Rule-Guided Mining of Association Rules in Relational Databases.",
+                  "size": 85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Mining knowledge at multiple concept levels",
+                  "size": 70
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1996",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "DMQL: A Data Mining Query Language for Relational Databases",
+                  "size": 253
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Maintenance of discovered association rules in large databases: an incremental updating technique",
+                  "size": 615
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "A fast distributed algorithm for mining association rules",
+                  "size": 336
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Data mining: an overview from a database perspective",
+                  "size": 1388
+                },
+                {
+                  "name": "Intelligent query answering by knowledge discovery techniques",
+                  "size": 77
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1997",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "DBMiner: a system for data mining in relational databases and data warehouses",
+                  "size": 56
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "GeoMiner: a system prototype for spatial data mining",
+                  "size": 161
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Generalization and decision tree induction: efficient classification in data mining",
+                  "size": 97
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1998",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Selective Materialization: An Efficient Method for Spatial Data Cube Construction",
+                  "size": 122
+                },
+                {
+                  "name": "Stock movement prediction and N-dimensional inter-transaction association rules",
+                  "size": 76
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "An Efficient Two-Step Method for Classification of Spatial Data",
+                  "size": 83
+                },
+                {
+                  "name": "Issues for On-Line Analytical Mining of Data Warehouses",
+                  "size": 36
+                },
+                {
+                  "name": "Mining multimedia data",
+                  "size": 87
+                },
+                {
+                  "name": "OLAP Mining: An Integration of OLAP with Data Mining",
+                  "size": 138
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Exploratory mining and pruning optimizations of constrained associations rules",
+                  "size": 645
+                },
+                {
+                  "name": "MultiMediaMiner: a system prototype for multimedia data mining",
+                  "size": 74
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Discovering Web access patterns and trends by applying OLAP and data mining technology on Web logs",
+                  "size": 390
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Towards on-line analytical mining in large databases",
+                  "size": 129
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Generalization-based data mining in object-oriented databases using an object cube model",
+                  "size": 54
+                }
+              ]
+            },
+            {
+              "name": "C",
+              "children": [
+                {
+                  "name": "Knowledge representation and discovery based on linguistic atoms",
+                  "size": 50
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1999",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Efficient Polygon Amalgamation Methods for Spatial OLAP and Spatial Data Mining",
+                  "size": 34
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Breaking the barrier of transactions: mining inter-transaction association rules",
+                  "size": 68
+                },
+                {
+                  "name": "Efficient mining of partial periodic patterns in time series database",
+                  "size": 453
+                },
+                {
+                  "name": "Optimization of constrained frequent set queries with 2-variable constraints",
+                  "size": 154
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Mining multiple-level association rules in large databases",
+                  "size": 268
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Constraint-based, multidimensional data mining",
+                  "size": 147
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2000",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Mining Frequent Itemsets Using Support Constraints",
+                  "size": 117
+                }
+              ]
+            },
+            {
+              "name": "C",
+              "children": [
+                {
+                  "name": "Mining Access Patterns Efficiently from Web Logs",
+                  "size": 392
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Methods and system for mining frequent patterns",
+                  "size": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "FreeSpan: frequent pattern-projected sequential pattern mining",
+                  "size": 559
+                },
+                {
+                  "name": "Mining frequent patterns without candidate generation",
+                  "size": 4275
+                },
+                {
+                  "name": "Mining recurrent items in multimedia with progressive resolution refinement",
+                  "size": 68
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Beyond intratransaction association analysis: mining multidimensional intertransaction association rules",
+                  "size": 115
+                },
+                {
+                  "name": "Mining frequent patterns by pattern-growth: methodology and implications",
+                  "size": 203
+                },
+                {
+                  "name": "Object-based selective materialization for efficient implementation of spatial data cubes",
+                  "size": 135
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2001",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Mining Multi-Dimensional Constrained Gradients in Data Cubes",
+                  "size": 47
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Constraint-based clustering in large databases",
+                  "size": 125
+                },
+                {
+                  "name": "Fault-Tolerant Frequent Pattern Mining: Problems and Challenges.",
+                  "size": 70
+                },
+                {
+                  "name": "Geographic Data Mining and Knowledge Discovery",
+                  "size": 512
+                },
+                {
+                  "name": "RecTree: An Efficient Collaborative Filtering Method",
+                  "size": 89
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Efficient computation of Iceberg cubes with complex measures",
+                  "size": 197
+                },
+                {
+                  "name": "Mining frequent itemsets with convertible constraints",
+                  "size": 276
+                },
+                {
+                  "name": "Spatial clustering in the presence of obstacles",
+                  "size": 130
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "CMAR: accurate and efficient classification based on multiple class-association rules",
+                  "size": 854
+                },
+                {
+                  "name": "H-mine: hyper-structure mining of frequent patterns in large databases",
+                  "size": 262
+                },
+                {
+                  "name": "Mining top-n local outliers in large databases",
+                  "size": 212
+                },
+                {
+                  "name": "Multi-dimensional sequential pattern mining",
+                  "size": 148
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2002",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "How Can Data Mining Help Bio-Data Analysis?",
+                  "size": 33
+                },
+                {
+                  "name": "Multi-dimensional regression analysis of time-series data streams",
+                  "size": 240
+                },
+                {
+                  "name": "Quotient cube: how to summarize the semantics of a data cube",
+                  "size": 147
+                },
+                {
+                  "name": "Top Down FP-Growth for Association Rule Mining",
+                  "size": 84
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Mining Frequent Patterns in Data Streams at Multiple Time Granularities",
+                  "size": 399
+                },
+                {
+                  "name": "Profit Mining: From Patterns to Actions",
+                  "size": 74
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Mining frequent item sets by opportunistic projection",
+                  "size": 153
+                },
+                {
+                  "name": "Mining long sequential patterns in a noisy environment",
+                  "size": 141
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Mining sequential patterns with constraints in large databases",
+                  "size": 191
+                },
+                {
+                  "name": "Mining top-k frequent closed patterns without minimum support",
+                  "size": 194
+                },
+                {
+                  "name": "On computing condensed frequent pattern bases",
+                  "size": 56
+                },
+                {
+                  "name": "PEBL: positive example based learning for Web page classification using SVM",
+                  "size": 198
+                },
+                {
+                  "name": "gSpan: graph-based substructure pattern mining",
+                  "size": 1365
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "CLARANS: a method for clustering objects for spatial data mining",
+                  "size": 595
+                },
+                {
+                  "name": "Constrained frequent pattern mining: a pattern-growth view",
+                  "size": 90
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Automated Classification of Construction Project Documents",
+                  "size": 71
+                },
+                {
+                  "name": "Data mining for Web intelligence",
+                  "size": 125
+                },
+                {
+                  "name": "Emerging scientific applications in data mining",
+                  "size": 54
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2003",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "A framework for clustering evolving data streams",
+                  "size": 1050
+                },
+                {
+                  "name": "Star-cubing: computing iceberg cubes by top-down and bottom-up integration",
+                  "size": 115
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Online Mining of Changes from Data Streams: Research Problems and Preliminary Results",
+                  "size": 86
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "CLOSET+: searching for the best strategies for mining frequent closed itemsets",
+                  "size": 482
+                },
+                {
+                  "name": "Classifying large data sets using SVMs with hierarchical clusters",
+                  "size": 163
+                },
+                {
+                  "name": "CloseGraph: mining closed frequent graph patterns",
+                  "size": 481
+                },
+                {
+                  "name": "Mining concept-drifting data streams using ensemble classifiers",
+                  "size": 783
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Text classification from positive and unlabeled documents",
+                  "size": 41
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Efficient mining of intertransaction association rules",
+                  "size": 122
+                },
+                {
+                  "name": "Pushing support constraints into association rules mining",
+                  "size": 60
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Cancer classification using gene expression data",
+                  "size": 152
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2004",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "A framework for projected clustering of high dimensional data streams",
+                  "size": 349
+                },
+                {
+                  "name": "High-dimensional OLAP: a minimal cubing approach",
+                  "size": 91
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "From sequential pattern mining to structured pattern mining: a pattern-growth approach",
+                  "size": 26
+                },
+                {
+                  "name": "Mining thick skylines over large databases",
+                  "size": 53
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Data Mining: Concepts and Techniques",
+                  "size": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "BIDE: efficient mining of frequent closed sequences",
+                  "size": 410
+                },
+                {
+                  "name": "CrossMine: efficient classification across multiple database relations",
+                  "size": 89
+                },
+                {
+                  "name": "Graph indexing: a frequent structure-based approach",
+                  "size": 408
+                },
+                {
+                  "name": "IncSpan: incremental mining of sequential patterns in large database",
+                  "size": 175
+                },
+                {
+                  "name": "MAIDS: mining alarming incidents from data streams",
+                  "size": 75
+                },
+                {
+                  "name": "Mining scale-free networks using geodesic clustering",
+                  "size": 61
+                },
+                {
+                  "name": "On demand classification of data streams",
+                  "size": 197
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Clustering moving objects",
+                  "size": 158
+                },
+                {
+                  "name": "Discovering complex matchings across web query interfaces: a correlation mining approach",
+                  "size": 119
+                }
+              ]
+            },
+            {
+              "name": "C",
+              "children": [
+                {
+                  "name": "MM-Cubing: computing Iceberg cubes by factorizing the lattice space",
+                  "size": 36
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Mining sequential patterns by pattern-growth: the PrefixSpan approach",
+                  "size": 734
+                },
+                {
+                  "name": "PEBL: Web page classification without negative examples",
+                  "size": 173
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Mining Frequent Patterns without Candidate Generation: A Frequent-Pattern Tree Approach",
+                  "size": 1345
+                },
+                {
+                  "name": "Pushing Convertible Constraints in Frequent Itemset Mining",
+                  "size": 104
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2005",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Mining compressed frequent-pattern sets",
+                  "size": 153
+                },
+                {
+                  "name": "Self-Tuning Spectral Clustering",
+                  "size": 1059
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Community mining from multi-relational networks",
+                  "size": 99
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "SOBER: statistical model-based bug localization",
+                  "size": 2
+                },
+                {
+                  "name": "Sequential Pattern Mining by Pattern-Growth: Principles and Extensions",
+                  "size": 26
+                },
+                {
+                  "name": "Using Graph Model for Face Analysis",
+                  "size": 61
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Mining closed relational graphs with connectivity constraints",
+                  "size": 10
+                },
+                {
+                  "name": "Parallel mining of closed sequential patterns",
+                  "size": 64
+                },
+                {
+                  "name": "Substructure similarity search in graph databases",
+                  "size": 209
+                },
+                {
+                  "name": "Summarizing itemset patterns: a profile-based approach",
+                  "size": 134
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Mining hidden community in heterogeneous social networks",
+                  "size": 113
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Document clustering using locality preserving indexing",
+                  "size": 300
+                },
+                {
+                  "name": "Graph indexing based on discriminative frequent structure analysis",
+                  "size": 76
+                },
+                {
+                  "name": "TFP: an efficient algorithm for mining top-k frequent closed itemsets",
+                  "size": 145
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Making SVMs Scalable to Large Data Sets using Hierarchical Cluster Indexing",
+                  "size": 35
+                },
+                {
+                  "name": "On High Dimensional Projected Clustering of Data Streams",
+                  "size": 27
+                },
+                {
+                  "name": "TSP: Mining top-k closed sequential patterns",
+                  "size": 50
+                }
+              ]
+            },
+            {
+              "name": "C",
+              "children": [
+                {
+                  "name": "Stream Cube: An Architecture for Multi-Dimensional Analysis of Data Streams",
+                  "size": 119
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Mining coherent dense subgraphs across massive biological networks for functional discovery",
+                  "size": 215
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2006",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Answering top-k queries with multi-dimensional selections: the ranking cube approach",
+                  "size": 51
+                },
+                {
+                  "name": "Flowcube: constructing RFID flowcubes for multi-dimensional analysis of commodity flows",
+                  "size": 79
+                },
+                {
+                  "name": "LinkClus: efficient clustering via heterogeneous semantic links",
+                  "size": 91
+                },
+                {
+                  "name": "Towards robust indexing for ranked queries",
+                  "size": 56
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Motion-Alert: automatic anomaly detection in massive moving objects",
+                  "size": 11
+                },
+                {
+                  "name": "Ranking outliers using symmetric neighborhood relationship",
+                  "size": 0
+                },
+                {
+                  "name": "Warehousing and Mining Massive RFID Data Sets",
+                  "size": 34
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "C-Cubing: Efficient Computation of Closed Cubes by Aggregation-Based Checking",
+                  "size": 36
+                },
+                {
+                  "name": "Extracting redundancy-aware top-k patterns",
+                  "size": 78
+                },
+                {
+                  "name": "Failure proximity: a fault localization-based approach",
+                  "size": 92
+                },
+                {
+                  "name": "GPLAG: detection of software plagiarism by program dependence graph analysis",
+                  "size": 208
+                },
+                {
+                  "name": "Generating semantic annotations for frequent patterns with context analysis",
+                  "size": 45
+                },
+                {
+                  "name": "Ranking objects based on relationships",
+                  "size": 49
+                },
+                {
+                  "name": "Searching Substructures with Superimposed Distance",
+                  "size": 34
+                },
+                {
+                  "name": "Warehousing and Analyzing Massive RFID Data Sets",
+                  "size": 227
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Mining compressed commodity workflows from massive RFID data sets",
+                  "size": 57
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "A framework for on-demand classification of evolving data streams",
+                  "size": 74
+                },
+                {
+                  "name": "Efficient classification across multiple database relations: a CrossMine approach",
+                  "size": 53
+                },
+                {
+                  "name": "Feature-based similarity search in graph structures",
+                  "size": 50
+                },
+                {
+                  "name": "Orthogonal Laplacianfaces for Face Recognition",
+                  "size": 467
+                },
+                {
+                  "name": "Regression Cubes with Lossless Compression and Aggregation",
+                  "size": 33
+                },
+                {
+                  "name": "Statistical Debugging: A Hypothesis Testing-Based Approach",
+                  "size": 173
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2007",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Adaptive fastest path computation on a road network: a traffic mining approach",
+                  "size": 146
+                },
+                {
+                  "name": "Isometric projection",
+                  "size": 86
+                },
+                {
+                  "name": "Towards graph containment search and indexing",
+                  "size": 59
+                },
+                {
+                  "name": "gPrune: a constraint pushing framework for graph pattern mining",
+                  "size": 54
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "A general framework for mining concept-drifting data streams with skewed distributions",
+                  "size": 99
+                },
+                {
+                  "name": "Association Mining in Large Databases: A Re-examination of Its Measures",
+                  "size": 37
+                }
+              ]
+            },
+            {
+              "name": "C",
+              "children": [
+                {
+                  "name": "Traffic density-based discovery of hot routes in road networks",
+                  "size": 116
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Spectral Regression for Dimensionality Reduction",
+                  "size": 41
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Cost-Conscious Cleaning of Massive RFID Data Sets",
+                  "size": 47
+                },
+                {
+                  "name": "Discriminative Frequent Pattern Analysis for Effective Classification",
+                  "size": 223
+                },
+                {
+                  "name": "Learning a Spatially Smooth Subspace for Face Recognition",
+                  "size": 205
+                },
+                {
+                  "name": "Mining Colossal Frequent Patterns by Core Pattern Fusion",
+                  "size": 67
+                },
+                {
+                  "name": "Object Distinction: Distinguishing Objects with Identical Names",
+                  "size": 61
+                },
+                {
+                  "name": "Progressive and selective merge: computing top-k with ad-hoc ranking functions",
+                  "size": 54
+                },
+                {
+                  "name": "Spectral regression: a unified subspace learning framework for content-based image retrieval",
+                  "size": 54
+                },
+                {
+                  "name": "The Multi-Relational Skyline Operator",
+                  "size": 43
+                },
+                {
+                  "name": "Trajectory clustering: a partition-and-group framework",
+                  "size": 586
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Efficient Kernel Discriminant Analysis via Spectral Regression",
+                  "size": 85
+                },
+                {
+                  "name": "On Appropriate Assumptions to Mine Data Streams: Analysis and Practice",
+                  "size": 91
+                },
+                {
+                  "name": "Regularized locality preserving indexing via spectral regression",
+                  "size": 63
+                },
+                {
+                  "name": "Spectral Regression: A Unified Approach for Sparse Subspace Learning",
+                  "size": 110
+                },
+                {
+                  "name": "gApprox: Mining Frequent Approximate Patterns from a Massive Network",
+                  "size": 51
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Semi-supervised Discriminant Analysis",
+                  "size": 372
+                },
+                {
+                  "name": "Spectral Regression for Efficient Regularized Subspace Learning",
+                  "size": 227
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Frequent Closed Sequence Mining without Candidate Maintenance",
+                  "size": 113
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Frequent pattern mining: current status and future directions",
+                  "size": 756
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Constraint-based sequential pattern mining: the pattern-growth methods",
+                  "size": 130
+                },
+                {
+                  "name": "H-Mine: Fast and space-preserving frequent pattern mining in large databases",
+                  "size": 30
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2008",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Data Mining: Know It All",
+                  "size": 45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Direct Discriminative Pattern Mining for Effective Classification",
+                  "size": 127
+                },
+                {
+                  "name": "Direct mining of discriminative and essential frequent patterns via model-based search tree",
+                  "size": 79
+                },
+                {
+                  "name": "Knowledge transfer via multiple model local structure mapping",
+                  "size": 148
+                },
+                {
+                  "name": "Mining significant graph patterns by leap search",
+                  "size": 156
+                },
+                {
+                  "name": "Trajectory Outlier Detection: A Partition-and-Detect Framework",
+                  "size": 182
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "A Practical Approach to Classify Evolving Data Streams: Training with Limited Amount of Labeled Data",
+                  "size": 83
+                },
+                {
+                  "name": "Dustminer: troubleshooting interactive complexity bugs in sensor networks",
+                  "size": 87
+                },
+                {
+                  "name": "Graph OLAP: Towards Online Analytical Processing on Graphs",
+                  "size": 74
+                },
+                {
+                  "name": "Mining preferences from superior and inferior examples",
+                  "size": 49
+                },
+                {
+                  "name": "Modeling hidden topics on document manifold",
+                  "size": 98
+                },
+                {
+                  "name": "Non-negative Matrix Factorization on Manifold",
+                  "size": 173
+                },
+                {
+                  "name": "Stream Sequential Pattern Mining with Precise Error Bounds",
+                  "size": 31
+                },
+                {
+                  "name": "Text Cube: Computing IR Measures for Multidimensional Text Database Analysis",
+                  "size": 71
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Learning a Maximum Margin Subspace for Image Retrieval",
+                  "size": 141
+                },
+                {
+                  "name": "SRDA: An Efficient Algorithm for Large-Scale Discriminant Analysis",
+                  "size": 276
+                },
+                {
+                  "name": "Truth Discovery with Multiple Conflicting Information Providers on the Web",
+                  "size": 270
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Classifying Data Streams with Skewed Class Distributions and Concept Drifts",
+                  "size": 61
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2009",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Graph-based Consensus Maximization among Multiple Supervised and Unsupervised Models",
+                  "size": 50
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Integrating Novel Class Detection with Classification for Concept-Drifting Data Streams",
+                  "size": 48
+                },
+                {
+                  "name": "Near-optimal supervised feature selection among frequent subgraphs",
+                  "size": 65
+                },
+                {
+                  "name": "Topic cube: Topic modeling for OLAP on multidimensional text databases",
+                  "size": 67
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Mining Heterogeneous Information Networks by Exploring the Power of Links",
+                  "size": 47
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Classification of software behaviors for failure detection: a discriminative pattern mining approach",
+                  "size": 100
+                },
+                {
+                  "name": "Efficient Mining of Closed Repetitive Gapped Subsequences from a Sequence Database",
+                  "size": 66
+                },
+                {
+                  "name": "Ranking-based clustering of heterogeneous information networks with star network schema",
+                  "size": 230
+                },
+                {
+                  "name": "Temporal Outlier Detection in Vehicle Traffic Data",
+                  "size": 58
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Exploring social tagging graph for web object classification",
+                  "size": 77
+                },
+                {
+                  "name": "P-Rank: a comprehensive structural similarity measure over information networks",
+                  "size": 113
+                },
+                {
+                  "name": "iTopicModel: Information Network-Integrated Topic Modeling",
+                  "size": 68
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "RankClus: integrating clustering with ranking for heterogeneous information network analysis",
+                  "size": 192
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "A particle-and-density based evolutionary clustering method for dynamic networks",
+                  "size": 109
+                },
+                {
+                  "name": "Mining graph patterns efficiently via randomized summaries",
+                  "size": 21
+                },
+                {
+                  "name": "Promotion analysis in multi-dimensional space",
+                  "size": 37
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Graph OLAP: a multi-dimensional framework for graph data analysis",
+                  "size": 45
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2010",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Classification and novel class detection of data streams in a dynamic feature space",
+                  "size": 36
+                },
+                {
+                  "name": "Graph regularized transductive classification on heterogeneous information networks",
+                  "size": 84
+                },
+                {
+                  "name": "Incremental clustering for trajectories",
+                  "size": 49
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "CETR: content extraction via tag ratios",
+                  "size": 62
+                },
+                {
+                  "name": "Keyword extraction for social snippets",
+                  "size": 35
+                },
+                {
+                  "name": "LINKREC: a unified framework for link recommendation with user attributes and graph structure",
+                  "size": 55
+                },
+                {
+                  "name": "Mining advisor-advisee relationships from research publication networks",
+                  "size": 103
+                },
+                {
+                  "name": "Mining periodic behaviors for moving objects",
+                  "size": 124
+                },
+                {
+                  "name": "MoveMine: mining moving object databases",
+                  "size": 52
+                },
+                {
+                  "name": "PET: a statistical model for popular events tracking in social communities",
+                  "size": 108
+                },
+                {
+                  "name": "The wisdom of social multimedia: using flickr for prediction and forecast",
+                  "size": 74
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Addressing Concept-Evolution in Concept-Drifting Data Streams",
+                  "size": 59
+                },
+                {
+                  "name": "Mining topic-level influence in heterogeneous networks",
+                  "size": 148
+                },
+                {
+                  "name": "On community outliers and their efficient detection in information networks",
+                  "size": 75
+                },
+                {
+                  "name": "Privacy-aware regression modeling of participatory sensing data",
+                  "size": 48
+                },
+                {
+                  "name": "SHRINK: a structural clustering algorithm for detecting hierarchical communities in networks",
+                  "size": 62
+                },
+                {
+                  "name": "Tru-Alarm: Trustworthiness Analysis of Sensor Networks in Cyber-Physical Systems",
+                  "size": 46
+                },
+                {
+                  "name": "gSkeletonClu: Density-Based Network Clustering via Structure-Connected Tree Division or Agglomeration",
+                  "size": 32
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "A Unified Framework for Link Recommendation Using Random Walks",
+                  "size": 65
+                },
+                {
+                  "name": "Community evolution detection in dynamic heterogeneous information networks",
+                  "size": 45
+                },
+                {
+                  "name": "Fast computation of SimRank for static and dynamic information networks",
+                  "size": 85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "On graph query optimization in large networks",
+                  "size": 117
+                },
+                {
+                  "name": "Survey on social tagging techniques",
+                  "size": 145
+                },
+                {
+                  "name": "Swarm: mining relaxed temporal moving object clusters",
+                  "size": 144
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Re-examination of interestingness measures in pattern mining: a unified framework",
+                  "size": 64
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2011",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Mining Top-K Large Structural Patterns in a Massive Network",
+                  "size": 32
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Generalized Fisher score for feature selection",
+                  "size": 101
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Challenges and Opportunities with Big Data 2011-1",
+                  "size": 9
+                },
+                {
+                  "name": "Joint feature selection and subspace learning",
+                  "size": 63
+                },
+                {
+                  "name": "Pathsim: Meta path-based top-k similarity search in heterogeneous information networks",
+                  "size": 277
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Differentially private data cubes: optimizing noise sources and consistency",
+                  "size": 74
+                },
+                {
+                  "name": "Geographical topic discovery and comparison",
+                  "size": 172
+                },
+                {
+                  "name": "Graph cube: on warehousing and OLAP multidimensional networks",
+                  "size": 79
+                },
+                {
+                  "name": "Learning online discussion structures by conditional random fields",
+                  "size": 29
+                },
+                {
+                  "name": "Probabilistic topic models with biased propagation on heterogeneous information networks",
+                  "size": 66
+                },
+                {
+                  "name": "Ranking-based classification of heterogeneous information networks",
+                  "size": 78
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Correlated multi-label feature selection",
+                  "size": 26
+                },
+                {
+                  "name": "The Joint Inference of Topic Diffusion and Evolution in Social Communities",
+                  "size": 40
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Co-author Relationship Prediction in Heterogeneous Bibliographic Networks",
+                  "size": 161
+                },
+                {
+                  "name": "Geo-Friends Recommendation in GPS-based Cyber-physical Social Network",
+                  "size": 39
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Classification and Novel Class Detection in Concept-Drifting Data Streams under Time Constraints",
+                  "size": 141
+                },
+                {
+                  "name": "Graph Regularized Nonnegative Matrix Factorization for Data Representation",
+                  "size": 576
+                },
+                {
+                  "name": "Laplacian Regularized Gaussian Mixture Model for Data Clustering",
+                  "size": 62
+                },
+                {
+                  "name": "Locally Consistent Concept Factorization for Document Clustering",
+                  "size": 105
+                },
+                {
+                  "name": "Mining Discriminative Patterns for Classifying Trajectories on Road Networks",
+                  "size": 54
+                },
+                {
+                  "name": "Speed up kernel discriminant analysis",
+                  "size": 78
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Methods for mining frequent items in data streams: an overview",
+                  "size": 56
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "MoveMine: Mining moving object data for discovery of animal movement patterns",
+                  "size": 57
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2012",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Community trend outlier detection using soft temporal pattern mining",
+                  "size": 29
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Integrating community matching and outlier detection for mining evolutionary community outliers",
+                  "size": 51
+                },
+                {
+                  "name": "On Discovery of Traveling Companions from Streaming Trajectories",
+                  "size": 59
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Event-based social networks: linking the online and offline social worlds",
+                  "size": 112
+                },
+                {
+                  "name": "Predicting Links in Multi-relational and Heterogeneous Networks",
+                  "size": 46
+                },
+                {
+                  "name": "When will it happen?: relationship prediction in heterogeneous information networks",
+                  "size": 107
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "A Bayesian approach to discovering truth from conflicting sources for data integration",
+                  "size": 134
+                },
+                {
+                  "name": "Relation strength-aware clustering of heterogeneous information networks with incomplete attributes",
+                  "size": 62
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Facing the reality of data stream classification: coping with scarcity of labeled data",
+                  "size": 42
+                },
+                {
+                  "name": "Learning influence from heterogeneous social networks",
+                  "size": 26
+                },
+                {
+                  "name": "Mining Heterogeneous Information Networks: Principles and Methodologies",
+                  "size": 93
+                },
+                {
+                  "name": "Survey on web spam detection: principles and algorithms",
+                  "size": 77
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Latent Community Topic Analysis: Integration of Community Discovery with Topic Modeling",
+                  "size": 35
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2013",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Clustered Support Vector Machines",
+                  "size": 36
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "A phrase mining framework for recursive construction of a topical hierarchy",
+                  "size": 25
+                },
+                {
+                  "name": "Mining collective intelligence in diverse groups",
+                  "size": 41
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Mining evidences for named entity disambiguation",
+                  "size": 44
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "An exploration of discussion threads in social news sites: a case study of the Reddit community",
+                  "size": 17
+                },
+                {
+                  "name": "Recommendation in heterogeneous information networks with implicit user feedback",
+                  "size": 30
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Classification and Adaptive Novel Class Detection of Feature-Evolving Data Streams",
+                  "size": 41
+                },
+                {
+                  "name": "Mining heterogeneous information networks: a structural analysis approach",
+                  "size": 62
+                },
+                {
+                  "name": "On Exploiting Transient Social Contact Patterns for Data Forwarding in Delay-Tolerant Networks",
+                  "size": 67
+                },
+                {
+                  "name": "PathSelClus: Integrating Meta-Path Selection with User-Guided Object Clustering in Heterogeneous Information Networks",
+                  "size": 19
+                },
+                {
+                  "name": "Revealing Density-Based Clustering Structure from the Core-Connected Tree of a Network",
+                  "size": 24
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "A framework of traveling companion discovery on trajectory data streams",
+                  "size": 26
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2014",
+      "children": [
+        {
+          "name": "[O]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "A confidence-aware approach for truth discovery on long-tail data",
+                  "size": 39
+                },
+                {
+                  "name": "Scalable topical phrase mining from text corpora",
+                  "size": 38
+                },
+                {
+                  "name": "Splitter: mining fine-grained sequential patterns in semantic trajectories",
+                  "size": 28
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Frequent Pattern Mining",
+                  "size": 56
+                },
+                {
+                  "name": "Link Mining: Models, Algorithms, and Applications",
+                  "size": 43
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "ClusCite: effective citation recommendation by information network-based clustering",
+                  "size": 19
+                },
+                {
+                  "name": "Resolving conflicts in heterogeneous data by truth discovery and source reliability estimation",
+                  "size": 66
+                },
+                {
+                  "name": "Top-K interesting subgraph discovery in information networks",
+                  "size": 22
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Personalized entity recommendation: a heterogeneous information network approach",
+                  "size": 61
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Outlier Detection for Temporal Data: A Survey",
+                  "size": 112
+                }
+              ]
+            },
+            {
+              "name": "B",
+              "children": [
+                {
+                  "name": "Outlier Detection for Temporal Data",
+                  "size": 52
+                }
+              ]
+            },
+            {
+              "name": "Other",
+              "children": [
+                {
+                  "name": "Facile synthesis of few-layer-thick carbon nitride nanosheets by liquid ammonia-assisted lithiation method and their photocatalytic redox properties",
+                  "size": 13
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2015",
+      "children": [
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "ClusType: Effective Entity Recognition and Typing by Relation Phrase-Based Clustering",
+                  "size": 11
+                },
+                {
+                  "name": "FaitCrowd: Fine Grained Truth Discovery for Crowdsourced Data Aggregation",
+                  "size": 23
+                },
+                {
+                  "name": "Mining Quality Phrases from Massive Text Corpora",
+                  "size": 21
+                },
+                {
+                  "name": "On the Discovery of Evolving Truth",
+                  "size": 19
+                },
+                {
+                  "name": "STREAMCUBE: Hierarchical spatio-temporal hashtag clustering for event exploration over the Twitter stream",
+                  "size": 26
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "Entity Linking with a Knowledge Base: Issues, Techniques, and Solutions",
+                  "size": 77
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2016",
+      "children": [
+        {
+          "name": "[C]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "GeoBurst: Real-Time Local Event Detection in Geo-Tagged Tweet Streams",
+                  "size": 7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "[J]",
+          "children": [
+            {
+              "name": "A",
+              "children": [
+                {
+                  "name": "A Survey on Truth Discovery",
+                  "size": 29
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
