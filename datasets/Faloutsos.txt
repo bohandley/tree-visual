@@ -241,7 +241,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Expert database systems: efficient support for engineering environments",
+                           "name":"Expert database systems: Efficient support for engineering environments",
                            "size":6
                         }
                      ]
@@ -306,7 +306,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Signature-based text retrieval methods: a survey",
+                           "name":"Signature-based text retrieval methods: A survey",
                            "size":42
                         },
                         {
@@ -543,7 +543,7 @@
                            "size":20
                         },
                         {
-                           "name":"Declustering R-Tree on multi-computer architectures",
+                           "name":"Declustering R-tree on multi-computer architectures",
                            "size":0
                         },
                         {
@@ -714,7 +714,7 @@
                            "size":0
                         },
                         {
-                           "name":"Declustering Spatial Databases on a multi-computer architecture",
+                           "name":"Declustering spatial databases on a multi-computer architecture",
                            "size":55
                         },
                         {
@@ -1013,7 +1013,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Automated learning and discovery: State-of-the-art and research topics in a Rapidly Growing Field",
+                           "name":"Automated learning and discovery: State-of-the-art and research topics in a rapidly growing field",
                            "size":10
                         },
                         {
@@ -1109,7 +1109,7 @@
                            "size":76
                         },
                         {
-                           "name":"Density biased sampling: an improved method for data mining and clustering",
+                           "name":"Density biased sampling: An improved method for data mining and clustering",
                            "size":111
                         },
                         {
@@ -1189,7 +1189,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Similarity search without tears: the OMNI-family of all-purpose access methods",
+                           "name":"Similarity search without tears: The OMNI-family of all-purpose access methods",
                            "size":115
                         },
                         {
@@ -1364,7 +1364,7 @@
                            "size":82
                         },
                         {
-                           "name":"KDD-2002 workshop report fractals and self-similarity in data mining: issue and approaches",
+                           "name":"KDD-2002 workshop report fractals and self-similarity in data mining: Issue and approaches",
                            "size":0
                         }
                      ]
@@ -1466,7 +1466,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"Epidemic spreading in real networks: an eigenvalue viewpoint",
+                           "name":"Epidemic spreading in real networks: An eigenvalue viewpoint",
                            "size":405
                         },
                         {
@@ -1596,7 +1596,7 @@
                            "size":181
                         },
                         {
-                           "name":"Recovering latent time-series from their observed sums: network tomography with particle filters.",
+                           "name":"Recovering latent time-series from their observed sums: Network tomography with particle filters.",
                            "size":14
                         }
                      ]
@@ -1749,7 +1749,7 @@
                            "size":13
                         },
                         {
-                           "name":"ViVo: visual vocabulary construction for mining biomedical images",
+                           "name":"ViVo: Visual vocabulary construction for mining biomedical images",
                            "size":29
                         }
                      ]
@@ -1886,7 +1886,7 @@
                            "size":19
                         },
                         {
-                           "name":"Beyond streams and graphs: dynamic tensor analysis",
+                           "name":"Beyond streams and graphs: Dynamic tensor analysis",
                            "size":258
                         },
                         {
@@ -2178,7 +2178,7 @@
                      "name":"A",
                      "children":[
                         {
-                           "name":"Colibri: fast mining of large static and dynamic graphs",
+                           "name":"Colibri: Fast mining of large static and dynamic graphs",
                            "size":79
                         },
                         {
@@ -2239,7 +2239,7 @@
                            "size":0
                         },
                         {
-                           "name":"Graph mining: laws, generators and tools",
+                           "name":"Graph mining: Laws, generators and tools",
                            "size":2
                         },
                         {
@@ -2459,7 +2459,7 @@
                      "name":"B",
                      "children":[
                         {
-                           "name":"RTG: a recursive realistic graph generator using random typing",
+                           "name":"RTG: A recursive realistic graph generator using random typing",
                            "size":43
                         }
                      ]
@@ -2583,7 +2583,7 @@
                            "size":0
                         },
                         {
-                           "name":"Finding Clusters in subspaces of very large, multi-dimensional datasets",
+                           "name":"Finding clusters in subspaces of very large, multi-dimensional datasets",
                            "size":13
                         },
                         {
@@ -2705,7 +2705,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"A highly scalable and adaptable co-learning framework on multimodal data mining in a multimedia Database",
+                           "name":"A highly scalable and adaptable co-learning framework on multimodal data mining in a multimedia database",
                            "size":0
                         },
                         {
@@ -2825,7 +2825,7 @@
                            "size":8
                         },
                         {
-                           "name":"PEGASUS: mining peta-scale graphs",
+                           "name":"PEGASUS: Mining peta-scale graphs",
                            "size":75
                         },
                         {
@@ -3016,7 +3016,7 @@
                            "size":79
                         },
                         {
-                           "name":"gbase: An efficient analysis platform for large graphs",
+                           "name":"GBASE: An efficient analysis platform for large graphs",
                            "size":26
                         }
                      ]
@@ -3710,7 +3710,7 @@
                            "size":0
                         },
                         {
-                           "name":"Data mining In large sets Of complex data",
+                           "name":"Data mining in large sets of complex data",
                            "size":0
                         },
                         {
