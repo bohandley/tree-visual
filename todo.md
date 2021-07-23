@@ -47,7 +47,7 @@
 
 - [X] All changes from email on 4/8/21
 - [X] The onboarding function should show up automatically only when a user uses the program for the first time. If the user revisits the program, then he/she can activate this by clicking on 'help?'.
-createSelectionSelectPicker
+	createSelectionSelectPicker
 	gives a title to the options in the original html before instantiating the seletpicker
 	creates the leafGlobals
 	figure out the disabled
@@ -62,30 +62,39 @@ createSelectionSelectPicker
 Could you go over the data so that they are formatted consistently? The problems I see so far are:
 
 - [ ] publication/citation data:
-	- [ ] add source url, google scholar and microsoft academic graph
-	- [X] Faloutsos 
-	- [ ] Some publications capitalize every single character, some capitalize the first character of the first word, and some capitalize each word's first character. In general, we can do the following: only capitalize the first character of the first word. Exceptions are: if there is a ':' then the first character of the next word is capitalized as well. For special terms, we capitalize them as well. Using my publications as examples: 
-	- [ ] In situ visualization for large-scale combustion simulations (only capitalize the first character of the first word)
-	- [ ] Parallel hierarchical visualization of large time-varying 3D vector fields
-	- [ ] (3D is a special term, 'D' should be capitalized)
-	- [ ] TransGraph: Hierarchical exploration of transition relationships in time-varying volumetric data
-		- [ ] ("TransGraph" is a special term, so 'G' is capitalized as well. 'H' in "Hierarchical" is also capitalized since "Hierarchical" is right after ':')
-	- [ ] If you have doubts or are unsure about some publication titles, please send them to me for an edit. 
-
+	- [x] add source url, google scholar and microsoft academic graph
+	  - [x] Faloutsos
+	    - [ ] Capitalize I in "Internet"?
+	    - [ ] is "Web" a special term?
+	    - [ ] line 2552, capitalize first characters of both sentences?
+	    - [ ] line 3019, "gbase" a special term? (source: https://www.cs.cmu.edu/~ukang/papers/GbaseVLDBJ2012.pdf)
+	    - [ ] line 176/180/1271/1545/1599/3120/3527/3721, end with or without a period?
+	  - [ ] Jiawei Han
+	    - [ ] Line 149/545/588/683/835, several words connected with hyphen, capitalize all or only first one? (yet another special case: line 1151 "C-Cubing")
+	- [x]  Some publications capitalize every single character, some capitalize the first character of the first word, and some capitalize each word's first character. In general, we can do the following: only capitalize the first character of the first word. Exceptions are: if there is a ':' then the first character of the next word is capitalized as well. For special terms, we capitalize them as well. Using my publications as examples: 
+	- [x] In situ visualization for large-scale combustion simulations (only capitalize the first character of the first word)
+	- [x] Parallel hierarchical visualization of large time-varying 3D vector fields
+	- [x] (3D is a special term, 'D' should be capitalized)
+	- [x] TransGraph: Hierarchical exploration of transition relationships in time-varying volumetric data
+		- [x] ("TransGraph" is a special term, so 'G' is capitalized as well. 'H' in "Hierarchical" is also capitalized since "Hierarchical" is right after ':')
+	- [x] If you have doubts or are unsure about some publication titles, please send them to me for an edit. 
+	
 - [X] government data: 
-	- [ ] add data source for the govt, url to click
+	- [x] add data source for the govt, url to click
 	- [X] Canada: I found typos (Branche, Fedral) in Level 1 (Governer) in Level 2; Repeated entries in Level 2 (Governer General, Judicial/Judiciary, Legislative); Level 2 and Level 3 both have the same entries (Governer/Governor General). In the leave nodes, I found the same entries (House of Commons/House of commons), "Senate(" should be "Senate (". Filtering shows five levels, while the data description shows four levels. I also question if the data are actually correct (where is the source of data?
 	- [X] Philippines: Executive branch -> Executive Branch (do the same for other entries). I did not check other issues as the Canada data set, but I see they could happen here as well. 
 	- [X] I did not check UK and US data. 
 	- [X] I would suggest we go over each government data set and check carefully. 
 
 - [ ] trade data:
-	- [ ] add source data url
+	- [x] add source data url
 	- [ ] Capital goods -> Capital Goods (do the same for other entries). 
 
 - [ ] tree of live data:
-	- [ ] add source data url
+	- [x] add source data url
 	- [ ] I cannot tell most names there, but it would be good to see if any of the issues we found for the rest of three categories (publication/citation, government, trade) of data sets remain here as well. If yes, please correct them.
+	- [ ] **Can't find the source for Afrosoricida. It is pruned from the synthetic tree!**
+	- [ ] Hard to verify sources. I think most are good, but source for Pelecaniformes might be inappropriate (it shares the branch with another thing).
 
 
 ### April
@@ -182,7 +191,7 @@ If possible, consider only updating the view that has been changed or needs chan
 - [X] When I switch between data sets in different types, the visualization panels do not update well, I have to refresh again to get it right. 
 - [X] When "Proportional Node Size" is on, changing "Node Size" does not take effect, until I switch back and force "Proportional Node Size". 
 
- 
+
 - [ ] Hint for the lock icon: 
 	- [ ] "Check to store the most recent layout chosen (data-specific layouts not supported)" -> "Check to store the most recent layout chosen" (I thought the bracket is only for GraphVisual)
 
@@ -365,5 +374,4 @@ If possible, consider only updating the view that has been changed or needs chan
 - [x] Fix (size => value) function in zoomable treemap
 - [x] Fix zoomable tree map click event
 - [x] Trim the tree of life dataset
-
 
