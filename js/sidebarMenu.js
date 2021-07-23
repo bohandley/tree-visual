@@ -94,7 +94,7 @@ var menu = (function (d3, $) {
                 name: "Tree of Life",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s tree taxonomy.`,
                 hierarchy: "--------Order <br/>| <br/>------Family <br/>| <br/>----Genus <br/>| <br/>--Species - Common Name",
-                source: (root) => `Open Tree of Life`,
+                source: (root) => `<a href=${root.source} target="_blank">Open Tree of Life</a>`,
                 //"Open Tree of Life",
             },
         },
