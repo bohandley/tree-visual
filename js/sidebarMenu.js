@@ -87,7 +87,7 @@ var menu = (function (d3, $) {
                 name: "Trade",
                 desc: (dsName, root) => `The tree shows ${dsName}\'s trade data.`,
                 hierarchy: "------In/Export <br/>| <br/>----Product <br/>| <br/>--Partner Country",
-                source: (root) => `World Integrated Trade Solution - World Bank`,
+                source: (root) => `<a href="https://wits.worldbank.org/" target="_blank">World Integrated Trade Solution - World Bank</a>`,
                 //"World Integrated Trade Solution - World Bank",
             },
             treeoflife: {
