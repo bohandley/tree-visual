@@ -1,8 +1,8 @@
 {
   "name": "Leskovec",
   "source": [
-      "https://academic.microsoft.com/author/1878631932/publication",
-      "https://scholar.google.com/citations?user=Q_kKkIUAAAAJ&hl=en"
+    "https://academic.microsoft.com/author/1878631932/publication",
+    "https://scholar.google.com/citations?user=Q_kKkIUAAAAJ&hl=en"
   ],
   "children": [
     {
@@ -15,7 +15,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Business Intelligence",
+                  "name": "Business intelligence",
                   "size": 789
                 },
                 {
@@ -51,7 +51,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "MACHINE LEARNING ON SETS OF DOCUMENTS CONNECTED IN GRAPHS",
+                  "name": "Machine learning on sets of documents connected in graphs",
                   "size": 0
                 }
               ]
@@ -65,7 +65,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "The Download Estimation task on KDD Cup 2003",
+                  "name": "The download estimation task on KDD cup 2003",
                   "size": 6
                 }
               ]
@@ -84,7 +84,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Learning Sub-structures of Document Semantic Graphs for Document Summarization",
+                  "name": "Learning sub-structures of document semantic graphs for document summarization",
                   "size": 52
                 }
               ]
@@ -112,7 +112,7 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Realistic, mathematically tractable graph generation and evolution, using kronecker multiplication",
+                  "name": "Realistic, mathematically tractable graph generation and evolution, using Kronecker multiplication",
                   "size": 205
                 }
               ]
@@ -121,11 +121,11 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Extracting Summary Sentences Based on the Document Semantic Graph",
+                  "name": "Extracting summary sentences based on the document semantic graph",
                   "size": 23
                 },
                 {
-                  "name": "Modeling Link Qualities in a Sensor Network",
+                  "name": "Modeling link qualities in a sensor network",
                   "size": 6
                 }
               ]
@@ -139,7 +139,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Graphs over time: densification laws, shrinking diameters and possible explanations",
+                  "name": "Graphs over time: Densification laws, shrinking diameters and possible explanations",
                   "size": 1089
                 }
               ]
@@ -158,7 +158,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "GMine: a system for scalable, interactive graph visualization and mining",
+                  "name": "GMine: A system for scalable, interactive graph visualization and mining",
                   "size": 22
                 }
               ]
@@ -167,7 +167,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Draft: Comments Welcome",
+                  "name": "Draft: Comments welcome",
                   "size": 0
                 },
                 {
@@ -217,7 +217,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Worldwide Buzz: Planetary-Scale Views on an Instant-Messaging Network",
+                  "name": "Worldwide buzz: Planetary-scale views on an instant-messaging network",
                   "size": 28
                 }
               ]
@@ -244,7 +244,7 @@
                   "size": 135
                 },
                 {
-                  "name": "Web projections: learning from contextual subgraphs of the web",
+                  "name": "Web projections: Learning from contextual subgraphs of the web",
                   "size": 32
                 }
               ]
@@ -262,7 +262,7 @@
               "name": "C",
               "children": [
                 {
-                  "name": "Information Survival Threshold in Sensor and P2P Networks",
+                  "name": "Information survival threshold in sensor and P2P networks",
                   "size": 47
                 }
               ]
@@ -295,7 +295,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "15-826: Multimedia Databases and Data Mining",
+                  "name": "15-826: Multimedia databases and data mining",
                   "size": 1
                 },
                 {
@@ -317,11 +317,11 @@
                   "size": 449
                 },
                 {
-                  "name": "Mobile call graphs: beyond power-law and lognormal distributions",
+                  "name": "Mobile call graphs: Beyond power-law and lognormal distributions",
                   "size": 121
                 },
                 {
-                  "name": "Monitoring Network Evolution using MDL",
+                  "name": "Monitoring network evolution using MDL",
                   "size": 38
                 },
                 {
@@ -329,7 +329,7 @@
                   "size": 344
                 },
                 {
-                  "name": "Social networks: looking ahead",
+                  "name": "Social networks: Looking ahead",
                   "size": 1
                 },
                 {
@@ -342,7 +342,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "OPTIMIZING SENSOR PLACEMENTS IN WATER DISTRIBUTION SYSTEMS USING SUBMODULAR FUNCTION MAXIMIZATION",
+                  "name": "Optimizing sensor placements in water distribution systems using submodular function maximization",
                   "size": 27
                 }
               ]
@@ -356,7 +356,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Efficient Sensor Placement Optimization for Securing Large Water Distribution Networks",
+                  "name": "Efficient sensor placement optimization for securing large water distribution networks",
                   "size": 164
                 },
                 {
@@ -364,7 +364,7 @@
                   "size": 282
                 },
                 {
-                  "name": "The Battle of the Water Sensor Networks (BWSN): A Design Challenge for Engineers and Algorithms",
+                  "name": "The battle of the water sensor networks (BWSN): A design challenge for engineers and algorithms",
                   "size": 200
                 }
               ]
@@ -383,11 +383,11 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "David Hesmondhalgh and Jason Toynbee (Eds.), The Media and Social Theory",
+                  "name": "David Hesmondhalgh and Jason Toynbee (Eds.), The media and social theory",
                   "size": 0
                 },
                 {
-                  "name": "Modeling Blog Dynamics.",
+                  "name": "Modeling blog dynamics",
                   "size": 96
                 }
               ]
@@ -405,7 +405,7 @@
                   "size": 802
                 },
                 {
-                  "name": "Tutorial summary: Large social and information networks: opportunities for ML",
+                  "name": "Tutorial summary: Large social and information networks: Opportunities for ML",
                   "size": 4
                 }
               ]
@@ -414,7 +414,7 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Networks, communities and kronecker products",
+                  "name": "Networks, communities and Kronecker products",
                   "size": 8
                 }
               ]
@@ -428,7 +428,7 @@
               "name": "C",
               "children": [
                 {
-                  "name": "Community Structure in Large Networks: Natural Cluster Sizes and the Absence of Large Well-Defined Clusters",
+                  "name": "Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters",
                   "size": 701
                 }
               ]
@@ -447,11 +447,11 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Kronecker Graphs: An Approach to Modeling Networks",
+                  "name": "Kronecker graphs: An approach to modeling networks",
                   "size": 344
                 },
                 {
-                  "name": "On the Convexity of Latent Social Network Inference",
+                  "name": "On the convexity of latent social network inference",
                   "size": 122
                 }
               ]
@@ -486,7 +486,7 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Modeling Information Diffusion in Implicit Networks",
+                  "name": "Modeling information diffusion in implicit networks",
                   "size": 256
                 }
               ]
@@ -518,7 +518,7 @@
                   "size": 46
                 },
                 {
-                  "name": "The Network Completion Problem: Inferring Missing Nodes and Edges in Networks",
+                  "name": "The network completion problem: Inferring missing nodes and edges in networks",
                   "size": 70
                 }
               ]
@@ -527,7 +527,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Mining of Massive Datasets",
+                  "name": "Mining of massive datasets",
                   "size": 684
                 }
               ]
@@ -541,19 +541,19 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Dynamics of bidding in a P2P lending service: effects of herding and predicting loan success",
+                  "name": "Dynamics of bidding in a P2P lending service: Effects of herding and predicting loan success",
                   "size": 17
                 },
                 {
-                  "name": "Friendship and mobility: user movement in location-based social networks",
+                  "name": "Friendship and mobility: User movement in location-based social networks",
                   "size": 954
                 },
                 {
-                  "name": "Social media analytics: tracking, modeling and predicting the flow of information through networks",
+                  "name": "Social media analytics: Tracking, modeling and predicting the flow of information through networks",
                   "size": 53
                 },
                 {
-                  "name": "Social media: source of information or bunch of noise",
+                  "name": "Social media: Source of information or bunch of noise",
                   "size": 5
                 }
               ]
@@ -570,7 +570,7 @@
                   "size": 478
                 },
                 {
-                  "name": "Supervised random walks: predicting and recommending links in social networks",
+                  "name": "Supervised random walks: Predicting and recommending links in social networks",
                   "size": 435
                 }
               ]
@@ -579,7 +579,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "The role of social networks in online shopping: information passing, price of trust, and consumer choice",
+                  "name": "The role of social networks in online shopping: Information passing, price of trust, and consumer choice",
                   "size": 75
                 }
               ]
@@ -593,7 +593,7 @@
               "name": "B",
               "children": [
                 {
-                  "name": "HADI: Mining Radii of Large Graphs",
+                  "name": "HADI: Mining radii of large graphs",
                   "size": 68
                 }
               ]
@@ -612,11 +612,11 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Latent Multi-group Membership Graph Model",
+                  "name": "Latent multi-group membership graph model",
                   "size": 23
                 },
                 {
-                  "name": "Learning to Discover Social Circles in Ego Networks",
+                  "name": "Learning to discover social circles in ego networks",
                   "size": 421
                 }
               ]
@@ -625,7 +625,7 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Image labeling on a network: using social-network metadata for image classification",
+                  "name": "Image labeling on a network: Using social-network metadata for image classification",
                   "size": 37
                 }
               ]
@@ -634,11 +634,11 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Learning Attitudes and Attributes from Online Reviews",
+                  "name": "Learning attitudes and attributes from online reviews",
                   "size": 0
                 },
                 {
-                  "name": "Structure and Overlaps of Communities in Networks",
+                  "name": "Structure and overlaps of communities in networks",
                   "size": 29
                 }
               ]
@@ -652,7 +652,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Discovering value from community activity on focused question answering sites: a case study of stack overflow",
+                  "name": "Discovering value from community activity on focused question answering sites: A case study of stack overflow",
                   "size": 131
                 },
                 {
@@ -669,11 +669,11 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Clash of the Contagions: Cooperation and Competition in Information Diffusion",
+                  "name": "Clash of the contagions: Cooperation and competition in information diffusion",
                   "size": 56
                 },
                 {
-                  "name": "Community-Affiliation Graph Model for Overlapping Network Community Detection",
+                  "name": "Community-affiliation graph model for overlapping network community detection",
                   "size": 70
                 },
                 {
@@ -681,11 +681,11 @@
                   "size": 45
                 },
                 {
-                  "name": "Learning Attitudes and Attributes from Multi-aspect Reviews",
+                  "name": "Learning attitudes and attributes from multi-aspect reviews",
                   "size": 34
                 },
                 {
-                  "name": "The life and death of online groups: predicting group growth and longevity",
+                  "name": "The life and death of online groups: Predicting group growth and longevity",
                   "size": 88
                 }
               ]
@@ -712,7 +712,7 @@
                   "size": 41
                 },
                 {
-                  "name": "Multiplicative Attribute Graph Model of Real-World Networks",
+                  "name": "Multiplicative attribute graph model of real-world networks",
                   "size": 80
                 }
               ]
@@ -731,11 +731,11 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Modeling Information Propagation with Survival Theory",
+                  "name": "Modeling information propagation with survival theory",
                   "size": 56
                 },
                 {
-                  "name": "Nonparametric Multi-group Membership Model for Dynamic Networks",
+                  "name": "Nonparametric multi-group membership model for dynamic networks",
                   "size": 13
                 }
               ]
@@ -753,7 +753,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Mining Large Graphs",
+                  "name": "Mining large graphs",
                   "size": 1
                 }
               ]
@@ -767,23 +767,23 @@
               "name": "A",
               "children": [
                 {
-                  "name": "From amateurs to connoisseurs: modeling the evolution of user expertise through online reviews",
+                  "name": "From amateurs to connoisseurs: Modeling the evolution of user expertise through online reviews",
                   "size": 85
                 },
                 {
-                  "name": "How status and reputation shape human evaluations: consequences for recommender systems",
+                  "name": "How status and reputation shape human evaluations: Consequences for recommender systems",
                   "size": 2
                 },
                 {
-                  "name": "Information cartography: creating zoomable, large-scale maps of information",
+                  "name": "Information cartography: Creating zoomable, large-scale maps of information",
                   "size": 26
                 },
                 {
-                  "name": "NIFTY: a system for large scale information flow tracking and clustering",
+                  "name": "NIFTY: A system for large scale information flow tracking and clustering",
                   "size": 19
                 },
                 {
-                  "name": "No country for old members: user lifecycle and linguistic change in online communities",
+                  "name": "No country for old members: User lifecycle and linguistic change in online communities",
                   "size": 93
                 },
                 {
@@ -796,15 +796,15 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Channeling the deluge: research challenges for big data and information systems",
+                  "name": "Channeling the deluge: Research challenges for big data and information systems",
                   "size": 4
                 },
                 {
-                  "name": "Community Detection in Networks with Node Attributes",
+                  "name": "Community detection in networks with node attributes",
                   "size": 150
                 },
                 {
-                  "name": "Overlapping community detection at scale: a nonnegative matrix factorization approach",
+                  "name": "Overlapping community detection at scale: A nonnegative matrix factorization approach",
                   "size": 177
                 },
                 {
@@ -817,7 +817,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Hidden factors and hidden topics: understanding rating dimensions with review text",
+                  "name": "Hidden factors and hidden topics: Understanding rating dimensions with review text",
                   "size": 247
                 }
               ]
@@ -840,15 +840,15 @@
                   "size": 11
                 },
                 {
-                  "name": "Exploiting Social Network Structure for Person-to-Person Sentiment Analysis",
+                  "name": "Exploiting social network structure for person-to-person sentiment analysis",
                   "size": 22
                 },
                 {
-                  "name": "How Community Feedback Shapes User Behavior",
+                  "name": "How community feedback shapes user behavior",
                   "size": 24
                 },
                 {
-                  "name": "Social Media Analytics",
+                  "name": "Social media analytics",
                   "size": 0
                 }
               ]
@@ -870,11 +870,11 @@
                   "size": 15
                 },
                 {
-                  "name": "Status and friendship: mechanisms of social network evolution",
+                  "name": "Status and friendship: Mechanisms of social network evolution",
                   "size": 2
                 },
                 {
-                  "name": "The bursty dynamics of the Twitter information network",
+                  "name": "The bursty dynamics of the twitter information network",
                   "size": 59
                 }
               ]
@@ -887,7 +887,7 @@
                   "size": 19
                 },
                 {
-                  "name": "The last click: why users give up information network navigation",
+                  "name": "The last click: Why users give up information network navigation",
                   "size": 9
                 }
               ]
@@ -901,7 +901,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "The Digital Age and the Future of Social Network Science and Engineering",
+                  "name": "The digital age and the future of social network science and engineering",
                   "size": 1
                 }
               ]
@@ -919,11 +919,11 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Geospatial Structure of a Planetary-Scale Social Network",
+                  "name": "Geospatial structure of a planetary-scale social network",
                   "size": 8
                 },
                 {
-                  "name": "Structure and Overlaps of Ground-Truth Communities in Networks",
+                  "name": "Structure and overlaps of ground-truth communities in networks",
                   "size": 19
                 },
                 {
@@ -931,7 +931,7 @@
                   "size": 33
                 },
                 {
-                  "name": "Visualizing information networks: the 2011 Fukushima earthquake",
+                  "name": "Visualizing information networks: The 2011 fukushima earthquake",
                   "size": 0
                 }
               ]
@@ -950,7 +950,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "SnapVX: A Network-Based Convex Optimization Solver",
+                  "name": "SnapVX: A network-based convex optimization solver",
                   "size": 4
                 }
               ]
@@ -959,7 +959,7 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Tensor Spectral Clustering for Partitioning Higher-order Network Structures",
+                  "name": "Tensor spectral clustering for partitioning higher-order network structures",
                   "size": 8
                 }
               ]
@@ -968,7 +968,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Analyzing Information Seeking and Drug-Safety Alert Response by Health Care Professionals as New Methods for Surveillance",
+                  "name": "Analyzing information seeking and drug-safety alert response by health care professionals as new methods for surveillance",
                   "size": 5
                 },
                 {
@@ -986,35 +986,35 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Global Diffusion via Cascading Invitations: Structure, Growth, and Homophily",
+                  "name": "Global diffusion via cascading invitations: Structure, growth, and homophily",
                   "size": 10
                 },
                 {
-                  "name": "Inferring Networks of Substitutable and Complementary Products",
+                  "name": "Inferring networks of substitutable and complementary products",
                   "size": 72
                 },
                 {
-                  "name": "Large Scale Network Analytics with SNAP: Tutorial at the World Wide Web 2015 Conference",
+                  "name": "Large scale network analytics with SNAP: Tutorial at the world wide web 2015 conference",
                   "size": 0
                 },
                 {
-                  "name": "Mining Missing Hyperlinks from Human Navigation Traces: A Case Study of Wikipedia",
+                  "name": "Mining missing hyperlinks from human navigation traces: A case study of wikipedia",
                   "size": 12
                 },
                 {
-                  "name": "Network Lasso: Clustering and Optimization in Large Graphs",
+                  "name": "Network lasso: Clustering and optimization in large graphs",
                   "size": 16
                 },
                 {
-                  "name": "QUOTUS: The Structure of Political Media Coverage as Revealed by Quoting Patterns",
+                  "name": "QUOTUS: The structure of political media coverage as revealed by quoting patterns",
                   "size": 7
                 },
                 {
-                  "name": "Ringo: Interactive Graph Analytics on Big-Memory Machines",
+                  "name": "Ringo: Interactive graph analytics on big-memory machines",
                   "size": 12
                 },
                 {
-                  "name": "SEISMIC: A Self-Exciting Point Process Model for Predicting Tweet Popularity",
+                  "name": "SEISMIC: A self-exciting point process model for predicting Tweet popularity",
                   "size": 47
                 }
               ]
@@ -1023,7 +1023,7 @@
               "name": "B",
               "children": [
                 {
-                  "name": "New Directions in Recommender Systems",
+                  "name": "New directions in recommender systems",
                   "size": 0
                 }
               ]
@@ -1041,7 +1041,7 @@
                   "size": 347
                 },
                 {
-                  "name": "The Mobilize Center: an NIH big data to knowledge center to advance human movement research and improve mobility",
+                  "name": "The mobilize center: An NIH big data to knowledge center to advance human movement research and improve mobility",
                   "size": 4
                 }
               ]
@@ -1050,7 +1050,7 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "A Novel Method to Extract Rocks from Mars Images",
+                  "name": "A novel method to extract rocks from mars images",
                   "size": 0
                 }
               ]
@@ -1069,7 +1069,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Confusions over Time: An Interpretable Bayesian Model to Characterize Trends in Decision Making",
+                  "name": "Confusions over time: An interpretable bayesian model to characterize trends in decision making",
                   "size": 2
                 }
               ]
@@ -1078,19 +1078,19 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Inferring Person-to-person Proximity Using WiFi Signals",
+                  "name": "Inferring person-to-person proximity using WiFi signals",
                   "size": 1
                 },
                 {
-                  "name": "Large-scale Analysis of Counseling Conversations: An Application of Natural Language Processing to Mental Health",
+                  "name": "Large-scale analysis of counseling conversations: An application of natural language processing to mental health",
                   "size": 3
                 },
                 {
-                  "name": "Natural Language Processing for Mental Health: Large Scale Discourse Analysis of Counseling Conversations",
+                  "name": "Natural language processing for mental health: Large scale discourse analysis of counseling conversations",
                   "size": 1
                 },
                 {
-                  "name": "Psycho-Demographic Analysis of the Facebook Rainbow Campaign",
+                  "name": "Psycho-demographic analysis of the Facebook Rainbow Campaign",
                   "size": 0
                 }
               ]
@@ -1104,27 +1104,27 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Beyond nodes and edges: multiresolution algorithms for network data",
+                  "name": "Beyond nodes and edges: Multiresolution algorithms for network data",
                   "size": 0
                 },
                 {
-                  "name": "Disinformation on the Web: Impact, Characteristics, and Detection of Wikipedia Hoaxes",
+                  "name": "Disinformation on the web: Impact, characteristics, and detection of wikipedia hoaxes",
                   "size": 7
                 },
                 {
-                  "name": "Growing Wikipedia Across Languages via Recommendation",
+                  "name": "Growing wikipedia across languages via recommendation",
                   "size": 5
                 },
                 {
-                  "name": "Interpretable Decision Sets: A Joint Framework for Description and Prediction",
+                  "name": "Interpretable decision sets: A joint framework for description and prediction",
                   "size": 5
                 },
                 {
-                  "name": "Understanding Behaviors that Lead to Purchasing: A Case Study of Pinterest",
+                  "name": "Understanding behaviors that lead to purchasing: A case study of Pinterest",
                   "size": 3
                 },
                 {
-                  "name": "node2vec: Scalable Feature Learning for Networks",
+                  "name": "Node2vec: Scalable feature learning for networks",
                   "size": 46
                 }
               ]
@@ -1133,19 +1133,19 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Cultural Shift or Linguistic Drift? Comparing Two Computational Measures of Semantic Change",
+                  "name": "Cultural shift or linguistic drift? Comparing two computational measures of semantic change",
                   "size": 0
                 },
                 {
-                  "name": "Diachronic Word Embeddings Reveal Statistical Laws of Semantic Change",
+                  "name": "Diachronic word embeddings reveal statistical laws of semantic change",
                   "size": 12
                 },
                 {
-                  "name": "Improving Website Hyperlink Structure Using Server Logs",
+                  "name": "Improving website hyperlink structure using server logs",
                   "size": 6
                 },
                 {
-                  "name": "Inducing Domain-Specific Sentiment Lexicons from Unlabeled Corpora",
+                  "name": "Inducing domain-specific sentiment lexicons from unlabeled corpora",
                   "size": 0
                 }
               ]
@@ -1158,11 +1158,11 @@
                   "size": 0
                 },
                 {
-                  "name": "Learning Linguistic Descriptors of User Roles in Online Communities",
+                  "name": "Learning linguistic descriptors of user roles in online communities",
                   "size": 0
                 },
                 {
-                  "name": "Seeing the forest for the trees: new approaches to forecasting cascades",
+                  "name": "Seeing the forest for the trees: New approaches to forecasting cascades",
                   "size": 1
                 }
               ]
@@ -1176,7 +1176,7 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Introduction to the Special Issue of Best Papers in ACM SIGKDD 2014",
+                  "name": "Introduction to the special issue of best papers in ACM SIGKDD 2014",
                   "size": 0
                 }
               ]
@@ -1193,7 +1193,7 @@
                   "size": 1
                 },
                 {
-                  "name": "SNAP: A General-Purpose Network Analysis and Graph-Mining Library",
+                  "name": "SNAP: A general-purpose network analysis and graph-mining library",
                   "size": 11
                 }
               ]
@@ -1212,19 +1212,19 @@
               "name": "A",
               "children": [
                 {
-                  "name": "Antisocial Behavior on the Web: Characterization and Detection",
+                  "name": "Antisocial behavior on the web: Characterization and detection",
                   "size": 0
                 },
                 {
-                  "name": "How Gamification Affects Physical Activity: Large-scale Analysis of Walking Challenges in a Mobile Application",
+                  "name": "How gamification affects physical activity: Large-scale analysis of walking challenges in a mobile application",
                   "size": 1
                 },
                 {
-                  "name": "Predicting Intent Using Activity Logs: How Goal Specificity and Temporal Range Affect User Behavior",
+                  "name": "Predicting intent using activity logs: How goal specificity and temporal range affect user behavior",
                   "size": 0
                 },
                 {
-                  "name": "Understanding Online Collection Growth Over Time: A Case Study of Pinterest",
+                  "name": "Understanding online collection growth over time: A case study of Pinterest",
                   "size": 0
                 }
               ]
@@ -1233,11 +1233,11 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Categorizing User Sessions at Pinterest",
+                  "name": "Categorizing user sessions at Pinterest",
                   "size": 0
                 },
                 {
-                  "name": "Community Identity and User Engagement in a Multi-Community Landscape",
+                  "name": "Community identity and user engagement in a multi-community landscape",
                   "size": 0
                 },
                 {
@@ -1245,11 +1245,11 @@
                   "size": 0
                 },
                 {
-                  "name": "Human Decisions and Machine Predictions",
+                  "name": "Human decisions and machine predictions",
                   "size": 3
                 },
                 {
-                  "name": "Network Inference via the Time-Varying Graphical Lasso",
+                  "name": "Network inference via the time-varying graphical Lasso",
                   "size": 0
                 }
               ]
@@ -1263,11 +1263,11 @@
               "name": "A",
               "children": [
                 {
-                  "name": "An Army of Me: Sockpuppets in Online Discussion Communities",
+                  "name": "An army of me: Sockpuppets in online discussion communities",
                   "size": 0
                 },
                 {
-                  "name": "Why We Read Wikipedia",
+                  "name": "Why we read Wikipedia",
                   "size": 0
                 }
               ]
@@ -1276,11 +1276,11 @@
               "name": "B",
               "children": [
                 {
-                  "name": "Motifs in Temporal Networks",
+                  "name": "Motifs in temporal networks",
                   "size": 0
                 },
                 {
-                  "name": "Online Actions with Offline Impact: How Online Social Networks Influence Online and Offline User Behavior",
+                  "name": "Online actions with offline impact: How online social networks influence online and offline user behavior",
                   "size": 4
                 }
               ]
@@ -1289,7 +1289,7 @@
               "name": "C",
               "children": [
                 {
-                  "name": "Anyone Can Become a Troll: Causes of Trolling Behavior in Online Discussions",
+                  "name": "Anyone can become a troll: Causes of trolling behavior in online discussions",
                   "size": 1
                 }
               ]
@@ -1303,11 +1303,11 @@
               "name": "Other",
               "children": [
                 {
-                  "name": "Anyone Can Become a Troll",
+                  "name": "Anyone can become a troll",
                   "size": 0
                 },
                 {
-                  "name": "Network analysis: a novel method for mapping neonatal acute transport patterns in California",
+                  "name": "Network analysis: A novel method for mapping neonatal acute transport patterns in california",
                   "size": 0
                 }
               ]
