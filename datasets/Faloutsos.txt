@@ -173,11 +173,11 @@
                            "size":2
                         },
                         {
-                           "name":"High performance engineering information systems.",
+                           "name":"High performance engineering information systems",
                            "size":0
                         },
                         {
-                           "name":"PSQL: An efficient pictorial database system.",
+                           "name":"PSQL: An efficient pictorial database system",
                            "size":0
                         }
                      ]
@@ -1278,7 +1278,7 @@
                            "size":0
                         },
                         {
-                           "name":"Data visualization in RDBMS.",
+                           "name":"Data visualization in RDBMS",
                            "size":10
                         },
                         {
@@ -1542,7 +1542,7 @@
                      "name":"Other",
                      "children":[
                         {
-                           "name":"Automated assistance for eliciting User expectations.",
+                           "name":"Automated assistance for eliciting User expectations",
                            "size":4
                         },
                         {
@@ -1596,7 +1596,7 @@
                            "size":181
                         },
                         {
-                           "name":"Recovering latent time-series from their observed sums: Network tomography with particle filters.",
+                           "name":"Recovering latent time-series from their observed sums: Network tomography with particle filters",
                            "size":14
                         }
                      ]
@@ -3117,7 +3117,7 @@
                            "size":1
                         },
                         {
-                           "name":"Large scale tensor decompositions: Algorithmic developments and applications.",
+                           "name":"Large scale tensor decompositions: Algorithmic developments and applications",
                            "size":11
                         },
                         {
@@ -3524,7 +3524,7 @@
                            "size":0
                         },
                         {
-                           "name":"Machine beats experts: Automatic discovery of skill models for data-driven online course refinement.",
+                           "name":"Machine beats experts: Automatic discovery of skill models for data-driven online course refinement",
                            "size":2
                         },
                         {
@@ -3718,7 +3718,7 @@
                            "size":0
                         },
                         {
-                           "name":"Mining online music listening trajectories.",
+                           "name":"Mining online music listening trajectories",
                            "size":0
                         },
                         {

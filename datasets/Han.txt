@@ -146,7 +146,7 @@
                   "size": 522
                 },
                 {
-                  "name": "Meta-rule-guided mining of association rules in relational databases.",
+                  "name": "Meta-rule-guided mining of association rules in relational databases",
                   "size": 85
                 }
               ]
@@ -542,7 +542,7 @@
                   "size": 125
                 },
                 {
-                  "name": "Fault-tolerant frequent pattern mining: Problems and challenges.",
+                  "name": "Fault-tolerant frequent pattern mining: Problems and challenges",
                   "size": 70
                 },
                 {

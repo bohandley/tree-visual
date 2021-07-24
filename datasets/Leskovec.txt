@@ -1189,7 +1189,7 @@
                   "size": 28
                 },
                 {
-                  "name": "Mining big data to extract patterns and predict real-life outcomes.",
+                  "name": "Mining big data to extract patterns and predict real-life outcomes",
                   "size": 1
                 },
                 {
