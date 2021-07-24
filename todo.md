@@ -61,7 +61,7 @@
 ####  Datasets
 Could you go over the data so that they are formatted consistently? The problems I see so far are:
 
-- [ ] publication/citation data:
+- [x] publication/citation data:
 	- [x] add source url, google scholar and microsoft academic graph
 	  - [x] Faloutsos
 	    - [ ] Capitalize I in "Internet"?
@@ -72,7 +72,8 @@ Could you go over the data so that they are formatted consistently? The problems
 	  - [x] Jiawei Han
 	    - [ ] Line 149/545/588/683/835, several words connected with hyphen, capitalize all or only first one? (yet another special case: line 1151 "C-Cubing")
 	  - [x] Leskovec 
-	  - [ ] Stasko
+	  - [x] Stasko
+	    - [ ] Anthropomorphic Agents as a UI Paradigm: Experimental Findings and a Framework for Research
 	- [x]  Some publications capitalize every single character, some capitalize the first character of the first word, and some capitalize each word's first character. In general, we can do the following: only capitalize the first character of the first word. Exceptions are: if there is a ':' then the first character of the next word is capitalized as well. For special terms, we capitalize them as well. Using my publications as examples: 
 	- [x] In situ visualization for large-scale combustion simulations (only capitalize the first character of the first word)
 	- [x] Parallel hierarchical visualization of large time-varying 3D vector fields
