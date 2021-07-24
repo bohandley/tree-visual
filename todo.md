@@ -71,6 +71,8 @@ Could you go over the data so that they are formatted consistently? The problems
 	    - [ ] line 176/180/1271/1545/1599/3120/3527/3721, end with or without a period?
 	  - [x] Jiawei Han
 	    - [ ] Line 149/545/588/683/835, several words connected with hyphen, capitalize all or only first one? (yet another special case: line 1151 "C-Cubing")
+	  - [x] Leskovec 
+	  - [ ] Stasko
 	- [x]  Some publications capitalize every single character, some capitalize the first character of the first word, and some capitalize each word's first character. In general, we can do the following: only capitalize the first character of the first word. Exceptions are: if there is a ':' then the first character of the next word is capitalized as well. For special terms, we capitalize them as well. Using my publications as examples: 
 	- [x] In situ visualization for large-scale combustion simulations (only capitalize the first character of the first word)
 	- [x] Parallel hierarchical visualization of large time-varying 3D vector fields
