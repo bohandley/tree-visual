@@ -62,12 +62,12 @@ function draw_collapsible_tree(position) {
             .tree()
             .size([360, 300])
             .separation(function (a, b) {
-                return (a.parent == b.parent ? 1 : 10) / (a.depth + 1);
+                return (a.parent == b.parent ? 1 : 10) / a.depth;
             });
 
         var diagonal = d3v3.svg.diagonal.radial().projection(function (d) {
-        		//if(!d.x)
-        		//	d.x = 0 
+        		if(!d.x)
+        			d.x = 0 
 
             return [d.y, (d.x / 180) * Math.PI];
         });
@@ -163,8 +163,8 @@ function draw_collapsible_tree(position) {
                 .transition()
                 .duration(duration)
                 .attr("transform", function (d) {
-                	//if(!d.x)
-                	//	d.x = 90;
+                	if(!d.x)
+                		d.x = 90;
 
                     return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
                 });
