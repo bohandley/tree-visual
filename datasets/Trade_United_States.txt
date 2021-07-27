@@ -1,1 +1,2310 @@
-{"name": "United States-2018", "children": [{"name": "Export", "children": [{"name": "Animal", "children": [{"name": "Japan", "size": 4914756.74}, {"name": "Mexico", "size": 4793880.62}, {"name": "Korea, Rep.", "size": 3233760.89}, {"name": "Canada", "size": 3033624.18}, {"name": "China", "size": 2041927.04}, {"name": "Hong Kong, China", "size": 1965626.5}, {"name": "Other Asia, nes", "size": 925366.07}, {"name": "Philippines", "size": 518909.73}, {"name": "Vietnam", "size": 460965.78}, {"name": "Netherlands", "size": 415937.23}]}, {"name": "Vegetable", "children": [{"name": "Canada", "size": 9732473.76}, {"name": "Mexico", "size": 9006683.55}, {"name": "Japan", "size": 6819834.09}, {"name": "China", "size": 4996324.2}, {"name": "Korea, Rep.", "size": 3725291.22}, {"name": "Netherlands", "size": 2435969.23}, {"name": "Other Asia, nes", "size": 2242808.18}, {"name": "Spain", "size": 1745078.19}, {"name": "Colombia", "size": 1651087.26}, {"name": "Egypt, Arab Rep.", "size": 1580449.84}]}, {"name": "Food Products", "children": [{"name": "Canada", "size": 14003129.78}, {"name": "Mexico", "size": 5237039.5}, {"name": "Japan", "size": 2057322.58}, {"name": "China", "size": 1599625.23}, {"name": "Korea, Rep.", "size": 1573927.95}, {"name": "Philippines", "size": 1134177.46}, {"name": "United Kingdom", "size": 1102544.44}, {"name": "Brazil", "size": 1012058.97}, {"name": "Netherlands", "size": 967115.38}, {"name": "Vietnam", "size": 963391.2}]}, {"name": "Minerals", "children": [{"name": "Canada", "size": 2799117.62}, {"name": "Mexico", "size": 1558879.23}, {"name": "China", "size": 1090122.65}, {"name": "Japan", "size": 714293.97}, {"name": "Netherlands", "size": 522414.07}, {"name": "Korea, Rep.", "size": 504905.75}, {"name": "United Kingdom", "size": 391489.53}, {"name": "Belgium", "size": 375205.71}, {"name": "Germany", "size": 331502.69}, {"name": "Spain", "size": 268707.9}]}, {"name": "Fuels", "children": [{"name": "Mexico", "size": 34507805.13}, {"name": "Canada", "size": 26943521.84}, {"name": "Korea, Rep.", "size": 9990420.3}, {"name": "Brazil", "size": 9489890.65}, {"name": "Japan", "size": 9107984.6}, {"name": "Netherlands", "size": 8932953.24}, {"name": "China", "size": 8450679.01}, {"name": "India", "size": 6656137.36}, {"name": "United Kingdom", "size": 6392427.57}, {"name": "Chile", "size": 5094502.88}]}, {"name": "Chemicals", "children": [{"name": "Canada", "size": 22761626.24}, {"name": "Mexico", "size": 17897186.92}, {"name": "China", "size": 12260902.89}, {"name": "Japan", "size": 10698364.15}, {"name": "Belgium", "size": 9792567.98}, {"name": "Netherlands", "size": 9259731.46}, {"name": "Germany", "size": 8443421.99}, {"name": "Brazil", "size": 6818242.75}, {"name": "Korea, Rep.", "size": 6732478.29}, {"name": "United Kingdom", "size": 6717137.05}]}, {"name": "Plastic or Rubber", "children": [{"name": "Mexico", "size": 21579948.66}, {"name": "Canada", "size": 18006130.62}, {"name": "China", "size": 6462543.73}, {"name": "Belgium", "size": 3197835.13}, {"name": "Brazil", "size": 2344158.62}, {"name": "Japan", "size": 2172411.8}, {"name": "Korea, Rep.", "size": 1799796.81}, {"name": "Germany", "size": 1769400.69}, {"name": "Singapore", "size": 1683380.66}, {"name": "Netherlands", "size": 1634280.53}]}, {"name": "Hides and Skins", "children": [{"name": "China", "size": 910148.1}, {"name": "Canada", "size": 800056.76}, {"name": "Mexico", "size": 626605.2}, {"name": "Italy", "size": 269219.75}, {"name": "Korea, Rep.", "size": 241536.65}, {"name": "Thailand", "size": 150752.16}, {"name": "Japan", "size": 143169.39}, {"name": "Vietnam", "size": 116575.33}, {"name": "Hong Kong, China", "size": 95301.6}, {"name": "France", "size": 71358.64}]}, {"name": "Wood", "children": [{"name": "Canada", "size": 10133491.12}, {"name": "China", "size": 6823121.5}, {"name": "Mexico", "size": 6312090.51}, {"name": "Japan", "size": 2005561.96}, {"name": "United Kingdom", "size": 1790092.21}, {"name": "India", "size": 991107.67}, {"name": "Korea, Rep.", "size": 850049.66}, {"name": "Italy", "size": 766733.28}, {"name": "Germany", "size": 656600.64}, {"name": "Indonesia", "size": 596265.08}]}, {"name": "Textiles and Clothing", "children": [{"name": "Mexico", "size": 5776989.03}, {"name": "Canada", "size": 4487864.83}, {"name": "China", "size": 1714732.04}, {"name": "Honduras", "size": 1560478.56}, {"name": "Vietnam", "size": 1459688.66}, {"name": "Turkey", "size": 748908.52}, {"name": "Indonesia", "size": 700082.77}, {"name": "Pakistan", "size": 637040.71}, {"name": "United Kingdom", "size": 620544.0}, {"name": "Dominican Republic", "size": 554389.24}]}, {"name": "Footwear", "children": [{"name": "Canada", "size": 693325.15}, {"name": "Vietnam", "size": 243871.77}, {"name": "China", "size": 166715.6}, {"name": "Mexico", "size": 156813.74}, {"name": "Hong Kong, China", "size": 75401.18}, {"name": "United Kingdom", "size": 68249.26}, {"name": "Japan", "size": 67163.45}, {"name": "Australia", "size": 44976.64}, {"name": "Indonesia", "size": 43614.82}, {"name": "Korea, Rep.", "size": 41403.66}]}, {"name": "Stone and Glass", "children": [{"name": "Switzerland", "size": 10779926.56}, {"name": "Hong Kong, China", "size": 9324317.49}, {"name": "United Kingdom", "size": 8694682.55}, {"name": "India", "size": 8086135.47}, {"name": "Canada", "size": 7025273.75}, {"name": "Israel", "size": 4948794.67}, {"name": "Belgium", "size": 3334861.6}, {"name": "Germany", "size": 3013562.12}, {"name": "China", "size": 2489186.2}, {"name": "Mexico", "size": 2417234.91}]}, {"name": "Metals", "children": [{"name": "Mexico", "size": 20641688.42}, {"name": "Canada", "size": 19362633.53}, {"name": "China", "size": 4820483.8}, {"name": "Korea, Rep.", "size": 2135420.01}, {"name": "Japan", "size": 1979945.54}, {"name": "United Kingdom", "size": 1871793.69}, {"name": "Germany", "size": 1804934.66}, {"name": "France", "size": 1582459.5}, {"name": "India", "size": 1431484.03}, {"name": "Other Asia, nes", "size": 1368571.07}]}, {"name": "Mach and Elec", "children": [{"name": "Mexico", "size": 89013770.06}, {"name": "Canada", "size": 71413493.98}, {"name": "China", "size": 24038140.97}, {"name": "Hong Kong, China", "size": 13449900.66}, {"name": "Germany", "size": 12155233.0}, {"name": "United Kingdom", "size": 11122343.31}, {"name": "Japan", "size": 10880931.11}, {"name": "Korea, Rep.", "size": 10160377.02}, {"name": "Netherlands", "size": 9803785.72}, {"name": "Singapore", "size": 9173481.32}]}, {"name": "Transportation", "children": [{"name": "Canada", "size": 63427502.43}, {"name": "China", "size": 27663291.74}, {"name": "Mexico", "size": 26991946.52}, {"name": "Germany", "size": 16159382.51}, {"name": "France", "size": 14732916.21}, {"name": "United Kingdom", "size": 14552258.1}, {"name": "Japan", "size": 8274260.09}, {"name": "Brazil", "size": 7294603.14}, {"name": "United Arab Emirates", "size": 6598303.14}, {"name": "Singapore", "size": 6186840.03}]}, {"name": "Miscellaneous", "children": [{"name": "Canada", "size": 25121226.95}, {"name": "Mexico", "size": 18916220.53}, {"name": "China", "size": 14619921.02}, {"name": "Japan", "size": 12567265.97}, {"name": "United Kingdom", "size": 10379621.9}, {"name": "Germany", "size": 10163680.82}, {"name": "Netherlands", "size": 9156204.35}, {"name": "Korea, Rep.", "size": 8533055.62}, {"name": "Singapore", "size": 5530922.5}, {"name": "France", "size": 5416368.26}]}, {"name": "Agricultural Raw Materials", "children": [{"name": "China", "size": 7326075.22}, {"name": "Mexico", "size": 2529835.03}, {"name": "Canada", "size": 2440831.0}, {"name": "Vietnam", "size": 1887963.38}, {"name": "Japan", "size": 1544163.17}, {"name": "Indonesia", "size": 1268401.23}, {"name": "India", "size": 1237624.81}, {"name": "Turkey", "size": 989519.51}, {"name": "United Kingdom", "size": 877805.8}, {"name": "Korea, Rep.", "size": 876097.05}]}, {"name": "Food", "children": [{"name": "Canada", "size": 25466038.41}, {"name": "Mexico", "size": 18256039.65}, {"name": "Japan", "size": 13619912.41}, {"name": "Korea, Rep.", "size": 8276949.31}, {"name": "China", "size": 8001842.2}, {"name": "Hong Kong, China", "size": 4153951.36}, {"name": "Other Asia, nes", "size": 3780217.16}, {"name": "Netherlands", "size": 3485579.88}, {"name": "Philippines", "size": 2898460.64}, {"name": "Colombia", "size": 2822590.33}]}, {"name": "Manufactures", "children": [{"name": "Canada", "size": 227090168.4}, {"name": "Mexico", "size": 193236053.3}, {"name": "China", "size": 89511248.21}, {"name": "Germany", "size": 50002626.93}, {"name": "Japan", "size": 46716261.3}, {"name": "United Kingdom", "size": 45859267.7}, {"name": "Korea, Rep.", "size": 33976063.61}, {"name": "Netherlands", "size": 33875724.86}, {"name": "France", "size": 31657016.63}, {"name": "Hong Kong, China", "size": 29598082.05}]}, {"name": "Ores and Metals", "children": [{"name": "Mexico", "size": 8879104.46}, {"name": "Canada", "size": 7695400.12}, {"name": "China", "size": 4630692.41}, {"name": "Germany", "size": 2323137.31}, {"name": "Japan", "size": 2273193.11}, {"name": "Korea, Rep.", "size": 2212750.76}, {"name": "United Kingdom", "size": 2018282.27}, {"name": "India", "size": 1474014.89}, {"name": "Italy", "size": 1463531.86}, {"name": "Other Asia, nes", "size": 1321722.58}]}, {"name": "Textiles", "children": [{"name": "Mexico", "size": 6006218.11}, {"name": "Canada", "size": 4811882.63}, {"name": "China", "size": 1766969.77}, {"name": "Honduras", "size": 1562213.18}, {"name": "Vietnam", "size": 1460477.29}, {"name": "Turkey", "size": 755965.98}, {"name": "United Kingdom", "size": 734369.42}, {"name": "Indonesia", "size": 703070.46}, {"name": "Pakistan", "size": 637551.44}, {"name": "Japan", "size": 601294.41}]}, {"name": "Machinery and Transport Equipment", "children": [{"name": "Canada", "size": 136079167.7}, {"name": "Mexico", "size": 117378834.5}, {"name": "China", "size": 56133000.47}, {"name": "Germany", "size": 29474343.39}, {"name": "United Kingdom", "size": 26137374.52}, {"name": "Japan", "size": 21922470.38}, {"name": "France", "size": 20775073.23}, {"name": "Korea, Rep.", "size": 19356492.64}, {"name": "Singapore", "size": 16433264.01}, {"name": "Brazil", "size": 15202069.01}]}, {"name": "Raw materials", "children": [{"name": "Canada", "size": 27145169.5}, {"name": "China", "size": 18517299.18}, {"name": "Japan", "size": 15635750.08}, {"name": "Mexico", "size": 15323836.47}, {"name": "Korea, Rep.", "size": 15004839.59}, {"name": "India", "size": 8091866.61}, {"name": "Other Asia, nes", "size": 7716934.72}, {"name": "Netherlands", "size": 7525716.84}, {"name": "United Kingdom", "size": 6941146.88}, {"name": "Italy", "size": 4775254.59}]}, {"name": "Intermediate goods", "children": [{"name": "Mexico", "size": 52395826.38}, {"name": "Canada", "size": 46422149.93}, {"name": "China", "size": 23269307.52}, {"name": "Japan", "size": 14283745.82}, {"name": "Belgium", "size": 14024043.32}, {"name": "India", "size": 13483750.19}, {"name": "United Kingdom", "size": 12652480.19}, {"name": "Switzerland", "size": 11249793.5}, {"name": "Netherlands", "size": 9647833.56}, {"name": "Korea, Rep.", "size": 9622962.26}]}, {"name": "Consumer goods", "children": [{"name": "Canada", "size": 97706857.56}, {"name": "Mexico", "size": 78959283.17}, {"name": "China", "size": 20624530.56}, {"name": "Japan", "size": 17471295.27}, {"name": "Germany", "size": 14749536.19}, {"name": "United Kingdom", "size": 14637108.18}, {"name": "Netherlands", "size": 11709847.49}, {"name": "Korea, Rep.", "size": 10926566.23}, {"name": "Brazil", "size": 10672047.3}, {"name": "Australia", "size": 7492803.68}]}, {"name": "Capital goods", "children": [{"name": "Canada", "size": 110925701.9}, {"name": "Mexico", "size": 107441220.1}, {"name": "China", "size": 37607898.83}, {"name": "Japan", "size": 20450452.36}, {"name": "Germany", "size": 19450446.12}, {"name": "United Kingdom", "size": 17858165.02}, {"name": "Korea, Rep.", "size": 17069276.07}, {"name": "Netherlands", "size": 16727265.53}, {"name": "Hong Kong, China", "size": 16394861.19}, {"name": "Singapore", "size": 12807808.23}]}]}, {"name": "Import", "children": [{"name": "Animal", "children": [{"name": "Canada", "size": 6901061.15}, {"name": "Mexico", "size": 2783777.07}, {"name": "China", "size": 2589619.37}, {"name": "Chile", "size": 2360145.23}, {"name": "Australia", "size": 2272156.36}, {"name": "India", "size": 2236441.35}, {"name": "New Zealand", "size": 1791959.55}, {"name": "Indonesia", "size": 1270801.64}, {"name": "Vietnam", "size": 1147919.78}, {"name": "Norway", "size": 987525.83}]}, {"name": "Vegetable", "children": [{"name": "Mexico", "size": 14875769.37}, {"name": "Canada", "size": 8016941.9}, {"name": "Chile", "size": 2757399.37}, {"name": "Colombia", "size": 2440809.29}, {"name": "Guatemala", "size": 2162267.66}, {"name": "Peru", "size": 2093738.14}, {"name": "Indonesia", "size": 2019900.51}, {"name": "Vietnam", "size": 1981756.3}, {"name": "India", "size": 1866918.74}, {"name": "China", "size": 1745615.77}]}, {"name": "Food Products", "children": [{"name": "Canada", "size": 12281775.38}, {"name": "Mexico", "size": 11367498.99}, {"name": "France", "size": 5709759.72}, {"name": "Italy", "size": 4097841.46}, {"name": "China", "size": 3704377.85}, {"name": "Singapore", "size": 2643236.19}, {"name": "Thailand", "size": 2598643.0}, {"name": "United Kingdom", "size": 2485849.7}, {"name": "Brazil", "size": 2322517.25}, {"name": "Netherlands", "size": 1769617.48}]}, {"name": "Minerals", "children": [{"name": "Canada", "size": 1814404.44}, {"name": "Mexico", "size": 724542.96}, {"name": "China", "size": 678217.45}, {"name": "Brazil", "size": 619890.57}, {"name": "South Africa", "size": 568183.8}, {"name": "Peru", "size": 553001.82}, {"name": "Chile", "size": 354492.98}, {"name": "Turkey", "size": 302204.29}, {"name": "Australia", "size": 282917.73}, {"name": "Germany", "size": 229463.29}]}, {"name": "Fuels", "children": [{"name": "Canada", "size": 89520855.3}, {"name": "Saudi Arabia", "size": 23036668.6}, {"name": "Mexico", "size": 15828007.61}, {"name": "Venezuela", "size": 12831987.16}, {"name": "Iraq", "size": 12123440.26}, {"name": "Russian Federation", "size": 10672101.59}, {"name": "Colombia", "size": 8495467.48}, {"name": "Nigeria", "size": 5569662.61}, {"name": "Brazil", "size": 5300193.23}, {"name": "Algeria", "size": 4610633.95}]}, {"name": "Chemicals", "children": [{"name": "Ireland", "size": 41013621.61}, {"name": "Germany", "size": 23212745.97}, {"name": "Canada", "size": 19180442.45}, {"name": "Switzerland", "size": 19111811.11}, {"name": "China", "size": 18970569.99}, {"name": "India", "size": 10254117.46}, {"name": "United Kingdom", "size": 9882630.31}, {"name": "Japan", "size": 9675464.5}, {"name": "Singapore", "size": 8468411.09}, {"name": "France", "size": 8385804.93}]}, {"name": "Plastic or Rubber", "children": [{"name": "China", "size": 25057709.34}, {"name": "Canada", "size": 14633686.95}, {"name": "Mexico", "size": 8500602.36}, {"name": "Japan", "size": 4782992.16}, {"name": "Germany", "size": 4724928.71}, {"name": "Korea, Rep.", "size": 4666030.8}, {"name": "Thailand", "size": 4323802.5}, {"name": "Other Asia, nes", "size": 3078572.56}, {"name": "Malaysia", "size": 2234614.77}, {"name": "Indonesia", "size": 2127776.61}]}, {"name": "Hides and Skins", "children": [{"name": "China", "size": 7913018.77}, {"name": "Italy", "size": 1666089.72}, {"name": "Vietnam", "size": 1089764.09}, {"name": "France", "size": 852883.31}, {"name": "India", "size": 568574.56}, {"name": "Cambodia", "size": 406699.83}, {"name": "Philippines", "size": 367457.03}, {"name": "Mexico", "size": 366592.8}, {"name": "Indonesia", "size": 353900.01}, {"name": "Spain", "size": 195931.14}]}, {"name": "Wood", "children": [{"name": "Canada", "size": 20547170.17}, {"name": "China", "size": 11399590.1}, {"name": "Brazil", "size": 3057908.06}, {"name": "Mexico", "size": 2242976.13}, {"name": "Germany", "size": 1797931.02}, {"name": "Chile", "size": 1080290.43}, {"name": "Finland", "size": 997673.61}, {"name": "Indonesia", "size": 965586.58}, {"name": "United Kingdom", "size": 764710.51}, {"name": "Korea, Rep.", "size": 728117.15}]}, {"name": "Textiles and Clothing", "children": [{"name": "China", "size": 42479673.9}, {"name": "Vietnam", "size": 13065662.46}, {"name": "India", "size": 8500339.31}, {"name": "Bangladesh", "size": 5688721.53}, {"name": "Mexico", "size": 5426102.06}, {"name": "Indonesia", "size": 4886597.13}, {"name": "Pakistan", "size": 3049235.55}, {"name": "Honduras", "size": 2777578.27}, {"name": "Cambodia", "size": 2563692.88}, {"name": "Italy", "size": 2198814.05}]}, {"name": "Footwear", "children": [{"name": "China", "size": 18900913.91}, {"name": "Vietnam", "size": 6670203.84}, {"name": "Indonesia", "size": 1914937.24}, {"name": "Italy", "size": 1628105.37}, {"name": "Mexico", "size": 720841.83}, {"name": "India", "size": 486512.95}, {"name": "Bangladesh", "size": 394565.09}, {"name": "Cambodia", "size": 355919.48}, {"name": "Dominican Republic", "size": 270450.65}, {"name": "Spain", "size": 260057.9}]}, {"name": "Stone and Glass", "children": [{"name": "India", "size": 12369043.3}, {"name": "China", "size": 12134697.6}, {"name": "Mexico", "size": 8316480.55}, {"name": "Israel", "size": 8172998.41}, {"name": "Canada", "size": 5248502.67}, {"name": "South Africa", "size": 3830266.38}, {"name": "Belgium", "size": 3254577.71}, {"name": "Italy", "size": 2995872.6}, {"name": "Germany", "size": 2826786.88}, {"name": "Peru", "size": 2174654.68}]}, {"name": "Metals", "children": [{"name": "China", "size": 29896194.21}, {"name": "Canada", "size": 26484637.08}, {"name": "Mexico", "size": 13125056.68}, {"name": "Germany", "size": 6759000.85}, {"name": "Other Asia, nes", "size": 6356682.67}, {"name": "Japan", "size": 5630098.49}, {"name": "Korea, Rep.", "size": 5581527.55}, {"name": "Russian Federation", "size": 4667326.05}, {"name": "Brazil", "size": 4149444.67}, {"name": "Chile", "size": 3250167.13}]}, {"name": "Mach and Elec", "children": [{"name": "China", "size": 275046547.7}, {"name": "Mexico", "size": 127521809.0}, {"name": "Japan", "size": 49646149.5}, {"name": "Germany", "size": 36599945.39}, {"name": "Canada", "size": 31444820.29}, {"name": "Korea, Rep.", "size": 29667121.34}, {"name": "Malaysia", "size": 29549738.38}, {"name": "Other Asia, nes", "size": 24344712.52}, {"name": "Thailand", "size": 16119811.11}, {"name": "Vietnam", "size": 14005686.38}]}, {"name": "Transportation", "children": [{"name": "Mexico", "size": 95694338.52}, {"name": "Canada", "size": 59712514.7}, {"name": "Japan", "size": 56838860.39}, {"name": "Germany", "size": 28463229.29}, {"name": "China", "size": 20271284.24}, {"name": "Korea, Rep.", "size": 19657169.02}, {"name": "United Kingdom", "size": 13107245.59}, {"name": "Italy", "size": 8388404.12}, {"name": "France", "size": 7210505.22}, {"name": "Brazil", "size": 3240167.68}]}, {"name": "Miscellaneous", "children": [{"name": "China", "size": 91648624.33}, {"name": "Mexico", "size": 37188651.05}, {"name": "Canada", "size": 27763273.56}, {"name": "Germany", "size": 20143447.68}, {"name": "Japan", "size": 14693702.34}, {"name": "Switzerland", "size": 13554689.14}, {"name": "United Kingdom", "size": 13182504.92}, {"name": "Ireland", "size": 12515911.44}, {"name": "France", "size": 10913764.34}, {"name": "Vietnam", "size": 7437274.6}]}, {"name": "Agricultural Raw Materials", "children": [{"name": "Canada", "size": 9480875.89}, {"name": "Brazil", "size": 1810521.79}, {"name": "China", "size": 1432715.58}, {"name": "Indonesia", "size": 1144731.36}, {"name": "Colombia", "size": 977048.72}, {"name": "Germany", "size": 650830.73}, {"name": "Thailand", "size": 505537.12}, {"name": "India", "size": 499406.65}, {"name": "Netherlands", "size": 395062.38}, {"name": "Ecuador", "size": 373685.21}]}, {"name": "Food", "children": [{"name": "Mexico", "size": 28764025.42}, {"name": "Canada", "size": 26380874.15}, {"name": "China", "size": 6991460.49}, {"name": "France", "size": 6097989.18}, {"name": "Chile", "size": 5672733.21}, {"name": "Italy", "size": 5381096.97}, {"name": "Indonesia", "size": 4610791.26}, {"name": "India", "size": 4349816.58}, {"name": "Vietnam", "size": 3966810.16}, {"name": "Thailand", "size": 3678399.17}]}, {"name": "Manufactures", "children": [{"name": "China", "size": 543893622.9}, {"name": "Mexico", "size": 287243890.9}, {"name": "Canada", "size": 162403087.1}, {"name": "Japan", "size": 138407608.0}, {"name": "Germany", "size": 115006722.7}, {"name": "Korea, Rep.", "size": 69342707.33}, {"name": "Ireland", "size": 51258397.09}, {"name": "United Kingdom", "size": 47060478.25}, {"name": "Italy", "size": 46998259.87}, {"name": "India", "size": 46556516.29}]}, {"name": "Ores and Metals", "children": [{"name": "Canada", "size": 17284733.54}, {"name": "Mexico", "size": 4615903.57}, {"name": "Chile", "size": 3621928.39}, {"name": "Germany", "size": 3459660.22}, {"name": "South Africa", "size": 3373540.2}, {"name": "Russian Federation", "size": 2721463.7}, {"name": "China", "size": 2654931.96}, {"name": "United Arab Emirates", "size": 1609905.26}, {"name": "Brazil", "size": 1470426.25}, {"name": "Japan", "size": 1390823.8}]}, {"name": "Textiles", "children": [{"name": "China", "size": 46608225.31}, {"name": "Vietnam", "size": 13363793.62}, {"name": "India", "size": 8694706.81}, {"name": "Mexico", "size": 5910292.77}, {"name": "Bangladesh", "size": 5883755.71}, {"name": "Indonesia", "size": 5092724.64}, {"name": "Pakistan", "size": 3164508.53}, {"name": "Honduras", "size": 2778921.15}, {"name": "Cambodia", "size": 2583513.91}, {"name": "Italy", "size": 2518809.53}]}, {"name": "Machinery and Transport Equipment", "children": [{"name": "China", "size": 310324739.7}, {"name": "Mexico", "size": 225052669.1}, {"name": "Japan", "size": 109675589.8}, {"name": "Canada", "size": 91676103.75}, {"name": "Germany", "size": 68010489.11}, {"name": "Korea, Rep.", "size": 49907936.52}, {"name": "Malaysia", "size": 29999546.47}, {"name": "Other Asia, nes", "size": 27963251.8}, {"name": "United Kingdom", "size": 25873214.48}, {"name": "Italy", "size": 21553649.53}]}, {"name": "Raw materials", "children": [{"name": "Canada", "size": 80166531.56}, {"name": "Mexico", "size": 33357307.79}, {"name": "Saudi Arabia", "size": 21933176.58}, {"name": "Iraq", "size": 12063427.85}, {"name": "Venezuela", "size": 10766723.08}, {"name": "Colombia", "size": 8403384.28}, {"name": "Brazil", "size": 6182784.41}, {"name": "Ecuador", "size": 5636363.87}, {"name": "Nigeria", "size": 5192343.33}, {"name": "Chile", "size": 5107075.13}]}, {"name": "Intermediate goods", "children": [{"name": "Canada", "size": 66544697.07}, {"name": "China", "size": 40923296.13}, {"name": "Ireland", "size": 30838977.92}, {"name": "Mexico", "size": 28324354.33}, {"name": "Germany", "size": 24063951.88}, {"name": "Japan", "size": 17329442.85}, {"name": "India", "size": 17187273.23}, {"name": "Korea, Rep.", "size": 13467716.76}, {"name": "Brazil", "size": 10577735.4}, {"name": "Israel", "size": 10011631.57}]}, {"name": "Consumer goods", "children": [{"name": "China", "size": 243324826.9}, {"name": "Mexico", "size": 102575555.7}, {"name": "Canada", "size": 102203160.7}, {"name": "Japan", "size": 58984441.44}, {"name": "Germany", "size": 40678665.28}, {"name": "Vietnam", "size": 31330125.94}, {"name": "Italy", "size": 29141796.5}, {"name": "India", "size": 27317964.78}, {"name": "Korea, Rep.", "size": 27058538.78}, {"name": "United Kingdom", "size": 25374958.28}]}]}]}
+{
+  "name": "United States-2018",
+  "children": [
+    {
+      "name": "Export",
+      "children": [
+        {
+          "name": "Animal",
+          "children": [
+            {
+              "name": "Japan",
+              "size": 4914756.74
+            },
+            {
+              "name": "Mexico",
+              "size": 4793880.62
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 3233760.89
+            },
+            {
+              "name": "Canada",
+              "size": 3033624.18
+            },
+            {
+              "name": "China",
+              "size": 2041927.04
+            },
+            {
+              "name": "Hong Kong, China",
+              "size": 1965626.5
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 925366.07
+            },
+            {
+              "name": "Philippines",
+              "size": 518909.73
+            },
+            {
+              "name": "Vietnam",
+              "size": 460965.78
+            },
+            {
+              "name": "Netherlands",
+              "size": 415937.23
+            }
+          ]
+        },
+        {
+          "name": "Vegetable",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 9732473.76
+            },
+            {
+              "name": "Mexico",
+              "size": 9006683.55
+            },
+            {
+              "name": "Japan",
+              "size": 6819834.09
+            },
+            {
+              "name": "China",
+              "size": 4996324.2
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 3725291.22
+            },
+            {
+              "name": "Netherlands",
+              "size": 2435969.23
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 2242808.18
+            },
+            {
+              "name": "Spain",
+              "size": 1745078.19
+            },
+            {
+              "name": "Colombia",
+              "size": 1651087.26
+            },
+            {
+              "name": "Egypt, Arab Rep.",
+              "size": 1580449.84
+            }
+          ]
+        },
+        {
+          "name": "Food Products",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 14003129.78
+            },
+            {
+              "name": "Mexico",
+              "size": 5237039.5
+            },
+            {
+              "name": "Japan",
+              "size": 2057322.58
+            },
+            {
+              "name": "China",
+              "size": 1599625.23
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 1573927.95
+            },
+            {
+              "name": "Philippines",
+              "size": 1134177.46
+            },
+            {
+              "name": "United Kingdom",
+              "size": 1102544.44
+            },
+            {
+              "name": "Brazil",
+              "size": 1012058.97
+            },
+            {
+              "name": "Netherlands",
+              "size": 967115.38
+            },
+            {
+              "name": "Vietnam",
+              "size": 963391.2
+            }
+          ]
+        },
+        {
+          "name": "Minerals",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 2799117.62
+            },
+            {
+              "name": "Mexico",
+              "size": 1558879.23
+            },
+            {
+              "name": "China",
+              "size": 1090122.65
+            },
+            {
+              "name": "Japan",
+              "size": 714293.97
+            },
+            {
+              "name": "Netherlands",
+              "size": 522414.07
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 504905.75
+            },
+            {
+              "name": "United Kingdom",
+              "size": 391489.53
+            },
+            {
+              "name": "Belgium",
+              "size": 375205.71
+            },
+            {
+              "name": "Germany",
+              "size": 331502.69
+            },
+            {
+              "name": "Spain",
+              "size": 268707.9
+            }
+          ]
+        },
+        {
+          "name": "Fuels",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 34507805.13
+            },
+            {
+              "name": "Canada",
+              "size": 26943521.84
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 9990420.3
+            },
+            {
+              "name": "Brazil",
+              "size": 9489890.65
+            },
+            {
+              "name": "Japan",
+              "size": 9107984.6
+            },
+            {
+              "name": "Netherlands",
+              "size": 8932953.24
+            },
+            {
+              "name": "China",
+              "size": 8450679.01
+            },
+            {
+              "name": "India",
+              "size": 6656137.36
+            },
+            {
+              "name": "United Kingdom",
+              "size": 6392427.57
+            },
+            {
+              "name": "Chile",
+              "size": 5094502.88
+            }
+          ]
+        },
+        {
+          "name": "Chemicals",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 22761626.24
+            },
+            {
+              "name": "Mexico",
+              "size": 17897186.92
+            },
+            {
+              "name": "China",
+              "size": 12260902.89
+            },
+            {
+              "name": "Japan",
+              "size": 10698364.15
+            },
+            {
+              "name": "Belgium",
+              "size": 9792567.98
+            },
+            {
+              "name": "Netherlands",
+              "size": 9259731.46
+            },
+            {
+              "name": "Germany",
+              "size": 8443421.99
+            },
+            {
+              "name": "Brazil",
+              "size": 6818242.75
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 6732478.29
+            },
+            {
+              "name": "United Kingdom",
+              "size": 6717137.05
+            }
+          ]
+        },
+        {
+          "name": "Plastic or Rubber",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 21579948.66
+            },
+            {
+              "name": "Canada",
+              "size": 18006130.62
+            },
+            {
+              "name": "China",
+              "size": 6462543.73
+            },
+            {
+              "name": "Belgium",
+              "size": 3197835.13
+            },
+            {
+              "name": "Brazil",
+              "size": 2344158.62
+            },
+            {
+              "name": "Japan",
+              "size": 2172411.8
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 1799796.81
+            },
+            {
+              "name": "Germany",
+              "size": 1769400.69
+            },
+            {
+              "name": "Singapore",
+              "size": 1683380.66
+            },
+            {
+              "name": "Netherlands",
+              "size": 1634280.53
+            }
+          ]
+        },
+        {
+          "name": "Hides and Skins",
+          "children": [
+            {
+              "name": "China",
+              "size": 910148.1
+            },
+            {
+              "name": "Canada",
+              "size": 800056.76
+            },
+            {
+              "name": "Mexico",
+              "size": 626605.2
+            },
+            {
+              "name": "Italy",
+              "size": 269219.75
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 241536.65
+            },
+            {
+              "name": "Thailand",
+              "size": 150752.16
+            },
+            {
+              "name": "Japan",
+              "size": 143169.39
+            },
+            {
+              "name": "Vietnam",
+              "size": 116575.33
+            },
+            {
+              "name": "Hong Kong, China",
+              "size": 95301.6
+            },
+            {
+              "name": "France",
+              "size": 71358.64
+            }
+          ]
+        },
+        {
+          "name": "Wood",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 10133491.12
+            },
+            {
+              "name": "China",
+              "size": 6823121.5
+            },
+            {
+              "name": "Mexico",
+              "size": 6312090.51
+            },
+            {
+              "name": "Japan",
+              "size": 2005561.96
+            },
+            {
+              "name": "United Kingdom",
+              "size": 1790092.21
+            },
+            {
+              "name": "India",
+              "size": 991107.67
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 850049.66
+            },
+            {
+              "name": "Italy",
+              "size": 766733.28
+            },
+            {
+              "name": "Germany",
+              "size": 656600.64
+            },
+            {
+              "name": "Indonesia",
+              "size": 596265.08
+            }
+          ]
+        },
+        {
+          "name": "Textiles and Clothing",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 5776989.03
+            },
+            {
+              "name": "Canada",
+              "size": 4487864.83
+            },
+            {
+              "name": "China",
+              "size": 1714732.04
+            },
+            {
+              "name": "Honduras",
+              "size": 1560478.56
+            },
+            {
+              "name": "Vietnam",
+              "size": 1459688.66
+            },
+            {
+              "name": "Turkey",
+              "size": 748908.52
+            },
+            {
+              "name": "Indonesia",
+              "size": 700082.77
+            },
+            {
+              "name": "Pakistan",
+              "size": 637040.71
+            },
+            {
+              "name": "United Kingdom",
+              "size": 620544.0
+            },
+            {
+              "name": "Dominican Republic",
+              "size": 554389.24
+            }
+          ]
+        },
+        {
+          "name": "Footwear",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 693325.15
+            },
+            {
+              "name": "Vietnam",
+              "size": 243871.77
+            },
+            {
+              "name": "China",
+              "size": 166715.6
+            },
+            {
+              "name": "Mexico",
+              "size": 156813.74
+            },
+            {
+              "name": "Hong Kong, China",
+              "size": 75401.18
+            },
+            {
+              "name": "United Kingdom",
+              "size": 68249.26
+            },
+            {
+              "name": "Japan",
+              "size": 67163.45
+            },
+            {
+              "name": "Australia",
+              "size": 44976.64
+            },
+            {
+              "name": "Indonesia",
+              "size": 43614.82
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 41403.66
+            }
+          ]
+        },
+        {
+          "name": "Stone and Glass",
+          "children": [
+            {
+              "name": "Switzerland",
+              "size": 10779926.56
+            },
+            {
+              "name": "Hong Kong, China",
+              "size": 9324317.49
+            },
+            {
+              "name": "United Kingdom",
+              "size": 8694682.55
+            },
+            {
+              "name": "India",
+              "size": 8086135.47
+            },
+            {
+              "name": "Canada",
+              "size": 7025273.75
+            },
+            {
+              "name": "Israel",
+              "size": 4948794.67
+            },
+            {
+              "name": "Belgium",
+              "size": 3334861.6
+            },
+            {
+              "name": "Germany",
+              "size": 3013562.12
+            },
+            {
+              "name": "China",
+              "size": 2489186.2
+            },
+            {
+              "name": "Mexico",
+              "size": 2417234.91
+            }
+          ]
+        },
+        {
+          "name": "Metals",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 20641688.42
+            },
+            {
+              "name": "Canada",
+              "size": 19362633.53
+            },
+            {
+              "name": "China",
+              "size": 4820483.8
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 2135420.01
+            },
+            {
+              "name": "Japan",
+              "size": 1979945.54
+            },
+            {
+              "name": "United Kingdom",
+              "size": 1871793.69
+            },
+            {
+              "name": "Germany",
+              "size": 1804934.66
+            },
+            {
+              "name": "France",
+              "size": 1582459.5
+            },
+            {
+              "name": "India",
+              "size": 1431484.03
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 1368571.07
+            }
+          ]
+        },
+        {
+          "name": "Mach and Elec",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 89013770.06
+            },
+            {
+              "name": "Canada",
+              "size": 71413493.98
+            },
+            {
+              "name": "China",
+              "size": 24038140.97
+            },
+            {
+              "name": "Hong Kong, China",
+              "size": 13449900.66
+            },
+            {
+              "name": "Germany",
+              "size": 12155233.0
+            },
+            {
+              "name": "United Kingdom",
+              "size": 11122343.31
+            },
+            {
+              "name": "Japan",
+              "size": 10880931.11
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 10160377.02
+            },
+            {
+              "name": "Netherlands",
+              "size": 9803785.72
+            },
+            {
+              "name": "Singapore",
+              "size": 9173481.32
+            }
+          ]
+        },
+        {
+          "name": "Transportation",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 63427502.43
+            },
+            {
+              "name": "China",
+              "size": 27663291.74
+            },
+            {
+              "name": "Mexico",
+              "size": 26991946.52
+            },
+            {
+              "name": "Germany",
+              "size": 16159382.51
+            },
+            {
+              "name": "France",
+              "size": 14732916.21
+            },
+            {
+              "name": "United Kingdom",
+              "size": 14552258.1
+            },
+            {
+              "name": "Japan",
+              "size": 8274260.09
+            },
+            {
+              "name": "Brazil",
+              "size": 7294603.14
+            },
+            {
+              "name": "United Arab Emirates",
+              "size": 6598303.14
+            },
+            {
+              "name": "Singapore",
+              "size": 6186840.03
+            }
+          ]
+        },
+        {
+          "name": "Miscellaneous",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 25121226.95
+            },
+            {
+              "name": "Mexico",
+              "size": 18916220.53
+            },
+            {
+              "name": "China",
+              "size": 14619921.02
+            },
+            {
+              "name": "Japan",
+              "size": 12567265.97
+            },
+            {
+              "name": "United Kingdom",
+              "size": 10379621.9
+            },
+            {
+              "name": "Germany",
+              "size": 10163680.82
+            },
+            {
+              "name": "Netherlands",
+              "size": 9156204.35
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 8533055.62
+            },
+            {
+              "name": "Singapore",
+              "size": 5530922.5
+            },
+            {
+              "name": "France",
+              "size": 5416368.26
+            }
+          ]
+        },
+        {
+          "name": "Agricultural Raw Materials",
+          "children": [
+            {
+              "name": "China",
+              "size": 7326075.22
+            },
+            {
+              "name": "Mexico",
+              "size": 2529835.03
+            },
+            {
+              "name": "Canada",
+              "size": 2440831.0
+            },
+            {
+              "name": "Vietnam",
+              "size": 1887963.38
+            },
+            {
+              "name": "Japan",
+              "size": 1544163.17
+            },
+            {
+              "name": "Indonesia",
+              "size": 1268401.23
+            },
+            {
+              "name": "India",
+              "size": 1237624.81
+            },
+            {
+              "name": "Turkey",
+              "size": 989519.51
+            },
+            {
+              "name": "United Kingdom",
+              "size": 877805.8
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 876097.05
+            }
+          ]
+        },
+        {
+          "name": "Food",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 25466038.41
+            },
+            {
+              "name": "Mexico",
+              "size": 18256039.65
+            },
+            {
+              "name": "Japan",
+              "size": 13619912.41
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 8276949.31
+            },
+            {
+              "name": "China",
+              "size": 8001842.2
+            },
+            {
+              "name": "Hong Kong, China",
+              "size": 4153951.36
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 3780217.16
+            },
+            {
+              "name": "Netherlands",
+              "size": 3485579.88
+            },
+            {
+              "name": "Philippines",
+              "size": 2898460.64
+            },
+            {
+              "name": "Colombia",
+              "size": 2822590.33
+            }
+          ]
+        },
+        {
+          "name": "Manufactures",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 227090168.4
+            },
+            {
+              "name": "Mexico",
+              "size": 193236053.3
+            },
+            {
+              "name": "China",
+              "size": 89511248.21
+            },
+            {
+              "name": "Germany",
+              "size": 50002626.93
+            },
+            {
+              "name": "Japan",
+              "size": 46716261.3
+            },
+            {
+              "name": "United Kingdom",
+              "size": 45859267.7
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 33976063.61
+            },
+            {
+              "name": "Netherlands",
+              "size": 33875724.86
+            },
+            {
+              "name": "France",
+              "size": 31657016.63
+            },
+            {
+              "name": "Hong Kong, China",
+              "size": 29598082.05
+            }
+          ]
+        },
+        {
+          "name": "Ores and Metals",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 8879104.46
+            },
+            {
+              "name": "Canada",
+              "size": 7695400.12
+            },
+            {
+              "name": "China",
+              "size": 4630692.41
+            },
+            {
+              "name": "Germany",
+              "size": 2323137.31
+            },
+            {
+              "name": "Japan",
+              "size": 2273193.11
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 2212750.76
+            },
+            {
+              "name": "United Kingdom",
+              "size": 2018282.27
+            },
+            {
+              "name": "India",
+              "size": 1474014.89
+            },
+            {
+              "name": "Italy",
+              "size": 1463531.86
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 1321722.58
+            }
+          ]
+        },
+        {
+          "name": "Textiles",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 6006218.11
+            },
+            {
+              "name": "Canada",
+              "size": 4811882.63
+            },
+            {
+              "name": "China",
+              "size": 1766969.77
+            },
+            {
+              "name": "Honduras",
+              "size": 1562213.18
+            },
+            {
+              "name": "Vietnam",
+              "size": 1460477.29
+            },
+            {
+              "name": "Turkey",
+              "size": 755965.98
+            },
+            {
+              "name": "United Kingdom",
+              "size": 734369.42
+            },
+            {
+              "name": "Indonesia",
+              "size": 703070.46
+            },
+            {
+              "name": "Pakistan",
+              "size": 637551.44
+            },
+            {
+              "name": "Japan",
+              "size": 601294.41
+            }
+          ]
+        },
+        {
+          "name": "Machinery and Transport Equipment",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 136079167.7
+            },
+            {
+              "name": "Mexico",
+              "size": 117378834.5
+            },
+            {
+              "name": "China",
+              "size": 56133000.47
+            },
+            {
+              "name": "Germany",
+              "size": 29474343.39
+            },
+            {
+              "name": "United Kingdom",
+              "size": 26137374.52
+            },
+            {
+              "name": "Japan",
+              "size": 21922470.38
+            },
+            {
+              "name": "France",
+              "size": 20775073.23
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 19356492.64
+            },
+            {
+              "name": "Singapore",
+              "size": 16433264.01
+            },
+            {
+              "name": "Brazil",
+              "size": 15202069.01
+            }
+          ]
+        },
+        {
+          "name": "Raw materials",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 27145169.5
+            },
+            {
+              "name": "China",
+              "size": 18517299.18
+            },
+            {
+              "name": "Japan",
+              "size": 15635750.08
+            },
+            {
+              "name": "Mexico",
+              "size": 15323836.47
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 15004839.59
+            },
+            {
+              "name": "India",
+              "size": 8091866.61
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 7716934.72
+            },
+            {
+              "name": "Netherlands",
+              "size": 7525716.84
+            },
+            {
+              "name": "United Kingdom",
+              "size": 6941146.88
+            },
+            {
+              "name": "Italy",
+              "size": 4775254.59
+            }
+          ]
+        },
+        {
+          "name": "Intermediate goods",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 52395826.38
+            },
+            {
+              "name": "Canada",
+              "size": 46422149.93
+            },
+            {
+              "name": "China",
+              "size": 23269307.52
+            },
+            {
+              "name": "Japan",
+              "size": 14283745.82
+            },
+            {
+              "name": "Belgium",
+              "size": 14024043.32
+            },
+            {
+              "name": "India",
+              "size": 13483750.19
+            },
+            {
+              "name": "United Kingdom",
+              "size": 12652480.19
+            },
+            {
+              "name": "Switzerland",
+              "size": 11249793.5
+            },
+            {
+              "name": "Netherlands",
+              "size": 9647833.56
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 9622962.26
+            }
+          ]
+        },
+        {
+          "name": "Consumer goods",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 97706857.56
+            },
+            {
+              "name": "Mexico",
+              "size": 78959283.17
+            },
+            {
+              "name": "China",
+              "size": 20624530.56
+            },
+            {
+              "name": "Japan",
+              "size": 17471295.27
+            },
+            {
+              "name": "Germany",
+              "size": 14749536.19
+            },
+            {
+              "name": "United Kingdom",
+              "size": 14637108.18
+            },
+            {
+              "name": "Netherlands",
+              "size": 11709847.49
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 10926566.23
+            },
+            {
+              "name": "Brazil",
+              "size": 10672047.3
+            },
+            {
+              "name": "Australia",
+              "size": 7492803.68
+            }
+          ]
+        },
+        {
+          "name": "Capital goods",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 110925701.9
+            },
+            {
+              "name": "Mexico",
+              "size": 107441220.1
+            },
+            {
+              "name": "China",
+              "size": 37607898.83
+            },
+            {
+              "name": "Japan",
+              "size": 20450452.36
+            },
+            {
+              "name": "Germany",
+              "size": 19450446.12
+            },
+            {
+              "name": "United Kingdom",
+              "size": 17858165.02
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 17069276.07
+            },
+            {
+              "name": "Netherlands",
+              "size": 16727265.53
+            },
+            {
+              "name": "Hong Kong, China",
+              "size": 16394861.19
+            },
+            {
+              "name": "Singapore",
+              "size": 12807808.23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Import",
+      "children": [
+        {
+          "name": "Animal",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 6901061.15
+            },
+            {
+              "name": "Mexico",
+              "size": 2783777.07
+            },
+            {
+              "name": "China",
+              "size": 2589619.37
+            },
+            {
+              "name": "Chile",
+              "size": 2360145.23
+            },
+            {
+              "name": "Australia",
+              "size": 2272156.36
+            },
+            {
+              "name": "India",
+              "size": 2236441.35
+            },
+            {
+              "name": "New Zealand",
+              "size": 1791959.55
+            },
+            {
+              "name": "Indonesia",
+              "size": 1270801.64
+            },
+            {
+              "name": "Vietnam",
+              "size": 1147919.78
+            },
+            {
+              "name": "Norway",
+              "size": 987525.83
+            }
+          ]
+        },
+        {
+          "name": "Vegetable",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 14875769.37
+            },
+            {
+              "name": "Canada",
+              "size": 8016941.9
+            },
+            {
+              "name": "Chile",
+              "size": 2757399.37
+            },
+            {
+              "name": "Colombia",
+              "size": 2440809.29
+            },
+            {
+              "name": "Guatemala",
+              "size": 2162267.66
+            },
+            {
+              "name": "Peru",
+              "size": 2093738.14
+            },
+            {
+              "name": "Indonesia",
+              "size": 2019900.51
+            },
+            {
+              "name": "Vietnam",
+              "size": 1981756.3
+            },
+            {
+              "name": "India",
+              "size": 1866918.74
+            },
+            {
+              "name": "China",
+              "size": 1745615.77
+            }
+          ]
+        },
+        {
+          "name": "Food Products",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 12281775.38
+            },
+            {
+              "name": "Mexico",
+              "size": 11367498.99
+            },
+            {
+              "name": "France",
+              "size": 5709759.72
+            },
+            {
+              "name": "Italy",
+              "size": 4097841.46
+            },
+            {
+              "name": "China",
+              "size": 3704377.85
+            },
+            {
+              "name": "Singapore",
+              "size": 2643236.19
+            },
+            {
+              "name": "Thailand",
+              "size": 2598643.0
+            },
+            {
+              "name": "United Kingdom",
+              "size": 2485849.7
+            },
+            {
+              "name": "Brazil",
+              "size": 2322517.25
+            },
+            {
+              "name": "Netherlands",
+              "size": 1769617.48
+            }
+          ]
+        },
+        {
+          "name": "Minerals",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 1814404.44
+            },
+            {
+              "name": "Mexico",
+              "size": 724542.96
+            },
+            {
+              "name": "China",
+              "size": 678217.45
+            },
+            {
+              "name": "Brazil",
+              "size": 619890.57
+            },
+            {
+              "name": "South Africa",
+              "size": 568183.8
+            },
+            {
+              "name": "Peru",
+              "size": 553001.82
+            },
+            {
+              "name": "Chile",
+              "size": 354492.98
+            },
+            {
+              "name": "Turkey",
+              "size": 302204.29
+            },
+            {
+              "name": "Australia",
+              "size": 282917.73
+            },
+            {
+              "name": "Germany",
+              "size": 229463.29
+            }
+          ]
+        },
+        {
+          "name": "Fuels",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 89520855.3
+            },
+            {
+              "name": "Saudi Arabia",
+              "size": 23036668.6
+            },
+            {
+              "name": "Mexico",
+              "size": 15828007.61
+            },
+            {
+              "name": "Venezuela",
+              "size": 12831987.16
+            },
+            {
+              "name": "Iraq",
+              "size": 12123440.26
+            },
+            {
+              "name": "Russian Federation",
+              "size": 10672101.59
+            },
+            {
+              "name": "Colombia",
+              "size": 8495467.48
+            },
+            {
+              "name": "Nigeria",
+              "size": 5569662.61
+            },
+            {
+              "name": "Brazil",
+              "size": 5300193.23
+            },
+            {
+              "name": "Algeria",
+              "size": 4610633.95
+            }
+          ]
+        },
+        {
+          "name": "Chemicals",
+          "children": [
+            {
+              "name": "Ireland",
+              "size": 41013621.61
+            },
+            {
+              "name": "Germany",
+              "size": 23212745.97
+            },
+            {
+              "name": "Canada",
+              "size": 19180442.45
+            },
+            {
+              "name": "Switzerland",
+              "size": 19111811.11
+            },
+            {
+              "name": "China",
+              "size": 18970569.99
+            },
+            {
+              "name": "India",
+              "size": 10254117.46
+            },
+            {
+              "name": "United Kingdom",
+              "size": 9882630.31
+            },
+            {
+              "name": "Japan",
+              "size": 9675464.5
+            },
+            {
+              "name": "Singapore",
+              "size": 8468411.09
+            },
+            {
+              "name": "France",
+              "size": 8385804.93
+            }
+          ]
+        },
+        {
+          "name": "Plastic or Rubber",
+          "children": [
+            {
+              "name": "China",
+              "size": 25057709.34
+            },
+            {
+              "name": "Canada",
+              "size": 14633686.95
+            },
+            {
+              "name": "Mexico",
+              "size": 8500602.36
+            },
+            {
+              "name": "Japan",
+              "size": 4782992.16
+            },
+            {
+              "name": "Germany",
+              "size": 4724928.71
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 4666030.8
+            },
+            {
+              "name": "Thailand",
+              "size": 4323802.5
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 3078572.56
+            },
+            {
+              "name": "Malaysia",
+              "size": 2234614.77
+            },
+            {
+              "name": "Indonesia",
+              "size": 2127776.61
+            }
+          ]
+        },
+        {
+          "name": "Hides and Skins",
+          "children": [
+            {
+              "name": "China",
+              "size": 7913018.77
+            },
+            {
+              "name": "Italy",
+              "size": 1666089.72
+            },
+            {
+              "name": "Vietnam",
+              "size": 1089764.09
+            },
+            {
+              "name": "France",
+              "size": 852883.31
+            },
+            {
+              "name": "India",
+              "size": 568574.56
+            },
+            {
+              "name": "Cambodia",
+              "size": 406699.83
+            },
+            {
+              "name": "Philippines",
+              "size": 367457.03
+            },
+            {
+              "name": "Mexico",
+              "size": 366592.8
+            },
+            {
+              "name": "Indonesia",
+              "size": 353900.01
+            },
+            {
+              "name": "Spain",
+              "size": 195931.14
+            }
+          ]
+        },
+        {
+          "name": "Wood",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 20547170.17
+            },
+            {
+              "name": "China",
+              "size": 11399590.1
+            },
+            {
+              "name": "Brazil",
+              "size": 3057908.06
+            },
+            {
+              "name": "Mexico",
+              "size": 2242976.13
+            },
+            {
+              "name": "Germany",
+              "size": 1797931.02
+            },
+            {
+              "name": "Chile",
+              "size": 1080290.43
+            },
+            {
+              "name": "Finland",
+              "size": 997673.61
+            },
+            {
+              "name": "Indonesia",
+              "size": 965586.58
+            },
+            {
+              "name": "United Kingdom",
+              "size": 764710.51
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 728117.15
+            }
+          ]
+        },
+        {
+          "name": "Textiles and Clothing",
+          "children": [
+            {
+              "name": "China",
+              "size": 42479673.9
+            },
+            {
+              "name": "Vietnam",
+              "size": 13065662.46
+            },
+            {
+              "name": "India",
+              "size": 8500339.31
+            },
+            {
+              "name": "Bangladesh",
+              "size": 5688721.53
+            },
+            {
+              "name": "Mexico",
+              "size": 5426102.06
+            },
+            {
+              "name": "Indonesia",
+              "size": 4886597.13
+            },
+            {
+              "name": "Pakistan",
+              "size": 3049235.55
+            },
+            {
+              "name": "Honduras",
+              "size": 2777578.27
+            },
+            {
+              "name": "Cambodia",
+              "size": 2563692.88
+            },
+            {
+              "name": "Italy",
+              "size": 2198814.05
+            }
+          ]
+        },
+        {
+          "name": "Footwear",
+          "children": [
+            {
+              "name": "China",
+              "size": 18900913.91
+            },
+            {
+              "name": "Vietnam",
+              "size": 6670203.84
+            },
+            {
+              "name": "Indonesia",
+              "size": 1914937.24
+            },
+            {
+              "name": "Italy",
+              "size": 1628105.37
+            },
+            {
+              "name": "Mexico",
+              "size": 720841.83
+            },
+            {
+              "name": "India",
+              "size": 486512.95
+            },
+            {
+              "name": "Bangladesh",
+              "size": 394565.09
+            },
+            {
+              "name": "Cambodia",
+              "size": 355919.48
+            },
+            {
+              "name": "Dominican Republic",
+              "size": 270450.65
+            },
+            {
+              "name": "Spain",
+              "size": 260057.9
+            }
+          ]
+        },
+        {
+          "name": "Stone and Glass",
+          "children": [
+            {
+              "name": "India",
+              "size": 12369043.3
+            },
+            {
+              "name": "China",
+              "size": 12134697.6
+            },
+            {
+              "name": "Mexico",
+              "size": 8316480.55
+            },
+            {
+              "name": "Israel",
+              "size": 8172998.41
+            },
+            {
+              "name": "Canada",
+              "size": 5248502.67
+            },
+            {
+              "name": "South Africa",
+              "size": 3830266.38
+            },
+            {
+              "name": "Belgium",
+              "size": 3254577.71
+            },
+            {
+              "name": "Italy",
+              "size": 2995872.6
+            },
+            {
+              "name": "Germany",
+              "size": 2826786.88
+            },
+            {
+              "name": "Peru",
+              "size": 2174654.68
+            }
+          ]
+        },
+        {
+          "name": "Metals",
+          "children": [
+            {
+              "name": "China",
+              "size": 29896194.21
+            },
+            {
+              "name": "Canada",
+              "size": 26484637.08
+            },
+            {
+              "name": "Mexico",
+              "size": 13125056.68
+            },
+            {
+              "name": "Germany",
+              "size": 6759000.85
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 6356682.67
+            },
+            {
+              "name": "Japan",
+              "size": 5630098.49
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 5581527.55
+            },
+            {
+              "name": "Russian Federation",
+              "size": 4667326.05
+            },
+            {
+              "name": "Brazil",
+              "size": 4149444.67
+            },
+            {
+              "name": "Chile",
+              "size": 3250167.13
+            }
+          ]
+        },
+        {
+          "name": "Mach and Elec",
+          "children": [
+            {
+              "name": "China",
+              "size": 275046547.7
+            },
+            {
+              "name": "Mexico",
+              "size": 127521809.0
+            },
+            {
+              "name": "Japan",
+              "size": 49646149.5
+            },
+            {
+              "name": "Germany",
+              "size": 36599945.39
+            },
+            {
+              "name": "Canada",
+              "size": 31444820.29
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 29667121.34
+            },
+            {
+              "name": "Malaysia",
+              "size": 29549738.38
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 24344712.52
+            },
+            {
+              "name": "Thailand",
+              "size": 16119811.11
+            },
+            {
+              "name": "Vietnam",
+              "size": 14005686.38
+            }
+          ]
+        },
+        {
+          "name": "Transportation",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 95694338.52
+            },
+            {
+              "name": "Canada",
+              "size": 59712514.7
+            },
+            {
+              "name": "Japan",
+              "size": 56838860.39
+            },
+            {
+              "name": "Germany",
+              "size": 28463229.29
+            },
+            {
+              "name": "China",
+              "size": 20271284.24
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 19657169.02
+            },
+            {
+              "name": "United Kingdom",
+              "size": 13107245.59
+            },
+            {
+              "name": "Italy",
+              "size": 8388404.12
+            },
+            {
+              "name": "France",
+              "size": 7210505.22
+            },
+            {
+              "name": "Brazil",
+              "size": 3240167.68
+            }
+          ]
+        },
+        {
+          "name": "Miscellaneous",
+          "children": [
+            {
+              "name": "China",
+              "size": 91648624.33
+            },
+            {
+              "name": "Mexico",
+              "size": 37188651.05
+            },
+            {
+              "name": "Canada",
+              "size": 27763273.56
+            },
+            {
+              "name": "Germany",
+              "size": 20143447.68
+            },
+            {
+              "name": "Japan",
+              "size": 14693702.34
+            },
+            {
+              "name": "Switzerland",
+              "size": 13554689.14
+            },
+            {
+              "name": "United Kingdom",
+              "size": 13182504.92
+            },
+            {
+              "name": "Ireland",
+              "size": 12515911.44
+            },
+            {
+              "name": "France",
+              "size": 10913764.34
+            },
+            {
+              "name": "Vietnam",
+              "size": 7437274.6
+            }
+          ]
+        },
+        {
+          "name": "Agricultural Raw Materials",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 9480875.89
+            },
+            {
+              "name": "Brazil",
+              "size": 1810521.79
+            },
+            {
+              "name": "China",
+              "size": 1432715.58
+            },
+            {
+              "name": "Indonesia",
+              "size": 1144731.36
+            },
+            {
+              "name": "Colombia",
+              "size": 977048.72
+            },
+            {
+              "name": "Germany",
+              "size": 650830.73
+            },
+            {
+              "name": "Thailand",
+              "size": 505537.12
+            },
+            {
+              "name": "India",
+              "size": 499406.65
+            },
+            {
+              "name": "Netherlands",
+              "size": 395062.38
+            },
+            {
+              "name": "Ecuador",
+              "size": 373685.21
+            }
+          ]
+        },
+        {
+          "name": "Food",
+          "children": [
+            {
+              "name": "Mexico",
+              "size": 28764025.42
+            },
+            {
+              "name": "Canada",
+              "size": 26380874.15
+            },
+            {
+              "name": "China",
+              "size": 6991460.49
+            },
+            {
+              "name": "France",
+              "size": 6097989.18
+            },
+            {
+              "name": "Chile",
+              "size": 5672733.21
+            },
+            {
+              "name": "Italy",
+              "size": 5381096.97
+            },
+            {
+              "name": "Indonesia",
+              "size": 4610791.26
+            },
+            {
+              "name": "India",
+              "size": 4349816.58
+            },
+            {
+              "name": "Vietnam",
+              "size": 3966810.16
+            },
+            {
+              "name": "Thailand",
+              "size": 3678399.17
+            }
+          ]
+        },
+        {
+          "name": "Manufactures",
+          "children": [
+            {
+              "name": "China",
+              "size": 543893622.9
+            },
+            {
+              "name": "Mexico",
+              "size": 287243890.9
+            },
+            {
+              "name": "Canada",
+              "size": 162403087.1
+            },
+            {
+              "name": "Japan",
+              "size": 138407608.0
+            },
+            {
+              "name": "Germany",
+              "size": 115006722.7
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 69342707.33
+            },
+            {
+              "name": "Ireland",
+              "size": 51258397.09
+            },
+            {
+              "name": "United Kingdom",
+              "size": 47060478.25
+            },
+            {
+              "name": "Italy",
+              "size": 46998259.87
+            },
+            {
+              "name": "India",
+              "size": 46556516.29
+            }
+          ]
+        },
+        {
+          "name": "Ores and Metals",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 17284733.54
+            },
+            {
+              "name": "Mexico",
+              "size": 4615903.57
+            },
+            {
+              "name": "Chile",
+              "size": 3621928.39
+            },
+            {
+              "name": "Germany",
+              "size": 3459660.22
+            },
+            {
+              "name": "South Africa",
+              "size": 3373540.2
+            },
+            {
+              "name": "Russian Federation",
+              "size": 2721463.7
+            },
+            {
+              "name": "China",
+              "size": 2654931.96
+            },
+            {
+              "name": "United Arab Emirates",
+              "size": 1609905.26
+            },
+            {
+              "name": "Brazil",
+              "size": 1470426.25
+            },
+            {
+              "name": "Japan",
+              "size": 1390823.8
+            }
+          ]
+        },
+        {
+          "name": "Textiles",
+          "children": [
+            {
+              "name": "China",
+              "size": 46608225.31
+            },
+            {
+              "name": "Vietnam",
+              "size": 13363793.62
+            },
+            {
+              "name": "India",
+              "size": 8694706.81
+            },
+            {
+              "name": "Mexico",
+              "size": 5910292.77
+            },
+            {
+              "name": "Bangladesh",
+              "size": 5883755.71
+            },
+            {
+              "name": "Indonesia",
+              "size": 5092724.64
+            },
+            {
+              "name": "Pakistan",
+              "size": 3164508.53
+            },
+            {
+              "name": "Honduras",
+              "size": 2778921.15
+            },
+            {
+              "name": "Cambodia",
+              "size": 2583513.91
+            },
+            {
+              "name": "Italy",
+              "size": 2518809.53
+            }
+          ]
+        },
+        {
+          "name": "Machinery and Transport Equipment",
+          "children": [
+            {
+              "name": "China",
+              "size": 310324739.7
+            },
+            {
+              "name": "Mexico",
+              "size": 225052669.1
+            },
+            {
+              "name": "Japan",
+              "size": 109675589.8
+            },
+            {
+              "name": "Canada",
+              "size": 91676103.75
+            },
+            {
+              "name": "Germany",
+              "size": 68010489.11
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 49907936.52
+            },
+            {
+              "name": "Malaysia",
+              "size": 29999546.47
+            },
+            {
+              "name": "Other Asia, nes",
+              "size": 27963251.8
+            },
+            {
+              "name": "United Kingdom",
+              "size": 25873214.48
+            },
+            {
+              "name": "Italy",
+              "size": 21553649.53
+            }
+          ]
+        },
+        {
+          "name": "Raw materials",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 80166531.56
+            },
+            {
+              "name": "Mexico",
+              "size": 33357307.79
+            },
+            {
+              "name": "Saudi Arabia",
+              "size": 21933176.58
+            },
+            {
+              "name": "Iraq",
+              "size": 12063427.85
+            },
+            {
+              "name": "Venezuela",
+              "size": 10766723.08
+            },
+            {
+              "name": "Colombia",
+              "size": 8403384.28
+            },
+            {
+              "name": "Brazil",
+              "size": 6182784.41
+            },
+            {
+              "name": "Ecuador",
+              "size": 5636363.87
+            },
+            {
+              "name": "Nigeria",
+              "size": 5192343.33
+            },
+            {
+              "name": "Chile",
+              "size": 5107075.13
+            }
+          ]
+        },
+        {
+          "name": "Intermediate goods",
+          "children": [
+            {
+              "name": "Canada",
+              "size": 66544697.07
+            },
+            {
+              "name": "China",
+              "size": 40923296.13
+            },
+            {
+              "name": "Ireland",
+              "size": 30838977.92
+            },
+            {
+              "name": "Mexico",
+              "size": 28324354.33
+            },
+            {
+              "name": "Germany",
+              "size": 24063951.88
+            },
+            {
+              "name": "Japan",
+              "size": 17329442.85
+            },
+            {
+              "name": "India",
+              "size": 17187273.23
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 13467716.76
+            },
+            {
+              "name": "Brazil",
+              "size": 10577735.4
+            },
+            {
+              "name": "Israel",
+              "size": 10011631.57
+            }
+          ]
+        },
+        {
+          "name": "Consumer goods",
+          "children": [
+            {
+              "name": "China",
+              "size": 243324826.9
+            },
+            {
+              "name": "Mexico",
+              "size": 102575555.7
+            },
+            {
+              "name": "Canada",
+              "size": 102203160.7
+            },
+            {
+              "name": "Japan",
+              "size": 58984441.44
+            },
+            {
+              "name": "Germany",
+              "size": 40678665.28
+            },
+            {
+              "name": "Vietnam",
+              "size": 31330125.94
+            },
+            {
+              "name": "Italy",
+              "size": 29141796.5
+            },
+            {
+              "name": "India",
+              "size": 27317964.78
+            },
+            {
+              "name": "Korea, Rep.",
+              "size": 27058538.78
+            },
+            {
+              "name": "United Kingdom",
+              "size": 25374958.28
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
