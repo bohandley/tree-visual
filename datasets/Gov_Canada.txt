@@ -1,5 +1,6 @@
 {
   "name":"Canada",
+  "source": "https://www.canada.ca/en/government/system/how-government-works/structure.html",
   "children":[
     {
       "name":"Federal Government",

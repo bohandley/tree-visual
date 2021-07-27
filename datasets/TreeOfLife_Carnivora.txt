@@ -1,5 +1,6 @@
 {
 	"name": "Carnivora",
+	"source": "https://tree.opentreeoflife.org/opentree/opentree13.4@ott44565/Carnivora",
 	"children": [
 		{
 			"name":"Canidae",

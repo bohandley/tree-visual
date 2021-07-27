@@ -69,8 +69,8 @@ function draw_collapsible_tree(position) {
             });
 
         var diagonal = d3v3.svg.diagonal.radial().projection(function (d) {
-        		//if(!d.x)
-        		//	d.x = 0 
+        		if(!d.x)
+        			d.x = 0 
 
             return [d.y, (d.x / 180) * Math.PI];
         });
@@ -166,8 +166,8 @@ function draw_collapsible_tree(position) {
                 .transition()
                 .duration(duration)
                 .attr("transform", function (d) {
-                	//if(!d.x)
-                	//	d.x = 90;
+                	if(!d.x)
+                		d.x = 90;
 
                     return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
                 });
