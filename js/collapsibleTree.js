@@ -62,7 +62,10 @@ function draw_collapsible_tree(position) {
             .tree()
             .size([360, 300])
             .separation(function (a, b) {
-                return (a.parent == b.parent ? 1 : 10) / a.depth;
+                if(a.depth > 0)
+                    return (a.parent == b.parent ? 1 : 10) / a.depth;
+                else
+                    return (a.parent == b.parent ? 1 : 10);
             });
 
         var diagonal = d3v3.svg.diagonal.radial().projection(function (d) {
