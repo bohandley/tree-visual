@@ -27,7 +27,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 
 	const hideG2Elements = () => {
 		// hide the container
-		$("#g2-div").css("border", "none")
+		$("#g2-div").css("border", "none");
 
 		$("#g2-div").html();
 
@@ -139,6 +139,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			if(i == total) {
 				$("#bNext").hide();
 				$("#bSubmit").show();
+				// TODO: Add a "congratulation page"
 			}
 		});	
 	}
