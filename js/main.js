@@ -185,17 +185,13 @@ function updateDataTypeAndFileName() {
         .attr('data', d => d.data)
         .text(d => d.name);
     
-    let initialSelected = d3.select('#dataDropdown').select('option');
-    initialSelected.attr('selected', 'selected');
+    if(MODE == "Study"){
+        let initialSelected = d3.select('#dataDropdown').select('option');
+        initialSelected.attr('selected', 'selected');
 
-    let selectedDataType = initialSelected.attr('data');
-    let selectedDataValue = initialSelected.attr('value');
+        updateDataset();
 
-    menu.updateConfig("dataType", selectedDataType);
-    treeLib.displayedNode(selectedDataValue);
-    let filename = "datasets/" + selectedDataValue + ".txt";
-    menu.updateConfig("filename", filename);
-    menu.dataFilterSubset();
+    }   
 
 }
 

@@ -433,7 +433,8 @@ var menu = (function (d3, $) {
         // non selected nodes lower opacity
         // if none selected revert to normal opacity
         collectLeaves("g1", vals);
-        collectLeaves("g2", vals);
+        if(MODE == "Study")
+            collectLeaves("g2", vals);
     }
 
     function collectLeaves(position, vals) {
