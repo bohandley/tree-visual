@@ -62,7 +62,9 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 								</div>
 							</div>`
 
-		$("#graphDiv2").html(el);					
+		$("#graphDiv2").html(el);
+
+
 	}
 
 	const questionOptionInput = (id, type, option) => {
@@ -139,9 +141,16 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			if(i == total) {
 				$("#bNext").hide();
 				$("#bSubmit").show();
-				// TODO: Add a "congratulation page"
 			}
-		});	
+		});
+		$("#bSubmit").on("click", () => {
+			if (!confirm("Ready to submit?"))
+				return;
+			//
+			// Send answers to the backend
+			//
+			window.location.replace("/submitted.html");
+		});
 	}
 
 	const hasBeenAnswered = (q) => {

@@ -316,7 +316,7 @@ const quizQuestions =
                 "The William B Hartsfield Atlan"
             ],
             "tree": {
-                "dataSet": "TreeOfLife_Afrosoricida"
+                "dataSet": "TreeOfLife_Afrosoricida",
                 "layouts": [
                 	"Pack",
                 	"Radial_Tree",
