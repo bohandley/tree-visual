@@ -39,32 +39,50 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 
 	const setupQuestionContainer = () => {
 		let el = `<div class="container" style="padding-top: 20px; padding-left: 30px;">
-								<input id="questionId" value="" type="hidden" style="display: none;" />`+
-									// set the value of the question id here
-								`<p id="questions-counter"></p>
-								<div class="row">
-									<div class="col-md-12" id="questions" style="font-family: arial;">`+
-										// attach questions here
-										// <p>Question text</p>
-										// and
-										// iterate through options or place textarea
-									`</div>
-									<hr/>
-									<div class="col-md-12 d-flex justify-content-center" id="buttons" style="font-family: arial;">`+
-                  	// display the regular button unless last question, then display submitted button
-                  	`<button style="margin-left: 5px; display: none;" type="button" class="btn btn-success float-right" id="bSubmit" aria-disabled="true">
-                  		Submit
-                  	</button>
-                  	<button type="button" class="btn btn-primary float-right" id="bNext" aria-disabled="true">
-                  		Next
-                 		</button>
-                </div>
-								</div>
-							</div>`
+					<input id="questionId" value="" type="hidden" style="display: none;" />`+
+					// set the value of the question id here
+					`<p id="questions-counter"></p>
+					<div class="row">
+						<div class="col-md-12" id="questions" style="font-family: arial;">`+
+							// attach questions here
+							// <p>Question text</p>
+							// and iterate through options or place textarea
+						`</div>
+						<hr/>
+						<div class="col-md-12 d-flex justify-content-center" id="buttons" style="font-family: arial;">`+
+						// display the regular button unless last question, then display submitted button
+							`<button style="margin-left: 5px; display: none;" type="button" class="btn btn-success float-right" id="bSubmit" aria-disabled="true">
+							Submit
+							</button>
+							<button type="button" class="btn btn-primary float-right" id="bNext" aria-disabled="true">
+							Next
+							</button>
+						</div>
+					</div>
+				</div>`
 
 		$("#graphDiv2").html(el);
 
+	}
 
+	const hideGraphInterface = () => {
+		$("#graphDiv1").hide();
+		$("#sidebarInsideDiv").hide();
+		$("#graphInfoDiv").hide();
+		$("#widgetsDiv1").hide();
+		$("#graphsBottomDiv").hide();
+		$("#graphDiv2WithWidgets").prop('class', 'col-lg-12');
+		$("#questions").prop('class', 'offset-md-1 col-md-10');
+	}
+
+	const showGraphInterface = () => {
+		$("#graphDiv2WithWidgets").prop('class', 'col-lg-6 col-md-12')
+		$("#questions").prop('class', 'col-md-12');
+		$("#graphDiv1").show();
+		$("#sidebarInsideDiv").show();
+		$("#graphInfoDiv").show();
+		$("#widgetsDiv1").show();
+		$("#graphsBottomDiv").show();
 	}
 
 	const questionOptionInput = (id, type, option) => {
@@ -100,6 +118,13 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 	}
 
 	const selectLayouts = (q) => {
+
+		if (q.tree.layouts === undefined){
+			hideGraphInterface();
+			return;
+		}
+
+		showGraphInterface();
 		
 		let selected = q.tree.layouts[0];
 
