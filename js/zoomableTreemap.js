@@ -66,12 +66,14 @@ function draw_zoomable_treemap(position) {
 
         sizeToValue(root);
         initialize(root);
-        accumulate(root);
+        // Interesting! Why compute the accumulated size twice?
+        //accumulate(root);
         leafAcc(root);
         sizeAcc(root);
+        childAcc(root);
 
         // change value attribute for each node based on control panel area seletion
-        root = menu.processAccumulated(root, "zoomableTreemap");
+        root = menu.processNodeSize(root, "zoomableTree");
         layout(root);
 
         display(root);
@@ -91,6 +93,8 @@ function draw_zoomable_treemap(position) {
         // treemap layout, but not here because of our custom implementation.
         // We also take a snapshot of the original children (_children) to avoid
         // the children being overwritten when when layout is computed.
+        //
+        // Update: this function is no longer called
         function accumulate(d) {
             return (d._children = d.children)
                 ? (d.value = d.children.reduce(function (p, v) {
@@ -111,10 +115,21 @@ function draw_zoomable_treemap(position) {
         // aggregate the number of leaves within each node
         function leafAcc(d) {
             return (d._children = d.children)
-                ? (d.lvs = d.children.reduce(function (p, v) {
-                      return p.concat(leafAcc(v));
-                  }, []))
-                : [d];
+                ? (d.nLeaves = d.children.reduce(function (p, v) {
+                      return p + leafAcc(v);
+                  }, 0))
+                : (d.nLeaves = 1);
+        }
+
+        // Compute # of children
+        function childAcc(d) {
+            if (d.children){
+                d.nChildren = d.children.length;
+                d.children.forEach(childAcc);
+            }
+            else{
+                d.nChildren = 0;
+            }
         }
 
         // Compute the treemap layout recursively such that each group of siblings
@@ -200,12 +215,7 @@ function draw_zoomable_treemap(position) {
                 .attr("class", "parent")
                 .on("mouseover", (d) => treeLib.mouseoverLinking(position1, position2, d))
                 .on("mouseout", (d) => treeLib.mouseoutLinking(position1, position2, d))
-                .call(rect)
-                .append("title")
-                .text((d) => {
-                    
-                    return d.name + "\n" + menu.dataNodeSizeText(d.accSize)
-            });
+                .call(rect);
 
             g.append("text")
                 .attr("dy", ".75em")
@@ -371,7 +381,7 @@ function draw_zoomable_treemap(position) {
         function rect(rect) {
             rect.attr("x", function (d) {
                 return x(d.x);
-            })
+                })
                 .attr("y", function (d) {
                     return y(d.y);
                 })

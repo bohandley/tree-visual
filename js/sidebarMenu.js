@@ -57,10 +57,17 @@ var menu = (function (d3, $) {
             treeoflife: (filtered, total) => `Number of subspecies in taxonomy (displayed / total): ${addCommas(filtered)} / ${addCommas(total)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataNodeSizeText: {
-            author: (filtered) => `Number of citations: ${addCommas(filtered)}`,
-            government: (filtered) => `Number of employees ${addCommas(filtered)}`, // no employee data available
-            trade: (filtered) => `Number of USD (Million): ${divideByThous(filtered)}`,
-            treeoflife: (filtered) => `Number of subspecies in taxonomy: ${addCommas(filtered)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
+            author: (accSize, nLeaves, nChildren) => 
+                `Number of papers: ${addCommas(nLeaves)}\n` +
+                `Number of citations: ${addCommas(accSize)}`,
+            government: (accSize, nLeaves, nChildren) => 
+                `Number of branches: ${addCommas(nChildren)}\n` +
+                `Number of employees: ${addCommas(accSize)}`,
+            trade: (accSize, nLeaves, nChildren) => 
+                `Number of USD (Million): ${divideByThous(accSize)}`,
+            treeoflife: (accSize, nLeaves, nChildren) => 
+                `Number of species in taxonomy: ${addCommas(nLeaves)}\n` +
+                `Number of subspecies in taxonomy: ${addCommas(accSize)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataInfoTypes: {
             author: { size: "# Citations", leaves: "# Papers" },
@@ -283,6 +290,8 @@ var menu = (function (d3, $) {
         document.getElementById("treeSource").innerHTML = config.dataDescription[dataType].source(root);
     }
 
+    // This function is no longer used
+    // Please use processNodeSize
     function processAccumulated(root, type = null) {
         var acc = config.accumulated;
 
@@ -753,8 +762,9 @@ var menu = (function (d3, $) {
             return config.dataInfoLeavesText[config.dataType](value);
         },
 
-        dataNodeSizeText: function (value) {
-            return config.dataNodeSizeText[config.dataType](value);
+        dataNodeSizeText: function (node) {
+            dataNodeSizeTextFunc = config.dataNodeSizeText[config.dataType];
+            return dataNodeSizeTextFunc(node.accSize, node.nLeaves, node.nChildren);
         },
 
         updateAccumulated: function (acc) {
@@ -767,6 +777,48 @@ var menu = (function (d3, $) {
 
         processAccumulated: function (root, type = null) {
             return processAccumulated(root, type);
+        },
+
+        processNodeSize: function(root, type = null){
+            let acc = config.accumulated;
+
+            if (type != null){
+                // Please don't directly compare strings -- very time consuming!
+                // Using an int to indicate the mode. Way faster.
+                if (acc == "size"){
+                    this.processNodeSizeZT(root, 0);
+                }
+                else if (acc == "leaves"){
+                    this.processNodeSizeZT(root, 1);
+                }
+                return root;
+            }
+
+            if (acc == "leaves"){
+                root.each(el => (el.value = el.nLeaves));
+            }
+            else if (acc == "size"){
+                root.each(el => (el.value = el.accSize));
+            }
+            return root;
+        },
+
+        processNodeSizeZT: function(root, nodeSizeNum){
+            // nodeSizeNum=0: node size by accumulated size
+            // nodeSizeNum=1: node size by # of leaves
+            // Don't compare strings
+
+            if (nodeSizeNum == 0){
+                root.value = root.accSize;
+            }
+            else if (nodeSizeNum == 1){
+                root.value = root.nLeaves;
+            }
+            if (root.children){
+                for(let i = 0; i < root.children.length; ++i){
+                    this.processNodeSizeZT(root.children[i], nodeSizeNum);
+                }
+            }
         },
 
         dataTypeSpanText: function () {

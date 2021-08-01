@@ -121,6 +121,22 @@ var treeLib = (function (d3) {
         container.exposedIds = idsForRestr;
     }
 
+    function newline(id) {
+        var idLen = id.split(".").length;
+        var pathEls = id.split(".");
+
+        var newId = pathEls.map(function(el,idx){
+            // check the end, some leaves end with '.'
+            // don't add the => for the last element
+            if (idx == idLen - 1 || pathEls[idx + 1] == '')
+                return el;
+            else
+                return el + " => ";
+        }).join("");
+
+        return newId;
+    }
+
     // create a path to use as a class
     // clean the names?
     function createPathId(node, containerId, clean=1) {
@@ -1189,6 +1205,7 @@ var treeLib = (function (d3) {
         config.containers.forEach((cont) => (cont.lastClickedType = type));
     }
 
+    // Why linking?
     function mouseoverLinking(position1, position2, d, isgr = 0) {
         let first = getOtherGraphType(position1),
             second = getOtherGraphType(position2),
@@ -1293,6 +1310,10 @@ var treeLib = (function (d3) {
 
     function mouseoverZT(first, second, position1Id, position2Id, d, isgr) {
         if (first == "Zoomable_Treemap") {
+
+            if (position1Id == "g1" || position1Id == "g2")
+                return;
+                
             if (d == null || isgr) {
                 //( el1 == ".grandparent" )
                 var p1IdMod = "#" + position1Id + ".grandparent";
@@ -1318,6 +1339,12 @@ var treeLib = (function (d3) {
                     .style("cursor", "pointer");
             }
 
+            d3.select("#" + position1Id)
+                .append("title")
+                .text(d => {
+                    return d.name + "\n" + menu.dataNodeSizeText(d);
+                });
+
             otherMouseoverResponse(second, position2Id);
         }
     }
@@ -1325,6 +1352,10 @@ var treeLib = (function (d3) {
     function mouseoutZT(first, second, position1Id, position2Id, d, isgr) {
 
         if (first == "Zoomable_Treemap") {
+
+            if(position1Id == "g1" || position1Id == "g2")
+                return;
+
             if (d == null || isgr) {
                 //(el1 == ".grandparent"){
                 var p1IdMod = "#" + position1Id + ".grandparent";
@@ -1343,6 +1374,10 @@ var treeLib = (function (d3) {
                     .style("stroke", "white")
                     .style("stroke-width", 0.5);
             }
+
+            d3.select("#" + position1Id)
+                .select("title")
+                .remove();
 
             otherMouseoutResponse(second, position2Id);
         }
@@ -1387,12 +1422,12 @@ var treeLib = (function (d3) {
             .style("stroke", "black")
             .style("stroke-width", 1.5)
             .style("cursor", "pointer");
-
+        
         d3.select("#" + position2Id)
             .append("title")
             .text((d) => {
                 var name = d.data.name;
-                var size = menu.dataNodeSizeText(d.accSize);
+                var size = menu.dataNodeSizeText(d);
                 return name + "\n" + size;
         });
     }
@@ -1401,6 +1436,10 @@ var treeLib = (function (d3) {
         d3.select("#" + position2Id)
             .style("stroke", "white")
             .style("stroke-width", 1);
+
+        d3.select("#" + position2Id)
+            .select("title")
+            .remove();
     }
 
     function sunburstResponseMOver(position2Id) {
@@ -1408,12 +1447,22 @@ var treeLib = (function (d3) {
             .style("stroke", "black")
             .style("stroke-width", 1.5)
             .style("cursor", "pointer");
+
+        d3.select("#" + position2Id)
+            .append("title")
+            .text(d => {
+                return d.data.name + "\n" + menu.dataNodeSizeText(d);
+            });
     }
 
     function sunburstResponseMOut(position2Id) {
         d3.select("#" + position2Id)
             .style("stroke", "white")
             .style("stroke-width", 0.5);
+        
+        d3.select("#" + position2Id)
+            .select("title")
+            .remove();
     }
 
     function treemapResponseMOver(position2Id) {
@@ -1421,12 +1470,24 @@ var treeLib = (function (d3) {
             .style("stroke", "black")
             .style("stroke-width", 1.5)
             .style("cursor", "pointer");
+
+        d3.select("#" + position2Id)
+            .append("title")
+            .text((d) => {
+                var name = newline(d.data.id);
+                var size = menu.dataNodeSizeText(d);
+                return name + "\n" + size;
+        });
     }
 
     function treemapResponseMOut(position2Id) {
         d3.select("#" + position2Id)
             .style("stroke", "white")
             .style("stroke-width", 0.1);
+
+        d3.select("#" + position2Id)
+            .select("title")
+            .remove();
     }
 
     function radialTreeResponseMOver(position2Id) {
@@ -1450,7 +1511,7 @@ var treeLib = (function (d3) {
             .select("circle")
             .append("title")
             .text((d) => {
-                var text = d.data.name + "\n" + menu.dataNodeSizeText(d.accSize)
+                var text = d.data.name + "\n" + menu.dataNodeSizeText(d)
                 return text;
             });
     }
@@ -1465,6 +1526,11 @@ var treeLib = (function (d3) {
             .style("stroke", "#555")
             .attr("stroke-opacity", 0.4)
             .style("stroke-width", 1);
+        
+        d3.select("#" + position2Id)
+            .select("circle")
+            .select("title")
+            .remove();
     }
 
     function collapsibleTreeResponseMOver(position2Id) {
@@ -1489,7 +1555,7 @@ var treeLib = (function (d3) {
             .append("title")
             .text(
                 // NEED TO COMPUTE SIZE FOR EACH NODE
-                (d) => d.data.name + "\n" + menu.dataNodeSizeText(d.accSize)
+                (d) => d.data.name + "\n" + menu.dataNodeSizeText(d)
             );
     }
 
@@ -1504,6 +1570,11 @@ var treeLib = (function (d3) {
                 // return 5;
                 return menu.getNodeSize(d, position2Id[1]);
             });
+        
+        d3.select("#" + position2Id)
+            .select("circle")
+            .select("title")
+            .remove();
     }
 
     function zoomableTreeResponseMOver(position2Id, removeNodeForZT = 0) {
@@ -1823,6 +1894,14 @@ var treeLib = (function (d3) {
 
         preserveAccSize: function (root) {
             return root.each((el) => (el.accSize = el.value));
+        },
+
+        computeNodeFeatures: function (root){
+            // Compute accSize, # of leaves, # of children
+            root.sum(d => d.size).each(el => (el.accSize = el.value));
+            root.count().each(el => (el.nLeaves = el.value));
+            root.each(el => (el.nChildren = el.children? el.children.length : 0));
+            return root;
         },
 
         getNodeDisplayName: getNodeDisplayName,
