@@ -4,50 +4,77 @@ treeLib.buildConfig(["g1", "g2"]);
 // global variable for dataset, passed to all d3 generators in the future
 var dataGlobal,
     leavesGlobals,
-    dataFilterSubsetGlobal;
+    dataFilterSubsetGlobal;;
+
 let MODE = "Study";
 
-if (confirm("Would you like to take the mock quiz?"))
-    MODE = 'Mock Quiz';
-
-// const MODE = 'Assessment';
-
 $(document).ready(function () {
+	
+	// show the modal to decide on the quiz
+	$("#quizModal").modal("show");
 
-    updateDataTypeAndFileName();
-        
-    menu.setupCheckBoxes();
+	// hide quiz for no
+	$("#study-mode").on("click", function(){
+		$("#quizModal").modal("hide");
+	});
 
-    setupSliderValueTooltip();
+	// if user decides to take quiz
+	$("#take-quiz").on("click", function(){
+		// quiz user data
+		let userEmailAddress = $("#user-email-address").val(),
+			userId = $("#user-id").val(),
+			userLevel = $("#user-level").val();
 
-    setupToolTips();
+		if(!userEmailAddress || !userId || !userLevel){
+			alert("Please complete the quiz information before continuing.");
+			return;
+		}
 
-    setupOnboarding();
+		$("#quizModal").modal("hide");
 
-    if (MODE == "Mock Quiz") {
-        mockQuiz.hideDataSelect();
-        mockQuiz.hideG2Elements();
-        mockQuiz.setupQuestionContainer();
-        // updateDataSelect
-        mockQuiz.moveDescribeDiv();
-        mockQuiz.runQuiz(quizQuestions.questions);
-    }
-    // after the dataFilterSubset has completed, the spc event is called
-    $(document).on("spc", function (e) {
-        addSelectpickerTitles();
+		MODE = 'Mock Quiz';
+		
+    mockQuiz.hideDataSelect();
+    mockQuiz.hideG2Elements();
+    mockQuiz.setupQuestionContainer();
+    mockQuiz.moveDescribeDiv();
+    mockQuiz.runQuiz(quizQuestions, userEmailAddress, userId, userLevel);
+	});
 
-        setupFilterEvent();
+  updateDataTypeAndFileName();
+      
+  menu.setupCheckBoxes();
 
-        menu.changeDataset(1);
+  setupSliderValueTooltip();
 
-        menu.dataTypeSpanText();
+  setupToolTips();
 
-        loadVisualization("1");
+  setupOnboarding();
 
-        
-        loadVisualization("2");
+  // if (MODE == "Mock Quiz") {
+  //     mockQuiz.hideDataSelect();
+  //     mockQuiz.hideG2Elements();
+  //     mockQuiz.setupQuestionContainer();
+  //     // updateDataSelect
+  //     mockQuiz.moveDescribeDiv();
+  //     mockQuiz.runQuiz(quizQuestions.questions);
+  // }
+  // after the dataFilterSubset has completed, the spc event is called
+  $(document).on("spc", function (e) {
+      addSelectpickerTitles();
 
-    });
+      setupFilterEvent();
+
+      menu.changeDataset(1);
+
+      menu.dataTypeSpanText();
+
+      loadVisualization("1");
+
+      
+      loadVisualization("2");
+
+  });
 });
 
 function setupOnboarding() {

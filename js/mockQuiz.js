@@ -113,21 +113,61 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		});
 	}
 
-	const runQuiz = (questions) => {
+	const runQuiz = (quizQuestions, userEmailAddress, userId, userLevel) => {
+		let questions = quizQuestions.questions,
+			quizId = quizQuestions.quizId,
+			questionStartTime = (new Date()).getTime();
+
 		let total = questions.length;
-		// questions.forEach(q => {
 		let i = 0;
 		let q = questions[i];
 		
 		attachQuestionHtml(q, total);
+		
 		// change the dataSets in quizQuestions
 		updateDataSelect(q);
 		selectLayouts(q);
+		// iterate to the next question
 		i++;
 		$("#bNext").on("click", () => {
 			// check that an answer has been selected or typed
 			if (!hasBeenAnswered(q) && !confirm("The question has not been answered. Proceed anyway?"))
 				return
+
+			// if the question was answered, get the end time and send to backend
+			let questionEndTime = (new Date()).getTime();
+
+			let questionTime = (questionEndTime - questionStartTime)/1000,
+				questionNumber = q.id,
+				questionText = q.text,
+				questionAnswer = q.answer,
+				userSubmission;
+
+			if(q.type == 'radio') {
+				userSubmission = $('input:checked').val();
+			} else {
+				userSubmission = $('textarea').val();
+			}
+
+			console.log('quizId: ' + quizId);
+			console.log('questionText: ' + questionText);
+			console.log('questionAnswer: ' + questionAnswer);
+			console.log('questionNumber: ' + questionNumber);
+			console.log('userEmailAddress: ' + userEmailAddress);
+			console.log('userId: ' + userId);
+			console.log('userLevel: ' + userLevel);
+			console.log('questionTime: ' + questionTime);
+			console.log('userSubmission: ' + userSubmission);
+			console.log('---------');
+
+				// - [ ] userId "mimre", 
+				// - [ ] quiz id TRACE(quiz.quizId)
+				// - [ ] questionNumber 
+				// - [ ] submission(s) 
+				// - [ ] question.text  
+				// - [ ] {'time' : timeDiff});
+
+				
 
 			q = questions[i];
 			attachQuestionHtml(q, total);
@@ -136,6 +176,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			selectLayouts(q);
 			i++
 
+			// quiz completed, show the submit button
 			if(i == total) {
 				$("#bNext").hide();
 				$("#bSubmit").show();
