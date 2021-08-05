@@ -176,18 +176,6 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				userSubmission = $('textarea').val();
 			}
 
-		});
-    
-		$("#bSubmit").on("click", () => {
-			if (!confirm("Ready to submit?"))
-				return;
-			//
-			// Send answers to the backend
-			//
-			window.location.replace("/submitted.html");
-		});
-
-
 			console.log('quizId: ' + quizId);
 			console.log('questionText: ' + questionText);
 			console.log('questionAnswer: ' + questionAnswer);
@@ -228,7 +216,16 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			.fail(function() {
 			  alert( "error" );
 			});
-		});	
+		});
+    
+		$("#bSubmit").on("click", () => {
+			if (!confirm("Ready to submit?"))
+				return;
+			//
+			// Send answers to the backend
+			//
+			window.location.replace("/submitted.html");
+		});
 	}
 
 	const hasBeenAnswered = (q) => {
