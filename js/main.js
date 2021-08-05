@@ -41,7 +41,7 @@ $(document).ready(function () {
 			}
 		};
 
-		$.post( "http://localhost:3000/users.json", params, function(data) {
+		$.post( "https://tree-vis-quiz-api.herokuapp.com/users.json", params, function(data) {
   		let questionNumber = 0;
   		if(data.update && data.questions.length > 0) {
   			let qNums = data.questions.map(q => q.question_number).sort();
