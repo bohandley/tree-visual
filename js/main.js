@@ -4,50 +4,108 @@ treeLib.buildConfig(["g1", "g2"]);
 // global variable for dataset, passed to all d3 generators in the future
 var dataGlobal,
     leavesGlobals,
-    dataFilterSubsetGlobal;
+    dataFilterSubsetGlobal;;
+
 let MODE = "Study";
 
-if (confirm("Would you like to take the mock quiz?"))
-    MODE = 'Mock Quiz';
-
-// const MODE = 'Assessment';
-
 $(document).ready(function () {
+	
+	// show the modal to decide on the quiz
+	$("#quizModal").modal("show");
 
-    updateDataTypeAndFileName();
-        
-    menu.setupCheckBoxes();
+	// hide quiz for no
+	$("#study-mode").on("click", function(){
+		$("#quizModal").modal("hide");
+	});
 
-    setupSliderValueTooltip();
+	// if user decides to take quiz
+	$("#take-quiz").on("click", function(){
+		// quiz user data
+		let userEmailAddress = $("#user-email-address").val(),
+			userId = $("#user-id").val(),
+			userLevel = $("#user-level").val();
 
-    setupToolTips();
+		if(!userEmailAddress || !userId || !userLevel){
+			alert("Please complete the quiz information before continuing.");
+			return;
+		}
 
-    setupOnboarding();
+		// api call to backend to store userId, userLevel, userEmail address
+		// if user has already tried to take the quiz, return the question they 
+		// most recently completed
+		let params = {
+			user: {
+				user_name: userId,
+				user_level: userLevel,
+				email_address: userEmailAddress
+			}
+		};
 
-    if (MODE == "Mock Quiz") {
-        mockQuiz.hideDataSelect();
-        mockQuiz.hideG2Elements();
-        mockQuiz.setupQuestionContainer();
-        // updateDataSelect
-        mockQuiz.moveDescribeDiv();
-        mockQuiz.runQuiz(quizQuestions.questions);
-    }
-    // after the dataFilterSubset has completed, the spc event is called
-    $(document).on("spc", function (e) {
-        addSelectpickerTitles();
+		$.post( "https://tree-vis-quiz-api.herokuapp.com/users.json", params, function(data) {
+  		let questionNumber = 0;
+  		if(data.update && data.questions.length > 0) {
+  			let qNums = data.questions.map(q => q.question_number).sort();
+  			questionNumber = qNums[qNums.length - 1];
+  		}
 
-        setupFilterEvent();
+  		$("#quizModal").modal("hide");
 
-        menu.changeDataset(1);
+			MODE = 'Mock Quiz';
+			
+	    mockQuiz.hideDataSelect();
+	    mockQuiz.hideG2Elements();
+	    mockQuiz.setupQuestionContainer();
+	    mockQuiz.moveDescribeDiv();
+	    mockQuiz.runQuiz(quizQuestions, userEmailAddress, userId, userLevel, questionNumber);
+		})
+	  .fail(function() {
+	    alert( "error" );
+	  })
+	  .always(function() {
+	    // what to do here...
+	  });
 
-        menu.dataTypeSpanText();
 
-        loadVisualization("1");
+	});
 
-        
-        loadVisualization("2");
+  updateDataTypeAndFileName();
+      
+  menu.setupCheckBoxes();
 
-    });
+  setupSliderValueTooltip();
+
+  setupToolTips();
+
+  // only load the onboarding if user chooses study mode
+  // and has not seen the onboarding before
+	$("#study-mode").on("click", function(){
+		setupOnboarding();
+	});
+
+  // if (MODE == "Mock Quiz") {
+  //     mockQuiz.hideDataSelect();
+  //     mockQuiz.hideG2Elements();
+  //     mockQuiz.setupQuestionContainer();
+  //     // updateDataSelect
+  //     mockQuiz.moveDescribeDiv();
+  //     mockQuiz.runQuiz(quizQuestions.questions);
+  // }
+  // after the dataFilterSubset has completed, the spc event is called
+  $(document).on("spc", function (e) {
+      addSelectpickerTitles();
+
+      setupFilterEvent();
+
+      menu.changeDataset(1);
+
+      menu.dataTypeSpanText();
+
+      loadVisualization("1");
+
+      
+      loadVisualization("2");
+
+  });
 });
 
 function setupOnboarding() {

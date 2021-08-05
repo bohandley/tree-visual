@@ -561,6 +561,16 @@ ADD TIME WITH THE UNDERGRADS AND ALL CODING WORK
   Meet with Yuheng
   1 hour
 
+7/20/21
+  Meet with Yuheng
+  code review
+  2 hours
+
+7/26/21
+  code review
+  begin building api params for quiz backend
+  7:00pm-11:30pm
+
 NEXT(as of 7/14/2020)
   - New Features Needed
     - dataset filtering: create multiselects for each level(not leaves)

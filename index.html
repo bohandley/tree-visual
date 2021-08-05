@@ -434,6 +434,56 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Would you like to take the quiz?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                    <div class="col-3">
+                        <label>Email:</label>    
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="user-email-address" class="form-control"/>    
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-3">
+                        <label>User id:</label>    
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="user-id" class="form-control"/>    
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-3">
+                        <label>Level:</label>    
+                    </div>
+                    <div class="col-9">
+                        <select  id="user-level" class="form-control">
+                            <option value="">Select a level</option>
+                            <option value="UG">Undergraduate</option>
+                            <option value="G">Graduate</option>
+                            <option value="P">Professional</option>
+                        </select>
+                    </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="study-mode" class="btn btn-secondary" data-dismiss="modal">No, thank you</button>
+                <button type="button" id="take-quiz" class="btn btn-primary">Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </body>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->

@@ -4,6 +4,19 @@
 
 ### May/June/July
 
+questions: 
+	show children and accum size in tooltip? 
+		show the number of children(i.e. papers) only show for the non leaf nodes
+	Formatting for hyphenated words?
+	tree of life add second source to show pruned data
+		focus on visualization as the priority
+
+	refresh the browser and return to the question that they were on
+		only if they have stored
+			store in cache, like graph visual
+				same user
+
+
 #### Bugs
 - [X] zoomable tree issue with Faloutsos data set having a + character in leaf
 - [X] collapsible tree d.x = NaN on collapsing root
@@ -31,8 +44,19 @@
 	- [ ] an order
 - [ ] accepts an event for each question to click an answer
 - [ ] submit an answer with name and quiz type
-- [ ] has a backend that
-
+- [ ] has a backend that collects data
+	- [ ] information, 
+		- [ ] email address
+		- [ ] login id, netid 
+		- [ ] level, U, G, or P? 
+	- [ ] start time and end time for total time in quiz
+	- [ ] send one answer at a time
+		- [ ] login id "mimre", 
+		- [ ] quiz id TRACE(quiz.quizId)
+		- [ ] questionNumber 
+		- [ ] submission(s) 
+		- [ ] question.text  
+		- [ ] {'time' : timeDiff});
 
 #### Onboarding
 
