@@ -60,10 +60,10 @@ $(document).ready(function () {
 		})
 	  .fail(function() {
 	    alert( "error" );
+	  })
+	  .always(function() {
+	    // what to do here...
 	  });
-	  // .always(function() {
-	  //   alert( "finished" );
-	  // });
 
 
 	});
@@ -76,7 +76,11 @@ $(document).ready(function () {
 
   setupToolTips();
 
-  setupOnboarding();
+  // only load the onboarding if user chooses study mode
+  // and has not seen the onboarding before
+	$("#study-mode").on("click", function(){
+		setupOnboarding();
+	});
 
   // if (MODE == "Mock Quiz") {
   //     mockQuiz.hideDataSelect();
