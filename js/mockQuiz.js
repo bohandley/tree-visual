@@ -113,13 +113,13 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		});
 	}
 
-	const runQuiz = (quizQuestions, userEmailAddress, userId, userLevel) => {
+	const runQuiz = (quizQuestions, userEmailAddress, userId, userLevel, questionNumber) => {
 		let questions = quizQuestions.questions,
 			quizId = quizQuestions.quizId,
 			questionStartTime = (new Date()).getTime();
 
 		let total = questions.length;
-		let i = 0;
+		let i = questionNumber;
 		let q = questions[i];
 		
 		attachQuestionHtml(q, total);
@@ -160,27 +160,35 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			console.log('userSubmission: ' + userSubmission);
 			console.log('---------');
 
-				// - [ ] userId "mimre", 
-				// - [ ] quiz id TRACE(quiz.quizId)
-				// - [ ] questionNumber 
-				// - [ ] submission(s) 
-				// - [ ] question.text  
-				// - [ ] {'time' : timeDiff});
+			let params = {
+				question: {
+					"quiz_id": quizId,
+					"question_text": questionText,
+					"question_answer": questionAnswer,
+					"question_number": questionNumber,
+					"question_time": questionTime,
+					"submission": userSubmission,
+				},
+				"user_name": userId,
+				"user_level": userLevel
+			};
+			$.post( "http://localhost:3000/questions.json", params, function(data) {
+				q = questions[i];
+				attachQuestionHtml(q, total);
+				// change the dataSets in quizQuestions
+				updateDataSelect(q);
+				selectLayouts(q);
+				i++
 
-				
-
-			q = questions[i];
-			attachQuestionHtml(q, total);
-			// change the dataSets in quizQuestions
-			updateDataSelect(q);
-			selectLayouts(q);
-			i++
-
-			// quiz completed, show the submit button
-			if(i == total) {
-				$("#bNext").hide();
-				$("#bSubmit").show();
-			}
+				// quiz completed, show the submit button
+				if(i == total) {
+					$("#bNext").hide();
+					$("#bSubmit").show();
+				}
+			})
+			.fail(function() {
+			  alert( "error" );
+			});
 		});	
 	}
 

@@ -30,15 +30,42 @@ $(document).ready(function () {
 			return;
 		}
 
-		$("#quizModal").modal("hide");
+		// api call to backend to store userId, userLevel, userEmail address
+		// if user has already tried to take the quiz, return the question they 
+		// most recently completed
+		let params = {
+			user: {
+				user_name: userId,
+				user_level: userLevel,
+				email_address: userEmailAddress
+			}
+		};
 
-		MODE = 'Mock Quiz';
-		
-    mockQuiz.hideDataSelect();
-    mockQuiz.hideG2Elements();
-    mockQuiz.setupQuestionContainer();
-    mockQuiz.moveDescribeDiv();
-    mockQuiz.runQuiz(quizQuestions, userEmailAddress, userId, userLevel);
+		$.post( "http://localhost:3000/users.json", params, function(data) {
+  		let questionNumber = 0;
+  		if(data.update && data.questions.length > 0) {
+  			let qNums = data.questions.map(q => q.question_number).sort();
+  			questionNumber = qNums[qNums.length - 1];
+  		}
+
+  		$("#quizModal").modal("hide");
+
+			MODE = 'Mock Quiz';
+			
+	    mockQuiz.hideDataSelect();
+	    mockQuiz.hideG2Elements();
+	    mockQuiz.setupQuestionContainer();
+	    mockQuiz.moveDescribeDiv();
+	    mockQuiz.runQuiz(quizQuestions, userEmailAddress, userId, userLevel, questionNumber);
+		})
+	  .fail(function() {
+	    alert( "error" );
+	  });
+	  // .always(function() {
+	  //   alert( "finished" );
+	  // });
+
+
 	});
 
   updateDataTypeAndFileName();
