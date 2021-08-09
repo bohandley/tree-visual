@@ -31,15 +31,13 @@ function draw_radial_tree(position) {
 
         var tree = d3.cluster().size([2 * Math.PI, radius - 100]);
 
-        var root = tree(d3.hierarchy(data).sort((a, b) => d3.ascending(a.data.name, b.data.name))).sum(function (d) {
-            return d.size;
-        });
+        var root = tree(d3.hierarchy(data).sort((a, b) => d3.ascending(a.data.name, b.data.name)));
 
-        // preserve the accSize for citations
-        root = treeLib.preserveAccSize(root);
+        // compute acc size, # leaves, # children
+        root = treeLib.computeNodeFeatures(root);
 
         // process the value as either leaves or acc size depending on control panel
-        root = menu.processAccumulated(root);
+        root = menu.processNodeSize(root);
 
         treeLib.displaySelectedNode(root);
 

@@ -243,9 +243,6 @@ text {
     border-radius: 5px;
 }
 
-.nodenameHoverContainer
-{}
-
 .nodeNameHover
 {
     position: fixed;
@@ -386,10 +383,6 @@ input, select, .panel-heading
   stroke-width: 1.5px;
 }
 
-.selected-node {
-    /*stroke: gold !important;*/
-}
-
 .hide-tag {
     display: none;
 }
@@ -416,20 +409,21 @@ input, select, .panel-heading
     position: relative;
 }
 
-.btn-group.btn-group-sm.btn-block {
-    /*margin-left: -15px;*/
-}
-
-#treemap-tooltip {
+#tooltip {
     border-radius: 1px;
-    background-color: #f3f2f2;
-    font-size: x-small;
+    background-color: white;
+    font-size: small;
     font-family: Arial;
     padding: 4px 6px;
-    box-shadow: 0 0 5px grey;
+    box-shadow: 0 0 5px gray;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
 }
 
-#treemap-tooltip p {
+#tooltip p {
     margin: 0;
 }
 

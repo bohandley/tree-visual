@@ -39,11 +39,11 @@ function draw_pack(position) {
                 return b.value - a.value;
             });
         
-        // preserve the accSize
-        root = treeLib.preserveAccSize(root);
+        // compute acc size, # leaves, # children
+        root = treeLib.computeNodeFeatures(root);
 
         // process the value as either leaves or acc size depending on control panel
-        root = menu.processAccumulated(root);
+        root = menu.processNodeSize(root);
 
         treeLib.displaySelectedNode(root);
 

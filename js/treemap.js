@@ -32,11 +32,11 @@ function draw_treemap(position, selectindex) {
             .sum((d) => d.size)
             .sort((a, b) => b.height - a.height || b.value - a.value);
 
-        // preserve the accSize for citations
-        root = treeLib.preserveAccSize(root);
+        // compute acc size, # leaves, # children
+        root = treeLib.computeNodeFeatures(root);
 
         // process the value as either leaves or acc size depending on control panel
-        root = menu.processAccumulated(root);
+        root = menu.processNodeSize(root);
 
         treeLib.displaySelectedNode(root);
 
@@ -44,7 +44,7 @@ function draw_treemap(position, selectindex) {
 
         var cell = svg
             .selectAll("g")
-            .data(root.leaves())
+            .data(root.leaves().filter(d => d.value != 0))
             .enter()
             .append("g")
             .attr("transform", (d) => "translate(" + d.x0 + "," + d.y0 + ")");
@@ -70,109 +70,6 @@ function draw_treemap(position, selectindex) {
             .attr("id", (d) => "clip-" + d.data.id)
             .append("use")
             .attr("xlink:href", (d) => "#" + d.data.id);
-
-        // create the custom tooltip to display the whole text
-        d3.select('body')
-            .append('div')
-            .attr('id', 'treemap-tooltip')
-            .attr('style', 'position: absolute; opacity: 0;');
-
-        let tooltipTimer;
-
-        cell.on('mouseover', function(d) {
-            let treemapTooltip = d3.select('#treemap-tooltip')
-
-            treemapTooltip
-                .style('left', (d3.event.pageX+10) + 'px')
-                .style('top', (d3.event.pageY+10) + 'px')
-
-            let text1 = newline(d.data.id);
-            let text2 = menu.dataNodeSizeText(d.accSize);
-
-            treemapTooltip
-                .append("p")
-                .text(text1);
-
-            treemapTooltip
-                .append("p")
-                .text(text2)
-            
-            tooltipTimer = setTimeout(function(){
-                treemapTooltip
-                .transition()
-                .duration(200)
-                .style('opacity', 1) 
-            }, 1000)
-            
-
-        })
-        .on('mouseout', function() {
-            clearTimeout(tooltipTimer);
-
-            d3.select('#treemap-tooltip')
-                .style('opacity', 0)
-                .html("");
-        })
-        .on('mousemove', function() {
-            // d3.select('#treemap-tooltip')
-            //     .style('left', (d3.event.pageX+10) + 'px')
-            //     .style('top', (d3.event.pageY+10) + 'px')
-        })
-
-        // cell.append("svg:title").text((d) => {
-        //      return newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize)
-        //     })
-        //     .style("width", "1000px");
-
-          // create a tooltip
-    //       var div = d3.select("body").append("div") 
-    // .attr("class", "tooltip")               
-    // .style("opacity", 0);
-    //     let tooltip = cell.append("g")
-    //         .attr("class", "treemap-title")
-    //         .attr("transform", "translate(20,20)")
-    //         .attr("opacity", .9)
-
-    //     let rect = tooltip.append("rect")
-            
-    //         rect.attr("rx", 100)
-    //         .attr("width", 100)
-    //         .attr("height", 100)
-
-
-        // let treemapText = tooltip.append("text")
-
-        // treemapText.text((d) => {
-        //      return newline(d.data.id) + "\n" + menu.dataNodeSizeText(d.accSize)
-        //     })
-        
-        function newline(id) {
-            var storedId = id;
-            var idLen = id.split(".").length;
-            var pathEls = id.split(".");
-
-            var newId = pathEls.map(function(el,idx){
-                // check the end, some leaves end with '.'
-                let fullLength = storedId.split(".").length;
-
-                // don't add the => for the last element
-                if (idx == fullLength - 1 || pathEls[idx + 1] == '')
-                    return el;
-                else
-                    return el + " => ";
-                // var dashLength = idLen - idx;
-                // var dash = "--".repeat(dashLength);
-
-                // if (idx == storedId.split(".").length - 1){
-                //     return dash + " " + el + "\n";
-                // } else {
-                //     return dash + " " + el + "\n | \n";
-                // }
-
-            }).join("");
-
-            return newId;
-        }
 
         d3.select("svg#" + position1).dispatch("doneDrawing");
     });
