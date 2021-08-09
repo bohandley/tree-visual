@@ -71,12 +71,6 @@ function draw_treemap(position, selectindex) {
             .append("use")
             .attr("xlink:href", (d) => "#" + d.data.id);
 
-        // create the custom tooltip to display the whole text
-        d3.select('body')
-            .append('div')
-            .attr('id', 'treemap-tooltip')
-            .attr('style', 'position: absolute; opacity: 0;');
-
         d3.select("svg#" + position1).dispatch("doneDrawing");
     });
 }

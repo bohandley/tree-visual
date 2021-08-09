@@ -58,15 +58,15 @@ var menu = (function (d3, $) {
         },
         dataNodeSizeText: {
             author: (accSize, nLeaves, nChildren) => 
-                `Number of papers: ${addCommas(nLeaves)}\n` +
+                `Number of papers: ${addCommas(nLeaves)}<br>` +
                 `Number of citations: ${addCommas(accSize)}`,
             government: (accSize, nLeaves, nChildren) => 
-                `Number of branches: ${addCommas(nChildren)}\n` +
+                `Number of branches: ${addCommas(nChildren)}<br>` +
                 `Number of employees: ${addCommas(accSize)}`,
             trade: (accSize, nLeaves, nChildren) => 
                 `Number of USD (Million): ${divideByThous(accSize)}`,
             treeoflife: (accSize, nLeaves, nChildren) => 
-                `Number of species in taxonomy: ${addCommas(nLeaves)}\n` +
+                `Number of species in taxonomy: ${addCommas(nLeaves)}<br>` +
                 `Number of subspecies in taxonomy: ${addCommas(accSize)}`, // Tips: the actual leafs in this branch (Since the tree is trimmed, actual leafs are a lot more than current leafs)
         },
         dataInfoTypes: {

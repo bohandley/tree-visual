@@ -1205,7 +1205,32 @@ var treeLib = (function (d3) {
         config.containers.forEach((cont) => (cont.lastClickedType = type));
     }
 
-    // Why linking?
+    function showToolTip(texts, isd3v3 = false) {
+        let tooltip = d3.select('#tooltip');
+        tooltip.style('opacity', 1);
+
+        let innerText = "";
+        for(let i = 0; i < texts.length; ++i)
+            innerText += `<p>${texts[i]}</p>`;
+        
+        tooltip.html(innerText);
+
+        if (isd3v3) {
+            tooltip.style('left', (d3v3.event.pageX+10) + 'px')
+                .style('top', (d3v3.event.pageY+10) + 'px')
+        }
+        else {
+            tooltip.style('left', (d3.event.pageX+10) + 'px')
+                .style('top', (d3.event.pageY+10) + 'px')
+        }
+       
+    }
+
+    function hideToolTip() {
+        let tooltip = d3.select('#tooltip');
+        tooltip.style('opacity', 0);
+    }
+
     function mouseoverLinking(position1, position2, d, isgr = 0) {
         let first = getOtherGraphType(position1),
             second = getOtherGraphType(position2),
@@ -1254,56 +1279,56 @@ var treeLib = (function (d3) {
 
     function mouseoverCT(first, second, position1Id, position2Id) {
         if (first == "Collapsible_Tree") {
-            collapsibleTreeResponseMOver(position1Id);
+            collapsibleTreeResponseMOver(position1Id, true);
             otherMouseoverResponse(second, position2Id);
         }
     }
 
     function mouseoutCT(first, second, position1Id, position2Id) {
         if (first == "Collapsible_Tree") {
-            collapsibleTreeResponseMOut(position1Id);
+            collapsibleTreeResponseMOut(position1Id, true);
             otherMouseoutResponse(second, position2Id);
         }
     }
 
     function mouseoverRT(first, second, position1Id, position2Id) {
         if (first == "Radial_Tree") {
-            radialTreeResponseMOver(position1Id);
+            radialTreeResponseMOver(position1Id, true);
             otherMouseoverResponse(second, position2Id);
         }
     }
 
     function mouseoutRT(first, second, position1Id, position2Id) {
         if (first == "Radial_Tree") {
-            radialTreeResponseMOut(position1Id);
+            radialTreeResponseMOut(position1Id, true);
             otherMouseoutResponse(second, position2Id);
         }
     }
 
     function mouseoverPack(first, second, position1Id, position2Id) {
         if (first == "Pack") {
-            packResponseMOver(position1Id);
+            packResponseMOver(position1Id, true);
             otherMouseoverResponse(second, position2Id);
         }
     }
 
     function mouseoutPack(first, second, position1Id, position2Id) {
         if (first == "Pack") {
-            packResponseMOut(position1Id);
+            packResponseMOut(position1Id, true);
             otherMouseoutResponse(second, position2Id);
         }
     }
 
     function mouseoverTreemap(first, second, position1Id, position2Id) {
         if (first == "Treemap") {
-            treemapResponseMOver(position1Id);
+            treemapResponseMOver(position1Id, true);
             otherMouseoverResponse(second, position2Id);
         }
     }
 
     function mouseoutTreemap(first, second, position1Id, position2Id) {
         if (first == "Treemap") {
-            treemapResponseMOut(position1Id);
+            treemapResponseMOut(position1Id, true);
             otherMouseoutResponse(second, position2Id);
         }
     }
@@ -1339,11 +1364,11 @@ var treeLib = (function (d3) {
                     .style("cursor", "pointer");
             }
 
-            d3.select("#" + position1Id)
-                .append("title")
-                .text(d => {
-                    return d.name + "\n" + menu.dataNodeSizeText(d);
-                });
+            let selectedCell = d3.select("#" + position1Id);
+            let selectedData = selectedCell.data()[0];
+            let name = newline(selectedData.name);
+            let size = menu.dataNodeSizeText(selectedData);
+            showToolTip([name, size], true);
 
             otherMouseoverResponse(second, position2Id);
         }
@@ -1375,9 +1400,7 @@ var treeLib = (function (d3) {
                     .style("stroke-width", 0.5);
             }
 
-            d3.select("#" + position1Id)
-                .select("title")
-                .remove();
+            hideToolTip();
 
             otherMouseoutResponse(second, position2Id);
         }
@@ -1385,14 +1408,14 @@ var treeLib = (function (d3) {
 
     function mouseoverSunburst(first, second, position1Id, position2Id) {
         if (first == "Sunburst") {
-            sunburstResponseMOver(position1Id);
+            sunburstResponseMOver(position1Id, true);
             otherMouseoverResponse(second, position2Id);
         }
     }
 
     function mouseoutSunburst(first, second, position1Id, position2Id) {
         if (first == "Sunburst") {
-            sunburstResponseMOut(position1Id);
+            sunburstResponseMOut(position1Id, true);
             otherMouseoutResponse(second, position2Id);
         }
     }
@@ -1415,86 +1438,84 @@ var treeLib = (function (d3) {
         else if (second == "Sunburst") sunburstResponseMOut(position2Id);
     }
 
-    function packResponseMOver(position2Id) {
+    function packResponseMOver(position2Id, display = false) {
         var formatNumber = d3.format(",d");
+        let selectedCell = d3.select("#" + position2Id);
 
-        d3.select("#" + position2Id)
-            .style("stroke", "black")
+        selectedCell.style("stroke", "black")
             .style("stroke-width", 1.5)
             .style("cursor", "pointer");
         
-        d3.select("#" + position2Id)
-            .append("title")
-            .text((d) => {
-                var name = d.data.name;
-                var size = menu.dataNodeSizeText(d);
-                return name + "\n" + size;
-        });
+        if (display) {
+            let selectedData = selectedCell.data()[0];
+            let name = newline(selectedData.data.name);
+            let size = menu.dataNodeSizeText(selectedData);
+            showToolTip([name, size]);
+        }
     }
 
-    function packResponseMOut(position2Id) {
+    function packResponseMOut(position2Id, display = false) {
         d3.select("#" + position2Id)
             .style("stroke", "white")
             .style("stroke-width", 1);
 
-        d3.select("#" + position2Id)
-            .select("title")
-            .remove();
+        if (display)
+            hideToolTip();
     }
 
-    function sunburstResponseMOver(position2Id) {
-        d3.select("#" + position2Id)
-            .style("stroke", "black")
+    function sunburstResponseMOver(position2Id, display = false) {
+        let selectedCell = d3.select("#" + position2Id);
+
+        selectedCell.style("stroke", "black")
             .style("stroke-width", 1.5)
             .style("cursor", "pointer");
-
-        d3.select("#" + position2Id)
-            .append("title")
-            .text(d => {
-                return d.data.name + "\n" + menu.dataNodeSizeText(d);
-            });
+        
+        if (display) {
+            let selectedData = selectedCell.data()[0];
+            let name = newline(selectedData.data.name);
+            let size = menu.dataNodeSizeText(selectedData);
+            showToolTip([name, size]);
+        }
     }
 
-    function sunburstResponseMOut(position2Id) {
+    function sunburstResponseMOut(position2Id, display = false) {
         d3.select("#" + position2Id)
             .style("stroke", "white")
             .style("stroke-width", 0.5);
         
-        d3.select("#" + position2Id)
-            .select("title")
-            .remove();
+        if (display)
+            hideToolTip();
     }
 
-    function treemapResponseMOver(position2Id) {
-        d3.select("#" + position2Id)
-            .style("stroke", "black")
+    function treemapResponseMOver(position2Id, display = false) {
+        let selectedCell = d3.select("#" + position2Id);
+        
+        selectedCell.style("stroke", "black")
             .style("stroke-width", 1.5)
             .style("cursor", "pointer");
-
-        d3.select("#" + position2Id)
-            .append("title")
-            .text((d) => {
-                var name = newline(d.data.id);
-                var size = menu.dataNodeSizeText(d);
-                return name + "\n" + size;
-        });
+        
+        if (display) {
+            let selectedData = selectedCell.data()[0];
+            let name = newline(selectedData.data.id);
+            let size = menu.dataNodeSizeText(selectedData);
+            showToolTip([name, size]);
+        }
     }
 
-    function treemapResponseMOut(position2Id) {
+    function treemapResponseMOut(position2Id, display = false) {
         d3.select("#" + position2Id)
             .style("stroke", "white")
             .style("stroke-width", 0.1);
-
-        d3.select("#" + position2Id)
-            .select("title")
-            .remove();
+        
+        if (display)
+            hideToolTip();
     }
 
-    function radialTreeResponseMOver(position2Id) {
+    function radialTreeResponseMOver(position2Id, display = false) {
         var formatNumber = d3.format(",d");
+        let selectedCell = d3.select("#" + position2Id);
 
-        d3.select("#" + position2Id)
-            .select("circle")
+        selectedCell.select("circle")
             .style("cursor", "pointer")
             .attr("r", (d) => {
                 // return 10;
@@ -1507,16 +1528,15 @@ var treeLib = (function (d3) {
             .attr("stroke-opacity", 1)
             .style("stroke-width", 1);
 
-        d3.select("#" + position2Id)
-            .select("circle")
-            .append("title")
-            .text((d) => {
-                var text = d.data.name + "\n" + menu.dataNodeSizeText(d)
-                return text;
-            });
+        if (display) {
+            let selectedData = selectedCell.data()[0];
+            let name = newline(selectedData.data.name);
+            let size = menu.dataNodeSizeText(selectedData);
+            showToolTip([name, size]);
+        }
     }
 
-    function radialTreeResponseMOut(position2Id) {
+    function radialTreeResponseMOut(position2Id, display = false) {
         d3.select("#" + position2Id)
             .select("circle")
             .attr("r", (d) => {
@@ -1527,17 +1547,15 @@ var treeLib = (function (d3) {
             .attr("stroke-opacity", 0.4)
             .style("stroke-width", 1);
         
-        d3.select("#" + position2Id)
-            .select("circle")
-            .select("title")
-            .remove();
+        if (display)
+            hideToolTip();
     }
 
-    function collapsibleTreeResponseMOver(position2Id) {
+    function collapsibleTreeResponseMOver(position2Id, display = false) {
         var formatNumber = d3.format(",d");
+        let selectedCell = d3.select("#" + position2Id);
 
-        d3.select("#" + position2Id)
-            .select("circle")
+        selectedCell.select("circle")
             .style("stroke", (d) => {
                 // return getComplement(getColor(d, color));
                 return "black";
@@ -1550,16 +1568,15 @@ var treeLib = (function (d3) {
                 return menu.getNodeSize(d, position2Id[1]) * 2;
             });
 
-        d3.select("#" + position2Id)
-            .select("circle")
-            .append("title")
-            .text(
-                // NEED TO COMPUTE SIZE FOR EACH NODE
-                (d) => d.data.name + "\n" + menu.dataNodeSizeText(d)
-            );
+        if (display) {
+            let selectedData = selectedCell.data()[0];
+            let name = newline(selectedData.data.name);
+            let size = menu.dataNodeSizeText(selectedData);
+            showToolTip([name, size], true);
+        }
     }
 
-    function collapsibleTreeResponseMOut(position2Id) {
+    function collapsibleTreeResponseMOut(position2Id, display = false) {
         d3.select("#" + position2Id)
             .select("circle")
             .style("stroke", "#555")
@@ -1571,10 +1588,8 @@ var treeLib = (function (d3) {
                 return menu.getNodeSize(d, position2Id[1]);
             });
         
-        d3.select("#" + position2Id)
-            .select("circle")
-            .select("title")
-            .remove();
+        if (display)
+            hideToolTip();
     }
 
     function zoomableTreeResponseMOver(position2Id, removeNodeForZT = 0) {
