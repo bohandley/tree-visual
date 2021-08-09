@@ -44,7 +44,7 @@ function draw_treemap(position, selectindex) {
 
         var cell = svg
             .selectAll("g")
-            .data(root.leaves())
+            .data(root.leaves().filter(d => d.value != 0))
             .enter()
             .append("g")
             .attr("transform", (d) => "translate(" + d.x0 + "," + d.y0 + ")");
