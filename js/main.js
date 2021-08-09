@@ -174,7 +174,6 @@ function loadVisualization(position){//, locked) {
     if (MODE != "Study" && position == "2")
         return
 
-
     clearVisualization(position);
 
     // hide specific tags for treemap and radial trees
@@ -271,23 +270,6 @@ function updateDataset() {
     menu.updateConfig("dataType", selectedDataType);
 
     menu.dataFilterSubset();
-
-    $(document).on("spc", function (e) {
-        addSelectpickerTitles();
-
-        menu.resetLeafSelection();
-
-        menu.changeDataset();
-
-        menu.dataTypeSpanText();
-
-        // var locked1 = menu.isLocked("1");
-        // var locked2 = menu.isLocked("2");
-
-        loadVisualization("1")//, locked1);
-
-        loadVisualization("2")//, locked2);
-    });
 }
 
 function setupFilterEvent() {
