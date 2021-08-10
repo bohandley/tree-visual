@@ -112,7 +112,7 @@ function draw_pack(position) {
             .style("display", function (d) {
                 return d.parent === root ? "inline" : "none";
             })
-            .text((d) => treeLib.getNodeDisplayName(d.data.name));
+            .text((d) => treeLib.getNodeDisplayName(d.data.name, menu.config().removeText));
 
         var node = g.selectAll("circle,text");
 
