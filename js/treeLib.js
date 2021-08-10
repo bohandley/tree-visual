@@ -122,8 +122,8 @@ var treeLib = (function (d3) {
     }
 
     function newline(id) {
-        var idLen = id.split(".").length;
         var pathEls = id.split(".");
+        var idLen = pathEls.length;
 
         var newId = pathEls.map(function(el,idx){
             // check the end, some leaves end with '.'
