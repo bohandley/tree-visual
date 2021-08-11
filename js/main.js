@@ -50,7 +50,7 @@ $(document).ready(function () {
 
   		$("#quizModal").modal("hide");
 
-			MODE = 'Mock Quiz';
+		MODE = 'Mock Quiz';
 			
 	    mockQuiz.hideDataSelect();
 	    mockQuiz.hideG2Elements();

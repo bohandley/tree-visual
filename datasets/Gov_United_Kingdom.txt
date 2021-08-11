@@ -7,7 +7,7 @@
       "size":1
     },
     {
-      "name":"Executive",
+      "name":"Executive Branch",
       "children":[
         {
           "name":"Prime Minister",
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "name":"Parliament",
+      "name":"Legislative Branch (Parliament)",
       "children":[
         {
           "name":"Office of the Leader of the House of Commons",
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "name":"Judiciary",
+      "name":"Judicial Branch",
       "children":[
         {
           "name":"Supreme Court",
