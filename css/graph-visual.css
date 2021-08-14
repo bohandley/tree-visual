@@ -439,7 +439,8 @@ input, select, .panel-heading
 }
 
 .spinner > div {
-    background-color: #333;
+    background-color: rgb(80, 78, 78);
+    opacity: 0.9;
     height: 100%;
     width: 6px;
     display: inline-block;
