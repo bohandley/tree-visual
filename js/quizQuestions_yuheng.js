@@ -42,7 +42,7 @@ const quizQuestions =
                 "dataSet": "Gov_Canada"
             },
             "text": "On provincial level, which court is at the lowest level?",
-            "type": "radio",
+            "type": "checkbox",
             "answer": "Small Claims, Family Court"
         },
         {

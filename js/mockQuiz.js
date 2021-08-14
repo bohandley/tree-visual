@@ -116,7 +116,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		let question = questionText(q);
 
 		let answers = "";
-		if (type == "radio")
+		if (type == "radio" || type == "checkbox")
 			answers = q.options.reduce((acc, el) => acc + questionOptionInput(q.id, q.type, el),"")
 		else if (type == "text")
 			answers = questionTextAreaInput(q.id);
@@ -181,7 +181,11 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 	
 			if(q.type == 'radio') {
 				userSubmission = $('#questions input:checked').val();
-			} else {
+			}
+			else if(q.type == 'checkbox') {
+				userSubmission = $('#questions input:checked').get().map(d => d.value);
+			}
+			else {
 				userSubmission = $('textarea').val();
 			}
 	
@@ -258,12 +262,13 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		let type = q.type;
 
 		let hasBeenAnswered = false
-		if (type == "radio") {
+		if (type == "radio" || type == "checkbox") {
 			$("#questions input").each((idx,el) => {
 				if ($(el).is(":checked"))
 					hasBeenAnswered = true;
 			});
-		} else if (type == "text") {
+		}
+		else if (type == "text") {
 			hasBeenAnswered = $("#questions textarea").val() != "";
 		}
 		
