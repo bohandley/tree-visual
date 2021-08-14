@@ -30,6 +30,8 @@ $(document).ready(function () {
 			return;
 		}
 
+        $("#loading").show();
+
 		// api call to backend to store userId, userLevel, userEmail address
 		// if user has already tried to take the quiz, return the question they 
 		// most recently completed
@@ -42,70 +44,69 @@ $(document).ready(function () {
 		};
 
 		$.post( "https://tree-vis-quiz-api.herokuapp.com/users.json", params, function(data) {
-  		let questionNumber = 0;
-  		if(data.update && data.questions.length > 0) {
-  			let qNums = data.questions.map(q => q.question_number).sort();
-  			questionNumber = qNums[qNums.length - 1];
-  		}
+            let questionNumber = 0;
+            if(data.update && data.questions.length > 0) {
+                let qNums = data.questions.map(q => q.question_number).sort();
+                questionNumber = qNums[qNums.length - 1];
+            }
 
-  		$("#quizModal").modal("hide");
+            $("#quizModal").modal("hide");
 
-		MODE = 'Mock Quiz';
-			
-	    mockQuiz.hideDataSelect();
-	    mockQuiz.hideG2Elements();
-	    mockQuiz.setupQuestionContainer();
-	    mockQuiz.moveDescribeDiv();
-	    mockQuiz.runQuiz(quizQuestions, userEmailAddress, userId, userLevel, questionNumber);
+            MODE = 'Mock Quiz';
+                
+            mockQuiz.hideDataSelect();
+            mockQuiz.hideG2Elements();
+            mockQuiz.setupQuestionContainer();
+            mockQuiz.moveDescribeDiv();
+            mockQuiz.runQuiz(quizQuestions, userEmailAddress, userId, userLevel, questionNumber);
 		})
-	  .fail(function() {
-	    alert( "error" );
-	  })
-	  .always(function() {
-	    // what to do here...
-	  });
-
+	    .fail(function() {
+            $("#loading").hide();
+	        alert( "Cannot enter the quiz. Please check your connection and try again." );
+	    })
+	    .always(function() {
+	        $("#loading").hide();
+	    });
 
 	});
 
-  updateDataTypeAndFileName();
+    updateDataTypeAndFileName();
       
-  menu.setupCheckBoxes();
+    menu.setupCheckBoxes();
 
-  setupSliderValueTooltip();
+    setupSliderValueTooltip();
 
-  setupToolTips();
+    setupToolTips();
 
-  // only load the onboarding if user chooses study mode
-  // and has not seen the onboarding before
-	$("#study-mode").on("click", function(){
-		setupOnboarding();
-	});
+    // only load the onboarding if user chooses study mode
+    // and has not seen the onboarding before
+    $("#study-mode").on("click", function(){
+        setupOnboarding();
+    });
 
-  // if (MODE == "Mock Quiz") {
-  //     mockQuiz.hideDataSelect();
-  //     mockQuiz.hideG2Elements();
-  //     mockQuiz.setupQuestionContainer();
-  //     // updateDataSelect
-  //     mockQuiz.moveDescribeDiv();
-  //     mockQuiz.runQuiz(quizQuestions.questions);
-  // }
-  // after the dataFilterSubset has completed, the spc event is called
-  $(document).on("spc", function (e) {
-      addSelectpickerTitles();
+    // if (MODE == "Mock Quiz") {
+    //     mockQuiz.hideDataSelect();
+    //     mockQuiz.hideG2Elements();
+    //     mockQuiz.setupQuestionContainer();
+    //     // updateDataSelect
+    //     mockQuiz.moveDescribeDiv();
+    //     mockQuiz.runQuiz(quizQuestions.questions);
+    // }
+    // after the dataFilterSubset has completed, the spc event is called
+    $(document).on("spc", function (e) {
+        addSelectpickerTitles();
 
-      setupFilterEvent();
+        setupFilterEvent();
 
-      menu.changeDataset(1);
+        menu.changeDataset(1);
 
-      menu.dataTypeSpanText();
+        menu.dataTypeSpanText();
 
-      loadVisualization("1");
+        loadVisualization("1");
+        
+        loadVisualization("2");
 
-      
-      loadVisualization("2");
-
-  });
+    });
 });
 
 function setupOnboarding() {
