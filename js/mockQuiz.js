@@ -100,8 +100,10 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		return `<textarea id="${id}" name="question${id}" style="width:100%;" rows="6" placeholder="Briefly state your answer and explain your decision."></textarea>`;;
 	}
 
-	const questionText = (q) => {
-		return `<p>${q.text}</p>`;
+	const questionText = (q, type) => {
+		let extra = (type == "checkbox")? "<br>Select all applicable answers." : "";
+		let text = `<p>${q.text}${extra}</p>`;
+		return text;
 	}
 
 	const attachQuestionHtml = (q, total) => {
@@ -113,7 +115,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		// iterate through the options
 		let type = q.type;
 
-		let question = questionText(q);
+		let question = questionText(q, type);
 
 		let answers = "";
 		if (type == "radio" || type == "checkbox")
