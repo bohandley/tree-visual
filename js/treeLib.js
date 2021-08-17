@@ -1256,14 +1256,6 @@ var treeLib = (function (d3) {
             position1Id = treeLib.pathId(d, position1), //buildNodeOrLeafId(d, position1),
             position2Id = treeLib.pathId(d, position2); //buildNodeOrLeafId(d, position2);
         
-        if (d) {
-            var name = d.name || d.name == "" ? d.name : d.data.name;
-            // do not do mouse out styling if the leaf is selected from the menu Leaf Selection
-            if (menu.config().leafSelection.includes(name)){
-                return
-            }
-        }
-        
         mouseoutCT(first, second, position1Id, position2Id);
 
         mouseoutZT(first, second, position1Id, position2Id, d, isgr);
