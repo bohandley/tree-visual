@@ -185,7 +185,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				userSubmission = $('#questions input:checked').val();
 			}
 			else if(q.type == 'checkbox') {
-				userSubmission = $('#questions input:checked').get().map(d => d.value);
+				userSubmission = $('#questions input:checked').get().map(d => d.value).join(';');
 			}
 			else {
 				userSubmission = $('textarea').val();

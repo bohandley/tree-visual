@@ -487,21 +487,22 @@ var menu = (function (d3, $) {
 
         var d = d3.select(id).data()[0];
 
-        treeLib.mouseoutLinking("g1", "g2", d);
-
         if (vals.length == 0){
             // if no leaves are selected everything is normal
+            treeLib.mouseoutLinking("g1", "g2", d);
             d3.select(node)
                 .style("opacity", 1);
         }
         else if (!vals.includes(nodeName)) {
             // if the node is not in the collection lower opacity
+            treeLib.mouseoutLinking("g1", "g2", d);
             d3.select(node)
                 .style("opacity", .5);
         }
         else {
             // this branch: vals.length > 0 && vals.includes(nodeName)
-            // which means the node is selected, and we give them opacity 1
+            // the node is selected, we give it opacity 1 and simulate a mouseover event
+            treeLib.mouseoverLinking("g1", "g2", d, true);
             d3.select(node)
                 .style("opacity", 1);
         }
