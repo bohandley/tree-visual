@@ -481,7 +481,7 @@ var menu = (function (d3, $) {
         else
             nodeName = node.__data__.data.name;
 
-        var id = "#"+node.id;
+        var id = "#" + node.id;
         if (id == "#")
             return
 
@@ -492,16 +492,17 @@ var menu = (function (d3, $) {
             treeLib.mouseoutLinking("g1", "g2", d);
             d3.select(node)
                 .style("opacity", 1);
-        } else if (!vals.includes(nodeName)) {
+        }
+        else if (!vals.includes(nodeName)) {
             // if the node is not in the collection lower opacity
             treeLib.mouseoutLinking("g1", "g2", d);
             d3.select(node)
                 .style("opacity", .5);
-        } else if (vals.includes(nodeName) || vals.length == 0) { 
-            // if leaves are selected
-            // we act as if they are moused over, on auto
-            // and just in case we give them 1 opacity
-            treeLib.mouseoverLinking("g1", "g2", d);
+        }
+        else {
+            // this branch: vals.length > 0 && vals.includes(nodeName)
+            // the node is selected, we give it opacity 1 and simulate a mouseover event
+            treeLib.mouseoverLinking("g1", "g2", d, true);
             d3.select(node)
                 .style("opacity", 1);
         }

@@ -50,13 +50,20 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 						`</div>
 						<hr/>
 						<div class="col-md-12 d-flex justify-content-center" id="buttons" style="font-family: arial;">`+
-						// display the regular button unless last question, then display submitted button
+							// display the regular button unless last question, then display submitted button
 							`<button style="margin-left: 5px; display: none;" type="button" class="btn btn-success float-right" id="bSubmit" aria-disabled="true">
 							Submit
 							</button>
 							<button type="button" class="btn btn-primary float-right" id="bNext" aria-disabled="true">
 							Next
 							</button>
+							<div class="spinner" id="submit-loading" style="position: absolute; right: 0%; display: none;">
+								<div class="rect1"></div>
+								<div class="rect2"></div>
+								<div class="rect3"></div>
+								<div class="rect4"></div>
+								<div class="rect5"></div>
+							</div>
 						</div>
 					</div>
 				</div>`
@@ -93,8 +100,10 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		return `<textarea id="${id}" name="question${id}" style="width:100%;" rows="6" placeholder="Briefly state your answer and explain your decision."></textarea>`;;
 	}
 
-	const questionText = (q) => {
-		return `<p>${q.text}</p>`;
+	const questionText = (q, type) => {
+		let extra = (type == "checkbox")? "<br>Select all applicable answers." : "";
+		let text = `<p>${q.text}${extra}</p>`;
+		return text;
 	}
 
 	const attachQuestionHtml = (q, total) => {
@@ -106,10 +115,10 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		// iterate through the options
 		let type = q.type;
 
-		let question = questionText(q);
+		let question = questionText(q, type);
 
 		let answers = "";
-		if (type == "radio")
+		if (type == "radio" || type == "checkbox")
 			answers = q.options.reduce((acc, el) => acc + questionOptionInput(q.id, q.type, el),"")
 		else if (type == "text")
 			answers = questionTextAreaInput(q.id);
@@ -131,7 +140,6 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		// hide layouts that are not in the layouts collection
 		$("#dropdown1").val(selected).trigger("change");
 
-
 		$("#dropdown1 option").each((idx, el) => {
 			if ( q.tree.layouts.includes($(el).val()) )
 				$(el).show();
@@ -148,34 +156,41 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		let total = questions.length;
 		let i = questionNumber;
 		let q = questions[i];
-		
-		attachQuestionHtml(q, total);
-		
-		// change the dataSets in quizQuestions
-		updateDataSelect(q);
-		selectLayouts(q);
-		// iterate to the next question
-		i++;
-		$("#bNext").on("click", () => {
+
+		if (i >= total) {
+			// The user has finished the quiz
+			window.location.replace("/submitted.html");
+			return;
+		}
+		else if (i == total - 1) {
+			$("#bNext").hide();
+			$("#bSubmit").show();
+		}
+
+		const submitAnswer = (isLastQuestion) => {
 			// check that an answer has been selected or typed
 			if (!hasBeenAnswered(q) && !confirm("The question has not been answered. Proceed anyway?"))
-				return
-
+				return;
+	
 			// if the question was answered, get the end time and send to backend
 			let questionEndTime = (new Date()).getTime();
-
+	
 			let questionTime = (questionEndTime - questionStartTime)/1000,
 				questionNumber = q.id,
 				questionText = q.text,
 				questionAnswer = q.answer,
 				userSubmission;
-
+	
 			if(q.type == 'radio') {
-				userSubmission = $('input:checked').val();
-			} else {
+				userSubmission = $('#questions input:checked').val();
+			}
+			else if(q.type == 'checkbox') {
+				userSubmission = $('#questions input:checked').get().map(d => d.value).join(';');
+			}
+			else {
 				userSubmission = $('textarea').val();
 			}
-
+	
 			console.log('quizId: ' + quizId);
 			console.log('questionText: ' + questionText);
 			console.log('questionAnswer: ' + questionAnswer);
@@ -187,6 +202,8 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			console.log('userSubmission: ' + userSubmission);
 			console.log('---------');
 
+			$("#submit-loading").show();
+	
 			let params = {
 				question: {
 					"quiz_id": quizId,
@@ -200,13 +217,18 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				"user_level": userLevel
 			};
 			$.post( "https://tree-vis-quiz-api.herokuapp.com/questions.json", params, function(data) {
+				if (isLastQuestion) {
+					window.location.replace("/submitted.html");
+					return;
+				}
+					
 				q = questions[i];
 				attachQuestionHtml(q, total);
 				// change the dataSets in quizQuestions
 				updateDataSelect(q);
 				selectLayouts(q);
 				i++
-
+	
 				// quiz completed, show the submit button
 				if(i == total) {
 					$("#bNext").hide();
@@ -214,17 +236,27 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				}
 			})
 			.fail(function() {
-			  alert( "error" );
+				$("#submit-loading").hide();
+				alert( "Cannot submit the answer. Please check your connection and try again." );
+			})
+			.always(function() {
+				$("#submit-loading").hide();
 			});
+		}
+		
+		attachQuestionHtml(q, total);
+		
+		// change the dataSets in quizQuestions
+		updateDataSelect(q);
+		selectLayouts(q);
+		// iterate to the next question
+		i++;
+		$("#bNext").on("click", () => {
+			submitAnswer(false);
 		});
     
 		$("#bSubmit").on("click", () => {
-			if (!confirm("Ready to submit?"))
-				return;
-			//
-			// Send answers to the backend
-			//
-			window.location.replace("/submitted.html");
+			submitAnswer(true);			
 		});
 	}
 
@@ -232,12 +264,13 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		let type = q.type;
 
 		let hasBeenAnswered = false
-		if (type == "radio") {
+		if (type == "radio" || type == "checkbox") {
 			$("#questions input").each((idx,el) => {
 				if ($(el).is(":checked"))
 					hasBeenAnswered = true;
 			});
-		} else if (type == "text") {
+		}
+		else if (type == "text") {
 			hasBeenAnswered = $("#questions textarea").val() != "";
 		}
 		

@@ -166,9 +166,6 @@ function draw_collapsible_tree(position) {
                 .transition()
                 .duration(duration)
                 .attr("transform", function (d) {
-                	if(!d.x)
-                		d.x = 90;
-
                     return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
                 });
 
