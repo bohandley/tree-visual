@@ -21,12 +21,12 @@ const quizQuestions =
     "quizId": "tree_quiz",
     "questions": [
         {
-        		"id": 1,
+        	"id": 1,
             "options": [
-                "14 and 3",
-                "37 and 65",
-                "59 and 26",
-                "46 and 11"
+                "Court of Appeal",
+                "Supreme Court",
+                "Ontario Court",
+                "Small Claims, Family Court"
             ],
             "tree": {
                 "layouts": [
@@ -37,86 +37,39 @@ const quizQuestions =
                 	"Sunburst",
                 	// "Treemap",
                 	// "Zoomable_Treemap"
-                    // "YIFAN_HU"
                 ],
                 // select the dataSet
-                "dataSet": "Faloutsos",//""//"Cat Brain"
+                "dataSet": "Gov_Canada"
             },
-            "text": "Assuming that the edge length in the drawing represents the length of a fiber tract, which two nuclei are the farthest apart?",
-            "type": "radio",
-            "answer": "59 and 26"
+            "text": "On provincial level, which court is at the lowest level?",
+            "type": "checkbox",
+            "answer": "Small Claims, Family Court"
         },
         {
-        		"id": 2,
-            "tree": {
-                "layouts": [
-                    // "FORCE_ATLAS",
-                    // "OPENORD"
-                    "Radial_Tree"
-                ],
-                "dataSet": "Han",//"Cat Brain"
-            },
-            "text": "Which of the following two layouts (ForceAtlas2, OpenOrd) is better when depicting the Cat Brain data set? Briefly explain.",
-            "type": "text",
-            "answer": "Force atlas is better as it keeps the clusters better together and spreads the nodes more evenly."
-        },
-        {
-        		"id": 3,
+        	"id": 2,
             "options": [
-                "1",
-                "2",
-                "3",
-                "4"
+                "Nation",
+                "Province",
+                "Municipality",
+                "Autonomous Region",
+                "Barangay"
             ],
             "tree": {
-                "dataSet": "Stasko",//"Divorce",
+                "dataSet": "Gov_Philippines",
                 "layouts": [
-                		
-	                	"Pack",
-	                	// "Radial_Tree",
-	                	// "Collapsible_Tree",
-	                	"Sunburst",
-	                	"Treemap",
-	                	"Zoomable_Treemap"
-                    // "RANDOMIZED",
-                    // "CIRCULAR",
-                    // "SPECTRAL",
-                    // "FORCE_DIRECTED",
-                    // "FM_3",
-                    // "FORCE_ATLAS",
-                    // "OPENORD",
-                    // "YIFAN_HU"
+                    "Treemap",
+	                "Pack",
+	                // "Radial_Tree",
+	                // "Collapsible_Tree",
+	                "Collapsible_Tree"
                 ]
             },
-            "text": "How many states have every legal ground for divorce?",
+            "text": "Which branch of the Philippines Government has the highest number of employees?",
             "type": "radio",
-            "answer": "1"
+            "answer": "Nation"
         },
         {
-        		"id": 4,
-            "options": [
-                "Delaware",
-                "Hawaii",
-                "Louisiana",
-                "Wisconsin"
-            ],
-            "tree": {
-                "layouts": [
-                  "Pack",
-                	"Radial_Tree",
-                	"Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	"Zoomable_Treemap"
-                ],
-                "dataSet": "Leskovec",//"Divorce"
-            },
-            "text": "Among the states listed below, which state does not have the same legal grounds for divorce as others?",
-            "type": "radio",
-            "answer": "Louisiana"
-        },
-        {
-        		"id": 5,
+        	"id": 3,
             "options": [
                 "Connecticut",
                 "Idaho",
@@ -125,125 +78,140 @@ const quizQuestions =
             ],
             "tree": {
                 "layouts": [
-                 //  "Pack",
-                	// "Radial_Tree",
-                	// "Collapsible_Tree",
                 	"Sunburst",
                 	"Treemap",
                 	"Zoomable_Treemap"
                 ],
-                "dataSet": "Gov_Canada",//"Divorce"
+                "dataSet": "Gov_United_States"
             },
-            "text": "Among the states listed below, which state has fewer legal grounds for divorce than others?",
-            "type": "radio",
-            "answer": "Utah"
-        },
-        {
-        		"id": 6,
-            "tree": {
-                "dataSet": "Gov_Philippines",//"Divorce",
-                "layouts": [
-                	"Pack",
-                	"Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	// "Zoomable_Treemap"
-                    // "RANDOMIZED",
-                    // "CIRCULAR",
-                    // "SPECTRAL",
-                    // "FORCE_DIRECTED",
-                    // "FM_3",
-                    // "FORCE_ATLAS",
-                    // "OPENORD",
-                    // "YIFAN_HU"
-                ]
-            },
-            "text": "What are the pros and cons of the bipartite layout when depicting the Divorce data set? Briefly explain.",
+            "text": "Which of the following three layouts (Sunburst, Treemap, Zoomable Treemap) is best at depicting the hierarchy of the United States Government?",
             "type": "text",
-            "answer": "It is clearly seen which nodes are states and which are legal grounds in the bipartite layout, however, their connections is harder to see due to the occlusion of all the edges. "
+            "answer": "Sunburst or Zoomable Treemap"
         },
         {
-        		"id": 7,
+        	"id": 4,
             "options": [
-                "DN63",
-                "Web",
-                "Zig",
-                "Zipfel"
+                "1997",
+                "1998",
+                "1987",
+                "1991"
             ],
             "tree": {
                 "layouts": [
-                 //  "Pack",
-                	// "Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	"Treemap",
-                	"Zoomable_Treemap"
+                    "Pack",
+                    "Sunburst"
                 ],
-                "dataSet": "Gov_United_Kingdom",//"Dolphins"
+                "dataSet": "Faloutsos"
             },
-            "text": "Which node is the most distinct one in the spectral layout?",
+            "text": "Before the 21st century, on which year was Faloutsos most prolific in terms of number of papers?",
             "type": "radio",
-            "answer": "Zig"
+            "answer": "1998"
         },
         {
-        		"id": 8,
-            "tree": {
-                "dataSet": "Gov_United_States",//"Dolphins",
-                "layouts": [
-                	"Pack",
-                	// "Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	"Zoomable_Treemap"
-                    // "RANDOMIZED",
-                    // "CIRCULAR",
-                    // "SPECTRAL",
-                    // "FORCE_DIRECTED",
-                    // "FM_3",
-                    // "FORCE_ATLAS",
-                    // "OPENORD",
-                    // "YIFAN_HU"
-                ]
-            },
-            "text": "What are the pros and cons of the spectral layout when depicting the Dolphins data set compared to the other layouts. Briefly explain.",
-            "type": "text",
-            "answer": "In the Spectral layout, the nodes are squished together (except for light blue cluster), which disallows to see the connections among nodes outside the light blue cluster. However this also helps to identify that nodes of that cluster are not related with the ones of the other clusters."
-        },
-        {
-        		"id": 9,
+        	"id": 5,
             "options": [
-                "42",
-                "80",
-                "60",
-                "38"
+                "1997",
+                "1998",
+                "1987",
+                "1991"
             ],
             "tree": {
-                "dataSet": "Trade_China",//"Enron Email",
                 "layouts": [
-	                "Pack",
+                    "Pack"
+                ],
+                "dataSet": "Faloutsos"
+            },
+            "text": "What are the pros and cons of the pack layout when depicting the Faloutsos dataset?",
+            "type": "text",
+            "answer": "1998"
+        },
+        {
+        	"id": 6,
+            "options": [
+                "Germany",
+                "United States",
+                "Singarpore",
+                "Netherlands",
+                "China"
+            ],
+            "tree": {
+                "layouts": [
+                    "Pack",
+                    "Collapsible_Tree",
+                    "Zoomable_Treemap"
+                ],
+                "dataSet": "Trade_United_Kingdom"
+            },
+            "text": "Which country is UK's second-largest exporter in capital goods?",
+            "type": "radio",
+            "answer": "Germany"
+        },
+        {
+        	"id": 7,
+            "options": [
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            "tree": {
+                "layouts": [
+                    "Pack",
+                	"Collapsible_Tree",
+                    "Zoomable_Treemap"
+                ],
+                "dataSet": "Trade_China"
+            },
+            "text": "How many countries (regions) are both China's importer and exporter in vegatable?",
+            "type": "radio",
+            "answer": "5"
+        },
+        {
+        	"id": 8,
+            "options": [
+                "Agricultural Raw Materials",
+                "Fuels",
+                "Hides and Skins",
+                "Mach and Elec",
+                "Intermediate goods"
+            ],
+            "tree": {
+                "dataSet": "Trade_Germany",
+                "layouts": [
                 	"Radial_Tree",
                 	"Collapsible_Tree",
-                	"Sunburst",
-                	"Treemap",
-                	"Zoomable_Treemap"
-                    // "RANDOMIZED",
-                    // "CIRCULAR",
-                    // "SPECTRAL",
-                    // "FORCE_DIRECTED",
-                    // "FM_3",
-                    // "FORCE_ATLAS",
-                    // "OPENORD",
-                    // "YIFAN_HU"
+                    "Pack"
                 ]
             },
-            "text": "Among all the employees, the one with the most contact has how many contacts?",
+            "text": "Which of the following kind of goods did Spain import from Germany in 2018?",
             "type": "radio",
-            "answer": "42"
+            "answer": "Mach and Elec"
         },
         {
-        		"id": 10,
+        	"id": 9,
+            "options": [
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            "tree": {
+                "layouts": [
+                    "Pack",
+                    "Sunburst",
+                    "Radial_Tree",
+                	"Collapsible_Tree",
+                    "Treemap",
+                    "Zoomable_Treemap"
+                ],
+                "dataSet": "Trade_China"
+            },
+            "text": "Considering the features of hierarchy of trade datasets, which layout(s) is better at depicting the trade datasets?",
+            "type": "text",
+            "answer": "Pack, Collapsible Radial Tree, Zoomable Treemap"
+        },
+        {
+        	"id": 10,
             "options": [
                 "23 and 92",
                 "42 and 92",
@@ -266,7 +234,7 @@ const quizQuestions =
             "answer": "42 and 92"
         },
         {
-        		"id": 11,
+        	"id": 11,
             "options": [
                 "15-25%",
                 "35-45%",
@@ -282,14 +250,6 @@ const quizQuestions =
                 	// "Sunburst",
                 	"Treemap",
                 	"Zoomable_Treemap"
-                    // "RANDOMIZED",
-                    // "CIRCULAR",
-                    // "SPECTRAL",
-                    // "FORCE_DIRECTED",
-                    // "FM_3",
-                    // "FORCE_ATLAS",
-                    // "OPENORD",
-                    // "YIFAN_HU"
                 ]
             },
             "text": "What percentage of naval bases have connections with at least 8 other bases?",
@@ -297,7 +257,7 @@ const quizQuestions =
             "answer": "55-65%"
         },
         {
-        		"id": 12,
+        	"id": 12,
             "tree": {
                 "layouts": [
                 	"Pack",
@@ -306,17 +266,15 @@ const quizQuestions =
                 	// "Sunburst",
                 	// "Treemap",
                 	// "Zoomable_Treemap"
-                    // "FM_3",
-                    // "SPECTRAL"
                 ],
-                "dataSet": "Trade_United_Kingdom",//"Naval"
+                "dataSet": "Trade_United_Kingdom"
             },
             "text": "Which of the following two layouts (FM3, spectral) is better when depicting the Naval data set? Briefly explain.",
             "type": "text",
             "answer": "There is no clear favorite. The Fm3 allows seeing the structure better, while the spectral layout allows to see that nodes within a clusters are barely connected to nodes outside that cluster."
         },
         {
-        		"id": 13,
+        	"id": 13,
             "tree": {
                 "layouts": [
                 	"Pack",
@@ -325,20 +283,15 @@ const quizQuestions =
                 	// "Sunburst",
                 	// "Treemap",
                 	// "Zoomable_Treemap"
-                    // "FM_3",
-                    // "FORCE_ATLAS",
-                    // "FORCE_DIRECTED",
-                    // "YIFAN_HU",
-                    // "OPENORD"
                 ],
-                "dataSet": "Trade_United_States",//"Netscience"
+                "dataSet": "Trade_United_States"
             },
             "text": "Among the force-directed layouts, which is the best in depicting the Netscience data set? Briefly explain.",
             "type": "text",
             "answer": "The D3 force directed layout is the clear favorite as it keeps the clusters nicer together"
         },
         {
-        		"id": 14,
+        	"id": 14,
             "tree": {
                 "layouts": [
                 	"Pack",
@@ -347,17 +300,15 @@ const quizQuestions =
                 	// "Sunburst",
                 	// "Treemap",
                 	// "Zoomable_Treemap"
-                    // "OPENORD",
-                    // "YIFAN_HU"
                 ],
-                "dataSet": "TreeOfLife_Carnivora",//"Netscience"
+                "dataSet": "TreeOfLife_Carnivora"
             },
             "text": "Briefly explain the main similarities and differences between OpenOrd and Yifan Hu layouts when depicting the Netscience data set. ",
             "type": "text",
             "answer": "Both of the layouts do not keep clusters together. OpenOrd, however, overlaps the nodes so strong that its barely visible that there are as many nodes"
         },
         {
-        		"id": 15,
+        	"id": 15,
             "options": [
                 "Chicago O'hare Intl",
                 "Dallas/Fort Worth Intl",
@@ -365,7 +316,7 @@ const quizQuestions =
                 "The William B Hartsfield Atlan"
             ],
             "tree": {
-                "dataSet": "TreeOfLife_Afrosoricida",//"USAir97",
+                "dataSet": "TreeOfLife_Afrosoricida",
                 "layouts": [
                 	"Pack",
                 	"Radial_Tree",
@@ -373,14 +324,6 @@ const quizQuestions =
                 	// "Sunburst",
                 	// "Treemap",
                 	// "Zoomable_Treemap"
-                    // "RANDOMIZED",
-                    // "CIRCULAR",
-                    // "SPECTRAL",
-                    // "FORCE_DIRECTED",
-                    // "FM_3",
-                    // "FORCE_ATLAS",
-                    // "OPENORD",
-                    // "YIFAN_HU"
                 ]
             },
             "text": "Which airport has the most direct flights to and from other airports?",
@@ -388,7 +331,7 @@ const quizQuestions =
             "answer": "Chicago O'hare Intl"
         },
         {
-        		"id": 16,
+        	"id": 16,
             "options": [
                 "Chicago O'hare Intl",
                 "Los Angeles Intl",
@@ -403,18 +346,17 @@ const quizQuestions =
                 	// "Sunburst",
                 	// "Treemap",
                 	// "Zoomable_Treemap"
-                    // "extra"
                 ],
-                "dataSet": "TreeOfLife_Pelecaniformes",//"USAir97"
+                "dataSet": "TreeOfLife_Pelecaniformes"
             },
             "text": "From Anchorage Intl to Pago Pago Intl, which of the following airport  should be used for transferring so that the number of legs is minimized?",
             "type": "radio",
             "answer": "Los Angeles Intl"
         },
         {
-        		"id": 17,
+        	"id": 17,
             "tree": {
-                "dataSet": "TreeOfLife_Afrosoricida",//"USAir97",
+                "dataSet": "TreeOfLife_Afrosoricida",
                 "layouts": [
                 	// "Pack",
                 	// "Radial_Tree",
@@ -422,14 +364,6 @@ const quizQuestions =
                 	"Sunburst",
                 	"Treemap",
                 	"Zoomable_Treemap"
-                    // "RANDOMIZED",
-                    // "CIRCULAR",
-                    // "SPECTRAL",
-                    // "FORCE_DIRECTED",
-                    // "FM_3",
-                    // "FORCE_ATLAS",
-                    // "OPENORD",
-                    // "YIFAN_HU"
                 ]
             },
             "text": "What are the pros and cons of the geographical layout when depicting the USAir97 data set? Briefly explain.",
