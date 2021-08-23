@@ -176,7 +176,9 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			let questionEndTime = (new Date()).getTime();
 	
 			let questionTime = (questionEndTime - questionStartTime)/1000,
-				questionNumber = q.id,
+				// Do we really need an id? Can we just use i?
+				// questionNumber = q.id,
+				questionNumber = i,
 				questionText = q.text,
 				questionAnswer = q.answer,
 				userSubmission;
