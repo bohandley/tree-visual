@@ -16,6 +16,12 @@
 // TreeOfLife_Pelecaniformes
 // TreeOfLife_Afrosoricida
 
+// The questions.id here is only for internal reference
+// it will NOT be used
+
+// We need to make a unified form for checkbox answers
+// shall we write a concatnated string or an array of strings?
+
 const quizQuestions =
 {
     "quizId": "tree_quiz",
@@ -42,7 +48,7 @@ const quizQuestions =
                 "dataSet": "Gov_Canada"
             },
             "text": "On provincial level, which court is at the lowest level?",
-            "type": "checkbox",
+            "type": "radio",
             "answer": "Small Claims, Family Court"
         },
         {
@@ -59,8 +65,6 @@ const quizQuestions =
                 "layouts": [
                     "Treemap",
 	                "Pack",
-	                // "Radial_Tree",
-	                // "Collapsible_Tree",
 	                "Collapsible_Tree"
                 ]
             },
@@ -70,12 +74,6 @@ const quizQuestions =
         },
         {
         	"id": 3,
-            "options": [
-                "Connecticut",
-                "Idaho",
-                "Oklahoma",
-                "Utah"
-            ],
             "tree": {
                 "layouts": [
                 	"Sunburst",
@@ -84,12 +82,66 @@ const quizQuestions =
                 ],
                 "dataSet": "Gov_United_States"
             },
-            "text": "Which of the following three layouts (Sunburst, Treemap, Zoomable Treemap) is best at depicting the hierarchy of the United States Government?",
+            "text": "Which of the following three layouts (Sunburst, Treemap, Zoomable Treemap) are best at depicting the hierarchy of the United States Government? Explain your answer.",
             "type": "text",
             "answer": "Sunburst or Zoomable Treemap"
         },
         {
-        	"id": 4,
+            "id": 4,
+            "tree": {
+                "layouts": [
+                    "Treemap",
+                    "Collapsible_Tree"
+                ],
+                "dataSet": "Gov_United_Kingdom"
+            },
+            "text": "Briefly compare the Treemap and Collapsible Tree in depicting the hierarchy of the United States Government.",
+            "type": "text",
+            "answer": "I don't know"
+        },
+        {
+        	"id": 5,
+            "options": [
+                "Kronecker graphs: An approach to modeling networks",
+                "Empirical comparison of algorithms for network community detection",
+                "Signed networks in social media",
+                "Predicting positive and negative links in online social networks",
+                "On the convexity of latent social network inference"
+            ],
+            "tree": {
+                "layouts": [
+                    "Pack",
+                    "Sunburst",
+                    "Treemap"
+                ],
+                "dataSet": "Leskovec"
+            },
+            "text": "Among all Leskovec's publications in 2010, which paper were cited most?",
+            "type": "radio",
+            "answer": "Predicting positive and negative links in online social networks"
+        },
+        {
+        	"id": 6,
+            "options": [
+                "7",
+                "9",
+                "11",
+                "13"
+            ],
+            "tree": {
+                "layouts": [
+                    "Pack",
+                    "Sunburst",
+                    "Treemap"
+                ],
+                "dataSet": "Stasko"
+            },
+            "text": "How many papers did Stasko publish in 2008?",
+            "type": "radio",
+            "answer": "13"
+        },
+        {
+        	"id": 7,
             "options": [
                 "1997",
                 "1998",
@@ -108,13 +160,7 @@ const quizQuestions =
             "answer": "1998"
         },
         {
-        	"id": 5,
-            "options": [
-                "1997",
-                "1998",
-                "1987",
-                "1991"
-            ],
+        	"id": 8,
             "tree": {
                 "layouts": [
                     "Pack"
@@ -123,10 +169,10 @@ const quizQuestions =
             },
             "text": "What are the pros and cons of the pack layout when depicting the Faloutsos dataset?",
             "type": "text",
-            "answer": "1998"
+            "answer": "I don't know."
         },
         {
-        	"id": 6,
+        	"id": 9,
             "options": [
                 "Germany",
                 "United States",
@@ -147,7 +193,7 @@ const quizQuestions =
             "answer": "Germany"
         },
         {
-        	"id": 7,
+        	"id": 10,
             "options": [
                 "4",
                 "5",
@@ -167,7 +213,7 @@ const quizQuestions =
             "answer": "5"
         },
         {
-        	"id": 8,
+        	"id": 11,
             "options": [
                 "Agricultural Raw Materials",
                 "Fuels",
@@ -188,13 +234,32 @@ const quizQuestions =
             "answer": "Mach and Elec"
         },
         {
-        	"id": 9,
+        	"id": 12,
             "options": [
-                "4",
-                "5",
-                "6",
-                "7"
+                "Belgium",
+                "China",
+                "Netherlands",
+                "Russian Federation",
+                "United States",
+                "United Kingdom"
             ],
+            "tree": {
+                "dataSet": "Trade_Germany",
+                "layouts": [
+                	"Pack",
+                    "Sunburst",
+                    "Radial_Tree",
+                	"Collapsible_Tree",
+                    "Treemap",
+                    "Zoomable_Treemap"
+                ]
+            },
+            "text": "Which countries export food <b>and</b> fuels to Germany?",
+            "type": "checkbox",
+            "answer": ["Belgium", "Netherlands", "United States"]
+        },
+        {
+        	"id": 13,
             "tree": {
                 "layouts": [
                     "Pack",
@@ -206,129 +271,45 @@ const quizQuestions =
                 ],
                 "dataSet": "Trade_China"
             },
-            "text": "Considering the features of hierarchy of trade datasets, which layout(s) is better at depicting the trade datasets?",
+            "text": "Considering the features of hierarchy of trade datasets, which layout(s) is better at depicting the trade datasets? Explain your answers.",
             "type": "text",
-            "answer": "Pack, Collapsible Radial Tree, Zoomable Treemap"
-        },
-        {
-        	"id": 10,
-            "options": [
-                "23 and 92",
-                "42 and 92",
-                "80 and 92",
-                "134 and 92"
-            ],
-            "tree": {
-                "layouts": [
-                  "Pack",
-                	// "Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	// "Zoomable_Treemap"
-                ],
-                "dataSet": "Trade_Germany",//"Enron Email"
-            },
-            "text": "Which two nodes have the longest path (along graph edges) in the spectral layout?",
-            "type": "radio",
-            "answer": "42 and 92"
-        },
-        {
-        	"id": 11,
-            "options": [
-                "15-25%",
-                "35-45%",
-                "55-65%",
-                "75-85%"
-            ],
-            "tree": {
-                "dataSet": "TreeOfLife_Anura",//"Naval",
-                "layouts": [
-                	// "Pack",
-                	// "Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	"Treemap",
-                	"Zoomable_Treemap"
-                ]
-            },
-            "text": "What percentage of naval bases have connections with at least 8 other bases?",
-            "type": "radio",
-            "answer": "55-65%"
-        },
-        {
-        	"id": 12,
-            "tree": {
-                "layouts": [
-                	"Pack",
-                	"Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	// "Zoomable_Treemap"
-                ],
-                "dataSet": "Trade_United_Kingdom"
-            },
-            "text": "Which of the following two layouts (FM3, spectral) is better when depicting the Naval data set? Briefly explain.",
-            "type": "text",
-            "answer": "There is no clear favorite. The Fm3 allows seeing the structure better, while the spectral layout allows to see that nodes within a clusters are barely connected to nodes outside that cluster."
-        },
-        {
-        	"id": 13,
-            "tree": {
-                "layouts": [
-                	"Pack",
-                	// "Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	// "Zoomable_Treemap"
-                ],
-                "dataSet": "Trade_United_States"
-            },
-            "text": "Among the force-directed layouts, which is the best in depicting the Netscience data set? Briefly explain.",
-            "type": "text",
-            "answer": "The D3 force directed layout is the clear favorite as it keeps the clusters nicer together"
+            "answer": "Pack, Collapsible Tree, Zoomable Treemap"
         },
         {
         	"id": 14,
             "tree": {
                 "layouts": [
-                	"Pack",
-                	"Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	// "Zoomable_Treemap"
+                	"Treemap"
                 ],
-                "dataSet": "TreeOfLife_Carnivora"
+                "dataSet": "Trade_United_States"
             },
-            "text": "Briefly explain the main similarities and differences between OpenOrd and Yifan Hu layouts when depicting the Netscience data set. ",
+            "text": "Is Treemap a good layout for depicting the United States trade dataset? Briefly explain.",
             "type": "text",
-            "answer": "Both of the layouts do not keep clusters together. OpenOrd, however, overlaps the nodes so strong that its barely visible that there are as many nodes"
+            "answer": "No."
         },
         {
         	"id": 15,
             "options": [
-                "Chicago O'hare Intl",
-                "Dallas/Fort Worth Intl",
-                "Lambert-St Louis Intl",
-                "The William B Hartsfield Atlan"
+                "13",
+                "27",
+                "66",
+                "116",
+                "176"
             ],
             "tree": {
-                "dataSet": "TreeOfLife_Afrosoricida",
                 "layouts": [
                 	"Pack",
                 	"Radial_Tree",
                 	"Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	// "Zoomable_Treemap"
-                ]
+                	"Sunburst",
+                	"Treemap",
+                	"Zoomable_Treemap"
+                ],
+                "dataSet": "TreeOfLife_Pelecaniformes"
             },
-            "text": "Which airport has the most direct flights to and from other airports?",
+            "text": "How many subspecies does the Ardeidae family have?",
             "type": "radio",
-            "answer": "Chicago O'hare Intl"
+            "answer": "116"
         },
         {
         	"id": 16,
@@ -370,61 +351,11 @@ const quizQuestions =
             "type": "text",
             "answer": "The geographical layout allows to use previous knowledge to find specific nodes. It also gives meaningful order into the nodes, however it doesnt reveal the connections very well."
         },
-        // WHAT TO DO WITH THESE THAT DON'T INCLUDE A LAYOUT???
-        // {
-        // 		"id": 18,
-        //     "text": "In a force-directed graph drawing, what does a long edge indicate?",
-        //     "type": "text",
-        //     "answer": "A long edge means a repulsive force that is much higher than the attracting force between the two nodes the edge connects."
-        // },
-        // {
-        // 		"id": 19,
-        //     "options": [
-        //         "FM3",
-        //         "Random",
-        //         "ForceAtlas2",
-        //         "OpenOrd"
-        //     ],
-        //     "text": "Which of the following are force-directed layouts?",
-        //     "type": "checkbox",
-        //     "answer": [
-        //         "FM3",
-        //         "ForceAtlas2",
-        //         "OpenOrd"
-        //     ]
-        // },
-        // {
-        // 		"id": 20,
-        //     "options": [
-        //         "Circular",
-        //         "OpenOrd",
-        //         "Spectral",
-        //         "Yifan Hu"
-        //     ],
-        //     "text": "Which of the following are not force-directed layouts?",
-        //     "type": "checkbox",
-        //     "answer": [
-        //         "Circular",
-        //         "Spectral"
-        //     ]
-        // },
-        // {
-        // 		"id": 21,
-        //     "text": "In a force-directed layout, what is the name of the force that counterbalances the repulsive force?",
-        //     "type": "text",
-        //     "answer": "Attractive force"
-        // },
-        // {
-        // 		"id": 21,
-        //     "options": [
-        //         "Adjacency matirx",
-        //         "Laplacian matrix",
-        //         "Graph eigenvalues of adjacency matrix",
-        //         "Graph eigenvalues of Laplacian matrix"
-        //     ],
-        //     "text": "What is the spectrum of a graph called? ",
-        //     "type": "radio",
-        //     "answer": "Graph eigenvalues of adjacency matrix"
-        // }
+        {
+        	"id": 18,
+            "text": "In a force-directed graph drawing, what does a long edge indicate?",
+            "type": "text",
+            "answer": "A long edge means a repulsive force that is much higher than the attracting force between the two nodes the edge connects."
+        }
     ]
 }
