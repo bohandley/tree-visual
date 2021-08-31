@@ -215,7 +215,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				"user_name": userId,
 				"user_level": userLevel
 			};
-			$.post( "http://localhost:3000/questions.json", params, function(data) {
+			$.post( "https://tree-vis-quiz-api.herokuapp.com/questions.json", params, function(data) {
 				if (isLastQuestion) {
 					window.location.replace("/submitted.html");
 					return;
