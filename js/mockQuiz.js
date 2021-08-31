@@ -148,7 +148,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		});
 	}
 
-	const runQuiz = (quizQuestions, userEmailAddress, userId, userLevel, questionNumber) => {
+	const runQuiz = (quizQuestions, userId, userLevel, questionNumber) => {
 		let questions = quizQuestions.questions,
 			quizId = quizQuestions.quizId,
 			questionStartTime = (new Date()).getTime();
@@ -195,7 +195,6 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			console.log('questionText: ' + questionText);
 			console.log('questionAnswer: ' + questionAnswer);
 			console.log('questionNumber: ' + questionNumber);
-			console.log('userEmailAddress: ' + userEmailAddress);
 			console.log('userId: ' + userId);
 			console.log('userLevel: ' + userLevel);
 			console.log('questionTime: ' + questionTime);
