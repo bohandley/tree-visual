@@ -21,11 +21,10 @@ $(document).ready(function () {
 	// if user decides to take quiz
 	$("#take-quiz").on("click", function(){
 		// quiz user data
-		let userEmailAddress = $("#user-email-address").val(),
-			userId = $("#user-id").val(),
+		let userId = $("#user-id").val(),
 			userLevel = $("#user-level").val();
 
-		if(!userEmailAddress || !userId || !userLevel){
+		if(!userId || !userLevel){
 			alert("Please complete the quiz information before continuing.");
 			return;
 		}
@@ -39,7 +38,6 @@ $(document).ready(function () {
 			user: {
 				user_name: userId,
 				user_level: userLevel,
-				email_address: userEmailAddress
 			}
 		};
 
@@ -58,7 +56,7 @@ $(document).ready(function () {
             mockQuiz.hideG2Elements();
             mockQuiz.setupQuestionContainer();
             mockQuiz.moveDescribeDiv();
-            mockQuiz.runQuiz(quizQuestions, userEmailAddress, userId, userLevel, questionNumber);
+            mockQuiz.runQuiz(quizQuestions, userId, userLevel, questionNumber);
 		})
 	    .fail(function() {
             $("#loading").hide();
