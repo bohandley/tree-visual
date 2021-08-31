@@ -123,7 +123,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Gov_United_Kingdom"
             },
-            "text": "Briefly compare the Treemap and Radial Tree in depicting the hierarchy of the United States Government.",
+            "text": "Briefly compare the Treemap and Radial Tree in depicting the hierarchy of the United Kingdom Government.",
             "type": "text",
             "answer": "The Radial Tree shows the hierarchy of the government."
         },
@@ -145,7 +145,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Leskovec"
             },
-            "text": "Among all Leskovec's publications in 2010, which paper were cited most?",
+            "text": "Among all Leskovec's publications in 2010, which paper is cited most?",
             "type": "radio",
             "answer": "Predicting positive and negative links in online social networks"
         },
@@ -251,6 +251,27 @@ const quizQuestions =
         {
         	"id": 12,
             "options": [
+                "5%",
+                "10%",
+                "20%",
+                "30%",
+                "35%"
+            ],
+            "tree": {
+                "layouts": [
+                    "Pack",
+                    "Collapsible_Tree",
+                    "Sunburst"
+                ],
+                "dataSet": "Trade_United_Kingdom"
+            },
+            "text": "Among UK's import volume in 2018, at roughly what percentage did manufacture accounts for?",
+            "type": "radio",
+            "answer": "20%"
+        },
+        {
+        	"id": 13,
+            "options": [
                 "4",
                 "5",
                 "6",
@@ -269,7 +290,7 @@ const quizQuestions =
             "answer": "5"
         },
         {
-        	"id": 13,
+        	"id": 14,
             "options": [
                 "Agricultural Raw Materials",
                 "Fuels",
@@ -290,7 +311,7 @@ const quizQuestions =
             "answer": "Mach and Elec"
         },
         {
-        	"id": 14,
+        	"id": 15,
             "options": [
                 "Belgium",
                 "China",
@@ -315,7 +336,7 @@ const quizQuestions =
             "answer": ["Belgium", "Netherlands", "United States"]
         },
         {
-        	"id": 15,
+        	"id": 16,
             "tree": {
                 "layouts": [
                     "Pack",
@@ -332,7 +353,7 @@ const quizQuestions =
             "answer": "Pack, Collapsible Tree, Zoomable Treemap"
         },
         {
-        	"id": 16,
+        	"id": 17,
             "tree": {
                 "layouts": [
                 	"Treemap"
@@ -344,7 +365,7 @@ const quizQuestions =
             "answer": "No."
         },
         {
-        	"id": 17,
+        	"id": 18,
             "options": [
                 "13",
                 "27",
@@ -368,7 +389,7 @@ const quizQuestions =
             "answer": "116"
         },
         {
-        	"id": 18,
+        	"id": 19,
             "options": [
                 "N.cinerea - Australian sea lion",
                 "O.flavescens - South American sea lion",
@@ -391,7 +412,7 @@ const quizQuestions =
                 ]
         },
         {
-        	"id": 19,
+        	"id": 20,
             "options": [
                 "Hyaenidae",
                 "Canidae",
@@ -415,7 +436,7 @@ const quizQuestions =
             ]
         },
         {
-        	"id": 20,
+        	"id": 21,
             "options": [
                 "Felidae, Viverridae",
                 "Canidae, Viverridae",
@@ -436,7 +457,7 @@ const quizQuestions =
             "answer": "Canidae, Mustelidae"
         },
         {
-            "id": 21,
+            "id": 22,
             "tree": {
                 "dataSet": "Faloutsos"
             },
@@ -446,7 +467,7 @@ const quizQuestions =
             
         },
         {
-            "id": 22,
+            "id": 23,
             "options": [
                 "Pack",
                 "Radial Tree",
