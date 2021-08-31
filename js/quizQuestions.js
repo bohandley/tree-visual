@@ -34,13 +34,53 @@ const quizQuestions =
                 "Ontario Court",
                 "Small Claims, Family Court"
             ],
-
+            "tree": {
+                "layouts": [
+                	// update the layout select to only allow the following tree layouts
+                	"Pack",
+                	"Radial_Tree",
+                	"Collapsible_Tree",
+                	"Sunburst",
+                	// "Treemap",
+                	// "Zoomable_Treemap"
+                ],
+                // select the dataSet
+                "dataSet": "Gov_Canada"
+            },
             "text": "On provincial level, which court is at the lowest level?",
             "type": "radio",
             "answer": "Small Claims, Family Court"
         },
         {
-        	"id": 2,
+            "id": 2,
+            "options": [
+                "Supreme Court",
+                "Superior Court",
+                "Premiers",
+                "Governor General",
+                "Lieutenant Governors"
+            ],
+            "tree": {
+                "layouts": [
+                	// update the layout select to only allow the following tree layouts
+                	"Pack",
+                	"Radial_Tree",
+                	"Collapsible_Tree",
+                	"Sunburst",
+                ],
+                // select the dataSet
+                "dataSet": "Gov_Canada"
+            },
+            "text": "Which of the following are Federal institutions?",
+            "type": "checkbox",
+            "answer": [
+                "Supreme Court",
+                "Governor General",
+
+            ]
+        },
+        {
+        	"id": 3,
             "options": [
                 "Nation",
                 "Province",
@@ -61,7 +101,7 @@ const quizQuestions =
             "answer": "Nation"
         },
         {
-        	"id": 3,
+        	"id": 4,
             "tree": {
                 "layouts": [
                 	"Sunburst",
@@ -75,20 +115,20 @@ const quizQuestions =
             "answer": "Sunburst or Zoomable Treemap"
         },
         {
-            "id": 4,
+            "id": 5,
             "tree": {
                 "layouts": [
                     "Treemap",
-                    "Collapsible_Tree"
+                    "Radial_Tree"
                 ],
                 "dataSet": "Gov_United_Kingdom"
             },
-            "text": "Briefly compare the Treemap and Collapsible Tree in depicting the hierarchy of the United States Government.",
+            "text": "Briefly compare the Treemap and Radial Tree in depicting the hierarchy of the United States Government.",
             "type": "text",
-            "answer": "I don't know"
+            "answer": "The Radial Tree shows the hierarchy of the government."
         },
         {
-        	"id": 5,
+        	"id": 6,
             "options": [
                 "Kronecker graphs: An approach to modeling networks",
                 "Empirical comparison of algorithms for network community detection",
@@ -100,7 +140,8 @@ const quizQuestions =
                 "layouts": [
                     "Pack",
                     "Sunburst",
-                    "Treemap"
+                    "Treemap",
+                    "Radial_Tree"
                 ],
                 "dataSet": "Leskovec"
             },
@@ -109,7 +150,34 @@ const quizQuestions =
             "answer": "Predicting positive and negative links in online social networks"
         },
         {
-        	"id": 6,
+        	"id": 7,
+            "options": [
+                "Mining big data to extract patterns and predict real-life outcomes",
+                "Inferring person-to-person proximity using WiFi signals",
+                "Psycho-demographic analysis of the Facebook Rainbow Campaign",
+                "Higher-order organization of complex networks",
+                "SNAP: A general-purpose network analysis and graph-mining library",
+                "Improving website hyperlink structure using server logs"
+            ],
+            "tree": {
+                "layouts": [
+                    "Pack",
+                    "Sunburst",
+                    "Treemap",
+                    "Radial_Tree"
+                ],
+                "dataSet": "Leskovec"
+            },
+            "text": "Among Leskovec's publications in 2016, which paper(s) are of type [J]?",
+            "type": "checkbox",
+            "answer": [
+                "Mining big data to extract patterns and predict real-life outcomes",
+                "Higher-order organization of complex networks",
+                "SNAP: A general-purpose network analysis and graph-mining library"
+            ]
+        },
+        {
+        	"id": 8,
             "options": [
                 "7",
                 "9",
@@ -129,7 +197,7 @@ const quizQuestions =
             "answer": "13"
         },
         {
-        	"id": 7,
+        	"id": 9,
             "options": [
                 "1997",
                 "1998",
@@ -148,7 +216,7 @@ const quizQuestions =
             "answer": "1998"
         },
         {
-        	"id": 8,
+        	"id": 10,
             "tree": {
                 "layouts": [
                     "Pack"
@@ -160,7 +228,7 @@ const quizQuestions =
             "answer": "I don't know."
         },
         {
-        	"id": 9,
+        	"id": 11,
             "options": [
                 "Germany",
                 "United States",
@@ -181,7 +249,7 @@ const quizQuestions =
             "answer": "Germany"
         },
         {
-        	"id": 10,
+        	"id": 12,
             "options": [
                 "4",
                 "5",
@@ -201,7 +269,7 @@ const quizQuestions =
             "answer": "5"
         },
         {
-        	"id": 11,
+        	"id": 13,
             "options": [
                 "Agricultural Raw Materials",
                 "Fuels",
@@ -222,7 +290,7 @@ const quizQuestions =
             "answer": "Mach and Elec"
         },
         {
-        	"id": 12,
+        	"id": 14,
             "options": [
                 "Belgium",
                 "China",
@@ -247,7 +315,7 @@ const quizQuestions =
             "answer": ["Belgium", "Netherlands", "United States"]
         },
         {
-        	"id": 13,
+        	"id": 15,
             "tree": {
                 "layouts": [
                     "Pack",
@@ -264,7 +332,7 @@ const quizQuestions =
             "answer": "Pack, Collapsible Tree, Zoomable Treemap"
         },
         {
-        	"id": 14,
+        	"id": 16,
             "tree": {
                 "layouts": [
                 	"Treemap"
@@ -276,7 +344,7 @@ const quizQuestions =
             "answer": "No."
         },
         {
-        	"id": 15,
+        	"id": 17,
             "options": [
                 "13",
                 "27",
@@ -300,7 +368,7 @@ const quizQuestions =
             "answer": "116"
         },
         {
-        	"id": 16,
+        	"id": 18,
             "options": [
                 "N.cinerea - Australian sea lion",
                 "O.flavescens - South American sea lion",
@@ -323,7 +391,7 @@ const quizQuestions =
                 ]
         },
         {
-        	"id": 17,
+        	"id": 19,
             "options": [
                 "Hyaenidae",
                 "Canidae",
@@ -347,7 +415,7 @@ const quizQuestions =
             ]
         },
         {
-        	"id": 18,
+        	"id": 20,
             "options": [
                 "Felidae, Viverridae",
                 "Canidae, Viverridae",
@@ -368,20 +436,35 @@ const quizQuestions =
             "answer": "Canidae, Mustelidae"
         },
         {
-            "id": 19,
+            "id": 21,
             "tree": {
-                "dataSet": "TreeOfLife_Carnivora",
-                "layouts": [
-                    "Pack",
-                    "Radial_Tree"
-                ]
+                "dataSet": "Faloutsos"
             },
-            "text": "Compare the pros and cons of Pack and Radial Tree in depicting the Carnivora dataset.",
+            "text": "What is the difference between Radial Tree and Collapsible Tree?",
             "type": "text",
-            "answer": "I don't know"
+            "answer": ""
+            
         },
         {
-            "id": 20,
-        }
+            "id": 22,
+            "options": [
+                "Pack",
+                "Radial Tree",
+                "Collapsible Tree",
+                "Sunburst",
+                "Treemap",
+                "Zoomable Treemap"
+            ],
+            "tree": {
+                "dataSet": "Faloutsos"
+            },
+            "text": "Which of the following layout(s) explicitly shows the paths from root to leaves?",
+            "type": "checkbox",
+            "answer": [
+                "Radial Tree",
+                "Collapsible Tree"
+            ]
+        },
+        
     ]
 }
