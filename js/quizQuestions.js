@@ -34,19 +34,7 @@ const quizQuestions =
                 "Ontario Court",
                 "Small Claims, Family Court"
             ],
-            "tree": {
-                "layouts": [
-                	// update the layout select to only allow the following tree layouts
-                	"Pack",
-                	"Radial_Tree",
-                	"Collapsible_Tree",
-                	"Sunburst",
-                	// "Treemap",
-                	// "Zoomable_Treemap"
-                ],
-                // select the dataSet
-                "dataSet": "Gov_Canada"
-            },
+
             "text": "On provincial level, which court is at the lowest level?",
             "type": "radio",
             "answer": "Small Claims, Family Court"
@@ -314,48 +302,86 @@ const quizQuestions =
         {
         	"id": 16,
             "options": [
-                "Chicago O'hare Intl",
-                "Los Angeles Intl",
-                "San Francisco Intl",
-                "Seattle-Tacoma Intl"
+                "N.cinerea - Australian sea lion",
+                "O.flavescens - South American sea lion",
+                "A.philippii - Juan Fernández fur seal",
+                "B.astutus - Ring-tailed cat",
+                "N.olivacea - Western dwarf coati"
             ],
             "tree": {
                 "layouts": [
-                	"Pack",
-                	// "Radial_Tree",
-                	// "Collapsible_Tree",
-                	// "Sunburst",
-                	// "Treemap",
-                	// "Zoomable_Treemap"
+                    "Pack",
+                	"Radial_Tree",
+                	"Collapsible_Tree",
                 ],
-                "dataSet": "TreeOfLife_Pelecaniformes"
+                "dataSet": "TreeOfLife_Carnivora"
             },
-            "text": "From Anchorage Intl to Pago Pago Intl, which of the following airport  should be used for transferring so that the number of legs is minimized?",
-            "type": "radio",
-            "answer": "Los Angeles Intl"
+            "text": "Which of the following species belong to the Otariidae family?",
+            "type": "checkbox",
+            "answer": ["N.cinerea - Australian sea lion",
+                    "O.flavescens - South American sea lion",
+                ]
         },
         {
         	"id": 17,
+            "options": [
+                "Hyaenidae",
+                "Canidae",
+                "Mustelidae",
+                "Felidae",
+                "Procyonidae"
+            ],
             "tree": {
-                "dataSet": "TreeOfLife_Afrosoricida",
+                "dataSet": "TreeOfLife_Carnivora",
                 "layouts": [
-                	// "Pack",
-                	// "Radial_Tree",
-                	// "Collapsible_Tree",
-                	"Sunburst",
-                	"Treemap",
-                	"Zoomable_Treemap"
+                	"Pack",
+                	"Radial_Tree",
+                	"Collapsible_Tree",
                 ]
             },
-            "text": "What are the pros and cons of the geographical layout when depicting the USAir97 data set? Briefly explain.",
-            "type": "text",
-            "answer": "The geographical layout allows to use previous knowledge to find specific nodes. It also gives meaningful order into the nodes, however it doesnt reveal the connections very well."
+            "text": "Which of the following families have more than 30 species?",
+            "type": "checkbox",
+            "answer": [
+                "Canidae",
+                "Felidae"
+            ]
         },
         {
         	"id": 18,
-            "text": "In a force-directed graph drawing, what does a long edge indicate?",
+            "options": [
+                "Felidae, Viverridae",
+                "Canidae, Viverridae",
+                "Canidae, Mustelidae",
+                "Viverridae, Felidae",
+                "Mustelidae, Canidae"
+            ],
+            "tree": {
+                "dataSet": "TreeOfLife_Carnivora",
+                "layouts": [
+                	"Pack",
+                	"Radial_Tree",
+                	"Collapsible_Tree",
+                ]
+            },
+            "text": "Find the family with the most number of species, and family with the most number of subspecies",
+            "type": "radio",
+            "answer": "Canidae, Mustelidae"
+        },
+        {
+            "id": 19,
+            "tree": {
+                "dataSet": "TreeOfLife_Carnivora",
+                "layouts": [
+                    "Pack",
+                    "Radial_Tree"
+                ]
+            },
+            "text": "Compare the pros and cons of Pack and Radial Tree in depicting the Carnivora dataset.",
             "type": "text",
-            "answer": "A long edge means a repulsive force that is much higher than the attracting force between the two nodes the edge connects."
+            "answer": "I don't know"
+        },
+        {
+            "id": 20,
         }
     ]
 }
