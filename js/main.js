@@ -51,6 +51,7 @@ $(document).ready(function () {
             $("#quizModal").modal("hide");
 
             MODE = 'Mock Quiz';
+            updateDataTypeAndFileName();
                 
             mockQuiz.hideDataSelect();
             mockQuiz.hideG2Elements();
@@ -65,11 +66,8 @@ $(document).ready(function () {
 	    .always(function() {
 	        $("#loading").hide();
 	    });
-
 	});
-
-    updateDataTypeAndFileName();
-      
+     
     menu.setupCheckBoxes();
 
     setupSliderValueTooltip();
@@ -79,6 +77,7 @@ $(document).ready(function () {
     // only load the onboarding if user chooses study mode
     // and has not seen the onboarding before
     $("#study-mode").on("click", function(){
+        updateDataTypeAndFileName();
         setupOnboarding();
     });
 
@@ -227,7 +226,6 @@ window.onload = function () {
 
 function updateDataTypeAndFileName() {
     // get the filename and datatype for the initial dataset
-
     d3.select('#dataDropdown')
         .selectAll('optgroup')
         .data(datasetDescription)
