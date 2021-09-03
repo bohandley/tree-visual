@@ -458,9 +458,6 @@ const quizQuestions =
         },
         {
             "id": 22,
-            "tree": {
-                "dataSet": "Faloutsos"
-            },
             "text": "What is the difference between Radial Tree and Collapsible Tree?",
             "type": "text",
             "answer": ""
@@ -476,9 +473,6 @@ const quizQuestions =
                 "Treemap",
                 "Zoomable Treemap"
             ],
-            "tree": {
-                "dataSet": "Faloutsos"
-            },
             "text": "Which of the following layout(s) explicitly shows the paths from root to leaves?",
             "type": "checkbox",
             "answer": [

@@ -7,6 +7,8 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 	
 	// 	- [ ] fire the select as the questions move
 	const updateDataSelect = (q) => {
+		if (q.tree === undefined || q.tree.dataSet === undefined)
+			return;
 		let dataSet = q.tree.dataSet;
 		$("#dataDropdown option[value='"+ dataSet +"']").prop("selected", true);
 		$("#dataDropdown").trigger("change");
@@ -128,7 +130,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 
 	const selectLayouts = (q) => {
 
-		if (q.tree.layouts === undefined){
+		if (q.tree === undefined || q.tree.layouts === undefined){
 			hideGraphInterface();
 			return;
 		}
@@ -205,6 +207,8 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			console.log('---------');
 
 			$("#submit-loading").show();
+			$("#bNext").attr("disabled", true);
+			$("#bSubmit").attr("disabled", true);
 	
 			let params = {
 				question: {
@@ -238,11 +242,12 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				}
 			})
 			.fail(function() {
-				$("#submit-loading").hide();
 				alert( "Cannot submit the answer. Please check your connection and try again." );
 			})
 			.always(function() {
 				$("#submit-loading").hide();
+				$("#bNext").attr("disabled", false);
+				$("#bSubmit").attr("disabled", false);
 			});
 		}
 		

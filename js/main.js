@@ -31,6 +31,9 @@ $(document).ready(function () {
 
         $("#loading").show();
 
+        $("#take-quiz").attr("disabled", true);
+        $("#study-mode").attr("disabled", true);
+
 		// api call to backend to store userId, userLevel, userEmail address
 		// if user has already tried to take the quiz, return the question they 
 		// most recently completed
@@ -51,7 +54,6 @@ $(document).ready(function () {
             $("#quizModal").modal("hide");
 
             MODE = 'Mock Quiz';
-            updateDataTypeAndFileName();
                 
             mockQuiz.hideDataSelect();
             mockQuiz.hideG2Elements();
@@ -60,14 +62,16 @@ $(document).ready(function () {
             mockQuiz.runQuiz(quizQuestions, userId, userLevel, questionNumber);
 		})
 	    .fail(function() {
-            $("#loading").hide();
 	        alert( "Cannot enter the quiz. Please check your connection and try again." );
 	    })
 	    .always(function() {
 	        $("#loading").hide();
+            $("#take-quiz").attr("disabled", false);
+            $("#study-mode").attr("disabled", false);
 	    });
 	});
-     
+    
+    updateDataTypeAndFileName();
     menu.setupCheckBoxes();
 
     setupSliderValueTooltip();
@@ -77,7 +81,6 @@ $(document).ready(function () {
     // only load the onboarding if user chooses study mode
     // and has not seen the onboarding before
     $("#study-mode").on("click", function(){
-        updateDataTypeAndFileName();
         setupOnboarding();
     });
 
@@ -233,14 +236,20 @@ function updateDataTypeAndFileName() {
         .attr("label", d => d.label)
         .attr("id", d => d.id)
         .selectAll('option')
-        .data(d => d.options.filter(op => MODE == "Study"? op.mode == MODE : true))
+        //.data(d => d.options.filter(op => MODE == "Study"? op.mode == MODE : true))
+        .data(d => d.options)
         .enter().append('option')
         .attr('value', d => d.value)
         .attr('data', d => d.data)
         .text(d => d.name);
     
     if(MODE == "Study"){
-        let initialSelected = d3.select('#dataDropdown').select('option');
+        let study_options = d3.select('#dataDropdown')
+            .selectAll('option')
+            .filter(d => d.mode != MODE);
+        study_options.attr('hidden', 'hidden');
+
+        let initialSelected = d3.select(study_options.node());
         initialSelected.attr('selected', 'selected');
 
         updateDataset();
