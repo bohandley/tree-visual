@@ -101,7 +101,31 @@ const quizQuestions =
             "answer": "Nation"
         },
         {
-        	"id": 4,
+            "id": 4,
+            "options": [
+                "Government Publishing Office",
+                "Architect of the Capitol",
+                "Government Accountability Office",
+                "Library of Congress",
+                "Congressional Budget Office",
+                "The Congress",
+                "United States Botanic Garden"
+            ],
+            "tree": {
+                "layouts": [
+                    "Treemap",
+                    "Pack",
+                    "Collapsible_Tree",
+                    "Sunburst"
+                ],
+                "dataSet": "Gov_United_States"
+            },
+            "text": "Which of the following institutions in the legislative branch has the most number of employees?",
+            "type": "radio",
+            "answer": "Library of Congress"
+        },
+        {
+        	"id": 5,
             "tree": {
                 "layouts": [
                 	"Sunburst",
@@ -115,7 +139,7 @@ const quizQuestions =
             "answer": "Sunburst or Zoomable Treemap"
         },
         {
-            "id": 5,
+            "id": 6,
             "tree": {
                 "layouts": [
                     "Treemap",
@@ -128,7 +152,7 @@ const quizQuestions =
             "answer": "The Radial Tree shows the hierarchy of the government."
         },
         {
-        	"id": 6,
+        	"id": 7,
             "options": [
                 "Kronecker graphs: An approach to modeling networks",
                 "Empirical comparison of algorithms for network community detection",
@@ -150,7 +174,7 @@ const quizQuestions =
             "answer": "Predicting positive and negative links in online social networks"
         },
         {
-        	"id": 7,
+        	"id": 8,
             "options": [
                 "Mining big data to extract patterns and predict real-life outcomes",
                 "Inferring person-to-person proximity using WiFi signals",
@@ -177,7 +201,7 @@ const quizQuestions =
             ]
         },
         {
-        	"id": 8,
+        	"id": 9,
             "options": [
                 "7",
                 "9",
@@ -197,7 +221,7 @@ const quizQuestions =
             "answer": "13"
         },
         {
-        	"id": 9,
+        	"id": 10,
             "options": [
                 "1997",
                 "1998",
@@ -216,7 +240,7 @@ const quizQuestions =
             "answer": "1998"
         },
         {
-        	"id": 10,
+        	"id": 11,
             "tree": {
                 "layouts": [
                     "Pack"
@@ -228,7 +252,7 @@ const quizQuestions =
             "answer": "I don't know."
         },
         {
-        	"id": 11,
+        	"id": 12,
             "options": [
                 "Germany",
                 "United States",
@@ -249,7 +273,7 @@ const quizQuestions =
             "answer": "Germany"
         },
         {
-        	"id": 12,
+        	"id": 13,
             "options": [
                 "5%",
                 "10%",
@@ -270,7 +294,7 @@ const quizQuestions =
             "answer": "20%"
         },
         {
-        	"id": 13,
+        	"id": 14,
             "options": [
                 "4",
                 "5",
@@ -290,7 +314,7 @@ const quizQuestions =
             "answer": "5"
         },
         {
-        	"id": 14,
+        	"id": 15,
             "options": [
                 "Agricultural Raw Materials",
                 "Fuels",
@@ -311,7 +335,7 @@ const quizQuestions =
             "answer": "Mach and Elec"
         },
         {
-        	"id": 15,
+        	"id": 16,
             "options": [
                 "Belgium",
                 "China",
@@ -336,7 +360,7 @@ const quizQuestions =
             "answer": ["Belgium", "Netherlands", "United States"]
         },
         {
-        	"id": 16,
+        	"id": 17,
             "tree": {
                 "layouts": [
                     "Pack",
@@ -353,7 +377,7 @@ const quizQuestions =
             "answer": "Pack, Collapsible Tree, Zoomable Treemap"
         },
         {
-        	"id": 17,
+        	"id": 18,
             "tree": {
                 "layouts": [
                 	"Treemap"
@@ -365,7 +389,7 @@ const quizQuestions =
             "answer": "No."
         },
         {
-        	"id": 18,
+        	"id": 19,
             "options": [
                 "13",
                 "27",
@@ -389,7 +413,7 @@ const quizQuestions =
             "answer": "116"
         },
         {
-        	"id": 19,
+        	"id": 20,
             "options": [
                 "N.cinerea - Australian sea lion",
                 "O.flavescens - South American sea lion",
@@ -412,7 +436,7 @@ const quizQuestions =
                 ]
         },
         {
-        	"id": 20,
+        	"id": 21,
             "options": [
                 "Hyaenidae",
                 "Canidae",
@@ -436,7 +460,7 @@ const quizQuestions =
             ]
         },
         {
-        	"id": 21,
+        	"id": 22,
             "options": [
                 "Felidae, Viverridae",
                 "Canidae, Viverridae",
@@ -457,14 +481,29 @@ const quizQuestions =
             "answer": "Canidae, Mustelidae"
         },
         {
-            "id": 22,
-            "text": "What is the difference between Radial Tree and Collapsible Tree?",
-            "type": "text",
-            "answer": ""
-            
+        	"id": 23,
+            "options": [
+                "Felidae",
+                "Ursidae",
+                "Mustelidae",
+                "Canidae",
+                "Procyonidae",
+                "Viverridae"
+            ],
+            "tree": {
+                "dataSet": "TreeOfLife_Carnivora",
+                "layouts": [
+                	"Pack",
+                	"Radial_Tree",
+                	"Collapsible_Tree",
+                ]
+            },
+            "text": "Which family does <i>T.taxus - American badger</i> belong to?",
+            "type": "radio",
+            "answer": "Mustelidae"
         },
         {
-            "id": 23,
+            "id": 24,
             "options": [
                 "Pack",
                 "Radial Tree",
@@ -480,6 +519,31 @@ const quizQuestions =
                 "Collapsible Tree"
             ]
         },
+        {
+            "id": 25,
+            "options": [
+                "Circle A is enclosed in circle B",
+                "Circle B is enclosed in circle A",
+                "Circle A intersects with circle B",
+                "Circle A is tangent to circle B",
+                "None of the above is true"
+            ],
+            "text": "In the Pack layout, if node B is node A's grandchild, which of the following is true about the circles for A and B?",
+            "type": "radio",
+            "answer": "Circle B is enclosed in circle A"
+        },
+        {
+            "id": 26,
+            "text": "What is the benefit of Collapsible Tree compared to Radial Tree?",
+            "type": "text",
+            "answer": ""
+        },
+        {
+            "id": 27,
+            "text": "Briefly compare the different ways Radial Tree and Pack use to indicate hierarchy.",
+            "type": "text",
+            "answer": ""
+        }
         
     ]
 }
