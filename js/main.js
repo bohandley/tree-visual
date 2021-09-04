@@ -33,6 +33,7 @@ $(document).ready(function () {
 
         $("#take-quiz").attr("disabled", true);
         $("#study-mode").attr("disabled", true);
+        $('#quizModal').data('bs.modal')._config.backdrop = 'static';
 
 		// api call to backend to store userId, userLevel, userEmail address
 		// if user has already tried to take the quiz, return the question they 
@@ -68,6 +69,7 @@ $(document).ready(function () {
 	        $("#loading").hide();
             $("#take-quiz").attr("disabled", false);
             $("#study-mode").attr("disabled", false);
+            $('#quizModal').data('bs.modal')._config.backdrop = true;
 	    });
 	});
     
@@ -244,11 +246,12 @@ function updateDataTypeAndFileName() {
         .text(d => d.name);
     
     if(MODE == "Study"){
-        let study_options = d3.select('#dataDropdown')
-            .selectAll('option')
-            .filter(d => d.mode != MODE);
-        study_options.attr('hidden', 'hidden');
+        let all_options = d3.select('#dataDropdown')
+            .selectAll('option');
+        let study_options = all_options.filter(d => d.mode == MODE),
+            quiz_options = all_options.filter(d => d.mode != MODE);
 
+        quiz_options.attr('hidden', 'hidden');
         let initialSelected = d3.select(study_options.node());
         initialSelected.attr('selected', 'selected');
 
