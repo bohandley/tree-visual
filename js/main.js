@@ -31,6 +31,10 @@ $(document).ready(function () {
 
         $("#loading").show();
 
+        $("#take-quiz").attr("disabled", true);
+        $("#study-mode").attr("disabled", true);
+        $('#quizModal').data('bs.modal')._config.backdrop = 'static';
+
 		// api call to backend to store userId, userLevel, userEmail address
 		// if user has already tried to take the quiz, return the question they 
 		// most recently completed
@@ -59,17 +63,17 @@ $(document).ready(function () {
             mockQuiz.runQuiz(quizQuestions, userId, userLevel, questionNumber);
 		})
 	    .fail(function() {
-            $("#loading").hide();
 	        alert( "Cannot enter the quiz. Please check your connection and try again." );
 	    })
 	    .always(function() {
 	        $("#loading").hide();
+            $("#take-quiz").attr("disabled", false);
+            $("#study-mode").attr("disabled", false);
+            $('#quizModal').data('bs.modal')._config.backdrop = true;
 	    });
-
 	});
-
+    
     updateDataTypeAndFileName();
-      
     menu.setupCheckBoxes();
 
     setupSliderValueTooltip();
@@ -227,7 +231,6 @@ window.onload = function () {
 
 function updateDataTypeAndFileName() {
     // get the filename and datatype for the initial dataset
-
     d3.select('#dataDropdown')
         .selectAll('optgroup')
         .data(datasetDescription)
@@ -235,14 +238,21 @@ function updateDataTypeAndFileName() {
         .attr("label", d => d.label)
         .attr("id", d => d.id)
         .selectAll('option')
-        .data(d => d.options.filter(op => MODE == "Study"? op.mode == MODE : true))
+        //.data(d => d.options.filter(op => MODE == "Study"? op.mode == MODE : true))
+        .data(d => d.options)
         .enter().append('option')
         .attr('value', d => d.value)
         .attr('data', d => d.data)
         .text(d => d.name);
     
     if(MODE == "Study"){
-        let initialSelected = d3.select('#dataDropdown').select('option');
+        let all_options = d3.select('#dataDropdown')
+            .selectAll('option');
+        let study_options = all_options.filter(d => d.mode == MODE),
+            quiz_options = all_options.filter(d => d.mode != MODE);
+
+        quiz_options.attr('hidden', 'hidden');
+        let initialSelected = d3.select(study_options.node());
         initialSelected.attr('selected', 'selected');
 
         updateDataset();

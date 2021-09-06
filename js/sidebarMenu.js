@@ -420,10 +420,9 @@ var menu = (function (d3, $) {
             .attr("title", (d) => d.text);
 
         var leafSelect = $("#leaf-selection");
-
-        leafSelect.selectpicker("refresh");
-
+        leafSelect.addClass('dropdown-menu-right').selectpicker('setStyle');
         leafSelect.selectpicker({"width": "auto"});
+        leafSelect.selectpicker("refresh");
 
         leafSelect.on("change", function () {
             var vals = $(this).val();
@@ -533,6 +532,7 @@ var menu = (function (d3, $) {
 
             var curFilter = $("#filter-level-" + level);
 
+            curFilter.addClass('dropdown-menu-right').selectpicker('setStyle');
             curFilter.selectpicker("refresh");
 
             curFilter.on("change", function () {
@@ -570,6 +570,7 @@ var menu = (function (d3, $) {
                                 data-actions-box="true" 
                                 data-width="100%"
                                 data-height="100px"
+                                data-container="body"
                             >
                             </select>
                         </div>

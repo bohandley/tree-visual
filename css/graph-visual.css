@@ -1,5 +1,9 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+body {
+    overflow-x: hidden;
+}
+
 h2 {
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
@@ -418,7 +422,7 @@ input, select, .panel-heading
     box-shadow: 0 0 5px gray;
     white-space: nowrap;
     position: absolute;
-    z-index: 999;
+    z-index: 1000;
     opacity: 0;
     pointer-events: none;
 }

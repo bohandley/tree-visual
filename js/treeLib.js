@@ -1216,11 +1216,11 @@ var treeLib = (function (d3) {
         tooltip.html(innerText);
 
         if (isd3v3) {
-            tooltip.style('left', (d3v3.event.pageX+10) + 'px')
+            tooltip.style('left', (d3v3.event.pageX-10) + 'px')
                 .style('top', (d3v3.event.pageY+10) + 'px')
         }
         else {
-            tooltip.style('left', (d3.event.pageX+10) + 'px')
+            tooltip.style('left', (d3.event.pageX-10) + 'px')
                 .style('top', (d3.event.pageY+10) + 'px')
         }
        
