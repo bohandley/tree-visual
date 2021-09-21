@@ -180,6 +180,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			let questionTime = (questionEndTime - questionStartTime)/1000,
 				// Do we really need an id? Can we just use i?
 				// questionNumber = q.id,
+				questionType = q.type,
 				questionNumber = i,
 				questionText = q.text,
 				questionAnswer = q.answer,
@@ -204,6 +205,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			console.log('userLevel: ' + userLevel);
 			console.log('questionTime: ' + questionTime);
 			console.log('userSubmission: ' + userSubmission);
+			console.log('questionType: ' + questionType);
 			console.log('---------');
 
 			$("#submit-loading").show();
@@ -217,6 +219,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 					"question_answer": questionAnswer,
 					"question_number": questionNumber,
 					"question_time": questionTime,
+					"question_type": questionType,
 					"submission": userSubmission,
 				},
 				"user_name": userId,
