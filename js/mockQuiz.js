@@ -217,6 +217,7 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 					"question_text": questionText,
 					"question_number": questionNumber,
 					"question_time": questionTime,
+					"question_type": questionType,
 					"submission": userSubmission,
 				},
 				"user_name": userId,
