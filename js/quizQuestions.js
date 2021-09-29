@@ -120,7 +120,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Gov_United_States"
             },
-            "text": "Which of the following three layouts (Sunburst, Treemap, Zoomable Treemap) are best at depicting the hierarchy of the United States Government? Explain your answer.",
+            "text": "Which of the following three layouts (Sunburst, Treemap, Treemap (Zoomable)) are best at depicting the hierarchy of the United States Government? Explain your answer.",
             "type": "text",
         },
         {
@@ -424,11 +424,10 @@ const quizQuestions =
             "options": [
                 "Felidae, Viverridae",
                 "Canidae, Viverridae",
-                "Canidae, Mustelidae",
+                "Canidae, Canidae",
                 "Viverridae, Felidae",
                 "Mustelidae, Canidae"
             ],
-            // No correct choices here!
             "tree": {
                 "dataSet": "TreeOfLife_Carnivora",
                 "layouts": [
@@ -437,7 +436,7 @@ const quizQuestions =
                 	"Collapsible_Tree",
                 ]
             },
-            "text": "Find the family with the most number of species, and family with the most number of subspecies",
+            "text": "Find the family with the most number of species, and family with the most number of subspecies.",
             "type": "radio",
         },
         {
