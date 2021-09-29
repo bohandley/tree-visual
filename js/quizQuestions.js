@@ -16,12 +16,6 @@
 // TreeOfLife_Pelecaniformes
 // TreeOfLife_Afrosoricida
 
-// The questions.id here is only for internal reference
-// it will NOT be used
-
-// We need to make a unified form for checkbox answers
-// shall we write a concatnated string or an array of strings?
-
 const quizQuestions =
 {
     "quizId": "tree_quiz",
@@ -47,7 +41,7 @@ const quizQuestions =
                 // select the dataSet
                 "dataSet": "Gov_Canada"
             },
-            "text": "On provincial level, which court is at the lowest level?",
+            "text": "On the provincial level, which court is at the lowest level?",
             "type": "radio",
         },
         {
@@ -90,7 +84,7 @@ const quizQuestions =
 	                "Collapsible_Tree"
                 ]
             },
-            "text": "Which branch of the Philippines Government has the highest number of employees?",
+            "text": "Which branch of the Philippines Government has the most number of employees?",
             "type": "radio",
         },
         {
@@ -113,7 +107,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Gov_United_States"
             },
-            "text": "Which of the following institutions in the legislative branch has the most number of employees?",
+            "text": "Which of the following institutions in the legislative branch of the United States has the most number of employees?",
             "type": "radio",
         },
         {
@@ -138,7 +132,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Gov_United_Kingdom"
             },
-            "text": "Briefly compare the Treemap and Radial Tree in depicting the hierarchy of the United Kingdom Government.",
+            "text": "Briefly compare Treemap and Radial Tree in depicting the hierarchy of the United Kingdom Government. Which layout do you prefer?",
             "type": "text",
         },
         {
@@ -218,7 +212,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Faloutsos"
             },
-            "text": "Before the 21st century, on which year was Faloutsos most prolific in terms of number of papers?",
+            "text": "Before the 21st century, on which year was Faloutsos most prolific in terms of the number of papers?",
             "type": "radio",
         },
         {
@@ -229,7 +223,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Faloutsos"
             },
-            "text": "What are the pros and cons of the pack layout when depicting the Faloutsos dataset?",
+            "text": "What are the pros and cons of the Pack layout when depicting the Faloutsos dataset?",
             "type": "text",
         },
         {
@@ -249,7 +243,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Trade_United_Kingdom"
             },
-            "text": "Which country is UK's second-largest exporter in capital goods?",
+            "text": "Which country is UK's second-largest exporter of capital goods?",
             "type": "radio",
         },
         {
@@ -288,7 +282,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Trade_China"
             },
-            "text": "How many countries (regions) are both China's importer and exporter in vegatable?",
+            "text": "How many countries (regions) are both China's importers and exporters in vegatable?",
             "type": "radio",
         },
         {
@@ -348,7 +342,7 @@ const quizQuestions =
                 ],
                 "dataSet": "Trade_China"
             },
-            "text": "Considering the features of hierarchy of trade datasets, which layout(s) is better at depicting the trade datasets? Explain your answers.",
+            "text": "Considering the features of the hierarchy of trade datasets, which layout(s) is better at depicting the trade datasets? Explain your answers.",
             "type": "text",
         },
         {
@@ -434,6 +428,7 @@ const quizQuestions =
                 "Viverridae, Felidae",
                 "Mustelidae, Canidae"
             ],
+            // No correct choices here!
             "tree": {
                 "dataSet": "TreeOfLife_Carnivora",
                 "layouts": [
@@ -463,7 +458,7 @@ const quizQuestions =
                 	"Collapsible_Tree",
                 ]
             },
-            "text": "Which family does <i>T.taxus - American badger</i> belong to?",
+            "text": "Which family does T.taxus - American badger belong to?",
             "type": "radio",
         },
         {
@@ -471,12 +466,12 @@ const quizQuestions =
             "options": [
                 "Pack",
                 "Radial Tree",
-                "Collapsible Tree",
+                "Radial Tree (Collapsible)",
                 "Sunburst",
                 "Treemap",
-                "Zoomable Treemap"
+                "Treemap (Zoomable)"
             ],
-            "text": "Which of the following layout(s) explicitly shows the paths from root to leaves?",
+            "text": "Which of the following layout(s) explicitly shows the paths from the root to leaves?",
             "type": "checkbox",
         },
         {
@@ -493,7 +488,7 @@ const quizQuestions =
         },
         {
             "id": 26,
-            "text": "What is the benefit of Collapsible Tree compared to Radial Tree?",
+            "text": "What is the benefit of Radial Tree (Collapsible) compared to Radial Tree?",
             "type": "text",
         },
         {
