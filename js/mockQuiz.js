@@ -180,7 +180,6 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			let questionTime = (questionEndTime - questionStartTime)/1000,
 				questionNumber = q.id,
 				questionText = q.text,
-				questionAnswer = q.answer,
 				userSubmission;
 	
 			if(q.type == 'radio') {
@@ -188,7 +187,6 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			}
 			else if(q.type == 'checkbox') {
 				userSubmission = $('#questions input:checked').get().map(d => d.value).join(';');
-				questionAnswer = questionAnswer.join(';');
 			}
 			else {
 				userSubmission = $('textarea').val();
@@ -202,7 +200,6 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				question: {
 					"quiz_id": quizId,
 					"question_text": questionText,
-					"question_answer": questionAnswer,
 					"question_number": questionNumber,
 					"question_time": questionTime,
 					"submission": userSubmission,

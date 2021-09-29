@@ -49,7 +49,6 @@ const quizQuestions =
             },
             "text": "On provincial level, which court is at the lowest level?",
             "type": "radio",
-            "answer": "Small Claims, Family Court"
         },
         {
             "id": 2,
@@ -73,11 +72,6 @@ const quizQuestions =
             },
             "text": "Which of the following are Federal institutions?",
             "type": "checkbox",
-            "answer": [
-                "Supreme Court",
-                "Governor General",
-
-            ]
         },
         {
         	"id": 3,
@@ -98,7 +92,6 @@ const quizQuestions =
             },
             "text": "Which branch of the Philippines Government has the highest number of employees?",
             "type": "radio",
-            "answer": "Nation"
         },
         {
             "id": 4,
@@ -122,7 +115,6 @@ const quizQuestions =
             },
             "text": "Which of the following institutions in the legislative branch has the most number of employees?",
             "type": "radio",
-            "answer": "Library of Congress"
         },
         {
         	"id": 5,
@@ -136,7 +128,6 @@ const quizQuestions =
             },
             "text": "Which of the following three layouts (Sunburst, Treemap, Zoomable Treemap) are best at depicting the hierarchy of the United States Government? Explain your answer.",
             "type": "text",
-            "answer": "Sunburst or Zoomable Treemap"
         },
         {
             "id": 6,
@@ -149,7 +140,6 @@ const quizQuestions =
             },
             "text": "Briefly compare the Treemap and Radial Tree in depicting the hierarchy of the United Kingdom Government.",
             "type": "text",
-            "answer": "The Radial Tree shows the hierarchy of the government."
         },
         {
         	"id": 7,
@@ -171,7 +161,6 @@ const quizQuestions =
             },
             "text": "Among all Leskovec's publications in 2010, which paper is cited most?",
             "type": "radio",
-            "answer": "Predicting positive and negative links in online social networks"
         },
         {
         	"id": 8,
@@ -194,11 +183,6 @@ const quizQuestions =
             },
             "text": "Among Leskovec's publications in 2016, which paper(s) are of type [J]?",
             "type": "checkbox",
-            "answer": [
-                "Mining big data to extract patterns and predict real-life outcomes",
-                "Higher-order organization of complex networks",
-                "SNAP: A general-purpose network analysis and graph-mining library"
-            ]
         },
         {
         	"id": 9,
@@ -218,7 +202,6 @@ const quizQuestions =
             },
             "text": "How many papers did Stasko publish in 2008?",
             "type": "radio",
-            "answer": "13"
         },
         {
         	"id": 10,
@@ -237,7 +220,6 @@ const quizQuestions =
             },
             "text": "Before the 21st century, on which year was Faloutsos most prolific in terms of number of papers?",
             "type": "radio",
-            "answer": "1998"
         },
         {
         	"id": 11,
@@ -249,7 +231,6 @@ const quizQuestions =
             },
             "text": "What are the pros and cons of the pack layout when depicting the Faloutsos dataset?",
             "type": "text",
-            "answer": "I don't know."
         },
         {
         	"id": 12,
@@ -270,7 +251,6 @@ const quizQuestions =
             },
             "text": "Which country is UK's second-largest exporter in capital goods?",
             "type": "radio",
-            "answer": "Germany"
         },
         {
         	"id": 13,
@@ -291,7 +271,6 @@ const quizQuestions =
             },
             "text": "Among UK's import volume in 2018, at roughly what percentage did manufacture accounts for?",
             "type": "radio",
-            "answer": "20%"
         },
         {
         	"id": 14,
@@ -311,7 +290,6 @@ const quizQuestions =
             },
             "text": "How many countries (regions) are both China's importer and exporter in vegatable?",
             "type": "radio",
-            "answer": "5"
         },
         {
         	"id": 15,
@@ -332,7 +310,6 @@ const quizQuestions =
             },
             "text": "Which of the following kind of goods did Spain import from Germany in 2018?",
             "type": "radio",
-            "answer": "Mach and Elec"
         },
         {
         	"id": 16,
@@ -357,7 +334,6 @@ const quizQuestions =
             },
             "text": "Which countries export food <b>and</b> fuels to Germany?",
             "type": "checkbox",
-            "answer": ["Belgium", "Netherlands", "United States"]
         },
         {
         	"id": 17,
@@ -374,7 +350,6 @@ const quizQuestions =
             },
             "text": "Considering the features of hierarchy of trade datasets, which layout(s) is better at depicting the trade datasets? Explain your answers.",
             "type": "text",
-            "answer": "Pack, Collapsible Tree, Zoomable Treemap"
         },
         {
         	"id": 18,
@@ -386,7 +361,6 @@ const quizQuestions =
             },
             "text": "Is Treemap a good layout for depicting the United States trade dataset? Briefly explain.",
             "type": "text",
-            "answer": "No."
         },
         {
         	"id": 19,
@@ -410,7 +384,6 @@ const quizQuestions =
             },
             "text": "How many subspecies does the Ardeidae family have?",
             "type": "radio",
-            "answer": "116"
         },
         {
         	"id": 20,
@@ -431,9 +404,6 @@ const quizQuestions =
             },
             "text": "Which of the following species belong to the Otariidae family?",
             "type": "checkbox",
-            "answer": ["N.cinerea - Australian sea lion",
-                    "O.flavescens - South American sea lion",
-                ]
         },
         {
         	"id": 21,
@@ -454,10 +424,6 @@ const quizQuestions =
             },
             "text": "Which of the following families have more than 30 species?",
             "type": "checkbox",
-            "answer": [
-                "Canidae",
-                "Felidae"
-            ]
         },
         {
         	"id": 22,
@@ -478,7 +444,6 @@ const quizQuestions =
             },
             "text": "Find the family with the most number of species, and family with the most number of subspecies",
             "type": "radio",
-            "answer": "Canidae, Mustelidae"
         },
         {
         	"id": 23,
@@ -500,7 +465,6 @@ const quizQuestions =
             },
             "text": "Which family does <i>T.taxus - American badger</i> belong to?",
             "type": "radio",
-            "answer": "Mustelidae"
         },
         {
             "id": 24,
@@ -514,10 +478,6 @@ const quizQuestions =
             ],
             "text": "Which of the following layout(s) explicitly shows the paths from root to leaves?",
             "type": "checkbox",
-            "answer": [
-                "Radial Tree",
-                "Collapsible Tree"
-            ]
         },
         {
             "id": 25,
@@ -530,19 +490,16 @@ const quizQuestions =
             ],
             "text": "In the Pack layout, if node B is node A's grandchild, which of the following is true about the circles for A and B?",
             "type": "radio",
-            "answer": "Circle B is enclosed in circle A"
         },
         {
             "id": 26,
             "text": "What is the benefit of Collapsible Tree compared to Radial Tree?",
             "type": "text",
-            "answer": ""
         },
         {
             "id": 27,
             "text": "Briefly compare the different ways Radial Tree and Pack use to indicate hierarchy.",
             "type": "text",
-            "answer": ""
         }
         
     ]
