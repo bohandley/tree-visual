@@ -178,12 +178,9 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			let questionEndTime = (new Date()).getTime();
 	
 			let questionTime = (questionEndTime - questionStartTime)/1000,
-				// Do we really need an id? Can we just use i?
-				// questionNumber = q.id,
+				questionNumber = q.id,
 				questionType = q.type,
-				questionNumber = i,
 				questionText = q.text,
-				questionAnswer = q.answer,
 				userSubmission;
 	
 			if(q.type == 'radio') {
@@ -191,22 +188,10 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			}
 			else if(q.type == 'checkbox') {
 				userSubmission = $('#questions input:checked').get().map(d => d.value).join(';');
-				questionAnswer = questionAnswer.join(';');
 			}
 			else {
 				userSubmission = $('textarea').val();
 			}
-	
-			console.log('quizId: ' + quizId);
-			console.log('questionText: ' + questionText);
-			console.log('questionAnswer: ' + questionAnswer);
-			console.log('questionNumber: ' + questionNumber);
-			console.log('userId: ' + userId);
-			console.log('userLevel: ' + userLevel);
-			console.log('questionTime: ' + questionTime);
-			console.log('userSubmission: ' + userSubmission);
-			console.log('questionType: ' + questionType);
-			console.log('---------');
 
 			$("#submit-loading").show();
 			$("#bNext").attr("disabled", true);
@@ -216,7 +201,6 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				question: {
 					"quiz_id": quizId,
 					"question_text": questionText,
-					"question_answer": questionAnswer,
 					"question_number": questionNumber,
 					"question_time": questionTime,
 					"question_type": questionType,
@@ -236,7 +220,8 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 				// change the dataSets in quizQuestions
 				updateDataSelect(q);
 				selectLayouts(q);
-				i++
+				i++;
+				questionStartTime = (new Date()).getTime();
 	
 				// quiz completed, show the submit button
 				if(i == total) {
