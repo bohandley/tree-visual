@@ -8,6 +8,12 @@ var dataGlobal,
 
 let MODE = "Study";
 
+// if QUIZPREP, send QUIZPREP to backend for each question
+// 	so when we can keep track of QUIZPREP questions order(navigating away from page and returning)
+//	vs
+//	the actual quiz. We won't send QUIZPREP to back end in the formal quiz
+const QUIZPREP = 0;
+
 $(document).ready(function () {
 	
 	// show the modal to decide on the quiz
@@ -38,14 +44,19 @@ $(document).ready(function () {
 		// api call to backend to store userId, userLevel, userEmail address
 		// if user has already tried to take the quiz, return the question they 
 		// most recently completed
+		// two possibilities
+			// quizprep keeps track of questions done before the formal quiz
+			// QUIZPREP == 0 is the formal quiz
 		let params = {
 			user: {
 				user_name: userId,
 				user_level: userLevel,
+				quiz_prep: QUIZPREP
 			}
 		};
 
 		$.post( "https://tree-vis-quiz-api.herokuapp.com/users.json", params, function(data) {
+		// $.post( "http://localhost:3000/users.json", params, function(data) {
             let questionNumber = 0;
             if(data.update && data.questions.length > 0) {
                 let qNums = data.questions.map(q => q.question_number).sort();
