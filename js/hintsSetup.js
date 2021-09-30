@@ -91,6 +91,16 @@ var hintsSetup = (function (d3, $) {
 			});
 	}
 
+	function dataFilterHint() {
+		let intro = introJs();
+
+		intro.addHints();
+
+		intro.onhintclose(()=> {
+			intro.removeHints()
+		})
+	}
+
 
 	return {
 		onboarding() {
@@ -102,7 +112,9 @@ var hintsSetup = (function (d3, $) {
 
 		help() {
 			hintList()
-		}
+		},
+
+		dataFilterHint
 	}
 
 })(d3, $);

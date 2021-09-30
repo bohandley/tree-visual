@@ -252,7 +252,9 @@ function updateDataTypeAndFileName() {
             quiz_options = all_options.filter(d => d.mode != MODE);
 
         quiz_options.attr('hidden', 'hidden');
-        let initialSelected = d3.select(study_options.node());
+        // choose a dataset that is not filtered in the start
+        let initialSelected = d3.select(study_options.nodes()[3]);
+        // let initialSelected = d3.select(study_options.node());
         initialSelected.attr('selected', 'selected');
 
         updateDataset();

@@ -287,8 +287,13 @@ text {
 
 .introjs-hint-pulse
 {
+    margin-left:  -3px;
     border: 2px solid rgba(60, 60, 60, 0.27)!important;
     background-color: rgba(249, 0, 0, 0.8)!important;
+}
+
+.introjs-hint-dot {
+    margin-left:  -3px;
 }
 
 /* .optionGroup

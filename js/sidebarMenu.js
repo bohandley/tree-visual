@@ -109,7 +109,7 @@ var menu = (function (d3, $) {
             author: (level, set) => (level == 1 ? set.slice(0, 10) : set), // first 10 for level 1
             trade: (level, set) => (level == 2 ? set.slice(0, 5) : set), // first 5 for level 2
             treeoflife: (level, set) => (set),//(level == 1 ? set.slice(0, 10) : set), // first 10 for all levels
-            government: (level, set) => (set.length > 20 ? set.filter((e, i) => i % 2 == 0) : set), // intervene select for large set
+            government: (level, set) => (set)//.length > 20 ? set.filter((e, i) => i % 2 == 0) : set), // intervene select for large set
         },
     };
 
@@ -283,6 +283,13 @@ var menu = (function (d3, $) {
         var dataType = config.dataType;
 
         var root = config.root;
+
+        // remove old data hints (only in html, not in onboarding hints)
+				introJs().removeHints();
+
+				//expose hint for filtered data sets
+				if (['author', 'trade'].includes(dataType))
+					hintsSetup.dataFilterHint();
 
         document.getElementById("treeName").innerHTML = config.dataDescription[dataType].name;
         document.getElementById("treeDescription").innerHTML = config.dataDescription[dataType].desc(datasetName, root);
