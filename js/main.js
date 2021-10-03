@@ -11,8 +11,8 @@ let MODE = "Study";
 // if QUIZPREP, send QUIZPREP to backend for each question
 // 	so when we can keep track of QUIZPREP questions order(navigating away from page and returning)
 //	vs
-//	the actual quiz. We won't send QUIZPREP to back end in the formal quiz
-const QUIZPREP = 0;
+//	the actual quiz. 
+const QUIZPREP = 1;
 
 $(document).ready(function () {
 	
@@ -66,12 +66,17 @@ $(document).ready(function () {
             $("#quizModal").modal("hide");
 
             MODE = 'Mock Quiz';
+
+            var questions = quizQuestions;
+
+            if(+QUIZPREP)
+            	questions = quizPrepQuestions;
                 
             mockQuiz.hideDataSelect();
             mockQuiz.hideG2Elements();
             mockQuiz.setupQuestionContainer();
             mockQuiz.moveDescribeDiv();
-            mockQuiz.runQuiz(quizQuestions, userId, userLevel, questionNumber);
+            mockQuiz.runQuiz(questions, userId, userLevel, questionNumber);
 		})
 	    .fail(function() {
 	        alert( "Cannot enter the quiz. Please check your connection and try again." );
