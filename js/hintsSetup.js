@@ -92,15 +92,28 @@ var hintsSetup = (function (d3, $) {
 	}
 
 	function dataFilterHint() {
-		let intro = introJs();
+		let hint = introJs();
 
-		intro.addHints();
+		hint.addHints();
 
-		intro.onhintclose(()=> {
-			intro.removeHints()
+		let scrollHandler = addSidebarScrollListener(hint);
+
+		hint.onhintclose(()=> {
+			hint.removeHints();
+			$("sidebar").off("scroll", scrollHandler);
 		})
 	}
 
+	// listen to sidebar's scroll event and move the hint
+	function addSidebarScrollListener(hint)
+	{
+	    let scrollHandler = function()
+	    {
+	        hint.refresh();
+	    };
+	    $("#sidebar").scroll(scrollHandler);
+	    return scrollHandler;
+	}
 
 	return {
 		onboarding() {
