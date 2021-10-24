@@ -8,6 +8,12 @@ var dataGlobal,
 
 let MODE = "Study";
 
+// if QUIZPREP, send QUIZPREP to backend for each question
+// 	so when we can keep track of QUIZPREP questions order(navigating away from page and returning)
+//	vs
+//	the actual quiz. 
+const QUIZPREP = 1;
+
 $(document).ready(function () {
 	
 	// show the modal to decide on the quiz
@@ -38,14 +44,19 @@ $(document).ready(function () {
 		// api call to backend to store userId, userLevel, userEmail address
 		// if user has already tried to take the quiz, return the question they 
 		// most recently completed
+		// two possibilities
+			// quizprep keeps track of questions done before the formal quiz
+			// QUIZPREP == 0 is the formal quiz
 		let params = {
 			user: {
 				user_name: userId,
 				user_level: userLevel,
+				quiz_prep: QUIZPREP
 			}
 		};
 
 		$.post( "https://tree-vis-quiz-api.herokuapp.com/users.json", params, function(data) {
+		// $.post( "http://localhost:3000/users.json", params, function(data) {
             let questionNumber = 0;
             if(data.update && data.questions.length > 0) {
                 let qNums = data.questions.map(q => q.question_number).sort();
@@ -55,12 +66,17 @@ $(document).ready(function () {
             $("#quizModal").modal("hide");
 
             MODE = 'Mock Quiz';
+
+            var questions = quizQuestions;
+
+            if(+QUIZPREP)
+            	questions = quizPrepQuestions;
                 
             mockQuiz.hideDataSelect();
             mockQuiz.hideG2Elements();
             mockQuiz.setupQuestionContainer();
             mockQuiz.moveDescribeDiv();
-            mockQuiz.runQuiz(quizQuestions, userId, userLevel, questionNumber);
+            mockQuiz.runQuiz(questions, userId, userLevel, questionNumber);
 		})
 	    .fail(function() {
 	        alert( "Cannot enter the quiz. Please check your connection and try again." );
@@ -252,7 +268,9 @@ function updateDataTypeAndFileName() {
             quiz_options = all_options.filter(d => d.mode != MODE);
 
         quiz_options.attr('hidden', 'hidden');
-        let initialSelected = d3.select(study_options.node());
+        // choose a dataset that is not filtered in the start
+        let initialSelected = d3.select(study_options.nodes()[3]);
+        // let initialSelected = d3.select(study_options.node());
         initialSelected.attr('selected', 'selected');
 
         updateDataset();

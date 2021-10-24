@@ -50,6 +50,7 @@
         <script src="js/about.js"></script>
         <script src="js/hintsSetup.js"></script>
         <script src="js/quizQuestions.js"></script>
+        <script src="js/quizPrepQuestions.js"></script>
         <script src="js/mockQuiz.js"></script>
 
     </head>
@@ -261,7 +262,12 @@
                             <hr id="hr" />
 
                             <!-- sidebar body -->
-                            <div class="col-md-12" id="sidebarIntroDiv">
+                            <div 
+                                class="col-md-12" 
+                                id="sidebarIntroDiv" 
+                                data-hint='This data set has been filtered. To display a node that has been filtered out, open the "Filtering" section, select the desired node and click "Apply Filters".'
+                                data-hintposition="top-right"
+                            >
                                 <div id="sidebarIntro">
                                     <!-- dataset selection -->
                                     <div class="mb-4" style="width: 100%;">
