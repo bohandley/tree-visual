@@ -302,7 +302,7 @@ const quizQuestions =
                   "Pack"
                 ]
             },
-            "text": "Which of the following kind of goods did Sweden import from the United Kingdom in 2018?",
+            "text": "Which of the following goods did the United Kingdom import from Sweden in 2018?",
             "type": "radio",
         },
         {//**
@@ -313,7 +313,7 @@ const quizQuestions =
                 "China",
                 "Hong Kong",
                 "Philippines",
-                "Columbia"
+                "Colombia"
             ],
             "tree": {
                 "dataSet": "Trade_United_States",
@@ -326,7 +326,7 @@ const quizQuestions =
                     "Zoomable_Treemap"
                 ]
             },
-            "text": "Which countries export food <b>and</b> fuels to the United States?",
+            "text": "The United States exports food <b>and</b> fuels to which countries?",
             "type": "checkbox",
         },
         {//**
