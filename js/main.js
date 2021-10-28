@@ -12,7 +12,7 @@ let MODE = "Study";
 // 	so when we can keep track of QUIZPREP questions order(navigating away from page and returning)
 //	vs
 //	the actual quiz. 
-const QUIZPREP = 1;
+const QUIZPREP = 0;
 
 $(document).ready(function () {
 	

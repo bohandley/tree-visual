@@ -1,13 +1,13 @@
 const quizPrepQuestions = {
     "quizId": "tree_quiz",
     "questions": [
-        {
+        {//**
         	"id": 1,
             "options": [
-                "Court of Appeal",
-                "Supreme Court",
-                "Ontario Court",
-                "Small Claims, Family Court"
+                "Ardeidae",
+                "Threskiornithidae",
+                "Pelecanidae",
+                "Scopidae"
             ],
             "tree": {
                 "layouts": [
@@ -20,19 +20,19 @@ const quizPrepQuestions = {
                 	// "Zoomable_Treemap"
                 ],
                 // select the dataSet
-                "dataSet": "Gov_Canada"
+                "dataSet": "TreeOfLife_Pelecaniformes"
             },
-            "text": "On the provincial level, which court is at the lowest level?",
+            "text": "Which of the following families has the least amount of species?",
             "type": "radio",
         },
-        {
+        {//**
             "id": 2,
             "options": [
-                "Supreme Court",
-                "Superior Court",
-                "Premiers",
-                "Governor General",
-                "Lieutenant Governors"
+                "1992",
+                "1993",
+                "1994",
+                "1995",
+                "1996"
             ],
             "tree": {
                 "layouts": [
@@ -43,29 +43,29 @@ const quizPrepQuestions = {
                 	"Sunburst",
                 ],
                 // select the dataSet
-                "dataSet": "Gov_Canada"
+                "dataSet": "Stasko"
             },
-            "text": "Which of the following are Federal institutions?",
+            "text": "In which of the following years did John Stasko publish eleven papers?",
             "type": "checkbox",
         },
-        {
+        {//**
         	"id": 3,
             "options": [
-                "Nation",
-                "Province",
-                "Municipality",
-                "Autonomous Region",
-                "Barangay"
+                "Belgium",
+                "France",
+                "Hong Kong",
+                "Ireland",
+                "United States"
             ],
             "tree": {
-                "dataSet": "Gov_Philippines",
+                "dataSet": "Trade_United_Kingdom",
                 "layouts": [
-                    "Treemap",
+                  "Radial_Tree",
 	                "Pack",
-	                "Collapsible_Tree"
+	                "Sunburst"
                 ]
             },
-            "text": "Which branch of the Philippines Government has the most number of employees?",
+            "text": "Of the following countries, which does the United Kingdom export the most animal products to?",
             "type": "radio",
         },
         {
@@ -103,8 +103,6 @@ const quizPrepQuestions = {
             },
             "text": "Which of the following three layouts (Sunburst, Treemap, Treemap (Zoomable)) are best at depicting the hierarchy of the United States Government? Explain your answer.",
             "type": "text",
-        }
+        },
       ]
-
     }
-
