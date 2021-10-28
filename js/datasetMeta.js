@@ -19,13 +19,13 @@ var datasetDescription = [
                 "value": "Stasko",
                 "name": "John Stasko",
                 "data": "author",
-                "mode": "Study"
+                "mode": "Mock Quiz"
             },
             {
                 "value": "Leskovec",
                 "name": "Jure Leskovec",
                 "data": "author",
-                "mode": "Study"
+                "mode": "Mock Quiz"
             }
         ]
     },
@@ -49,13 +49,13 @@ var datasetDescription = [
                 "value": "Gov_United_Kingdom",
                 "name": "United Kingdom",
                 "data": "government",
-                "mode": "Study"
+                "mode": "Mock Quiz"
             },
             {
                 "value": "Gov_United_States",
                 "name": "United States",
                 "data": "government",
-                "mode": "Study"
+                "mode": "Mock Quiz"
             }
         ]
     },
@@ -79,13 +79,13 @@ var datasetDescription = [
                 "value": "Trade_United_Kingdom",
                 "name": "United Kingdom",
                 "data": "trade",
-                "mode": "Study"
+                "mode": "Mock Quiz"
             },
             {
                 "value": "Trade_United_States",
                 "name": "United States",
                 "data": "trade",
-                "mode": "Study"
+                "mode": "Mock Quiz"
             }
         ]
     },
@@ -109,13 +109,13 @@ var datasetDescription = [
                 "value": "TreeOfLife_Pelecaniformes",
                 "name": "Pelecaniformes (Waterbirds)",
                 "data": "treeoflife",
-                "mode": "Study"
+                "mode": "Mock Quiz"
             },
             {
                 "value": "TreeOfLife_Afrosoricida",
                 "name": "Afrosoricida (Moles, Shrews & Tenrecs)",
                 "data": "treeoflife",
-                "mode": "Study"
+                "mode": "Mock Quiz"
             }
         ]
     }
