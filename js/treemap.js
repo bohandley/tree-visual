@@ -28,7 +28,7 @@ function draw_treemap(position, selectindex) {
 
         var root = d3
             .hierarchy(data)
-            .eachBefore((d) => (d.data.id = (d.parent ? d.parent.data.id + "." : "") + d.data.name))
+            .eachBefore((d) => (d.data.id = (d.parent ? d.parent.data.id + "|" : "") + d.data.name))
             .sum((d) => d.size)
             .sort((a, b) => b.height - a.height || b.value - a.value);
 

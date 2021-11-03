@@ -121,8 +121,13 @@ var treeLib = (function (d3) {
         container.exposedIds = idsForRestr;
     }
 
-    function newline(id) {
-        var pathEls = id.split(".");
+    function newline(id, layout=null) {
+        var pathEls;
+        if (layout == "treemap")
+          pathEls = id.split("|");
+        else
+          pathEls = id.split(".");
+
         var idLen = pathEls.length;
 
         var newId = pathEls.map(function(el,idx){
@@ -1507,7 +1512,7 @@ var treeLib = (function (d3) {
         
         if (display && !simulated) {
             let selectedData = selectedCell.data()[0];
-            let name = newline(selectedData.data.id);
+            let name = newline(selectedData.data.id, "treemap");
             let size = menu.dataNodeSizeText(selectedData);
             showToolTip([name, size]);
         }
