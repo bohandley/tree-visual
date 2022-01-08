@@ -108,9 +108,15 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 		return text;
 	}
 
-	const attachQuestionHtml = (q, total) => {
-		$("#questionId").text(q.id);
-		$("#questions-counter").text("(" + q.id + " of " + total + ")");
+	const attachQuestionHtml = (q, total, qIdx) => {
+		// show the index +1 for the number of the questions 
+		// to decouple the order
+		var num = Number(qIdx) + 1;
+
+		$("#questionId").text(num);
+		
+		$("#questions-counter").text("(" + num + " of " + total + ")");
+		
 		// build the question
 		// question text and then
 		// either place textarea or
@@ -205,18 +211,21 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 					"question_time": questionTime,
 					"question_type": questionType,
 					"submission": userSubmission,
+					// QUIZPREP is 1 or 0 to diferentiate questions answered before the quiz or after
+					"quiz_prep": QUIZPREP
 				},
 				"user_name": userId,
 				"user_level": userLevel
 			};
-			$.post( "https://tree-vis-quiz-api.herokuapp.com/questions.json", params, function(data) {
+			$.post("https://tree-vis-quiz-api.herokuapp.com/questions.json", params, function(data) {
+			// $.post("http://localhost:3000/questions.json", params, function(data) {
 				if (isLastQuestion) {
 					window.location.replace("/submitted.html");
 					return;
 				}
 					
 				q = questions[i];
-				attachQuestionHtml(q, total);
+				attachQuestionHtml(q, total, i);
 				// change the dataSets in quizQuestions
 				updateDataSelect(q);
 				selectLayouts(q);
@@ -239,12 +248,12 @@ var mockQuiz = (function (d3, $, quizQuestions) {
 			});
 		}
 		
-		attachQuestionHtml(q, total);
+		attachQuestionHtml(q, total, i);
 		
 		// change the dataSets in quizQuestions
 		updateDataSelect(q);
 		selectLayouts(q);
-		// iterate to the next question
+		// iterate to the next question on the first q, all other increments will happen in submitAnswer
 		i++;
 		$("#bNext").on("click", () => {
 			submitAnswer(false);

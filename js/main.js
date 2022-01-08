@@ -8,8 +8,15 @@ var dataGlobal,
 
 let MODE = "Study";
 
+// if QUIZPREP, send QUIZPREP to backend for each question
+// 	so when we can keep track of QUIZPREP questions order(navigating away from page and returning)
+//	vs
+//	the actual quiz. 
+const QUIZPREP = 1;
+
 $(document).ready(function () {
 	
+<<<<<<< HEAD
 // 	show the modal to decide on the quiz
 // 	$("#quizModal").modal("show");
 // 
@@ -71,8 +78,7 @@ $(document).ready(function () {
 //             $("#study-mode").attr("disabled", false);
 //             $('#quizModal').data('bs.modal')._config.backdrop = true;
 // 	    });
-// 	});
-    
+// 	});    
     updateDataTypeAndFileName();
     menu.setupCheckBoxes();
 
@@ -252,7 +258,9 @@ function updateDataTypeAndFileName() {
             quiz_options = all_options.filter(d => d.mode != MODE);
 
         quiz_options.attr('hidden', 'hidden');
-        let initialSelected = d3.select(study_options.node());
+        // choose a dataset that is not filtered in the start
+        let initialSelected = d3.select(study_options.nodes()[3]);
+        // let initialSelected = d3.select(study_options.node());
         initialSelected.attr('selected', 'selected');
 
         updateDataset();

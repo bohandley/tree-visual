@@ -91,6 +91,29 @@ var hintsSetup = (function (d3, $) {
 			});
 	}
 
+	function dataFilterHint() {
+		let hint = introJs();
+
+		hint.addHints();
+
+		let scrollHandler = addSidebarScrollListener(hint);
+
+		hint.onhintclose(()=> {
+			hint.removeHints();
+			$("sidebar").off("scroll", scrollHandler);
+		})
+	}
+
+	// listen to sidebar's scroll event and move the hint
+	function addSidebarScrollListener(hint)
+	{
+	    let scrollHandler = function()
+	    {
+	        hint.refresh();
+	    };
+	    $("#sidebar").scroll(scrollHandler);
+	    return scrollHandler;
+	}
 
 	return {
 		onboarding() {
@@ -102,7 +125,9 @@ var hintsSetup = (function (d3, $) {
 
 		help() {
 			hintList()
-		}
+		},
+
+		dataFilterHint
 	}
 
 })(d3, $);
