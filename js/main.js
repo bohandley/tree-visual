@@ -16,7 +16,7 @@ const QUIZPREP = 1;
 
 $(document).ready(function () {
 	
-<<<<<<< HEAD
+
 // 	show the modal to decide on the quiz
 // 	$("#quizModal").modal("show");
 // 
