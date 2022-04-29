@@ -121,18 +121,25 @@ var treeLib = (function (d3) {
         container.exposedIds = idsForRestr;
     }
 
-    function newline(id) {
-        var pathEls = id.split(".");
-        var idLen = pathEls.length;
+    function newline(id, layout=null) {
+        var newId;
+        var pathEls;
+        if (layout == "treemap"){
+            pathEls = id.split("|");
 
-        var newId = pathEls.map(function(el,idx){
-            // check the end, some leaves end with '.'
-            // don't add the => for the last element
-            if (idx == idLen - 1 || pathEls[idx + 1] == '')
-                return el;
-            else
-                return el + " => ";
-        }).join("");
+            var idLen = pathEls.length;
+
+            newId = pathEls.map(function(el,idx){
+                // check the end, some leaves end with '.'
+                // don't add the => for the last element
+                if (idx == idLen - 1 || pathEls[idx + 1] == '')
+                    return el;
+                else
+                    return el + " => ";
+            }).join("");
+        } else {
+            newId = id;
+        }
 
         return newId;
     }
@@ -1507,7 +1514,7 @@ var treeLib = (function (d3) {
         
         if (display && !simulated) {
             let selectedData = selectedCell.data()[0];
-            let name = newline(selectedData.data.id);
+            let name = newline(selectedData.data.id, 'treemap');
             let size = menu.dataNodeSizeText(selectedData);
             showToolTip([name, size]);
         }

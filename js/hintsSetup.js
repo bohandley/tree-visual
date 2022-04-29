@@ -117,10 +117,10 @@ var hintsSetup = (function (d3, $) {
 
 	return {
 		onboarding() {
-			if (localStorage.getItem("hasLoadBefore") == null) {
+			// if (localStorage.getItem("hasLoadBefore") == null) {
 				hintList();
-				localStorage.setItem("hasLoadBefore", true);
-			}
+				// localStorage.setItem("hasLoadBefore", true);
+			// }
 		},
 
 		help() {
